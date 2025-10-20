@@ -37,7 +37,7 @@ namespace PLCKeygen
         {
             bool STATUS = PLCKey.ReadBit("MR112");
 
-            textBox1.AppendText("BIT : " + $"{STATUS}\r\n");
+            textBox1.AppendText("BIT : " + $"{STATUS}\r\n"); 
             Task.Delay(100);
         }
     }
