@@ -37,6 +37,8 @@
             this.Y1 = new System.Windows.Forms.Label();
             this.R1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button47 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,6 +49,8 @@
             this.btnConnect12 = new System.Windows.Forms.Button();
             this.cam12 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button48 = new System.Windows.Forms.Button();
+            this.btnTriggerCamP3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRMasPort3 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -65,6 +69,24 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.groupBox31 = new System.Windows.Forms.GroupBox();
+            this.groupBox33 = new System.Windows.Forms.GroupBox();
+            this.button45 = new System.Windows.Forms.Button();
+            this.button46 = new System.Windows.Forms.Button();
+            this.groupBox35 = new System.Windows.Forms.GroupBox();
+            this.button49 = new System.Windows.Forms.Button();
+            this.button50 = new System.Windows.Forms.Button();
+            this.groupBox41 = new System.Windows.Forms.GroupBox();
+            this.groupBox42 = new System.Windows.Forms.GroupBox();
+            this.button59 = new System.Windows.Forms.Button();
+            this.button60 = new System.Windows.Forms.Button();
+            this.groupBox44 = new System.Windows.Forms.GroupBox();
+            this.button63 = new System.Windows.Forms.Button();
+            this.button64 = new System.Windows.Forms.Button();
+            this.groupBox45 = new System.Windows.Forms.GroupBox();
+            this.button65 = new System.Windows.Forms.Button();
+            this.button66 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
@@ -149,6 +171,8 @@
             this.groupBox29 = new System.Windows.Forms.GroupBox();
             this.groupBox28 = new System.Windows.Forms.GroupBox();
             this.groupBox27 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnTriggerCamP4 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.txtRMasPort4 = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
@@ -160,6 +184,8 @@
             this.txtXCurMasPort4 = new System.Windows.Forms.Label();
             this.btnSetMasP4 = new System.Windows.Forms.Button();
             this.groupBox26 = new System.Windows.Forms.GroupBox();
+            this.button43 = new System.Windows.Forms.Button();
+            this.button44 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -170,32 +196,7 @@
             this.txtYCurMasPort2 = new System.Windows.Forms.Label();
             this.txtXCurMasPort2 = new System.Windows.Forms.Label();
             this.btnSetMasP2 = new System.Windows.Forms.Button();
-            this.btnTriggerCamP3 = new System.Windows.Forms.Button();
-            this.btnTriggerCamP4 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button44 = new System.Windows.Forms.Button();
-            this.groupBox30 = new System.Windows.Forms.GroupBox();
-            this.groupBox41 = new System.Windows.Forms.GroupBox();
-            this.groupBox45 = new System.Windows.Forms.GroupBox();
-            this.button65 = new System.Windows.Forms.Button();
-            this.button66 = new System.Windows.Forms.Button();
-            this.groupBox31 = new System.Windows.Forms.GroupBox();
-            this.groupBox33 = new System.Windows.Forms.GroupBox();
-            this.button45 = new System.Windows.Forms.Button();
-            this.button46 = new System.Windows.Forms.Button();
-            this.groupBox35 = new System.Windows.Forms.GroupBox();
-            this.button49 = new System.Windows.Forms.Button();
-            this.button50 = new System.Windows.Forms.Button();
-            this.button60 = new System.Windows.Forms.Button();
-            this.button59 = new System.Windows.Forms.Button();
-            this.groupBox42 = new System.Windows.Forms.GroupBox();
-            this.button64 = new System.Windows.Forms.Button();
-            this.button63 = new System.Windows.Forms.Button();
-            this.groupBox44 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button43 = new System.Windows.Forms.Button();
-            this.button47 = new System.Windows.Forms.Button();
-            this.button48 = new System.Windows.Forms.Button();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -203,6 +204,14 @@
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox30.SuspendLayout();
+            this.groupBox31.SuspendLayout();
+            this.groupBox33.SuspendLayout();
+            this.groupBox35.SuspendLayout();
+            this.groupBox41.SuspendLayout();
+            this.groupBox42.SuspendLayout();
+            this.groupBox44.SuspendLayout();
+            this.groupBox45.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox25.SuspendLayout();
@@ -230,14 +239,6 @@
             this.groupBox28.SuspendLayout();
             this.groupBox27.SuspendLayout();
             this.groupBox26.SuspendLayout();
-            this.groupBox30.SuspendLayout();
-            this.groupBox41.SuspendLayout();
-            this.groupBox45.SuspendLayout();
-            this.groupBox31.SuspendLayout();
-            this.groupBox33.SuspendLayout();
-            this.groupBox35.SuspendLayout();
-            this.groupBox42.SuspendLayout();
-            this.groupBox44.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -322,6 +323,27 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Port 1";
+            // 
+            // button47
+            // 
+            this.button47.Location = new System.Drawing.Point(248, 60);
+            this.button47.Name = "button47";
+            this.button47.Size = new System.Drawing.Size(72, 23);
+            this.button47.TabIndex = 27;
+            this.button47.Text = "Get master";
+            this.button47.UseVisualStyleBackColor = true;
+            this.button47.Click += new System.EventHandler(this.button47_Click);
+            // 
+            // button8
+            // 
+            this.button8.Enabled = false;
+            this.button8.Location = new System.Drawing.Point(248, 31);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(72, 25);
+            this.button8.TabIndex = 26;
+            this.button8.Text = "Trigger";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // label6
             // 
@@ -418,6 +440,27 @@
             this.groupBox2.TabIndex = 15;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Port 3";
+            // 
+            // button48
+            // 
+            this.button48.Location = new System.Drawing.Point(248, 60);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(72, 23);
+            this.button48.TabIndex = 23;
+            this.button48.Text = "Get master";
+            this.button48.UseVisualStyleBackColor = true;
+            this.button48.Click += new System.EventHandler(this.button48_Click);
+            // 
+            // btnTriggerCamP3
+            // 
+            this.btnTriggerCamP3.Enabled = false;
+            this.btnTriggerCamP3.Location = new System.Drawing.Point(248, 31);
+            this.btnTriggerCamP3.Name = "btnTriggerCamP3";
+            this.btnTriggerCamP3.Size = new System.Drawing.Size(72, 25);
+            this.btnTriggerCamP3.TabIndex = 21;
+            this.btnTriggerCamP3.Text = "Trigger";
+            this.btnTriggerCamP3.UseVisualStyleBackColor = true;
+            this.btnTriggerCamP3.Click += new System.EventHandler(this.btnTriggerCamP3_Click);
             // 
             // label7
             // 
@@ -547,6 +590,7 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -559,7 +603,7 @@
             this.tabPage3.Controls.Add(this.tabControl2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(877, 603);
+            this.tabPage3.Size = new System.Drawing.Size(1015, 603);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Motion";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -574,7 +618,7 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(877, 603);
+            this.tabControl2.Size = new System.Drawing.Size(1015, 603);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage4
@@ -587,10 +631,189 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(869, 577);
+            this.tabPage4.Size = new System.Drawing.Size(1007, 577);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Port1";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox30
+            // 
+            this.groupBox30.Controls.Add(this.groupBox31);
+            this.groupBox30.Controls.Add(this.groupBox41);
+            this.groupBox30.Location = new System.Drawing.Point(618, 6);
+            this.groupBox30.Name = "groupBox30";
+            this.groupBox30.Size = new System.Drawing.Size(243, 347);
+            this.groupBox30.TabIndex = 11;
+            this.groupBox30.TabStop = false;
+            this.groupBox30.Text = "Teaching";
+            // 
+            // groupBox31
+            // 
+            this.groupBox31.Controls.Add(this.groupBox33);
+            this.groupBox31.Controls.Add(this.groupBox35);
+            this.groupBox31.Location = new System.Drawing.Point(6, 207);
+            this.groupBox31.Name = "groupBox31";
+            this.groupBox31.Size = new System.Drawing.Size(229, 109);
+            this.groupBox31.TabIndex = 7;
+            this.groupBox31.TabStop = false;
+            this.groupBox31.Text = "Vi tri Tray Load";
+            // 
+            // groupBox33
+            // 
+            this.groupBox33.Controls.Add(this.button45);
+            this.groupBox33.Controls.Add(this.button46);
+            this.groupBox33.Location = new System.Drawing.Point(117, 19);
+            this.groupBox33.Name = "groupBox33";
+            this.groupBox33.Size = new System.Drawing.Size(105, 76);
+            this.groupBox33.TabIndex = 5;
+            this.groupBox33.TabStop = false;
+            this.groupBox33.Text = "Tray Load X End";
+            // 
+            // button45
+            // 
+            this.button45.Location = new System.Drawing.Point(15, 17);
+            this.button45.Name = "button45";
+            this.button45.Size = new System.Drawing.Size(75, 23);
+            this.button45.TabIndex = 1;
+            this.button45.Text = "Save";
+            this.button45.UseVisualStyleBackColor = true;
+            // 
+            // button46
+            // 
+            this.button46.Location = new System.Drawing.Point(15, 46);
+            this.button46.Name = "button46";
+            this.button46.Size = new System.Drawing.Size(75, 23);
+            this.button46.TabIndex = 3;
+            this.button46.Text = "Go";
+            this.button46.UseVisualStyleBackColor = true;
+            // 
+            // groupBox35
+            // 
+            this.groupBox35.Controls.Add(this.button49);
+            this.groupBox35.Controls.Add(this.button50);
+            this.groupBox35.Location = new System.Drawing.Point(6, 19);
+            this.groupBox35.Name = "groupBox35";
+            this.groupBox35.Size = new System.Drawing.Size(105, 76);
+            this.groupBox35.TabIndex = 4;
+            this.groupBox35.TabStop = false;
+            this.groupBox35.Text = "Tray Load X Start";
+            // 
+            // button49
+            // 
+            this.button49.Location = new System.Drawing.Point(15, 17);
+            this.button49.Name = "button49";
+            this.button49.Size = new System.Drawing.Size(75, 23);
+            this.button49.TabIndex = 1;
+            this.button49.Text = "Save";
+            this.button49.UseVisualStyleBackColor = true;
+            // 
+            // button50
+            // 
+            this.button50.Location = new System.Drawing.Point(15, 46);
+            this.button50.Name = "button50";
+            this.button50.Size = new System.Drawing.Size(75, 23);
+            this.button50.TabIndex = 3;
+            this.button50.Text = "Go";
+            this.button50.UseVisualStyleBackColor = true;
+            // 
+            // groupBox41
+            // 
+            this.groupBox41.Controls.Add(this.groupBox42);
+            this.groupBox41.Controls.Add(this.groupBox44);
+            this.groupBox41.Controls.Add(this.groupBox45);
+            this.groupBox41.Location = new System.Drawing.Point(6, 16);
+            this.groupBox41.Name = "groupBox41";
+            this.groupBox41.Size = new System.Drawing.Size(229, 185);
+            this.groupBox41.TabIndex = 1;
+            this.groupBox41.TabStop = false;
+            this.groupBox41.Text = "Vi tri Socket";
+            // 
+            // groupBox42
+            // 
+            this.groupBox42.Controls.Add(this.button59);
+            this.groupBox42.Controls.Add(this.button60);
+            this.groupBox42.Location = new System.Drawing.Point(117, 101);
+            this.groupBox42.Name = "groupBox42";
+            this.groupBox42.Size = new System.Drawing.Size(105, 76);
+            this.groupBox42.TabIndex = 6;
+            this.groupBox42.TabStop = false;
+            this.groupBox42.Text = "Socket Z Unload";
+            // 
+            // button59
+            // 
+            this.button59.Location = new System.Drawing.Point(15, 17);
+            this.button59.Name = "button59";
+            this.button59.Size = new System.Drawing.Size(75, 23);
+            this.button59.TabIndex = 1;
+            this.button59.Text = "Save";
+            this.button59.UseVisualStyleBackColor = true;
+            // 
+            // button60
+            // 
+            this.button60.Location = new System.Drawing.Point(15, 46);
+            this.button60.Name = "button60";
+            this.button60.Size = new System.Drawing.Size(75, 23);
+            this.button60.TabIndex = 3;
+            this.button60.Text = "Go";
+            this.button60.UseVisualStyleBackColor = true;
+            // 
+            // groupBox44
+            // 
+            this.groupBox44.Controls.Add(this.button63);
+            this.groupBox44.Controls.Add(this.button64);
+            this.groupBox44.Location = new System.Drawing.Point(6, 101);
+            this.groupBox44.Name = "groupBox44";
+            this.groupBox44.Size = new System.Drawing.Size(105, 76);
+            this.groupBox44.TabIndex = 5;
+            this.groupBox44.TabStop = false;
+            this.groupBox44.Text = "Socket Z Load";
+            // 
+            // button63
+            // 
+            this.button63.Location = new System.Drawing.Point(15, 17);
+            this.button63.Name = "button63";
+            this.button63.Size = new System.Drawing.Size(75, 23);
+            this.button63.TabIndex = 1;
+            this.button63.Text = "Save";
+            this.button63.UseVisualStyleBackColor = true;
+            // 
+            // button64
+            // 
+            this.button64.Location = new System.Drawing.Point(15, 46);
+            this.button64.Name = "button64";
+            this.button64.Size = new System.Drawing.Size(75, 23);
+            this.button64.TabIndex = 3;
+            this.button64.Text = "Go";
+            this.button64.UseVisualStyleBackColor = true;
+            // 
+            // groupBox45
+            // 
+            this.groupBox45.Controls.Add(this.button65);
+            this.groupBox45.Controls.Add(this.button66);
+            this.groupBox45.Location = new System.Drawing.Point(6, 19);
+            this.groupBox45.Name = "groupBox45";
+            this.groupBox45.Size = new System.Drawing.Size(105, 76);
+            this.groupBox45.TabIndex = 4;
+            this.groupBox45.TabStop = false;
+            this.groupBox45.Text = "Socket Load XY";
+            // 
+            // button65
+            // 
+            this.button65.Location = new System.Drawing.Point(15, 17);
+            this.button65.Name = "button65";
+            this.button65.Size = new System.Drawing.Size(75, 23);
+            this.button65.TabIndex = 1;
+            this.button65.Text = "Save";
+            this.button65.UseVisualStyleBackColor = true;
+            // 
+            // button66
+            // 
+            this.button66.Location = new System.Drawing.Point(15, 46);
+            this.button66.Name = "button66";
+            this.button66.Size = new System.Drawing.Size(75, 23);
+            this.button66.TabIndex = 3;
+            this.button66.Text = "Go";
+            this.button66.UseVisualStyleBackColor = true;
             // 
             // groupBox7
             // 
@@ -1342,7 +1565,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1001, 577);
+            this.tabPage5.Size = new System.Drawing.Size(869, 577);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Port2";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1351,7 +1574,7 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1001, 577);
+            this.tabPage6.Size = new System.Drawing.Size(869, 577);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Port3";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1360,7 +1583,7 @@
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1001, 577);
+            this.tabPage7.Size = new System.Drawing.Size(869, 577);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Port4";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1370,7 +1593,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1009, 603);
+            this.tabPage2.Size = new System.Drawing.Size(1015, 603);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "IO";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1436,6 +1659,27 @@
             this.groupBox27.TabIndex = 23;
             this.groupBox27.TabStop = false;
             this.groupBox27.Text = "Port 4";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(248, 57);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(72, 23);
+            this.button7.TabIndex = 17;
+            this.button7.Text = "Get master";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // btnTriggerCamP4
+            // 
+            this.btnTriggerCamP4.Enabled = false;
+            this.btnTriggerCamP4.Location = new System.Drawing.Point(248, 28);
+            this.btnTriggerCamP4.Name = "btnTriggerCamP4";
+            this.btnTriggerCamP4.Size = new System.Drawing.Size(72, 25);
+            this.btnTriggerCamP4.TabIndex = 24;
+            this.btnTriggerCamP4.Text = "Trigger";
+            this.btnTriggerCamP4.UseVisualStyleBackColor = true;
+            this.btnTriggerCamP4.Click += new System.EventHandler(this.btnTriggerCamP4_Click);
             // 
             // label25
             // 
@@ -1543,6 +1787,27 @@
             this.groupBox26.TabStop = false;
             this.groupBox26.Text = "Port 2";
             // 
+            // button43
+            // 
+            this.button43.Location = new System.Drawing.Point(248, 61);
+            this.button43.Name = "button43";
+            this.button43.Size = new System.Drawing.Size(72, 23);
+            this.button43.TabIndex = 18;
+            this.button43.Text = "Get master";
+            this.button43.UseVisualStyleBackColor = true;
+            this.button43.Click += new System.EventHandler(this.button43_Click);
+            // 
+            // button44
+            // 
+            this.button44.Enabled = false;
+            this.button44.Location = new System.Drawing.Point(248, 31);
+            this.button44.Name = "button44";
+            this.button44.Size = new System.Drawing.Size(72, 25);
+            this.button44.TabIndex = 26;
+            this.button44.Text = "Trigger";
+            this.button44.UseVisualStyleBackColor = true;
+            this.button44.Click += new System.EventHandler(this.button44_Click);
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1628,264 +1893,14 @@
             this.btnSetMasP2.UseVisualStyleBackColor = true;
             this.btnSetMasP2.Click += new System.EventHandler(this.btnSetMasP2_Click);
             // 
-            // btnTriggerCamP3
+            // tabPage8
             // 
-            this.btnTriggerCamP3.Location = new System.Drawing.Point(248, 31);
-            this.btnTriggerCamP3.Name = "btnTriggerCamP3";
-            this.btnTriggerCamP3.Size = new System.Drawing.Size(72, 25);
-            this.btnTriggerCamP3.TabIndex = 21;
-            this.btnTriggerCamP3.Text = "Trigger";
-            this.btnTriggerCamP3.UseVisualStyleBackColor = true;
-            this.btnTriggerCamP3.Click += new System.EventHandler(this.btnTriggerCamP3_Click);
-            // 
-            // btnTriggerCamP4
-            // 
-            this.btnTriggerCamP4.Location = new System.Drawing.Point(248, 28);
-            this.btnTriggerCamP4.Name = "btnTriggerCamP4";
-            this.btnTriggerCamP4.Size = new System.Drawing.Size(72, 25);
-            this.btnTriggerCamP4.TabIndex = 24;
-            this.btnTriggerCamP4.Text = "Trigger";
-            this.btnTriggerCamP4.UseVisualStyleBackColor = true;
-            this.btnTriggerCamP4.Click += new System.EventHandler(this.btnTriggerCamP4_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(248, 31);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(72, 25);
-            this.button8.TabIndex = 26;
-            this.button8.Text = "Trigger";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
-            // 
-            // button44
-            // 
-            this.button44.Location = new System.Drawing.Point(248, 31);
-            this.button44.Name = "button44";
-            this.button44.Size = new System.Drawing.Size(72, 25);
-            this.button44.TabIndex = 26;
-            this.button44.Text = "Trigger";
-            this.button44.UseVisualStyleBackColor = true;
-            this.button44.Click += new System.EventHandler(this.button44_Click);
-            // 
-            // groupBox30
-            // 
-            this.groupBox30.Controls.Add(this.groupBox31);
-            this.groupBox30.Controls.Add(this.groupBox41);
-            this.groupBox30.Location = new System.Drawing.Point(618, 6);
-            this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(243, 347);
-            this.groupBox30.TabIndex = 11;
-            this.groupBox30.TabStop = false;
-            this.groupBox30.Text = "Teaching";
-            // 
-            // groupBox41
-            // 
-            this.groupBox41.Controls.Add(this.groupBox42);
-            this.groupBox41.Controls.Add(this.groupBox44);
-            this.groupBox41.Controls.Add(this.groupBox45);
-            this.groupBox41.Location = new System.Drawing.Point(6, 16);
-            this.groupBox41.Name = "groupBox41";
-            this.groupBox41.Size = new System.Drawing.Size(229, 185);
-            this.groupBox41.TabIndex = 1;
-            this.groupBox41.TabStop = false;
-            this.groupBox41.Text = "Vi tri Socket";
-            // 
-            // groupBox45
-            // 
-            this.groupBox45.Controls.Add(this.button65);
-            this.groupBox45.Controls.Add(this.button66);
-            this.groupBox45.Location = new System.Drawing.Point(6, 19);
-            this.groupBox45.Name = "groupBox45";
-            this.groupBox45.Size = new System.Drawing.Size(105, 76);
-            this.groupBox45.TabIndex = 4;
-            this.groupBox45.TabStop = false;
-            this.groupBox45.Text = "Socket Load XY";
-            // 
-            // button65
-            // 
-            this.button65.Location = new System.Drawing.Point(15, 17);
-            this.button65.Name = "button65";
-            this.button65.Size = new System.Drawing.Size(75, 23);
-            this.button65.TabIndex = 1;
-            this.button65.Text = "Save";
-            this.button65.UseVisualStyleBackColor = true;
-            // 
-            // button66
-            // 
-            this.button66.Location = new System.Drawing.Point(15, 46);
-            this.button66.Name = "button66";
-            this.button66.Size = new System.Drawing.Size(75, 23);
-            this.button66.TabIndex = 3;
-            this.button66.Text = "Go";
-            this.button66.UseVisualStyleBackColor = true;
-            // 
-            // groupBox31
-            // 
-            this.groupBox31.Controls.Add(this.groupBox33);
-            this.groupBox31.Controls.Add(this.groupBox35);
-            this.groupBox31.Location = new System.Drawing.Point(6, 207);
-            this.groupBox31.Name = "groupBox31";
-            this.groupBox31.Size = new System.Drawing.Size(229, 109);
-            this.groupBox31.TabIndex = 7;
-            this.groupBox31.TabStop = false;
-            this.groupBox31.Text = "Vi tri Tray Load";
-            // 
-            // groupBox33
-            // 
-            this.groupBox33.Controls.Add(this.button45);
-            this.groupBox33.Controls.Add(this.button46);
-            this.groupBox33.Location = new System.Drawing.Point(117, 19);
-            this.groupBox33.Name = "groupBox33";
-            this.groupBox33.Size = new System.Drawing.Size(105, 76);
-            this.groupBox33.TabIndex = 5;
-            this.groupBox33.TabStop = false;
-            this.groupBox33.Text = "Tray Load X End";
-            // 
-            // button45
-            // 
-            this.button45.Location = new System.Drawing.Point(15, 17);
-            this.button45.Name = "button45";
-            this.button45.Size = new System.Drawing.Size(75, 23);
-            this.button45.TabIndex = 1;
-            this.button45.Text = "Save";
-            this.button45.UseVisualStyleBackColor = true;
-            // 
-            // button46
-            // 
-            this.button46.Location = new System.Drawing.Point(15, 46);
-            this.button46.Name = "button46";
-            this.button46.Size = new System.Drawing.Size(75, 23);
-            this.button46.TabIndex = 3;
-            this.button46.Text = "Go";
-            this.button46.UseVisualStyleBackColor = true;
-            // 
-            // groupBox35
-            // 
-            this.groupBox35.Controls.Add(this.button49);
-            this.groupBox35.Controls.Add(this.button50);
-            this.groupBox35.Location = new System.Drawing.Point(6, 19);
-            this.groupBox35.Name = "groupBox35";
-            this.groupBox35.Size = new System.Drawing.Size(105, 76);
-            this.groupBox35.TabIndex = 4;
-            this.groupBox35.TabStop = false;
-            this.groupBox35.Text = "Tray Load X Start";
-            // 
-            // button49
-            // 
-            this.button49.Location = new System.Drawing.Point(15, 17);
-            this.button49.Name = "button49";
-            this.button49.Size = new System.Drawing.Size(75, 23);
-            this.button49.TabIndex = 1;
-            this.button49.Text = "Save";
-            this.button49.UseVisualStyleBackColor = true;
-            // 
-            // button50
-            // 
-            this.button50.Location = new System.Drawing.Point(15, 46);
-            this.button50.Name = "button50";
-            this.button50.Size = new System.Drawing.Size(75, 23);
-            this.button50.TabIndex = 3;
-            this.button50.Text = "Go";
-            this.button50.UseVisualStyleBackColor = true;
-            // 
-            // button60
-            // 
-            this.button60.Location = new System.Drawing.Point(15, 46);
-            this.button60.Name = "button60";
-            this.button60.Size = new System.Drawing.Size(75, 23);
-            this.button60.TabIndex = 3;
-            this.button60.Text = "Go";
-            this.button60.UseVisualStyleBackColor = true;
-            // 
-            // button59
-            // 
-            this.button59.Location = new System.Drawing.Point(15, 17);
-            this.button59.Name = "button59";
-            this.button59.Size = new System.Drawing.Size(75, 23);
-            this.button59.TabIndex = 1;
-            this.button59.Text = "Save";
-            this.button59.UseVisualStyleBackColor = true;
-            // 
-            // groupBox42
-            // 
-            this.groupBox42.Controls.Add(this.button59);
-            this.groupBox42.Controls.Add(this.button60);
-            this.groupBox42.Location = new System.Drawing.Point(117, 101);
-            this.groupBox42.Name = "groupBox42";
-            this.groupBox42.Size = new System.Drawing.Size(105, 76);
-            this.groupBox42.TabIndex = 6;
-            this.groupBox42.TabStop = false;
-            this.groupBox42.Text = "Socket Z Unload";
-            // 
-            // button64
-            // 
-            this.button64.Location = new System.Drawing.Point(15, 46);
-            this.button64.Name = "button64";
-            this.button64.Size = new System.Drawing.Size(75, 23);
-            this.button64.TabIndex = 3;
-            this.button64.Text = "Go";
-            this.button64.UseVisualStyleBackColor = true;
-            // 
-            // button63
-            // 
-            this.button63.Location = new System.Drawing.Point(15, 17);
-            this.button63.Name = "button63";
-            this.button63.Size = new System.Drawing.Size(75, 23);
-            this.button63.TabIndex = 1;
-            this.button63.Text = "Save";
-            this.button63.UseVisualStyleBackColor = true;
-            // 
-            // groupBox44
-            // 
-            this.groupBox44.Controls.Add(this.button63);
-            this.groupBox44.Controls.Add(this.button64);
-            this.groupBox44.Location = new System.Drawing.Point(6, 101);
-            this.groupBox44.Name = "groupBox44";
-            this.groupBox44.Size = new System.Drawing.Size(105, 76);
-            this.groupBox44.TabIndex = 5;
-            this.groupBox44.TabStop = false;
-            this.groupBox44.Text = "Socket Z Load";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(248, 57);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(72, 23);
-            this.button7.TabIndex = 17;
-            this.button7.Text = "Get master";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
-            // 
-            // button43
-            // 
-            this.button43.Location = new System.Drawing.Point(248, 61);
-            this.button43.Name = "button43";
-            this.button43.Size = new System.Drawing.Size(72, 23);
-            this.button43.TabIndex = 18;
-            this.button43.Text = "Get master";
-            this.button43.UseVisualStyleBackColor = true;
-            this.button43.Click += new System.EventHandler(this.button43_Click);
-            // 
-            // button47
-            // 
-            this.button47.Location = new System.Drawing.Point(248, 60);
-            this.button47.Name = "button47";
-            this.button47.Size = new System.Drawing.Size(72, 23);
-            this.button47.TabIndex = 27;
-            this.button47.Text = "Get master";
-            this.button47.UseVisualStyleBackColor = true;
-            this.button47.Click += new System.EventHandler(this.button47_Click);
-            // 
-            // button48
-            // 
-            this.button48.Location = new System.Drawing.Point(248, 60);
-            this.button48.Name = "button48";
-            this.button48.Size = new System.Drawing.Size(72, 23);
-            this.button48.TabIndex = 23;
-            this.button48.Text = "Get master";
-            this.button48.UseVisualStyleBackColor = true;
-            this.button48.Click += new System.EventHandler(this.button48_Click);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1015, 603);
+            this.tabPage8.TabIndex = 3;
+            this.tabPage8.Text = "Handeye";
+            this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -1905,6 +1920,14 @@
             this.tabPage3.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.groupBox30.ResumeLayout(false);
+            this.groupBox31.ResumeLayout(false);
+            this.groupBox33.ResumeLayout(false);
+            this.groupBox35.ResumeLayout(false);
+            this.groupBox41.ResumeLayout(false);
+            this.groupBox42.ResumeLayout(false);
+            this.groupBox44.ResumeLayout(false);
+            this.groupBox45.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             this.groupBox25.ResumeLayout(false);
@@ -1941,14 +1964,6 @@
             this.groupBox27.PerformLayout();
             this.groupBox26.ResumeLayout(false);
             this.groupBox26.PerformLayout();
-            this.groupBox30.ResumeLayout(false);
-            this.groupBox41.ResumeLayout(false);
-            this.groupBox45.ResumeLayout(false);
-            this.groupBox31.ResumeLayout(false);
-            this.groupBox33.ResumeLayout(false);
-            this.groupBox35.ResumeLayout(false);
-            this.groupBox42.ResumeLayout(false);
-            this.groupBox44.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2122,6 +2137,7 @@
         private System.Windows.Forms.Button button43;
         private System.Windows.Forms.Button button47;
         private System.Windows.Forms.Button button48;
+        private System.Windows.Forms.TabPage tabPage8;
     }
 }
 
