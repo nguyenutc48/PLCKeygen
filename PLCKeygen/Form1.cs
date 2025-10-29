@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,16 +45,16 @@ namespace PLCKeygen
         {
             X1.Text =  (PLCKey.ReadInt32("DM2082")/100.0f).ToString();
             Y1.Text =  (PLCKey.ReadInt32("DM2084")/100.0f).ToString();
-            R1.Text =  (PLCKey.ReadInt32("DM2086")/100.0f).ToString();
+            R1.Text =  (PLCKey.ReadInt32("DM2086")/10.0f).ToString();
             X2.Text = (PLCKey.ReadInt32("DM2482") / 100.0f).ToString();
             Y2.Text = (PLCKey.ReadInt32("DM2484") / 100.0f).ToString();
-            R2.Text = (PLCKey.ReadInt32("DM2486") / 100.0f).ToString();
+            R2.Text = (PLCKey.ReadInt32("DM2486") / 10.0f).ToString();
             txtXCurMasPort2.Text = (PLCKey.ReadInt32("DM1282") / 100.0f).ToString();
             txtYCurMasPort2.Text = (PLCKey.ReadInt32("DM1284") / 100.0f).ToString();
-            txtRCurMasPort2.Text = (PLCKey.ReadInt32("DM1286") / 100.0f).ToString();
+            txtRCurMasPort2.Text = (PLCKey.ReadInt32("DM1286") / 10.0f).ToString();
             txtXCurMasPort4.Text = (PLCKey.ReadInt32("DM1682") / 100.0f).ToString();
             txtYCurMasPort4.Text = (PLCKey.ReadInt32("DM1684") / 100.0f).ToString();
-            txtRCurMasPort4.Text = (PLCKey.ReadInt32("DM1686") / 100.0f).ToString();
+            txtRCurMasPort4.Text = (PLCKey.ReadInt32("DM1686") / 10.0f).ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -432,14 +433,23 @@ namespace PLCKeygen
                 MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var a = cameraClient34.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
-            var b = a.Split(',');
-            txtXMasPort4.Text = b[2].Trim();
-            txtYMasPort4.Text = b[3].Trim();
-            txtRMasPort4.Text = b[4].Trim();
-            MessageBox.Show(a);
-            
-        }
+            var sgp = cameraClient34.SendCommand("SGP,1,HOME2D,0,0,0");
+            var sgp_split = sgp.Split(',');
+            if (sgp_split[0] == "SGP" && sgp_split[1] == "1")
+            {
+                var a = cameraClient34.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
+                var b = a.Split(',');
+                txtXMasPort4.Text = b[2].Trim();
+                txtYMasPort4.Text = b[3].Trim();
+                txtRMasPort4.Text = b[4].Trim();
+                MessageBox.Show(a);
+            }
+            else
+            {
+                MessageBox.Show("Co loi roi");
+            }
+
+}
 
         private void button43_Click(object sender, EventArgs e)
         {
@@ -448,12 +458,21 @@ namespace PLCKeygen
                 MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var a = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
-            var b = a.Split(',');
-            txtXMasPort2.Text = b[2].Trim();
-            txtYMasPort2.Text = b[3].Trim();
-            txtRMasPort2.Text = b[4].Trim();
-            MessageBox.Show(a);
+            var sgp = cameraClient12.SendCommand("SGP,1,HOME2D,0,0,0");
+            var sgp_split = sgp.Split(',');
+            if (sgp_split[0] == "SGP" && sgp_split[1] == "1")
+            {
+                var a = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
+                var b = a.Split(',');
+                txtXMasPort2.Text = b[2].Trim();
+                txtYMasPort2.Text = b[3].Trim();
+                txtRMasPort2.Text = b[4].Trim();
+                MessageBox.Show(a);
+            }
+            else
+            {
+                MessageBox.Show("Co loi roi");
+            }
         }
 
         private void button47_Click(object sender, EventArgs e)
@@ -463,12 +482,21 @@ namespace PLCKeygen
                 MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var a = cameraClient12.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
-            var b = a.Split(',');
-            txtXMasPort1.Text = b[2].Trim();
-            txtYMasPort1.Text = b[3].Trim();
-            txtRMasPort1.Text = b[4].Trim();
-            MessageBox.Show(a);
+            var sgp = cameraClient12.SendCommand("SGP,2,HOME2D,0,0,0");
+            var sgp_split = sgp.Split(',');
+            if (sgp_split[0] == "SGP" && sgp_split[1] == "1")
+            {
+                var a = cameraClient12.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
+                var b = a.Split(',');
+                txtXMasPort1.Text = b[2].Trim();
+                txtYMasPort1.Text = b[3].Trim();
+                txtRMasPort1.Text = b[4].Trim();
+                MessageBox.Show(a);
+            }
+            else
+            {
+                MessageBox.Show("Co loi roi");
+            }
         }
 
         private void button48_Click(object sender, EventArgs e)
@@ -478,12 +506,21 @@ namespace PLCKeygen
                 MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var a = cameraClient34.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
-            var b = a.Split(',');
-            txtXMasPort3.Text = b[2].Trim();
-            txtYMasPort3.Text = b[3].Trim();
-            txtRMasPort3.Text = b[4].Trim();
-            MessageBox.Show(a);
+            var sgp = cameraClient34.SendCommand("SGP,2,HOME2D,0,0,0");
+            var sgp_split = sgp.Split(',');
+            if (sgp_split[0] == "SGP" && sgp_split[1] == "1")
+            {
+                var a = cameraClient34.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
+                var b = a.Split(',');
+                txtXMasPort3.Text = b[2].Trim();
+                txtYMasPort3.Text = b[3].Trim();
+                txtRMasPort3.Text = b[4].Trim();
+                MessageBox.Show(a);
+            }
+            else
+            {
+                MessageBox.Show("Co loi roi");
+            }
         }
 
         private void button51_Click(object sender, EventArgs e)
