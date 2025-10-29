@@ -1,0 +1,457 @@
+{
+  "PLCName": "Keyence_PLC_Main",
+  "IPAddress": "192.168.1.100",
+  "Port": 8501,
+  "Addresses": {
+    "Input": [
+      {
+        "Name": "Xilanh_trai_phai",
+        "DisplayName": "Cảm biến va chạm",
+        "DataType": "Bool",
+        "Address": "MR5002"
+      },
+      {
+        "Name": "Cam_bien_quang_dau_vao",
+        "DisplayName": "Cảm biến quang đầu vào",
+        "DataType": "Bool",
+        "Address": "R1"
+      },
+      {
+        "Name": "Cam_bien_quang_dau_ra",
+        "DisplayName": "Cảm biến quang đầu ra",
+        "DataType": "Bool",
+        "Address": "R2"
+      },
+      {
+        "Name": "Cam_bien_tu",
+        "DisplayName": "Cảm biến từ",
+        "DataType": "Bool",
+        "Address": "R3"
+      },
+      {
+        "Name": "Cam_bien_nhiet_do",
+        "DisplayName": "Cảm biến nhiệt độ",
+        "DataType": "Bool",
+        "Address": "R4"
+      },
+      {
+        "Name": "Cam_bien_ap_suat",
+        "DisplayName": "Cảm biến áp suất",
+        "DataType": "Bool",
+        "Address": "R5"
+      },
+      {
+        "Name": "Nut_start",
+        "DisplayName": "Nút Start",
+        "DataType": "Bool",
+        "Address": "R10"
+      },
+      {
+        "Name": "Nut_stop",
+        "DisplayName": "Nút Stop",
+        "DataType": "Bool",
+        "Address": "R11"
+      },
+      {
+        "Name": "Nut_reset",
+        "DisplayName": "Nút Reset",
+        "DataType": "Bool",
+        "Address": "R12"
+      },
+      {
+        "Name": "Nut_auto",
+        "DisplayName": "Nút chế độ Auto",
+        "DataType": "Bool",
+        "Address": "R13"
+      },
+      {
+        "Name": "Nut_manual",
+        "DisplayName": "Nút chế độ Manual",
+        "DataType": "Bool",
+        "Address": "R14"
+      },
+      {
+        "Name": "Cong_tat_bao_ve",
+        "DisplayName": "Công tắc bảo vệ",
+        "DataType": "Bool",
+        "Address": "R15"
+      },
+      {
+        "Name": "Cong_tat_khan_cap",
+        "DisplayName": "Công tắc khẩn cấp",
+        "DataType": "Bool",
+        "Address": "R16"
+      },
+      {
+        "Name": "Encoder_xung_A",
+        "DisplayName": "Encoder xung A",
+        "DataType": "Bool",
+        "Address": "R20"
+      },
+      {
+        "Name": "Encoder_xung_B",
+        "DisplayName": "Encoder xung B",
+        "DataType": "Bool",
+        "Address": "R21"
+      },
+      {
+        "Name": "Encoder_xung_Z",
+        "DisplayName": "Encoder xung Z (zero)",
+        "DataType": "Bool",
+        "Address": "R22"
+      },
+      {
+        "Name": "Home_sensor",
+        "DisplayName": "Cảm biến Home position",
+        "DataType": "Bool",
+        "Address": "R23"
+      },
+      {
+        "Name": "Limit_switch_tren",
+        "DisplayName": "Limit switch trên",
+        "DataType": "Bool",
+        "Address": "R24"
+      },
+      {
+        "Name": "Limit_switch_duoi",
+        "DisplayName": "Limit switch dưới",
+        "DataType": "Bool",
+        "Address": "R25"
+      },
+      {
+        "Name": "Gia_tri_nhiet_do",
+        "DisplayName": "Giá trị nhiệt độ",
+        "DataType": "UInt16",
+        "Address": "DM100"
+      },
+      {
+        "Name": "Gia_tri_ap_suat",
+        "DisplayName": "Giá trị áp suất",
+        "DataType": "UInt16",
+        "Address": "DM101"
+      },
+      {
+        "Name": "Gia_tri_do_am",
+        "DisplayName": "Giá trị độ ẩm",
+        "DataType": "UInt16",
+        "Address": "DM102"
+      },
+      {
+        "Name": "Toc_do_dong_co",
+        "DisplayName": "Tốc độ động cơ",
+        "DataType": "UInt16",
+        "Address": "DM103"
+      },
+      {
+        "Name": "Vi_tri_hien_tai",
+        "DisplayName": "Vị trí hiện tại",
+        "DataType": "Int32",
+        "Address": "DM104"
+      }
+    ],
+    "Output": [
+      {
+        "Name": "Den_bao_xanh",
+        "DisplayName": "Đèn báo xanh",
+        "DataType": "Bool",
+        "Address": "R500"
+      },
+      {
+        "Name": "Den_bao_do",
+        "DisplayName": "Đèn báo đỏ",
+        "DataType": "Bool",
+        "Address": "R501"
+      },
+      {
+        "Name": "Den_bao_vang",
+        "DisplayName": "Đèn báo vàng",
+        "DataType": "Bool",
+        "Address": "R502"
+      },
+      {
+        "Name": "Coi_bao_dong",
+        "DisplayName": "Còi báo động",
+        "DataType": "Bool",
+        "Address": "R503"
+      },
+      {
+        "Name": "Dong_co_chinh",
+        "DisplayName": "Động cơ chính",
+        "DataType": "Bool",
+        "Address": "R510"
+      },
+      {
+        "Name": "Dong_co_phu",
+        "DisplayName": "Động cơ phụ",
+        "DataType": "Bool",
+        "Address": "R511"
+      },
+      {
+        "Name": "Dong_co_quat",
+        "DisplayName": "Động cơ quạt",
+        "DataType": "Bool",
+        "Address": "R512"
+      },
+      {
+        "Name": "Dong_co_bom",
+        "DisplayName": "Động cơ bơm",
+        "DataType": "Bool",
+        "Address": "R513"
+      },
+      {
+        "Name": "Van_khi_1",
+        "DisplayName": "Van khí số 1",
+        "DataType": "Bool",
+        "Address": "R520"
+      },
+      {
+        "Name": "Van_khi_2",
+        "DisplayName": "Van khí số 2",
+        "DataType": "Bool",
+        "Address": "R521"
+      },
+      {
+        "Name": "Van_khi_3",
+        "DisplayName": "Van khí số 3",
+        "DataType": "Bool",
+        "Address": "R522"
+      },
+      {
+        "Name": "Van_dien_tu",
+        "DisplayName": "Van điện từ",
+        "DataType": "Bool",
+        "Address": "R523"
+      },
+      {
+        "Name": "Van_thuong_dong",
+        "DisplayName": "Van thường đóng",
+        "DataType": "Bool",
+        "Address": "R524"
+      },
+      {
+        "Name": "Van_thuong_mo",
+        "DisplayName": "Van thường mở",
+        "DataType": "Bool",
+        "Address": "R525"
+      },
+      {
+        "Name": "Xi_lanh_nang",
+        "DisplayName": "Xi lanh nâng",
+        "DataType": "Bool",
+        "Address": "R530"
+      },
+      {
+        "Name": "Xi_lanh_ha",
+        "DisplayName": "Xi lanh hạ",
+        "DataType": "Bool",
+        "Address": "R531"
+      },
+      {
+        "Name": "Xi_lanh_day",
+        "DisplayName": "Xi lanh đẩy",
+        "DataType": "Bool",
+        "Address": "R532"
+      },
+      {
+        "Name": "Xi_lanh_keo",
+        "DisplayName": "Xi lanh kéo",
+        "DataType": "Bool",
+        "Address": "R533"
+      },
+      {
+        "Name": "Xi_lanh_kep",
+        "DisplayName": "Xi lanh kẹp",
+        "DataType": "Bool",
+        "Address": "R534"
+      },
+      {
+        "Name": "May_han",
+        "DisplayName": "Máy hàn",
+        "DataType": "Bool",
+        "Address": "R540"
+      },
+      {
+        "Name": "May_cat",
+        "DisplayName": "Máy cắt",
+        "DataType": "Bool",
+        "Address": "R541"
+      },
+      {
+        "Name": "May_khoan",
+        "DisplayName": "Máy khoan",
+        "DataType": "Bool",
+        "Address": "R542"
+      },
+      {
+        "Name": "Bang_tai",
+        "DisplayName": "Băng tải",
+        "DataType": "Bool",
+        "Address": "R550"
+      },
+      {
+        "Name": "May_kiem_tra",
+        "DisplayName": "Máy kiểm tra",
+        "DataType": "Bool",
+        "Address": "R560"
+      },
+      {
+        "Name": "Robot_pick_place",
+        "DisplayName": "Robot pick and place",
+        "DataType": "Bool",
+        "Address": "R570"
+      },
+      {
+        "Name": "Toc_do_dat_dong_co",
+        "DisplayName": "Tốc độ đặt động cơ",
+        "DataType": "UInt16",
+        "Address": "DM500"
+      },
+      {
+        "Name": "Vi_tri_dat",
+        "DisplayName": "Vị trí đặt",
+        "DataType": "Int32",
+        "Address": "DM501"
+      },
+      {
+        "Name": "Gia_tri_PWM",
+        "DisplayName": "Giá trị PWM",
+        "DataType": "UInt16",
+        "Address": "DM503"
+      },
+      {
+        "Name": "Nhiet_do_dat",
+        "DisplayName": "Nhiệt độ đặt",
+        "DataType": "Int16",
+        "Address": "DM504"
+      }
+    ],
+    "Data": [
+      {
+        "Name": "So_luong_san_pham_OK",
+        "DisplayName": "Số lượng sản phẩm OK",
+        "DataType": "Int32",
+        "Address": "DM1000"
+      },
+      {
+        "Name": "So_luong_san_pham_NG",
+        "DisplayName": "Số lượng sản phẩm NG",
+        "DataType": "Int32",
+        "Address": "DM1002"
+      },
+      {
+        "Name": "Tong_san_pham",
+        "DisplayName": "Tổng sản phẩm",
+        "DataType": "Int32",
+        "Address": "DM1004"
+      },
+      {
+        "Name": "Tong_thoi_gian_chay",
+        "DisplayName": "Tổng thời gian chạy (giây)",
+        "DataType": "Int32",
+        "Address": "DM1006"
+      },
+      {
+        "Name": "Thoi_gian_dung_may",
+        "DisplayName": "Thời gian dừng máy (giây)",
+        "DataType": "Int32",
+        "Address": "DM1008"
+      },
+      {
+        "Name": "So_lan_bao_tri",
+        "DisplayName": "Số lần bảo trì",
+        "DataType": "UInt16",
+        "Address": "DM1010"
+      },
+      {
+        "Name": "So_lan_loi",
+        "DisplayName": "Số lần lỗi",
+        "DataType": "UInt16",
+        "Address": "DM1011"
+      },
+      {
+        "Name": "Ma_loi_hien_tai",
+        "DisplayName": "Mã lỗi hiện tại",
+        "DataType": "UInt16",
+        "Address": "DM1012"
+      },
+      {
+        "Name": "Trang_thai_he_thong",
+        "DisplayName": "Trạng thái hệ thống",
+        "DataType": "UInt16",
+        "Address": "DM2000"
+      },
+      {
+        "Name": "Che_do_van_hanh",
+        "DisplayName": "Chế độ vận hành (0:Stop, 1:Manual, 2:Auto)",
+        "DataType": "UInt16",
+        "Address": "DM2001"
+      },
+      {
+        "Name": "Trang_thai_dong_co",
+        "DisplayName": "Trạng thái động cơ (bitwise)",
+        "DataType": "UInt16",
+        "Address": "DM2002"
+      },
+      {
+        "Name": "Trang_thai_van_khi",
+        "DisplayName": "Trạng thái van khí (bitwise)",
+        "DataType": "UInt16",
+        "Address": "DM2003"
+      },
+      {
+        "Name": "Trang_thai_cam_bien",
+        "DisplayName": "Trạng thái cảm biến (bitwise)",
+        "DataType": "UInt16",
+        "Address": "DM2004"
+      },
+      {
+        "Name": "Cycle_time",
+        "DisplayName": "Cycle time (ms)",
+        "DataType": "UInt16",
+        "Address": "DM2010"
+      },
+      {
+        "Name": "Target_count",
+        "DisplayName": "Số lượng mục tiêu",
+        "DataType": "Int32",
+        "Address": "DM2020"
+      },
+      {
+        "Name": "Hieu_suat",
+        "DisplayName": "Hiệu suất (%)",
+        "DataType": "UInt16",
+        "Address": "DM2022"
+      },
+      {
+        "Name": "OEE",
+        "DisplayName": "OEE - Overall Equipment Effectiveness (%)",
+        "DataType": "UInt16",
+        "Address": "DM2023"
+      },
+      {
+        "Name": "Ngay_hien_tai",
+        "DisplayName": "Ngày hiện tại (YYYYMMDD)",
+        "DataType": "Int32",
+        "Address": "DM3000"
+      },
+      {
+        "Name": "Gio_hien_tai",
+        "DisplayName": "Giờ hiện tại (HHMMSS)",
+        "DataType": "Int32",
+        "Address": "DM3002"
+      },
+      {
+        "Name": "Version_firmware",
+        "DisplayName": "Version firmware",
+        "DataType": "UInt16",
+        "Address": "DM9000"
+      },
+      {
+        "Name": "Serial_number",
+        "DisplayName": "Serial number thiết bị",
+        "DataType": "Int32",
+        "Address": "DM9001"
+      }
+    ]
+  }
+}

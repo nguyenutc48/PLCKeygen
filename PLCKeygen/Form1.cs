@@ -78,7 +78,7 @@ namespace PLCKeygen
             float y = float.Parse(txtYMasPort1.Text);
             var y1 = y * 100;
             float r = float.Parse(txtRMasPort1.Text);
-            var r1 = r * 100;
+            var r1 = r * 10;
 
             PLCKey.WriteInt16("DM2082", (short)x1);
             PLCKey.WriteInt16("DM2084", (short)y1);
@@ -92,7 +92,7 @@ namespace PLCKeygen
             float y = float.Parse(txtYMasPort3.Text);
             var y1 = y * 100;
             float r = float.Parse(txtRMasPort3.Text);
-            var r1 = r * 100;
+            var r1 = r * 10;
 
             PLCKey.WriteInt16("DM2482", (short)x1);
             PLCKey.WriteInt16("DM2484", (short)y1);
@@ -101,18 +101,19 @@ namespace PLCKeygen
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             txtXMasPort1.Text = (PLCKey.ReadInt32("DM2082") / 100.0f).ToString();
             txtYMasPort1.Text = (PLCKey.ReadInt32("DM2084") / 100.0f).ToString();
-            txtRMasPort1.Text = (PLCKey.ReadInt32("DM2086") / 100.0f).ToString();
+            txtRMasPort1.Text = (PLCKey.ReadInt32("DM2086") / 10.0f).ToString();
             txtXMasPort3.Text = (PLCKey.ReadInt32("DM2482") / 100.0f).ToString();
             txtYMasPort3.Text = (PLCKey.ReadInt32("DM2484") / 100.0f).ToString();
-            txtRMasPort3.Text = (PLCKey.ReadInt32("DM2486") / 100.0f).ToString();
+            txtRMasPort3.Text = (PLCKey.ReadInt32("DM2486") / 10.0f).ToString();
             txtXMasPort2.Text = (PLCKey.ReadInt32("DM1282") / 100.0f).ToString();
             txtYMasPort2.Text = (PLCKey.ReadInt32("DM1284") / 100.0f).ToString();
-            txtRMasPort2.Text = (PLCKey.ReadInt32("DM1286") / 100.0f).ToString();
+            txtRMasPort2.Text = (PLCKey.ReadInt32("DM1286") / 10.0f).ToString();
             txtXMasPort4.Text = (PLCKey.ReadInt32("DM1682") / 100.0f).ToString();
             txtYMasPort4.Text = (PLCKey.ReadInt32("DM1684") / 100.0f).ToString();
-            txtRMasPort4.Text = (PLCKey.ReadInt32("DM1686") / 100.0f).ToString();
+            txtRMasPort4.Text = (PLCKey.ReadInt32("DM1686") / 10.0f).ToString();
             if (PLCKey.ReadBit("MR5002"))
             {
                 button1.Text = "Sang phai";
@@ -274,7 +275,7 @@ namespace PLCKeygen
             float y = float.Parse(txtYMasPort2.Text);
             var y1 = y * 100;
             float r = float.Parse(txtRMasPort2.Text);
-            var r1 = r * 100;
+            var r1 = r * 10;
 
             PLCKey.WriteInt16("DM1282", (short)x1);
             PLCKey.WriteInt16("DM1284", (short)y1);
@@ -288,7 +289,7 @@ namespace PLCKeygen
             float y = float.Parse(txtYMasPort4.Text);
             var y1 = y * 100;
             float r = float.Parse(txtRMasPort4.Text);
-            var r1 = r * 100;
+            var r1 = r * 10;
 
             PLCKey.WriteInt16("DM1682", (short)x1);
             PLCKey.WriteInt16("DM1684", (short)y1);
@@ -426,6 +427,11 @@ namespace PLCKeygen
 
         private void button7_Click_1(object sender, EventArgs e)
         {
+            if (cameraClient34 == null || !cameraClient34.IsConnected)
+            {
+                MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var a = cameraClient34.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
             var b = a.Split(',');
             txtXMasPort4.Text = b[2].Trim();
@@ -437,6 +443,11 @@ namespace PLCKeygen
 
         private void button43_Click(object sender, EventArgs e)
         {
+            if (cameraClient12 == null || !cameraClient12.IsConnected)
+            {
+                MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var a = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
             var b = a.Split(',');
             txtXMasPort2.Text = b[2].Trim();
@@ -447,6 +458,11 @@ namespace PLCKeygen
 
         private void button47_Click(object sender, EventArgs e)
         {
+            if (cameraClient12 == null || !cameraClient12.IsConnected)
+            {
+                MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var a = cameraClient12.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
             var b = a.Split(',');
             txtXMasPort1.Text = b[2].Trim();
@@ -457,12 +473,44 @@ namespace PLCKeygen
 
         private void button48_Click(object sender, EventArgs e)
         {
+            if (cameraClient34 == null || !cameraClient34.IsConnected)
+            {
+                MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             var a = cameraClient34.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
             var b = a.Split(',');
             txtXMasPort3.Text = b[2].Trim();
             txtYMasPort3.Text = b[3].Trim();
             txtRMasPort3.Text = b[4].Trim();
             MessageBox.Show(a);
+        }
+
+        private void button51_Click(object sender, EventArgs e)
+        {
+            PLCUsageExample.Example2_LoadConfigAndCreatePLC();
+            
+
+        }
+
+        private void Job_Plus_Press_Click(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("hehehe");
+        }
+
+        private void Jog_Minus_Press_Click(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show("hihi");
+        }
+        int a = 0;
+        private void Jog_Minus_Down(object sender, KeyEventArgs e)
+        {
+            a = 1;
+        }
+
+        private void Jog_Minus_Up(object sender, KeyEventArgs e)
+        {
+            a = 2;
         }
     }
 }

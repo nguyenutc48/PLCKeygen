@@ -1,0 +1,91 @@
+{
+  "PLCName": "My_PLC",
+  "IPAddress": "192.168.1.100",
+  "Port": 8501,
+  "Addresses": {
+    "Input": [
+      {
+        "Name": "Sensor_Start",
+        "DisplayName": "Cảm biến Start",
+        "DataType": "Bool",
+        "Address": "R0"
+      },
+      {
+        "Name": "Sensor_Stop",
+        "DisplayName": "Cảm biến Stop",
+        "DataType": "Bool",
+        "Address": "R1"
+      },
+      {
+        "Name": "Current_Speed",
+        "DisplayName": "Tốc độ hiện tại",
+        "DataType": "UInt16",
+        "Address": "DM100"
+      },
+      {
+        "Name": "Current_Position",
+        "DisplayName": "Vị trí hiện tại",
+        "DataType": "Int32",
+        "Address": "DM101"
+      }
+    ],
+    "Output": [
+      {
+        "Name": "Green_Light",
+        "DisplayName": "Đèn xanh",
+        "DataType": "Bool",
+        "Address": "R500"
+      },
+      {
+        "Name": "Red_Light",
+        "DisplayName": "Đèn đỏ",
+        "DataType": "Bool",
+        "Address": "R501"
+      },
+      {
+        "Name": "Motor_Main",
+        "DisplayName": "Động cơ chính",
+        "DataType": "Bool",
+        "Address": "R510"
+      },
+      {
+        "Name": "Target_Speed",
+        "DisplayName": "Tốc độ đặt",
+        "DataType": "UInt16",
+        "Address": "DM500"
+      },
+      {
+        "Name": "Target_Position",
+        "DisplayName": "Vị trí đặt",
+        "DataType": "Int32",
+        "Address": "DM501"
+      }
+    ],
+    "Data": [
+      {
+        "Name": "Product_Count",
+        "DisplayName": "Số lượng sản phẩm",
+        "DataType": "Int32",
+        "Address": "DM1000"
+      },
+      {
+        "Name": "Error_Count",
+        "DisplayName": "Số lỗi",
+        "DataType": "UInt16",
+        "Address": "DM1002"
+      },
+      {
+        "Name": "System_Status",
+        "DisplayName": "Trạng thái hệ thống",
+        "DataType": "UInt16",
+        "Address": "DM2000"
+      },
+      {
+        "Name": "Run_Mode",
+        "DisplayName": "Chế độ vận hành (0:Stop, 1:Manual, 2:Auto)",
+        "DataType": "UInt16",
+        "Address": "DM2001"
+      }
+    ]
+  }
+}

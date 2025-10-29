@@ -130,39 +130,36 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
+            this.P1_FJog_Minus = new System.Windows.Forms.Button();
+            this.P1_FJog_Plus = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.P1_ZJog_Minus = new System.Windows.Forms.Button();
+            this.P1_ZJog_Plus = new System.Windows.Forms.Button();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.P1_ROJog_Minus = new System.Windows.Forms.Button();
+            this.P1_ROJog_Plus = new System.Windows.Forms.Button();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button16 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.P1_RIJog_Minus = new System.Windows.Forms.Button();
+            this.P1_RIJog_Plus = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnX1Minus = new System.Windows.Forms.Button();
-            this.btnX1Plus = new System.Windows.Forms.Button();
-            this.btnY1Minus = new System.Windows.Forms.Button();
-            this.btnY1Plus = new System.Windows.Forms.Button();
+            this.P1_XJog_Minus = new System.Windows.Forms.Button();
+            this.P1_XJog_Plus = new System.Windows.Forms.Button();
+            this.P1_YJog_Minus = new System.Windows.Forms.Button();
+            this.P1_YJog_Plus = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
@@ -197,6 +194,9 @@
             this.txtXCurMasPort2 = new System.Windows.Forms.Label();
             this.btnSetMasP2 = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.button51 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -239,6 +239,7 @@
             this.groupBox28.SuspendLayout();
             this.groupBox27.SuspendLayout();
             this.groupBox26.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -396,7 +397,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(33, 28);
+            this.label3.Location = new System.Drawing.Point(9, 30);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 16;
@@ -404,9 +405,9 @@
             // 
             // btnConnect12
             // 
-            this.btnConnect12.Location = new System.Drawing.Point(224, 43);
+            this.btnConnect12.Location = new System.Drawing.Point(12, 72);
             this.btnConnect12.Name = "btnConnect12";
-            this.btnConnect12.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect12.Size = new System.Drawing.Size(75, 53);
             this.btnConnect12.TabIndex = 15;
             this.btnConnect12.Text = "Connect";
             this.btnConnect12.UseVisualStyleBackColor = true;
@@ -414,9 +415,9 @@
             // 
             // cam12
             // 
-            this.cam12.Location = new System.Drawing.Point(32, 46);
+            this.cam12.Location = new System.Drawing.Point(12, 46);
             this.cam12.Name = "cam12";
-            this.cam12.Size = new System.Drawing.Size(186, 20);
+            this.cam12.Size = new System.Drawing.Size(181, 20);
             this.cam12.TabIndex = 14;
             this.cam12.Text = "192.168.0.97";
             // 
@@ -550,7 +551,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(31, 25);
+            this.label10.Location = new System.Drawing.Point(9, 27);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 13);
             this.label10.TabIndex = 22;
@@ -558,9 +559,9 @@
             // 
             // btnConnect34
             // 
-            this.btnConnect34.Location = new System.Drawing.Point(224, 40);
+            this.btnConnect34.Location = new System.Drawing.Point(12, 69);
             this.btnConnect34.Name = "btnConnect34";
-            this.btnConnect34.Size = new System.Drawing.Size(75, 23);
+            this.btnConnect34.Size = new System.Drawing.Size(75, 55);
             this.btnConnect34.TabIndex = 21;
             this.btnConnect34.Text = "Connect";
             this.btnConnect34.UseVisualStyleBackColor = true;
@@ -568,9 +569,9 @@
             // 
             // cam34
             // 
-            this.cam34.Location = new System.Drawing.Point(30, 43);
+            this.cam34.Location = new System.Drawing.Point(12, 43);
             this.cam34.Name = "cam34";
-            this.cam34.Size = new System.Drawing.Size(186, 20);
+            this.cam34.Size = new System.Drawing.Size(181, 20);
             this.cam34.TabIndex = 20;
             this.cam34.Text = "192.168.0.98";
             // 
@@ -595,7 +596,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1023, 629);
+            this.tabControl1.Size = new System.Drawing.Size(885, 629);
             this.tabControl1.TabIndex = 19;
             // 
             // tabPage3
@@ -603,7 +604,7 @@
             this.tabPage3.Controls.Add(this.tabControl2);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1015, 603);
+            this.tabPage3.Size = new System.Drawing.Size(877, 603);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Motion";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -618,11 +619,13 @@
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(1015, 603);
+            this.tabControl2.Size = new System.Drawing.Size(877, 603);
             this.tabControl2.TabIndex = 0;
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.groupBox30);
             this.tabPage4.Controls.Add(this.groupBox7);
             this.tabPage4.Controls.Add(this.groupBox6);
@@ -631,7 +634,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1007, 577);
+            this.tabPage4.Size = new System.Drawing.Size(869, 577);
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Port1";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -820,7 +823,7 @@
             this.groupBox7.Controls.Add(this.groupBox16);
             this.groupBox7.Controls.Add(this.groupBox11);
             this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Location = new System.Drawing.Point(154, 359);
+            this.groupBox7.Location = new System.Drawing.Point(6, 359);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(707, 212);
             this.groupBox7.TabIndex = 10;
@@ -1218,8 +1221,8 @@
             // 
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.textBox6);
-            this.groupBox6.Controls.Add(this.button19);
-            this.groupBox6.Controls.Add(this.button20);
+            this.groupBox6.Controls.Add(this.P1_FJog_Minus);
+            this.groupBox6.Controls.Add(this.P1_FJog_Plus);
             this.groupBox6.Location = new System.Drawing.Point(486, 6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(126, 347);
@@ -1243,23 +1246,23 @@
             this.textBox6.Size = new System.Drawing.Size(100, 20);
             this.textBox6.TabIndex = 21;
             // 
-            // button19
+            // P1_FJog_Minus
             // 
-            this.button19.Location = new System.Drawing.Point(37, 88);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(41, 37);
-            this.button19.TabIndex = 1;
-            this.button19.Text = "-";
-            this.button19.UseVisualStyleBackColor = true;
+            this.P1_FJog_Minus.Location = new System.Drawing.Point(37, 88);
+            this.P1_FJog_Minus.Name = "P1_FJog_Minus";
+            this.P1_FJog_Minus.Size = new System.Drawing.Size(41, 37);
+            this.P1_FJog_Minus.TabIndex = 1;
+            this.P1_FJog_Minus.Text = "-";
+            this.P1_FJog_Minus.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // P1_FJog_Plus
             // 
-            this.button20.Location = new System.Drawing.Point(37, 26);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(41, 37);
-            this.button20.TabIndex = 0;
-            this.button20.Text = "+";
-            this.button20.UseVisualStyleBackColor = true;
+            this.P1_FJog_Plus.Location = new System.Drawing.Point(37, 26);
+            this.P1_FJog_Plus.Name = "P1_FJog_Plus";
+            this.P1_FJog_Plus.Size = new System.Drawing.Size(41, 37);
+            this.P1_FJog_Plus.TabIndex = 0;
+            this.P1_FJog_Plus.Text = "+";
+            this.P1_FJog_Plus.UseVisualStyleBackColor = true;
             // 
             // groupBox5
             // 
@@ -1277,12 +1280,9 @@
             // 
             this.groupBox22.Controls.Add(this.label18);
             this.groupBox22.Controls.Add(this.textBox4);
-            this.groupBox22.Controls.Add(this.label12);
             this.groupBox22.Controls.Add(this.label11);
-            this.groupBox22.Controls.Add(this.button5);
-            this.groupBox22.Controls.Add(this.button6);
-            this.groupBox22.Controls.Add(this.button9);
-            this.groupBox22.Controls.Add(this.button10);
+            this.groupBox22.Controls.Add(this.P1_ZJog_Minus);
+            this.groupBox22.Controls.Add(this.P1_ZJog_Plus);
             this.groupBox22.Location = new System.Drawing.Point(6, 16);
             this.groupBox22.Name = "groupBox22";
             this.groupBox22.Size = new System.Drawing.Size(275, 133);
@@ -1293,7 +1293,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(179, 48);
+            this.label18.Location = new System.Drawing.Point(154, 17);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(35, 13);
             this.label18.TabIndex = 20;
@@ -1301,72 +1301,45 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(153, 70);
+            this.textBox4.Location = new System.Drawing.Point(128, 39);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 18;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(88, 14);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(51, 13);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Z Unload";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 14);
+            this.label11.Location = new System.Drawing.Point(13, 17);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(41, 13);
             this.label11.TabIndex = 10;
             this.label11.Text = "Z Load";
             // 
-            // button5
+            // P1_ZJog_Minus
             // 
-            this.button5.Location = new System.Drawing.Point(91, 36);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(41, 37);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "-";
-            this.button5.UseVisualStyleBackColor = true;
+            this.P1_ZJog_Minus.Location = new System.Drawing.Point(16, 39);
+            this.P1_ZJog_Minus.Name = "P1_ZJog_Minus";
+            this.P1_ZJog_Minus.Size = new System.Drawing.Size(41, 37);
+            this.P1_ZJog_Minus.TabIndex = 5;
+            this.P1_ZJog_Minus.Text = "-";
+            this.P1_ZJog_Minus.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // P1_ZJog_Plus
             // 
-            this.button6.Location = new System.Drawing.Point(91, 86);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(41, 37);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "+";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(20, 36);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(41, 37);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "-";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(20, 86);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(41, 37);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "+";
-            this.button10.UseVisualStyleBackColor = true;
+            this.P1_ZJog_Plus.Location = new System.Drawing.Point(16, 80);
+            this.P1_ZJog_Plus.Name = "P1_ZJog_Plus";
+            this.P1_ZJog_Plus.Size = new System.Drawing.Size(41, 37);
+            this.P1_ZJog_Plus.TabIndex = 4;
+            this.P1_ZJog_Plus.Text = "+";
+            this.P1_ZJog_Plus.UseVisualStyleBackColor = true;
             // 
             // groupBox21
             // 
             this.groupBox21.Controls.Add(this.label13);
             this.groupBox21.Controls.Add(this.textBox5);
             this.groupBox21.Controls.Add(this.button11);
-            this.groupBox21.Controls.Add(this.button13);
-            this.groupBox21.Controls.Add(this.button15);
+            this.groupBox21.Controls.Add(this.P1_ROJog_Minus);
+            this.groupBox21.Controls.Add(this.P1_ROJog_Plus);
             this.groupBox21.Location = new System.Drawing.Point(150, 156);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Size = new System.Drawing.Size(131, 179);
@@ -1399,31 +1372,31 @@
             this.button11.Text = "Nha";
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // P1_ROJog_Minus
             // 
-            this.button13.Location = new System.Drawing.Point(16, 73);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(41, 37);
-            this.button13.TabIndex = 12;
-            this.button13.Text = "-";
-            this.button13.UseVisualStyleBackColor = true;
+            this.P1_ROJog_Minus.Location = new System.Drawing.Point(16, 73);
+            this.P1_ROJog_Minus.Name = "P1_ROJog_Minus";
+            this.P1_ROJog_Minus.Size = new System.Drawing.Size(41, 37);
+            this.P1_ROJog_Minus.TabIndex = 12;
+            this.P1_ROJog_Minus.Text = "-";
+            this.P1_ROJog_Minus.UseVisualStyleBackColor = true;
             // 
-            // button15
+            // P1_ROJog_Plus
             // 
-            this.button15.Location = new System.Drawing.Point(16, 22);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(41, 37);
-            this.button15.TabIndex = 8;
-            this.button15.Text = "+";
-            this.button15.UseVisualStyleBackColor = true;
+            this.P1_ROJog_Plus.Location = new System.Drawing.Point(16, 22);
+            this.P1_ROJog_Plus.Name = "P1_ROJog_Plus";
+            this.P1_ROJog_Plus.Size = new System.Drawing.Size(41, 37);
+            this.P1_ROJog_Plus.TabIndex = 8;
+            this.P1_ROJog_Plus.Text = "+";
+            this.P1_ROJog_Plus.UseVisualStyleBackColor = true;
             // 
             // groupBox20
             // 
             this.groupBox20.Controls.Add(this.label17);
             this.groupBox20.Controls.Add(this.textBox3);
             this.groupBox20.Controls.Add(this.button16);
-            this.groupBox20.Controls.Add(this.button14);
-            this.groupBox20.Controls.Add(this.button12);
+            this.groupBox20.Controls.Add(this.P1_RIJog_Minus);
+            this.groupBox20.Controls.Add(this.P1_RIJog_Plus);
             this.groupBox20.Location = new System.Drawing.Point(6, 156);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Size = new System.Drawing.Size(132, 179);
@@ -1457,23 +1430,23 @@
             this.button16.Text = "Nha";
             this.button16.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // P1_RIJog_Minus
             // 
-            this.button14.Location = new System.Drawing.Point(16, 73);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(41, 37);
-            this.button14.TabIndex = 12;
-            this.button14.Text = "-";
-            this.button14.UseVisualStyleBackColor = true;
+            this.P1_RIJog_Minus.Location = new System.Drawing.Point(16, 73);
+            this.P1_RIJog_Minus.Name = "P1_RIJog_Minus";
+            this.P1_RIJog_Minus.Size = new System.Drawing.Size(41, 37);
+            this.P1_RIJog_Minus.TabIndex = 12;
+            this.P1_RIJog_Minus.Text = "-";
+            this.P1_RIJog_Minus.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // P1_RIJog_Plus
             // 
-            this.button12.Location = new System.Drawing.Point(16, 22);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(41, 37);
-            this.button12.TabIndex = 8;
-            this.button12.Text = "+";
-            this.button12.UseVisualStyleBackColor = true;
+            this.P1_RIJog_Plus.Location = new System.Drawing.Point(16, 22);
+            this.P1_RIJog_Plus.Name = "P1_RIJog_Plus";
+            this.P1_RIJog_Plus.Size = new System.Drawing.Size(41, 37);
+            this.P1_RIJog_Plus.TabIndex = 8;
+            this.P1_RIJog_Plus.Text = "+";
+            this.P1_RIJog_Plus.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -1481,10 +1454,10 @@
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.textBox2);
             this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.btnX1Minus);
-            this.groupBox4.Controls.Add(this.btnX1Plus);
-            this.groupBox4.Controls.Add(this.btnY1Minus);
-            this.groupBox4.Controls.Add(this.btnY1Plus);
+            this.groupBox4.Controls.Add(this.P1_XJog_Minus);
+            this.groupBox4.Controls.Add(this.P1_XJog_Plus);
+            this.groupBox4.Controls.Add(this.P1_YJog_Minus);
+            this.groupBox4.Controls.Add(this.P1_YJog_Plus);
             this.groupBox4.Location = new System.Drawing.Point(6, 6);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(175, 347);
@@ -1524,48 +1497,49 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 4;
             // 
-            // btnX1Minus
+            // P1_XJog_Minus
             // 
-            this.btnX1Minus.Location = new System.Drawing.Point(16, 55);
-            this.btnX1Minus.Name = "btnX1Minus";
-            this.btnX1Minus.Size = new System.Drawing.Size(41, 37);
-            this.btnX1Minus.TabIndex = 3;
-            this.btnX1Minus.Text = "-";
-            this.btnX1Minus.UseVisualStyleBackColor = true;
+            this.P1_XJog_Minus.Location = new System.Drawing.Point(16, 55);
+            this.P1_XJog_Minus.Name = "P1_XJog_Minus";
+            this.P1_XJog_Minus.Size = new System.Drawing.Size(41, 37);
+            this.P1_XJog_Minus.TabIndex = 3;
+            this.P1_XJog_Minus.Text = "-";
+            this.P1_XJog_Minus.UseVisualStyleBackColor = true;
             // 
-            // btnX1Plus
+            // P1_XJog_Plus
             // 
-            this.btnX1Plus.Location = new System.Drawing.Point(110, 55);
-            this.btnX1Plus.Name = "btnX1Plus";
-            this.btnX1Plus.Size = new System.Drawing.Size(41, 37);
-            this.btnX1Plus.TabIndex = 2;
-            this.btnX1Plus.Text = "+";
-            this.btnX1Plus.UseVisualStyleBackColor = true;
+            this.P1_XJog_Plus.Location = new System.Drawing.Point(110, 55);
+            this.P1_XJog_Plus.Name = "P1_XJog_Plus";
+            this.P1_XJog_Plus.Size = new System.Drawing.Size(41, 37);
+            this.P1_XJog_Plus.TabIndex = 2;
+            this.P1_XJog_Plus.Text = "+";
+            this.P1_XJog_Plus.UseVisualStyleBackColor = true;
             // 
-            // btnY1Minus
+            // P1_YJog_Minus
             // 
-            this.btnY1Minus.Location = new System.Drawing.Point(63, 88);
-            this.btnY1Minus.Name = "btnY1Minus";
-            this.btnY1Minus.Size = new System.Drawing.Size(41, 37);
-            this.btnY1Minus.TabIndex = 1;
-            this.btnY1Minus.Text = "-";
-            this.btnY1Minus.UseVisualStyleBackColor = true;
+            this.P1_YJog_Minus.Location = new System.Drawing.Point(63, 88);
+            this.P1_YJog_Minus.Name = "P1_YJog_Minus";
+            this.P1_YJog_Minus.Size = new System.Drawing.Size(41, 37);
+            this.P1_YJog_Minus.TabIndex = 1;
+            this.P1_YJog_Minus.Text = "-";
+            this.P1_YJog_Minus.UseVisualStyleBackColor = true;
             // 
-            // btnY1Plus
+            // P1_YJog_Plus
             // 
-            this.btnY1Plus.Location = new System.Drawing.Point(63, 19);
-            this.btnY1Plus.Name = "btnY1Plus";
-            this.btnY1Plus.Size = new System.Drawing.Size(41, 37);
-            this.btnY1Plus.TabIndex = 0;
-            this.btnY1Plus.Text = "+";
-            this.btnY1Plus.UseVisualStyleBackColor = true;
+            this.P1_YJog_Plus.Location = new System.Drawing.Point(63, 19);
+            this.P1_YJog_Plus.Name = "P1_YJog_Plus";
+            this.P1_YJog_Plus.Size = new System.Drawing.Size(41, 37);
+            this.P1_YJog_Plus.TabIndex = 0;
+            this.P1_YJog_Plus.Text = "+";
+            this.P1_YJog_Plus.UseVisualStyleBackColor = true;
+            this.P1_YJog_Plus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Job_Plus_Press_Click);
             // 
             // tabPage5
             // 
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(869, 577);
+            this.tabPage5.Size = new System.Drawing.Size(1007, 577);
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Port2";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1574,7 +1548,7 @@
             // 
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(869, 577);
+            this.tabPage6.Size = new System.Drawing.Size(1007, 577);
             this.tabPage6.TabIndex = 2;
             this.tabPage6.Text = "Port3";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1583,7 +1557,7 @@
             // 
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(869, 577);
+            this.tabPage7.Size = new System.Drawing.Size(1007, 577);
             this.tabPage7.TabIndex = 3;
             this.tabPage7.Text = "Port4";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1610,7 +1584,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1015, 603);
+            this.tabPage1.Size = new System.Drawing.Size(877, 603);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Master";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1622,7 +1596,7 @@
             this.groupBox29.Controls.Add(this.cam34);
             this.groupBox29.Location = new System.Drawing.Point(672, 143);
             this.groupBox29.Name = "groupBox29";
-            this.groupBox29.Size = new System.Drawing.Size(334, 130);
+            this.groupBox29.Size = new System.Drawing.Size(199, 130);
             this.groupBox29.TabIndex = 25;
             this.groupBox29.TabStop = false;
             this.groupBox29.Text = "Camera port 34";
@@ -1634,7 +1608,7 @@
             this.groupBox28.Controls.Add(this.cam12);
             this.groupBox28.Location = new System.Drawing.Point(672, 6);
             this.groupBox28.Name = "groupBox28";
-            this.groupBox28.Size = new System.Drawing.Size(334, 131);
+            this.groupBox28.Size = new System.Drawing.Size(199, 131);
             this.groupBox28.TabIndex = 24;
             this.groupBox28.TabStop = false;
             this.groupBox28.Text = "Camera port 12";
@@ -1895,6 +1869,7 @@
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.button51);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Size = new System.Drawing.Size(1015, 603);
@@ -1902,11 +1877,39 @@
             this.tabPage8.Text = "Handeye";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
+            // button51
+            // 
+            this.button51.Location = new System.Drawing.Point(88, 72);
+            this.button51.Name = "button51";
+            this.button51.Size = new System.Drawing.Size(75, 23);
+            this.button51.TabIndex = 0;
+            this.button51.Text = "button51";
+            this.button51.UseVisualStyleBackColor = true;
+            this.button51.Click += new System.EventHandler(this.button51_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(737, 375);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(109, 55);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(737, 505);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(109, 55);
+            this.button6.TabIndex = 13;
+            this.button6.Text = "Reset All";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 629);
+            this.ClientSize = new System.Drawing.Size(885, 629);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1964,6 +1967,7 @@
             this.groupBox27.PerformLayout();
             this.groupBox26.ResumeLayout(false);
             this.groupBox26.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2010,25 +2014,22 @@
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button P1_ZJog_Minus;
+        private System.Windows.Forms.Button P1_ZJog_Plus;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btnX1Minus;
-        private System.Windows.Forms.Button btnX1Plus;
-        private System.Windows.Forms.Button btnY1Minus;
-        private System.Windows.Forms.Button btnY1Plus;
+        private System.Windows.Forms.Button P1_XJog_Minus;
+        private System.Windows.Forms.Button P1_XJog_Plus;
+        private System.Windows.Forms.Button P1_YJog_Minus;
+        private System.Windows.Forms.Button P1_YJog_Plus;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button P1_FJog_Minus;
+        private System.Windows.Forms.Button P1_FJog_Plus;
         private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button P1_RIJog_Minus;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button P1_RIJog_Plus;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox13;
@@ -2085,8 +2086,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button P1_ROJog_Minus;
+        private System.Windows.Forms.Button P1_ROJog_Plus;
         private System.Windows.Forms.GroupBox groupBox27;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txtRMasPort4;
@@ -2138,6 +2139,9 @@
         private System.Windows.Forms.Button button47;
         private System.Windows.Forms.Button button48;
         private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Button button51;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
     }
 }
 
