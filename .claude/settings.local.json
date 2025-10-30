@@ -3,7 +3,9 @@
     "allow": [
       "Bash(dir:*)",
       "Bash(findstr:*)",
-      "Bash(nuget install:*)"
+      "Bash(nuget install:*)",
+      "Bash(dotnet build:*)",
+      "Bash(where:*)"
     ],
     "deny": [],
     "ask": []

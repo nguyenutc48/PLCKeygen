@@ -28,11 +28,7 @@ namespace PLCKeygen
                 plc.SetBit(PLCAddresses.Output.Dong_co_chinh);  // Bật động cơ
                 plc.WriteInt16(PLCAddresses.Output.Gia_tri_dat, 1500);
 
-                // Đọc/Ghi Data
-                int soLuongSanPham = plc.ReadInt32(PLCAddresses.Data.So_luong_san_pham);
-                plc.WriteInt32(PLCAddresses.Data.So_luong_san_pham, soLuongSanPham + 1);
-
-                Console.WriteLine($"Số lượng sản phẩm: {soLuongSanPham}");
+       
             }
             catch (Exception ex)
             {
