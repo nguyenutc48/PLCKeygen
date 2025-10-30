@@ -202,10 +202,33 @@ namespace PLCKeygen
         /// </summary>
         public static class Data
         {
-            public const string So_luong_san_pham = "DM1000";
-            public const string Tong_thoi_gian_chay = "DM1002";
-            public const string Trang_thai_he_thong = "DM2000";
+            public const string P1_X_Pos_Cur =  "TM332";
+            public const string P1_RI_Pos_Cur = "TM334";
+            public const string P1_Y_Pos_Cur =  "TM336";
+            public const string P1_RO_Pos_Cur = "TM338";
+            public const string P1_Z_Pos_Cur =  "TM340";
+            public const string P1_F_Pos_Cur =  "TM344";
 
+            public const string P2_X_Pos_Cur =  "TM300";
+            public const string P2_RI_Pos_Cur = "TM302";
+            public const string P2_Y_Pos_Cur =  "TM304";
+            public const string P2_RO_Pos_Cur = "TM306";
+            public const string P2_Z_Pos_Cur =  "TM308";
+            public const string P2_F_Pos_Cur =  "TM312";
+
+            public const string P3_X_Pos_Cur =  "TM348";
+            public const string P3_RI_Pos_Cur = "TM350";
+            public const string P3_Y_Pos_Cur =  "TM352";
+            public const string P3_RO_Pos_Cur = "TM354";
+            public const string P3_Z_Pos_Cur =  "TM356";
+            public const string P3_F_Pos_Cur =  "TM360";
+
+            public const string P4_X_Pos_Cur =  "TM316";
+            public const string P4_RI_Pos_Cur = "TM318";
+            public const string P4_Y_Pos_Cur =  "TM320";
+            public const string P4_RO_Pos_Cur = "TM322";
+            public const string P4_Z_Pos_Cur =  "TM324";
+            public const string P4_F_Pos_Cur =  "TM328";
         }
 
     }
