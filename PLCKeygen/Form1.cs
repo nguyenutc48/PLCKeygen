@@ -20,14 +20,67 @@ namespace PLCKeygen
         private bool stopHandEye1 = false;
         private bool stopHandEye2 = false;
 
+        // Motion control tracking
+        private int selectedPort = 1;  // 1-4
+        private string selectedAxis = "X";  // X, Y, Z, RI, RO, F
+        private bool isJogMode = true;  // true=JOG, false=STEP
+
         public Form1()
         {
             InitializeComponent();
-            
+
             PLCKey = new PLCKeyence("192.168.0.10", 8501);
             PLCKey.Open();
             PLCKey.StartCommunication();
-            
+
+            // Setup keyboard shortcuts
+            this.KeyPreview = true;
+            this.KeyDown += Form1_KeyDown;
+            this.KeyUp += Form1_KeyUp;
+
+            // Setup radio button event handlers
+            rbtPort1.CheckedChanged += PortRadioButton_CheckedChanged;
+            rbtPort2.CheckedChanged += PortRadioButton_CheckedChanged;
+            rbtPort3.CheckedChanged += PortRadioButton_CheckedChanged;
+            rbtPort4.CheckedChanged += PortRadioButton_CheckedChanged;
+
+            rbtX.CheckedChanged += AxisRadioButton_CheckedChanged;
+            rbtY.CheckedChanged += AxisRadioButton_CheckedChanged;
+            rbtZ.CheckedChanged += AxisRadioButton_CheckedChanged;
+            rbtRI.CheckedChanged += AxisRadioButton_CheckedChanged;
+            rbtRO.CheckedChanged += AxisRadioButton_CheckedChanged;
+            rbtF.CheckedChanged += AxisRadioButton_CheckedChanged;
+
+            rbtJog.CheckedChanged += ModeRadioButton_CheckedChanged;
+            rbtStep.CheckedChanged += ModeRadioButton_CheckedChanged;
+
+            // Set default checked state
+            rbtJog.Checked = true;  // JOG mode
+            rbtX.Checked = true;  // X axis
+
+            // Wire up Go button event handlers
+            btnXGo.Click += btnAxisGo_Click;
+            btnYGo.Click += btnAxisGo_Click;
+            btnZGo.Click += btnAxisGo_Click;
+            btnRIGo.Click += btnAxisGo_Click;
+            btnROGo.Click += btnAxisGo_Click;
+            btnFGo.Click += btnAxisGo_Click;
+
+            // Wire up Org button event handlers
+            btnXOrg.Click += btnAxisOrg_Click;
+            btnYOrg.Click += btnAxisOrg_Click;
+            btnZOrg.Click += btnAxisOrg_Click;
+            btnRIOrg.Click += btnAxisOrg_Click;
+            btnROOrg.Click += btnAxisOrg_Click;
+            btnFOrg.Click += btnAxisOrg_Click;
+
+            // Wire up Reset button event handlers
+            btnXReset.Click += btnAxisReset_Click;
+            btnYReset.Click += btnAxisReset_Click;
+            btnZReset.Click += btnAxisReset_Click;
+            btnRIReset.Click += btnAxisReset_Click;
+            btnROReset.Click += btnAxisReset_Click;
+            btnFReset.Click += btnAxisReset_Click;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -68,6 +121,9 @@ namespace PLCKeygen
             txtXPosCurrent2.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur) / 100.0f).ToString("F2");
             txtYPosCurrent2.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur) / 100.0f).ToString("F2");
             txtRPosCurrent2.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_RI_Pos_Cur) / 10.0f).ToString("F2");
+
+            // Update current position displays for Motion tab
+            UpdateCurrentPositionDisplays();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -1058,5 +1114,754 @@ namespace PLCKeygen
         {
 
         }
+
+        #region Motion Control - Keyboard and Radio Button Handlers
+
+        // Keyboard shortcut handler
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Port selection (1-4)
+            if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
+            {
+                rbtPort1.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+            {
+                rbtPort2.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+                rbtPort3.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
+            {
+                rbtPort4.Checked = true;
+                e.Handled = true;
+            }
+            // Axis selection (X, Y, Z, I, O, F)
+            else if (e.KeyCode == Keys.X)
+            {
+                rbtX.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Y)
+            {
+                rbtY.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Z)
+            {
+                rbtZ.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.I)
+            {
+                rbtRI.Checked = true;  // RI
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.O)
+            {
+                rbtRO.Checked = true;  // RO
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.F)
+            {
+                rbtF.Checked = true;  // F
+                e.Handled = true;
+            }
+            // Mode selection (J=JOG, S=STEP)
+            else if (e.KeyCode == Keys.J)
+            {
+                rbtJog.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.S)
+            {
+                rbtStep.Checked = true;
+                e.Handled = true;
+            }
+            // JOG control with Up/Down keys
+            else if (e.KeyCode == Keys.Up)
+            {
+                string address = GetJogPlusAddress(selectedPort, selectedAxis);
+                if (!string.IsNullOrEmpty(address))
+                {
+                    PLCKey.SetBit(address);
+                }
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                string address = GetJogMinusAddress(selectedPort, selectedAxis);
+                if (!string.IsNullOrEmpty(address))
+                {
+                    PLCKey.SetBit(address);
+                }
+                e.Handled = true;
+            }
+        }
+
+        // Handle KeyUp to release JOG buttons
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Up)
+            {
+                string address = GetJogPlusAddress(selectedPort, selectedAxis);
+                if (!string.IsNullOrEmpty(address))
+                {
+                    PLCKey.ResetBit(address);
+                }
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Down)
+            {
+                string address = GetJogMinusAddress(selectedPort, selectedAxis);
+                if (!string.IsNullOrEmpty(address))
+                {
+                    PLCKey.ResetBit(address);
+                }
+                e.Handled = true;
+            }
+        }
+
+        // Port selection changed
+        private void PortRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                if (rb == rbtPort1) selectedPort = 1;
+                else if (rb == rbtPort2) selectedPort = 2;
+                else if (rb == rbtPort3) selectedPort = 3;
+                else if (rb == rbtPort4) selectedPort = 4;
+
+                // Update current position displays for new port
+                UpdateCurrentPositionDisplays();
+            }
+        }
+
+        // Axis selection changed
+        private void AxisRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                if (rb == rbtX) selectedAxis = "X";
+                else if (rb == rbtY) selectedAxis = "Y";
+                else if (rb == rbtZ) selectedAxis = "Z";
+                else if (rb == rbtRI) selectedAxis = "RI";
+                else if (rb == rbtRO) selectedAxis = "RO";
+                else if (rb == rbtF) selectedAxis = "F";
+            }
+        }
+
+        // Mode selection changed (JOG/STEP)
+        private void ModeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                if (rb == rbtJog)  // JOG
+                {
+                    isJogMode = true;
+                    SetStepJogMode(false);  // Reset Step_Jog_Mode bit
+                }
+                else if (rb == rbtStep)  // STEP
+                {
+                    isJogMode = false;
+                    SetStepJogMode(true);  // Set Step_Jog_Mode bit
+                }
+            }
+        }
+
+        // Set or reset the P[1-4]_Step_Jog_Mode bit based on selected port
+        private void SetStepJogMode(bool isStepMode)
+        {
+            string address = GetStepJogModeAddress(selectedPort);
+            if (!string.IsNullOrEmpty(address))
+            {
+                if (isStepMode)
+                    PLCKey.SetBit(address);
+                else
+                    PLCKey.ResetBit(address);
+            }
+        }
+
+        // Get Step_Jog_Mode address for the selected port
+        private string GetStepJogModeAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Input.P1_Step_Jog_Mode;
+                case 2: return PLCAddresses.Input.P2_Step_Jog_Mode;
+                case 3: return PLCAddresses.Input.P3_Step_Jog_Mode;
+                case 4: return PLCAddresses.Input.P4_Step_Jog_Mode;
+                default: return null;
+            }
+        }
+
+        // Get JOG Plus address for selected port and axis
+        private string GetJogPlusAddress(int port, string axis)
+        {
+            switch (port)
+            {
+                case 1:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P1_XJog_Plus;
+                        case "Y": return PLCAddresses.Input.P1_YJog_Plus;
+                        case "Z": return PLCAddresses.Input.P1_ZJog_Plus;
+                        case "RI": return PLCAddresses.Input.P1_RIJog_Plus;
+                        case "RO": return PLCAddresses.Input.P1_ROJog_Plus;
+                        case "F": return PLCAddresses.Input.P1_FJog_Plus;
+                    }
+                    break;
+                case 2:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P2_XJog_Plus;
+                        case "Y": return PLCAddresses.Input.P2_YJog_Plus;
+                        case "Z": return PLCAddresses.Input.P2_ZJog_Plus;
+                        case "RI": return PLCAddresses.Input.P2_RIJog_Plus;
+                        case "RO": return PLCAddresses.Input.P2_ROJog_Plus;
+                        case "F": return PLCAddresses.Input.P2_FJog_Plus;
+                    }
+                    break;
+                case 3:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P3_XJog_Plus;
+                        case "Y": return PLCAddresses.Input.P3_YJog_Plus;
+                        case "Z": return PLCAddresses.Input.P3_ZJog_Plus;
+                        case "RI": return PLCAddresses.Input.P3_RIJog_Plus;
+                        case "RO": return PLCAddresses.Input.P3_ROJog_Plus;
+                        case "F": return PLCAddresses.Input.P3_FJog_Plus;
+                    }
+                    break;
+                case 4:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P4_XJog_Plus;
+                        case "Y": return PLCAddresses.Input.P4_YJog_Plus;
+                        case "Z": return PLCAddresses.Input.P4_ZJog_Plus;
+                        case "RI": return PLCAddresses.Input.P4_RIJog_Plus;
+                        case "RO": return PLCAddresses.Input.P4_ROJog_Plus;
+                        case "F": return PLCAddresses.Input.P4_FJog_Plus;
+                    }
+                    break;
+            }
+            return null;
+        }
+
+        // Get JOG Minus address for selected port and axis
+        private string GetJogMinusAddress(int port, string axis)
+        {
+            switch (port)
+            {
+                case 1:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P1_XJog_Minus;
+                        case "Y": return PLCAddresses.Input.P1_YJog_Minus;
+                        case "Z": return PLCAddresses.Input.P1_ZJog_Minus;
+                        case "RI": return PLCAddresses.Input.P1_RIJog_Minus;
+                        case "RO": return PLCAddresses.Input.P1_ROJog_Minus;
+                        case "F": return PLCAddresses.Input.P1_FJog_Minus;
+                    }
+                    break;
+                case 2:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P2_XJog_Minus;
+                        case "Y": return PLCAddresses.Input.P2_YJog_Minus;
+                        case "Z": return PLCAddresses.Input.P2_ZJog_Minus;
+                        case "RI": return PLCAddresses.Input.P2_RIJog_Minus;
+                        case "RO": return PLCAddresses.Input.P2_ROJog_Minus;
+                        case "F": return PLCAddresses.Input.P2_FJog_Minus;
+                    }
+                    break;
+                case 3:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P3_XJog_Minus;
+                        case "Y": return PLCAddresses.Input.P3_YJog_Minus;
+                        case "Z": return PLCAddresses.Input.P3_ZJog_Minus;
+                        case "RI": return PLCAddresses.Input.P3_RIJog_Minus;
+                        case "RO": return PLCAddresses.Input.P3_ROJog_Minus;
+                        case "F": return PLCAddresses.Input.P3_FJog_Minus;
+                    }
+                    break;
+                case 4:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P4_XJog_Minus;
+                        case "Y": return PLCAddresses.Input.P4_YJog_Minus;
+                        case "Z": return PLCAddresses.Input.P4_ZJog_Minus;
+                        case "RI": return PLCAddresses.Input.P4_RIJog_Minus;
+                        case "RO": return PLCAddresses.Input.P4_ROJog_Minus;
+                        case "F": return PLCAddresses.Input.P4_FJog_Minus;
+                    }
+                    break;
+            }
+            return null;
+        }
+
+        // Generic JOG Plus button MouseDown event handler
+        private void btnJogPlus_MouseDown(object sender, MouseEventArgs e)
+        {
+            string address = GetJogPlusAddress(selectedPort, selectedAxis);
+            if (!string.IsNullOrEmpty(address))
+            {
+                PLCKey.SetBit(address);
+            }
+        }
+
+        // Generic JOG Plus button MouseUp event handler
+        private void btnJogPlus_MouseUp(object sender, MouseEventArgs e)
+        {
+            string address = GetJogPlusAddress(selectedPort, selectedAxis);
+            if (!string.IsNullOrEmpty(address))
+            {
+                PLCKey.ResetBit(address);
+            }
+        }
+
+        // Generic JOG Minus button MouseDown event handler
+        private void btnJogMinus_MouseDown(object sender, MouseEventArgs e)
+        {
+            string address = GetJogMinusAddress(selectedPort, selectedAxis);
+            if (!string.IsNullOrEmpty(address))
+            {
+                PLCKey.SetBit(address);
+            }
+        }
+
+        // Generic JOG Minus button MouseUp event handler
+        private void btnJogMinus_MouseUp(object sender, MouseEventArgs e)
+        {
+            string address = GetJogMinusAddress(selectedPort, selectedAxis);
+            if (!string.IsNullOrEmpty(address))
+            {
+                PLCKey.ResetBit(address);
+            }
+        }
+
+        // Get current position address for selected port and axis
+        private string GetPosCurAddress(int port, string axis)
+        {
+            switch (port)
+            {
+                case 1:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Data.P1_X_Pos_Cur;
+                        case "Y": return PLCAddresses.Data.P1_Y_Pos_Cur;
+                        case "Z": return PLCAddresses.Data.P1_Z_Pos_Cur;
+                        case "RI": return PLCAddresses.Data.P1_RI_Pos_Cur;
+                        case "RO": return PLCAddresses.Data.P1_RO_Pos_Cur;
+                        case "F": return PLCAddresses.Data.P1_F_Pos_Cur;
+                    }
+                    break;
+                case 2:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Data.P2_X_Pos_Cur;
+                        case "Y": return PLCAddresses.Data.P2_Y_Pos_Cur;
+                        case "Z": return PLCAddresses.Data.P2_Z_Pos_Cur;
+                        case "RI": return PLCAddresses.Data.P2_RI_Pos_Cur;
+                        case "RO": return PLCAddresses.Data.P2_RO_Pos_Cur;
+                        case "F": return PLCAddresses.Data.P2_F_Pos_Cur;
+                    }
+                    break;
+                case 3:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Data.P3_X_Pos_Cur;
+                        case "Y": return PLCAddresses.Data.P3_Y_Pos_Cur;
+                        case "Z": return PLCAddresses.Data.P3_Z_Pos_Cur;
+                        case "RI": return PLCAddresses.Data.P3_RI_Pos_Cur;
+                        case "RO": return PLCAddresses.Data.P3_RO_Pos_Cur;
+                        case "F": return PLCAddresses.Data.P3_F_Pos_Cur;
+                    }
+                    break;
+                case 4:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Data.P4_X_Pos_Cur;
+                        case "Y": return PLCAddresses.Data.P4_Y_Pos_Cur;
+                        case "Z": return PLCAddresses.Data.P4_Z_Pos_Cur;
+                        case "RI": return PLCAddresses.Data.P4_RI_Pos_Cur;
+                        case "RO": return PLCAddresses.Data.P4_RO_Pos_Cur;
+                        case "F": return PLCAddresses.Data.P4_F_Pos_Cur;
+                    }
+                    break;
+            }
+            return null;
+        }
+
+        // Get ABS setpoint address for selected port and axis
+        private string GetABSSetpointAddress(int port, string axis)
+        {
+            switch (port)
+            {
+                case 1:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Data.P1_X_ABS_Setpoint;
+                        case "Y": return PLCAddresses.Data.P1_Y_ABS_Setpoint;
+                        case "RI": return PLCAddresses.Data.P1_RI_ABS_Setpoint;
+                    }
+                    break;
+                case 2:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Data.P2_X_ABS_Setpoint;
+                        case "Y": return PLCAddresses.Data.P2_Y_ABS_Setpoint;
+                        case "RI": return PLCAddresses.Data.P2_RI_ABS_Setpoint;
+                    }
+                    break;
+                case 3:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Data.P3_X_ABS_Setpoint;
+                        case "Y": return PLCAddresses.Data.P3_Y_ABS_Setpoint;
+                        case "RI": return PLCAddresses.Data.P3_RI_ABS_Setpoint;
+                    }
+                    break;
+                case 4:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Data.P4_X_ABS_Setpoint;
+                        case "Y": return PLCAddresses.Data.P4_Y_ABS_Setpoint;
+                        case "RI": return PLCAddresses.Data.P4_RI_ABS_Setpoint;
+                    }
+                    break;
+            }
+            return null;
+        }
+
+        // Get Go (ABS) bit address
+        private string GetGoABSAddress(int port, string axis)
+        {
+            switch (port)
+            {
+                case 1:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P1_XGo_ABS;
+                        case "Y": return PLCAddresses.Input.P1_YGo_ABS;
+                        case "Z": return PLCAddresses.Input.P1_ZGo_ABS;
+                        case "RI": return PLCAddresses.Input.P1_RIGo_ABS;
+                        case "RO": return PLCAddresses.Input.P1_ROGo_ABS;
+                        case "F": return PLCAddresses.Input.P1_FGo_ABS;
+                    }
+                    break;
+                case 2:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P2_XGo_ABS;
+                        case "Y": return PLCAddresses.Input.P2_YGo_ABS;
+                        case "Z": return PLCAddresses.Input.P2_ZGo_ABS;
+                        case "RI": return PLCAddresses.Input.P2_RIGo_ABS;
+                        case "RO": return PLCAddresses.Input.P2_ROGo_ABS;
+                        case "F": return PLCAddresses.Input.P2_FGo_ABS;
+                    }
+                    break;
+                case 3:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P3_XGo_ABS;
+                        case "Y": return PLCAddresses.Input.P3_YGo_ABS;
+                        case "Z": return PLCAddresses.Input.P3_ZGo_ABS;
+                        case "RI": return PLCAddresses.Input.P3_RIGo_ABS;
+                        case "RO": return PLCAddresses.Input.P3_ROGo_ABS;
+                        case "F": return PLCAddresses.Input.P3_FGo_ABS;
+                    }
+                    break;
+                case 4:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P4_XGo_ABS;
+                        case "Y": return PLCAddresses.Input.P4_YGo_ABS;
+                        case "Z": return PLCAddresses.Input.P4_ZGo_ABS;
+                        case "RI": return PLCAddresses.Input.P4_RIGo_ABS;
+                        case "RO": return PLCAddresses.Input.P4_ROGo_ABS;
+                        case "F": return PLCAddresses.Input.P4_FGo_ABS;
+                    }
+                    break;
+            }
+            return null;
+        }
+
+        // Get Home bit address
+        private string GetHomeAddress(int port, string axis)
+        {
+            switch (port)
+            {
+                case 1:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P1_XHome;
+                        case "Y": return PLCAddresses.Input.P1_YHome;
+                        case "Z": return PLCAddresses.Input.P1_ZHome;
+                        case "RI": return PLCAddresses.Input.P1_RIHome;
+                        case "RO": return PLCAddresses.Input.P1_ROHome;
+                        case "F": return PLCAddresses.Input.P1_FHome;
+                    }
+                    break;
+                case 2:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P2_XHome;
+                        case "Y": return PLCAddresses.Input.P2_YHome;
+                        case "Z": return PLCAddresses.Input.P2_ZHome;
+                        case "RI": return PLCAddresses.Input.P2_RIHome;
+                        case "RO": return PLCAddresses.Input.P2_ROHome;
+                        case "F": return PLCAddresses.Input.P2_FHome;
+                    }
+                    break;
+                case 3:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P3_XHome;
+                        case "Y": return PLCAddresses.Input.P3_YHome;
+                        case "Z": return PLCAddresses.Input.P3_ZHome;
+                        case "RI": return PLCAddresses.Input.P3_RIHome;
+                        case "RO": return PLCAddresses.Input.P3_ROHome;
+                        case "F": return PLCAddresses.Input.P3_FHome;
+                    }
+                    break;
+                case 4:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P4_XHome;
+                        case "Y": return PLCAddresses.Input.P4_YHome;
+                        case "Z": return PLCAddresses.Input.P4_ZHome;
+                        case "RI": return PLCAddresses.Input.P4_RIHome;
+                        case "RO": return PLCAddresses.Input.P4_ROHome;
+                        case "F": return PLCAddresses.Input.P4_FHome;
+                    }
+                    break;
+            }
+            return null;
+        }
+
+        // Get Reset bit address
+        private string GetResetAddress(int port, string axis)
+        {
+            switch (port)
+            {
+                case 1:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P1_XReset;
+                        case "Y": return PLCAddresses.Input.P1_YReset;
+                        case "Z": return PLCAddresses.Input.P1_ZReset;
+                        case "RI": return PLCAddresses.Input.P1_RIReset;
+                        case "RO": return PLCAddresses.Input.P1_ROReset;
+                        case "F": return PLCAddresses.Input.P1_FReset;
+                    }
+                    break;
+                case 2:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P2_XReset;
+                        case "Y": return PLCAddresses.Input.P2_YReset;
+                        case "Z": return PLCAddresses.Input.P2_ZReset;
+                        case "RI": return PLCAddresses.Input.P2_RIReset;
+                        case "RO": return PLCAddresses.Input.P2_ROReset;
+                        case "F": return PLCAddresses.Input.P2_FReset;
+                    }
+                    break;
+                case 3:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P3_XReset;
+                        case "Y": return PLCAddresses.Input.P3_YReset;
+                        case "Z": return PLCAddresses.Input.P3_ZReset;
+                        case "RI": return PLCAddresses.Input.P3_RIReset;
+                        case "RO": return PLCAddresses.Input.P3_ROReset;
+                        case "F": return PLCAddresses.Input.P3_FReset;
+                    }
+                    break;
+                case 4:
+                    switch (axis)
+                    {
+                        case "X": return PLCAddresses.Input.P4_XReset;
+                        case "Y": return PLCAddresses.Input.P4_YReset;
+                        case "Z": return PLCAddresses.Input.P4_ZReset;
+                        case "RI": return PLCAddresses.Input.P4_RIReset;
+                        case "RO": return PLCAddresses.Input.P4_ROReset;
+                        case "F": return PLCAddresses.Input.P4_FReset;
+                    }
+                    break;
+            }
+            return null;
+        }
+
+        // Update current position displays for all axes of selected port
+        private void UpdateCurrentPositionDisplays()
+        {
+            try
+            {
+                // X axis
+                string addrX = GetPosCurAddress(selectedPort, "X");
+                if (!string.IsNullOrEmpty(addrX))
+                {
+                    int posX = PLCKey.ReadInt32(addrX);
+                    txtXCur.Text = (posX / 100.0f).ToString("F2");
+                }
+
+                // Y axis
+                string addrY = GetPosCurAddress(selectedPort, "Y");
+                if (!string.IsNullOrEmpty(addrY))
+                {
+                    int posY = PLCKey.ReadInt32(addrY);
+                    txtYCur.Text = (posY / 100.0f).ToString("F2");
+                }
+
+                // Z axis
+                string addrZ = GetPosCurAddress(selectedPort, "Z");
+                if (!string.IsNullOrEmpty(addrZ))
+                {
+                    int posZ = PLCKey.ReadInt32(addrZ);
+                    txtZCur.Text = (posZ / 100.0f).ToString("F2");
+                }
+
+                // RI axis
+                string addrRI = GetPosCurAddress(selectedPort, "RI");
+                if (!string.IsNullOrEmpty(addrRI))
+                {
+                    int posRI = PLCKey.ReadInt32(addrRI);
+                    txtRICur.Text = (posRI / 10.0f).ToString("F2");
+                }
+
+                // RO axis
+                string addrRO = GetPosCurAddress(selectedPort, "RO");
+                if (!string.IsNullOrEmpty(addrRO))
+                {
+                    int posRO = PLCKey.ReadInt32(addrRO);
+                    txtROCur.Text = (posRO / 10.0f).ToString("F2");
+                }
+
+                // F axis
+                string addrF = GetPosCurAddress(selectedPort, "F");
+                if (!string.IsNullOrEmpty(addrF))
+                {
+                    int posF = PLCKey.ReadInt32(addrF);
+                    txtFCur.Text = (posF / 100.0f).ToString("F2");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle errors silently or log
+            }
+        }
+
+        // Button event handlers for Go buttons
+        private void btnAxisGo_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
+            if (btn == null) return;
+
+            // Determine which axis based on button
+            string axis = "";
+            System.Windows.Forms.TextBox txtGoPos = null;
+
+            if (btn == btnXGo) { axis = "X"; txtGoPos = txtXGoPos; }
+            else if (btn == btnYGo) { axis = "Y"; txtGoPos = txtYGoPos; }
+            else if (btn == btnZGo) { axis = "Z"; txtGoPos = txtZGoPos; }
+            else if (btn == btnRIGo) { axis = "RI"; txtGoPos = txtRIGoPos; }
+            else if (btn == btnROGo) { axis = "RO"; txtGoPos = txtROGoPos; }
+            else if (btn == btnFGo) { axis = "F"; txtGoPos = txtFGoPos; }
+            else return;
+
+            try
+            {
+                // Get setpoint address (only for X, Y, RI)
+                string setpointAddr = GetABSSetpointAddress(selectedPort, axis);
+                if (string.IsNullOrEmpty(setpointAddr))
+                {
+                    MessageBox.Show($"Axis {axis} does not support ABS movement", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // Parse target position
+                float targetPos = float.Parse(txtGoPos.Text);
+                int targetPosInt;
+
+                // Convert based on axis type
+                if (axis == "RI" || axis == "RO")
+                    targetPosInt = (int)(targetPos * 10);  // Rotation axes: x10
+                else
+                    targetPosInt = (int)(targetPos * 100);  // Linear axes: x100
+
+                // Write setpoint
+                PLCKey.WriteInt32(setpointAddr, targetPosInt);
+
+                // Delay to ensure write completes
+                System.Threading.Thread.Sleep(100);
+
+                // Set Go bit
+                string goAddr = GetGoABSAddress(selectedPort, axis);
+                if (!string.IsNullOrEmpty(goAddr))
+                {
+                    PLCKey.SetBit(goAddr);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Button event handlers for Org (Home) buttons
+        private void btnAxisOrg_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
+            if (btn == null) return;
+
+            string axis = "";
+            if (btn == btnXOrg) axis = "X";
+            else if (btn == btnYOrg) axis = "Y";
+            else if (btn == btnZOrg) axis = "Z";
+            else if (btn == btnRIOrg) axis = "RI";
+            else if (btn == btnROOrg) axis = "RO";
+            else if (btn == btnFOrg) axis = "F";
+            else return;
+
+            string homeAddr = GetHomeAddress(selectedPort, axis);
+            if (!string.IsNullOrEmpty(homeAddr))
+            {
+                PLCKey.SetBit(homeAddr);
+            }
+        }
+
+        // Button event handlers for Reset buttons
+        private void btnAxisReset_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
+            if (btn == null) return;
+
+            string axis = "";
+            if (btn == btnXReset) axis = "X";
+            else if (btn == btnYReset) axis = "Y";
+            else if (btn == btnZReset) axis = "Z";
+            else if (btn == btnRIReset) axis = "RI";
+            else if (btn == btnROReset) axis = "RO";
+            else if (btn == btnFReset) axis = "F";
+            else return;
+
+            string resetAddr = GetResetAddress(selectedPort, axis);
+            if (!string.IsNullOrEmpty(resetAddr))
+            {
+                PLCKey.SetBit(resetAddr);
+            }
+        }
+
+        #endregion
     }
 }
