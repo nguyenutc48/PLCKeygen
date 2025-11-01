@@ -11,6 +11,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.CodeDom;
+
 namespace PLCKeygen
 {
     /// <summary>
@@ -206,6 +208,24 @@ namespace PLCKeygen
         /// </summary>
         public static class Data
         {
+            // Master 
+            public const string P1_X_Master = "DM2082";
+            public const string P1_Y_Master = "DM2084";
+            public const string P1_R_Master = "DM2086";
+
+            public const string P2_X_Master = "DM1282";
+            public const string P2_Y_Master = "DM1284";
+            public const string P2_R_Master = "DM1286";
+
+            public const string P3_X_Master = "DM2482";
+            public const string P3_Y_Master = "DM2484";
+            public const string P3_R_Master = "DM2486";
+
+            public const string P4_X_Master = "DM1682";
+            public const string P4_Y_Master = "DM1684";
+            public const string P4_R_Master = "DM1686";
+
+            // Port
             public const string P1_X_Pos_Cur =  "TM332";
             public const string P1_RI_Pos_Cur = "TM334";
             public const string P1_Y_Pos_Cur =  "TM336";

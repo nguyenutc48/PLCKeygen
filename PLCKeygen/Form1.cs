@@ -150,9 +150,9 @@ namespace PLCKeygen
             float r = float.Parse(txtRMasPort1.Text);
             var r1 = r * 10;
 
-            PLCKey.WriteInt16("DM2082", (short)x1);
-            PLCKey.WriteInt16("DM2084", (short)y1);
-            PLCKey.WriteInt16("DM2086", (short)r1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P1_X_Master, (short)x1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P1_Y_Master, (short)y1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P1_R_Master, (short)r1);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -164,9 +164,9 @@ namespace PLCKeygen
             float r = float.Parse(txtRMasPort3.Text);
             var r1 = r * 10;
 
-            PLCKey.WriteInt16("DM2482", (short)x1);
-            PLCKey.WriteInt16("DM2484", (short)y1);
-            PLCKey.WriteInt16("DM2486", (short)r1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P3_X_Master, (short)x1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P3_Y_Master, (short)y1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P3_R_Master, (short)r1);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -348,9 +348,9 @@ namespace PLCKeygen
             float r = float.Parse(txtRMasPort2.Text);
             var r1 = r * 10;
 
-            PLCKey.WriteInt16("DM1282", (short)x1);
-            PLCKey.WriteInt16("DM1284", (short)y1);
-            PLCKey.WriteInt16("DM1286", (short)r1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P2_X_Master, (short)x1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P2_Y_Master, (short)y1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P2_R_Master, (short)r1);
         }
 
         private void btnSetMasP4_Click(object sender, EventArgs e)
@@ -362,9 +362,9 @@ namespace PLCKeygen
             float r = float.Parse(txtRMasPort4.Text);
             var r1 = r * 10;
 
-            PLCKey.WriteInt16("DM1682", (short)x1);
-            PLCKey.WriteInt16("DM1684", (short)y1);
-            PLCKey.WriteInt16("DM1686", (short)r1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P4_X_Master, (short)x1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P4_Y_Master, (short)y1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P4_R_Master, (short)r1);
         }
 
         private async Task btnGetMasCamP2_Click(object sender, EventArgs e)
@@ -724,6 +724,23 @@ namespace PLCKeygen
         // Handeye functions for Camera 1 (Port 2)
         private async void btnCalPos1_Click(object sender, EventArgs e)
         {
+            var _dialogResult = MessageBox.Show("Bạn có chắc chắn không", "Cảnh báo",MessageBoxButtons.YesNo);
+            if (_dialogResult == DialogResult.No)
+            {
+                return;
+            }
+            XY1Cam1.BackColor = Color.Transparent;
+            XY2Cam1.BackColor = Color.Transparent;
+            XY3Cam1.BackColor = Color.Transparent;
+            XY4Cam1.BackColor = Color.Transparent;
+            XY5Cam1.BackColor = Color.Transparent;
+            XY6Cam1.BackColor = Color.Transparent;
+            XY7Cam1.BackColor = Color.Transparent;
+            XY8Cam1.BackColor = Color.Transparent;
+            XY9Cam1.BackColor = Color.Transparent;
+            XYR1Cam1.BackColor = Color.Transparent;
+            XYR2Cam1.BackColor = Color.Transparent;
+            btnCalPos1.Enabled = false;
             try
             {
                 bool cmd_result = await RunCmdSendCamera1(Cmd_Type.Start);
@@ -896,11 +913,29 @@ namespace PLCKeygen
             {
                 MessageBox.Show($"Loi khi tinh toan vi tri: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            btnCalPos1.Enabled = true;
         }
 
         // Handeye functions for Camera 34 (Port 4)
         private async void btnCalPos2_Click(object sender, EventArgs e)
         {
+            var _dialogResult = MessageBox.Show("Bạn có chắc chắn không", "Cảnh báo", MessageBoxButtons.YesNo);
+            if (_dialogResult == DialogResult.No)
+            {
+                return;
+            }
+            XY1Cam2.BackColor = Color.Transparent;
+            XY2Cam2.BackColor = Color.Transparent;
+            XY3Cam2.BackColor = Color.Transparent;
+            XY4Cam2.BackColor = Color.Transparent;
+            XY5Cam2.BackColor = Color.Transparent;
+            XY6Cam2.BackColor = Color.Transparent;
+            XY7Cam2.BackColor = Color.Transparent;
+            XY8Cam2.BackColor = Color.Transparent;
+            XY9Cam2.BackColor = Color.Transparent;
+            XYR1Cam2.BackColor = Color.Transparent;
+            XYR2Cam2.BackColor = Color.Transparent;
+            btnCalPos2.Enabled = false;
             try
             {
                 bool cmd_result = await RunCmdSendCamera2(Cmd_Type.Start);
@@ -1073,50 +1108,7 @@ namespace PLCKeygen
             {
                 MessageBox.Show($"Loi khi tinh toan vi tri: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        // Helper function to check camera response
-        private bool CheckCameraResponse(string expectedCommand, string response, Label labelToUpdate)
-        {
-            // Phan tich phan hoi tu camera
-            // Format: HEB,1 hoac HE,1 hoac HEE,1
-            if (string.IsNullOrEmpty(response))
-            {
-                this.Invoke((MethodInvoker)delegate {
-                    labelToUpdate.BackColor = Color.Yellow;
-                });
-                return false;
-            }
-
-            string[] parts = response.Split(',');
-            if (parts.Length < 2)
-            {
-                this.Invoke((MethodInvoker)delegate {
-                    labelToUpdate.BackColor = Color.Yellow;
-                });
-                return false;
-            }
-
-            // Kiem tra phan hoi co khop voi lenh gui khong
-            string[] expectedParts = expectedCommand.Split(',');
-            if (parts[0] != expectedParts[0] || parts[1] != "1")
-            {
-                this.Invoke((MethodInvoker)delegate {
-                    labelToUpdate.BackColor = Color.Yellow;
-                });
-                return false;
-            }
-
-            // Thanh cong - doi mau xanh
-            this.Invoke((MethodInvoker)delegate {
-                labelToUpdate.BackColor = Color.LightGreen;
-            });
-            return true;
-        }
-
-        private void XY5Cam1_Click(object sender, EventArgs e)
-        {
-
+            btnCalPos2.Enabled = true;
         }
 
         #region Motion Control - Keyboard and Radio Button Handlers
@@ -1867,5 +1859,37 @@ namespace PLCKeygen
         }
 
         #endregion
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cameraClient12 != null && cameraClient12.IsConnected)
+            {
+                btnConnect12.Text = "Disconnect";
+                btnConnect12.BackColor = Color.LightGreen;
+                btnCam1Connect.Text = "Disconnect";
+                btnCam1Connect.BackColor = Color.LightGreen;
+            }
+            else 
+            {
+                btnConnect12.Text = "Connect";
+                btnConnect12.BackColor = Color.LightCoral;
+                btnCam1Connect.Text = "Connect";
+                btnCam1Connect.BackColor = Color.LightCoral;
+            }
+            if (cameraClient34 != null && cameraClient34.IsConnected)
+            {
+                btnConnect34.Text = "Disconnect";
+                btnConnect34.BackColor = Color.LightGreen;
+                btnCam2Connect.Text = "Disconnect";
+                btnCam2Connect.BackColor = Color.LightGreen;
+            }
+            else 
+            {
+                btnConnect34.Text = "Connect";
+                btnConnect34.BackColor = Color.LightCoral;
+                btnCam2Connect.Text = "Connect";
+                btnCam2Connect.BackColor = Color.LightCoral;
+            }
+        }
     }
 }
