@@ -23,10 +23,11 @@ namespace PLCKeygen
         public Form1()
         {
             InitializeComponent();
-
+            
             PLCKey = new PLCKeyence("192.168.0.10", 8501);
             PLCKey.Open();
             PLCKey.StartCommunication();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -114,7 +115,8 @@ namespace PLCKeygen
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            toolStripStatusLabel2.ToolTipText = "PLC Connected";
+            toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
             txtXMasPort1.Text = (PLCKey.ReadInt32("DM2082") / 100.0f).ToString();
             txtYMasPort1.Text = (PLCKey.ReadInt32("DM2084") / 100.0f).ToString();
             txtRMasPort1.Text = (PLCKey.ReadInt32("DM2086") / 10.0f).ToString();
@@ -445,16 +447,16 @@ namespace PLCKeygen
                 MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var sgp = cameraClient34.SendCommand("SGP,1,HOME2D,0,0,0");
+            var sgp = cameraClient34.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
             var sgp_split = sgp.Split(',');
-            if (sgp_split[0] == "SGP" && sgp_split[1] == "1")
+            if (sgp_split[0] == "GCP" && sgp_split[1] == "1")
             {
-                var a = cameraClient34.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
-                var b = a.Split(',');
+                //var a = cameraClient34.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
+                var b = sgp.Split(',');
                 txtXMasPort4.Text = b[2].Trim();
                 txtYMasPort4.Text = b[3].Trim();
                 txtRMasPort4.Text = b[4].Trim();
-                MessageBox.Show(a);
+                MessageBox.Show(sgp);
             }
             else
             {
@@ -470,16 +472,16 @@ namespace PLCKeygen
                 MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var sgp = cameraClient12.SendCommand("SGP,1,HOME2D,0,0,0");
+            var sgp = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
             var sgp_split = sgp.Split(',');
-            if (sgp_split[0] == "SGP" && sgp_split[1] == "1")
+            if (sgp_split[0] == "GCP" && sgp_split[1] == "1")
             {
-                var a = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
-                var b = a.Split(',');
+                //var a = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
+                var b = sgp.Split(',');
                 txtXMasPort2.Text = b[2].Trim();
                 txtYMasPort2.Text = b[3].Trim();
                 txtRMasPort2.Text = b[4].Trim();
-                MessageBox.Show(a);
+                MessageBox.Show(sgp);
             }
             else
             {
@@ -494,16 +496,16 @@ namespace PLCKeygen
                 MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var sgp = cameraClient12.SendCommand("SGP,2,HOME2D,0,0,0");
+            var sgp = cameraClient12.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
             var sgp_split = sgp.Split(',');
-            if (sgp_split[0] == "SGP" && sgp_split[1] == "1")
+            if (sgp_split[0] == "GCP" && sgp_split[1] == "1")
             {
-                var a = cameraClient12.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
-                var b = a.Split(',');
+                //var a = cameraClient12.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
+                var b = sgp.Split(',');
                 txtXMasPort1.Text = b[2].Trim();
                 txtYMasPort1.Text = b[3].Trim();
                 txtRMasPort1.Text = b[4].Trim();
-                MessageBox.Show(a);
+                MessageBox.Show(sgp);
             }
             else
             {
@@ -518,16 +520,17 @@ namespace PLCKeygen
                 MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            var sgp = cameraClient34.SendCommand("SGP,2,HOME2D,0,0,0");
+            var sgp = cameraClient34.SendCommand("GCP,2,Home2D,0,0,0,0,0,0");
+         
             var sgp_split = sgp.Split(',');
-            if (sgp_split[0] == "SGP" && sgp_split[1] == "1")
+            if (sgp_split[0] == "GCP" && sgp_split[1] == "1")
             {
-                var a = cameraClient34.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
-                var b = a.Split(',');
-                txtXMasPort3.Text = b[2].Trim();
-                txtYMasPort3.Text = b[3].Trim();
-                txtRMasPort3.Text = b[4].Trim();
-                MessageBox.Show(a);
+                //var a = cameraClient34.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
+                //var b = sgp.Split(',');
+                txtXMasPort3.Text = sgp_split[2].Trim();
+                txtYMasPort3.Text = sgp_split[3].Trim();
+                txtRMasPort3.Text = sgp_split[4].Trim();
+                MessageBox.Show(sgp);
             }
             else
             {
@@ -562,83 +565,277 @@ namespace PLCKeygen
             a = 2;
         }
 
+        private async Task RunABSPosXYRCam1Async(int x_pos,int y_pos,int r_pos)
+        {
+            PLCKey.WriteInt32(PLCAddresses.Data.P2_X_ABS_Setpoint, x_pos);
+            await Task.Delay(500);
+            PLCKey.WriteInt32(PLCAddresses.Data.P2_Y_ABS_Setpoint, y_pos);
+            await Task.Delay(500);
+            PLCKey.WriteInt32(PLCAddresses.Data.P2_RI_INC_Setpoint, r_pos);
+            await Task.Delay(500);
+            // Set bit de chay
+            PLCKey.SetBit(PLCAddresses.Input.P2_XGo_ABS);
+            await Task.Delay(2000);
+            PLCKey.SetBit(PLCAddresses.Input.P2_YGo_ABS);
+            await Task.Delay(2000);
+            PLCKey.SetBit(PLCAddresses.Input.P2_RIGo_INC);
+            await Task.Delay(2000);
+        }
+
+        private async Task RunABSPosXYRCam2Async(int x_pos, int y_pos, int r_pos)
+        {
+            PLCKey.WriteInt32(PLCAddresses.Data.P4_X_ABS_Setpoint, x_pos);
+            await Task.Delay(500);
+            PLCKey.WriteInt32(PLCAddresses.Data.P4_Y_ABS_Setpoint, y_pos);
+            await Task.Delay(500);
+            PLCKey.WriteInt32(PLCAddresses.Data.P4_RI_INC_Setpoint, r_pos);
+            await Task.Delay(500);
+            // Set bit de chay
+            PLCKey.SetBit(PLCAddresses.Input.P4_XGo_ABS);
+            await Task.Delay(2000);
+            PLCKey.SetBit(PLCAddresses.Input.P4_YGo_ABS);
+            await Task.Delay(2000);
+            PLCKey.SetBit(PLCAddresses.Input.P4_RIGo_INC);
+            await Task.Delay(2000);
+        }
+
+        enum Cmd_Type
+        {
+            Start,
+            Send_Point,
+            End
+        }
+
+        private async Task<bool> RunCmdSendCamera1(Cmd_Type type,float r = 0)
+        {
+            if (cbTestCam1.Checked) return true;
+            int x = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur);
+            int y = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
+            switch (type)
+            {
+                case Cmd_Type.Start:
+                    string response = cameraClient12.SendCommand("HEB,1");
+                    await Task.Delay(500);
+                    if (!response.Contains("HEB,1")) return false;
+                    break;
+                case Cmd_Type.Send_Point:
+                    string cmd1 = $"HE,1,1,{x / 100.0f:F2},{y / 100.0f:F2},0,{r},0,0,0";
+                    response = cameraClient12.SendCommand(cmd1);
+                    if (!response.Contains("HE,1")) return false;
+                    break;
+                case Cmd_Type.End:
+                    response = cameraClient12.SendCommand("HEE,1");
+                    await Task.Delay(500);
+                    if (!response.Contains("HEE,1")) return false;
+                    break;
+                default:
+                    return false;
+            }
+            return true;
+        }
+
+        private async Task<bool> RunCmdSendCamera2(Cmd_Type type, float r = 0)
+        {
+            if (cbTestCam2.Checked) return true;
+            int x = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur);
+            int y = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
+            switch (type)
+            {
+                case Cmd_Type.Start:
+                    string response = cameraClient12.SendCommand("HEB,1");
+                    await Task.Delay(500);
+                    if (!response.Contains("HEB,1")) return false;
+                    break;
+                case Cmd_Type.Send_Point:
+                    string cmd1 = $"HE,1,1,{x / 100.0f:F2},{y / 100.0f:F2},0,{r},0,0,0";
+                    response = cameraClient12.SendCommand(cmd1);
+                    if (!response.Contains("HE,1")) return false;
+                    break;
+                case Cmd_Type.End:
+                    response = cameraClient12.SendCommand("HEE,1");
+                    await Task.Delay(500);
+                    if (!response.Contains("HEE,1")) return false;
+                    break;
+                default:
+                    return false;
+            }
+            return true;
+        }
+
         // Handeye functions for Camera 1 (Port 2)
-        private void btnCalPos1_Click(object sender, EventArgs e)
+        private async void btnCalPos1_Click(object sender, EventArgs e)
         {
             try
             {
-                // Doc toa do hien tai tu PLC (Port 2)
-                float curX = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur) / 100.0f;
-                float curY = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur) / 100.0f;
-                float curRI = PLCKey.ReadInt32(PLCAddresses.Data.P2_RI_Pos_Cur) / 10.0f;
+                if (cameraClient12 == null || !cameraClient12.IsConnected)
+                {
+                    MessageBox.Show("Chua ket noi camera 12! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                // Hien thi toa do hien tai
-                txtXPosCurrent1.Text = curX.ToString("F2");
-                txtYPosCurrent1.Text = curY.ToString("F2");
-                txtRPosCurrent1.Text = curRI.ToString("F2");
+                bool cmd_result = await RunCmdSendCamera1(Cmd_Type.Start);
+                if (!cmd_result) 
+                {
+                    MessageBox.Show("Bat dau handeye khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Lay buoc di chuyen
-                float stepX = float.Parse(txtXStep1.Text);
-                float stepY = float.Parse(txtYStep1.Text);
+                int stepX = int.Parse(txtXStep1.Text)*100;
+                int stepY = int.Parse(txtYStep1.Text)*100;
 
-                // Tinh toan 9 diem
+                // Tinh toan 9 diem 
                 // Diem 1: Trung tam (X, Y)
-                float x1 = curX;
-                float y1 = curY;
-                XY1Cam1.Text = $"{x1:F2},{y1:F2}";
+                int x1 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur);
+                int y1 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
+                await RunABSPosXYRCam1Async(x1, y1,0);
+                XY1Cam1.Text = $"{x1/100.0f:F2},{y1/100.0f:F2}";
+                XY1Cam1.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point,0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 1 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 2: (X+stepX, Y+stepY)
-                float x2 = curX + stepX;
-                float y2 = curY + stepY;
-                XY2Cam1.Text = $"{x2:F2},{y2:F2}";
+                int x2 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur) - stepX;
+                int y2 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
+                await RunABSPosXYRCam1Async(x2, y2,0);
+                XY2Cam1.Text = $"{x2/100.0f:F2},{y2/100.0f:F2}";
+                XY2Cam1.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 2 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 3: (X+2*stepX, Y+2*stepY)
-                float x3 = curX + 2 * stepX;
-                float y3 = curY + 2 * stepY;
-                XY3Cam1.Text = $"{x3:F2},{y3:F2}";
+                int x3 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur);
+                int y3 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur) + stepY;
+                await RunABSPosXYRCam1Async(x3, y3,0);
+                XY3Cam1.Text = $"{x3/100.0f:F2},{y3/100.0f:F2}";
+                XY3Cam1.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 3 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 4: (X+stepX, Y)
-                float x4 = curX + stepX;
-                float y4 = curY;
-                XY4Cam1.Text = $"{x4:F2},{y4:F2}";
+                int x4 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur) + stepX;
+                int y4 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
+                await RunABSPosXYRCam1Async(x4, y4,0);
+                XY4Cam1.Text = $"{x4/100.0f:F2},{y4/100.0f:F2}";
+                XY4Cam1.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 4 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 5: (X, Y+stepY)
-                float x5 = curX;
-                float y5 = curY + stepY;
-                XY5Cam1.Text = $"{x5:F2},{y5:F2}";
+                int x5 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur) + stepX;
+                int y5 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
+                await RunABSPosXYRCam1Async(x5, y5,0);
+                XY5Cam1.Text = $"{x5/100.0f:F2},{y5/100.0f:F2}";
+                XY5Cam1.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 5 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 6: (X, Y+2*stepY)
-                float x6 = curX;
-                float y6 = curY + 2 * stepY;
-                XY6Cam1.Text = $"{x6:F2},{y6:F2}";
+                int x6 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur);
+                int y6 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur) - stepY;
+                await RunABSPosXYRCam1Async(x6, y6,0);
+                XY6Cam1.Text = $"{x6/100.0f:F2},{y6/100.0f:F2}";
+                XY6Cam1.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 6 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 7: (X-stepX, Y-stepY)
-                float x7 = curX - stepX;
-                float y7 = curY - stepY;
-                XY7Cam1.Text = $"{x7:F2},{y7:F2}";
+                int x7 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur);
+                int y7 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur) - stepY;
+                await RunABSPosXYRCam1Async(x7, y7,0);
+                XY7Cam1.Text = $"{x7/100.0f:F2},{y7/100.0f:F2}";
+                XY7Cam1.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 7 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 8: (X+stepX, Y-stepY)
-                float x8 = curX + stepX;
-                float y8 = curY - stepY;
-                XY8Cam1.Text = $"{x8:F2},{y8:F2}";
+                int x8 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur) - stepX;
+                int y8 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
+                await RunABSPosXYRCam1Async(x8, y8,0);
+                XY8Cam1.Text = $"{x8/100.0f:F2},{y8/100.0f:F2}";
+                XY8Cam1.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 9 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 9: (X+2*stepX, Y-stepY)
-                float x9 = curX + 2 * stepX;
-                float y9 = curY - stepY;
-                XY9Cam1.Text = $"{x9:F2},{y9:F2}";
+                int x9 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur) - stepX;
+                int y9 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
+                await RunABSPosXYRCam1Async(x9, y9,0);
+                XY9Cam1.Text = $"{x9/100.0f:F2},{y9/100.0f:F2}";
+                XY9Cam1.BackColor = Color.Green;
 
-                // Tinh toan 2 diem R
-                float stepR = float.Parse(txtRStep1.Text);
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 9 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                // XYR1: Quay -stepR do (tru 1 don vi)
-                float r1 = curRI - 1;
-                XYR1Cam1.Text = $"{x1:F2},{y1:F2},{r1:F2}";
+                // Diem 10: (X+2*stepX, Y-stepY)
+                int x10 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur) + stepX;
+                int y10 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur) + stepY;
+                await RunABSPosXYRCam1Async(x10, y10,-100);
+                XYR1Cam1.Text = $"{x10 / 100.0f:F2},{y10 / 100.0f:F2}";
+                XYR1Cam1.BackColor = Color.Green;
 
-                // XYR2: Quay +stepR do (cong 1 don vi)
-                float r2 = curRI + 1;
-                XYR2Cam1.Text = $"{x1:F2},{y1:F2},{r2:F2}";
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, -10);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 10 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                MessageBox.Show("Da tinh toan xong 9 diem XY va 2 diem R cho Camera 1!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Diem 11: (X+2*stepX, Y-stepY)
+                int x11 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur);
+                int y11 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
+                await RunABSPosXYRCam1Async(x10, y10, 200);
+                XYR2Cam1.Text = $"{x10 / 100.0f:F2} , {y10 / 100.0f:F2}";
+                XYR2Cam1.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.Send_Point, 10);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 10 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                await Task.Delay(1000);
+
+                cmd_result = await RunCmdSendCamera1(Cmd_Type.End);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Ket thuc handeye khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                MessageBox.Show("Da tinh toan xong 11 diem XY va 2 diem R cho Camera 1!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -646,83 +843,180 @@ namespace PLCKeygen
             }
         }
 
-        // Handeye functions for Camera 2 (Port 4)
-        private void btnCalPos2_Click(object sender, EventArgs e)
+        // Handeye functions for Camera 34 (Port 4)
+        private async void btnCalPos2_Click(object sender, EventArgs e)
         {
             try
             {
-                // Doc toa do hien tai tu PLC (Port 4)
-                float curX = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur) / 100.0f;
-                float curY = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur) / 100.0f;
-                float curRI = PLCKey.ReadInt32(PLCAddresses.Data.P4_RI_Pos_Cur) / 10.0f;
+                if (cameraClient34 == null || !cameraClient34.IsConnected)
+                {
+                    MessageBox.Show("Chua ket noi camera 12! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                // Hien thi toa do hien tai
-                txtXPosCurrent2.Text = curX.ToString("F2");
-                txtYPosCurrent2.Text = curY.ToString("F2");
-                txtRPosCurrent2.Text = curRI.ToString("F2");
+                bool cmd_result = await RunCmdSendCamera2(Cmd_Type.Start);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Bat dau handeye khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Lay buoc di chuyen
-                float stepX = float.Parse(txtXStep2.Text);
-                float stepY = float.Parse(txtYStep2.Text);
+                int stepX = int.Parse(txtXStep2.Text) * 100;
+                int stepY = int.Parse(txtYStep2.Text) * 100;
 
-                // Tinh toan 9 diem
+                // Tinh toan 9 diem 
                 // Diem 1: Trung tam (X, Y)
-                float x1 = curX;
-                float y1 = curY;
-                XY1Cam2.Text = $"{x1:F2},{y1:F2}";
+                int x1 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur);
+                int y1 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
+                await RunABSPosXYRCam2Async(x1, y1, 0);
+                XY1Cam2.Text = $"{x1 / 100.0f:F2},{y1 / 100.0f:F2}";
+                XY1Cam2.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 1 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 2: (X+stepX, Y+stepY)
-                float x2 = curX + stepX;
-                float y2 = curY + stepY;
-                XY2Cam2.Text = $"{x2:F2},{y2:F2}";
+                int x2 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur) - stepX;
+                int y2 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
+                await RunABSPosXYRCam2Async(x2, y2, 0);
+                XY2Cam2.Text = $"{x2 / 100.0f:F2},{y2 / 100.0f:F2}";
+                XY2Cam2.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 2 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 3: (X+2*stepX, Y+2*stepY)
-                float x3 = curX + 2 * stepX;
-                float y3 = curY + 2 * stepY;
-                XY3Cam2.Text = $"{x3:F2},{y3:F2}";
+                int x3 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur);
+                int y3 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur) + stepY;
+                await RunABSPosXYRCam2Async(x3, y3, 0);
+                XY3Cam2.Text = $"{x3 / 100.0f:F2},{y3 / 100.0f:F2}";
+                XY3Cam2.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 3 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 4: (X+stepX, Y)
-                float x4 = curX + stepX;
-                float y4 = curY;
-                XY4Cam2.Text = $"{x4:F2},{y4:F2}";
+                int x4 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur) + stepX;
+                int y4 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
+                await RunABSPosXYRCam2Async(x4, y4, 0);
+                XY4Cam2.Text = $"{x4 / 100.0f:F2},{y4 / 100.0f:F2}";
+                XY4Cam2.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 4 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 5: (X, Y+stepY)
-                float x5 = curX;
-                float y5 = curY + stepY;
-                XY5Cam2.Text = $"{x5:F2},{y5:F2}";
+                int x5 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur) + stepX;
+                int y5 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
+                await RunABSPosXYRCam2Async(x5, y5, 0);
+                XY5Cam2.Text = $"{x5 / 100.0f:F2},{y5 / 100.0f:F2}";
+                XY5Cam2.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 5 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 6: (X, Y+2*stepY)
-                float x6 = curX;
-                float y6 = curY + 2 * stepY;
-                XY6Cam2.Text = $"{x6:F2},{y6:F2}";
+                int x6 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur);
+                int y6 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur) - stepY;
+                await RunABSPosXYRCam2Async(x6, y6, 0);
+                XY6Cam2.Text = $"{x6 / 100.0f:F2},{y6 / 100.0f:F2}";
+                XY6Cam2.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 6 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 7: (X-stepX, Y-stepY)
-                float x7 = curX - stepX;
-                float y7 = curY - stepY;
-                XY7Cam2.Text = $"{x7:F2},{y7:F2}";
+                int x7 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur);
+                int y7 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur) - stepY;
+                await RunABSPosXYRCam2Async(x7, y7, 0);
+                XY7Cam2.Text = $"{x7 / 100.0f:F2},{y7 / 100.0f:F2}";
+                XY7Cam2.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 7 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 8: (X+stepX, Y-stepY)
-                float x8 = curX + stepX;
-                float y8 = curY - stepY;
-                XY8Cam2.Text = $"{x8:F2},{y8:F2}";
+                int x8 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur) - stepX;
+                int y8 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
+                await RunABSPosXYRCam2Async(x8, y8, 0);
+                XY8Cam2.Text = $"{x8 / 100.0f:F2},{y8 / 100.0f:F2}";
+                XY8Cam2.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 9 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 // Diem 9: (X+2*stepX, Y-stepY)
-                float x9 = curX + 2 * stepX;
-                float y9 = curY - stepY;
-                XY9Cam2.Text = $"{x9:F2},{y9:F2}";
+                int x9 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur) - stepX;
+                int y9 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
+                await RunABSPosXYRCam2Async(x9, y9, 0);
+                XY9Cam2.Text = $"{x9 / 100.0f:F2},{y9 / 100.0f:F2}";
+                XY9Cam2.BackColor = Color.Green;
 
-                // Tinh toan 2 diem R
-                float stepR = float.Parse(txtRStep2.Text);
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 0);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 9 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                // XYR1: Quay -stepR do (tru 1 don vi)
-                float r1 = curRI - 1;
-                XYR1Cam2.Text = $"{x1:F2},{y1:F2},{r1:F2}";
+                // Diem 10: (X+2*stepX, Y-stepY)
+                int x10 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur) + stepX;
+                int y10 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur) + stepY;
+                await RunABSPosXYRCam2Async(x10, y10, -100);
+                XYR1Cam2.Text = $"{x10 / 100.0f:F2},{y10 / 100.0f:F2}";
+                XYR1Cam2.BackColor = Color.Green;
 
-                // XYR2: Quay +stepR do (cong 1 don vi)
-                float r2 = curRI + 1;
-                XYR2Cam2.Text = $"{x1:F2},{y1:F2},{r2:F2}";
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, -10);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 10 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-                MessageBox.Show("Da tinh toan xong 9 diem XY va 2 diem R cho Camera 2!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Diem 11: (X+2*stepX, Y-stepY)
+                int x11 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur);
+                int y11 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
+                await RunABSPosXYRCam2Async(x10, y10, 200);
+                XYR2Cam2.Text = $"{x10 / 100.0f:F2} , {y10 / 100.0f:F2}";
+                XYR2Cam2.BackColor = Color.Green;
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.Send_Point, 10);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Diem 10 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                await Task.Delay(1000);
+
+                cmd_result = await RunCmdSendCamera2(Cmd_Type.End);
+                if (!cmd_result)
+                {
+                    MessageBox.Show("Ket thuc handeye khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                MessageBox.Show("Da tinh toan xong 11 diem XY va 2 diem R cho Camera 1!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -769,448 +1063,9 @@ namespace PLCKeygen
             return true;
         }
 
-        // Start Handeye process for Camera 1 (Port 2)
-        private async void btnStartHandEye1_Click(object sender, EventArgs e)
+        private void XY5Cam1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (cameraClient12 == null || !cameraClient12.IsConnected)
-                {
-                    MessageBox.Show("Chua ket noi camera 12! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
 
-                // Reset flag stop
-                stopHandEye1 = false;
-
-                // Reset mau tat ca labels
-                XY1Cam1.BackColor = SystemColors.Control;
-                XY2Cam1.BackColor = SystemColors.Control;
-                XY3Cam1.BackColor = SystemColors.Control;
-                XY4Cam1.BackColor = SystemColors.Control;
-                XY5Cam1.BackColor = SystemColors.Control;
-                XY6Cam1.BackColor = SystemColors.Control;
-                XY7Cam1.BackColor = SystemColors.Control;
-                XY8Cam1.BackColor = SystemColors.Control;
-                XY9Cam1.BackColor = SystemColors.Control;
-                XYR1Cam1.BackColor = SystemColors.Control;
-                XYR2Cam1.BackColor = SystemColors.Control;
-
-                // Lay toa do da tinh toan tu labels
-                Label[] xyLabels = { XY1Cam1, XY2Cam1, XY3Cam1, XY4Cam1, XY5Cam1, XY6Cam1, XY7Cam1, XY8Cam1, XY9Cam1 };
-                float[,] points = new float[9, 2];
-
-                // Doc toa do hien tai de gui cho camera (diem 1)
-                float curX = 0, curY = 0, curRI = 0;
-
-                // Parse toa do tu labels
-                for (int i = 0; i < 9; i++)
-                {
-                    string[] coords = xyLabels[i].Text.Split(',');
-                    if (coords.Length >= 2)
-                    {
-                        points[i, 0] = float.Parse(coords[0].Trim());
-                        points[i, 1] = float.Parse(coords[1].Trim());
-                    }
-                }
-
-                // Parse toa do R tu labels XYR
-                string[] xyr1Coords = XYR1Cam1.Text.Split(',');
-                string[] xyr2Coords = XYR2Cam1.Text.Split(',');
-                float xyr1_x = 0, xyr1_y = 0, xyr1_r = 0;
-                float xyr2_x = 0, xyr2_y = 0, xyr2_r = 0;
-                float stepR = 0;
-
-                if (xyr1Coords.Length >= 3 && xyr2Coords.Length >= 3)
-                {
-                    xyr1_x = float.Parse(xyr1Coords[0].Trim());
-                    xyr1_y = float.Parse(xyr1Coords[1].Trim());
-                    xyr1_r = float.Parse(xyr1Coords[2].Trim());
-
-                    xyr2_x = float.Parse(xyr2Coords[0].Trim());
-                    xyr2_y = float.Parse(xyr2Coords[1].Trim());
-                    xyr2_r = float.Parse(xyr2Coords[2].Trim());
-
-                    stepR = float.Parse(txtRStep1.Text);
-                }
-
-                // Doc gia tri RI hien tai de gui cho camera (R = 0)
-                curRI = PLCKey.ReadInt32(PLCAddresses.Data.P2_RI_Pos_Cur) / 10.0f;
-
-                // Bat dau qua trinh Handeye
-                await Task.Run(async () =>
-                {
-                    try
-                    {
-                        // Gui lenh bat dau
-                        string response = cameraClient12.SendCommand("HEB,1");
-                        await Task.Delay(500);
-
-                        // Kiem tra phan hoi HEB,1
-                        if (!response.Contains("HEB,1"))
-                        {
-                            MessageBox.Show("Loi khi bat dau Handeye: Phan hoi khong hop le!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        // Chay tung diem XY
-                        for (int i = 0; i < 9; i++)
-                        {
-                            // Kiem tra neu nhan Stop
-                            if (stopHandEye1)
-                            {
-                                MessageBox.Show("Da dung qua trinh Handeye Camera 1!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                return;
-                            }
-
-                            // Gui toa do tu label xuong PLC
-                            short xPlc = (short)(points[i, 0] * 100);
-                            short yPlc = (short)(points[i, 1] * 100);
-                            short rPlc = (short)(curRI * 10); // Giu nguyen R
-
-                            PLCKey.WriteInt16("DM1282", xPlc);
-                            PLCKey.WriteInt16("DM1284", yPlc);
-                            PLCKey.WriteInt16("DM1286", rPlc);
-
-                            // Set bit de chay
-                            PLCKey.SetBit(PLCAddresses.Input.P2_XGo_ABS);
-                            await Task.Delay(100);
-                            PLCKey.SetBit(PLCAddresses.Input.P2_YGo_ABS);
-                            await Task.Delay(100);
-
-                            // Cho den khi hoan thanh (can them logic check status)
-                            await Task.Delay(2000);
-
-                            // Gui lenh cho camera voi toa do tu label
-                            string cmd = $"HE,1,{i + 1},{points[i, 0]:F2},{points[i, 1]:F2},0,0,0,0";
-                            response = cameraClient12.SendCommand(cmd);
-                            await Task.Delay(500);
-
-                            // Kiem tra phan hoi va doi mau
-                            if (!CheckCameraResponse("HE,1", response, xyLabels[i]))
-                            {
-                                MessageBox.Show($"Loi tai diem XY{i + 1}! Dung qua trinh Handeye.", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-
-                            // Delay 1s sau moi diem thanh cong
-                            await Task.Delay(1000);
-                        }
-
-                        // Kiem tra neu nhan Stop
-                        if (stopHandEye1)
-                        {
-                            MessageBox.Show("Da dung qua trinh Handeye Camera 1!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-
-                        // Xu ly 2 diem R
-                        // Diem R1: Quay -stepR do (su dung toa do tu XYR1Cam1)
-                        short r1Plc = (short)(xyr1_r * 10);
-
-                        PLCKey.WriteInt16("DM1282", (short)(xyr1_x * 100));
-                        PLCKey.WriteInt16("DM1284", (short)(xyr1_y * 100));
-                        PLCKey.WriteInt16("DM1286", r1Plc);
-
-                        PLCKey.SetBit(PLCAddresses.Input.P2_RIGo_ABS);
-                        await Task.Delay(2000);
-
-                        string cmd2 = $"HE,1,10,{xyr1_x:F2},{xyr1_y:F2},{-stepR:F2},0,0,0";
-                        response = cameraClient12.SendCommand(cmd2);
-                        await Task.Delay(500);
-
-                        // Kiem tra phan hoi XYR1
-                        if (!CheckCameraResponse("HE,1", response, XYR1Cam1))
-                        {
-                            MessageBox.Show("Loi tai diem XYR1 (R-)! Dung qua trinh Handeye.", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        // Delay 1s sau diem thanh cong
-                        await Task.Delay(1000);
-
-                        // Kiem tra neu nhan Stop
-                        if (stopHandEye1)
-                        {
-                            MessageBox.Show("Da dung qua trinh Handeye Camera 1!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-
-                        // Diem R2: Quay +stepR do (su dung toa do tu XYR2Cam1)
-                        short r2Plc = (short)(xyr2_r * 10);
-
-                        PLCKey.WriteInt16("DM1282", (short)(xyr2_x * 100));
-                        PLCKey.WriteInt16("DM1284", (short)(xyr2_y * 100));
-                        PLCKey.WriteInt16("DM1286", r2Plc);
-
-                        PLCKey.SetBit(PLCAddresses.Input.P2_RIGo_ABS);
-                        await Task.Delay(2000);
-
-                        cmd2 = $"HE,1,11,{xyr2_x:F2},{xyr2_y:F2},{stepR:F2},0,0,0";
-                        response = cameraClient12.SendCommand(cmd2);
-                        await Task.Delay(500);
-
-                        // Kiem tra phan hoi XYR2
-                        if (!CheckCameraResponse("HE,1", response, XYR2Cam1))
-                        {
-                            MessageBox.Show("Loi tai diem XYR2 (R+)! Dung qua trinh Handeye.", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        // Delay 1s sau diem thanh cong
-                        await Task.Delay(1000);
-
-                        // Ket thuc
-                        response = cameraClient12.SendCommand("HEE,1");
-
-                        // Kiem tra phan hoi HEE,1
-                        if (!response.Contains("HEE,1"))
-                        {
-                            MessageBox.Show("Loi khi ket thuc Handeye: Phan hoi khong hop le!", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Hoan thanh qua trinh Handeye cho Camera 1!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Loi trong qua trinh Handeye: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Loi: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Stop Handeye process for Camera 1
-        private void btnStopHandEye1_Click(object sender, EventArgs e)
-        {
-            stopHandEye1 = true;
-        }
-
-        // Start Handeye process for Camera 2 (Port 4)
-        private async void btnStartHandEye2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (cameraClient34 == null || !cameraClient34.IsConnected)
-                {
-                    MessageBox.Show("Chua ket noi camera 34! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                // Reset flag stop
-                stopHandEye2 = false;
-
-                // Reset mau tat ca labels
-                XY1Cam2.BackColor = SystemColors.Control;
-                XY2Cam2.BackColor = SystemColors.Control;
-                XY3Cam2.BackColor = SystemColors.Control;
-                XY4Cam2.BackColor = SystemColors.Control;
-                XY5Cam2.BackColor = SystemColors.Control;
-                XY6Cam2.BackColor = SystemColors.Control;
-                XY7Cam2.BackColor = SystemColors.Control;
-                XY8Cam2.BackColor = SystemColors.Control;
-                XY9Cam2.BackColor = SystemColors.Control;
-                XYR1Cam2.BackColor = SystemColors.Control;
-                XYR2Cam2.BackColor = SystemColors.Control;
-
-                // Lay toa do da tinh toan tu labels
-                Label[] xyLabels = { XY1Cam2, XY2Cam2, XY3Cam2, XY4Cam2, XY5Cam2, XY6Cam2, XY7Cam2, XY8Cam2, XY9Cam2 };
-                float[,] points = new float[9, 2];
-
-                // Doc toa do hien tai de gui cho camera (diem 1)
-                float curX = 0, curY = 0, curRI = 0;
-
-                // Parse toa do tu labels
-                for (int i = 0; i < 9; i++)
-                {
-                    string[] coords = xyLabels[i].Text.Split(',');
-                    if (coords.Length >= 2)
-                    {
-                        points[i, 0] = float.Parse(coords[0].Trim());
-                        points[i, 1] = float.Parse(coords[1].Trim());
-                    }
-                }
-
-                // Parse toa do R tu labels XYR
-                string[] xyr1Coords = XYR1Cam2.Text.Split(',');
-                string[] xyr2Coords = XYR2Cam2.Text.Split(',');
-                float xyr1_x = 0, xyr1_y = 0, xyr1_r = 0;
-                float xyr2_x = 0, xyr2_y = 0, xyr2_r = 0;
-                float stepR = 0;
-
-                if (xyr1Coords.Length >= 3 && xyr2Coords.Length >= 3)
-                {
-                    xyr1_x = float.Parse(xyr1Coords[0].Trim());
-                    xyr1_y = float.Parse(xyr1Coords[1].Trim());
-                    xyr1_r = float.Parse(xyr1Coords[2].Trim());
-
-                    xyr2_x = float.Parse(xyr2Coords[0].Trim());
-                    xyr2_y = float.Parse(xyr2Coords[1].Trim());
-                    xyr2_r = float.Parse(xyr2Coords[2].Trim());
-
-                    stepR = float.Parse(txtRStep2.Text);
-                }
-
-                // Doc gia tri RI hien tai de gui cho camera (R = 0)
-                curRI = PLCKey.ReadInt32(PLCAddresses.Data.P4_RI_Pos_Cur) / 10.0f;
-
-                // Bat dau qua trinh Handeye
-                await Task.Run(async () =>
-                {
-                    try
-                    {
-                        // Gui lenh bat dau
-                        string response = cameraClient34.SendCommand("HEB,1");
-                        await Task.Delay(500);
-
-                        // Kiem tra phan hoi HEB,1
-                        if (!response.Contains("HEB,1"))
-                        {
-                            MessageBox.Show("Loi khi bat dau Handeye: Phan hoi khong hop le!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        // Chay tung diem XY
-                        for (int i = 0; i < 9; i++)
-                        {
-                            // Kiem tra neu nhan Stop
-                            if (stopHandEye2)
-                            {
-                                MessageBox.Show("Da dung qua trinh Handeye Camera 2!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                return;
-                            }
-
-                            // Gui toa do tu label xuong PLC
-                            short xPlc = (short)(points[i, 0] * 100);
-                            short yPlc = (short)(points[i, 1] * 100);
-                            short rPlc = (short)(curRI * 10); // Giu nguyen R
-
-                            PLCKey.WriteInt16("DM1682", xPlc);
-                            PLCKey.WriteInt16("DM1684", yPlc);
-                            PLCKey.WriteInt16("DM1686", rPlc);
-
-                            // Set bit de chay
-                            PLCKey.SetBit(PLCAddresses.Input.P4_XGo_ABS);
-                            await Task.Delay(100);
-                            PLCKey.SetBit(PLCAddresses.Input.P4_YGo_ABS);
-                            await Task.Delay(100);
-
-                            // Cho den khi hoan thanh (can them logic check status)
-                            await Task.Delay(2000);
-
-                            // Gui lenh cho camera voi toa do tu label
-                            string cmd = $"HE,1,{i + 1},{points[i, 0]:F2},{points[i, 1]:F2},0,0,0,0";
-                            response = cameraClient34.SendCommand(cmd);
-                            await Task.Delay(500);
-
-                            // Kiem tra phan hoi va doi mau
-                            if (!CheckCameraResponse("HE,1", response, xyLabels[i]))
-                            {
-                                MessageBox.Show($"Loi tai diem XY{i + 1}! Dung qua trinh Handeye.", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-
-                            // Delay 1s sau moi diem thanh cong
-                            await Task.Delay(1000);
-                        }
-
-                        // Kiem tra neu nhan Stop
-                        if (stopHandEye2)
-                        {
-                            MessageBox.Show("Da dung qua trinh Handeye Camera 2!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-
-                        // Xu ly 2 diem R
-                        // Diem R1: Quay -stepR do (su dung toa do tu XYR1Cam2)
-                        short r1Plc = (short)(xyr1_r * 10);
-
-                        PLCKey.WriteInt16("DM1682", (short)(xyr1_x * 100));
-                        PLCKey.WriteInt16("DM1684", (short)(xyr1_y * 100));
-                        PLCKey.WriteInt16("DM1686", r1Plc);
-
-                        PLCKey.SetBit(PLCAddresses.Input.P4_RIGo_ABS);
-                        await Task.Delay(2000);
-
-                        string cmd2 = $"HE,1,10,{xyr1_x:F2},{xyr1_y:F2},{-stepR:F2},0,0,0";
-                        response = cameraClient34.SendCommand(cmd2);
-                        await Task.Delay(500);
-
-                        // Kiem tra phan hoi XYR1
-                        if (!CheckCameraResponse("HE,1", response, XYR1Cam2))
-                        {
-                            MessageBox.Show("Loi tai diem XYR1 (R-)! Dung qua trinh Handeye.", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        // Delay 1s sau diem thanh cong
-                        await Task.Delay(1000);
-
-                        // Kiem tra neu nhan Stop
-                        if (stopHandEye2)
-                        {
-                            MessageBox.Show("Da dung qua trinh Handeye Camera 2!", "Thong bao", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-
-                        // Diem R2: Quay +stepR do (su dung toa do tu XYR2Cam2)
-                        short r2Plc = (short)(xyr2_r * 10);
-
-                        PLCKey.WriteInt16("DM1682", (short)(xyr2_x * 100));
-                        PLCKey.WriteInt16("DM1684", (short)(xyr2_y * 100));
-                        PLCKey.WriteInt16("DM1686", r2Plc);
-
-                        PLCKey.SetBit(PLCAddresses.Input.P4_RIGo_ABS);
-                        await Task.Delay(2000);
-
-                        cmd2 = $"HE,1,11,{xyr2_x:F2},{xyr2_y:F2},{stepR:F2},0,0,0";
-                        response = cameraClient34.SendCommand(cmd2);
-                        await Task.Delay(500);
-
-                        // Kiem tra phan hoi XYR2
-                        if (!CheckCameraResponse("HE,1", response, XYR2Cam2))
-                        {
-                            MessageBox.Show("Loi tai diem XYR2 (R+)! Dung qua trinh Handeye.", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
-                        // Delay 1s sau diem thanh cong
-                        await Task.Delay(1000);
-
-                        // Ket thuc
-                        response = cameraClient34.SendCommand("HEE,1");
-
-                        // Kiem tra phan hoi HEE,1
-                        if (!response.Contains("HEE,1"))
-                        {
-                            MessageBox.Show("Loi khi ket thuc Handeye: Phan hoi khong hop le!", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Hoan thanh qua trinh Handeye cho Camera 2!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Loi trong qua trinh Handeye: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                });
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Loi: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Stop Handeye process for Camera 2
-        private void btnStopHandEye2_Click(object sender, EventArgs e)
-        {
-            stopHandEye2 = true;
         }
     }
 }

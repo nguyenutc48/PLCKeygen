@@ -29,6 +29,7 @@ namespace PLCKeygen
         public static class Input
         {
             #region Port 1 Jog
+            public const string P1_Step_Jog_Mode =  "MR02002";
             public const string P1_XJog_Plus =  "MR43701";
             public const string P1_XJog_Minus = "MR43702";
             public const string P1_XHome =      "MR43700";
@@ -68,6 +69,7 @@ namespace PLCKeygen
             #endregion
 
             #region Port 2 Jog
+            public const string P2_Step_Jog_Mode = "MR00002";
             public const string P2_XJog_Plus =  "MR40101";
             public const string P2_XJog_Minus = "MR40102";
             public const string P2_XHome =      "MR40100";
@@ -107,81 +109,83 @@ namespace PLCKeygen
             #endregion
 
             #region Port 3 Jog
-            public const string P3_XJog_Plus = "MR45501";
+            public const string P3_Step_Jog_Mode = "MR03002";
+            public const string P3_XJog_Plus =  "MR45501";
             public const string P3_XJog_Minus = "MR45502";
-            public const string P3_XHome = "MR45500";
-            public const string P3_XReset = "MR45505";
-            public const string P3_XGo_ABS = "MR45503";
-            public const string P3_XGo_INC = "MR45504";
-            public const string P3_YJog_Plus = "MR45801";
+            public const string P3_XHome =      "MR45500";
+            public const string P3_XReset =     "MR45505";
+            public const string P3_XGo_ABS =    "MR45503";
+            public const string P3_XGo_INC =    "MR45504";
+            public const string P3_YJog_Plus =  "MR45801";
             public const string P3_YJog_Minus = "MR45802";
-            public const string P3_YHome = "MR45800";
-            public const string P3_YReset = "MR45805";
-            public const string P3_YGo_ABS = "MR45803";
-            public const string P3_YGo_INC = "MR45804";
-            public const string P3_ZJog_Plus = "MR46101";
+            public const string P3_YHome =      "MR45800";
+            public const string P3_YReset =     "MR45805";
+            public const string P3_YGo_ABS =    "MR45803";
+            public const string P3_YGo_INC =    "MR45804";
+            public const string P3_ZJog_Plus =  "MR46101";
             public const string P3_ZJog_Minus = "MR46102";
-            public const string P3_ZHome = "MR46100";
-            public const string P3_ZReset = "MR46105";
-            public const string P3_ZGo_ABS = "MR46103";
-            public const string P3_ZGo_INC = "MR46104";
+            public const string P3_ZHome =      "MR46100";
+            public const string P3_ZReset =     "MR46105";
+            public const string P3_ZGo_ABS =    "MR46103";
+            public const string P3_ZGo_INC =    "MR46104";
             public const string P3_RIJog_Plus = "MR46401";
-            public const string P3_RIJog_Minus = "MR46402";
-            public const string P3_RIHome = "MR46400";
-            public const string P3_RIReset = "MR46405";
-            public const string P3_RIGo_ABS = "MR46403";
-            public const string P3_RIGo_INC = "MR46404";
+            public const string P3_RIJog_Minus ="MR46402";
+            public const string P3_RIHome =     "MR46400";
+            public const string P3_RIReset =    "MR46405";
+            public const string P3_RIGo_ABS =   "MR46403";
+            public const string P3_RIGo_INC =   "MR46404";
             public const string P3_ROJog_Plus = "MR46701";
-            public const string P3_ROJog_Minus = "MR46702";
-            public const string P3_ROHome = "MR46700";
-            public const string P3_ROReset = "MR46705";
-            public const string P3_ROGo_ABS = "MR46703";
-            public const string P3_ROGo_INC = "MR46704";
-            public const string P3_FJog_Plus = "MR47001";
+            public const string P3_ROJog_Minus ="MR46702";
+            public const string P3_ROHome =     "MR46700";
+            public const string P3_ROReset =    "MR46705";
+            public const string P3_ROGo_ABS =   "MR46703";
+            public const string P3_ROGo_INC =   "MR46704";
+            public const string P3_FJog_Plus =  "MR47001";
             public const string P3_FJog_Minus = "MR47002";
-            public const string P3_FHome = "MR47000";
-            public const string P3_FReset = "MR47005";
-            public const string P3_FGo_ABS = "MR47003";
-            public const string P3_FGo_INC = "MR47004";
+            public const string P3_FHome =      "MR47000";
+            public const string P3_FReset =     "MR47005";
+            public const string P3_FGo_ABS =    "MR47003";
+            public const string P3_FGo_INC =    "MR47004";
             #endregion
 
             #region Port 4 Jog
-            public const string P4_XJog_Plus = "MR41901";
+            public const string P4_Step_Jog_Mode = "MR01002";
+            public const string P4_XJog_Plus =  "MR41901";
             public const string P4_XJog_Minus = "MR41902";
-            public const string P4_XHome = "MR41900";
-            public const string P4_XReset = "MR41905";
-            public const string P4_XGo_ABS = "MR41903";
-            public const string P4_XGo_INC = "MR41904";
-            public const string P4_YJog_Plus = "MR42201";
+            public const string P4_XHome =      "MR41900";
+            public const string P4_XReset =     "MR41905";
+            public const string P4_XGo_ABS =    "MR41903";
+            public const string P4_XGo_INC =    "MR41904";
+            public const string P4_YJog_Plus =  "MR42201";
             public const string P4_YJog_Minus = "MR42202";
-            public const string P4_YHome = "MR42200";
-            public const string P4_YReset = "MR42205";
-            public const string P4_YGo_ABS = "MR42203";
-            public const string P4_YGo_INC = "MR42204";
-            public const string P4_ZJog_Plus = "MR42501";
+            public const string P4_YHome =      "MR42200";
+            public const string P4_YReset =     "MR42205";
+            public const string P4_YGo_ABS =    "MR42203";
+            public const string P4_YGo_INC =    "MR42204";
+            public const string P4_ZJog_Plus =  "MR42501";
             public const string P4_ZJog_Minus = "MR42502";
-            public const string P4_ZHome = "MR42500";
-            public const string P4_ZReset = "MR42505";
-            public const string P4_ZGo_ABS = "MR42503";
-            public const string P4_ZGo_INC = "MR42504";
-            public const string P4_RIJog_Plus = "MR42501";
-            public const string P4_RIJog_Minus = "MR42502";
-            public const string P4_RIHome = "MR42500";
-            public const string P4_RIReset = "MR42505";
-            public const string P4_RIGo_ABS = "MR42503";
-            public const string P4_RIGo_INC = "MR42504";
-            public const string P4_ROJog_Plus = "MR42801";
-            public const string P4_ROJog_Minus = "MR42802";
-            public const string P4_ROHome = "MR42800";
-            public const string P4_ROReset = "MR42805";
-            public const string P4_ROGo_ABS = "MR42803";
-            public const string P4_ROGo_INC = "MR42804";
-            public const string P4_FJog_Plus = "MR43101";
-            public const string P4_FJog_Minus = "MR43102";
-            public const string P4_FHome = "MR43100";
-            public const string P4_FReset = "MR43105";
-            public const string P4_FGo_ABS = "MR43103";
-            public const string P4_FGo_INC = "MR43104";
+            public const string P4_ZHome =      "MR42500";
+            public const string P4_ZReset =     "MR42505";
+            public const string P4_ZGo_ABS =    "MR42503";
+            public const string P4_ZGo_INC =    "MR42504";
+            public const string P4_RIJog_Plus = "MR42801";
+            public const string P4_RIJog_Minus ="MR42802";
+            public const string P4_RIHome =     "MR42800";
+            public const string P4_RIReset =    "MR42805";
+            public const string P4_RIGo_ABS =   "MR42803";
+            public const string P4_RIGo_INC =   "MR42804";
+            public const string P4_ROJog_Plus = "MR43101";
+            public const string P4_ROJog_Minus ="MR43102";
+            public const string P4_ROHome =     "MR43100";
+            public const string P4_ROReset =    "MR43105";
+            public const string P4_ROGo_ABS =   "MR43103";
+            public const string P4_ROGo_INC =   "MR43104";
+            public const string P4_FJog_Plus =  "MR43401";
+            public const string P4_FJog_Minus = "MR43402";
+            public const string P4_FHome =      "MR43400";
+            public const string P4_FReset =     "MR43405";
+            public const string P4_FGo_ABS =    "MR43403";
+            public const string P4_FGo_INC =    "MR43404";
             #endregion
         }
 
@@ -208,6 +212,10 @@ namespace PLCKeygen
             public const string P1_RO_Pos_Cur = "TM338";
             public const string P1_Z_Pos_Cur =  "TM340";
             public const string P1_F_Pos_Cur =  "TM344";
+            public const string P1_X_ABS_Setpoint =     "DM370";
+            public const string P1_Y_ABS_Setpoint =     "DM400";
+            public const string P1_RI_ABS_Setpoint =    "DM460";
+            public const string P1_RI_INC_Setpoint =    "DM464";
 
             public const string P2_X_Pos_Cur =  "TM300";
             public const string P2_RI_Pos_Cur = "TM302";
@@ -215,6 +223,10 @@ namespace PLCKeygen
             public const string P2_RO_Pos_Cur = "TM306";
             public const string P2_Z_Pos_Cur =  "TM308";
             public const string P2_F_Pos_Cur =  "TM312";
+            public const string P2_X_ABS_Setpoint =     "DM10";
+            public const string P2_Y_ABS_Setpoint =     "DM40";
+            public const string P2_RI_ABS_Setpoint =    "DM100";
+            public const string P2_RI_INC_Setpoint =    "DM104";
 
             public const string P3_X_Pos_Cur =  "TM348";
             public const string P3_RI_Pos_Cur = "TM350";
@@ -222,6 +234,10 @@ namespace PLCKeygen
             public const string P3_RO_Pos_Cur = "TM354";
             public const string P3_Z_Pos_Cur =  "TM356";
             public const string P3_F_Pos_Cur =  "TM360";
+            public const string P3_X_ABS_Setpoint =     "DM550";
+            public const string P3_Y_ABS_Setpoint =     "DM580";
+            public const string P3_RI_ABS_Setpoint =    "DM640";
+            public const string P3_RI_INC_Setpoint =    "DM644";
 
             public const string P4_X_Pos_Cur =  "TM316";
             public const string P4_RI_Pos_Cur = "TM318";
@@ -229,6 +245,11 @@ namespace PLCKeygen
             public const string P4_RO_Pos_Cur = "TM322";
             public const string P4_Z_Pos_Cur =  "TM324";
             public const string P4_F_Pos_Cur =  "TM328";
+            public const string P4_X_ABS_Setpoint =     "DM190";
+            public const string P4_Y_ABS_Setpoint =     "DM220";
+            public const string P4_RI_ABS_Setpoint =    "DM280";
+            public const string P4_RI_INC_Setpoint =    "DM284";
+
         }
 
     }
