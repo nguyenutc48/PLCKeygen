@@ -609,6 +609,7 @@ namespace PLCKeygen
         private async Task<bool> RunCmdSendCamera1(Cmd_Type type,float r = 0)
         {
             if (cbTestCam1.Checked) return true;
+            if (cameraClient12 == null || !cameraClient12.IsConnected) return false;
             int x = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur);
             int y = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
             switch (type)
@@ -637,6 +638,8 @@ namespace PLCKeygen
         private async Task<bool> RunCmdSendCamera2(Cmd_Type type, float r = 0)
         {
             if (cbTestCam2.Checked) return true;
+            if (cameraClient34 == null || !cameraClient34.IsConnected) return false;
+
             int x = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur);
             int y = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
             switch (type)
@@ -667,12 +670,6 @@ namespace PLCKeygen
         {
             try
             {
-                if (cameraClient12 == null || !cameraClient12.IsConnected)
-                {
-                    MessageBox.Show("Chua ket noi camera 12! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
                 bool cmd_result = await RunCmdSendCamera1(Cmd_Type.Start);
                 if (!cmd_result) 
                 {
@@ -848,12 +845,6 @@ namespace PLCKeygen
         {
             try
             {
-                if (cameraClient34 == null || !cameraClient34.IsConnected)
-                {
-                    MessageBox.Show("Chua ket noi camera 12! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
                 bool cmd_result = await RunCmdSendCamera2(Cmd_Type.Start);
                 if (!cmd_result)
                 {
