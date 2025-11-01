@@ -701,17 +701,17 @@ namespace PLCKeygen
             switch (type)
             {
                 case Cmd_Type.Start:
-                    string response = cameraClient12.SendCommand("HEB,1");
+                    string response = cameraClient34.SendCommand("HEB,1");
                     await Task.Delay(500);
                     if (!response.Contains("HEB,1")) return false;
                     break;
                 case Cmd_Type.Send_Point:
                     string cmd1 = $"HE,1,1,{x / 100.0f:F2},{y / 100.0f:F2},0,{r},0,0,0";
-                    response = cameraClient12.SendCommand(cmd1);
+                    response = cameraClient34.SendCommand(cmd1);
                     if (!response.Contains("HE,1")) return false;
                     break;
                 case Cmd_Type.End:
-                    response = cameraClient12.SendCommand("HEE,1");
+                    response = cameraClient34.SendCommand("HEE,1");
                     await Task.Delay(500);
                     if (!response.Contains("HEE,1")) return false;
                     break;
@@ -888,6 +888,8 @@ namespace PLCKeygen
                     MessageBox.Show("Ket thuc handeye khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
+                await RunABSPosXYRCam1Async(x11, y11, -100);
+
                 MessageBox.Show("Da tinh toan xong 11 diem XY va 2 diem R cho Camera 1!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -1062,6 +1064,8 @@ namespace PLCKeygen
                 {
                     MessageBox.Show("Ket thuc handeye khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                await RunABSPosXYRCam2Async(x11, y11, -100);
 
                 MessageBox.Show("Da tinh toan xong 11 diem XY va 2 diem R cho Camera 1!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
