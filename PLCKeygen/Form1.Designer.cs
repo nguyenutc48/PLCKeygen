@@ -70,8 +70,8 @@
             this.btnResetAll = new System.Windows.Forms.Button();
             this.grbJogControl = new System.Windows.Forms.GroupBox();
             this.groupBox46 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rbtTeachingMode = new System.Windows.Forms.RadioButton();
+            this.rbtJogMode = new System.Windows.Forms.RadioButton();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.rbtPort4 = new System.Windows.Forms.RadioButton();
             this.rbtPort3 = new System.Windows.Forms.RadioButton();
@@ -825,9 +825,9 @@
             // btnHomeAll
             // 
             this.btnHomeAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeAll.Location = new System.Drawing.Point(726, 450);
+            this.btnHomeAll.Location = new System.Drawing.Point(726, 428);
             this.btnHomeAll.Name = "btnHomeAll";
-            this.btnHomeAll.Size = new System.Drawing.Size(229, 47);
+            this.btnHomeAll.Size = new System.Drawing.Size(229, 60);
             this.btnHomeAll.TabIndex = 12;
             this.btnHomeAll.Text = "Origin All";
             this.btnHomeAll.UseVisualStyleBackColor = true;
@@ -837,9 +837,9 @@
             // 
             this.btnResetAll.BackColor = System.Drawing.Color.Orange;
             this.btnResetAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetAll.Location = new System.Drawing.Point(726, 513);
+            this.btnResetAll.Location = new System.Drawing.Point(726, 497);
             this.btnResetAll.Name = "btnResetAll";
-            this.btnResetAll.Size = new System.Drawing.Size(229, 47);
+            this.btnResetAll.Size = new System.Drawing.Size(229, 60);
             this.btnResetAll.TabIndex = 4;
             this.btnResetAll.Text = "Reset All";
             this.btnResetAll.UseVisualStyleBackColor = false;
@@ -860,8 +860,8 @@
             // 
             // groupBox46
             // 
-            this.groupBox46.Controls.Add(this.radioButton3);
-            this.groupBox46.Controls.Add(this.radioButton4);
+            this.groupBox46.Controls.Add(this.rbtTeachingMode);
+            this.groupBox46.Controls.Add(this.rbtJogMode);
             this.groupBox46.Location = new System.Drawing.Point(369, 6);
             this.groupBox46.Name = "groupBox46";
             this.groupBox46.Size = new System.Drawing.Size(331, 45);
@@ -869,27 +869,27 @@
             this.groupBox46.TabStop = false;
             this.groupBox46.Text = "Chế độ";
             // 
-            // radioButton3
+            // rbtTeachingMode
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(237, 20);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(70, 17);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.Text = "Teaching";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtTeachingMode.AutoSize = true;
+            this.rbtTeachingMode.Location = new System.Drawing.Point(237, 20);
+            this.rbtTeachingMode.Name = "rbtTeachingMode";
+            this.rbtTeachingMode.Size = new System.Drawing.Size(70, 17);
+            this.rbtTeachingMode.TabIndex = 1;
+            this.rbtTeachingMode.Text = "Teaching";
+            this.rbtTeachingMode.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbtJogMode
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
-            this.radioButton4.Location = new System.Drawing.Point(105, 20);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(69, 17);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Chạy Jog";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbtJogMode.AutoSize = true;
+            this.rbtJogMode.Checked = true;
+            this.rbtJogMode.Location = new System.Drawing.Point(105, 20);
+            this.rbtJogMode.Name = "rbtJogMode";
+            this.rbtJogMode.Size = new System.Drawing.Size(69, 17);
+            this.rbtJogMode.TabIndex = 0;
+            this.rbtJogMode.TabStop = true;
+            this.rbtJogMode.Text = "Chạy Jog";
+            this.rbtJogMode.UseVisualStyleBackColor = true;
             // 
             // groupBox22
             // 
@@ -1773,7 +1773,7 @@
             this.grpTeachingSocket.Enabled = false;
             this.grpTeachingSocket.Location = new System.Drawing.Point(720, 3);
             this.grpTeachingSocket.Name = "grpTeachingSocket";
-            this.grpTeachingSocket.Size = new System.Drawing.Size(242, 432);
+            this.grpTeachingSocket.Size = new System.Drawing.Size(242, 412);
             this.grpTeachingSocket.TabIndex = 11;
             this.grpTeachingSocket.TabStop = false;
             this.grpTeachingSocket.Text = "Teaching vị trí socket";
@@ -1782,18 +1782,19 @@
             // 
             this.groupBox20.Controls.Add(this.groupBox40);
             this.groupBox20.Controls.Add(this.groupBox43);
-            this.groupBox20.Location = new System.Drawing.Point(6, 318);
+            this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox20.Location = new System.Drawing.Point(6, 304);
             this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(229, 103);
+            this.groupBox20.Size = new System.Drawing.Size(229, 102);
             this.groupBox20.TabIndex = 8;
             this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "Vị trí camera";
+            this.groupBox20.Text = "Camera";
             // 
             // groupBox40
             // 
             this.groupBox40.Controls.Add(this.button5);
             this.groupBox40.Controls.Add(this.button6);
-            this.groupBox40.Location = new System.Drawing.Point(117, 20);
+            this.groupBox40.Location = new System.Drawing.Point(117, 15);
             this.groupBox40.Name = "groupBox40";
             this.groupBox40.Size = new System.Drawing.Size(105, 76);
             this.groupBox40.TabIndex = 5;
@@ -1822,7 +1823,7 @@
             // 
             this.groupBox43.Controls.Add(this.button9);
             this.groupBox43.Controls.Add(this.button10);
-            this.groupBox43.Location = new System.Drawing.Point(6, 20);
+            this.groupBox43.Location = new System.Drawing.Point(6, 15);
             this.groupBox43.Name = "groupBox43";
             this.groupBox43.Size = new System.Drawing.Size(105, 76);
             this.groupBox43.TabIndex = 4;
@@ -1851,18 +1852,18 @@
             // 
             this.groupBox31.Controls.Add(this.groupBox33);
             this.groupBox31.Controls.Add(this.groupBox35);
-            this.groupBox31.Location = new System.Drawing.Point(6, 209);
+            this.groupBox31.Location = new System.Drawing.Point(6, 198);
             this.groupBox31.Name = "groupBox31";
-            this.groupBox31.Size = new System.Drawing.Size(229, 103);
+            this.groupBox31.Size = new System.Drawing.Size(229, 100);
             this.groupBox31.TabIndex = 7;
             this.groupBox31.TabStop = false;
-            this.groupBox31.Text = "Vị trí gấp socket";
+            this.groupBox31.Text = "Gập socket";
             // 
             // groupBox33
             // 
             this.groupBox33.Controls.Add(this.button45);
             this.groupBox33.Controls.Add(this.button46);
-            this.groupBox33.Location = new System.Drawing.Point(117, 20);
+            this.groupBox33.Location = new System.Drawing.Point(117, 16);
             this.groupBox33.Name = "groupBox33";
             this.groupBox33.Size = new System.Drawing.Size(105, 76);
             this.groupBox33.TabIndex = 5;
@@ -1891,7 +1892,7 @@
             // 
             this.groupBox35.Controls.Add(this.button49);
             this.groupBox35.Controls.Add(this.button50);
-            this.groupBox35.Location = new System.Drawing.Point(6, 20);
+            this.groupBox35.Location = new System.Drawing.Point(6, 16);
             this.groupBox35.Name = "groupBox35";
             this.groupBox35.Size = new System.Drawing.Size(105, 76);
             this.groupBox35.TabIndex = 4;
@@ -1923,7 +1924,7 @@
             this.groupBox41.Controls.Add(this.groupBox45);
             this.groupBox41.Location = new System.Drawing.Point(6, 16);
             this.groupBox41.Name = "groupBox41";
-            this.groupBox41.Size = new System.Drawing.Size(229, 185);
+            this.groupBox41.Size = new System.Drawing.Size(229, 176);
             this.groupBox41.TabIndex = 1;
             this.groupBox41.TabStop = false;
             this.groupBox41.Text = "Vị trí socket";
@@ -1932,7 +1933,7 @@
             // 
             this.groupBox42.Controls.Add(this.button59);
             this.groupBox42.Controls.Add(this.button60);
-            this.groupBox42.Location = new System.Drawing.Point(117, 101);
+            this.groupBox42.Location = new System.Drawing.Point(117, 93);
             this.groupBox42.Name = "groupBox42";
             this.groupBox42.Size = new System.Drawing.Size(105, 76);
             this.groupBox42.TabIndex = 6;
@@ -1961,7 +1962,7 @@
             // 
             this.groupBox44.Controls.Add(this.button63);
             this.groupBox44.Controls.Add(this.button64);
-            this.groupBox44.Location = new System.Drawing.Point(6, 101);
+            this.groupBox44.Location = new System.Drawing.Point(6, 93);
             this.groupBox44.Name = "groupBox44";
             this.groupBox44.Size = new System.Drawing.Size(105, 76);
             this.groupBox44.TabIndex = 5;
@@ -1990,7 +1991,7 @@
             // 
             this.groupBox45.Controls.Add(this.button65);
             this.groupBox45.Controls.Add(this.button66);
-            this.groupBox45.Location = new System.Drawing.Point(6, 19);
+            this.groupBox45.Location = new System.Drawing.Point(6, 14);
             this.groupBox45.Name = "groupBox45";
             this.groupBox45.Size = new System.Drawing.Size(105, 76);
             this.groupBox45.TabIndex = 4;
@@ -4534,8 +4535,8 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button btnResetAll;
         private System.Windows.Forms.GroupBox groupBox46;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rbtTeachingMode;
+        private System.Windows.Forms.RadioButton rbtJogMode;
         private System.Windows.Forms.Button btnHomeAll;
         private System.Windows.Forms.GroupBox groupBox47;
         private System.Windows.Forms.RadioButton rbtIOPort4;
