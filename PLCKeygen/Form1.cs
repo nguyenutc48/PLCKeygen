@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.VisualBasic;
 
 namespace PLCKeygen
 {
@@ -27,6 +28,9 @@ namespace PLCKeygen
 
         // IO tab tracking
         private int selectedIOPort = 1;  // 1-4 for IO tab
+
+        // Teaching mode password
+        private const string TEACHING_PASSWORD = "1234";
 
         public Form1()
         {
@@ -54,6 +58,10 @@ namespace PLCKeygen
             rbtIOPort2.CheckedChanged += IOPortRadioButton_CheckedChanged;
             rbtIOPort3.CheckedChanged += IOPortRadioButton_CheckedChanged;
             rbtIOPort4.CheckedChanged += IOPortRadioButton_CheckedChanged;
+
+            // Setup radio button event handlers for Teaching mode
+            rbtJogMode.CheckedChanged += TeachingModeRadioButton_CheckedChanged;
+            rbtTeachingMode.CheckedChanged += TeachingModeRadioButton_CheckedChanged;
 
             rbtX.CheckedChanged += AxisRadioButton_CheckedChanged;
             rbtY.CheckedChanged += AxisRadioButton_CheckedChanged;
@@ -122,6 +130,10 @@ namespace PLCKeygen
 
             // Set default IO port
             rbtIOPort1.Checked = true;
+
+            // Initialize Teaching groups as disabled (Jog mode is default)
+            grpTeachingSocket.Enabled = false;
+            grpTeachingTray.Enabled = false;
 
             // Load initial Speed and Step values from PLC
             LoadAxisSpeedAndStep();
@@ -1587,6 +1599,43 @@ namespace PLCKeygen
                 // Immediately update IO displays for new port
                 UpdateIOInputs();
                 UpdateIOOutputs();
+            }
+        }
+
+        // Handle Teaching mode radio button changes with password protection
+        private void TeachingModeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                if (rb == rbtJogMode)
+                {
+                    // Disable teaching groups when switching to Jog mode
+                    grpTeachingSocket.Enabled = false;
+                    grpTeachingTray.Enabled = false;
+                }
+                else if (rb == rbtTeachingMode)
+                {
+                    // Show password dialog when switching to Teaching mode
+                    string password = Interaction.InputBox(
+                        "Nhập mật khẩu để vào chế độ Teaching:",
+                        "Teaching Mode Password",
+                        "", -1, -1);
+
+                    if (password == TEACHING_PASSWORD)
+                    {
+                        // Correct password - enable teaching groups
+                        grpTeachingSocket.Enabled = true;
+                        grpTeachingTray.Enabled = true;
+                    }
+                    else
+                    {
+                        // Incorrect password - show error and revert to Jog mode
+                        MessageBox.Show("Mật khẩu không đúng!", "Error",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        rbtJogMode.Checked = true; // Revert to Jog mode
+                    }
+                }
             }
         }
 
