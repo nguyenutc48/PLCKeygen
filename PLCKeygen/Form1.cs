@@ -25,6 +25,9 @@ namespace PLCKeygen
         private string selectedAxis = "X";  // X, Y, Z, RI, RO, F
         private bool isJogMode = true;  // true=JOG, false=STEP
 
+        // IO tab tracking
+        private int selectedIOPort = 1;  // 1-4 for IO tab
+
         public Form1()
         {
             InitializeComponent();
@@ -38,11 +41,17 @@ namespace PLCKeygen
             this.KeyDown += Form1_KeyDown;
             this.KeyUp += Form1_KeyUp;
 
-            // Setup radio button event handlers
+            // Setup radio button event handlers for Motion tab
             rbtPort1.CheckedChanged += PortRadioButton_CheckedChanged;
             rbtPort2.CheckedChanged += PortRadioButton_CheckedChanged;
             rbtPort3.CheckedChanged += PortRadioButton_CheckedChanged;
             rbtPort4.CheckedChanged += PortRadioButton_CheckedChanged;
+
+            // Setup radio button event handlers for IO tab
+            rbtIOPort1.CheckedChanged += IOPortRadioButton_CheckedChanged;
+            rbtIOPort2.CheckedChanged += IOPortRadioButton_CheckedChanged;
+            rbtIOPort3.CheckedChanged += IOPortRadioButton_CheckedChanged;
+            rbtIOPort4.CheckedChanged += IOPortRadioButton_CheckedChanged;
 
             rbtX.CheckedChanged += AxisRadioButton_CheckedChanged;
             rbtY.CheckedChanged += AxisRadioButton_CheckedChanged;
@@ -81,6 +90,24 @@ namespace PLCKeygen
             btnRIReset.Click += btnAxisReset_Click;
             btnROReset.Click += btnAxisReset_Click;
             btnFReset.Click += btnAxisReset_Click;
+
+            // Wire up IO tab output button event handlers
+            btnVacLoad.Click += btnOutputToggle_Click;
+            btnVacUnload.Click += btnOutputToggle_Click;
+            btnCylinderSocket.Click += btnOutputToggle_Click;
+            btnCylinderChart.Click += btnOutputToggle_Click;
+            btnCylinderCamera1.Click += btnOutputToggle_Click;
+            btnCylinderCamera2.Click += btnOutputToggle_Click;
+            btnLampGreen.Click += btnOutputToggle_Click;
+            btnLampYellow.Click += btnOutputToggle_Click;
+            btnLampRed.Click += btnOutputToggle_Click;
+            btnLampStart.Click += btnOutputToggle_Click;
+            btnLampStop.Click += btnOutputToggle_Click;
+            btnLampRestart.Click += btnOutputToggle_Click;
+            btnLampInit.Click += btnOutputToggle_Click;
+
+            // Set default IO port
+            rbtIOPort1.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -124,6 +151,10 @@ namespace PLCKeygen
 
             // Update current position displays for Motion tab
             UpdateCurrentPositionDisplays();
+
+            // Update IO tab inputs and outputs
+            UpdateIOInputs();
+            UpdateIOOutputs();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -1072,6 +1103,23 @@ namespace PLCKeygen
             }
         }
 
+        private bool GetStepJogMode()
+        {
+            string address = GetStepJogModeAddress(selectedPort);
+            if (!string.IsNullOrEmpty(address))
+            {
+                if (PLCKey.SetBit(address))
+                {
+
+                    return true;
+                }
+                   
+                else
+                    return false;
+            }
+            else { return false; }
+        }
+
         // Get Step_Jog_Mode address for the selected port
         private string GetStepJogModeAddress(int port)
         {
@@ -1648,6 +1696,7 @@ namespace PLCKeygen
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Trạng thái connect camera
             if (cameraClient12 != null && cameraClient12.IsConnected)
             {
                 btnConnect12.Text = "Disconnect";
@@ -1676,11 +1725,294 @@ namespace PLCKeygen
                 btnCam2Connect.Text = "Connect";
                 btnCam2Connect.BackColor = Color.LightCoral;
             }
+            // Update trạng thái motion
+
         }
 
         private void rbtIOPort2_CheckedChanged(object sender, EventArgs e)
         {
 
         }
+
+        #region IO Tab - Input/Output Status Update
+
+        // IO Port radio button selection changed
+        private void IOPortRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                if (rb == rbtIOPort1) selectedIOPort = 1;
+                else if (rb == rbtIOPort2) selectedIOPort = 2;
+                else if (rb == rbtIOPort3) selectedIOPort = 3;
+                else if (rb == rbtIOPort4) selectedIOPort = 4;
+
+                // Immediately update IO displays for new port
+                UpdateIOInputs();
+                UpdateIOOutputs();
+            }
+        }
+
+        // Update input sensor status (LED buttons)
+        private void UpdateIOInputs()
+        {
+            try
+            {
+                switch (selectedIOPort)
+                {
+                    case 1:
+                        UpdateLEDStatus(ledVacLoad, PLCAddresses.Input.P1_Ss_VIn1);
+                        UpdateLEDStatus(ledVacUnload, PLCAddresses.Input.P1_Ss_VOt1);
+                        UpdateLEDStatus(ledSocketOpen, PLCAddresses.Input.P1_Ss_Fix1_Open);
+                        UpdateLEDStatus(ledSocketClose, PLCAddresses.Input.P1_Ss_Fix1_Close);
+                        UpdateLEDStatus(ledLCAStart, PLCAddresses.Input.P1_Stt_lca_Start1);
+                        UpdateLEDStatus(ledLCAStop, PLCAddresses.Input.P1_Stt_lca_Stop1);
+                        UpdateLEDStatus(ledDoor, PLCAddresses.Input.P1_Ss_Door1);
+                        UpdateLEDStatus(ledTrayLoadJig, PLCAddresses.Input.P1_Ss_Jig_OK);
+                        UpdateLEDStatus(ledTrayLoad, PLCAddresses.Input.P1_Ss_Tray_OK);
+                        UpdateLEDStatus(ledTrayNG1Jig, PLCAddresses.Input.P1_Ss_Jig_NG);
+                        UpdateLEDStatus(ledTrayNG1, PLCAddresses.Input.P1_Ss_Tray_NG);
+                        UpdateLEDStatus(ledTrayNG2Jig, PLCAddresses.Input.P1_Ss_Jig_NG4);
+                        UpdateLEDStatus(ledTrayNG2, PLCAddresses.Input.P1_Ss_Tray_NG4);
+                        UpdateLEDStatus(ledEMG, PLCAddresses.Input.P1_SW_EMS1);
+                        UpdateLEDStatus(ledStart, PLCAddresses.Input.P1_SW_Start1);
+                        UpdateLEDStatus(ledStop, PLCAddresses.Input.P1_SW_Stop1);
+                        UpdateLEDStatus(ledReset, PLCAddresses.Input.P1_SW_Reset1);
+                        UpdateLEDStatus(ledInit, PLCAddresses.Input.P1_SW_Init1);
+                        break;
+
+                    case 2:
+                        UpdateLEDStatus(ledVacLoad, PLCAddresses.Input.P2_Ss_VIn2);
+                        UpdateLEDStatus(ledVacUnload, PLCAddresses.Input.P2_Ss_VOt2);
+                        UpdateLEDStatus(ledSocketOpen, PLCAddresses.Input.P2_Ss_Fix2_Open);
+                        UpdateLEDStatus(ledSocketClose, PLCAddresses.Input.P2_Ss_Fix2_Close);
+                        UpdateLEDStatus(ledLCAStart, PLCAddresses.Input.P2_Stt_lca_Start2_StatusTester);
+                        UpdateLEDStatus(ledLCAStop, PLCAddresses.Input.P2_Stt_lca_Stop2_StatusTester);
+                        UpdateLEDStatus(ledDoor, PLCAddresses.Input.P2_Ss_Door2);
+                        UpdateLEDStatus(ledTrayLoadJig, PLCAddresses.Input.P2_Ss_Jig_OK);
+                        UpdateLEDStatus(ledTrayLoad, PLCAddresses.Input.P2_Ss_Tray_OK);
+                        UpdateLEDStatus(ledTrayNG1Jig, PLCAddresses.Input.P2_Ss_Jig_NG);
+                        UpdateLEDStatus(ledTrayNG1, PLCAddresses.Input.P2_Ss_Tray_NG);
+                        UpdateLEDStatus(ledTrayNG2Jig, PLCAddresses.Input.P2_Ss_Jig_NG4);
+                        UpdateLEDStatus(ledTrayNG2, PLCAddresses.Input.P2_Ss_Tray_NG4);
+                        UpdateLEDStatus(ledEMG, PLCAddresses.Input.P2_SW_EMS2);
+                        UpdateLEDStatus(ledStart, PLCAddresses.Input.P2_SW_Start2);
+                        UpdateLEDStatus(ledStop, PLCAddresses.Input.P2_SW_Stop2);
+                        UpdateLEDStatus(ledReset, PLCAddresses.Input.P2_SW_Reset2);
+                        UpdateLEDStatus(ledInit, PLCAddresses.Input.P2_SW_Init2);
+                        break;
+
+                    case 3:
+                        UpdateLEDStatus(ledVacLoad, PLCAddresses.Input.P3_Ss_VIn3);
+                        UpdateLEDStatus(ledVacUnload, PLCAddresses.Input.P3_Ss_VOt3);
+                        UpdateLEDStatus(ledSocketOpen, PLCAddresses.Input.P3_Ss_Fix3_Open);
+                        UpdateLEDStatus(ledSocketClose, PLCAddresses.Input.P3_Ss_Fix3_Close);
+                        UpdateLEDStatus(ledLCAStart, PLCAddresses.Input.P3_Stt_lca_Start3);
+                        UpdateLEDStatus(ledLCAStop, PLCAddresses.Input.P3_Stt_lca_Stop3);
+                        UpdateLEDStatus(ledDoor, PLCAddresses.Input.P3_Ss_Door3);
+                        UpdateLEDStatus(ledTrayLoadJig, PLCAddresses.Input.P3_Ss_Jig_OK);
+                        UpdateLEDStatus(ledTrayLoad, PLCAddresses.Input.P3_Ss_Tray_OK);
+                        UpdateLEDStatus(ledTrayNG1Jig, PLCAddresses.Input.P3_Ss_Jig_NG);
+                        UpdateLEDStatus(ledTrayNG1, PLCAddresses.Input.P3_Ss_Tray_NG);
+                        UpdateLEDStatus(ledTrayNG2Jig, PLCAddresses.Input.P3_Ss_Jig_NG4);
+                        UpdateLEDStatus(ledTrayNG2, PLCAddresses.Input.P3_Ss_Tray_NG4);
+                        UpdateLEDStatus(ledEMG, PLCAddresses.Input.P3_SW_EMS3);
+                        UpdateLEDStatus(ledStart, PLCAddresses.Input.P3_SW_Start3);
+                        UpdateLEDStatus(ledStop, PLCAddresses.Input.P3_SW_Stop3);
+                        UpdateLEDStatus(ledReset, PLCAddresses.Input.P3_SW_Reset3);
+                        UpdateLEDStatus(ledInit, PLCAddresses.Input.P3_SW_Init3);
+                        break;
+
+                    case 4:
+                        UpdateLEDStatus(ledVacLoad, PLCAddresses.Input.P4_Ss_VIn4);
+                        UpdateLEDStatus(ledVacUnload, PLCAddresses.Input.P4_Ss_VOt24);
+                        UpdateLEDStatus(ledSocketOpen, PLCAddresses.Input.P4_Ss_Fix4_Open);
+                        UpdateLEDStatus(ledSocketClose, PLCAddresses.Input.P4_Ss_Fix4_Close);
+                        UpdateLEDStatus(ledLCAStart, PLCAddresses.Input.P4_Stt_lca_Start4);
+                        UpdateLEDStatus(ledLCAStop, PLCAddresses.Input.P4_Stt_lca_Stop4);
+                        UpdateLEDStatus(ledDoor, PLCAddresses.Input.P4_Ss_Door4);
+                        UpdateLEDStatus(ledTrayLoadJig, PLCAddresses.Input.P4_Ss_Jig_OK);
+                        UpdateLEDStatus(ledTrayLoad, PLCAddresses.Input.P4_Ss_Tray_OK);
+                        UpdateLEDStatus(ledTrayNG1Jig, PLCAddresses.Input.P4_Ss_Jig_NG);
+                        UpdateLEDStatus(ledTrayNG1, PLCAddresses.Input.P4_Ss_Tray_NG);
+                        UpdateLEDStatus(ledTrayNG2Jig, PLCAddresses.Input.P4_Ss_Jig_NG4);
+                        UpdateLEDStatus(ledTrayNG2, PLCAddresses.Input.P4_Ss_Tray_NG4);
+                        UpdateLEDStatus(ledEMG, PLCAddresses.Input.P4_SW_EMS4);
+                        UpdateLEDStatus(ledStart, PLCAddresses.Input.P4_SW_Start4);
+                        UpdateLEDStatus(ledStop, PLCAddresses.Input.P4_SW_Stop4);
+                        UpdateLEDStatus(ledReset, PLCAddresses.Input.P4_SW_Reset4);
+                        UpdateLEDStatus(ledInit, PLCAddresses.Input.P4_SW_Init4);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle errors silently to avoid disrupting UI
+            }
+        }
+
+        // Update LED button color based on PLC bit status
+        // Green if ON, Red if OFF
+        private void UpdateLEDStatus(System.Windows.Forms.Button ledButton, string plcAddress)
+        {
+            if (ledButton == null || string.IsNullOrEmpty(plcAddress))
+                return;
+
+            bool bitStatus = PLCKey.ReadBit(plcAddress);
+            ledButton.BackColor = bitStatus ? Color.Green : Color.Red;
+        }
+
+        // Update output button status
+        private void UpdateIOOutputs()
+        {
+            try
+            {
+                switch (selectedIOPort)
+                {
+                    case 1:
+                        // Port 1 outputs - Tower lights and controls
+                        UpdateOutputButtonStatus(btnLampGreen, PLCAddresses.Output.P1_Tower_Green);
+                        UpdateOutputButtonStatus(btnLampYellow, PLCAddresses.Output.P1_Tower_Yellow);
+                        UpdateOutputButtonStatus(btnLampRed, PLCAddresses.Output.P1_Tower_Red);
+                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P1_Tower_Start);
+                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P1_Tower_Stop);
+                        break;
+
+                    case 2:
+                        // Port 2 outputs
+                        UpdateOutputButtonStatus(btnLampGreen, PLCAddresses.Output.P2_Tower_Green);
+                        UpdateOutputButtonStatus(btnLampYellow, PLCAddresses.Output.P2_Tower_Yellow);
+                        UpdateOutputButtonStatus(btnLampRed, PLCAddresses.Output.P2_Tower_Red);
+                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P2_Tower_Start);
+                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P2_Tower_Stop);
+                        break;
+
+                    case 3:
+                        // Port 3 outputs
+                        UpdateOutputButtonStatus(btnLampGreen, PLCAddresses.Output.P3_Tower_Green);
+                        UpdateOutputButtonStatus(btnLampYellow, PLCAddresses.Output.P3_Tower_Yellow);
+                        UpdateOutputButtonStatus(btnLampRed, PLCAddresses.Output.P3_Tower_Red);
+                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P3_Tower_Start);
+                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P3_Tower_Stop);
+                        break;
+
+                    case 4:
+                        // Port 4 outputs
+                        UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P4_Rq_Vin4);
+                        UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P4_Rq_Vout4);
+                        UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P4_Rq_VFix4);
+                        UpdateOutputButtonStatus(btnLampGreen, PLCAddresses.Output.P4_Tower_Green);
+                        UpdateOutputButtonStatus(btnLampYellow, PLCAddresses.Output.P4_Tower_Yellow);
+                        UpdateOutputButtonStatus(btnLampRed, PLCAddresses.Output.P4_Tower_Red);
+                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P4_Tower_Start);
+                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P4_Tower_Stop);
+                        UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P4_Rq_lca_Init4);
+                        UpdateOutputButtonStatus(btnLampRestart, PLCAddresses.Output.P4_Rq_lca_Res4);
+                        break;
+                }
+
+                // Camera cylinders are shared
+                UpdateOutputButtonStatus(btnCylinderCamera1, PLCAddresses.Output.P12_Cam_cylinder);
+                UpdateOutputButtonStatus(btnCylinderCamera2, PLCAddresses.Output.P34_Cam_cylinder);
+            }
+            catch (Exception ex)
+            {
+                // Handle errors silently
+            }
+        }
+
+        // Update output button color based on PLC bit status
+        // Red if ON, Green if OFF
+        private void UpdateOutputButtonStatus(System.Windows.Forms.Button outputButton, string plcAddress)
+        {
+            if (outputButton == null || string.IsNullOrEmpty(plcAddress))
+                return;
+
+            bool bitStatus = PLCKey.ReadBit(plcAddress);
+            outputButton.BackColor = bitStatus ? Color.Red : Color.Green;
+        }
+
+        // Output button click handler to toggle PLC bits
+        private void btnOutputToggle_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
+            if (btn == null) return;
+
+            try
+            {
+                string plcAddress = GetOutputAddress(btn);
+                if (!string.IsNullOrEmpty(plcAddress))
+                {
+                    // Toggle the bit
+                    bool currentStatus = PLCKey.ReadBit(plcAddress);
+                    if (currentStatus)
+                        PLCKey.ResetBit(plcAddress);
+                    else
+                        PLCKey.SetBit(plcAddress);
+
+                    // Immediately update the button color
+                    UpdateOutputButtonStatus(btn, plcAddress);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error toggling output: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Get PLC address for output button based on selected port
+        private string GetOutputAddress(System.Windows.Forms.Button btn)
+        {
+            // Camera cylinders are shared across ports
+            if (btn == btnCylinderCamera1)
+                return PLCAddresses.Output.P12_Cam_cylinder;
+            if (btn == btnCylinderCamera2)
+                return PLCAddresses.Output.P34_Cam_cylinder;
+
+            // Port-specific outputs
+            switch (selectedIOPort)
+            {
+                case 1:
+                    if (btn == btnLampGreen) return PLCAddresses.Output.P1_Tower_Green;
+                    if (btn == btnLampYellow) return PLCAddresses.Output.P1_Tower_Yellow;
+                    if (btn == btnLampRed) return PLCAddresses.Output.P1_Tower_Red;
+                    if (btn == btnLampStart) return PLCAddresses.Output.P1_Tower_Start;
+                    if (btn == btnLampStop) return PLCAddresses.Output.P1_Tower_Stop;
+                    break;
+
+                case 2:
+                    if (btn == btnLampGreen) return PLCAddresses.Output.P2_Tower_Green;
+                    if (btn == btnLampYellow) return PLCAddresses.Output.P2_Tower_Yellow;
+                    if (btn == btnLampRed) return PLCAddresses.Output.P2_Tower_Red;
+                    if (btn == btnLampStart) return PLCAddresses.Output.P2_Tower_Start;
+                    if (btn == btnLampStop) return PLCAddresses.Output.P2_Tower_Stop;
+                    break;
+
+                case 3:
+                    if (btn == btnLampGreen) return PLCAddresses.Output.P3_Tower_Green;
+                    if (btn == btnLampYellow) return PLCAddresses.Output.P3_Tower_Yellow;
+                    if (btn == btnLampRed) return PLCAddresses.Output.P3_Tower_Red;
+                    if (btn == btnLampStart) return PLCAddresses.Output.P3_Tower_Start;
+                    if (btn == btnLampStop) return PLCAddresses.Output.P3_Tower_Stop;
+                    break;
+
+                case 4:
+                    if (btn == btnVacLoad) return PLCAddresses.Output.P4_Rq_Vin4;
+                    if (btn == btnVacUnload) return PLCAddresses.Output.P4_Rq_Vout4;
+                    if (btn == btnCylinderSocket) return PLCAddresses.Output.P4_Rq_VFix4;
+                    if (btn == btnLampGreen) return PLCAddresses.Output.P4_Tower_Green;
+                    if (btn == btnLampYellow) return PLCAddresses.Output.P4_Tower_Yellow;
+                    if (btn == btnLampRed) return PLCAddresses.Output.P4_Tower_Red;
+                    if (btn == btnLampStart) return PLCAddresses.Output.P4_Tower_Start;
+                    if (btn == btnLampStop) return PLCAddresses.Output.P4_Tower_Stop;
+                    if (btn == btnLampInit) return PLCAddresses.Output.P4_Rq_lca_Init4;
+                    if (btn == btnLampRestart) return PLCAddresses.Output.P4_Rq_lca_Res4;
+                    break;
+            }
+
+            return null;
+        }
+
+        #endregion
     }
 }

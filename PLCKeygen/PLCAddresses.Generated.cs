@@ -751,6 +751,320 @@ namespace PLCKeygen
             public const string P4_Y_Master = "DM1684";
             public const string P4_R_Master = "DM1686";
 
+            #region Port 1 Extended Data (Base: DM360-510, DM2000-2100, DM1800-1910)
+
+            // Axis configuration data - Columns: DM360, DM390, DM420, DM450, DM480, DM510
+            // Row 0: Timeout
+            public const string P1_Timeout_X = "DM360";
+            public const string P1_Timeout_Y = "DM390";
+            public const string P1_Timeout_Z = "DM420";
+            public const string P1_Timeout_F = "DM510";
+
+            // Row 2: Dis Step Jog+
+            public const string P1_DisStep_JogPlus_X = "DM362";
+            public const string P1_DisStep_JogPlus_Y = "DM392";
+            public const string P1_DisStep_JogPlus_Z = "DM422";
+            public const string P1_DisStep_JogPlus_RI = "DM452";
+            public const string P1_DisStep_JogPlus_RO = "DM482";
+            public const string P1_DisStep_JogPlus_F = "DM512";
+
+            // Row 4: Speed LJog
+            public const string P1_Speed_LJog_X = "DM364";
+            public const string P1_Speed_LJog_Y = "DM394";
+            public const string P1_Speed_LJog_Z = "DM424";
+            public const string P1_Speed_LJog_RI = "DM454";
+            public const string P1_Speed_LJog_RO = "DM484";
+            public const string P1_Speed_LJog_F = "DM514";
+
+            // Row 6: Speed HJog
+            public const string P1_Speed_HJog_X = "DM366";
+            public const string P1_Speed_HJog_Y = "DM396";
+            public const string P1_Speed_HJog_Z = "DM426";
+            public const string P1_Speed_HJog_RI = "DM456";
+            public const string P1_Speed_HJog_RO = "DM486";
+            public const string P1_Speed_HJog_F = "DM516";
+
+            // Row 8: Dis Step Jog-
+            public const string P1_DisStep_JogMinus_X = "DM368";
+            public const string P1_DisStep_JogMinus_Y = "DM398";
+            public const string P1_DisStep_JogMinus_Z = "DM428";
+            public const string P1_DisStep_JogMinus_RI = "DM458";
+            public const string P1_DisStep_JogMinus_RO = "DM488";
+            public const string P1_DisStep_JogMinus_F = "DM518";
+
+            // Row 10: Point ABS
+            public const string P1_Point_ABS_X = "DM370";
+            public const string P1_Point_ABS_Y = "DM400";
+            public const string P1_Point_ABS_Z = "DM430";
+            public const string P1_Point_ABS_F = "DM520";
+
+            // Row 12: Sp ABS
+            public const string P1_Sp_ABS_X = "DM372";
+            public const string P1_Sp_ABS_Y = "DM402";
+            public const string P1_Sp_ABS_Z = "DM432";
+            public const string P1_Sp_ABS_F = "DM522";
+
+            // Production counters - Base DM2000
+            public const string P1_Nber_Prd_In = "DM2000";
+            public const string P1_Nber_Prd_OK = "DM2002";
+            public const string P1_Nber_Prd_NG = "DM2004";
+            public const string P1_Nber_Prd_Out = "DM2006";
+            public const string P1_Percent_OK = "DM2008";
+            public const string P1_Percent_NG = "DM2010";
+            public const string P1_Time_Seconds = "DM2012";
+            public const string P1_Time_Minutes = "DM2014";
+            public const string P1_Time_Hours = "DM2016";
+            public const string P1_Circle_Time_OK = "DM2018";
+            public const string P1_Circle_Time_Now = "DM2020";
+
+            // Position data - Tray operations DM1800
+            public const string P1_Pos_Unload_Tray = "DM1800";
+            public const string P1_Pos_Load_Tray = "DM1830";
+            public const string P1_Pos_Align_Cam = "DM1850";
+            public const string P1_Pos_UL_Socket = "DM1870";
+            public const string P1_Pos_L_Socket = "DM1890";
+            public const string P1_Pos_Test_LCA = "DM1910";
+
+            #endregion
+
+            #region Port 2 Extended Data (Base: DM0-150, DM1200-1300, DM1000-1110)
+
+            // Axis configuration data - Columns: DM0, DM30, DM60, DM90, DM120, DM150
+            // Row 0: Timeout
+            public const string P2_Timeout_X = "DM0";
+            public const string P2_Timeout_Y = "DM30";
+            public const string P2_Timeout_Z = "DM60";
+            public const string P2_Timeout_F = "DM150";
+
+            // Row 2: Dis Step Jog+
+            public const string P2_DisStep_JogPlus_X = "DM2";
+            public const string P2_DisStep_JogPlus_Y = "DM32";
+            public const string P2_DisStep_JogPlus_Z = "DM62";
+            public const string P2_DisStep_JogPlus_RI = "DM92";
+            public const string P2_DisStep_JogPlus_RO = "DM122";
+            public const string P2_DisStep_JogPlus_F = "DM152";
+
+            // Row 4: Speed LJog
+            public const string P2_Speed_LJog_X = "DM4";
+            public const string P2_Speed_LJog_Y = "DM34";
+            public const string P2_Speed_LJog_Z = "DM64";
+            public const string P2_Speed_LJog_RI = "DM94";
+            public const string P2_Speed_LJog_RO = "DM124";
+            public const string P2_Speed_LJog_F = "DM154";
+
+            // Row 6: Speed HJog
+            public const string P2_Speed_HJog_X = "DM6";
+            public const string P2_Speed_HJog_Y = "DM36";
+            public const string P2_Speed_HJog_Z = "DM66";
+            public const string P2_Speed_HJog_RI = "DM96";
+            public const string P2_Speed_HJog_RO = "DM126";
+            public const string P2_Speed_HJog_F = "DM156";
+
+            // Row 8: Dis Step Jog-
+            public const string P2_DisStep_JogMinus_X = "DM8";
+            public const string P2_DisStep_JogMinus_Y = "DM38";
+            public const string P2_DisStep_JogMinus_Z = "DM68";
+            public const string P2_DisStep_JogMinus_RI = "DM98";
+            public const string P2_DisStep_JogMinus_RO = "DM128";
+            public const string P2_DisStep_JogMinus_F = "DM158";
+
+            // Row 10: Point ABS
+            public const string P2_Point_ABS_X = "DM10";
+            public const string P2_Point_ABS_Y = "DM40";
+            public const string P2_Point_ABS_Z = "DM70";
+            public const string P2_Point_ABS_F = "DM160";
+
+            // Row 12: Sp ABS
+            public const string P2_Sp_ABS_X = "DM12";
+            public const string P2_Sp_ABS_Y = "DM42";
+            public const string P2_Sp_ABS_Z = "DM72";
+            public const string P2_Sp_ABS_F = "DM162";
+
+            // Production counters - Base DM1200
+            public const string P2_Nber_Prd_In = "DM1200";
+            public const string P2_Nber_Prd_OK = "DM1202";
+            public const string P2_Nber_Prd_NG = "DM1204";
+            public const string P2_Nber_Prd_Out = "DM1206";
+            public const string P2_Percent_OK = "DM1208";
+            public const string P2_Percent_NG = "DM1210";
+            public const string P2_Time_Seconds = "DM1212";
+            public const string P2_Time_Minutes = "DM1214";
+            public const string P2_Time_Hours = "DM1216";
+            public const string P2_Circle_Time_OK = "DM1218";
+            public const string P2_Circle_Time_Now = "DM1220";
+
+            // Position data - Tray operations DM1000
+            public const string P2_Pos_Unload_Tray = "DM1000";
+            public const string P2_Pos_Load_Tray = "DM1030";
+            public const string P2_Pos_Align_Cam = "DM1050";
+            public const string P2_Pos_UL_Socket = "DM1070";
+            public const string P2_Pos_L_Socket = "DM1090";
+            public const string P2_Pos_Test_LCA = "DM1110";
+
+            #endregion
+
+            #region Port 3 Extended Data (Base: DM540-690, DM2400-2500, DM2200-2310)
+
+            // Axis configuration data - Columns: DM540, DM570, DM600, DM630, DM660, DM690
+            // Row 0: Timeout
+            public const string P3_Timeout_X = "DM540";
+            public const string P3_Timeout_Y = "DM570";
+            public const string P3_Timeout_Z = "DM600";
+            public const string P3_Timeout_F = "DM690";
+
+            // Row 2: Dis Step Jog+
+            public const string P3_DisStep_JogPlus_X = "DM542";
+            public const string P3_DisStep_JogPlus_Y = "DM572";
+            public const string P3_DisStep_JogPlus_Z = "DM602";
+            public const string P3_DisStep_JogPlus_RI = "DM632";
+            public const string P3_DisStep_JogPlus_RO = "DM662";
+            public const string P3_DisStep_JogPlus_F = "DM692";
+
+            // Row 4: Speed LJog
+            public const string P3_Speed_LJog_X = "DM544";
+            public const string P3_Speed_LJog_Y = "DM574";
+            public const string P3_Speed_LJog_Z = "DM604";
+            public const string P3_Speed_LJog_RI = "DM634";
+            public const string P3_Speed_LJog_RO = "DM664";
+            public const string P3_Speed_LJog_F = "DM694";
+
+            // Row 6: Speed HJog
+            public const string P3_Speed_HJog_X = "DM546";
+            public const string P3_Speed_HJog_Y = "DM576";
+            public const string P3_Speed_HJog_Z = "DM606";
+            public const string P3_Speed_HJog_RI = "DM636";
+            public const string P3_Speed_HJog_RO = "DM666";
+            public const string P3_Speed_HJog_F = "DM696";
+
+            // Row 8: Dis Step Jog-
+            public const string P3_DisStep_JogMinus_X = "DM548";
+            public const string P3_DisStep_JogMinus_Y = "DM578";
+            public const string P3_DisStep_JogMinus_Z = "DM608";
+            public const string P3_DisStep_JogMinus_RI = "DM638";
+            public const string P3_DisStep_JogMinus_RO = "DM668";
+            public const string P3_DisStep_JogMinus_F = "DM698";
+
+            // Row 10: Point ABS
+            public const string P3_Point_ABS_X = "DM550";
+            public const string P3_Point_ABS_Y = "DM580";
+            public const string P3_Point_ABS_Z = "DM610";
+            public const string P3_Point_ABS_F = "DM700";
+
+            // Row 12: Sp ABS
+            public const string P3_Sp_ABS_X = "DM552";
+            public const string P3_Sp_ABS_Y = "DM582";
+            public const string P3_Sp_ABS_Z = "DM612";
+            public const string P3_Sp_ABS_F = "DM702";
+
+            // Production counters - Base DM2400
+            public const string P3_Nber_Prd_In = "DM2400";
+            public const string P3_Nber_Prd_OK = "DM2402";
+            public const string P3_Nber_Prd_NG = "DM2404";
+            public const string P3_Nber_Prd_Out = "DM2406";
+            public const string P3_Percent_OK = "DM2408";
+            public const string P3_Percent_NG = "DM2410";
+            public const string P3_Time_Seconds = "DM2412";
+            public const string P3_Time_Minutes = "DM2414";
+            public const string P3_Time_Hours = "DM2416";
+            public const string P3_Circle_Time_OK = "DM2418";
+            public const string P3_Circle_Time_Now = "DM2420";
+
+            // Position data - Tray operations DM2200
+            public const string P3_Pos_Unload_Tray = "DM2200";
+            public const string P3_Pos_Load_Tray = "DM2230";
+            public const string P3_Pos_Align_Cam = "DM2250";
+            public const string P3_Pos_UL_Socket = "DM2270";
+            public const string P3_Pos_L_Socket = "DM2290";
+            public const string P3_Pos_Test_LCA = "DM2310";
+
+            #endregion
+
+            #region Port 4 Extended Data (Base: DM180-330, DM1600-1700, DM1400-1510)
+
+            // Axis configuration data - Columns: DM180, DM210, DM240, DM270, DM300, DM330
+            // Row 0: Timeout
+            public const string P4_Timeout_X = "DM180";
+            public const string P4_Timeout_Y = "DM210";
+            public const string P4_Timeout_Z = "DM240";
+            public const string P4_Timeout_F = "DM330";
+
+            // Row 2: Dis Step Jog+
+            public const string P4_DisStep_JogPlus_X = "DM182";
+            public const string P4_DisStep_JogPlus_Y = "DM212";
+            public const string P4_DisStep_JogPlus_Z = "DM242";
+            public const string P4_DisStep_JogPlus_RI = "DM272";
+            public const string P4_DisStep_JogPlus_RO = "DM302";
+            public const string P4_DisStep_JogPlus_F = "DM332";
+
+            // Row 4: Speed LJog
+            public const string P4_Speed_LJog_X = "DM184";
+            public const string P4_Speed_LJog_Y = "DM214";
+            public const string P4_Speed_LJog_Z = "DM244";
+            public const string P4_Speed_LJog_RI = "DM274";
+            public const string P4_Speed_LJog_RO = "DM304";
+            public const string P4_Speed_LJog_F = "DM334";
+
+            // Row 6: Speed HJog
+            public const string P4_Speed_HJog_X = "DM186";
+            public const string P4_Speed_HJog_Y = "DM216";
+            public const string P4_Speed_HJog_Z = "DM246";
+            public const string P4_Speed_HJog_RI = "DM276";
+            public const string P4_Speed_HJog_RO = "DM306";
+            public const string P4_Speed_HJog_F = "DM336";
+
+            // Row 8: Dis Step Jog-
+            public const string P4_DisStep_JogMinus_X = "DM188";
+            public const string P4_DisStep_JogMinus_Y = "DM218";
+            public const string P4_DisStep_JogMinus_Z = "DM248";
+            public const string P4_DisStep_JogMinus_RI = "DM278";
+            public const string P4_DisStep_JogMinus_RO = "DM308";
+            public const string P4_DisStep_JogMinus_F = "DM338";
+
+            // Row 10: Point ABS
+            public const string P4_Point_ABS_X = "DM190";
+            public const string P4_Point_ABS_Y = "DM220";
+            public const string P4_Point_ABS_Z = "DM250";
+            public const string P4_Point_ABS_F = "DM340";
+
+            // Row 12: Sp ABS
+            public const string P4_Sp_ABS_X = "DM192";
+            public const string P4_Sp_ABS_Y = "DM222";
+            public const string P4_Sp_ABS_Z = "DM252";
+            public const string P4_Sp_ABS_F = "DM342";
+
+            // Production counters - Base DM1600
+            public const string P4_Nber_Prd_In = "DM1600";
+            public const string P4_Nber_Prd_OK = "DM1602";
+            public const string P4_Nber_Prd_NG = "DM1604";
+            public const string P4_Nber_Prd_Out = "DM1606";
+            public const string P4_Percent_OK = "DM1608";
+            public const string P4_Percent_NG = "DM1610";
+            public const string P4_Time_Seconds = "DM1612";
+            public const string P4_Time_Minutes = "DM1614";
+            public const string P4_Time_Hours = "DM1616";
+            public const string P4_Circle_Time_OK = "DM1618";
+            public const string P4_Circle_Time_Now = "DM1620";
+
+            // Position data - Tray operations DM1400
+            public const string P4_Pos_Unload_Tray = "DM1400";
+            public const string P4_Pos_Load_Tray = "DM1430";
+            public const string P4_Pos_Align_Cam = "DM1450";
+            public const string P4_Pos_UL_Socket = "DM1470";
+            public const string P4_Pos_L_Socket = "DM1490";
+            public const string P4_Pos_Test_LCA = "DM1510";
+
+            #endregion
+
+            #region Shared NG Data (All Ports)
+
+            // NG (Not Good) data - Shared across all ports
+            public const string Data_NG1 = "DM900";
+            public const string Data_NG2 = "DM920";
+            public const string Data_NG3 = "DM940";
+            public const string Data_NG4 = "DM960";
+
+            #endregion
+
         }
 
     }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.button2 = new System.Windows.Forms.Button();
@@ -1801,7 +1802,7 @@
             this.groupBox40.Size = new System.Drawing.Size(105, 76);
             this.groupBox40.TabIndex = 5;
             this.groupBox40.TabStop = false;
-            this.groupBox40.Text = "Tray Load X End";
+            this.groupBox40.Text = "Vị trí ";
             // 
             // button5
             // 
@@ -1830,7 +1831,7 @@
             this.groupBox43.Size = new System.Drawing.Size(105, 76);
             this.groupBox43.TabIndex = 4;
             this.groupBox43.TabStop = false;
-            this.groupBox43.Text = "Tray Load X Start";
+            this.groupBox43.Text = "Vị trí master";
             // 
             // button9
             // 
@@ -1870,7 +1871,7 @@
             this.groupBox33.Size = new System.Drawing.Size(105, 76);
             this.groupBox33.TabIndex = 5;
             this.groupBox33.TabStop = false;
-            this.groupBox33.Text = "Tray Load X End";
+            this.groupBox33.Text = "Đóng socket";
             // 
             // button45
             // 
@@ -1899,7 +1900,7 @@
             this.groupBox35.Size = new System.Drawing.Size(105, 76);
             this.groupBox35.TabIndex = 4;
             this.groupBox35.TabStop = false;
-            this.groupBox35.Text = "Tray Load X Start";
+            this.groupBox35.Text = "Mở socket";
             // 
             // button49
             // 
@@ -3333,7 +3334,6 @@
             this.rbtIOPort2.TabIndex = 1;
             this.rbtIOPort2.Text = "Port 2";
             this.rbtIOPort2.UseVisualStyleBackColor = true;
-            this.rbtIOPort2.CheckedChanged += new System.EventHandler(this.rbtIOPort2_CheckedChanged);
             // 
             // rbtIOPort1
             // 
@@ -4225,8 +4225,9 @@
             this.ClientSize = new System.Drawing.Size(978, 623);
             this.Controls.Add(this.strip);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "LCA Handler Teaching EQS - Nguyen Van Nguyen";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
