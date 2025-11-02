@@ -1714,7 +1714,7 @@
             // btnJog_Minus
             // 
             this.btnJog_Minus.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJog_Minus.Location = new System.Drawing.Point(7, 22);
+            this.btnJog_Minus.Location = new System.Drawing.Point(6, 112);
             this.btnJog_Minus.Name = "btnJog_Minus";
             this.btnJog_Minus.Size = new System.Drawing.Size(83, 80);
             this.btnJog_Minus.TabIndex = 3;
@@ -1726,7 +1726,7 @@
             // btnJog_Plus
             // 
             this.btnJog_Plus.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJog_Plus.Location = new System.Drawing.Point(7, 111);
+            this.btnJog_Plus.Location = new System.Drawing.Point(6, 24);
             this.btnJog_Plus.Name = "btnJog_Plus";
             this.btnJog_Plus.Size = new System.Drawing.Size(83, 80);
             this.btnJog_Plus.TabIndex = 2;
@@ -2663,7 +2663,7 @@
             this.groupBox59.Size = new System.Drawing.Size(220, 76);
             this.groupBox59.TabIndex = 5;
             this.groupBox59.TabStop = false;
-            this.groupBox59.Text = "Fix socket";
+            this.groupBox59.Text = "Cylinder";
             // 
             // label76
             // 
