@@ -85,32 +85,32 @@ namespace PLCKeygen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (PLCKey.ReadBit("MR5002"))
+            if (PLCKey.ReadBit(PLCAddresses.Output.P12_Cam_cylinder))
             {
-                PLCKey.ResetBit("MR5002");
+                PLCKey.ResetBit(PLCAddresses.Output.P12_Cam_cylinder);
                 button1.Text = "Sang trai";
             } 
             else
             {
-                PLCKey.SetBit("MR5002");
+                PLCKey.SetBit(PLCAddresses.Output.P12_Cam_cylinder);
                 button1.Text = "Sang phai";
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            X1.Text =  (PLCKey.ReadInt32("DM2082")/100.0f).ToString();
-            Y1.Text =  (PLCKey.ReadInt32("DM2084")/100.0f).ToString();
-            R1.Text =  (PLCKey.ReadInt32("DM2086")/10.0f).ToString();
-            X2.Text = (PLCKey.ReadInt32("DM2482") / 100.0f).ToString();
-            Y2.Text = (PLCKey.ReadInt32("DM2484") / 100.0f).ToString();
-            R2.Text = (PLCKey.ReadInt32("DM2486") / 10.0f).ToString();
-            txtXCurMasPort2.Text = (PLCKey.ReadInt32("DM1282") / 100.0f).ToString();
-            txtYCurMasPort2.Text = (PLCKey.ReadInt32("DM1284") / 100.0f).ToString();
-            txtRCurMasPort2.Text = (PLCKey.ReadInt32("DM1286") / 10.0f).ToString();
-            txtXCurMasPort4.Text = (PLCKey.ReadInt32("DM1682") / 100.0f).ToString();
-            txtYCurMasPort4.Text = (PLCKey.ReadInt32("DM1684") / 100.0f).ToString();
-            txtRCurMasPort4.Text = (PLCKey.ReadInt32("DM1686") / 10.0f).ToString();
+            txtXCurMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_X_Master) / 100.0f).ToString();
+            txtYCurMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_Y_Master) / 100.0f).ToString();
+            txtRCurMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_R_Master) / 10.0f).ToString();
+            txtXCurMasPort3.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_X_Master) / 100.0f).ToString();
+            txtYCurMasPort3.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_Y_Master) / 100.0f).ToString();
+            txtRCurMasPort3.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_R_Master) / 10.0f).ToString();
+            txtXCurMasPort2.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Master) / 100.0f).ToString();
+            txtYCurMasPort2.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Master) / 100.0f).ToString();
+            txtRCurMasPort2.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_R_Master) / 10.0f).ToString();
+            txtXCurMasPort4.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Master) / 100.0f).ToString();
+            txtYCurMasPort4.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Master) / 100.0f).ToString();
+            txtRCurMasPort4.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_R_Master) / 10.0f).ToString();
 
             // Update toa do hien tai cho Handeye Camera 1 (Port 2)
             txtXPosCurrent1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur) / 100.0f).ToString("F2");
@@ -128,14 +128,14 @@ namespace PLCKeygen
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (PLCKey.ReadBit("MR6002"))
+            if (PLCKey.ReadBit(PLCAddresses.Output.P34_Cam_cylinder))
             {
-                PLCKey.ResetBit("MR6002");
+                PLCKey.ResetBit(PLCAddresses.Output.P34_Cam_cylinder);
                 button2.Text = "Sang trai";
             }
             else
             {
-                PLCKey.SetBit("MR6002");
+                PLCKey.SetBit(PLCAddresses.Output.P34_Cam_cylinder);
                 button2.Text = "Sang phai";
             }
                 
@@ -150,9 +150,9 @@ namespace PLCKeygen
             float r = float.Parse(txtRMasPort1.Text);
             var r1 = r * 10;
 
-            PLCKey.WriteInt32(PLCAddresses.Data.P1_X_Master, (short)x1);
-            PLCKey.WriteInt32(PLCAddresses.Data.P1_Y_Master, (short)y1);
-            PLCKey.WriteInt32(PLCAddresses.Data.P1_R_Master, (short)r1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P1_X_Master, (int)x1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P1_Y_Master, (int)y1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P1_R_Master, (int)r1);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -164,28 +164,28 @@ namespace PLCKeygen
             float r = float.Parse(txtRMasPort3.Text);
             var r1 = r * 10;
 
-            PLCKey.WriteInt32(PLCAddresses.Data.P3_X_Master, (short)x1);
-            PLCKey.WriteInt32(PLCAddresses.Data.P3_Y_Master, (short)y1);
-            PLCKey.WriteInt32(PLCAddresses.Data.P3_R_Master, (short)r1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P3_X_Master, (int)x1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P3_Y_Master, (int)y1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P3_R_Master, (int)r1);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             toolStripStatusLabel2.ToolTipText = "PLC Connected";
             toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
-            txtXMasPort1.Text = (PLCKey.ReadInt32("DM2082") / 100.0f).ToString();
-            txtYMasPort1.Text = (PLCKey.ReadInt32("DM2084") / 100.0f).ToString();
-            txtRMasPort1.Text = (PLCKey.ReadInt32("DM2086") / 10.0f).ToString();
-            txtXMasPort3.Text = (PLCKey.ReadInt32("DM2482") / 100.0f).ToString();
-            txtYMasPort3.Text = (PLCKey.ReadInt32("DM2484") / 100.0f).ToString();
-            txtRMasPort3.Text = (PLCKey.ReadInt32("DM2486") / 10.0f).ToString();
-            txtXMasPort2.Text = (PLCKey.ReadInt32("DM1282") / 100.0f).ToString();
-            txtYMasPort2.Text = (PLCKey.ReadInt32("DM1284") / 100.0f).ToString();
-            txtRMasPort2.Text = (PLCKey.ReadInt32("DM1286") / 10.0f).ToString();
-            txtXMasPort4.Text = (PLCKey.ReadInt32("DM1682") / 100.0f).ToString();
-            txtYMasPort4.Text = (PLCKey.ReadInt32("DM1684") / 100.0f).ToString();
-            txtRMasPort4.Text = (PLCKey.ReadInt32("DM1686") / 10.0f).ToString();
-            if (PLCKey.ReadBit("MR5002"))
+            txtXMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_X_Master) / 100.0f).ToString();
+            txtYMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_Y_Master) / 100.0f).ToString();
+            txtRMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_R_Master) / 10.0f).ToString();
+            txtXMasPort3.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_X_Master) / 100.0f).ToString();
+            txtYMasPort3.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_Y_Master) / 100.0f).ToString();
+            txtRMasPort3.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_R_Master) / 10.0f).ToString();
+            txtXMasPort2.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Master) / 100.0f).ToString();
+            txtYMasPort2.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Master) / 100.0f).ToString();
+            txtRMasPort2.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_R_Master) / 10.0f).ToString();
+            txtXMasPort4.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Master) / 100.0f).ToString();
+            txtYMasPort4.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Master) / 100.0f).ToString();
+            txtRMasPort4.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_R_Master) / 10.0f).ToString();
+            if (PLCKey.ReadBit(PLCAddresses.Output.P12_Cam_cylinder))
             {
                 button1.Text = "Sang phai";
             }
@@ -194,7 +194,7 @@ namespace PLCKeygen
                 button1.Text = "Sang trai";
             }
 
-            if (PLCKey.ReadBit("MR6002"))
+            if (PLCKey.ReadBit(PLCAddresses.Output.P34_Cam_cylinder))
             {
                 button2.Text = "Sang phai";
             }
@@ -281,64 +281,6 @@ namespace PLCKeygen
             }
         }
 
-        private async void button7_Click(object sender, EventArgs e)
-        {
-            if (cameraClient12 == null || !cameraClient12.IsConnected)
-            {
-                MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            await Task.Factory.StartNew(() =>
-            {
-                PLCKey.SetBit("MR5002");
-                Task.Delay(3000);
-                try
-                {
-                    string response = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
-                    MessageBox.Show($"Da gui lenh HOME2D!\nPhan hoi: {response}", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Loi khi gui lenh: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            });
-
-            try
-            {
-                string response = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
-                MessageBox.Show($"Da gui lenh HOME2D!\nPhan hoi: {response}", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Loi khi gui lenh: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            if (cameraClient34 == null || !cameraClient34.IsConnected)
-            {
-                MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                string response = cameraClient34.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
-                MessageBox.Show($"Da gui lenh HOME2D!\nPhan hoi: {response}", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Loi khi gui lenh: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void groupBox20_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSetMasP2_Click(object sender, EventArgs e)
         {
             float x = float.Parse(txtXMasPort2.Text);
@@ -348,9 +290,9 @@ namespace PLCKeygen
             float r = float.Parse(txtRMasPort2.Text);
             var r1 = r * 10;
 
-            PLCKey.WriteInt32(PLCAddresses.Data.P2_X_Master, (short)x1);
-            PLCKey.WriteInt32(PLCAddresses.Data.P2_Y_Master, (short)y1);
-            PLCKey.WriteInt32(PLCAddresses.Data.P2_R_Master, (short)r1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P2_X_Master, (int)x1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P2_Y_Master, (int)y1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P2_R_Master, (int)r1);
         }
 
         private void btnSetMasP4_Click(object sender, EventArgs e)
@@ -362,138 +304,9 @@ namespace PLCKeygen
             float r = float.Parse(txtRMasPort4.Text);
             var r1 = r * 10;
 
-            PLCKey.WriteInt32(PLCAddresses.Data.P4_X_Master, (short)x1);
-            PLCKey.WriteInt32(PLCAddresses.Data.P4_Y_Master, (short)y1);
-            PLCKey.WriteInt32(PLCAddresses.Data.P4_R_Master, (short)r1);
-        }
-
-        private async Task btnGetMasCamP2_Click(object sender, EventArgs e)
-        {
-            if (cameraClient12 == null || !cameraClient12.IsConnected)
-            {
-                MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            await Task.Factory.StartNew(() => 
-            {
-                PLCKey.ResetBit("MR5002");
-                Task.Delay(3000);
-                try
-                {
-                    string response = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
-                    MessageBox.Show($"Da gui lenh HOME2D!\nPhan hoi: {response}", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Loi khi gui lenh: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            } );
-
-            try
-            {
-                string response = cameraClient12.SendCommand("GCP,1,HOME2D,0,0,0,0,0,0");
-                MessageBox.Show($"Da gui lenh HOME2D!\nPhan hoi: {response}", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Loi khi gui lenh: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-        private void btnGetMasCamP3_Click(object sender, EventArgs e)
-        {
-            if (cameraClient34 == null || !cameraClient34.IsConnected)
-            {
-                MessageBox.Show("Chua ket noi camera! Vui long ket noi truoc.", "Canh bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                string response = cameraClient34.SendCommand("GCP,2,HOME2D,0,0,0,0,0,0");
-                MessageBox.Show($"Da gui lenh HOME2D!\nPhan hoi: {response}", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Loi khi gui lenh: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnTriggerCamP4_Click(object sender, EventArgs e)
-        {
-            PLCKey.SetBit("MR10410"); // cho sua lai bien
-            while (PLCKey.ReadBit("MR10410")) { Task.Delay(100); };
-            MessageBox.Show("nhan Save de luu ket qua");
-            var x = PLCKey.ReadInt32("DM800")/10/100.0f;//100
-            txtXMasPort4.Text = x.ToString();
-            var y = PLCKey.ReadInt32("DM802")/10/100.0f;//100
-            txtYMasPort4.Text = y.ToString();
-            var r = PLCKey.ReadInt32("DM804")/100/100.0f;//10
-            txtRMasPort4.Text = r.ToString();
-            //800-804
-        }
-
-        private void btnLoadCamP4_Click(object sender, EventArgs e)
-        {
-            PLCKey.SetBit("MR26003"); // cho sua lai bien
-            MessageBox.Show("Da load xong");
-        }
-
-        private void btnTriggerCamP3_Click(object sender, EventArgs e)
-        {
-            PLCKey.SetBit("MR10410"); // cho sua lai bien
-            while (PLCKey.ReadBit("MR10410")) { Task.Delay(100); };
-            MessageBox.Show("nhan Save de luu ket qua");
-            // cho sua lai bien
-            var x = PLCKey.ReadInt32("DM810")/10/100.0f;
-            txtXMasPort3.Text = x.ToString();
-            var y = PLCKey.ReadInt32("DM812")/10/100.0f;
-            txtYMasPort3.Text = y.ToString();
-            var r = PLCKey.ReadInt32("DM814")/100/100.0f;
-            txtRMasPort3.Text = r.ToString();
-            //810-814
-        }
-
-        private void btnLoadCamP3_Click(object sender, EventArgs e)
-        {
-            PLCKey.SetBit("MR26003"); // cho sua lai bien
-            MessageBox.Show("Da load xong");
-        }
-
-        private void button8_Click_1(object sender, EventArgs e)
-        {
-            //port 1
-            PLCKey.SetBit("MR10110");
-            while (PLCKey.ReadBit("MR10110")) { Task.Delay(100); }
-            ;
-            MessageBox.Show("nhan Save de luu ket qua");
-            var x = PLCKey.ReadInt32("DM780") / 10/100.0f;
-            txtXMasPort1.Text = x.ToString();
-            var y = PLCKey.ReadInt32("DM782") / 10/100.0f;
-            txtYMasPort1.Text= y.ToString();
-            var r = PLCKey.ReadInt32("DM784") / 100/100.0f;
-            txtRMasPort1.Text = r.ToString();
-        }
-
-        private void button44_Click(object sender, EventArgs e)
-        {
-            PLCKey.SetBit("MR10110"); //dm720/10 dm724/10 dm724/100
-            while (PLCKey.ReadBit("MR10110")) { Task.Delay(100); }
-            ;
-            MessageBox.Show("nhan Save de luu ket qua");
-            var x = PLCKey.ReadInt32("DM720") / 10/100.0f;
-            txtXMasPort2.Text = x.ToString();
-            var y = PLCKey.ReadInt32("DM722") / 10/100.0f;
-            txtYMasPort2.Text= y.ToString();
-            var r = PLCKey.ReadInt32("DM724") / 100 /100.0f;
-            txtRMasPort2.Text= r.ToString();
-            //dm1282,1284,1286
-        }
-
-        private void groupBox42_Enter(object sender, EventArgs e)
-        {
+            PLCKey.WriteInt32(PLCAddresses.Data.P4_X_Master, (int)x1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P4_Y_Master, (int)y1);
+            PLCKey.WriteInt32(PLCAddresses.Data.P4_R_Master, (int)r1);
         }
 
         private void button7_Click_1(object sender, EventArgs e)
@@ -592,33 +405,6 @@ namespace PLCKeygen
             {
                 MessageBox.Show("Co loi roi");
             }
-        }
-
-        private void button51_Click(object sender, EventArgs e)
-        {
-            PLCUsageExample.Example2_LoadConfigAndCreatePLC();
-            
-
-        }
-
-        private void Job_Plus_Press_Click(object sender, KeyPressEventArgs e)
-        {
-            MessageBox.Show("hehehe");
-        }
-
-        private void Jog_Minus_Press_Click(object sender, KeyPressEventArgs e)
-        {
-            MessageBox.Show("hihi");
-        }
-        int a = 0;
-        private void Jog_Minus_Down(object sender, KeyEventArgs e)
-        {
-            a = 1;
-        }
-
-        private void Jog_Minus_Up(object sender, KeyEventArgs e)
-        {
-            a = 2;
         }
 
         private async Task RunABSPosXYRCam1Async(int x_pos,int y_pos,int r_pos)
@@ -1890,6 +1676,11 @@ namespace PLCKeygen
                 btnCam2Connect.Text = "Connect";
                 btnCam2Connect.BackColor = Color.LightCoral;
             }
+        }
+
+        private void rbtIOPort2_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

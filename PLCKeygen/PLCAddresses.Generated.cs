@@ -201,6 +201,11 @@ namespace PLCKeygen
             public const string Van_khi = "R502";
             public const string Gia_tri_dat = "DM500";
 
+            //Xi lanh camera 12
+            public const string P12_Cam_cylinder = "MR5002";
+            //Xi lanh camera 34
+            public const string P34_Cam_cylinder = "MR6002";
+
         }
 
         /// <summary>
@@ -208,24 +213,8 @@ namespace PLCKeygen
         /// </summary>
         public static class Data
         {
-            // Master 
-            public const string P1_X_Master = "DM2082";
-            public const string P1_Y_Master = "DM2084";
-            public const string P1_R_Master = "DM2086";
 
-            public const string P2_X_Master = "DM1282";
-            public const string P2_Y_Master = "DM1284";
-            public const string P2_R_Master = "DM1286";
-
-            public const string P3_X_Master = "DM2482";
-            public const string P3_Y_Master = "DM2484";
-            public const string P3_R_Master = "DM2486";
-
-            public const string P4_X_Master = "DM1682";
-            public const string P4_Y_Master = "DM1684";
-            public const string P4_R_Master = "DM1686";
-
-            // Port
+            // Port1
             public const string P1_X_Pos_Cur =  "TM332";
             public const string P1_RI_Pos_Cur = "TM334";
             public const string P1_Y_Pos_Cur =  "TM336";
@@ -236,7 +225,10 @@ namespace PLCKeygen
             public const string P1_Y_ABS_Setpoint =     "DM400";
             public const string P1_RI_ABS_Setpoint =    "DM460";
             public const string P1_RI_INC_Setpoint =    "DM464";
-
+            public const string P1_X_Master = "DM2082";
+            public const string P1_Y_Master = "DM2084";
+            public const string P1_R_Master = "DM2086";
+            // Port2
             public const string P2_X_Pos_Cur =  "TM300";
             public const string P2_RI_Pos_Cur = "TM302";
             public const string P2_Y_Pos_Cur =  "TM304";
@@ -247,7 +239,10 @@ namespace PLCKeygen
             public const string P2_Y_ABS_Setpoint =     "DM40";
             public const string P2_RI_ABS_Setpoint =    "DM100";
             public const string P2_RI_INC_Setpoint =    "DM104";
-
+            public const string P2_X_Master = "DM1282";
+            public const string P2_Y_Master = "DM1284";
+            public const string P2_R_Master = "DM1286";
+            // Port3
             public const string P3_X_Pos_Cur =  "TM348";
             public const string P3_RI_Pos_Cur = "TM350";
             public const string P3_Y_Pos_Cur =  "TM352";
@@ -258,7 +253,10 @@ namespace PLCKeygen
             public const string P3_Y_ABS_Setpoint =     "DM580";
             public const string P3_RI_ABS_Setpoint =    "DM640";
             public const string P3_RI_INC_Setpoint =    "DM644";
-
+            public const string P3_X_Master = "DM2482";
+            public const string P3_Y_Master = "DM2484";
+            public const string P3_R_Master = "DM2486";
+            // Port4
             public const string P4_X_Pos_Cur =  "TM316";
             public const string P4_RI_Pos_Cur = "TM318";
             public const string P4_Y_Pos_Cur =  "TM320";
@@ -269,6 +267,9 @@ namespace PLCKeygen
             public const string P4_Y_ABS_Setpoint =     "DM220";
             public const string P4_RI_ABS_Setpoint =    "DM280";
             public const string P4_RI_INC_Setpoint =    "DM284";
+            public const string P4_X_Master = "DM1682";
+            public const string P4_Y_Master = "DM1684";
+            public const string P4_R_Master = "DM1686";
 
         }
 
