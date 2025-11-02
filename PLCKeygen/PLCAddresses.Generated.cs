@@ -11,6 +11,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
 using System.CodeDom;
 
 namespace PLCKeygen
@@ -189,6 +190,342 @@ namespace PLCKeygen
             public const string P4_FGo_ABS =    "MR43403";
             public const string P4_FGo_INC =    "MR43404";
             #endregion
+
+            #region Port 1 I/O Sensors (MR21, MR22)
+
+            // ===== MR21 Register =====
+            /// <summary>Sensor: Input - Ss VIn1</summary>
+            public const string P1_Ss_VIn1 = "MR2100";
+
+            /// <summary>Sensor: Output - Ss VOt1</summary>
+            public const string P1_Ss_VOt1 = "MR2101";
+
+            /// <summary>Sensor: Camera Port 1 Vacuum - Ss VCa21 Port1</summary>
+            public const string P1_Ss_VCa21_Port1 = "MR2102";
+
+            /// <summary>Sensor: Camera Port 2 Vacuum - Ss VCa21 Port2</summary>
+            public const string P1_Ss_VCa21_Port2 = "MR2103";
+
+            /// <summary>Sensor: Fixture Open - Ss Fix1 Open</summary>
+            public const string P1_Ss_Fix1_Open = "MR2104";
+
+            /// <summary>Sensor: Fixture Close - Ss Fix1 Close</summary>
+            public const string P1_Ss_Fix1_Close = "MR2105";
+
+            /// <summary>Status: Tower Light Start - Stt lca Start1</summary>
+            public const string P1_Stt_lca_Start1 = "MR2106";
+
+            /// <summary>Status: Tower Light Stop - Stt lca Stop1</summary>
+            public const string P1_Stt_lca_Stop1 = "MR2107";
+
+            /// <summary>Status: Tower Light Green - Stt lca Gre1</summary>
+            public const string P1_Stt_lca_Gre1 = "MR2108";
+
+            /// <summary>Status: Tower Light Yellow - Stt lca Yel1</summary>
+            public const string P1_Stt_lca_Yel1 = "MR2109";
+
+            /// <summary>Status: Tower Light Red - Stt lca Red1</summary>
+            public const string P1_Stt_lca_Red1 = "MR2110";
+
+            /// <summary>Sensor: Door 1 - Ss Door1</summary>
+            public const string P1_Ss_Door1 = "MR2111";
+
+            /// <summary>Sensor: Jig OK - Ss Jig OK</summary>
+            public const string P1_Ss_Jig_OK = "MR2112";
+
+            /// <summary>Sensor: Tray OK - Ss Tray OK</summary>
+            public const string P1_Ss_Tray_OK = "MR2113";
+
+            /// <summary>Sensor: Jig NG - Ss Jig NG</summary>
+            public const string P1_Ss_Jig_NG = "MR2114";
+
+            /// <summary>Sensor: Tray NG - Ss Tray NG</summary>
+            public const string P1_Ss_Tray_NG = "MR2115";
+
+            // ===== MR22 Register =====
+            /// <summary>Sensor: Jig NG4 - Ss Jig NG4</summary>
+            public const string P1_Ss_Jig_NG4 = "MR2200";
+
+            /// <summary>Sensor: Tray NG4 - Ss Tray NG4</summary>
+            public const string P1_Ss_Tray_NG4 = "MR2201";
+
+            /// <summary>Switch: Emergency Stop 1 - SW EMS1</summary>
+            public const string P1_SW_EMS1 = "MR2202";
+
+            /// <summary>Switch: Start 1 - SW Start1</summary>
+            public const string P1_SW_Start1 = "MR2203";
+
+            /// <summary>Switch: Stop 1 - SW Stop1</summary>
+            public const string P1_SW_Stop1 = "MR2204";
+
+            /// <summary>Switch: Reset 1 - SW Reset1</summary>
+            public const string P1_SW_Reset1 = "MR2205";
+
+            /// <summary>Sensor: Air Positive 1 - Ss Air+1</summary>
+            public const string P1_Ss_AirPlus1 = "MR2206";
+
+            /// <summary>Sensor: Air Negative 1 - Ss Air-1</summary>
+            public const string P1_Ss_AirMinus1 = "MR2207";
+
+            /// <summary>Sensor: Vision Seek 1 - Ss VSk1</summary>
+            public const string P1_Ss_VSk1 = "MR2208";
+
+            /// <summary>Switch: Initialize 1 - SW Init1</summary>
+            public const string P1_SW_Init1 = "MR2209";
+
+            #endregion
+
+            #region Port 2 I/O Sensors (MR1, MR2)
+
+            // ===== MR1 Register =====
+            /// <summary>Sensor: Input - Ss VIn2</summary>
+            public const string P2_Ss_VIn2 = "MR100";
+
+            /// <summary>Sensor: Output - Ss VOt2</summary>
+            public const string P2_Ss_VOt2 = "MR101";
+
+            /// <summary>Sensor: Camera Port 2 Vacuum - Ss VCa12 Port2</summary>
+            public const string P2_Ss_VCa12_Port2 = "MR102";
+
+            /// <summary>Sensor: Camera Port 1 Vacuum - Ss VCa12 Port1</summary>
+            public const string P2_Ss_VCa12_Port1 = "MR103";
+
+            /// <summary>Sensor: Fixture 2 Open - Ss Fix2 Open</summary>
+            public const string P2_Ss_Fix2_Open = "MR104";
+
+            /// <summary>Sensor: Fixture 2 Close - Ss Fix2 Close</summary>
+            public const string P2_Ss_Fix2_Close = "MR105";
+
+            /// <summary>Status: Tower Light Start 2 / StatusTester - Stt lca Start2</summary>
+            public const string P2_Stt_lca_Start2_StatusTester = "MR106";
+
+            /// <summary>Status: Tower Light Stop 2 / StatusTester - Stt lca Stop2</summary>
+            public const string P2_Stt_lca_Stop2_StatusTester = "MR107";
+
+            /// <summary>Status: Tower Light Green 2 - Stt lca Gre2</summary>
+            public const string P2_Stt_lca_Gre2 = "MR108";
+
+            /// <summary>Status: Tower Light Yellow 2 - Stt lca Yel2</summary>
+            public const string P2_Stt_lca_Yel2 = "MR109";
+
+            /// <summary>Status: Tower Light Red 2 - Stt lca Red2</summary>
+            public const string P2_Stt_lca_Red2 = "MR110";
+
+            /// <summary>Sensor: Door 2 - Ss Door2</summary>
+            public const string P2_Ss_Door2 = "MR111";
+
+            /// <summary>Sensor: Jig OK - Ss Jig OK</summary>
+            public const string P2_Ss_Jig_OK = "MR112";
+
+            /// <summary>Sensor: Tray OK - Ss Tray OK</summary>
+            public const string P2_Ss_Tray_OK = "MR113";
+
+            /// <summary>Sensor: Jig NG - Ss Jig NG</summary>
+            public const string P2_Ss_Jig_NG = "MR114";
+
+            /// <summary>Sensor: Tray NG - Ss Tray NG</summary>
+            public const string P2_Ss_Tray_NG = "MR115";
+
+            // ===== MR2 Register =====
+            /// <summary>Sensor: Jig NG4 - Ss Jig NG4</summary>
+            public const string P2_Ss_Jig_NG4 = "MR200";
+
+            /// <summary>Sensor: Tray NG4 - Ss Tray NG4</summary>
+            public const string P2_Ss_Tray_NG4 = "MR201";
+
+            /// <summary>Switch: Emergency Stop 2 - SW EMS2</summary>
+            public const string P2_SW_EMS2 = "MR202";
+
+            /// <summary>Switch: Start 2 - SW Start2</summary>
+            public const string P2_SW_Start2 = "MR203";
+
+            /// <summary>Switch: Stop 2 - SW Stop2</summary>
+            public const string P2_SW_Stop2 = "MR204";
+
+            /// <summary>Switch: Reset 2 - SW Reset2</summary>
+            public const string P2_SW_Reset2 = "MR205";
+
+            /// <summary>Sensor: Air Positive 2 - Ss Air+2</summary>
+            public const string P2_Ss_AirPlus2 = "MR206";
+
+            /// <summary>Sensor: Air Negative 2 - Ss Air-2</summary>
+            public const string P2_Ss_AirMinus2 = "MR207";
+
+            /// <summary>Sensor: Vision Seek 2 - Ss VSk2</summary>
+            public const string P2_Ss_VSk2 = "MR208";
+
+            /// <summary>Switch: Initialize 2 - SW Init2</summary>
+            public const string P2_SW_Init2 = "MR209";
+
+            #endregion
+
+            #region Port 3 I/O Sensors (MR31, MR32)
+
+            // ===== MR31 Register =====
+            /// <summary>Sensor: Input - Ss VIn3</summary>
+            public const string P3_Ss_VIn3 = "MR3100";
+
+            /// <summary>Sensor: Output - Ss VOt3</summary>
+            public const string P3_Ss_VOt3 = "MR3101";
+
+            /// <summary>Sensor: Camera Port 3 Vacuum - Ss VCa34 Port3</summary>
+            public const string P3_Ss_VCa34_Port3 = "MR3102";
+
+            /// <summary>Sensor: Camera Port 4 Vacuum - Ss VCa34 Port4</summary>
+            public const string P3_Ss_VCa34_Port4 = "MR3103";
+
+            /// <summary>Sensor: Fixture 3 Open - Ss Fix3 Open</summary>
+            public const string P3_Ss_Fix3_Open = "MR3104";
+
+            /// <summary>Sensor: Fixture 3 Close - Ss Fix3 Close</summary>
+            public const string P3_Ss_Fix3_Close = "MR3105";
+
+            /// <summary>Status: Tower Light Start 3 - Stt lca Start3</summary>
+            public const string P3_Stt_lca_Start3 = "MR3106";
+
+            /// <summary>Status: Tower Light Stop 3 - Stt lca Stop3</summary>
+            public const string P3_Stt_lca_Stop3 = "MR3107";
+
+            /// <summary>Status: Tower Light Green 3 - Stt lca Gre3</summary>
+            public const string P3_Stt_lca_Gre3 = "MR3108";
+
+            /// <summary>Status: Tower Light Yellow 3 - Stt lca Yel3</summary>
+            public const string P3_Stt_lca_Yel3 = "MR3109";
+
+            /// <summary>Status: Tower Light Red 3 - Stt lca Red3</summary>
+            public const string P3_Stt_lca_Red3 = "MR3110";
+
+            /// <summary>Sensor: Door 3 - Ss Door3</summary>
+            public const string P3_Ss_Door3 = "MR3111";
+
+            /// <summary>Sensor: Jig OK - Ss Jig OK</summary>
+            public const string P3_Ss_Jig_OK = "MR3112";
+
+            /// <summary>Sensor: Tray OK - Ss Tray OK</summary>
+            public const string P3_Ss_Tray_OK = "MR3113";
+
+            /// <summary>Sensor: Jig NG - Ss Jig NG</summary>
+            public const string P3_Ss_Jig_NG = "MR3114";
+
+            /// <summary>Sensor: Tray NG - Ss Tray NG</summary>
+            public const string P3_Ss_Tray_NG = "MR3115";
+
+            // ===== MR32 Register =====
+            /// <summary>Sensor: Jig NG4 - Ss Jig NG4</summary>
+            public const string P3_Ss_Jig_NG4 = "MR3200";
+
+            /// <summary>Sensor: Tray NG4 - Ss Tray NG4</summary>
+            public const string P3_Ss_Tray_NG4 = "MR3201";
+
+            /// <summary>Switch: Emergency Stop 3 - SW EMS3</summary>
+            public const string P3_SW_EMS3 = "MR3202";
+
+            /// <summary>Switch: Start 3 - SW Start3</summary>
+            public const string P3_SW_Start3 = "MR3203";
+
+            /// <summary>Switch: Stop 3 - SW Stop3</summary>
+            public const string P3_SW_Stop3 = "MR3204";
+
+            /// <summary>Switch: Reset 3 - SW Reset3</summary>
+            public const string P3_SW_Reset3 = "MR3205";
+
+            /// <summary>Sensor: Air Positive 3 - Ss Air+3</summary>
+            public const string P3_Ss_AirPlus3 = "MR3206";
+
+            /// <summary>Sensor: Air Negative 3 - Ss Air-3</summary>
+            public const string P3_Ss_AirMinus3 = "MR3207";
+
+            /// <summary>Sensor: Vision Seek 3 - Ss VSk3</summary>
+            public const string P3_Ss_VSk3 = "MR3208";
+
+            /// <summary>Switch: Initialize 3 - SW Init3</summary>
+            public const string P3_SW_Init3 = "MR3209";
+
+            #endregion
+
+            #region Port 4 I/O Sensors (MR11, MR12)
+
+            // ===== MR11 Register =====
+            /// <summary>Sensor: Input - Ss VIn4</summary>
+            public const string P4_Ss_VIn4 = "MR1100";
+
+            /// <summary>Sensor: Output - Ss VOt24</summary>
+            public const string P4_Ss_VOt24 = "MR1101";
+
+            /// <summary>Sensor: Camera Port 4 Vacuum - Ss VCa34 Port4</summary>
+            public const string P4_Ss_VCa34_Port4 = "MR1102";
+
+            /// <summary>Sensor: Camera Port 3 Vacuum - Ss VCa34 Port3</summary>
+            public const string P4_Ss_VCa34_Port3 = "MR1103";
+
+            /// <summary>Sensor: Fixture 4 Open - Ss Fix4 Open</summary>
+            public const string P4_Ss_Fix4_Open = "MR1104";
+
+            /// <summary>Sensor: Fixture 4 Close - Ss Fix4 Close</summary>
+            public const string P4_Ss_Fix4_Close = "MR1105";
+
+            /// <summary>Status: Tower Light Start 4 - Stt lca Start4</summary>
+            public const string P4_Stt_lca_Start4 = "MR1106";
+
+            /// <summary>Status: Tower Light Stop 4 - Stt lca Stop4</summary>
+            public const string P4_Stt_lca_Stop4 = "MR1107";
+
+            /// <summary>Status: Tower Light Green 4 - Stt lca Gre4</summary>
+            public const string P4_Stt_lca_Gre4 = "MR1108";
+
+            /// <summary>Status: Tower Light Yellow 4 - Stt lca Yel4</summary>
+            public const string P4_Stt_lca_Yel4 = "MR1109";
+
+            /// <summary>Status: Tower Light Red 4 - Stt lca Red4</summary>
+            public const string P4_Stt_lca_Red4 = "MR1110";
+
+            /// <summary>Sensor: Door 4 - Ss Door4</summary>
+            public const string P4_Ss_Door4 = "MR1111";
+
+            /// <summary>Sensor: Jig OK - Ss Jig OK</summary>
+            public const string P4_Ss_Jig_OK = "MR1112";
+
+            /// <summary>Sensor: Tray OK - Ss Tray OK</summary>
+            public const string P4_Ss_Tray_OK = "MR1113";
+
+            /// <summary>Sensor: Jig NG - Ss Jig NG</summary>
+            public const string P4_Ss_Jig_NG = "MR1114";
+
+            /// <summary>Sensor: Tray NG - Ss Tray NG</summary>
+            public const string P4_Ss_Tray_NG = "MR1115";
+
+            // ===== MR12 Register =====
+            /// <summary>Sensor: Jig NG4 - Ss Jig NG4</summary>
+            public const string P4_Ss_Jig_NG4 = "MR1200";
+
+            /// <summary>Sensor: Tray NG4 - Ss Tray NG4</summary>
+            public const string P4_Ss_Tray_NG4 = "MR1201";
+
+            /// <summary>Switch: Emergency Stop 4 - SW EMS4</summary>
+            public const string P4_SW_EMS4 = "MR1202";
+
+            /// <summary>Switch: Start 4 - SW Start4</summary>
+            public const string P4_SW_Start4 = "MR1203";
+
+            /// <summary>Switch: Stop 4 - SW Stop4</summary>
+            public const string P4_SW_Stop4 = "MR1204";
+
+            /// <summary>Switch: Reset 4 - SW Reset4</summary>
+            public const string P4_SW_Reset4 = "MR1205";
+
+            /// <summary>Sensor: Air Positive 4 - Ss Air+4</summary>
+            public const string P4_Ss_AirPlus4 = "MR1206";
+
+            /// <summary>Sensor: Air Negative 4 - Ss Air-4</summary>
+            public const string P4_Ss_AirMinus4 = "MR1207";
+
+            /// <summary>Sensor: Vision Seek 4 - Ss VSk4</summary>
+            public const string P4_Ss_VSk4 = "MR1208";
+
+            /// <summary>Switch: Initialize 4 - SW Init4</summary>
+            public const string P4_SW_Init4 = "MR1209";
+
+            #endregion
         }
 
         /// <summary>
@@ -196,15 +533,158 @@ namespace PLCKeygen
         /// </summary>
         public static class Output
         {
-            public const string Den_bao = "R500";
-            public const string Dong_co_chinh = "R501";
-            public const string Van_khi = "R502";
-            public const string Gia_tri_dat = "DM500";
-
-            //Xi lanh camera 12
+            #region Camera Cylinders
+            /// <summary>Xi lanh camera Port 1-2</summary>
             public const string P12_Cam_cylinder = "MR5002";
-            //Xi lanh camera 34
+
+            /// <summary>Xi lanh camera Port 3-4</summary>
             public const string P34_Cam_cylinder = "MR6002";
+            #endregion
+
+            #region Port 1 Outputs - Tower Lights
+            /// <summary>Đèn tháp xanh Port 1 - Tower Light Green</summary>
+            public const string P1_Tower_Green = "MR2108";
+
+            /// <summary>Đèn tháp vàng Port 1 - Tower Light Yellow</summary>
+            public const string P1_Tower_Yellow = "MR2109";
+
+            /// <summary>Đèn tháp đỏ Port 1 - Tower Light Red</summary>
+            public const string P1_Tower_Red = "MR2110";
+
+            /// <summary>Đèn tháp Start Port 1 - Tower Light Start</summary>
+            public const string P1_Tower_Start = "MR2106";
+
+            /// <summary>Đèn tháp Stop Port 1 - Tower Light Stop</summary>
+            public const string P1_Tower_Stop = "MR2107";
+            #endregion
+
+            #region Port 2 Outputs - Tower Lights
+            /// <summary>Đèn tháp xanh Port 2 - Tower Light Green</summary>
+            public const string P2_Tower_Green = "MR108";
+
+            /// <summary>Đèn tháp vàng Port 2 - Tower Light Yellow</summary>
+            public const string P2_Tower_Yellow = "MR109";
+
+            /// <summary>Đèn tháp đỏ Port 2 - Tower Light Red</summary>
+            public const string P2_Tower_Red = "MR110";
+
+            /// <summary>Đèn tháp Start Port 2 - Tower Light Start</summary>
+            public const string P2_Tower_Start = "MR106";
+
+            /// <summary>Đèn tháp Stop Port 2 - Tower Light Stop</summary>
+            public const string P2_Tower_Stop = "MR107";
+            #endregion
+
+            #region Port 3 Outputs - Tower Lights
+            /// <summary>Đèn tháp xanh Port 3 - Tower Light Green</summary>
+            public const string P3_Tower_Green = "MR3108";
+
+            /// <summary>Đèn tháp vàng Port 3 - Tower Light Yellow</summary>
+            public const string P3_Tower_Yellow = "MR3109";
+
+            /// <summary>Đèn tháp đỏ Port 3 - Tower Light Red</summary>
+            public const string P3_Tower_Red = "MR3110";
+
+            /// <summary>Đèn tháp Start Port 3 - Tower Light Start</summary>
+            public const string P3_Tower_Start = "MR3106";
+
+            /// <summary>Đèn tháp Stop Port 3 - Tower Light Stop</summary>
+            public const string P3_Tower_Stop = "MR3107";
+            #endregion
+
+            #region Port 4 Outputs (MR60)
+
+            /// <summary>Request: Input Valve - Rq Vin4</summary>
+            public const string P4_Rq_Vin4 = "MR6000";
+
+            /// <summary>Request: Output Valve - Rq Vout4</summary>
+            public const string P4_Rq_Vout4 = "MR6001";
+
+            /// <summary>Request: Camera Vacuum 34 - Rq VCam34 (same as P34_Cam_cylinder)</summary>
+            public const string P4_Rq_VCam34 = "MR6002";
+
+            /// <summary>Request: Fixture Valve - Rq VFix4</summary>
+            public const string P4_Rq_VFix4 = "MR6003";
+
+            /// <summary>Request: Tower Light Init 4 - Rq lca Init4</summary>
+            public const string P4_Rq_lca_Init4 = "MR6004";
+
+            /// <summary>Request: Tower Light Start Tester 4 - Rq lca StartT4</summary>
+            public const string P4_Rq_lca_StartT4 = "MR6005";
+
+            /// <summary>Request: Tower Light Stop Tester 4 - Rq lca StopT4</summary>
+            public const string P4_Rq_lca_StopT4 = "MR6006";
+
+            /// <summary>Request: Tower Light Reset 4 - Rq lca Res4</summary>
+            public const string P4_Rq_lca_Res4 = "MR6007";
+
+            /// <summary>Đèn tháp xanh Port 4 - Tower Light Green - Rq L Gre4</summary>
+            public const string P4_Tower_Green = "MR6008";
+
+            /// <summary>Đèn tháp đỏ Port 4 - Tower Light Red - Rq L Red4</summary>
+            public const string P4_Tower_Red = "MR6009";
+
+            /// <summary>Đèn tháp vàng Port 4 - Tower Light Yellow - Rq L Yel4</summary>
+            public const string P4_Tower_Yellow = "MR6010";
+
+            /// <summary>Đèn tháp Start Port 4 - Tower Light Start - Rq L Start4</summary>
+            public const string P4_Tower_Start = "MR6011";
+
+            /// <summary>Đèn tháp Stop Port 4 - Tower Light Stop - Rq L Stop4</summary>
+            public const string P4_Tower_Stop = "MR6012";
+
+            /// <summary>Request: Vision Check Seek 4 - Rq VChck Sk4</summary>
+            public const string P4_Rq_VChck_Sk4 = "MR6013";
+
+            #endregion
+
+            #region Helper Methods
+            /// <summary>
+            /// Lấy địa chỉ đèn tháp theo port và màu
+            /// Get tower light address by port and color
+            /// </summary>
+            /// <param name="port">Port number (1-4)</param>
+            /// <param name="color">Color: GREEN, YELLOW, RED, START, STOP</param>
+            /// <returns>PLC address string</returns>
+            public static string GetTowerLight(int port, string color)
+            {
+                color = color.ToUpper();
+
+                switch (port)
+                {
+                    case 1:
+                        if (color == "GREEN") return P1_Tower_Green;
+                        if (color == "YELLOW") return P1_Tower_Yellow;
+                        if (color == "RED") return P1_Tower_Red;
+                        if (color == "START") return P1_Tower_Start;
+                        if (color == "STOP") return P1_Tower_Stop;
+                        break;
+                    case 2:
+                        if (color == "GREEN") return P2_Tower_Green;
+                        if (color == "YELLOW") return P2_Tower_Yellow;
+                        if (color == "RED") return P2_Tower_Red;
+                        if (color == "START") return P2_Tower_Start;
+                        if (color == "STOP") return P2_Tower_Stop;
+                        break;
+                    case 3:
+                        if (color == "GREEN") return P3_Tower_Green;
+                        if (color == "YELLOW") return P3_Tower_Yellow;
+                        if (color == "RED") return P3_Tower_Red;
+                        if (color == "START") return P3_Tower_Start;
+                        if (color == "STOP") return P3_Tower_Stop;
+                        break;
+                    case 4:
+                        if (color == "GREEN") return P4_Tower_Green;
+                        if (color == "YELLOW") return P4_Tower_Yellow;
+                        if (color == "RED") return P4_Tower_Red;
+                        if (color == "START") return P4_Tower_Start;
+                        if (color == "STOP") return P4_Tower_Stop;
+                        break;
+                }
+
+                throw new ArgumentException($"Invalid port ({port}) or color ({color})");
+            }
+            #endregion
 
         }
 

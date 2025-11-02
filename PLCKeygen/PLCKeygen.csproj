@@ -56,11 +56,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.IO.Extension.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="KeyenceHostLinkTcpClient.cs" />
-    <Compile Include="PLCConfigModels.cs" />
-    <Compile Include="PLCConfigManager.cs" />
     <Compile Include="PLCAddresses.Generated.cs" />
-    <Compile Include="PLCUsageExample.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

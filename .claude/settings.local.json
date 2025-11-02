@@ -5,7 +5,8 @@
       "Bash(findstr:*)",
       "Bash(nuget install:*)",
       "Bash(dotnet build:*)",
-      "Bash(where:*)"
+      "Bash(where:*)",
+      "Bash(QUICKSTART.md)"
     ],
     "deny": [],
     "ask": []
