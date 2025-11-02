@@ -66,9 +66,9 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnHomeAll = new System.Windows.Forms.Button();
+            this.btnResetAll = new System.Windows.Forms.Button();
+            this.grbJogControl = new System.Windows.Forms.GroupBox();
             this.groupBox46 = new System.Windows.Forms.GroupBox();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
@@ -162,7 +162,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.rbtStep = new System.Windows.Forms.RadioButton();
             this.rbtJog = new System.Windows.Forms.RadioButton();
-            this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.grpTeachingSocket = new System.Windows.Forms.GroupBox();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.groupBox40 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -187,7 +187,7 @@
             this.groupBox45 = new System.Windows.Forms.GroupBox();
             this.button65 = new System.Windows.Forms.Button();
             this.button66 = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.grpTeachingTray = new System.Windows.Forms.GroupBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
             this.button41 = new System.Windows.Forms.Button();
@@ -229,28 +229,9 @@
             this.button22 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox49 = new System.Windows.Forms.GroupBox();
-            this.groupBox61 = new System.Windows.Forms.GroupBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.btnBuzz = new System.Windows.Forms.Button();
-            this.label86 = new System.Windows.Forms.Label();
-            this.btnLampInit = new System.Windows.Forms.Button();
-            this.label85 = new System.Windows.Forms.Label();
-            this.btnLampRestart = new System.Windows.Forms.Button();
-            this.label84 = new System.Windows.Forms.Label();
-            this.btnLampStop = new System.Windows.Forms.Button();
-            this.label83 = new System.Windows.Forms.Label();
-            this.btnLampStart = new System.Windows.Forms.Button();
-            this.label82 = new System.Windows.Forms.Label();
-            this.btnLampRed = new System.Windows.Forms.Button();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.btnLampYellow = new System.Windows.Forms.Button();
-            this.btnLampGreen = new System.Windows.Forms.Button();
             this.groupBox60 = new System.Windows.Forms.GroupBox();
-            this.label78 = new System.Windows.Forms.Label();
             this.label79 = new System.Windows.Forms.Label();
-            this.btnCylinderCamera2 = new System.Windows.Forms.Button();
-            this.btnCylinderCamera1 = new System.Windows.Forms.Button();
+            this.btnReqCamera = new System.Windows.Forms.Button();
             this.groupBox59 = new System.Windows.Forms.GroupBox();
             this.label76 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
@@ -413,18 +394,29 @@
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnLampStart = new System.Windows.Forms.Button();
+            this.label83 = new System.Windows.Forms.Label();
+            this.btnLampStop = new System.Windows.Forms.Button();
+            this.label84 = new System.Windows.Forms.Label();
+            this.btnLampRestart = new System.Windows.Forms.Button();
+            this.label85 = new System.Windows.Forms.Label();
+            this.btnLampInit = new System.Windows.Forms.Button();
+            this.label86 = new System.Windows.Forms.Label();
+            this.groupBox61 = new System.Windows.Forms.GroupBox();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tstStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.grbJogControl.SuspendLayout();
             this.groupBox46.SuspendLayout();
             this.groupBox22.SuspendLayout();
             this.groupBox21.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox30.SuspendLayout();
+            this.grpTeachingSocket.SuspendLayout();
             this.groupBox20.SuspendLayout();
             this.groupBox40.SuspendLayout();
             this.groupBox43.SuspendLayout();
@@ -435,7 +427,7 @@
             this.groupBox42.SuspendLayout();
             this.groupBox44.SuspendLayout();
             this.groupBox45.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.grpTeachingTray.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox25.SuspendLayout();
             this.groupBox17.SuspendLayout();
@@ -453,7 +445,6 @@
             this.groupBox13.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox49.SuspendLayout();
-            this.groupBox61.SuspendLayout();
             this.groupBox60.SuspendLayout();
             this.groupBox59.SuspendLayout();
             this.groupBox58.SuspendLayout();
@@ -480,6 +471,7 @@
             this.groupBox37.SuspendLayout();
             this.groupBox36.SuspendLayout();
             this.strip.SuspendLayout();
+            this.groupBox61.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -818,11 +810,11 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.button12);
-            this.tabPage3.Controls.Add(this.button11);
-            this.tabPage3.Controls.Add(this.groupBox4);
-            this.tabPage3.Controls.Add(this.groupBox30);
-            this.tabPage3.Controls.Add(this.groupBox7);
+            this.tabPage3.Controls.Add(this.btnHomeAll);
+            this.tabPage3.Controls.Add(this.btnResetAll);
+            this.tabPage3.Controls.Add(this.grbJogControl);
+            this.tabPage3.Controls.Add(this.grpTeachingSocket);
+            this.tabPage3.Controls.Add(this.grpTeachingTray);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(970, 597);
@@ -830,38 +822,41 @@
             this.tabPage3.Text = "Motion";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnHomeAll
             // 
-            this.button12.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button12.Location = new System.Drawing.Point(726, 450);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(229, 47);
-            this.button12.TabIndex = 12;
-            this.button12.Text = "Origin All";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnHomeAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeAll.Location = new System.Drawing.Point(726, 450);
+            this.btnHomeAll.Name = "btnHomeAll";
+            this.btnHomeAll.Size = new System.Drawing.Size(229, 47);
+            this.btnHomeAll.TabIndex = 12;
+            this.btnHomeAll.Text = "Origin All";
+            this.btnHomeAll.UseVisualStyleBackColor = true;
+            this.btnHomeAll.Click += new System.EventHandler(this.btnHomeAll_Click);
             // 
-            // button11
+            // btnResetAll
             // 
-            this.button11.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(726, 513);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(229, 47);
-            this.button11.TabIndex = 4;
-            this.button11.Text = "Reset All";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnResetAll.BackColor = System.Drawing.Color.Orange;
+            this.btnResetAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetAll.Location = new System.Drawing.Point(726, 513);
+            this.btnResetAll.Name = "btnResetAll";
+            this.btnResetAll.Size = new System.Drawing.Size(229, 47);
+            this.btnResetAll.TabIndex = 4;
+            this.btnResetAll.Text = "Reset All";
+            this.btnResetAll.UseVisualStyleBackColor = false;
+            this.btnResetAll.Click += new System.EventHandler(this.btnResetAll_Click);
             // 
-            // groupBox4
+            // grbJogControl
             // 
-            this.groupBox4.Controls.Add(this.groupBox46);
-            this.groupBox4.Controls.Add(this.groupBox22);
-            this.groupBox4.Controls.Add(this.groupBox21);
-            this.groupBox4.Controls.Add(this.groupBox6);
-            this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Location = new System.Drawing.Point(8, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(706, 341);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
+            this.grbJogControl.Controls.Add(this.groupBox46);
+            this.grbJogControl.Controls.Add(this.groupBox22);
+            this.grbJogControl.Controls.Add(this.groupBox21);
+            this.grbJogControl.Controls.Add(this.groupBox6);
+            this.grbJogControl.Controls.Add(this.groupBox5);
+            this.grbJogControl.Location = new System.Drawing.Point(8, 3);
+            this.grbJogControl.Name = "grbJogControl";
+            this.grbJogControl.Size = new System.Drawing.Size(706, 341);
+            this.grbJogControl.TabIndex = 8;
+            this.grbJogControl.TabStop = false;
             // 
             // groupBox46
             // 
@@ -1770,17 +1765,18 @@
             this.rbtJog.Text = "JOG";
             this.rbtJog.UseVisualStyleBackColor = true;
             // 
-            // groupBox30
+            // grpTeachingSocket
             // 
-            this.groupBox30.Controls.Add(this.groupBox20);
-            this.groupBox30.Controls.Add(this.groupBox31);
-            this.groupBox30.Controls.Add(this.groupBox41);
-            this.groupBox30.Location = new System.Drawing.Point(720, 3);
-            this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(242, 432);
-            this.groupBox30.TabIndex = 11;
-            this.groupBox30.TabStop = false;
-            this.groupBox30.Text = "Teaching vị trí socket";
+            this.grpTeachingSocket.Controls.Add(this.groupBox20);
+            this.grpTeachingSocket.Controls.Add(this.groupBox31);
+            this.grpTeachingSocket.Controls.Add(this.groupBox41);
+            this.grpTeachingSocket.Enabled = false;
+            this.grpTeachingSocket.Location = new System.Drawing.Point(720, 3);
+            this.grpTeachingSocket.Name = "grpTeachingSocket";
+            this.grpTeachingSocket.Size = new System.Drawing.Size(242, 432);
+            this.grpTeachingSocket.TabIndex = 11;
+            this.grpTeachingSocket.TabStop = false;
+            this.grpTeachingSocket.Text = "Teaching vị trí socket";
             // 
             // groupBox20
             // 
@@ -2019,17 +2015,18 @@
             this.button66.Text = "Go";
             this.button66.UseVisualStyleBackColor = true;
             // 
-            // groupBox7
+            // grpTeachingTray
             // 
-            this.groupBox7.Controls.Add(this.groupBox16);
-            this.groupBox7.Controls.Add(this.groupBox11);
-            this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Location = new System.Drawing.Point(8, 350);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(707, 212);
-            this.groupBox7.TabIndex = 10;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Teaching vị trí tray";
+            this.grpTeachingTray.Controls.Add(this.groupBox16);
+            this.grpTeachingTray.Controls.Add(this.groupBox11);
+            this.grpTeachingTray.Controls.Add(this.groupBox8);
+            this.grpTeachingTray.Enabled = false;
+            this.grpTeachingTray.Location = new System.Drawing.Point(8, 350);
+            this.grpTeachingTray.Name = "grpTeachingTray";
+            this.grpTeachingTray.Size = new System.Drawing.Size(707, 212);
+            this.grpTeachingTray.TabIndex = 10;
+            this.grpTeachingTray.TabStop = false;
+            this.grpTeachingTray.Text = "Teaching vị trí tray";
             // 
             // groupBox16
             // 
@@ -2444,213 +2441,33 @@
             this.groupBox49.TabStop = false;
             this.groupBox49.Text = "OUTPUT";
             // 
-            // groupBox61
-            // 
-            this.groupBox61.Controls.Add(this.label87);
-            this.groupBox61.Controls.Add(this.btnBuzz);
-            this.groupBox61.Controls.Add(this.label86);
-            this.groupBox61.Controls.Add(this.btnLampInit);
-            this.groupBox61.Controls.Add(this.label85);
-            this.groupBox61.Controls.Add(this.btnLampRestart);
-            this.groupBox61.Controls.Add(this.label84);
-            this.groupBox61.Controls.Add(this.btnLampStop);
-            this.groupBox61.Controls.Add(this.label83);
-            this.groupBox61.Controls.Add(this.btnLampStart);
-            this.groupBox61.Controls.Add(this.label82);
-            this.groupBox61.Controls.Add(this.btnLampRed);
-            this.groupBox61.Controls.Add(this.label80);
-            this.groupBox61.Controls.Add(this.label81);
-            this.groupBox61.Controls.Add(this.btnLampYellow);
-            this.groupBox61.Controls.Add(this.btnLampGreen);
-            this.groupBox61.Location = new System.Drawing.Point(12, 97);
-            this.groupBox61.Name = "groupBox61";
-            this.groupBox61.Size = new System.Drawing.Size(220, 241);
-            this.groupBox61.TabIndex = 6;
-            this.groupBox61.TabStop = false;
-            this.groupBox61.Text = "Đèn";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(39, 215);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(68, 13);
-            this.label87.TabIndex = 15;
-            this.label87.Text = "Còi đèn tháp";
-            // 
-            // btnBuzz
-            // 
-            this.btnBuzz.Location = new System.Drawing.Point(9, 209);
-            this.btnBuzz.Name = "btnBuzz";
-            this.btnBuzz.Size = new System.Drawing.Size(24, 24);
-            this.btnBuzz.TabIndex = 14;
-            this.btnBuzz.UseVisualStyleBackColor = true;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(39, 188);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(89, 13);
-            this.label86.TabIndex = 13;
-            this.label86.Text = "Đèn nút nhân Init";
-            // 
-            // btnLampInit
-            // 
-            this.btnLampInit.Location = new System.Drawing.Point(9, 182);
-            this.btnLampInit.Name = "btnLampInit";
-            this.btnLampInit.Size = new System.Drawing.Size(24, 24);
-            this.btnLampInit.TabIndex = 12;
-            this.btnLampInit.UseVisualStyleBackColor = true;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(39, 161);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(109, 13);
-            this.label85.TabIndex = 11;
-            this.label85.Text = "Đèn nút nhấn Restart";
-            // 
-            // btnLampRestart
-            // 
-            this.btnLampRestart.Location = new System.Drawing.Point(9, 155);
-            this.btnLampRestart.Name = "btnLampRestart";
-            this.btnLampRestart.Size = new System.Drawing.Size(24, 24);
-            this.btnLampRestart.TabIndex = 10;
-            this.btnLampRestart.UseVisualStyleBackColor = true;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(39, 133);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(97, 13);
-            this.label84.TabIndex = 9;
-            this.label84.Text = "Đèn nút nhấn Stop";
-            // 
-            // btnLampStop
-            // 
-            this.btnLampStop.Location = new System.Drawing.Point(9, 127);
-            this.btnLampStop.Name = "btnLampStop";
-            this.btnLampStop.Size = new System.Drawing.Size(24, 24);
-            this.btnLampStop.TabIndex = 8;
-            this.btnLampStop.UseVisualStyleBackColor = true;
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(39, 106);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(97, 13);
-            this.label83.TabIndex = 7;
-            this.label83.Text = "Đèn nút nhấn Start";
-            // 
-            // btnLampStart
-            // 
-            this.btnLampStart.Location = new System.Drawing.Point(9, 100);
-            this.btnLampStart.Name = "btnLampStart";
-            this.btnLampStart.Size = new System.Drawing.Size(24, 24);
-            this.btnLampStart.TabIndex = 6;
-            this.btnLampStart.UseVisualStyleBackColor = true;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(39, 79);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(90, 13);
-            this.label82.TabIndex = 5;
-            this.label82.Text = "Đèn tháp màu đỏ";
-            // 
-            // btnLampRed
-            // 
-            this.btnLampRed.Location = new System.Drawing.Point(9, 73);
-            this.btnLampRed.Name = "btnLampRed";
-            this.btnLampRed.Size = new System.Drawing.Size(24, 24);
-            this.btnLampRed.TabIndex = 4;
-            this.btnLampRed.UseVisualStyleBackColor = true;
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(39, 51);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(101, 13);
-            this.label80.TabIndex = 3;
-            this.label80.Text = "Đèn tháp màu vàng";
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(39, 24);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(100, 13);
-            this.label81.TabIndex = 2;
-            this.label81.Text = "Đèn tháp màu xanh";
-            // 
-            // btnLampYellow
-            // 
-            this.btnLampYellow.Location = new System.Drawing.Point(9, 45);
-            this.btnLampYellow.Name = "btnLampYellow";
-            this.btnLampYellow.Size = new System.Drawing.Size(24, 24);
-            this.btnLampYellow.TabIndex = 1;
-            this.btnLampYellow.UseVisualStyleBackColor = true;
-            // 
-            // btnLampGreen
-            // 
-            this.btnLampGreen.Location = new System.Drawing.Point(9, 18);
-            this.btnLampGreen.Name = "btnLampGreen";
-            this.btnLampGreen.Size = new System.Drawing.Size(24, 24);
-            this.btnLampGreen.TabIndex = 0;
-            this.btnLampGreen.UseVisualStyleBackColor = true;
-            // 
             // groupBox60
             // 
-            this.groupBox60.Controls.Add(this.label78);
             this.groupBox60.Controls.Add(this.label79);
-            this.groupBox60.Controls.Add(this.btnCylinderCamera2);
-            this.groupBox60.Controls.Add(this.btnCylinderCamera1);
+            this.groupBox60.Controls.Add(this.btnReqCamera);
             this.groupBox60.Location = new System.Drawing.Point(241, 97);
             this.groupBox60.Name = "groupBox60";
-            this.groupBox60.Size = new System.Drawing.Size(220, 76);
+            this.groupBox60.Size = new System.Drawing.Size(220, 52);
             this.groupBox60.TabIndex = 5;
             this.groupBox60.TabStop = false;
             this.groupBox60.Text = "Camera";
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(39, 51);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(116, 13);
-            this.label78.TabIndex = 3;
-            this.label78.Text = "Xi lanh camera port 3,4";
             // 
             // label79
             // 
             this.label79.AutoSize = true;
             this.label79.Location = new System.Drawing.Point(39, 24);
             this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(116, 13);
+            this.label79.Size = new System.Drawing.Size(118, 13);
             this.label79.TabIndex = 2;
-            this.label79.Text = "Xi lanh camera port 1,2";
+            this.label79.Text = "Camera di chuyển sang";
             // 
-            // btnCylinderCamera2
+            // btnReqCamera
             // 
-            this.btnCylinderCamera2.Location = new System.Drawing.Point(9, 45);
-            this.btnCylinderCamera2.Name = "btnCylinderCamera2";
-            this.btnCylinderCamera2.Size = new System.Drawing.Size(24, 24);
-            this.btnCylinderCamera2.TabIndex = 1;
-            this.btnCylinderCamera2.UseVisualStyleBackColor = true;
-            // 
-            // btnCylinderCamera1
-            // 
-            this.btnCylinderCamera1.Location = new System.Drawing.Point(9, 18);
-            this.btnCylinderCamera1.Name = "btnCylinderCamera1";
-            this.btnCylinderCamera1.Size = new System.Drawing.Size(24, 24);
-            this.btnCylinderCamera1.TabIndex = 0;
-            this.btnCylinderCamera1.UseVisualStyleBackColor = true;
+            this.btnReqCamera.Location = new System.Drawing.Point(9, 18);
+            this.btnReqCamera.Name = "btnReqCamera";
+            this.btnReqCamera.Size = new System.Drawing.Size(24, 24);
+            this.btnReqCamera.TabIndex = 0;
+            this.btnReqCamera.UseVisualStyleBackColor = true;
             // 
             // groupBox59
             // 
@@ -4199,7 +4016,9 @@
             // 
             this.strip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripProgressBar1,
-            this.toolStripStatusLabel2});
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel1,
+            this.tstStatus});
             this.strip.Location = new System.Drawing.Point(0, 601);
             this.strip.Name = "strip";
             this.strip.Size = new System.Drawing.Size(978, 22);
@@ -4217,6 +4036,103 @@
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(89, 17);
             this.toolStripStatusLabel2.Text = "PLC Connected";
+            // 
+            // btnLampStart
+            // 
+            this.btnLampStart.Location = new System.Drawing.Point(9, 18);
+            this.btnLampStart.Name = "btnLampStart";
+            this.btnLampStart.Size = new System.Drawing.Size(24, 24);
+            this.btnLampStart.TabIndex = 6;
+            this.btnLampStart.UseVisualStyleBackColor = true;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(39, 24);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(97, 13);
+            this.label83.TabIndex = 7;
+            this.label83.Text = "Đèn nút nhấn Start";
+            // 
+            // btnLampStop
+            // 
+            this.btnLampStop.Location = new System.Drawing.Point(9, 45);
+            this.btnLampStop.Name = "btnLampStop";
+            this.btnLampStop.Size = new System.Drawing.Size(24, 24);
+            this.btnLampStop.TabIndex = 8;
+            this.btnLampStop.UseVisualStyleBackColor = true;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(39, 51);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(97, 13);
+            this.label84.TabIndex = 9;
+            this.label84.Text = "Đèn nút nhấn Stop";
+            // 
+            // btnLampRestart
+            // 
+            this.btnLampRestart.Location = new System.Drawing.Point(9, 73);
+            this.btnLampRestart.Name = "btnLampRestart";
+            this.btnLampRestart.Size = new System.Drawing.Size(24, 24);
+            this.btnLampRestart.TabIndex = 10;
+            this.btnLampRestart.UseVisualStyleBackColor = true;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(39, 79);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(109, 13);
+            this.label85.TabIndex = 11;
+            this.label85.Text = "Đèn nút nhấn Restart";
+            // 
+            // btnLampInit
+            // 
+            this.btnLampInit.Location = new System.Drawing.Point(9, 100);
+            this.btnLampInit.Name = "btnLampInit";
+            this.btnLampInit.Size = new System.Drawing.Size(24, 24);
+            this.btnLampInit.TabIndex = 12;
+            this.btnLampInit.UseVisualStyleBackColor = true;
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(39, 106);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(89, 13);
+            this.label86.TabIndex = 13;
+            this.label86.Text = "Đèn nút nhân Init";
+            // 
+            // groupBox61
+            // 
+            this.groupBox61.Controls.Add(this.label86);
+            this.groupBox61.Controls.Add(this.btnLampInit);
+            this.groupBox61.Controls.Add(this.label85);
+            this.groupBox61.Controls.Add(this.btnLampRestart);
+            this.groupBox61.Controls.Add(this.label84);
+            this.groupBox61.Controls.Add(this.btnLampStop);
+            this.groupBox61.Controls.Add(this.label83);
+            this.groupBox61.Controls.Add(this.btnLampStart);
+            this.groupBox61.Location = new System.Drawing.Point(12, 97);
+            this.groupBox61.Name = "groupBox61";
+            this.groupBox61.Size = new System.Drawing.Size(220, 133);
+            this.groupBox61.TabIndex = 6;
+            this.groupBox61.TabStop = false;
+            this.groupBox61.Text = "Đèn";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel1.Text = "|";
+            // 
+            // tstStatus
+            // 
+            this.tstStatus.Name = "tstStatus";
+            this.tstStatus.Size = new System.Drawing.Size(64, 17);
+            this.tstStatus.Text = "Running....";
             // 
             // Form1
             // 
@@ -4236,7 +4152,7 @@
             this.groupBox3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.grbJogControl.ResumeLayout(false);
             this.groupBox46.ResumeLayout(false);
             this.groupBox46.PerformLayout();
             this.groupBox22.ResumeLayout(false);
@@ -4246,7 +4162,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox30.ResumeLayout(false);
+            this.grpTeachingSocket.ResumeLayout(false);
             this.groupBox20.ResumeLayout(false);
             this.groupBox40.ResumeLayout(false);
             this.groupBox43.ResumeLayout(false);
@@ -4257,7 +4173,7 @@
             this.groupBox42.ResumeLayout(false);
             this.groupBox44.ResumeLayout(false);
             this.groupBox45.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
+            this.grpTeachingTray.ResumeLayout(false);
             this.groupBox16.ResumeLayout(false);
             this.groupBox25.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
@@ -4275,8 +4191,6 @@
             this.groupBox13.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox49.ResumeLayout(false);
-            this.groupBox61.ResumeLayout(false);
-            this.groupBox61.PerformLayout();
             this.groupBox60.ResumeLayout(false);
             this.groupBox60.PerformLayout();
             this.groupBox59.ResumeLayout(false);
@@ -4326,6 +4240,8 @@
             this.groupBox36.PerformLayout();
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();
+            this.groupBox61.ResumeLayout(false);
+            this.groupBox61.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4455,7 +4371,7 @@
         private System.Windows.Forms.TextBox txtIpCamera2;
         private System.Windows.Forms.Label label44;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox grbJogControl;
         private System.Windows.Forms.GroupBox groupBox21;
         private System.Windows.Forms.Button btnFReset;
         private System.Windows.Forms.Button btnROReset;
@@ -4503,7 +4419,7 @@
         private System.Windows.Forms.Button btnJog_Minus;
         private System.Windows.Forms.Button btnJog_Plus;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.GroupBox groupBox30;
+        private System.Windows.Forms.GroupBox grpTeachingSocket;
         private System.Windows.Forms.GroupBox groupBox31;
         private System.Windows.Forms.GroupBox groupBox33;
         private System.Windows.Forms.Button button45;
@@ -4521,7 +4437,7 @@
         private System.Windows.Forms.GroupBox groupBox45;
         private System.Windows.Forms.Button button65;
         private System.Windows.Forms.Button button66;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox grpTeachingTray;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.GroupBox groupBox25;
         private System.Windows.Forms.Button button41;
@@ -4616,11 +4532,11 @@
         private System.Windows.Forms.GroupBox groupBox43;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnResetAll;
         private System.Windows.Forms.GroupBox groupBox46;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnHomeAll;
         private System.Windows.Forms.GroupBox groupBox47;
         private System.Windows.Forms.RadioButton rbtIOPort4;
         private System.Windows.Forms.RadioButton rbtIOPort3;
@@ -4692,30 +4608,22 @@
         private System.Windows.Forms.Label label73;
         private System.Windows.Forms.Button ledVacUnload;
         private System.Windows.Forms.Button ledVacLoad;
-        private System.Windows.Forms.GroupBox groupBox61;
-        private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Button btnLampStop;
-        private System.Windows.Forms.Label label83;
-        private System.Windows.Forms.Button btnLampStart;
-        private System.Windows.Forms.Label label82;
-        private System.Windows.Forms.Button btnLampRed;
-        private System.Windows.Forms.Label label80;
-        private System.Windows.Forms.Label label81;
-        private System.Windows.Forms.Button btnLampYellow;
-        private System.Windows.Forms.Button btnLampGreen;
         private System.Windows.Forms.GroupBox groupBox60;
-        private System.Windows.Forms.Label label78;
         private System.Windows.Forms.Label label79;
-        private System.Windows.Forms.Button btnCylinderCamera2;
-        private System.Windows.Forms.Button btnCylinderCamera1;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.Button btnBuzz;
+        private System.Windows.Forms.Button btnReqCamera;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Button ledVacIn;
+        private System.Windows.Forms.GroupBox groupBox61;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.Button btnLampInit;
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Button btnLampRestart;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.Button ledVacIn;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Button btnLampStop;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.Button btnLampStart;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel tstStatus;
     }
 }
 

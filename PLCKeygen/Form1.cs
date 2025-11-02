@@ -114,11 +114,7 @@ namespace PLCKeygen
             btnVacUnload.Click += btnOutputToggle_Click;
             btnCylinderSocket.Click += btnOutputToggle_Click;
             btnCylinderChart.Click += btnOutputToggle_Click;
-            btnCylinderCamera1.Click += btnOutputToggle_Click;
-            btnCylinderCamera2.Click += btnOutputToggle_Click;
-            btnLampGreen.Click += btnOutputToggle_Click;
-            btnLampYellow.Click += btnOutputToggle_Click;
-            btnLampRed.Click += btnOutputToggle_Click;
+            btnReqCamera.Click += btnOutputToggle_Click;
             btnLampStart.Click += btnOutputToggle_Click;
             btnLampStop.Click += btnOutputToggle_Click;
             btnLampRestart.Click += btnOutputToggle_Click;
@@ -955,28 +951,32 @@ namespace PLCKeygen
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             // Port selection (1-4)
-            //if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
-            //{
-            //    rbtPort1.Checked = true;
-            //    e.Handled = true;
-            //}
-            //else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
-            //{
-            //    rbtPort2.Checked = true;
-            //    e.Handled = true;
-            //}
-            //else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
-            //{
-            //    rbtPort3.Checked = true;
-            //    e.Handled = true;
-            //}
-            //else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
-            //{
-            //    rbtPort4.Checked = true;
-            //    e.Handled = true;
-            //}
+            if (e.KeyCode == Keys.F1)
+            {
+                GetStepJogMode();
+                rbtPort1.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.F2)
+            {
+                GetStepJogMode();
+                rbtPort2.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.F3)
+            {
+                GetStepJogMode();
+                rbtPort3.Checked = true;
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.F4)
+            {
+                GetStepJogMode();
+                rbtPort4.Checked = true;
+                e.Handled = true;
+            }
             // Axis selection (X, Y, Z, I, O, F)
-            if (e.KeyCode == Keys.X)
+            else if (e.KeyCode == Keys.X)
             {
                 rbtX.Checked = true;
                 e.Handled = true;
@@ -1007,18 +1007,14 @@ namespace PLCKeygen
                 e.Handled = true;
             }
             // Mode selection (J=JOG, S=STEP)
-            else if (e.KeyCode == Keys.J)
+            else if (e.KeyCode == Keys.Space)
             {
-                rbtJog.Checked = true;
-                e.Handled = true;
-            }
-            else if (e.KeyCode == Keys.S)
-            {
-                rbtStep.Checked = true;
+                if (rbtJog.Checked) rbtStep.Checked = true;
+                else rbtJog.Checked = true;
                 e.Handled = true;
             }
             // JOG control with Up/Down keys
-            else if (e.KeyCode == Keys.Up)
+            else if (e.KeyCode == Keys.Q)
             {
                 string address = GetJogPlusAddress(selectedPort, selectedAxis);
                 if (!string.IsNullOrEmpty(address))
@@ -1027,7 +1023,7 @@ namespace PLCKeygen
                 }
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.Down)
+            else if (e.KeyCode == Keys.A)
             {
                 string address = GetJogMinusAddress(selectedPort, selectedAxis);
                 if (!string.IsNullOrEmpty(address))
@@ -1041,7 +1037,7 @@ namespace PLCKeygen
         // Handle KeyUp to release JOG buttons
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.Q)
             {
                 string address = GetJogPlusAddress(selectedPort, selectedAxis);
                 if (!string.IsNullOrEmpty(address))
@@ -1050,7 +1046,7 @@ namespace PLCKeygen
                 }
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.Down)
+            else if (e.KeyCode == Keys.A)
             {
                 string address = GetJogMinusAddress(selectedPort, selectedAxis);
                 if (!string.IsNullOrEmpty(address))
@@ -1132,14 +1128,16 @@ namespace PLCKeygen
             string address = GetStepJogModeAddress(selectedPort);
             if (!string.IsNullOrEmpty(address))
             {
-                if (PLCKey.SetBit(address))
+                if (PLCKey.ReadBit(address))
                 {
-
+                    rbtStep.Checked = true;
                     return true;
                 }
-                   
                 else
+                {
+                    rbtJog.Checked = true;
                     return false;
+                }
             }
             else { return false; }
         }
@@ -1710,49 +1708,56 @@ namespace PLCKeygen
                 {
                     case 1:
                         // Port 1 outputs - Tower lights and controls
-                        UpdateOutputButtonStatus(btnLampGreen, PLCAddresses.Output.P1_Tower_Green);
-                        UpdateOutputButtonStatus(btnLampYellow, PLCAddresses.Output.P1_Tower_Yellow);
-                        UpdateOutputButtonStatus(btnLampRed, PLCAddresses.Output.P1_Tower_Red);
-                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P1_Tower_Start);
-                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P1_Tower_Stop);
+                        UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P1_Cylinder_Vaccum_Load);
+                        UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P1_Cylinder_Vaccum_Unload);
+                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P1_Request_Camera);
+                        UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P1_Cylinder_Fix_Socket);
+                        UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P1_LCA_Request_Init);
+                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P1_LCA_Request_Start);
+                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P1_LCA_Request_Stop);
+                        UpdateOutputButtonStatus(btnLampRestart, PLCAddresses.Output.P1_LCA_Request_Reset);
+                        UpdateOutputButtonStatus(btnCylinderChart, PLCAddresses.Output.P1_Cylinder_Chart_Socket);
                         break;
 
                     case 2:
                         // Port 2 outputs
-                        UpdateOutputButtonStatus(btnLampGreen, PLCAddresses.Output.P2_Tower_Green);
-                        UpdateOutputButtonStatus(btnLampYellow, PLCAddresses.Output.P2_Tower_Yellow);
-                        UpdateOutputButtonStatus(btnLampRed, PLCAddresses.Output.P2_Tower_Red);
-                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P2_Tower_Start);
-                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P2_Tower_Stop);
+                        UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P2_Cylinder_Vaccum_Load);
+                        UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P2_Cylinder_Vaccum_Unload);
+                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P2_Request_Camera);
+                        UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P2_Cylinder_Fix_Socket);
+                        UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P2_LCA_Request_Init);
+                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P2_LCA_Request_Start);
+                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P2_LCA_Request_Stop);
+                        UpdateOutputButtonStatus(btnLampRestart, PLCAddresses.Output.P2_LCA_Request_Reset);
+                        UpdateOutputButtonStatus(btnCylinderChart, PLCAddresses.Output.P2_Cylinder_Chart_Socket);
                         break;
 
                     case 3:
                         // Port 3 outputs
-                        UpdateOutputButtonStatus(btnLampGreen, PLCAddresses.Output.P3_Tower_Green);
-                        UpdateOutputButtonStatus(btnLampYellow, PLCAddresses.Output.P3_Tower_Yellow);
-                        UpdateOutputButtonStatus(btnLampRed, PLCAddresses.Output.P3_Tower_Red);
-                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P3_Tower_Start);
-                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P3_Tower_Stop);
+                        UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P3_Cylinder_Vaccum_Load);
+                        UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P3_Cylinder_Vaccum_Unload);
+                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P3_Request_Camera);
+                        UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P3_Cylinder_Fix_Socket);
+                        UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P3_LCA_Request_Init);
+                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P3_LCA_Request_Start);
+                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P3_LCA_Request_Stop);
+                        UpdateOutputButtonStatus(btnLampRestart, PLCAddresses.Output.P3_LCA_Request_Reset);
+                        UpdateOutputButtonStatus(btnCylinderChart, PLCAddresses.Output.P3_Cylinder_Chart_Socket);
                         break;
 
                     case 4:
                         // Port 4 outputs
-                        UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P4_Rq_Vin4);
-                        UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P4_Rq_Vout4);
-                        UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P4_Rq_VFix4);
-                        UpdateOutputButtonStatus(btnLampGreen, PLCAddresses.Output.P4_Tower_Green);
-                        UpdateOutputButtonStatus(btnLampYellow, PLCAddresses.Output.P4_Tower_Yellow);
-                        UpdateOutputButtonStatus(btnLampRed, PLCAddresses.Output.P4_Tower_Red);
-                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P4_Tower_Start);
-                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P4_Tower_Stop);
-                        UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P4_Rq_lca_Init4);
-                        UpdateOutputButtonStatus(btnLampRestart, PLCAddresses.Output.P4_Rq_lca_Res4);
+                        UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P4_Cylinder_Vaccum_Load);
+                        UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P4_Cylinder_Vaccum_Unload);
+                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P4_Request_Camera);
+                        UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P4_Cylinder_Fix_Socket);
+                        UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P4_LCA_Request_Init);
+                        UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P4_LCA_Request_Start);
+                        UpdateOutputButtonStatus(btnLampStop, PLCAddresses.Output.P4_LCA_Request_Stop);
+                        UpdateOutputButtonStatus(btnLampRestart, PLCAddresses.Output.P4_LCA_Request_Reset);
+                        UpdateOutputButtonStatus(btnCylinderChart, PLCAddresses.Output.P4_Cylinder_Chart_Socket);
                         break;
                 }
-
-                // Camera cylinders are shared
-                UpdateOutputButtonStatus(btnCylinderCamera1, PLCAddresses.Output.P12_Cam_cylinder);
-                UpdateOutputButtonStatus(btnCylinderCamera2, PLCAddresses.Output.P34_Cam_cylinder);
             }
             catch (Exception ex)
             {
@@ -1802,50 +1807,55 @@ namespace PLCKeygen
         // Get PLC address for output button based on selected port
         private string GetOutputAddress(System.Windows.Forms.Button btn)
         {
-            // Camera cylinders are shared across ports
-            if (btn == btnCylinderCamera1)
-                return PLCAddresses.Output.P12_Cam_cylinder;
-            if (btn == btnCylinderCamera2)
-                return PLCAddresses.Output.P34_Cam_cylinder;
-
             // Port-specific outputs
             switch (selectedIOPort)
             {
                 case 1:
-                    if (btn == btnLampGreen) return PLCAddresses.Output.P1_Tower_Green;
-                    if (btn == btnLampYellow) return PLCAddresses.Output.P1_Tower_Yellow;
-                    if (btn == btnLampRed) return PLCAddresses.Output.P1_Tower_Red;
-                    if (btn == btnLampStart) return PLCAddresses.Output.P1_Tower_Start;
-                    if (btn == btnLampStop) return PLCAddresses.Output.P1_Tower_Stop;
+                    if (btn == btnVacLoad) return PLCAddresses.Output.P1_Cylinder_Vaccum_Load ;
+                    if (btn == btnVacUnload) return PLCAddresses.Output.P1_Cylinder_Vaccum_Unload ;
+                    if (btn == btnReqCamera) return PLCAddresses.Output.P1_Request_Camera ;
+                    if (btn == btnCylinderSocket) return PLCAddresses.Output.P1_Cylinder_Fix_Socket ;
+                    if (btn == btnLampInit) return PLCAddresses.Output.P1_LCA_Request_Init ;
+                    if (btn == btnLampStart) return PLCAddresses.Output.P1_LCA_Request_Start ;
+                    if (btn == btnLampStop) return PLCAddresses.Output.P1_LCA_Request_Stop ;
+                    if (btn == btnLampRestart) return PLCAddresses.Output.P1_LCA_Request_Reset ;
+                    if (btn == btnCylinderChart) return PLCAddresses.Output.P1_Cylinder_Chart_Socket;
                     break;
 
                 case 2:
-                    if (btn == btnLampGreen) return PLCAddresses.Output.P2_Tower_Green;
-                    if (btn == btnLampYellow) return PLCAddresses.Output.P2_Tower_Yellow;
-                    if (btn == btnLampRed) return PLCAddresses.Output.P2_Tower_Red;
-                    if (btn == btnLampStart) return PLCAddresses.Output.P2_Tower_Start;
-                    if (btn == btnLampStop) return PLCAddresses.Output.P2_Tower_Stop;
+                    if (btn == btnVacLoad) return PLCAddresses.Output.P2_Cylinder_Vaccum_Load;
+                    if (btn == btnVacUnload) return PLCAddresses.Output.P2_Cylinder_Vaccum_Unload;
+                    if (btn == btnReqCamera) return PLCAddresses.Output.P2_Request_Camera;
+                    if (btn == btnCylinderSocket) return PLCAddresses.Output.P2_Cylinder_Fix_Socket;
+                    if (btn == btnLampInit) return PLCAddresses.Output.P2_LCA_Request_Init;
+                    if (btn == btnLampStart) return PLCAddresses.Output.P2_LCA_Request_Start;
+                    if (btn == btnLampStop) return PLCAddresses.Output.P2_LCA_Request_Stop;
+                    if (btn == btnLampRestart) return PLCAddresses.Output.P2_LCA_Request_Reset;
+                    if (btn == btnCylinderChart) return PLCAddresses.Output.P2_Cylinder_Chart_Socket;
                     break;
 
                 case 3:
-                    if (btn == btnLampGreen) return PLCAddresses.Output.P3_Tower_Green;
-                    if (btn == btnLampYellow) return PLCAddresses.Output.P3_Tower_Yellow;
-                    if (btn == btnLampRed) return PLCAddresses.Output.P3_Tower_Red;
-                    if (btn == btnLampStart) return PLCAddresses.Output.P3_Tower_Start;
-                    if (btn == btnLampStop) return PLCAddresses.Output.P3_Tower_Stop;
+                    if (btn == btnVacLoad) return PLCAddresses.Output.P3_Cylinder_Vaccum_Load;
+                    if (btn == btnVacUnload) return PLCAddresses.Output.P3_Cylinder_Vaccum_Unload;
+                    if (btn == btnReqCamera) return PLCAddresses.Output.P3_Request_Camera;
+                    if (btn == btnCylinderSocket) return PLCAddresses.Output.P3_Cylinder_Fix_Socket;
+                    if (btn == btnLampInit) return PLCAddresses.Output.P3_LCA_Request_Init;
+                    if (btn == btnLampStart) return PLCAddresses.Output.P3_LCA_Request_Start;
+                    if (btn == btnLampStop) return PLCAddresses.Output.P3_LCA_Request_Stop;
+                    if (btn == btnLampRestart) return PLCAddresses.Output.P3_LCA_Request_Reset;
+                    if (btn == btnCylinderChart) return PLCAddresses.Output.P3_Cylinder_Chart_Socket;
                     break;
 
                 case 4:
-                    if (btn == btnVacLoad) return PLCAddresses.Output.P4_Rq_Vin4;
-                    if (btn == btnVacUnload) return PLCAddresses.Output.P4_Rq_Vout4;
-                    if (btn == btnCylinderSocket) return PLCAddresses.Output.P4_Rq_VFix4;
-                    if (btn == btnLampGreen) return PLCAddresses.Output.P4_Tower_Green;
-                    if (btn == btnLampYellow) return PLCAddresses.Output.P4_Tower_Yellow;
-                    if (btn == btnLampRed) return PLCAddresses.Output.P4_Tower_Red;
-                    if (btn == btnLampStart) return PLCAddresses.Output.P4_Tower_Start;
-                    if (btn == btnLampStop) return PLCAddresses.Output.P4_Tower_Stop;
-                    if (btn == btnLampInit) return PLCAddresses.Output.P4_Rq_lca_Init4;
-                    if (btn == btnLampRestart) return PLCAddresses.Output.P4_Rq_lca_Res4;
+                    if (btn == btnVacLoad) return PLCAddresses.Output.P4_Cylinder_Vaccum_Load;
+                    if (btn == btnVacUnload) return PLCAddresses.Output.P4_Cylinder_Vaccum_Unload;
+                    if (btn == btnReqCamera) return PLCAddresses.Output.P4_Request_Camera;
+                    if (btn == btnCylinderSocket) return PLCAddresses.Output.P4_Cylinder_Fix_Socket;
+                    if (btn == btnLampInit) return PLCAddresses.Output.P4_LCA_Request_Init;
+                    if (btn == btnLampStart) return PLCAddresses.Output.P4_LCA_Request_Start;
+                    if (btn == btnLampStop) return PLCAddresses.Output.P4_LCA_Request_Stop;
+                    if (btn == btnLampRestart) return PLCAddresses.Output.P4_LCA_Request_Reset;
+                    if (btn == btnCylinderChart) return PLCAddresses.Output.P4_Cylinder_Chart_Socket;
                     break;
             }
 
@@ -2097,8 +2107,8 @@ namespace PLCKeygen
                 System.Threading.Thread.Sleep(100);
                 PLCKey.ResetBit(goAddr);
 
-                MessageBox.Show($"Moving {axis} axis to {targetPos} (Port {selectedPort})",
-                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show($"Moving {axis} axis to {targetPos} (Port {selectedPort})",
+                //    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -2341,5 +2351,69 @@ namespace PLCKeygen
         }
 
         #endregion
+
+        private async void btnResetAll_Click(object sender, EventArgs e)
+        {
+            string addrReset = GetResetAllAddress(selectedPort);
+            if (addrReset == null) return;
+            PLCKey.SetBit(addrReset);
+            grbJogControl.Enabled = false;
+            await Task.Factory.StartNew(() =>
+            {
+                while (true)
+                {
+                    Task.Delay(500);
+                    if (!PLCKey.ReadBit(addrReset)) break;
+                }
+            });
+            grbJogControl.Enabled = true;
+            MessageBox.Show("Đã reset xong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
+        private string GetHomeAllAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Output.P1_Home_All_Request;
+                case 2: return PLCAddresses.Output.P2_Home_All_Request;
+                case 3: return PLCAddresses.Output.P3_Home_All_Request;
+                case 4: return PLCAddresses.Output.P4_Home_All_Request;
+                default: return null;
+            }
+        }
+
+        private string GetResetAllAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Output.P1_Reset_All_Request;
+                case 2: return PLCAddresses.Output.P2_Reset_All_Request;
+                case 3: return PLCAddresses.Output.P3_Reset_All_Request;
+                case 4: return PLCAddresses.Output.P4_Reset_All_Request;
+                default: return null;
+            }
+        }
+
+        private async void btnHomeAll_Click(object sender, EventArgs e)
+        {
+            var dialogResult = MessageBox.Show("Bạn có chắc chắn không","Cảnh báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (dialogResult == DialogResult.No) return;
+            string addHome = GetHomeAllAddress(selectedPort);
+            if (addHome == null) return;
+            PLCKey.SetBit(addHome);
+            grbJogControl.Enabled = false;
+            tstStatus.Text = "Đang về gốc....";
+            await Task.Factory.StartNew(() =>
+            {
+                while (true)
+                {
+                    Task.Delay(500);
+                    if (!PLCKey.ReadBit(addHome)) break;
+                }
+            });
+            grbJogControl.Enabled = true;
+            MessageBox.Show("Đã về gốc xong","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Question);
+            tstStatus.Text = "Ready!";
+        }
     }
 }

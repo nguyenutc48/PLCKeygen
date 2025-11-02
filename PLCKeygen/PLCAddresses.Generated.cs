@@ -541,149 +541,60 @@ namespace PLCKeygen
             public const string P34_Cam_cylinder = "MR6002";
             #endregion
 
-            #region Port 1 Outputs - Tower Lights
-            /// <summary>Đèn tháp xanh Port 1 - Tower Light Green</summary>
-            public const string P1_Tower_Green = "MR2108";
-
-            /// <summary>Đèn tháp vàng Port 1 - Tower Light Yellow</summary>
-            public const string P1_Tower_Yellow = "MR2109";
-
-            /// <summary>Đèn tháp đỏ Port 1 - Tower Light Red</summary>
-            public const string P1_Tower_Red = "MR2110";
-
-            /// <summary>Đèn tháp Start Port 1 - Tower Light Start</summary>
-            public const string P1_Tower_Start = "MR2106";
-
-            /// <summary>Đèn tháp Stop Port 1 - Tower Light Stop</summary>
-            public const string P1_Tower_Stop = "MR2107";
+            #region Port 1
+            public const string P1_Home_All_Request = "MR21400";
+            public const string P1_Reset_All_Request = "MR21401";
+            public const string P1_Cylinder_Vaccum_Load = "MR7000";
+            public const string P1_Cylinder_Vaccum_Unload = "MR7001";
+            public const string P1_Request_Camera = "MR7002";
+            public const string P1_Cylinder_Fix_Socket = "MR7003";
+            public const string P1_LCA_Request_Init = "MR7004";
+            public const string P1_LCA_Request_Start = "MR7005";
+            public const string P1_LCA_Request_Stop = "MR7006";
+            public const string P1_LCA_Request_Reset = "MR7007";
+            public const string P1_Cylinder_Chart_Socket = "MR7014";
             #endregion
 
-            #region Port 2 Outputs - Tower Lights
-            /// <summary>Đèn tháp xanh Port 2 - Tower Light Green</summary>
-            public const string P2_Tower_Green = "MR108";
-
-            /// <summary>Đèn tháp vàng Port 2 - Tower Light Yellow</summary>
-            public const string P2_Tower_Yellow = "MR109";
-
-            /// <summary>Đèn tháp đỏ Port 2 - Tower Light Red</summary>
-            public const string P2_Tower_Red = "MR110";
-
-            /// <summary>Đèn tháp Start Port 2 - Tower Light Start</summary>
-            public const string P2_Tower_Start = "MR106";
-
-            /// <summary>Đèn tháp Stop Port 2 - Tower Light Stop</summary>
-            public const string P2_Tower_Stop = "MR107";
+            #region Port 2
+            public const string P2_Home_All_Request = "MR13400";
+            public const string P2_Reset_All_Request = "MR13401";
+            public const string P2_Cylinder_Vaccum_Load = "MR5000";
+            public const string P2_Cylinder_Vaccum_Unload = "MR5001";
+            public const string P2_Request_Camera = "MR5002";
+            public const string P2_Cylinder_Fix_Socket = "MR5003";
+            public const string P2_LCA_Request_Init = "MR5004";
+            public const string P2_LCA_Request_Start = "MR5005";
+            public const string P2_LCA_Request_Stop = "MR5006";
+            public const string P2_LCA_Request_Reset = "MR5007";
+            public const string P2_Cylinder_Chart_Socket = "MR5014";
             #endregion
 
-            #region Port 3 Outputs - Tower Lights
-            /// <summary>Đèn tháp xanh Port 3 - Tower Light Green</summary>
-            public const string P3_Tower_Green = "MR3108";
-
-            /// <summary>Đèn tháp vàng Port 3 - Tower Light Yellow</summary>
-            public const string P3_Tower_Yellow = "MR3109";
-
-            /// <summary>Đèn tháp đỏ Port 3 - Tower Light Red</summary>
-            public const string P3_Tower_Red = "MR3110";
-
-            /// <summary>Đèn tháp Start Port 3 - Tower Light Start</summary>
-            public const string P3_Tower_Start = "MR3106";
-
-            /// <summary>Đèn tháp Stop Port 3 - Tower Light Stop</summary>
-            public const string P3_Tower_Stop = "MR3107";
+            #region Port 3
+            public const string P3_Home_All_Request = "MR25400";
+            public const string P3_Reset_All_Request = "MR25401";
+            public const string P3_Cylinder_Vaccum_Load = "MR8000";
+            public const string P3_Cylinder_Vaccum_Unload = "MR8001";
+            public const string P3_Request_Camera = "MR8002";
+            public const string P3_Cylinder_Fix_Socket = "MR8003";
+            public const string P3_LCA_Request_Init = "MR8004";
+            public const string P3_LCA_Request_Start = "MR8005";
+            public const string P3_LCA_Request_Stop = "MR8006";
+            public const string P3_LCA_Request_Reset = "MR8007";
+            public const string P3_Cylinder_Chart_Socket = "MR8014";
             #endregion
 
-            #region Port 4 Outputs (MR60)
-
-            /// <summary>Request: Input Valve - Rq Vin4</summary>
-            public const string P4_Rq_Vin4 = "MR6000";
-
-            /// <summary>Request: Output Valve - Rq Vout4</summary>
-            public const string P4_Rq_Vout4 = "MR6001";
-
-            /// <summary>Request: Camera Vacuum 34 - Rq VCam34 (same as P34_Cam_cylinder)</summary>
-            public const string P4_Rq_VCam34 = "MR6002";
-
-            /// <summary>Request: Fixture Valve - Rq VFix4</summary>
-            public const string P4_Rq_VFix4 = "MR6003";
-
-            /// <summary>Request: Tower Light Init 4 - Rq lca Init4</summary>
-            public const string P4_Rq_lca_Init4 = "MR6004";
-
-            /// <summary>Request: Tower Light Start Tester 4 - Rq lca StartT4</summary>
-            public const string P4_Rq_lca_StartT4 = "MR6005";
-
-            /// <summary>Request: Tower Light Stop Tester 4 - Rq lca StopT4</summary>
-            public const string P4_Rq_lca_StopT4 = "MR6006";
-
-            /// <summary>Request: Tower Light Reset 4 - Rq lca Res4</summary>
-            public const string P4_Rq_lca_Res4 = "MR6007";
-
-            /// <summary>Đèn tháp xanh Port 4 - Tower Light Green - Rq L Gre4</summary>
-            public const string P4_Tower_Green = "MR6008";
-
-            /// <summary>Đèn tháp đỏ Port 4 - Tower Light Red - Rq L Red4</summary>
-            public const string P4_Tower_Red = "MR6009";
-
-            /// <summary>Đèn tháp vàng Port 4 - Tower Light Yellow - Rq L Yel4</summary>
-            public const string P4_Tower_Yellow = "MR6010";
-
-            /// <summary>Đèn tháp Start Port 4 - Tower Light Start - Rq L Start4</summary>
-            public const string P4_Tower_Start = "MR6011";
-
-            /// <summary>Đèn tháp Stop Port 4 - Tower Light Stop - Rq L Stop4</summary>
-            public const string P4_Tower_Stop = "MR6012";
-
-            /// <summary>Request: Vision Check Seek 4 - Rq VChck Sk4</summary>
-            public const string P4_Rq_VChck_Sk4 = "MR6013";
-
-            #endregion
-
-            #region Helper Methods
-            /// <summary>
-            /// Lấy địa chỉ đèn tháp theo port và màu
-            /// Get tower light address by port and color
-            /// </summary>
-            /// <param name="port">Port number (1-4)</param>
-            /// <param name="color">Color: GREEN, YELLOW, RED, START, STOP</param>
-            /// <returns>PLC address string</returns>
-            public static string GetTowerLight(int port, string color)
-            {
-                color = color.ToUpper();
-
-                switch (port)
-                {
-                    case 1:
-                        if (color == "GREEN") return P1_Tower_Green;
-                        if (color == "YELLOW") return P1_Tower_Yellow;
-                        if (color == "RED") return P1_Tower_Red;
-                        if (color == "START") return P1_Tower_Start;
-                        if (color == "STOP") return P1_Tower_Stop;
-                        break;
-                    case 2:
-                        if (color == "GREEN") return P2_Tower_Green;
-                        if (color == "YELLOW") return P2_Tower_Yellow;
-                        if (color == "RED") return P2_Tower_Red;
-                        if (color == "START") return P2_Tower_Start;
-                        if (color == "STOP") return P2_Tower_Stop;
-                        break;
-                    case 3:
-                        if (color == "GREEN") return P3_Tower_Green;
-                        if (color == "YELLOW") return P3_Tower_Yellow;
-                        if (color == "RED") return P3_Tower_Red;
-                        if (color == "START") return P3_Tower_Start;
-                        if (color == "STOP") return P3_Tower_Stop;
-                        break;
-                    case 4:
-                        if (color == "GREEN") return P4_Tower_Green;
-                        if (color == "YELLOW") return P4_Tower_Yellow;
-                        if (color == "RED") return P4_Tower_Red;
-                        if (color == "START") return P4_Tower_Start;
-                        if (color == "STOP") return P4_Tower_Stop;
-                        break;
-                }
-
-                throw new ArgumentException($"Invalid port ({port}) or color ({color})");
-            }
+            #region Port 4
+            public const string P4_Home_All_Request = "MR17400";
+            public const string P4_Reset_All_Request = "MR17401";
+            public const string P4_Cylinder_Vaccum_Load = "MR6000";
+            public const string P4_Cylinder_Vaccum_Unload = "MR6001";
+            public const string P4_Request_Camera = "MR6002";
+            public const string P4_Cylinder_Fix_Socket = "MR6003";
+            public const string P4_LCA_Request_Init = "MR6004";
+            public const string P4_LCA_Request_Start = "MR6005";
+            public const string P4_LCA_Request_Stop = "MR6006";
+            public const string P4_LCA_Request_Reset = "MR6007";
+            public const string P4_Cylinder_Chart_Socket = "MR6014";
             #endregion
 
         }

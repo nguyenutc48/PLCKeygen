@@ -71,9 +71,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.IO.Extension.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="KeyenceHostLinkTcpClient.cs" />
     <Compile Include="PLCAddresses.Generated.cs" />
     <Compile Include="Program.cs" />
