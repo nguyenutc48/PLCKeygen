@@ -161,6 +161,21 @@ namespace PLCKeygen
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (PLCKey.ReadBit(PLCAddresses.Output.P34_Cam_cylinder))
+            {
+                PLCKey.ResetBit(PLCAddresses.Output.P34_Cam_cylinder);
+                button2.Text = "Sang trai";
+            }
+            else
+            {
+                PLCKey.SetBit(PLCAddresses.Output.P34_Cam_cylinder);
+                button2.Text = "Sang phai";
+            }
+
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             txtXCurMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_X_Master) / 100.0f).ToString();
@@ -194,20 +209,6 @@ namespace PLCKeygen
             UpdateIOOutputs();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (PLCKey.ReadBit(PLCAddresses.Output.P34_Cam_cylinder))
-            {
-                PLCKey.ResetBit(PLCAddresses.Output.P34_Cam_cylinder);
-                button2.Text = "Sang trai";
-            }
-            else
-            {
-                PLCKey.SetBit(PLCAddresses.Output.P34_Cam_cylinder);
-                button2.Text = "Sang phai";
-            }
-                
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -256,18 +257,18 @@ namespace PLCKeygen
         }
         private void LoadIORadioPort()
         {
-            switch (Properties.Settings.Default.IOportRadio)
+            switch (Properties.Settings.Default.SelectedRadio)
             {
-                case "IOPort1":
+                case "Port1":
                     rbtIOPort1.Checked = true;
                     break;
-                case "IOPort2":
+                case "Port2":
                     rbtIOPort2.Checked = true;
                     break;
-                case "IOPort3":
+                case "Port3":
                     rbtIOPort3.Checked = true;
                     break;
-                case "IOPort4":
+                case "Port4":
                     rbtIOPort4.Checked = true;
                     break;
             }
@@ -611,7 +612,7 @@ namespace PLCKeygen
             }
             return true;
         }
-
+        #region HandEye
         // Handeye functions for Camera 1 (Port 2)
         private async void btnCalPos1_Click(object sender, EventArgs e)
         {
@@ -1001,6 +1002,7 @@ namespace PLCKeygen
             }
             btnCalPos2.Enabled = true;
         }
+        #endregion
 
         #region Motion Control - Keyboard and Radio Button Handlers
 
@@ -1623,11 +1625,6 @@ namespace PLCKeygen
 
         }
 
-        private void rbtIOPort2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
         #region IO Tab - Input/Output Status Update
 
         // IO Port radio button selection changed
@@ -1804,7 +1801,7 @@ namespace PLCKeygen
                         // Port 1 outputs - Tower lights and controls
                         UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P1_Cylinder_Vaccum_Load);
                         UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P1_Cylinder_Vaccum_Unload);
-                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P1_Request_Camera);
+                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P12_Cam_cylinder);
                         UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P1_Cylinder_Fix_Socket);
                         UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P1_LCA_Request_Init);
                         UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P1_LCA_Request_Start);
@@ -1817,7 +1814,7 @@ namespace PLCKeygen
                         // Port 2 outputs
                         UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P2_Cylinder_Vaccum_Load);
                         UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P2_Cylinder_Vaccum_Unload);
-                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P2_Request_Camera);
+                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P12_Cam_cylinder);
                         UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P2_Cylinder_Fix_Socket);
                         UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P2_LCA_Request_Init);
                         UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P2_LCA_Request_Start);
@@ -1830,7 +1827,7 @@ namespace PLCKeygen
                         // Port 3 outputs
                         UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P3_Cylinder_Vaccum_Load);
                         UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P3_Cylinder_Vaccum_Unload);
-                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P3_Request_Camera);
+                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P12_Cam_cylinder);
                         UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P3_Cylinder_Fix_Socket);
                         UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P3_LCA_Request_Init);
                         UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P3_LCA_Request_Start);
@@ -1843,7 +1840,7 @@ namespace PLCKeygen
                         // Port 4 outputs
                         UpdateOutputButtonStatus(btnVacLoad, PLCAddresses.Output.P4_Cylinder_Vaccum_Load);
                         UpdateOutputButtonStatus(btnVacUnload, PLCAddresses.Output.P4_Cylinder_Vaccum_Unload);
-                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P4_Request_Camera);
+                        UpdateOutputButtonStatus(btnReqCamera, PLCAddresses.Output.P12_Cam_cylinder);
                         UpdateOutputButtonStatus(btnCylinderSocket, PLCAddresses.Output.P4_Cylinder_Fix_Socket);
                         UpdateOutputButtonStatus(btnLampInit, PLCAddresses.Output.P4_LCA_Request_Init);
                         UpdateOutputButtonStatus(btnLampStart, PLCAddresses.Output.P4_LCA_Request_Start);
@@ -1907,7 +1904,7 @@ namespace PLCKeygen
                 case 1:
                     if (btn == btnVacLoad) return PLCAddresses.Output.P1_Cylinder_Vaccum_Load ;
                     if (btn == btnVacUnload) return PLCAddresses.Output.P1_Cylinder_Vaccum_Unload ;
-                    if (btn == btnReqCamera) return PLCAddresses.Output.P1_Request_Camera ;
+                    if (btn == btnReqCamera) return PLCAddresses.Output.P12_Cam_cylinder ;
                     if (btn == btnCylinderSocket) return PLCAddresses.Output.P1_Cylinder_Fix_Socket ;
                     if (btn == btnLampInit) return PLCAddresses.Output.P1_LCA_Request_Init ;
                     if (btn == btnLampStart) return PLCAddresses.Output.P1_LCA_Request_Start ;
@@ -1919,7 +1916,7 @@ namespace PLCKeygen
                 case 2:
                     if (btn == btnVacLoad) return PLCAddresses.Output.P2_Cylinder_Vaccum_Load;
                     if (btn == btnVacUnload) return PLCAddresses.Output.P2_Cylinder_Vaccum_Unload;
-                    if (btn == btnReqCamera) return PLCAddresses.Output.P2_Request_Camera;
+                    if (btn == btnReqCamera) return PLCAddresses.Output.P12_Cam_cylinder;
                     if (btn == btnCylinderSocket) return PLCAddresses.Output.P2_Cylinder_Fix_Socket;
                     if (btn == btnLampInit) return PLCAddresses.Output.P2_LCA_Request_Init;
                     if (btn == btnLampStart) return PLCAddresses.Output.P2_LCA_Request_Start;
@@ -1931,7 +1928,7 @@ namespace PLCKeygen
                 case 3:
                     if (btn == btnVacLoad) return PLCAddresses.Output.P3_Cylinder_Vaccum_Load;
                     if (btn == btnVacUnload) return PLCAddresses.Output.P3_Cylinder_Vaccum_Unload;
-                    if (btn == btnReqCamera) return PLCAddresses.Output.P3_Request_Camera;
+                    if (btn == btnReqCamera) return PLCAddresses.Output.P12_Cam_cylinder;
                     if (btn == btnCylinderSocket) return PLCAddresses.Output.P3_Cylinder_Fix_Socket;
                     if (btn == btnLampInit) return PLCAddresses.Output.P3_LCA_Request_Init;
                     if (btn == btnLampStart) return PLCAddresses.Output.P3_LCA_Request_Start;
@@ -1943,7 +1940,7 @@ namespace PLCKeygen
                 case 4:
                     if (btn == btnVacLoad) return PLCAddresses.Output.P4_Cylinder_Vaccum_Load;
                     if (btn == btnVacUnload) return PLCAddresses.Output.P4_Cylinder_Vaccum_Unload;
-                    if (btn == btnReqCamera) return PLCAddresses.Output.P4_Request_Camera;
+                    if (btn == btnReqCamera) return PLCAddresses.Output.P12_Cam_cylinder;
                     if (btn == btnCylinderSocket) return PLCAddresses.Output.P4_Cylinder_Fix_Socket;
                     if (btn == btnLampInit) return PLCAddresses.Output.P4_LCA_Request_Init;
                     if (btn == btnLampStart) return PLCAddresses.Output.P4_LCA_Request_Start;
@@ -2446,24 +2443,7 @@ namespace PLCKeygen
 
         #endregion
 
-        private async void btnResetAll_Click(object sender, EventArgs e)
-        {
-            string addrReset = GetResetAllAddress(selectedPort);
-            if (addrReset == null) return;
-            PLCKey.SetBit(addrReset);
-            grbJogControl.Enabled = false;
-            await Task.Factory.StartNew(() =>
-            {
-                while (true)
-                {
-                    Task.Delay(500);
-                    if (!PLCKey.ReadBit(addrReset)) break;
-                }
-            });
-            grbJogControl.Enabled = true;
-            MessageBox.Show("Đã reset xong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-        }
-
+        #region Button Home All Reset All
         private string GetHomeAllAddress(int port)
         {
             switch (port)
@@ -2488,6 +2468,24 @@ namespace PLCKeygen
             }
         }
 
+        private async void btnResetAll_Click(object sender, EventArgs e)
+        {
+            string addrReset = GetResetAllAddress(selectedPort);
+            if (addrReset == null) return;
+            PLCKey.SetBit(addrReset);
+            grbJogControl.Enabled = false;
+            await Task.Factory.StartNew(() =>
+            {
+                while (true)
+                {
+                    Task.Delay(500);
+                    if (!PLCKey.ReadBit(addrReset)) break;
+                }
+            });
+            grbJogControl.Enabled = true;
+            MessageBox.Show("Đã reset xong", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        }
+
         private async void btnHomeAll_Click(object sender, EventArgs e)
         {
             var dialogResult = MessageBox.Show("Bạn có chắc chắn không","Cảnh báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
@@ -2509,7 +2507,8 @@ namespace PLCKeygen
             MessageBox.Show("Đã về gốc xong","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Question);
             tstStatus.Text = "Ready!";
         }
-    
+        #endregion
+
         private void Closing(object sender, FormClosingEventArgs e)
         {
             if (rbtPort1.Checked)
@@ -2534,19 +2533,19 @@ namespace PLCKeygen
         {
             if (rbtIOPort1.Checked)
             {
-                Properties.Settings.Default.IOportRadio = "IOPort1";
+                Properties.Settings.Default.SelectedRadio = "Port1";
             }
             else if (rbtIOPort2.Checked)
             {
-                Properties.Settings.Default.IOportRadio = "IOPort2";
+                Properties.Settings.Default.SelectedRadio = "Port2";
             }
             else if (rbtIOPort3.Checked)
             {
-                Properties.Settings.Default.IOportRadio = "IOPort3";
+                Properties.Settings.Default.SelectedRadio = "Port3";
             }
             else if (rbtIOPort4.Checked)
             {
-                Properties.Settings.Default.IOportRadio = "IOPort4";
+                Properties.Settings.Default.SelectedRadio = "Port4";
             }
             Properties.Settings.Default.Save();
         }

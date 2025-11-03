@@ -405,6 +405,10 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -538,6 +542,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.button47);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -643,6 +648,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.checkBox3);
             this.groupBox2.Controls.Add(this.button48);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.txtRMasPort3);
@@ -3293,6 +3299,7 @@
             // 
             // groupBox27
             // 
+            this.groupBox27.Controls.Add(this.checkBox4);
             this.groupBox27.Controls.Add(this.button7);
             this.groupBox27.Controls.Add(this.label25);
             this.groupBox27.Controls.Add(this.txtRMasPort4);
@@ -3408,6 +3415,7 @@
             // 
             // groupBox26
             // 
+            this.groupBox26.Controls.Add(this.checkBox2);
             this.groupBox26.Controls.Add(this.button43);
             this.groupBox26.Controls.Add(this.label19);
             this.groupBox26.Controls.Add(this.label20);
@@ -4135,6 +4143,46 @@
             this.tstStatus.Size = new System.Drawing.Size(64, 17);
             this.tstStatus.Text = "Running....";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(107, 108);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(136, 17);
+            this.checkBox1.TabIndex = 28;
+            this.checkBox1.Text = "Sử dụng Chart để chạy";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(107, 105);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(136, 17);
+            this.checkBox2.TabIndex = 29;
+            this.checkBox2.Text = "Sử dụng Chart để chạy";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(107, 105);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(136, 17);
+            this.checkBox3.TabIndex = 30;
+            this.checkBox3.Text = "Sử dụng Chart để chạy";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(107, 105);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(136, 17);
+            this.checkBox4.TabIndex = 31;
+            this.checkBox4.Text = "Sử dụng Chart để chạy";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4625,6 +4673,10 @@
         private System.Windows.Forms.Button btnLampStart;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel tstStatus;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
 
