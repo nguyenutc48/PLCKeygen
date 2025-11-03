@@ -190,45 +190,54 @@
             this.grpTeachingTray = new System.Windows.Forms.GroupBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
-            this.button41 = new System.Windows.Forms.Button();
-            this.button42 = new System.Windows.Forms.Button();
+            this.btnSaveUnLoadZ = new System.Windows.Forms.Button();
+            this.btnGoUnLoadZ = new System.Windows.Forms.Button();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.button31 = new System.Windows.Forms.Button();
-            this.button32 = new System.Windows.Forms.Button();
+            this.btnSaveUnLoadXYPoint2 = new System.Windows.Forms.Button();
+            this.btnGoUnLoadXYPoint2 = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.button33 = new System.Windows.Forms.Button();
-            this.button34 = new System.Windows.Forms.Button();
+            this.btnSaveUnLoadXYPoint3 = new System.Windows.Forms.Button();
+            this.btnGoUnLoadXYPoint3 = new System.Windows.Forms.Button();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.button35 = new System.Windows.Forms.Button();
-            this.button36 = new System.Windows.Forms.Button();
+            this.btnSaveUnLoadXYPoint1 = new System.Windows.Forms.Button();
+            this.btnGoUnLoadXYPoint1 = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
-            this.button39 = new System.Windows.Forms.Button();
-            this.button40 = new System.Windows.Forms.Button();
+            this.btnSaveTrayUnLoadZ = new System.Windows.Forms.Button();
+            this.btnGoTrayUnLoadZ = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
+            this.btnSaveTrayUnLoadXYPoint2 = new System.Windows.Forms.Button();
+            this.btnGoTrayUnLoadXYPoint2 = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
+            this.btnSaveTrayUnLoadXYPoint3 = new System.Windows.Forms.Button();
+            this.btnGoTrayUnLoadXYPoint3 = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.button29 = new System.Windows.Forms.Button();
-            this.button30 = new System.Windows.Forms.Button();
+            this.btnSaveTrayUnLoadXYPoint1 = new System.Windows.Forms.Button();
+            this.btnGoTrayUnLoadXYPoint1 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
-            this.button37 = new System.Windows.Forms.Button();
-            this.button38 = new System.Windows.Forms.Button();
+            this.btnSaveTrayLoadZ = new System.Windows.Forms.Button();
+            this.btnGoTrayLoadZ = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
+            this.btnSaveTrayLoadXYPoint2 = new System.Windows.Forms.Button();
+            this.btnGoTrayLoadXYPoint2 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.btnSaveTrayLoadXStart = new System.Windows.Forms.Button();
-            this.button22 = new System.Windows.Forms.Button();
+            this.btnSaveTrayLoadXYPoint3 = new System.Windows.Forms.Button();
+            this.btnGoTrayLoadXYPoint3 = new System.Windows.Forms.Button();
+            this.trayload = new System.Windows.Forms.GroupBox();
+            this.btnSaveTrayLoadXYPoint1 = new System.Windows.Forms.Button();
+            this.btnGoTrayLoadXYPoint1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox49 = new System.Windows.Forms.GroupBox();
+            this.groupBox61 = new System.Windows.Forms.GroupBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.btnLampInit = new System.Windows.Forms.Button();
+            this.label85 = new System.Windows.Forms.Label();
+            this.btnLampRestart = new System.Windows.Forms.Button();
+            this.label84 = new System.Windows.Forms.Label();
+            this.btnLampStop = new System.Windows.Forms.Button();
+            this.label83 = new System.Windows.Forms.Label();
+            this.btnLampStart = new System.Windows.Forms.Button();
             this.groupBox60 = new System.Windows.Forms.GroupBox();
             this.label79 = new System.Windows.Forms.Label();
             this.btnReqCamera = new System.Windows.Forms.Button();
@@ -394,15 +403,6 @@
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnLampStart = new System.Windows.Forms.Button();
-            this.label83 = new System.Windows.Forms.Label();
-            this.btnLampStop = new System.Windows.Forms.Button();
-            this.label84 = new System.Windows.Forms.Label();
-            this.btnLampRestart = new System.Windows.Forms.Button();
-            this.label85 = new System.Windows.Forms.Label();
-            this.btnLampInit = new System.Windows.Forms.Button();
-            this.label86 = new System.Windows.Forms.Label();
-            this.groupBox61 = new System.Windows.Forms.GroupBox();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
@@ -442,9 +442,10 @@
             this.groupBox23.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.groupBox13.SuspendLayout();
+            this.trayload.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox49.SuspendLayout();
+            this.groupBox61.SuspendLayout();
             this.groupBox60.SuspendLayout();
             this.groupBox59.SuspendLayout();
             this.groupBox58.SuspendLayout();
@@ -471,7 +472,6 @@
             this.groupBox37.SuspendLayout();
             this.groupBox36.SuspendLayout();
             this.strip.SuspendLayout();
-            this.groupBox61.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -2040,123 +2040,123 @@
             this.groupBox16.Size = new System.Drawing.Size(228, 185);
             this.groupBox16.TabIndex = 7;
             this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Vi tri Tray NG";
+            this.groupBox16.Text = "Vi tri  NG không Tray";
             // 
             // groupBox25
             // 
-            this.groupBox25.Controls.Add(this.button41);
-            this.groupBox25.Controls.Add(this.button42);
+            this.groupBox25.Controls.Add(this.btnSaveUnLoadZ);
+            this.groupBox25.Controls.Add(this.btnGoUnLoadZ);
             this.groupBox25.Location = new System.Drawing.Point(117, 101);
             this.groupBox25.Name = "groupBox25";
             this.groupBox25.Size = new System.Drawing.Size(105, 76);
             this.groupBox25.TabIndex = 6;
             this.groupBox25.TabStop = false;
-            this.groupBox25.Text = "Truc Z";
+            this.groupBox25.Text = "Unload Z";
             // 
-            // button41
+            // btnSaveUnLoadZ
             // 
-            this.button41.Location = new System.Drawing.Point(15, 17);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(75, 23);
-            this.button41.TabIndex = 1;
-            this.button41.Text = "Save";
-            this.button41.UseVisualStyleBackColor = true;
+            this.btnSaveUnLoadZ.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveUnLoadZ.Name = "btnSaveUnLoadZ";
+            this.btnSaveUnLoadZ.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveUnLoadZ.TabIndex = 1;
+            this.btnSaveUnLoadZ.Text = "Save";
+            this.btnSaveUnLoadZ.UseVisualStyleBackColor = true;
             // 
-            // button42
+            // btnGoUnLoadZ
             // 
-            this.button42.Location = new System.Drawing.Point(15, 46);
-            this.button42.Name = "button42";
-            this.button42.Size = new System.Drawing.Size(75, 23);
-            this.button42.TabIndex = 3;
-            this.button42.Text = "Go";
-            this.button42.UseVisualStyleBackColor = true;
+            this.btnGoUnLoadZ.Location = new System.Drawing.Point(15, 46);
+            this.btnGoUnLoadZ.Name = "btnGoUnLoadZ";
+            this.btnGoUnLoadZ.Size = new System.Drawing.Size(75, 23);
+            this.btnGoUnLoadZ.TabIndex = 3;
+            this.btnGoUnLoadZ.Text = "Go";
+            this.btnGoUnLoadZ.UseVisualStyleBackColor = true;
             // 
             // groupBox17
             // 
-            this.groupBox17.Controls.Add(this.button31);
-            this.groupBox17.Controls.Add(this.button32);
+            this.groupBox17.Controls.Add(this.btnSaveUnLoadXYPoint2);
+            this.groupBox17.Controls.Add(this.btnGoUnLoadXYPoint2);
             this.groupBox17.Location = new System.Drawing.Point(117, 19);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Size = new System.Drawing.Size(105, 76);
             this.groupBox17.TabIndex = 5;
             this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Tray Load X End";
+            this.groupBox17.Text = "UnLoad X End";
             // 
-            // button31
+            // btnSaveUnLoadXYPoint2
             // 
-            this.button31.Location = new System.Drawing.Point(15, 17);
-            this.button31.Name = "button31";
-            this.button31.Size = new System.Drawing.Size(75, 23);
-            this.button31.TabIndex = 1;
-            this.button31.Text = "Save";
-            this.button31.UseVisualStyleBackColor = true;
+            this.btnSaveUnLoadXYPoint2.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveUnLoadXYPoint2.Name = "btnSaveUnLoadXYPoint2";
+            this.btnSaveUnLoadXYPoint2.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveUnLoadXYPoint2.TabIndex = 1;
+            this.btnSaveUnLoadXYPoint2.Text = "Save";
+            this.btnSaveUnLoadXYPoint2.UseVisualStyleBackColor = true;
             // 
-            // button32
+            // btnGoUnLoadXYPoint2
             // 
-            this.button32.Location = new System.Drawing.Point(15, 46);
-            this.button32.Name = "button32";
-            this.button32.Size = new System.Drawing.Size(75, 23);
-            this.button32.TabIndex = 3;
-            this.button32.Text = "Go";
-            this.button32.UseVisualStyleBackColor = true;
+            this.btnGoUnLoadXYPoint2.Location = new System.Drawing.Point(15, 46);
+            this.btnGoUnLoadXYPoint2.Name = "btnGoUnLoadXYPoint2";
+            this.btnGoUnLoadXYPoint2.Size = new System.Drawing.Size(75, 23);
+            this.btnGoUnLoadXYPoint2.TabIndex = 3;
+            this.btnGoUnLoadXYPoint2.Text = "Go";
+            this.btnGoUnLoadXYPoint2.UseVisualStyleBackColor = true;
             // 
             // groupBox18
             // 
-            this.groupBox18.Controls.Add(this.button33);
-            this.groupBox18.Controls.Add(this.button34);
+            this.groupBox18.Controls.Add(this.btnSaveUnLoadXYPoint3);
+            this.groupBox18.Controls.Add(this.btnGoUnLoadXYPoint3);
             this.groupBox18.Location = new System.Drawing.Point(6, 101);
             this.groupBox18.Name = "groupBox18";
             this.groupBox18.Size = new System.Drawing.Size(105, 76);
             this.groupBox18.TabIndex = 5;
             this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "Tray Load Y End";
+            this.groupBox18.Text = "Unload Y End";
             // 
-            // button33
+            // btnSaveUnLoadXYPoint3
             // 
-            this.button33.Location = new System.Drawing.Point(15, 17);
-            this.button33.Name = "button33";
-            this.button33.Size = new System.Drawing.Size(75, 23);
-            this.button33.TabIndex = 1;
-            this.button33.Text = "Save";
-            this.button33.UseVisualStyleBackColor = true;
+            this.btnSaveUnLoadXYPoint3.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveUnLoadXYPoint3.Name = "btnSaveUnLoadXYPoint3";
+            this.btnSaveUnLoadXYPoint3.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveUnLoadXYPoint3.TabIndex = 1;
+            this.btnSaveUnLoadXYPoint3.Text = "Save";
+            this.btnSaveUnLoadXYPoint3.UseVisualStyleBackColor = true;
             // 
-            // button34
+            // btnGoUnLoadXYPoint3
             // 
-            this.button34.Location = new System.Drawing.Point(15, 46);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(75, 23);
-            this.button34.TabIndex = 3;
-            this.button34.Text = "Go";
-            this.button34.UseVisualStyleBackColor = true;
+            this.btnGoUnLoadXYPoint3.Location = new System.Drawing.Point(15, 46);
+            this.btnGoUnLoadXYPoint3.Name = "btnGoUnLoadXYPoint3";
+            this.btnGoUnLoadXYPoint3.Size = new System.Drawing.Size(75, 23);
+            this.btnGoUnLoadXYPoint3.TabIndex = 3;
+            this.btnGoUnLoadXYPoint3.Text = "Go";
+            this.btnGoUnLoadXYPoint3.UseVisualStyleBackColor = true;
             // 
             // groupBox19
             // 
-            this.groupBox19.Controls.Add(this.button35);
-            this.groupBox19.Controls.Add(this.button36);
+            this.groupBox19.Controls.Add(this.btnSaveUnLoadXYPoint1);
+            this.groupBox19.Controls.Add(this.btnGoUnLoadXYPoint1);
             this.groupBox19.Location = new System.Drawing.Point(6, 19);
             this.groupBox19.Name = "groupBox19";
             this.groupBox19.Size = new System.Drawing.Size(105, 76);
             this.groupBox19.TabIndex = 4;
             this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Tray Load X Start";
+            this.groupBox19.Text = "Unload X Start";
             // 
-            // button35
+            // btnSaveUnLoadXYPoint1
             // 
-            this.button35.Location = new System.Drawing.Point(15, 17);
-            this.button35.Name = "button35";
-            this.button35.Size = new System.Drawing.Size(75, 23);
-            this.button35.TabIndex = 1;
-            this.button35.Text = "Save";
-            this.button35.UseVisualStyleBackColor = true;
+            this.btnSaveUnLoadXYPoint1.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveUnLoadXYPoint1.Name = "btnSaveUnLoadXYPoint1";
+            this.btnSaveUnLoadXYPoint1.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveUnLoadXYPoint1.TabIndex = 1;
+            this.btnSaveUnLoadXYPoint1.Text = "Save";
+            this.btnSaveUnLoadXYPoint1.UseVisualStyleBackColor = true;
             // 
-            // button36
+            // btnGoUnLoadXYPoint1
             // 
-            this.button36.Location = new System.Drawing.Point(15, 46);
-            this.button36.Name = "button36";
-            this.button36.Size = new System.Drawing.Size(75, 23);
-            this.button36.TabIndex = 3;
-            this.button36.Text = "Go";
-            this.button36.UseVisualStyleBackColor = true;
+            this.btnGoUnLoadXYPoint1.Location = new System.Drawing.Point(15, 46);
+            this.btnGoUnLoadXYPoint1.Name = "btnGoUnLoadXYPoint1";
+            this.btnGoUnLoadXYPoint1.Size = new System.Drawing.Size(75, 23);
+            this.btnGoUnLoadXYPoint1.TabIndex = 3;
+            this.btnGoUnLoadXYPoint1.Text = "Go";
+            this.btnGoUnLoadXYPoint1.UseVisualStyleBackColor = true;
             // 
             // groupBox11
             // 
@@ -2173,126 +2173,126 @@
             // 
             // groupBox24
             // 
-            this.groupBox24.Controls.Add(this.button39);
-            this.groupBox24.Controls.Add(this.button40);
+            this.groupBox24.Controls.Add(this.btnSaveTrayUnLoadZ);
+            this.groupBox24.Controls.Add(this.btnGoTrayUnLoadZ);
             this.groupBox24.Location = new System.Drawing.Point(117, 101);
             this.groupBox24.Name = "groupBox24";
             this.groupBox24.Size = new System.Drawing.Size(105, 76);
             this.groupBox24.TabIndex = 6;
             this.groupBox24.TabStop = false;
-            this.groupBox24.Text = "Truc Z";
+            this.groupBox24.Text = "Tray Unload Z";
             // 
-            // button39
+            // btnSaveTrayUnLoadZ
             // 
-            this.button39.Location = new System.Drawing.Point(15, 17);
-            this.button39.Name = "button39";
-            this.button39.Size = new System.Drawing.Size(75, 23);
-            this.button39.TabIndex = 1;
-            this.button39.Text = "Save";
-            this.button39.UseVisualStyleBackColor = true;
+            this.btnSaveTrayUnLoadZ.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveTrayUnLoadZ.Name = "btnSaveTrayUnLoadZ";
+            this.btnSaveTrayUnLoadZ.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveTrayUnLoadZ.TabIndex = 1;
+            this.btnSaveTrayUnLoadZ.Text = "Save";
+            this.btnSaveTrayUnLoadZ.UseVisualStyleBackColor = true;
             // 
-            // button40
+            // btnGoTrayUnLoadZ
             // 
-            this.button40.Location = new System.Drawing.Point(15, 46);
-            this.button40.Name = "button40";
-            this.button40.Size = new System.Drawing.Size(75, 23);
-            this.button40.TabIndex = 3;
-            this.button40.Text = "Go";
-            this.button40.UseVisualStyleBackColor = true;
+            this.btnGoTrayUnLoadZ.Location = new System.Drawing.Point(15, 46);
+            this.btnGoTrayUnLoadZ.Name = "btnGoTrayUnLoadZ";
+            this.btnGoTrayUnLoadZ.Size = new System.Drawing.Size(75, 23);
+            this.btnGoTrayUnLoadZ.TabIndex = 3;
+            this.btnGoTrayUnLoadZ.Text = "Go";
+            this.btnGoTrayUnLoadZ.UseVisualStyleBackColor = true;
             // 
             // groupBox12
             // 
-            this.groupBox12.Controls.Add(this.button25);
-            this.groupBox12.Controls.Add(this.button26);
+            this.groupBox12.Controls.Add(this.btnSaveTrayUnLoadXYPoint2);
+            this.groupBox12.Controls.Add(this.btnGoTrayUnLoadXYPoint2);
             this.groupBox12.Location = new System.Drawing.Point(117, 19);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(105, 76);
             this.groupBox12.TabIndex = 5;
             this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Tray Load X End";
+            this.groupBox12.Text = "UnLoad X End";
             // 
-            // button25
+            // btnSaveTrayUnLoadXYPoint2
             // 
-            this.button25.Location = new System.Drawing.Point(15, 17);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(75, 23);
-            this.button25.TabIndex = 1;
-            this.button25.Text = "Save";
-            this.button25.UseVisualStyleBackColor = true;
+            this.btnSaveTrayUnLoadXYPoint2.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveTrayUnLoadXYPoint2.Name = "btnSaveTrayUnLoadXYPoint2";
+            this.btnSaveTrayUnLoadXYPoint2.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveTrayUnLoadXYPoint2.TabIndex = 1;
+            this.btnSaveTrayUnLoadXYPoint2.Text = "Save";
+            this.btnSaveTrayUnLoadXYPoint2.UseVisualStyleBackColor = true;
             // 
-            // button26
+            // btnGoTrayUnLoadXYPoint2
             // 
-            this.button26.Location = new System.Drawing.Point(15, 46);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(75, 23);
-            this.button26.TabIndex = 3;
-            this.button26.Text = "Go";
-            this.button26.UseVisualStyleBackColor = true;
+            this.btnGoTrayUnLoadXYPoint2.Location = new System.Drawing.Point(15, 46);
+            this.btnGoTrayUnLoadXYPoint2.Name = "btnGoTrayUnLoadXYPoint2";
+            this.btnGoTrayUnLoadXYPoint2.Size = new System.Drawing.Size(75, 23);
+            this.btnGoTrayUnLoadXYPoint2.TabIndex = 3;
+            this.btnGoTrayUnLoadXYPoint2.Text = "Go";
+            this.btnGoTrayUnLoadXYPoint2.UseVisualStyleBackColor = true;
             // 
             // groupBox14
             // 
-            this.groupBox14.Controls.Add(this.button27);
-            this.groupBox14.Controls.Add(this.button28);
+            this.groupBox14.Controls.Add(this.btnSaveTrayUnLoadXYPoint3);
+            this.groupBox14.Controls.Add(this.btnGoTrayUnLoadXYPoint3);
             this.groupBox14.Location = new System.Drawing.Point(6, 101);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(105, 76);
             this.groupBox14.TabIndex = 5;
             this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "Tray Load Y End";
+            this.groupBox14.Text = "Unload Y End";
             // 
-            // button27
+            // btnSaveTrayUnLoadXYPoint3
             // 
-            this.button27.Location = new System.Drawing.Point(15, 17);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(75, 23);
-            this.button27.TabIndex = 1;
-            this.button27.Text = "Save";
-            this.button27.UseVisualStyleBackColor = true;
+            this.btnSaveTrayUnLoadXYPoint3.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveTrayUnLoadXYPoint3.Name = "btnSaveTrayUnLoadXYPoint3";
+            this.btnSaveTrayUnLoadXYPoint3.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveTrayUnLoadXYPoint3.TabIndex = 1;
+            this.btnSaveTrayUnLoadXYPoint3.Text = "Save";
+            this.btnSaveTrayUnLoadXYPoint3.UseVisualStyleBackColor = true;
             // 
-            // button28
+            // btnGoTrayUnLoadXYPoint3
             // 
-            this.button28.Location = new System.Drawing.Point(15, 46);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(75, 23);
-            this.button28.TabIndex = 3;
-            this.button28.Text = "Go";
-            this.button28.UseVisualStyleBackColor = true;
+            this.btnGoTrayUnLoadXYPoint3.Location = new System.Drawing.Point(15, 46);
+            this.btnGoTrayUnLoadXYPoint3.Name = "btnGoTrayUnLoadXYPoint3";
+            this.btnGoTrayUnLoadXYPoint3.Size = new System.Drawing.Size(75, 23);
+            this.btnGoTrayUnLoadXYPoint3.TabIndex = 3;
+            this.btnGoTrayUnLoadXYPoint3.Text = "Go";
+            this.btnGoTrayUnLoadXYPoint3.UseVisualStyleBackColor = true;
             // 
             // groupBox15
             // 
-            this.groupBox15.Controls.Add(this.button29);
-            this.groupBox15.Controls.Add(this.button30);
+            this.groupBox15.Controls.Add(this.btnSaveTrayUnLoadXYPoint1);
+            this.groupBox15.Controls.Add(this.btnGoTrayUnLoadXYPoint1);
             this.groupBox15.Location = new System.Drawing.Point(6, 19);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(105, 76);
             this.groupBox15.TabIndex = 4;
             this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Tray Load X Start";
+            this.groupBox15.Text = "Tray UnLoad X ";
             // 
-            // button29
+            // btnSaveTrayUnLoadXYPoint1
             // 
-            this.button29.Location = new System.Drawing.Point(15, 17);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(75, 23);
-            this.button29.TabIndex = 1;
-            this.button29.Text = "Save";
-            this.button29.UseVisualStyleBackColor = true;
+            this.btnSaveTrayUnLoadXYPoint1.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveTrayUnLoadXYPoint1.Name = "btnSaveTrayUnLoadXYPoint1";
+            this.btnSaveTrayUnLoadXYPoint1.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveTrayUnLoadXYPoint1.TabIndex = 1;
+            this.btnSaveTrayUnLoadXYPoint1.Text = "Save";
+            this.btnSaveTrayUnLoadXYPoint1.UseVisualStyleBackColor = true;
             // 
-            // button30
+            // btnGoTrayUnLoadXYPoint1
             // 
-            this.button30.Location = new System.Drawing.Point(15, 46);
-            this.button30.Name = "button30";
-            this.button30.Size = new System.Drawing.Size(75, 23);
-            this.button30.TabIndex = 3;
-            this.button30.Text = "Go";
-            this.button30.UseVisualStyleBackColor = true;
+            this.btnGoTrayUnLoadXYPoint1.Location = new System.Drawing.Point(15, 46);
+            this.btnGoTrayUnLoadXYPoint1.Name = "btnGoTrayUnLoadXYPoint1";
+            this.btnGoTrayUnLoadXYPoint1.Size = new System.Drawing.Size(75, 23);
+            this.btnGoTrayUnLoadXYPoint1.TabIndex = 3;
+            this.btnGoTrayUnLoadXYPoint1.Text = "Go";
+            this.btnGoTrayUnLoadXYPoint1.UseVisualStyleBackColor = true;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.groupBox23);
             this.groupBox8.Controls.Add(this.groupBox10);
             this.groupBox8.Controls.Add(this.groupBox9);
-            this.groupBox8.Controls.Add(this.groupBox13);
+            this.groupBox8.Controls.Add(this.trayload);
             this.groupBox8.Location = new System.Drawing.Point(6, 16);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(227, 185);
@@ -2302,8 +2302,8 @@
             // 
             // groupBox23
             // 
-            this.groupBox23.Controls.Add(this.button37);
-            this.groupBox23.Controls.Add(this.button38);
+            this.groupBox23.Controls.Add(this.btnSaveTrayLoadZ);
+            this.groupBox23.Controls.Add(this.btnGoTrayLoadZ);
             this.groupBox23.Location = new System.Drawing.Point(117, 101);
             this.groupBox23.Name = "groupBox23";
             this.groupBox23.Size = new System.Drawing.Size(105, 76);
@@ -2311,28 +2311,28 @@
             this.groupBox23.TabStop = false;
             this.groupBox23.Text = "Truc Z";
             // 
-            // button37
+            // btnSaveTrayLoadZ
             // 
-            this.button37.Location = new System.Drawing.Point(15, 17);
-            this.button37.Name = "button37";
-            this.button37.Size = new System.Drawing.Size(75, 23);
-            this.button37.TabIndex = 1;
-            this.button37.Text = "Save";
-            this.button37.UseVisualStyleBackColor = true;
+            this.btnSaveTrayLoadZ.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveTrayLoadZ.Name = "btnSaveTrayLoadZ";
+            this.btnSaveTrayLoadZ.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveTrayLoadZ.TabIndex = 1;
+            this.btnSaveTrayLoadZ.Text = "Save";
+            this.btnSaveTrayLoadZ.UseVisualStyleBackColor = true;
             // 
-            // button38
+            // btnGoTrayLoadZ
             // 
-            this.button38.Location = new System.Drawing.Point(15, 46);
-            this.button38.Name = "button38";
-            this.button38.Size = new System.Drawing.Size(75, 23);
-            this.button38.TabIndex = 3;
-            this.button38.Text = "Go";
-            this.button38.UseVisualStyleBackColor = true;
+            this.btnGoTrayLoadZ.Location = new System.Drawing.Point(15, 46);
+            this.btnGoTrayLoadZ.Name = "btnGoTrayLoadZ";
+            this.btnGoTrayLoadZ.Size = new System.Drawing.Size(75, 23);
+            this.btnGoTrayLoadZ.TabIndex = 3;
+            this.btnGoTrayLoadZ.Text = "Go";
+            this.btnGoTrayLoadZ.UseVisualStyleBackColor = true;
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.button23);
-            this.groupBox10.Controls.Add(this.button24);
+            this.groupBox10.Controls.Add(this.btnSaveTrayLoadXYPoint2);
+            this.groupBox10.Controls.Add(this.btnGoTrayLoadXYPoint2);
             this.groupBox10.Location = new System.Drawing.Point(117, 19);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(105, 76);
@@ -2340,28 +2340,28 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Tray Load X End";
             // 
-            // button23
+            // btnSaveTrayLoadXYPoint2
             // 
-            this.button23.Location = new System.Drawing.Point(15, 17);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(75, 23);
-            this.button23.TabIndex = 1;
-            this.button23.Text = "Save";
-            this.button23.UseVisualStyleBackColor = true;
+            this.btnSaveTrayLoadXYPoint2.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveTrayLoadXYPoint2.Name = "btnSaveTrayLoadXYPoint2";
+            this.btnSaveTrayLoadXYPoint2.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveTrayLoadXYPoint2.TabIndex = 1;
+            this.btnSaveTrayLoadXYPoint2.Text = "Save";
+            this.btnSaveTrayLoadXYPoint2.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // btnGoTrayLoadXYPoint2
             // 
-            this.button24.Location = new System.Drawing.Point(15, 46);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(75, 23);
-            this.button24.TabIndex = 3;
-            this.button24.Text = "Go";
-            this.button24.UseVisualStyleBackColor = true;
+            this.btnGoTrayLoadXYPoint2.Location = new System.Drawing.Point(15, 46);
+            this.btnGoTrayLoadXYPoint2.Name = "btnGoTrayLoadXYPoint2";
+            this.btnGoTrayLoadXYPoint2.Size = new System.Drawing.Size(75, 23);
+            this.btnGoTrayLoadXYPoint2.TabIndex = 3;
+            this.btnGoTrayLoadXYPoint2.Text = "Go";
+            this.btnGoTrayLoadXYPoint2.UseVisualStyleBackColor = true;
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.button18);
-            this.groupBox9.Controls.Add(this.button21);
+            this.groupBox9.Controls.Add(this.btnSaveTrayLoadXYPoint3);
+            this.groupBox9.Controls.Add(this.btnGoTrayLoadXYPoint3);
             this.groupBox9.Location = new System.Drawing.Point(6, 101);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(105, 76);
@@ -2369,52 +2369,52 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Tray Load Y End";
             // 
-            // button18
+            // btnSaveTrayLoadXYPoint3
             // 
-            this.button18.Location = new System.Drawing.Point(15, 17);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(75, 23);
-            this.button18.TabIndex = 1;
-            this.button18.Text = "Save";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnSaveTrayLoadXYPoint3.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveTrayLoadXYPoint3.Name = "btnSaveTrayLoadXYPoint3";
+            this.btnSaveTrayLoadXYPoint3.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveTrayLoadXYPoint3.TabIndex = 1;
+            this.btnSaveTrayLoadXYPoint3.Text = "Save";
+            this.btnSaveTrayLoadXYPoint3.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // btnGoTrayLoadXYPoint3
             // 
-            this.button21.Location = new System.Drawing.Point(15, 46);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
-            this.button21.TabIndex = 3;
-            this.button21.Text = "Go";
-            this.button21.UseVisualStyleBackColor = true;
+            this.btnGoTrayLoadXYPoint3.Location = new System.Drawing.Point(15, 46);
+            this.btnGoTrayLoadXYPoint3.Name = "btnGoTrayLoadXYPoint3";
+            this.btnGoTrayLoadXYPoint3.Size = new System.Drawing.Size(75, 23);
+            this.btnGoTrayLoadXYPoint3.TabIndex = 3;
+            this.btnGoTrayLoadXYPoint3.Text = "Go";
+            this.btnGoTrayLoadXYPoint3.UseVisualStyleBackColor = true;
             // 
-            // groupBox13
+            // trayload
             // 
-            this.groupBox13.Controls.Add(this.btnSaveTrayLoadXStart);
-            this.groupBox13.Controls.Add(this.button22);
-            this.groupBox13.Location = new System.Drawing.Point(6, 19);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(105, 76);
-            this.groupBox13.TabIndex = 4;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Tray Load X Start";
+            this.trayload.Controls.Add(this.btnSaveTrayLoadXYPoint1);
+            this.trayload.Controls.Add(this.btnGoTrayLoadXYPoint1);
+            this.trayload.Location = new System.Drawing.Point(6, 19);
+            this.trayload.Name = "trayload";
+            this.trayload.Size = new System.Drawing.Size(105, 76);
+            this.trayload.TabIndex = 4;
+            this.trayload.TabStop = false;
+            this.trayload.Text = "Tray Load X Start";
             // 
-            // btnSaveTrayLoadXStart
+            // btnSaveTrayLoadXYPoint1
             // 
-            this.btnSaveTrayLoadXStart.Location = new System.Drawing.Point(15, 17);
-            this.btnSaveTrayLoadXStart.Name = "btnSaveTrayLoadXStart";
-            this.btnSaveTrayLoadXStart.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveTrayLoadXStart.TabIndex = 1;
-            this.btnSaveTrayLoadXStart.Text = "Save";
-            this.btnSaveTrayLoadXStart.UseVisualStyleBackColor = true;
+            this.btnSaveTrayLoadXYPoint1.Location = new System.Drawing.Point(15, 17);
+            this.btnSaveTrayLoadXYPoint1.Name = "btnSaveTrayLoadXYPoint1";
+            this.btnSaveTrayLoadXYPoint1.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveTrayLoadXYPoint1.TabIndex = 1;
+            this.btnSaveTrayLoadXYPoint1.Text = "Save";
+            this.btnSaveTrayLoadXYPoint1.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // btnGoTrayLoadXYPoint1
             // 
-            this.button22.Location = new System.Drawing.Point(15, 46);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(75, 23);
-            this.button22.TabIndex = 3;
-            this.button22.Text = "Go";
-            this.button22.UseVisualStyleBackColor = true;
+            this.btnGoTrayLoadXYPoint1.Location = new System.Drawing.Point(15, 46);
+            this.btnGoTrayLoadXYPoint1.Name = "btnGoTrayLoadXYPoint1";
+            this.btnGoTrayLoadXYPoint1.Size = new System.Drawing.Size(75, 23);
+            this.btnGoTrayLoadXYPoint1.TabIndex = 3;
+            this.btnGoTrayLoadXYPoint1.Text = "Go";
+            this.btnGoTrayLoadXYPoint1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
@@ -2441,6 +2441,91 @@
             this.groupBox49.TabIndex = 63;
             this.groupBox49.TabStop = false;
             this.groupBox49.Text = "OUTPUT";
+            // 
+            // groupBox61
+            // 
+            this.groupBox61.Controls.Add(this.label86);
+            this.groupBox61.Controls.Add(this.btnLampInit);
+            this.groupBox61.Controls.Add(this.label85);
+            this.groupBox61.Controls.Add(this.btnLampRestart);
+            this.groupBox61.Controls.Add(this.label84);
+            this.groupBox61.Controls.Add(this.btnLampStop);
+            this.groupBox61.Controls.Add(this.label83);
+            this.groupBox61.Controls.Add(this.btnLampStart);
+            this.groupBox61.Location = new System.Drawing.Point(12, 97);
+            this.groupBox61.Name = "groupBox61";
+            this.groupBox61.Size = new System.Drawing.Size(220, 133);
+            this.groupBox61.TabIndex = 6;
+            this.groupBox61.TabStop = false;
+            this.groupBox61.Text = "Đèn";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(39, 106);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(89, 13);
+            this.label86.TabIndex = 13;
+            this.label86.Text = "Đèn nút nhân Init";
+            // 
+            // btnLampInit
+            // 
+            this.btnLampInit.Location = new System.Drawing.Point(9, 100);
+            this.btnLampInit.Name = "btnLampInit";
+            this.btnLampInit.Size = new System.Drawing.Size(24, 24);
+            this.btnLampInit.TabIndex = 12;
+            this.btnLampInit.UseVisualStyleBackColor = true;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(39, 79);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(109, 13);
+            this.label85.TabIndex = 11;
+            this.label85.Text = "Đèn nút nhấn Restart";
+            // 
+            // btnLampRestart
+            // 
+            this.btnLampRestart.Location = new System.Drawing.Point(9, 73);
+            this.btnLampRestart.Name = "btnLampRestart";
+            this.btnLampRestart.Size = new System.Drawing.Size(24, 24);
+            this.btnLampRestart.TabIndex = 10;
+            this.btnLampRestart.UseVisualStyleBackColor = true;
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(39, 51);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(97, 13);
+            this.label84.TabIndex = 9;
+            this.label84.Text = "Đèn nút nhấn Stop";
+            // 
+            // btnLampStop
+            // 
+            this.btnLampStop.Location = new System.Drawing.Point(9, 45);
+            this.btnLampStop.Name = "btnLampStop";
+            this.btnLampStop.Size = new System.Drawing.Size(24, 24);
+            this.btnLampStop.TabIndex = 8;
+            this.btnLampStop.UseVisualStyleBackColor = true;
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(39, 24);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(97, 13);
+            this.label83.TabIndex = 7;
+            this.label83.Text = "Đèn nút nhấn Start";
+            // 
+            // btnLampStart
+            // 
+            this.btnLampStart.Location = new System.Drawing.Point(9, 18);
+            this.btnLampStart.Name = "btnLampStart";
+            this.btnLampStart.Size = new System.Drawing.Size(24, 24);
+            this.btnLampStart.TabIndex = 6;
+            this.btnLampStart.UseVisualStyleBackColor = true;
             // 
             // groupBox60
             // 
@@ -4038,91 +4123,6 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(89, 17);
             this.toolStripStatusLabel2.Text = "PLC Connected";
             // 
-            // btnLampStart
-            // 
-            this.btnLampStart.Location = new System.Drawing.Point(9, 18);
-            this.btnLampStart.Name = "btnLampStart";
-            this.btnLampStart.Size = new System.Drawing.Size(24, 24);
-            this.btnLampStart.TabIndex = 6;
-            this.btnLampStart.UseVisualStyleBackColor = true;
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Location = new System.Drawing.Point(39, 24);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(97, 13);
-            this.label83.TabIndex = 7;
-            this.label83.Text = "Đèn nút nhấn Start";
-            // 
-            // btnLampStop
-            // 
-            this.btnLampStop.Location = new System.Drawing.Point(9, 45);
-            this.btnLampStop.Name = "btnLampStop";
-            this.btnLampStop.Size = new System.Drawing.Size(24, 24);
-            this.btnLampStop.TabIndex = 8;
-            this.btnLampStop.UseVisualStyleBackColor = true;
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(39, 51);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(97, 13);
-            this.label84.TabIndex = 9;
-            this.label84.Text = "Đèn nút nhấn Stop";
-            // 
-            // btnLampRestart
-            // 
-            this.btnLampRestart.Location = new System.Drawing.Point(9, 73);
-            this.btnLampRestart.Name = "btnLampRestart";
-            this.btnLampRestart.Size = new System.Drawing.Size(24, 24);
-            this.btnLampRestart.TabIndex = 10;
-            this.btnLampRestart.UseVisualStyleBackColor = true;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(39, 79);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(109, 13);
-            this.label85.TabIndex = 11;
-            this.label85.Text = "Đèn nút nhấn Restart";
-            // 
-            // btnLampInit
-            // 
-            this.btnLampInit.Location = new System.Drawing.Point(9, 100);
-            this.btnLampInit.Name = "btnLampInit";
-            this.btnLampInit.Size = new System.Drawing.Size(24, 24);
-            this.btnLampInit.TabIndex = 12;
-            this.btnLampInit.UseVisualStyleBackColor = true;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(39, 106);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(89, 13);
-            this.label86.TabIndex = 13;
-            this.label86.Text = "Đèn nút nhân Init";
-            // 
-            // groupBox61
-            // 
-            this.groupBox61.Controls.Add(this.label86);
-            this.groupBox61.Controls.Add(this.btnLampInit);
-            this.groupBox61.Controls.Add(this.label85);
-            this.groupBox61.Controls.Add(this.btnLampRestart);
-            this.groupBox61.Controls.Add(this.label84);
-            this.groupBox61.Controls.Add(this.btnLampStop);
-            this.groupBox61.Controls.Add(this.label83);
-            this.groupBox61.Controls.Add(this.btnLampStart);
-            this.groupBox61.Location = new System.Drawing.Point(12, 97);
-            this.groupBox61.Name = "groupBox61";
-            this.groupBox61.Size = new System.Drawing.Size(220, 133);
-            this.groupBox61.TabIndex = 6;
-            this.groupBox61.TabStop = false;
-            this.groupBox61.Text = "Đèn";
-            // 
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
@@ -4189,9 +4189,11 @@
             this.groupBox23.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
-            this.groupBox13.ResumeLayout(false);
+            this.trayload.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.groupBox49.ResumeLayout(false);
+            this.groupBox61.ResumeLayout(false);
+            this.groupBox61.PerformLayout();
             this.groupBox60.ResumeLayout(false);
             this.groupBox60.PerformLayout();
             this.groupBox59.ResumeLayout(false);
@@ -4241,8 +4243,6 @@
             this.groupBox36.PerformLayout();
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();
-            this.groupBox61.ResumeLayout(false);
-            this.groupBox61.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4441,43 +4441,43 @@
         private System.Windows.Forms.GroupBox grpTeachingTray;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.GroupBox groupBox25;
-        private System.Windows.Forms.Button button41;
-        private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.Button btnSaveUnLoadZ;
+        private System.Windows.Forms.Button btnGoUnLoadZ;
         private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.Button button31;
-        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Button btnSaveUnLoadXYPoint2;
+        private System.Windows.Forms.Button btnGoUnLoadXYPoint2;
         private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.Button button33;
-        private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button btnSaveUnLoadXYPoint3;
+        private System.Windows.Forms.Button btnGoUnLoadXYPoint3;
         private System.Windows.Forms.GroupBox groupBox19;
-        private System.Windows.Forms.Button button35;
-        private System.Windows.Forms.Button button36;
+        private System.Windows.Forms.Button btnSaveUnLoadXYPoint1;
+        private System.Windows.Forms.Button btnGoUnLoadXYPoint1;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox24;
-        private System.Windows.Forms.Button button39;
-        private System.Windows.Forms.Button button40;
+        private System.Windows.Forms.Button btnSaveTrayUnLoadZ;
+        private System.Windows.Forms.Button btnGoTrayUnLoadZ;
         private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button btnSaveTrayUnLoadXYPoint2;
+        private System.Windows.Forms.Button btnGoTrayUnLoadXYPoint2;
         private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
+        private System.Windows.Forms.Button btnSaveTrayUnLoadXYPoint3;
+        private System.Windows.Forms.Button btnGoTrayUnLoadXYPoint3;
         private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.Button button29;
-        private System.Windows.Forms.Button button30;
+        private System.Windows.Forms.Button btnSaveTrayUnLoadXYPoint1;
+        private System.Windows.Forms.Button btnGoTrayUnLoadXYPoint1;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox23;
-        private System.Windows.Forms.Button button37;
-        private System.Windows.Forms.Button button38;
+        private System.Windows.Forms.Button btnSaveTrayLoadZ;
+        private System.Windows.Forms.Button btnGoTrayLoadZ;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
+        private System.Windows.Forms.Button btnSaveTrayLoadXYPoint2;
+        private System.Windows.Forms.Button btnGoTrayLoadXYPoint2;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.Button btnSaveTrayLoadXStart;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button btnSaveTrayLoadXYPoint3;
+        private System.Windows.Forms.Button btnGoTrayLoadXYPoint3;
+        private System.Windows.Forms.GroupBox trayload;
+        private System.Windows.Forms.Button btnSaveTrayLoadXYPoint1;
+        private System.Windows.Forms.Button btnGoTrayLoadXYPoint1;
         private System.Windows.Forms.GroupBox groupBox22;
         private System.Windows.Forms.RadioButton rbtPort1;
         private System.Windows.Forms.RadioButton rbtPort4;

@@ -37,7 +37,9 @@ namespace PLCKeygen
             InitializeComponent();
 
             this.Text = this.Text +" - "+ Application.ProductVersion.ToString();
-
+            this.Load += Form1_Load;
+            this.FormClosing += Closing;
+            this.FormClosing += CloseIOport;
             PLCKey = new PLCKeyence("192.168.0.10", 8501);
             PLCKey.Open();
             PLCKey.StartCommunication();
@@ -135,6 +137,12 @@ namespace PLCKeygen
             grpTeachingSocket.Enabled = false;
             grpTeachingTray.Enabled = false;
 
+            // Wire up Teaching Position Save button event handlers
+            btnSaveTrayLoadXYPoint1.Click += btnSaveTrayLoadXYStart_Click;
+            btnSaveTrayLoadXYPoint2.Click += btnSaveTrayLoadXYPoint2_Click;  // Tray Load X End (Point 2)
+            btnSaveTrayLoadXYPoint3.Click += btnSaveTrayLoadXYPoint3_Click;  // Tray Load Y End (Point 3)
+            btnSaveTrayLoadZ.Click += btnSaveTrayLoadZ_Click;  // Truc Z
+
             // Load initial Speed and Step values from PLC
             LoadAxisSpeedAndStep();
         }
@@ -228,9 +236,46 @@ namespace PLCKeygen
             PLCKey.WriteInt32(PLCAddresses.Data.P3_Y_Master, (int)y1);
             PLCKey.WriteInt32(PLCAddresses.Data.P3_R_Master, (int)r1);
         }
-
+        private void LoadSelectedRadioPort()
+        {
+            switch (Properties.Settings.Default.SelectedRadio)
+            {
+                case "Port1":
+                    rbtPort1.Checked = true;
+                    break;
+                case "Port2":
+                    rbtPort2.Checked = true;
+                    break;
+                case "Port3":
+                    rbtPort3.Checked = true;
+                    break;
+                case "Port4":
+                    rbtPort4.Checked = true;
+                    break;
+            }
+        }
+        private void LoadIORadioPort()
+        {
+            switch (Properties.Settings.Default.IOportRadio)
+            {
+                case "IOPort1":
+                    rbtIOPort1.Checked = true;
+                    break;
+                case "IOPort2":
+                    rbtIOPort2.Checked = true;
+                    break;
+                case "IOPort3":
+                    rbtIOPort3.Checked = true;
+                    break;
+                case "IOPort4":
+                    rbtIOPort4.Checked = true;
+                    break;
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
+            LoadSelectedRadioPort();
+            LoadIORadioPort();
             toolStripStatusLabel2.ToolTipText = "PLC Connected";
             toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
             txtXMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_X_Master) / 100.0f).ToString();
@@ -2464,5 +2509,235 @@ namespace PLCKeygen
             MessageBox.Show("Đã về gốc xong","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Question);
             tstStatus.Text = "Ready!";
         }
+    
+        private void Closing(object sender, FormClosingEventArgs e)
+        {
+            if (rbtPort1.Checked)
+            {
+                Properties.Settings.Default.SelectedRadio = "Port1";
+            }
+            else if (rbtPort2.Checked)
+            {
+                Properties.Settings.Default.SelectedRadio = "Port2";
+            }
+            else if (rbtPort3.Checked)
+            {
+                Properties.Settings.Default.SelectedRadio = "Port3";
+            }
+            else if (rbtPort4.Checked)
+            {
+                Properties.Settings.Default.SelectedRadio = "Port4";
+            }
+            Properties.Settings.Default.Save(); 
+        }
+        private void CloseIOport(object sender, FormClosingEventArgs e)
+        {
+            if (rbtIOPort1.Checked)
+            {
+                Properties.Settings.Default.IOportRadio = "IOPort1";
+            }
+            else if (rbtIOPort2.Checked)
+            {
+                Properties.Settings.Default.IOportRadio = "IOPort2";
+            }
+            else if (rbtIOPort3.Checked)
+            {
+                Properties.Settings.Default.IOportRadio = "IOPort3";
+            }
+            else if (rbtIOPort4.Checked)
+            {
+                Properties.Settings.Default.IOportRadio = "IOPort4";
+            }
+            Properties.Settings.Default.Save();
+        }
+
+        #region Teaching Position Save to JSON
+
+        // Class to store teaching position data
+        public class TeachingPositions
+        {
+            public TrayLoadPosition TrayLoad { get; set; } = new TrayLoadPosition();
+        }
+
+        public class TrayLoadPosition
+        {
+            public XYPosition Point1 { get; set; } = new XYPosition();
+            public XYPosition Point2 { get; set; } = new XYPosition();
+            public XYPosition Point3 { get; set; } = new XYPosition();
+            public double Z { get; set; } = 0;
+        }
+
+        public class XYPosition
+        {
+            public double X { get; set; } = 0;
+            public double Y { get; set; } = 0;
+        }
+
+        private const string TEACHING_JSON_PATH = "TeachingPositions.json";
+
+        // Load teaching positions from JSON file
+        private TeachingPositions LoadTeachingPositions()
+        {
+            try
+            {
+                if (System.IO.File.Exists(TEACHING_JSON_PATH))
+                {
+                    string json = System.IO.File.ReadAllText(TEACHING_JSON_PATH);
+                    return Newtonsoft.Json.JsonConvert.DeserializeObject<TeachingPositions>(json);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi đọc file teaching positions: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return new TeachingPositions();
+        }
+
+        // Save teaching positions to JSON file
+        private void SaveTeachingPositions(TeachingPositions positions)
+        {
+            try
+            {
+                string json = Newtonsoft.Json.JsonConvert.SerializeObject(positions, Newtonsoft.Json.Formatting.Indented);
+                System.IO.File.WriteAllText(TEACHING_JSON_PATH, json);
+                MessageBox.Show("Đã lưu tọa độ thành công!", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi lưu file teaching positions: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Event handler for Save Tray Load XY Point 1 button
+        private void btnSaveTrayLoadXYStart_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get current X and Y values from textboxes
+                if (double.TryParse(txtXCur.Text, out double xValue) &&
+                    double.TryParse(txtYCur.Text, out double yValue))
+                {
+                    // Load existing positions
+                    TeachingPositions positions = LoadTeachingPositions();
+
+                    // Update Point1
+                    positions.TrayLoad.Point1.X = xValue;
+                    positions.TrayLoad.Point1.Y = yValue;
+
+                    // Save to JSON
+                    SaveTeachingPositions(positions);
+                }
+                else
+                {
+                    MessageBox.Show("Giá trị X hoặc Y không hợp lệ!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi lưu Point 1: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Event handler for Save Tray Load XY Point 2 button
+        private void btnSaveTrayLoadXYPoint2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get current X and Y values from textboxes
+                if (double.TryParse(txtXCur.Text, out double xValue) &&
+                    double.TryParse(txtYCur.Text, out double yValue))
+                {
+                    // Load existing positions
+                    TeachingPositions positions = LoadTeachingPositions();
+
+                    // Update Point2
+                    positions.TrayLoad.Point2.X = xValue;
+                    positions.TrayLoad.Point2.Y = yValue;
+
+                    // Save to JSON
+                    SaveTeachingPositions(positions);
+                }
+                else
+                {
+                    MessageBox.Show("Giá trị X hoặc Y không hợp lệ!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi lưu Point 2: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Event handler for Save Tray Load XY Point 3 button
+        private void btnSaveTrayLoadXYPoint3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get current X and Y values from textboxes
+                if (double.TryParse(txtXCur.Text, out double xValue) &&
+                    double.TryParse(txtYCur.Text, out double yValue))
+                {
+                    // Load existing positions
+                    TeachingPositions positions = LoadTeachingPositions();
+
+                    // Update Point3
+                    positions.TrayLoad.Point3.X = xValue;
+                    positions.TrayLoad.Point3.Y = yValue;
+
+                    // Save to JSON
+                    SaveTeachingPositions(positions);
+                }
+                else
+                {
+                    MessageBox.Show("Giá trị X hoặc Y không hợp lệ!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi lưu Point 3: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // Event handler for Save Tray Load Z button
+        private void btnSaveTrayLoadZ_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Get current Z value from textbox
+                if (double.TryParse(txtZCur.Text, out double zValue))
+                {
+                    // Load existing positions
+                    TeachingPositions positions = LoadTeachingPositions();
+
+                    // Update Z
+                    positions.TrayLoad.Z = zValue;
+
+                    // Save to JSON
+                    SaveTeachingPositions(positions);
+                }
+                else
+                {
+                    MessageBox.Show("Giá trị Z không hợp lệ!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi lưu Z: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        #endregion
+
     }
 }
