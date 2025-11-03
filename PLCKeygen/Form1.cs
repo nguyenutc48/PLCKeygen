@@ -1132,6 +1132,9 @@ namespace PLCKeygen
 
                 // Load Speed and Step values for new port
                 LoadAxisSpeedAndStep();
+
+                // Load Current Jog Mode
+                GetStepJogMode();
             }
         }
 

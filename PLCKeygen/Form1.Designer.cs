@@ -1618,6 +1618,7 @@
             // 
             this.txtFCur.Location = new System.Drawing.Point(54, 249);
             this.txtFCur.Name = "txtFCur";
+            this.txtFCur.ReadOnly = true;
             this.txtFCur.Size = new System.Drawing.Size(59, 20);
             this.txtFCur.TabIndex = 26;
             // 
@@ -1634,6 +1635,7 @@
             // 
             this.txtROCur.Location = new System.Drawing.Point(54, 206);
             this.txtROCur.Name = "txtROCur";
+            this.txtROCur.ReadOnly = true;
             this.txtROCur.Size = new System.Drawing.Size(59, 20);
             this.txtROCur.TabIndex = 23;
             // 
@@ -1650,6 +1652,7 @@
             // 
             this.txtRICur.Location = new System.Drawing.Point(54, 163);
             this.txtRICur.Name = "txtRICur";
+            this.txtRICur.ReadOnly = true;
             this.txtRICur.Size = new System.Drawing.Size(59, 20);
             this.txtRICur.TabIndex = 20;
             // 
@@ -1666,6 +1669,7 @@
             // 
             this.txtZCur.Location = new System.Drawing.Point(54, 120);
             this.txtZCur.Name = "txtZCur";
+            this.txtZCur.ReadOnly = true;
             this.txtZCur.Size = new System.Drawing.Size(59, 20);
             this.txtZCur.TabIndex = 17;
             // 
@@ -1682,6 +1686,7 @@
             // 
             this.txtYCur.Location = new System.Drawing.Point(54, 77);
             this.txtYCur.Name = "txtYCur";
+            this.txtYCur.ReadOnly = true;
             this.txtYCur.Size = new System.Drawing.Size(59, 20);
             this.txtYCur.TabIndex = 14;
             // 
@@ -1698,6 +1703,7 @@
             // 
             this.txtXCur.Location = new System.Drawing.Point(54, 34);
             this.txtXCur.Name = "txtXCur";
+            this.txtXCur.ReadOnly = true;
             this.txtXCur.Size = new System.Drawing.Size(59, 20);
             this.txtXCur.TabIndex = 4;
             // 
