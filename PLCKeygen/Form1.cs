@@ -137,11 +137,33 @@ namespace PLCKeygen
             grpTeachingSocket.Enabled = false;
             grpTeachingTray.Enabled = false;
 
-            // Wire up Teaching Position Save button event handlers
-            btnSaveTrayLoadXYPoint1.Click += btnSaveTrayLoadXYStart_Click;
-            btnSaveTrayLoadXYPoint2.Click += btnSaveTrayLoadXYPoint2_Click;  // Tray Load X End (Point 2)
-            btnSaveTrayLoadXYPoint3.Click += btnSaveTrayLoadXYPoint3_Click;  // Tray Load Y End (Point 3)
-            btnSaveTrayLoadZ.Click += btnSaveTrayLoadZ_Click;  // Truc Z
+            // Wire up Speed textbox events for validation and auto-save
+            txtXSpeed.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXSpeed.KeyDown += SpeedStepTextBox_KeyDown;
+            txtYSpeed.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYSpeed.KeyDown += SpeedStepTextBox_KeyDown;
+            txtZSpeed.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZSpeed.KeyDown += SpeedStepTextBox_KeyDown;
+            txtRISpeed.KeyPress += SpeedStepTextBox_KeyPress;
+            txtRISpeed.KeyDown += SpeedStepTextBox_KeyDown;
+            txtROSpeed.KeyPress += SpeedStepTextBox_KeyPress;
+            txtROSpeed.KeyDown += SpeedStepTextBox_KeyDown;
+            txtFSpeed.KeyPress += SpeedStepTextBox_KeyPress;
+            txtFSpeed.KeyDown += SpeedStepTextBox_KeyDown;
+
+            // Wire up Step textbox events for validation and auto-save
+            txtXStep.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXStep.KeyDown += SpeedStepTextBox_KeyDown;
+            txtYStep.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYStep.KeyDown += SpeedStepTextBox_KeyDown;
+            txtZStep.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZStep.KeyDown += SpeedStepTextBox_KeyDown;
+            txtRIStep.KeyPress += SpeedStepTextBox_KeyPress;
+            txtRIStep.KeyDown += SpeedStepTextBox_KeyDown;
+            txtROStep.KeyPress += SpeedStepTextBox_KeyPress;
+            txtROStep.KeyDown += SpeedStepTextBox_KeyDown;
+            txtFStep.KeyPress += SpeedStepTextBox_KeyPress;
+            txtFStep.KeyDown += SpeedStepTextBox_KeyDown;
 
             // Load initial Speed and Step values from PLC
             LoadAxisSpeedAndStep();
@@ -1968,75 +1990,75 @@ namespace PLCKeygen
                 switch (selectedPort)
                 {
                     case 1:
-                        // Load Speed values
-                        txtXSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_X).ToString();
-                        txtYSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_Y).ToString();
-                        txtZSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_Z).ToString();
-                        txtRISpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_RI).ToString();
-                        txtROSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_RO).ToString();
-                        txtFSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_F).ToString();
+                        // Load Speed values (divide by 100 and format with 2 decimals)
+                        txtXSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_X) / 100.0).ToString("F2");
+                        txtYSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_Y) / 100.0).ToString("F2");
+                        txtZSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_Z) / 100.0).ToString("F2");
+                        txtRISpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_RI) / 100.0).ToString("F2");
+                        txtROSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_RO) / 100.0).ToString("F2");
+                        txtFSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_Speed_HJog_F) / 100.0).ToString("F2");
 
-                        // Load Step values
-                        txtXStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_X).ToString();
-                        txtYStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_Y).ToString();
-                        txtZStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_Z).ToString();
-                        txtRIStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_RI).ToString();
-                        txtROStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_RO).ToString();
-                        txtFStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_F).ToString();
+                        // Load Step values (divide by 100 and format with 2 decimals)
+                        txtXStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_X) / 100.0).ToString("F2");
+                        txtYStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_Y) / 100.0).ToString("F2");
+                        txtZStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_Z) / 100.0).ToString("F2");
+                        txtRIStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_RI) / 100.0).ToString("F2");
+                        txtROStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_RO) / 100.0).ToString("F2");
+                        txtFStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_DisStep_JogPlus_F) / 100.0).ToString("F2");
                         break;
 
                     case 2:
-                        // Load Speed values
-                        txtXSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_X).ToString();
-                        txtYSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_Y).ToString();
-                        txtZSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_Z).ToString();
-                        txtRISpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_RI).ToString();
-                        txtROSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_RO).ToString();
-                        txtFSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_F).ToString();
+                        // Load Speed values (divide by 100 and format with 2 decimals)
+                        txtXSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_X) / 100.0).ToString("F2");
+                        txtYSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_Y) / 100.0).ToString("F2");
+                        txtZSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_Z) / 100.0).ToString("F2");
+                        txtRISpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_RI) / 100.0).ToString("F2");
+                        txtROSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_RO) / 100.0).ToString("F2");
+                        txtFSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_Speed_HJog_F) / 100.0).ToString("F2");
 
-                        // Load Step values
-                        txtXStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_X).ToString();
-                        txtYStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_Y).ToString();
-                        txtZStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_Z).ToString();
-                        txtRIStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_RI).ToString();
-                        txtROStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_RO).ToString();
-                        txtFStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_F).ToString();
+                        // Load Step values (divide by 100 and format with 2 decimals)
+                        txtXStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_X) / 100.0).ToString("F2");
+                        txtYStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_Y) / 100.0).ToString("F2");
+                        txtZStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_Z) / 100.0).ToString("F2");
+                        txtRIStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_RI) / 100.0).ToString("F2");
+                        txtROStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_RO) / 100.0).ToString("F2");
+                        txtFStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P2_DisStep_JogPlus_F) / 100.0).ToString("F2");
                         break;
 
                     case 3:
-                        // Load Speed values
-                        txtXSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_X).ToString();
-                        txtYSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_Y).ToString();
-                        txtZSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_Z).ToString();
-                        txtRISpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_RI).ToString();
-                        txtROSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_RO).ToString();
-                        txtFSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_F).ToString();
+                        // Load Speed values (divide by 100 and format with 2 decimals)
+                        txtXSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_X) / 100.0).ToString("F2");
+                        txtYSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_Y) / 100.0).ToString("F2");
+                        txtZSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_Z) / 100.0).ToString("F2");
+                        txtRISpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_RI) / 100.0).ToString("F2");
+                        txtROSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_RO) / 100.0).ToString("F2");
+                        txtFSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_Speed_HJog_F) / 100.0).ToString("F2");
 
-                        // Load Step values
-                        txtXStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_X).ToString();
-                        txtYStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_Y).ToString();
-                        txtZStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_Z).ToString();
-                        txtRIStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_RI).ToString();
-                        txtROStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_RO).ToString();
-                        txtFStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_F).ToString();
+                        // Load Step values (divide by 100 and format with 2 decimals)
+                        txtXStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_X) / 100.0).ToString("F2");
+                        txtYStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_Y) / 100.0).ToString("F2");
+                        txtZStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_Z) / 100.0).ToString("F2");
+                        txtRIStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_RI) / 100.0).ToString("F2");
+                        txtROStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_RO) / 100.0).ToString("F2");
+                        txtFStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P3_DisStep_JogPlus_F) / 100.0).ToString("F2");
                         break;
 
                     case 4:
-                        // Load Speed values
-                        txtXSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_X).ToString();
-                        txtYSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_Y).ToString();
-                        txtZSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_Z).ToString();
-                        txtRISpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_RI).ToString();
-                        txtROSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_RO).ToString();
-                        txtFSpeed.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_F).ToString();
+                        // Load Speed values (divide by 100 and format with 2 decimals)
+                        txtXSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_X) / 100.0).ToString("F2");
+                        txtYSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_Y) / 100.0).ToString("F2");
+                        txtZSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_Z) / 100.0).ToString("F2");
+                        txtRISpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_RI) / 100.0).ToString("F2");
+                        txtROSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_RO) / 100.0).ToString("F2");
+                        txtFSpeed.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_Speed_HJog_F) / 100.0).ToString("F2");
 
-                        // Load Step values
-                        txtXStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_X).ToString();
-                        txtYStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_Y).ToString();
-                        txtZStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_Z).ToString();
-                        txtRIStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_RI).ToString();
-                        txtROStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_RO).ToString();
-                        txtFStep.Text = PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_F).ToString();
+                        // Load Step values (divide by 100 and format with 2 decimals)
+                        txtXStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_X) / 100.0).ToString("F2");
+                        txtYStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_Y) / 100.0).ToString("F2");
+                        txtZStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_Z) / 100.0).ToString("F2");
+                        txtRIStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_RI) / 100.0).ToString("F2");
+                        txtROStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_RO) / 100.0).ToString("F2");
+                        txtFStep.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P4_DisStep_JogPlus_F) / 100.0).ToString("F2");
                         break;
                 }
             }
@@ -2553,190 +2575,101 @@ namespace PLCKeygen
             Properties.Settings.Default.Save();
         }
 
-        #region Teaching Position Save to JSON
+        #region Speed and Step Input Validation and Auto-Save
 
-        // Class to store teaching position data
-        public class TeachingPositions
+        // Validate numeric input with decimal point (only allow numbers and one decimal point)
+        private void SpeedStepTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            public TrayLoadPosition TrayLoad { get; set; } = new TrayLoadPosition();
+            System.Windows.Forms.TextBox txt = sender as System.Windows.Forms.TextBox;
+            if (txt == null) return;
+
+            // Allow control keys (backspace, delete, etc.)
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            // Allow digits
+            if (char.IsDigit(e.KeyChar))
+                return;
+
+            // Allow decimal point (.) only if it doesn't already exist
+            if (e.KeyChar == '.' && !txt.Text.Contains("."))
+                return;
+
+            // Block all other characters
+            e.Handled = true;
         }
 
-        public class TrayLoadPosition
+        // Save Speed or Step value to PLC when Enter key is pressed
+        private void SpeedStepTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            public XYPosition Point1 { get; set; } = new XYPosition();
-            public XYPosition Point2 { get; set; } = new XYPosition();
-            public XYPosition Point3 { get; set; } = new XYPosition();
-            public double Z { get; set; } = 0;
-        }
+            if (e.KeyCode != Keys.Enter)
+                return;
 
-        public class XYPosition
-        {
-            public double X { get; set; } = 0;
-            public double Y { get; set; } = 0;
-        }
+            System.Windows.Forms.TextBox txt = sender as System.Windows.Forms.TextBox;
+            if (txt == null) return;
 
-        private const string TEACHING_JSON_PATH = "TeachingPositions.json";
-
-        // Load teaching positions from JSON file
-        private TeachingPositions LoadTeachingPositions()
-        {
             try
             {
-                if (System.IO.File.Exists(TEACHING_JSON_PATH))
+                // Parse the value and multiply by 100, truncate to 2 decimal places
+                if (!double.TryParse(txt.Text, out double value))
                 {
-                    string json = System.IO.File.ReadAllText(TEACHING_JSON_PATH);
-                    return Newtonsoft.Json.JsonConvert.DeserializeObject<TeachingPositions>(json);
+                    MessageBox.Show("Giá trị không hợp lệ!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi đọc file teaching positions: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return new TeachingPositions();
-        }
 
-        // Save teaching positions to JSON file
-        private void SaveTeachingPositions(TeachingPositions positions)
-        {
-            try
-            {
-                string json = Newtonsoft.Json.JsonConvert.SerializeObject(positions, Newtonsoft.Json.Formatting.Indented);
-                System.IO.File.WriteAllText(TEACHING_JSON_PATH, json);
-                MessageBox.Show("Đã lưu tọa độ thành công!", "Success",
+                // Round to 2 decimal places and convert to integer (multiply by 100)
+                int plcValue = (int)(Math.Round(value, 2) * 100);
+
+                // Determine which textbox and get corresponding PLC address
+                string plcAddress = GetSpeedStepAddress(txt);
+                if (string.IsNullOrEmpty(plcAddress))
+                {
+                    MessageBox.Show("Không tìm thấy địa chỉ PLC!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Write to PLC
+                PLCKey.WriteInt32(plcAddress, plcValue);
+
+                // Update textbox with properly formatted value (2 decimals)
+                txt.Text = value.ToString("F2");
+
+                // Move focus away from textbox
+                this.ActiveControl = null;
+
+                // Show success message
+                MessageBox.Show($"Đã ghi thành công: {value:F2} (PLC value: {plcValue})", "Success",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Lỗi lưu file teaching positions: {ex.Message}", "Error",
+                MessageBox.Show($"Lỗi ghi xuống PLC: {ex.Message}", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        // Event handler for Save Tray Load XY Point 1 button
-        private void btnSaveTrayLoadXYStart_Click(object sender, EventArgs e)
+        // Get PLC address for a specific Speed or Step textbox
+        private string GetSpeedStepAddress(System.Windows.Forms.TextBox txt)
         {
-            try
-            {
-                // Get current X and Y values from textboxes
-                if (double.TryParse(txtXCur.Text, out double xValue) &&
-                    double.TryParse(txtYCur.Text, out double yValue))
-                {
-                    // Load existing positions
-                    TeachingPositions positions = LoadTeachingPositions();
+            // Speed textboxes
+            if (txt == txtXSpeed) return GetSpeedAddress(selectedPort, "X");
+            if (txt == txtYSpeed) return GetSpeedAddress(selectedPort, "Y");
+            if (txt == txtZSpeed) return GetSpeedAddress(selectedPort, "Z");
+            if (txt == txtRISpeed) return GetSpeedAddress(selectedPort, "RI");
+            if (txt == txtROSpeed) return GetSpeedAddress(selectedPort, "RO");
+            if (txt == txtFSpeed) return GetSpeedAddress(selectedPort, "F");
 
-                    // Update Point1
-                    positions.TrayLoad.Point1.X = xValue;
-                    positions.TrayLoad.Point1.Y = yValue;
+            // Step textboxes
+            if (txt == txtXStep) return GetStepAddress(selectedPort, "X");
+            if (txt == txtYStep) return GetStepAddress(selectedPort, "Y");
+            if (txt == txtZStep) return GetStepAddress(selectedPort, "Z");
+            if (txt == txtRIStep) return GetStepAddress(selectedPort, "RI");
+            if (txt == txtROStep) return GetStepAddress(selectedPort, "RO");
+            if (txt == txtFStep) return GetStepAddress(selectedPort, "F");
 
-                    // Save to JSON
-                    SaveTeachingPositions(positions);
-                }
-                else
-                {
-                    MessageBox.Show("Giá trị X hoặc Y không hợp lệ!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi lưu Point 1: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Event handler for Save Tray Load XY Point 2 button
-        private void btnSaveTrayLoadXYPoint2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Get current X and Y values from textboxes
-                if (double.TryParse(txtXCur.Text, out double xValue) &&
-                    double.TryParse(txtYCur.Text, out double yValue))
-                {
-                    // Load existing positions
-                    TeachingPositions positions = LoadTeachingPositions();
-
-                    // Update Point2
-                    positions.TrayLoad.Point2.X = xValue;
-                    positions.TrayLoad.Point2.Y = yValue;
-
-                    // Save to JSON
-                    SaveTeachingPositions(positions);
-                }
-                else
-                {
-                    MessageBox.Show("Giá trị X hoặc Y không hợp lệ!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi lưu Point 2: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Event handler for Save Tray Load XY Point 3 button
-        private void btnSaveTrayLoadXYPoint3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Get current X and Y values from textboxes
-                if (double.TryParse(txtXCur.Text, out double xValue) &&
-                    double.TryParse(txtYCur.Text, out double yValue))
-                {
-                    // Load existing positions
-                    TeachingPositions positions = LoadTeachingPositions();
-
-                    // Update Point3
-                    positions.TrayLoad.Point3.X = xValue;
-                    positions.TrayLoad.Point3.Y = yValue;
-
-                    // Save to JSON
-                    SaveTeachingPositions(positions);
-                }
-                else
-                {
-                    MessageBox.Show("Giá trị X hoặc Y không hợp lệ!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi lưu Point 3: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        // Event handler for Save Tray Load Z button
-        private void btnSaveTrayLoadZ_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                // Get current Z value from textbox
-                if (double.TryParse(txtZCur.Text, out double zValue))
-                {
-                    // Load existing positions
-                    TeachingPositions positions = LoadTeachingPositions();
-
-                    // Update Z
-                    positions.TrayLoad.Z = zValue;
-
-                    // Save to JSON
-                    SaveTeachingPositions(positions);
-                }
-                else
-                {
-                    MessageBox.Show("Giá trị Z không hợp lệ!", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi lưu Z: {ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            return null;
         }
 
         #endregion
