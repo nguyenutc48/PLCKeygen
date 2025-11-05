@@ -84,6 +84,8 @@
     <Compile Include="TeachingHotkeyHelp.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TeachingModel.cs" />
+    <Compile Include="ModelManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

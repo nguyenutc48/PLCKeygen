@@ -1,6 +1,58 @@
 # Teaching Hotkeys - Changelog
 
-## Version 1.1 (2025-11-06) - Latest Update
+## Version 1.3 (2025-11-06) - Single Instance Control
+
+### 🔒 Single Instance Protection
+- **Chỉ cho phép chạy 1 instance**: Ngăn chặn mở nhiều phần mềm cùng lúc
+  - Sử dụng Mutex để kiểm tra instance đang chạy
+  - Hiển thị thông báo khi cố mở phần mềm lần thứ 2
+  - Tự động focus vào cửa sổ đang mở
+  - Restore window nếu đang minimize
+
+### 🎯 User Experience
+- MessageBox thông báo rõ ràng: "PLCKeygen đã đang chạy!"
+- Tự động đưa cửa sổ đang chạy lên foreground
+- Tránh nhầm lẫn khi chạy nhiều instance
+
+### 📁 Files Modified
+1. ✅ `Program.cs` - Thêm single instance check với Mutex
+   - Win32 API: SetForegroundWindow, ShowWindow, IsIconic
+   - BringExistingInstanceToFront() method
+
+---
+
+## Version 1.2 (2025-11-06) - Model Management
+
+### 🗂️ Model Management System
+- **Lưu/Load Teaching Models**: Quản lý teaching points cho nhiều model khác nhau
+  - ComboBox `cbbModel`: Chọn model để load
+  - Button "Add": Lưu tất cả teaching points hiện tại vào model mới
+  - Button "Del": Xóa model đã chọn
+  - Storage: JSON file tại `TeachingModels/teaching_models.json`
+
+### 📚 Technical Implementation
+- **TeachingModel.cs**: Data structures (TeachingPoint, PortTeachingPoints, TeachingModel)
+- **ModelManager.cs**: JSON serialization và file management
+- **Form1.cs**: UI controls và PLC integration
+  - `ReadAllTeachingPointsFromPLC()`: Đọc 72 teaching points từ PLC (4 ports × 18 points)
+  - `WriteAllTeachingPointsToPLC()`: Ghi teaching points vào PLC
+  - `UpdateTeachingButtonColors()`: Cập nhật màu button sau khi load
+
+### 🎯 Features
+- Lưu tất cả teaching points (4 ports) vào 1 model
+- Load model và ghi vào PLC với confirmation dialog
+- Auto-refresh ComboBox sau khi thêm/xóa model
+- Validation: Kiểm tra tên model trùng lặp
+
+### 📁 Files Modified/Added
+1. ✅ `TeachingModel.cs` - Data model classes (NEW)
+2. ✅ `ModelManager.cs` - JSON manager (NEW)
+3. ✅ `Form1.cs` - Model management UI và logic
+4. ✅ `PLCKeygen.csproj` - Thêm new files
+
+---
+
+## Version 1.1 (2025-11-06)
 
 ### 🔒 Security Improvements
 - **Ẩn mật khẩu khi nhập**: Thay thế `Interaction.InputBox` bằng custom `PasswordDialog`

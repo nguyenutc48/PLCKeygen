@@ -35,6 +35,9 @@ namespace PLCKeygen
         // Teaching hotkey manager
         private TeachingHotkeyManager hotkeyManager;
 
+        // Model manager for saving/loading teaching models
+        private ModelManager modelManager;
+
         public Form1()
         {
             InitializeComponent();
@@ -142,6 +145,9 @@ namespace PLCKeygen
 
             // Initialize Teaching Hotkey Manager
             hotkeyManager = new TeachingHotkeyManager();
+
+            // Initialize Model Manager
+            modelManager = new ModelManager();
 
             // Wire up Speed textbox events for validation and auto-save
             txtXSpeed.KeyPress += SpeedStepTextBox_KeyPress;
@@ -3658,5 +3664,344 @@ namespace PLCKeygen
         {
             ClearCam2HandEyeStatus();
         }
+
+        #region Model Management
+
+        /// <summary>
+        /// Refresh ComboBox with available models
+        /// </summary>
+        private void RefreshModelComboBox()
+        {
+            string[] modelNames = modelManager.GetModelNames();
+            cbbModel.Items.Clear();
+            cbbModel.Items.AddRange(modelNames);
+
+            if (cbbModel.Items.Count > 0)
+            {
+                cbbModel.SelectedIndex = 0;
+            }
+        }
+
+        /// <summary>
+        /// Add new model button click handler
+        /// </summary>
+        private void btnModelAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Prompt for model name
+                string modelName = PasswordDialog.Show(
+                    "Nhập tên model:",
+                    "Thêm Model Mới",
+                    this);
+
+                if (string.IsNullOrWhiteSpace(modelName))
+                {
+                    return;  // User cancelled or entered empty name
+                }
+
+                // Check if model already exists
+                if (modelManager.ModelExists(modelName))
+                {
+                    MessageBox.Show(
+                        $"Model '{modelName}' đã tồn tại!",
+                        "Lỗi",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Read all current teaching points from PLC
+                var model = new TeachingModel(modelName);
+
+                // Read teaching points for all 4 ports
+                ReadAllTeachingPointsFromPLC(model);
+
+                // Save model
+                modelManager.SaveModel(model);
+
+                // Refresh ComboBox
+                RefreshModelComboBox();
+
+                // Select the newly added model
+                cbbModel.SelectedItem = modelName;
+
+                MessageBox.Show(
+                    $"Model '{modelName}' đã được lưu thành công!",
+                    "Thành công",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Lỗi khi thêm model: {ex.Message}",
+                    "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Model selection changed handler
+        /// </summary>
+        private void cbbModel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbbModel.SelectedItem == null)
+                return;
+
+            try
+            {
+                string modelName = cbbModel.SelectedItem.ToString();
+                var model = modelManager.GetModel(modelName);
+
+                if (model == null)
+                {
+                    MessageBox.Show(
+                        $"Không tìm thấy model '{modelName}'!",
+                        "Lỗi",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Confirm before loading
+                var result = MessageBox.Show(
+                    $"Bạn có muốn load teaching points từ model '{modelName}'?\n\n" +
+                    $"Thao tác này sẽ ghi đè các teaching points hiện tại trong PLC.",
+                    "Xác nhận",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    // Write all teaching points to PLC
+                    WriteAllTeachingPointsToPLC(model);
+
+                    MessageBox.Show(
+                        $"Model '{modelName}' đã được load thành công!",
+                        "Thành công",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    // Update button colors to reflect loaded points
+                    UpdateTeachingButtonColors();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Lỗi khi load model: {ex.Message}",
+                    "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Delete model button click handler
+        /// </summary>
+        private void btnModelDelete_Click(object sender, EventArgs e)
+        {
+            if (cbbModel.SelectedItem == null)
+            {
+                MessageBox.Show(
+                    "Vui lòng chọn model cần xóa!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                return;
+            }
+
+            string modelName = cbbModel.SelectedItem.ToString();
+
+            var result = MessageBox.Show(
+                $"Bạn có chắc muốn xóa model '{modelName}'?",
+                "Xác nhận xóa",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    modelManager.DeleteModel(modelName);
+                    RefreshModelComboBox();
+
+                    MessageBox.Show(
+                        $"Model '{modelName}' đã được xóa!",
+                        "Thành công",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(
+                        $"Lỗi khi xóa model: {ex.Message}",
+                        "Lỗi",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Read all teaching points from PLC for all 4 ports
+        /// </summary>
+        private void ReadAllTeachingPointsFromPLC(TeachingModel model)
+        {
+            // Read Port 1
+            ReadPortTeachingPointsFromPLC(1, model.Port1);
+            // Read Port 2
+            ReadPortTeachingPointsFromPLC(2, model.Port2);
+            // Read Port 3
+            ReadPortTeachingPointsFromPLC(3, model.Port3);
+            // Read Port 4
+            ReadPortTeachingPointsFromPLC(4, model.Port4);
+        }
+
+        /// <summary>
+        /// Read teaching points from PLC for a specific port
+        /// </summary>
+        private void ReadPortTeachingPointsFromPLC(int port, PortTeachingPoints portPoints)
+        {
+            // Helper function to read a single teaching point (uses existing GetTeachingPointAddresses method)
+            TeachingPoint ReadPoint(string pointName)
+            {
+                var addresses = GetTeachingPointAddresses(port, pointName);
+                return new TeachingPoint(
+                    PLCKey.ReadInt32(addresses.x),  // X
+                    PLCKey.ReadInt32(addresses.y),  // Y
+                    PLCKey.ReadInt32(addresses.z),  // Z
+                    0,  // RI (not used in current implementation)
+                    0,  // RO (not used in current implementation)
+                    PLCKey.ReadInt32(addresses.f)   // F
+                );
+            }
+
+            // Tray Input (OK)
+            portPoints.TrayInputXYStart = ReadPoint("TrayInputXYStart");
+            portPoints.TrayInputXEnd = ReadPoint("TrayInputXEnd");
+            portPoints.TrayInputYEnd = ReadPoint("TrayInputYEnd");
+            portPoints.TrayInputZPosition = ReadPoint("TrayInputZ");
+
+            // Tray NG1
+            portPoints.TrayNG1XYStart = ReadPoint("TrayNG1XYStart");
+            portPoints.TrayNG1XEnd = ReadPoint("TrayNG1XEnd");
+            portPoints.TrayNG1YEnd = ReadPoint("TrayNG1YEnd");
+            portPoints.TrayNG1ZPosition = ReadPoint("TrayNG1Z");
+
+            // Tray NG2
+            portPoints.TrayNG2XYStart = ReadPoint("TrayNG2XYStart");
+            portPoints.TrayNG2XEnd = ReadPoint("TrayNG2XEnd");
+            portPoints.TrayNG2YEnd = ReadPoint("TrayNG2YEnd");
+            portPoints.TrayNG2ZPosition = ReadPoint("TrayNG2Z");
+
+            // Socket
+            portPoints.SocketXYPosition = ReadPoint("Socket");
+            portPoints.SocketZLoad = ReadPoint("SocketZLoad");
+            portPoints.SocketZUnload = ReadPoint("SocketZUnload");
+            portPoints.SocketZReady = ReadPoint("SocketZReady");
+            portPoints.SocketFOpened = ReadPoint("SocketFOpened");
+            portPoints.SocketFClosed = ReadPoint("SocketFClosed");
+
+            // Camera
+            portPoints.CameraXYPosition = ReadPoint("Camera");
+            portPoints.CameraZPosition = ReadPoint("SocketCameraZ");
+        }
+
+        /// <summary>
+        /// Write all teaching points to PLC for all 4 ports
+        /// </summary>
+        private void WriteAllTeachingPointsToPLC(TeachingModel model)
+        {
+            // Write Port 1
+            WritePortTeachingPointsToPLC(1, model.Port1);
+            // Write Port 2
+            WritePortTeachingPointsToPLC(2, model.Port2);
+            // Write Port 3
+            WritePortTeachingPointsToPLC(3, model.Port3);
+            // Write Port 4
+            WritePortTeachingPointsToPLC(4, model.Port4);
+        }
+
+        /// <summary>
+        /// Write teaching points to PLC for a specific port
+        /// </summary>
+        private void WritePortTeachingPointsToPLC(int port, PortTeachingPoints portPoints)
+        {
+            // Helper function to write a single teaching point (uses existing GetTeachingPointAddresses method)
+            void WritePoint(string pointName, TeachingPoint point)
+            {
+                var addresses = GetTeachingPointAddresses(port, pointName);
+                PLCKey.WriteInt32(addresses.x, point.X);
+                PLCKey.WriteInt32(addresses.y, point.Y);
+                PLCKey.WriteInt32(addresses.z, point.Z);
+                PLCKey.WriteInt32(addresses.f, point.F);
+                // RI and RO are not used in current implementation
+            }
+
+            // Tray Input (OK)
+            WritePoint("TrayInputXYStart", portPoints.TrayInputXYStart);
+            WritePoint("TrayInputXEnd", portPoints.TrayInputXEnd);
+            WritePoint("TrayInputYEnd", portPoints.TrayInputYEnd);
+            WritePoint("TrayInputZ", portPoints.TrayInputZPosition);
+
+            // Tray NG1
+            WritePoint("TrayNG1XYStart", portPoints.TrayNG1XYStart);
+            WritePoint("TrayNG1XEnd", portPoints.TrayNG1XEnd);
+            WritePoint("TrayNG1YEnd", portPoints.TrayNG1YEnd);
+            WritePoint("TrayNG1Z", portPoints.TrayNG1ZPosition);
+
+            // Tray NG2
+            WritePoint("TrayNG2XYStart", portPoints.TrayNG2XYStart);
+            WritePoint("TrayNG2XEnd", portPoints.TrayNG2XEnd);
+            WritePoint("TrayNG2YEnd", portPoints.TrayNG2YEnd);
+            WritePoint("TrayNG2Z", portPoints.TrayNG2ZPosition);
+
+            // Socket
+            WritePoint("Socket", portPoints.SocketXYPosition);
+            WritePoint("SocketZLoad", portPoints.SocketZLoad);
+            WritePoint("SocketZUnload", portPoints.SocketZUnload);
+            WritePoint("SocketZReady", portPoints.SocketZReady);
+            WritePoint("SocketFOpened", portPoints.SocketFOpened);
+            WritePoint("SocketFClosed", portPoints.SocketFClosed);
+
+            // Camera
+            WritePoint("Camera", portPoints.CameraXYPosition);
+            WritePoint("SocketCameraZ", portPoints.CameraZPosition);
+        }
+
+        /// <summary>
+        /// Update teaching button colors after loading model
+        /// </summary>
+        private void UpdateTeachingButtonColors()
+        {
+            // Set all Save buttons to green to indicate they have values
+            var saveButtons = new[]
+            {
+                "btnSavePointTrayInputXYStart", "btnSavePointTrayInputXEnd",
+                "btnSavePointTrayInputYEnd", "btnSavePointTrayInputZ",
+                "btnSavePointTrayNG1XYStart", "btnSavePointTrayNG1XEnd",
+                "btnSavePointTrayNG1YEnd", "btnSavePointTrayNG1Z",
+                "btnSavePointTrayNG2XYStart", "btnSavePointTrayNG2XEnd",
+                "btnSavePointTrayNG2YEnd", "btnSavePointTrayNG2Z",
+                "btnSavePointSocket", "btnSavePointSocketZLoad",
+                "btnSavePointSocketZUnload", "btnSavePointSocketZReady",
+                "btnSavePointSocketFOpened", "btnSavePointSocketFClosed",
+                "btnSavePointCamera", "btnSavePointSocketCameraZ"
+            };
+
+            foreach (var btnName in saveButtons)
+            {
+                var btn = FindButtonByName(btnName);
+                if (btn != null)
+                {
+                    btn.BackColor = System.Drawing.Color.LightGreen;
+                }
+            }
+        }
+
+        #endregion
     }
 }
