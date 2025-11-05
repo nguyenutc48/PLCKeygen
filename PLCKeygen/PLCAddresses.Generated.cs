@@ -736,6 +736,47 @@ namespace PLCKeygen
             public const string P1_Pos_L_Socket = "DM1890";
             public const string P1_Pos_Test_LCA = "DM1910";
 
+            // Teaching Points - Tray Input (OK)
+            public const string P1_TeachPoint_TrayInput_XYStart_X = "DM1800";
+            public const string P1_TeachPoint_TrayInput_XYStart_Y = "DM1802";
+            public const string P1_TeachPoint_TrayInput_XEnd_X = "DM1804";
+            public const string P1_TeachPoint_TrayInput_XEnd_Y = "DM1806";
+            public const string P1_TeachPoint_TrayInput_YEnd_X = "DM1808";
+            public const string P1_TeachPoint_TrayInput_YEnd_Y = "DM1810";
+            public const string P1_TeachPoint_TrayInput_Z = "DM1812";
+
+            // Teaching Points - Tray NG1
+            public const string P1_TeachPoint_TrayNG1_XYStart_X = "DM1814";
+            public const string P1_TeachPoint_TrayNG1_XYStart_Y = "DM1816";
+            public const string P1_TeachPoint_TrayNG1_XEnd_X = "DM1818";
+            public const string P1_TeachPoint_TrayNG1_XEnd_Y = "DM1820";
+            public const string P1_TeachPoint_TrayNG1_YEnd_X = "DM1822";
+            public const string P1_TeachPoint_TrayNG1_YEnd_Y = "DM1824";
+            public const string P1_TeachPoint_TrayNG1_Z = "DM1826";
+
+            // Teaching Points - Tray NG2
+            public const string P1_TeachPoint_TrayNG2_XYStart_X = "DM1828";
+            public const string P1_TeachPoint_TrayNG2_XYStart_Y = "DM1830";
+            public const string P1_TeachPoint_TrayNG2_XEnd_X = "DM1832";
+            public const string P1_TeachPoint_TrayNG2_XEnd_Y = "DM1834";
+            public const string P1_TeachPoint_TrayNG2_YEnd_X = "DM1836";
+            public const string P1_TeachPoint_TrayNG2_YEnd_Y = "DM1838";
+            public const string P1_TeachPoint_TrayNG2_Z = "DM1840";
+
+            // Teaching Points - Socket
+            public const string P1_TeachPoint_Socket_X = "DM1870";
+            public const string P1_TeachPoint_Socket_Y = "DM1872";
+            public const string P1_TeachPoint_Socket_ZLoad = "DM1874";
+            public const string P1_TeachPoint_Socket_ZUnload = "DM1876";
+            public const string P1_TeachPoint_Socket_ZReady = "DM1878";
+            public const string P1_TeachPoint_Socket_FOpened = "DM1880";
+            public const string P1_TeachPoint_Socket_FClosed = "DM1882";
+
+            // Teaching Points - Camera
+            public const string P1_TeachPoint_Camera_X = "DM1850";
+            public const string P1_TeachPoint_Camera_Y = "DM1852";
+            public const string P1_TeachPoint_Camera_Z = "DM1854";
+
             #endregion
 
             #region Port 2 Extended Data (Base: DM0-150, DM1200-1300, DM1000-1110)
@@ -811,6 +852,47 @@ namespace PLCKeygen
             public const string P2_Pos_UL_Socket = "DM1070";
             public const string P2_Pos_L_Socket = "DM1090";
             public const string P2_Pos_Test_LCA = "DM1110";
+
+            // Teaching Points - Tray Input (OK)
+            public const string P2_TeachPoint_TrayInput_XYStart_X = "DM1000";
+            public const string P2_TeachPoint_TrayInput_XYStart_Y = "DM1002";
+            public const string P2_TeachPoint_TrayInput_XEnd_X = "DM1004";
+            public const string P2_TeachPoint_TrayInput_XEnd_Y = "DM1006";
+            public const string P2_TeachPoint_TrayInput_YEnd_X = "DM1008";
+            public const string P2_TeachPoint_TrayInput_YEnd_Y = "DM1010";
+            public const string P2_TeachPoint_TrayInput_Z = "DM1012";
+
+            // Teaching Points - Tray NG1
+            public const string P2_TeachPoint_TrayNG1_XYStart_X = "DM1014";
+            public const string P2_TeachPoint_TrayNG1_XYStart_Y = "DM1016";
+            public const string P2_TeachPoint_TrayNG1_XEnd_X = "DM1018";
+            public const string P2_TeachPoint_TrayNG1_XEnd_Y = "DM1020";
+            public const string P2_TeachPoint_TrayNG1_YEnd_X = "DM1022";
+            public const string P2_TeachPoint_TrayNG1_YEnd_Y = "DM1024";
+            public const string P2_TeachPoint_TrayNG1_Z = "DM1026";
+
+            // Teaching Points - Tray NG2
+            public const string P2_TeachPoint_TrayNG2_XYStart_X = "DM1028";
+            public const string P2_TeachPoint_TrayNG2_XYStart_Y = "DM1030";
+            public const string P2_TeachPoint_TrayNG2_XEnd_X = "DM1032";
+            public const string P2_TeachPoint_TrayNG2_XEnd_Y = "DM1034";
+            public const string P2_TeachPoint_TrayNG2_YEnd_X = "DM1036";
+            public const string P2_TeachPoint_TrayNG2_YEnd_Y = "DM1038";
+            public const string P2_TeachPoint_TrayNG2_Z = "DM1040";
+
+            // Teaching Points - Socket
+            public const string P2_TeachPoint_Socket_X = "DM1070";
+            public const string P2_TeachPoint_Socket_Y = "DM1072";
+            public const string P2_TeachPoint_Socket_ZLoad = "DM1074";
+            public const string P2_TeachPoint_Socket_ZUnload = "DM1076";
+            public const string P2_TeachPoint_Socket_ZReady = "DM1078";
+            public const string P2_TeachPoint_Socket_FOpened = "DM1080";
+            public const string P2_TeachPoint_Socket_FClosed = "DM1082";
+
+            // Teaching Points - Camera
+            public const string P2_TeachPoint_Camera_X = "DM1050";
+            public const string P2_TeachPoint_Camera_Y = "DM1052";
+            public const string P2_TeachPoint_Camera_Z = "DM1054";
 
             #endregion
 
@@ -888,6 +970,47 @@ namespace PLCKeygen
             public const string P3_Pos_L_Socket = "DM2290";
             public const string P3_Pos_Test_LCA = "DM2310";
 
+            // Teaching Points - Tray Input (OK)
+            public const string P3_TeachPoint_TrayInput_XYStart_X = "DM2200";
+            public const string P3_TeachPoint_TrayInput_XYStart_Y = "DM2202";
+            public const string P3_TeachPoint_TrayInput_XEnd_X = "DM2204";
+            public const string P3_TeachPoint_TrayInput_XEnd_Y = "DM2206";
+            public const string P3_TeachPoint_TrayInput_YEnd_X = "DM2208";
+            public const string P3_TeachPoint_TrayInput_YEnd_Y = "DM2210";
+            public const string P3_TeachPoint_TrayInput_Z = "DM2212";
+
+            // Teaching Points - Tray NG1
+            public const string P3_TeachPoint_TrayNG1_XYStart_X = "DM2214";
+            public const string P3_TeachPoint_TrayNG1_XYStart_Y = "DM2216";
+            public const string P3_TeachPoint_TrayNG1_XEnd_X = "DM2218";
+            public const string P3_TeachPoint_TrayNG1_XEnd_Y = "DM2220";
+            public const string P3_TeachPoint_TrayNG1_YEnd_X = "DM2222";
+            public const string P3_TeachPoint_TrayNG1_YEnd_Y = "DM2224";
+            public const string P3_TeachPoint_TrayNG1_Z = "DM2226";
+
+            // Teaching Points - Tray NG2
+            public const string P3_TeachPoint_TrayNG2_XYStart_X = "DM2228";
+            public const string P3_TeachPoint_TrayNG2_XYStart_Y = "DM2230";
+            public const string P3_TeachPoint_TrayNG2_XEnd_X = "DM2232";
+            public const string P3_TeachPoint_TrayNG2_XEnd_Y = "DM2234";
+            public const string P3_TeachPoint_TrayNG2_YEnd_X = "DM2236";
+            public const string P3_TeachPoint_TrayNG2_YEnd_Y = "DM2238";
+            public const string P3_TeachPoint_TrayNG2_Z = "DM2240";
+
+            // Teaching Points - Socket
+            public const string P3_TeachPoint_Socket_X = "DM2270";
+            public const string P3_TeachPoint_Socket_Y = "DM2272";
+            public const string P3_TeachPoint_Socket_ZLoad = "DM2274";
+            public const string P3_TeachPoint_Socket_ZUnload = "DM2276";
+            public const string P3_TeachPoint_Socket_ZReady = "DM2278";
+            public const string P3_TeachPoint_Socket_FOpened = "DM2280";
+            public const string P3_TeachPoint_Socket_FClosed = "DM2282";
+
+            // Teaching Points - Camera
+            public const string P3_TeachPoint_Camera_X = "DM2250";
+            public const string P3_TeachPoint_Camera_Y = "DM2252";
+            public const string P3_TeachPoint_Camera_Z = "DM2254";
+
             #endregion
 
             #region Port 4 Extended Data (Base: DM180-330, DM1600-1700, DM1400-1510)
@@ -963,6 +1086,47 @@ namespace PLCKeygen
             public const string P4_Pos_UL_Socket = "DM1470";
             public const string P4_Pos_L_Socket = "DM1490";
             public const string P4_Pos_Test_LCA = "DM1510";
+
+            // Teaching Points - Tray Input (OK)
+            public const string P4_TeachPoint_TrayInput_XYStart_X = "DM1400";
+            public const string P4_TeachPoint_TrayInput_XYStart_Y = "DM1402";
+            public const string P4_TeachPoint_TrayInput_XEnd_X = "DM1404";
+            public const string P4_TeachPoint_TrayInput_XEnd_Y = "DM1406";
+            public const string P4_TeachPoint_TrayInput_YEnd_X = "DM1408";
+            public const string P4_TeachPoint_TrayInput_YEnd_Y = "DM1410";
+            public const string P4_TeachPoint_TrayInput_Z = "DM1412";
+
+            // Teaching Points - Tray NG1
+            public const string P4_TeachPoint_TrayNG1_XYStart_X = "DM1414";
+            public const string P4_TeachPoint_TrayNG1_XYStart_Y = "DM1416";
+            public const string P4_TeachPoint_TrayNG1_XEnd_X = "DM1418";
+            public const string P4_TeachPoint_TrayNG1_XEnd_Y = "DM1420";
+            public const string P4_TeachPoint_TrayNG1_YEnd_X = "DM1422";
+            public const string P4_TeachPoint_TrayNG1_YEnd_Y = "DM1424";
+            public const string P4_TeachPoint_TrayNG1_Z = "DM1426";
+
+            // Teaching Points - Tray NG2
+            public const string P4_TeachPoint_TrayNG2_XYStart_X = "DM1428";
+            public const string P4_TeachPoint_TrayNG2_XYStart_Y = "DM1430";
+            public const string P4_TeachPoint_TrayNG2_XEnd_X = "DM1432";
+            public const string P4_TeachPoint_TrayNG2_XEnd_Y = "DM1434";
+            public const string P4_TeachPoint_TrayNG2_YEnd_X = "DM1436";
+            public const string P4_TeachPoint_TrayNG2_YEnd_Y = "DM1438";
+            public const string P4_TeachPoint_TrayNG2_Z = "DM1440";
+
+            // Teaching Points - Socket
+            public const string P4_TeachPoint_Socket_X = "DM1470";
+            public const string P4_TeachPoint_Socket_Y = "DM1472";
+            public const string P4_TeachPoint_Socket_ZLoad = "DM1474";
+            public const string P4_TeachPoint_Socket_ZUnload = "DM1476";
+            public const string P4_TeachPoint_Socket_ZReady = "DM1478";
+            public const string P4_TeachPoint_Socket_FOpened = "DM1480";
+            public const string P4_TeachPoint_Socket_FClosed = "DM1482";
+
+            // Teaching Points - Camera
+            public const string P4_TeachPoint_Camera_X = "DM1450";
+            public const string P4_TeachPoint_Camera_Y = "DM1452";
+            public const string P4_TeachPoint_Camera_Z = "DM1454";
 
             #endregion
 
