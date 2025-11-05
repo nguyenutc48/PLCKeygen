@@ -65,7 +65,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnConnect34 = new System.Windows.Forms.Button();
             this.cam34 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnHomeAll = new System.Windows.Forms.Button();
@@ -296,65 +295,6 @@
             this.txtYCurMasPort2 = new System.Windows.Forms.Label();
             this.txtXCurMasPort2 = new System.Windows.Forms.Label();
             this.btnSetMasP2 = new System.Windows.Forms.Button();
-            this.tabPage8 = new System.Windows.Forms.TabPage();
-            this.groupBox34 = new System.Windows.Forms.GroupBox();
-            this.XYR1Cam2 = new System.Windows.Forms.Label();
-            this.XYR2Cam2 = new System.Windows.Forms.Label();
-            this.XY9Cam2 = new System.Windows.Forms.Label();
-            this.XY3Cam2 = new System.Windows.Forms.Label();
-            this.XY8Cam2 = new System.Windows.Forms.Label();
-            this.XY7Cam2 = new System.Windows.Forms.Label();
-            this.XY6Cam2 = new System.Windows.Forms.Label();
-            this.XY5Cam2 = new System.Windows.Forms.Label();
-            this.XY2Cam2 = new System.Windows.Forms.Label();
-            this.XY4Cam2 = new System.Windows.Forms.Label();
-            this.XY1Cam2 = new System.Windows.Forms.Label();
-            this.groupBox38 = new System.Windows.Forms.GroupBox();
-            this.cbTestCam2 = new System.Windows.Forms.CheckBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.txtYStep2 = new System.Windows.Forms.TextBox();
-            this.btnCalPos2 = new System.Windows.Forms.Button();
-            this.txtXStep2 = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.txtRPosCurrent2 = new System.Windows.Forms.TextBox();
-            this.txtYPosCurrent2 = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.txtXPosCurrent2 = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.groupBox39 = new System.Windows.Forms.GroupBox();
-            this.btnCam2Connect = new System.Windows.Forms.Button();
-            this.txtIpCamera2 = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.groupBox32 = new System.Windows.Forms.GroupBox();
-            this.XYR1Cam1 = new System.Windows.Forms.Label();
-            this.XYR2Cam1 = new System.Windows.Forms.Label();
-            this.XY9Cam1 = new System.Windows.Forms.Label();
-            this.XY3Cam1 = new System.Windows.Forms.Label();
-            this.XY8Cam1 = new System.Windows.Forms.Label();
-            this.XY7Cam1 = new System.Windows.Forms.Label();
-            this.XY6Cam1 = new System.Windows.Forms.Label();
-            this.XY5Cam1 = new System.Windows.Forms.Label();
-            this.XY2Cam1 = new System.Windows.Forms.Label();
-            this.XY4Cam1 = new System.Windows.Forms.Label();
-            this.XY1Cam1 = new System.Windows.Forms.Label();
-            this.groupBox37 = new System.Windows.Forms.GroupBox();
-            this.cbTestCam1 = new System.Windows.Forms.CheckBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.txtYStep1 = new System.Windows.Forms.TextBox();
-            this.btnCalPos1 = new System.Windows.Forms.Button();
-            this.txtXStep1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtRPosCurrent1 = new System.Windows.Forms.TextBox();
-            this.txtYPosCurrent1 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtXPosCurrent1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.groupBox36 = new System.Windows.Forms.GroupBox();
-            this.btnCam1Connect = new System.Windows.Forms.Button();
-            this.txtIpCamera1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
@@ -469,11 +409,58 @@
             this.txtXPointCamera = new System.Windows.Forms.TextBox();
             this.label109 = new System.Windows.Forms.Label();
             this.txtZPointSocketCameraZ = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnClearCam1 = new System.Windows.Forms.Button();
+            this.cbTestCam1 = new System.Windows.Forms.CheckBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txtYStep1 = new System.Windows.Forms.TextBox();
+            this.btnCalPos1 = new System.Windows.Forms.Button();
+            this.txtXStep1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtRPosCurrent1 = new System.Windows.Forms.TextBox();
+            this.txtYPosCurrent1 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtXPosCurrent1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.XYR1Cam1 = new System.Windows.Forms.Label();
+            this.XYR2Cam1 = new System.Windows.Forms.Label();
+            this.XY9Cam1 = new System.Windows.Forms.Label();
+            this.XY3Cam1 = new System.Windows.Forms.Label();
+            this.XY8Cam1 = new System.Windows.Forms.Label();
+            this.XY7Cam1 = new System.Windows.Forms.Label();
+            this.XY6Cam1 = new System.Windows.Forms.Label();
+            this.XY5Cam1 = new System.Windows.Forms.Label();
+            this.XY2Cam1 = new System.Windows.Forms.Label();
+            this.XY4Cam1 = new System.Windows.Forms.Label();
+            this.XY1Cam1 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.btnClearCam2 = new System.Windows.Forms.Button();
+            this.cbTestCam2 = new System.Windows.Forms.CheckBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtYStep2 = new System.Windows.Forms.TextBox();
+            this.btnCalPos2 = new System.Windows.Forms.Button();
+            this.txtXStep2 = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.txtRPosCurrent2 = new System.Windows.Forms.TextBox();
+            this.txtYPosCurrent2 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txtXPosCurrent2 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.XYR1Cam2 = new System.Windows.Forms.Label();
+            this.XYR2Cam2 = new System.Windows.Forms.Label();
+            this.XY9Cam2 = new System.Windows.Forms.Label();
+            this.XY3Cam2 = new System.Windows.Forms.Label();
+            this.XY8Cam2 = new System.Windows.Forms.Label();
+            this.XY7Cam2 = new System.Windows.Forms.Label();
+            this.XY6Cam2 = new System.Windows.Forms.Label();
+            this.XY5Cam2 = new System.Windows.Forms.Label();
+            this.XY2Cam2 = new System.Windows.Forms.Label();
+            this.XY4Cam2 = new System.Windows.Forms.Label();
+            this.XY1Cam2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.grbJogControl.SuspendLayout();
@@ -526,25 +513,20 @@
             this.groupBox28.SuspendLayout();
             this.groupBox27.SuspendLayout();
             this.groupBox26.SuspendLayout();
-            this.tabPage8.SuspendLayout();
-            this.groupBox34.SuspendLayout();
-            this.groupBox38.SuspendLayout();
-            this.groupBox39.SuspendLayout();
-            this.groupBox32.SuspendLayout();
-            this.groupBox37.SuspendLayout();
-            this.groupBox36.SuspendLayout();
             this.strip.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox23.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox13.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 34);
+            this.button1.Location = new System.Drawing.Point(209, 46);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 26);
+            this.button1.Size = new System.Drawing.Size(75, 53);
             this.button1.TabIndex = 0;
             this.button1.Text = "Xilanh cam tren";
             this.button1.UseVisualStyleBackColor = true;
@@ -557,9 +539,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(23, 86);
+            this.button2.Location = new System.Drawing.Point(209, 43);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 26);
+            this.button2.Size = new System.Drawing.Size(75, 55);
             this.button2.TabIndex = 3;
             this.button2.Text = "Xilanh cam duoi";
             this.button2.UseVisualStyleBackColor = true;
@@ -616,7 +598,7 @@
             this.groupBox1.Controls.Add(this.txtYCurMasPort1);
             this.groupBox1.Controls.Add(this.txtXCurMasPort1);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Location = new System.Drawing.Point(303, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(326, 131);
             this.groupBox1.TabIndex = 14;
@@ -702,9 +684,10 @@
             // 
             // btnConnect12
             // 
+            this.btnConnect12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect12.Location = new System.Drawing.Point(12, 72);
             this.btnConnect12.Name = "btnConnect12";
-            this.btnConnect12.Size = new System.Drawing.Size(75, 53);
+            this.btnConnect12.Size = new System.Drawing.Size(87, 53);
             this.btnConnect12.TabIndex = 15;
             this.btnConnect12.Text = "Connect";
             this.btnConnect12.UseVisualStyleBackColor = true;
@@ -732,7 +715,7 @@
             this.groupBox2.Controls.Add(this.txtYCurMasPort3);
             this.groupBox2.Controls.Add(this.txtXCurMasPort3);
             this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Location = new System.Drawing.Point(8, 143);
+            this.groupBox2.Location = new System.Drawing.Point(303, 143);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(326, 131);
             this.groupBox2.TabIndex = 15;
@@ -855,9 +838,10 @@
             // 
             // btnConnect34
             // 
+            this.btnConnect34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect34.Location = new System.Drawing.Point(12, 69);
             this.btnConnect34.Name = "btnConnect34";
-            this.btnConnect34.Size = new System.Drawing.Size(75, 55);
+            this.btnConnect34.Size = new System.Drawing.Size(87, 55);
             this.btnConnect34.TabIndex = 21;
             this.btnConnect34.Text = "Connect";
             this.btnConnect34.UseVisualStyleBackColor = true;
@@ -871,28 +855,16 @@
             this.cam34.TabIndex = 20;
             this.cam34.Text = "192.168.0.98";
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button1);
-            this.groupBox3.Location = new System.Drawing.Point(8, 280);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(180, 131);
-            this.groupBox3.TabIndex = 16;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Xilanh camera";
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(978, 673);
+            this.tabControl1.Size = new System.Drawing.Size(978, 677);
             this.tabControl1.TabIndex = 19;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -905,7 +877,7 @@
             this.tabPage3.Controls.Add(this.grpTeachingTray);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(970, 647);
+            this.tabPage3.Size = new System.Drawing.Size(970, 651);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Motion";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2224,7 +2196,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(970, 647);
+            this.tabPage2.Size = new System.Drawing.Size(970, 651);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "IO";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2996,29 +2968,31 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox13);
+            this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox29);
             this.tabPage1.Controls.Add(this.groupBox28);
             this.tabPage1.Controls.Add(this.groupBox27);
             this.tabPage1.Controls.Add(this.groupBox26);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox2);
-            this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(970, 647);
+            this.tabPage1.Size = new System.Drawing.Size(970, 651);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Master";
+            this.tabPage1.Text = "Camera";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox29
             // 
+            this.groupBox29.Controls.Add(this.button2);
             this.groupBox29.Controls.Add(this.label10);
             this.groupBox29.Controls.Add(this.btnConnect34);
             this.groupBox29.Controls.Add(this.cam34);
-            this.groupBox29.Location = new System.Drawing.Point(672, 143);
+            this.groupBox29.Location = new System.Drawing.Point(8, 143);
             this.groupBox29.Name = "groupBox29";
-            this.groupBox29.Size = new System.Drawing.Size(199, 130);
+            this.groupBox29.Size = new System.Drawing.Size(290, 130);
             this.groupBox29.TabIndex = 25;
             this.groupBox29.TabStop = false;
             this.groupBox29.Text = "Camera port 34";
@@ -3026,11 +3000,12 @@
             // groupBox28
             // 
             this.groupBox28.Controls.Add(this.label3);
+            this.groupBox28.Controls.Add(this.button1);
             this.groupBox28.Controls.Add(this.btnConnect12);
             this.groupBox28.Controls.Add(this.cam12);
-            this.groupBox28.Location = new System.Drawing.Point(672, 6);
+            this.groupBox28.Location = new System.Drawing.Point(8, 6);
             this.groupBox28.Name = "groupBox28";
-            this.groupBox28.Size = new System.Drawing.Size(199, 131);
+            this.groupBox28.Size = new System.Drawing.Size(290, 131);
             this.groupBox28.TabIndex = 24;
             this.groupBox28.TabStop = false;
             this.groupBox28.Text = "Camera port 12";
@@ -3049,7 +3024,7 @@
             this.groupBox27.Controls.Add(this.txtYCurMasPort4);
             this.groupBox27.Controls.Add(this.txtXCurMasPort4);
             this.groupBox27.Controls.Add(this.btnSetMasP4);
-            this.groupBox27.Location = new System.Drawing.Point(340, 143);
+            this.groupBox27.Location = new System.Drawing.Point(635, 143);
             this.groupBox27.Name = "groupBox27";
             this.groupBox27.Size = new System.Drawing.Size(326, 131);
             this.groupBox27.TabIndex = 23;
@@ -3175,7 +3150,7 @@
             this.groupBox26.Controls.Add(this.txtYCurMasPort2);
             this.groupBox26.Controls.Add(this.txtXCurMasPort2);
             this.groupBox26.Controls.Add(this.btnSetMasP2);
-            this.groupBox26.Location = new System.Drawing.Point(340, 6);
+            this.groupBox26.Location = new System.Drawing.Point(634, 6);
             this.groupBox26.Name = "groupBox26";
             this.groupBox26.Size = new System.Drawing.Size(326, 131);
             this.groupBox26.TabIndex = 20;
@@ -3287,587 +3262,6 @@
             this.btnSetMasP2.UseVisualStyleBackColor = true;
             this.btnSetMasP2.Click += new System.EventHandler(this.btnSetMasP2_Click);
             // 
-            // tabPage8
-            // 
-            this.tabPage8.Controls.Add(this.groupBox34);
-            this.tabPage8.Controls.Add(this.groupBox32);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
-            this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(970, 647);
-            this.tabPage8.TabIndex = 3;
-            this.tabPage8.Text = "Handeye";
-            this.tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // groupBox34
-            // 
-            this.groupBox34.Controls.Add(this.XYR1Cam2);
-            this.groupBox34.Controls.Add(this.XYR2Cam2);
-            this.groupBox34.Controls.Add(this.XY9Cam2);
-            this.groupBox34.Controls.Add(this.XY3Cam2);
-            this.groupBox34.Controls.Add(this.XY8Cam2);
-            this.groupBox34.Controls.Add(this.XY7Cam2);
-            this.groupBox34.Controls.Add(this.XY6Cam2);
-            this.groupBox34.Controls.Add(this.XY5Cam2);
-            this.groupBox34.Controls.Add(this.XY2Cam2);
-            this.groupBox34.Controls.Add(this.XY4Cam2);
-            this.groupBox34.Controls.Add(this.XY1Cam2);
-            this.groupBox34.Controls.Add(this.groupBox38);
-            this.groupBox34.Controls.Add(this.groupBox39);
-            this.groupBox34.Controls.Add(this.label44);
-            this.groupBox34.Location = new System.Drawing.Point(8, 283);
-            this.groupBox34.Name = "groupBox34";
-            this.groupBox34.Size = new System.Drawing.Size(861, 274);
-            this.groupBox34.TabIndex = 31;
-            this.groupBox34.TabStop = false;
-            this.groupBox34.Text = "Handeye Camera 34";
-            // 
-            // XYR1Cam2
-            // 
-            this.XYR1Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XYR1Cam2.Location = new System.Drawing.Point(418, 165);
-            this.XYR1Cam2.Name = "XYR1Cam2";
-            this.XYR1Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XYR1Cam2.TabIndex = 30;
-            this.XYR1Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XYR2Cam2
-            // 
-            this.XYR2Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XYR2Cam2.Location = new System.Drawing.Point(593, 165);
-            this.XYR2Cam2.Name = "XYR2Cam2";
-            this.XYR2Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XYR2Cam2.TabIndex = 29;
-            this.XYR2Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY9Cam2
-            // 
-            this.XY9Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY9Cam2.Location = new System.Drawing.Point(683, 218);
-            this.XY9Cam2.Name = "XY9Cam2";
-            this.XY9Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XY9Cam2.TabIndex = 28;
-            this.XY9Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY3Cam2
-            // 
-            this.XY3Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY3Cam2.Location = new System.Drawing.Point(683, 38);
-            this.XY3Cam2.Name = "XY3Cam2";
-            this.XY3Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XY3Cam2.TabIndex = 27;
-            this.XY3Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY8Cam2
-            // 
-            this.XY8Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY8Cam2.Location = new System.Drawing.Point(507, 218);
-            this.XY8Cam2.Name = "XY8Cam2";
-            this.XY8Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XY8Cam2.TabIndex = 26;
-            this.XY8Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY7Cam2
-            // 
-            this.XY7Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY7Cam2.Location = new System.Drawing.Point(334, 218);
-            this.XY7Cam2.Name = "XY7Cam2";
-            this.XY7Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XY7Cam2.TabIndex = 25;
-            this.XY7Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY6Cam2
-            // 
-            this.XY6Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY6Cam2.Location = new System.Drawing.Point(334, 104);
-            this.XY6Cam2.Name = "XY6Cam2";
-            this.XY6Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XY6Cam2.TabIndex = 24;
-            this.XY6Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY5Cam2
-            // 
-            this.XY5Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY5Cam2.Location = new System.Drawing.Point(334, 38);
-            this.XY5Cam2.Name = "XY5Cam2";
-            this.XY5Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XY5Cam2.TabIndex = 23;
-            this.XY5Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY2Cam2
-            // 
-            this.XY2Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY2Cam2.Location = new System.Drawing.Point(683, 104);
-            this.XY2Cam2.Name = "XY2Cam2";
-            this.XY2Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XY2Cam2.TabIndex = 22;
-            this.XY2Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY4Cam2
-            // 
-            this.XY4Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY4Cam2.Location = new System.Drawing.Point(507, 38);
-            this.XY4Cam2.Name = "XY4Cam2";
-            this.XY4Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XY4Cam2.TabIndex = 21;
-            this.XY4Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY1Cam2
-            // 
-            this.XY1Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY1Cam2.Location = new System.Drawing.Point(507, 104);
-            this.XY1Cam2.Name = "XY1Cam2";
-            this.XY1Cam2.Size = new System.Drawing.Size(143, 32);
-            this.XY1Cam2.TabIndex = 20;
-            this.XY1Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox38
-            // 
-            this.groupBox38.Controls.Add(this.btnClearCam2);
-            this.groupBox38.Controls.Add(this.cbTestCam2);
-            this.groupBox38.Controls.Add(this.label39);
-            this.groupBox38.Controls.Add(this.txtYStep2);
-            this.groupBox38.Controls.Add(this.btnCalPos2);
-            this.groupBox38.Controls.Add(this.txtXStep2);
-            this.groupBox38.Controls.Add(this.label40);
-            this.groupBox38.Controls.Add(this.txtRPosCurrent2);
-            this.groupBox38.Controls.Add(this.txtYPosCurrent2);
-            this.groupBox38.Controls.Add(this.label41);
-            this.groupBox38.Controls.Add(this.label42);
-            this.groupBox38.Controls.Add(this.txtXPosCurrent2);
-            this.groupBox38.Controls.Add(this.label43);
-            this.groupBox38.Location = new System.Drawing.Point(9, 97);
-            this.groupBox38.Name = "groupBox38";
-            this.groupBox38.Size = new System.Drawing.Size(281, 171);
-            this.groupBox38.TabIndex = 19;
-            this.groupBox38.TabStop = false;
-            this.groupBox38.Text = "Toa do hien tai";
-            // 
-            // cbTestCam2
-            // 
-            this.cbTestCam2.AutoSize = true;
-            this.cbTestCam2.Location = new System.Drawing.Point(190, 87);
-            this.cbTestCam2.Name = "cbTestCam2";
-            this.cbTestCam2.Size = new System.Drawing.Size(68, 17);
-            this.cbTestCam2.TabIndex = 26;
-            this.cbTestCam2.Text = "Chạy thử";
-            this.cbTestCam2.UseVisualStyleBackColor = true;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(130, 58);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(42, 13);
-            this.label39.TabIndex = 24;
-            this.label39.Text = "Buoc Y";
-            // 
-            // txtYStep2
-            // 
-            this.txtYStep2.Location = new System.Drawing.Point(190, 55);
-            this.txtYStep2.Name = "txtYStep2";
-            this.txtYStep2.Size = new System.Drawing.Size(83, 20);
-            this.txtYStep2.TabIndex = 23;
-            this.txtYStep2.Text = "3";
-            // 
-            // btnCalPos2
-            // 
-            this.btnCalPos2.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnCalPos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalPos2.Location = new System.Drawing.Point(162, 118);
-            this.btnCalPos2.Name = "btnCalPos2";
-            this.btnCalPos2.Size = new System.Drawing.Size(111, 34);
-            this.btnCalPos2.TabIndex = 20;
-            this.btnCalPos2.Text = "BẮT ĐẦU";
-            this.btnCalPos2.UseVisualStyleBackColor = false;
-            this.btnCalPos2.Click += new System.EventHandler(this.btnCalPos2_Click);
-            // 
-            // txtXStep2
-            // 
-            this.txtXStep2.Location = new System.Drawing.Point(190, 26);
-            this.txtXStep2.Name = "txtXStep2";
-            this.txtXStep2.Size = new System.Drawing.Size(83, 20);
-            this.txtXStep2.TabIndex = 22;
-            this.txtXStep2.Text = "5";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(130, 29);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(42, 13);
-            this.label40.TabIndex = 21;
-            this.label40.Text = "Buoc X";
-            // 
-            // txtRPosCurrent2
-            // 
-            this.txtRPosCurrent2.Location = new System.Drawing.Point(41, 84);
-            this.txtRPosCurrent2.Name = "txtRPosCurrent2";
-            this.txtRPosCurrent2.Size = new System.Drawing.Size(83, 20);
-            this.txtRPosCurrent2.TabIndex = 19;
-            // 
-            // txtYPosCurrent2
-            // 
-            this.txtYPosCurrent2.Location = new System.Drawing.Point(41, 55);
-            this.txtYPosCurrent2.Name = "txtYPosCurrent2";
-            this.txtYPosCurrent2.Size = new System.Drawing.Size(83, 20);
-            this.txtYPosCurrent2.TabIndex = 18;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(20, 87);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(15, 13);
-            this.label41.TabIndex = 2;
-            this.label41.Text = "R";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(20, 58);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(14, 13);
-            this.label42.TabIndex = 1;
-            this.label42.Text = "Y";
-            // 
-            // txtXPosCurrent2
-            // 
-            this.txtXPosCurrent2.Location = new System.Drawing.Point(41, 26);
-            this.txtXPosCurrent2.Name = "txtXPosCurrent2";
-            this.txtXPosCurrent2.Size = new System.Drawing.Size(83, 20);
-            this.txtXPosCurrent2.TabIndex = 17;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(20, 29);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(14, 13);
-            this.label43.TabIndex = 0;
-            this.label43.Text = "X";
-            // 
-            // groupBox39
-            // 
-            this.groupBox39.Controls.Add(this.btnCam2Connect);
-            this.groupBox39.Controls.Add(this.txtIpCamera2);
-            this.groupBox39.Location = new System.Drawing.Point(9, 37);
-            this.groupBox39.Name = "groupBox39";
-            this.groupBox39.Size = new System.Drawing.Size(281, 54);
-            this.groupBox39.TabIndex = 18;
-            this.groupBox39.TabStop = false;
-            this.groupBox39.Text = "Ket noi camera";
-            // 
-            // btnCam2Connect
-            // 
-            this.btnCam2Connect.Location = new System.Drawing.Point(200, 14);
-            this.btnCam2Connect.Name = "btnCam2Connect";
-            this.btnCam2Connect.Size = new System.Drawing.Size(75, 29);
-            this.btnCam2Connect.TabIndex = 15;
-            this.btnCam2Connect.Text = "Connect";
-            this.btnCam2Connect.UseVisualStyleBackColor = true;
-            // 
-            // txtIpCamera2
-            // 
-            this.txtIpCamera2.Location = new System.Drawing.Point(9, 19);
-            this.txtIpCamera2.Name = "txtIpCamera2";
-            this.txtIpCamera2.Size = new System.Drawing.Size(181, 20);
-            this.txtIpCamera2.TabIndex = 14;
-            this.txtIpCamera2.Text = "192.168.0.98";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 16);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(54, 13);
-            this.label44.TabIndex = 16;
-            this.label44.Text = "Ip camera";
-            // 
-            // groupBox32
-            // 
-            this.groupBox32.Controls.Add(this.XYR1Cam1);
-            this.groupBox32.Controls.Add(this.XYR2Cam1);
-            this.groupBox32.Controls.Add(this.XY9Cam1);
-            this.groupBox32.Controls.Add(this.XY3Cam1);
-            this.groupBox32.Controls.Add(this.XY8Cam1);
-            this.groupBox32.Controls.Add(this.XY7Cam1);
-            this.groupBox32.Controls.Add(this.XY6Cam1);
-            this.groupBox32.Controls.Add(this.XY5Cam1);
-            this.groupBox32.Controls.Add(this.XY2Cam1);
-            this.groupBox32.Controls.Add(this.XY4Cam1);
-            this.groupBox32.Controls.Add(this.XY1Cam1);
-            this.groupBox32.Controls.Add(this.groupBox37);
-            this.groupBox32.Controls.Add(this.groupBox36);
-            this.groupBox32.Controls.Add(this.label2);
-            this.groupBox32.Location = new System.Drawing.Point(8, 3);
-            this.groupBox32.Name = "groupBox32";
-            this.groupBox32.Size = new System.Drawing.Size(861, 274);
-            this.groupBox32.TabIndex = 1;
-            this.groupBox32.TabStop = false;
-            this.groupBox32.Text = "Handeye Camera 12";
-            // 
-            // XYR1Cam1
-            // 
-            this.XYR1Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XYR1Cam1.Location = new System.Drawing.Point(418, 165);
-            this.XYR1Cam1.Name = "XYR1Cam1";
-            this.XYR1Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XYR1Cam1.TabIndex = 30;
-            this.XYR1Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XYR2Cam1
-            // 
-            this.XYR2Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XYR2Cam1.Location = new System.Drawing.Point(593, 165);
-            this.XYR2Cam1.Name = "XYR2Cam1";
-            this.XYR2Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XYR2Cam1.TabIndex = 29;
-            this.XYR2Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY9Cam1
-            // 
-            this.XY9Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY9Cam1.Location = new System.Drawing.Point(683, 218);
-            this.XY9Cam1.Name = "XY9Cam1";
-            this.XY9Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XY9Cam1.TabIndex = 28;
-            this.XY9Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY3Cam1
-            // 
-            this.XY3Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY3Cam1.Location = new System.Drawing.Point(683, 38);
-            this.XY3Cam1.Name = "XY3Cam1";
-            this.XY3Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XY3Cam1.TabIndex = 27;
-            this.XY3Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY8Cam1
-            // 
-            this.XY8Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY8Cam1.Location = new System.Drawing.Point(507, 218);
-            this.XY8Cam1.Name = "XY8Cam1";
-            this.XY8Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XY8Cam1.TabIndex = 26;
-            this.XY8Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY7Cam1
-            // 
-            this.XY7Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY7Cam1.Location = new System.Drawing.Point(334, 218);
-            this.XY7Cam1.Name = "XY7Cam1";
-            this.XY7Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XY7Cam1.TabIndex = 25;
-            this.XY7Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY6Cam1
-            // 
-            this.XY6Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY6Cam1.Location = new System.Drawing.Point(334, 104);
-            this.XY6Cam1.Name = "XY6Cam1";
-            this.XY6Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XY6Cam1.TabIndex = 24;
-            this.XY6Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY5Cam1
-            // 
-            this.XY5Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY5Cam1.Location = new System.Drawing.Point(334, 38);
-            this.XY5Cam1.Name = "XY5Cam1";
-            this.XY5Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XY5Cam1.TabIndex = 23;
-            this.XY5Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY2Cam1
-            // 
-            this.XY2Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY2Cam1.Location = new System.Drawing.Point(683, 104);
-            this.XY2Cam1.Name = "XY2Cam1";
-            this.XY2Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XY2Cam1.TabIndex = 22;
-            this.XY2Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY4Cam1
-            // 
-            this.XY4Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY4Cam1.Location = new System.Drawing.Point(507, 38);
-            this.XY4Cam1.Name = "XY4Cam1";
-            this.XY4Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XY4Cam1.TabIndex = 21;
-            this.XY4Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // XY1Cam1
-            // 
-            this.XY1Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.XY1Cam1.Location = new System.Drawing.Point(507, 104);
-            this.XY1Cam1.Name = "XY1Cam1";
-            this.XY1Cam1.Size = new System.Drawing.Size(143, 32);
-            this.XY1Cam1.TabIndex = 20;
-            this.XY1Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox37
-            // 
-            this.groupBox37.Controls.Add(this.btnClearCam1);
-            this.groupBox37.Controls.Add(this.cbTestCam1);
-            this.groupBox37.Controls.Add(this.label38);
-            this.groupBox37.Controls.Add(this.txtYStep1);
-            this.groupBox37.Controls.Add(this.btnCalPos1);
-            this.groupBox37.Controls.Add(this.txtXStep1);
-            this.groupBox37.Controls.Add(this.label1);
-            this.groupBox37.Controls.Add(this.txtRPosCurrent1);
-            this.groupBox37.Controls.Add(this.txtYPosCurrent1);
-            this.groupBox37.Controls.Add(this.label23);
-            this.groupBox37.Controls.Add(this.label22);
-            this.groupBox37.Controls.Add(this.txtXPosCurrent1);
-            this.groupBox37.Controls.Add(this.label12);
-            this.groupBox37.Location = new System.Drawing.Point(9, 97);
-            this.groupBox37.Name = "groupBox37";
-            this.groupBox37.Size = new System.Drawing.Size(281, 171);
-            this.groupBox37.TabIndex = 19;
-            this.groupBox37.TabStop = false;
-            this.groupBox37.Text = "Toa do hien tai";
-            // 
-            // cbTestCam1
-            // 
-            this.cbTestCam1.AutoSize = true;
-            this.cbTestCam1.Location = new System.Drawing.Point(190, 87);
-            this.cbTestCam1.Name = "cbTestCam1";
-            this.cbTestCam1.Size = new System.Drawing.Size(68, 17);
-            this.cbTestCam1.TabIndex = 25;
-            this.cbTestCam1.Text = "Chạy thử";
-            this.cbTestCam1.UseVisualStyleBackColor = true;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(142, 58);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(42, 13);
-            this.label38.TabIndex = 24;
-            this.label38.Text = "Buoc Y";
-            // 
-            // txtYStep1
-            // 
-            this.txtYStep1.Location = new System.Drawing.Point(190, 55);
-            this.txtYStep1.Name = "txtYStep1";
-            this.txtYStep1.Size = new System.Drawing.Size(83, 20);
-            this.txtYStep1.TabIndex = 23;
-            this.txtYStep1.Text = "3";
-            // 
-            // btnCalPos1
-            // 
-            this.btnCalPos1.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnCalPos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalPos1.Location = new System.Drawing.Point(162, 119);
-            this.btnCalPos1.Name = "btnCalPos1";
-            this.btnCalPos1.Size = new System.Drawing.Size(111, 34);
-            this.btnCalPos1.TabIndex = 20;
-            this.btnCalPos1.Text = "BẮT ĐẦU";
-            this.btnCalPos1.UseVisualStyleBackColor = false;
-            this.btnCalPos1.Click += new System.EventHandler(this.btnCalPos1_Click);
-            // 
-            // txtXStep1
-            // 
-            this.txtXStep1.Location = new System.Drawing.Point(190, 26);
-            this.txtXStep1.Name = "txtXStep1";
-            this.txtXStep1.Size = new System.Drawing.Size(83, 20);
-            this.txtXStep1.TabIndex = 22;
-            this.txtXStep1.Text = "5";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Buoc X";
-            // 
-            // txtRPosCurrent1
-            // 
-            this.txtRPosCurrent1.Location = new System.Drawing.Point(41, 84);
-            this.txtRPosCurrent1.Name = "txtRPosCurrent1";
-            this.txtRPosCurrent1.Size = new System.Drawing.Size(83, 20);
-            this.txtRPosCurrent1.TabIndex = 19;
-            // 
-            // txtYPosCurrent1
-            // 
-            this.txtYPosCurrent1.Location = new System.Drawing.Point(41, 55);
-            this.txtYPosCurrent1.Name = "txtYPosCurrent1";
-            this.txtYPosCurrent1.Size = new System.Drawing.Size(83, 20);
-            this.txtYPosCurrent1.TabIndex = 18;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(20, 87);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(15, 13);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "R";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(20, 58);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(14, 13);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "Y";
-            // 
-            // txtXPosCurrent1
-            // 
-            this.txtXPosCurrent1.Location = new System.Drawing.Point(41, 26);
-            this.txtXPosCurrent1.Name = "txtXPosCurrent1";
-            this.txtXPosCurrent1.Size = new System.Drawing.Size(83, 20);
-            this.txtXPosCurrent1.TabIndex = 17;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(20, 29);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "X";
-            // 
-            // groupBox36
-            // 
-            this.groupBox36.Controls.Add(this.btnCam1Connect);
-            this.groupBox36.Controls.Add(this.txtIpCamera1);
-            this.groupBox36.Location = new System.Drawing.Point(9, 37);
-            this.groupBox36.Name = "groupBox36";
-            this.groupBox36.Size = new System.Drawing.Size(281, 54);
-            this.groupBox36.TabIndex = 18;
-            this.groupBox36.TabStop = false;
-            this.groupBox36.Text = "Ket noi camera";
-            // 
-            // btnCam1Connect
-            // 
-            this.btnCam1Connect.Location = new System.Drawing.Point(200, 14);
-            this.btnCam1Connect.Name = "btnCam1Connect";
-            this.btnCam1Connect.Size = new System.Drawing.Size(75, 29);
-            this.btnCam1Connect.TabIndex = 15;
-            this.btnCam1Connect.Text = "Connect";
-            this.btnCam1Connect.UseVisualStyleBackColor = true;
-            // 
-            // txtIpCamera1
-            // 
-            this.txtIpCamera1.Location = new System.Drawing.Point(9, 19);
-            this.txtIpCamera1.Name = "txtIpCamera1";
-            this.txtIpCamera1.Size = new System.Drawing.Size(181, 20);
-            this.txtIpCamera1.TabIndex = 14;
-            this.txtIpCamera1.Text = "192.168.0.97";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Ip camera";
-            // 
             // strip
             // 
             this.strip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -3875,7 +3269,7 @@
             this.toolStripStatusLabel2,
             this.toolStripStatusLabel1,
             this.tstStatus});
-            this.strip.Location = new System.Drawing.Point(0, 651);
+            this.strip.Location = new System.Drawing.Point(0, 655);
             this.strip.Name = "strip";
             this.strip.Size = new System.Drawing.Size(978, 22);
             this.strip.TabIndex = 20;
@@ -4885,33 +4279,501 @@
             this.txtZPointSocketCameraZ.Size = new System.Drawing.Size(62, 20);
             this.txtZPointSocketCameraZ.TabIndex = 117;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.XYR1Cam1);
+            this.groupBox3.Controls.Add(this.XYR2Cam1);
+            this.groupBox3.Controls.Add(this.XY9Cam1);
+            this.groupBox3.Controls.Add(this.XY3Cam1);
+            this.groupBox3.Controls.Add(this.XY8Cam1);
+            this.groupBox3.Controls.Add(this.XY7Cam1);
+            this.groupBox3.Controls.Add(this.XY6Cam1);
+            this.groupBox3.Controls.Add(this.XY5Cam1);
+            this.groupBox3.Controls.Add(this.XY2Cam1);
+            this.groupBox3.Controls.Add(this.XY4Cam1);
+            this.groupBox3.Controls.Add(this.XY1Cam1);
+            this.groupBox3.Controls.Add(this.btnClearCam1);
+            this.groupBox3.Controls.Add(this.cbTestCam1);
+            this.groupBox3.Controls.Add(this.label38);
+            this.groupBox3.Controls.Add(this.txtYStep1);
+            this.groupBox3.Controls.Add(this.btnCalPos1);
+            this.groupBox3.Controls.Add(this.txtXStep1);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.txtRPosCurrent1);
+            this.groupBox3.Controls.Add(this.txtYPosCurrent1);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.label22);
+            this.groupBox3.Controls.Add(this.txtXPosCurrent1);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Location = new System.Drawing.Point(8, 280);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(954, 157);
+            this.groupBox3.TabIndex = 26;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "CAM 12 - HANDEYE";
+            // 
             // btnClearCam1
             // 
             this.btnClearCam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearCam1.Location = new System.Drawing.Point(41, 119);
+            this.btnClearCam1.Location = new System.Drawing.Point(27, 112);
             this.btnClearCam1.Name = "btnClearCam1";
             this.btnClearCam1.Size = new System.Drawing.Size(48, 34);
-            this.btnClearCam1.TabIndex = 16;
+            this.btnClearCam1.TabIndex = 29;
             this.btnClearCam1.Text = "Clear";
             this.btnClearCam1.UseVisualStyleBackColor = true;
-            this.btnClearCam1.Click += new System.EventHandler(this.btnClearCam1_Click);
+            // 
+            // cbTestCam1
+            // 
+            this.cbTestCam1.AutoSize = true;
+            this.cbTestCam1.Location = new System.Drawing.Point(176, 80);
+            this.cbTestCam1.Name = "cbTestCam1";
+            this.cbTestCam1.Size = new System.Drawing.Size(68, 17);
+            this.cbTestCam1.TabIndex = 38;
+            this.cbTestCam1.Text = "Chạy thử";
+            this.cbTestCam1.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(128, 51);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(42, 13);
+            this.label38.TabIndex = 37;
+            this.label38.Text = "Buoc Y";
+            // 
+            // txtYStep1
+            // 
+            this.txtYStep1.Location = new System.Drawing.Point(176, 48);
+            this.txtYStep1.Name = "txtYStep1";
+            this.txtYStep1.Size = new System.Drawing.Size(83, 20);
+            this.txtYStep1.TabIndex = 36;
+            this.txtYStep1.Text = "3";
+            // 
+            // btnCalPos1
+            // 
+            this.btnCalPos1.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnCalPos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalPos1.Location = new System.Drawing.Point(148, 112);
+            this.btnCalPos1.Name = "btnCalPos1";
+            this.btnCalPos1.Size = new System.Drawing.Size(111, 34);
+            this.btnCalPos1.TabIndex = 33;
+            this.btnCalPos1.Text = "BẮT ĐẦU";
+            this.btnCalPos1.UseVisualStyleBackColor = false;
+            // 
+            // txtXStep1
+            // 
+            this.txtXStep1.Location = new System.Drawing.Point(176, 19);
+            this.txtXStep1.Name = "txtXStep1";
+            this.txtXStep1.Size = new System.Drawing.Size(83, 20);
+            this.txtXStep1.TabIndex = 35;
+            this.txtXStep1.Text = "5";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(128, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Buoc X";
+            // 
+            // txtRPosCurrent1
+            // 
+            this.txtRPosCurrent1.Location = new System.Drawing.Point(27, 77);
+            this.txtRPosCurrent1.Name = "txtRPosCurrent1";
+            this.txtRPosCurrent1.Size = new System.Drawing.Size(83, 20);
+            this.txtRPosCurrent1.TabIndex = 32;
+            // 
+            // txtYPosCurrent1
+            // 
+            this.txtYPosCurrent1.Location = new System.Drawing.Point(27, 48);
+            this.txtYPosCurrent1.Name = "txtYPosCurrent1";
+            this.txtYPosCurrent1.Size = new System.Drawing.Size(83, 20);
+            this.txtYPosCurrent1.TabIndex = 31;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(6, 80);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(15, 13);
+            this.label23.TabIndex = 28;
+            this.label23.Text = "R";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 51);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(14, 13);
+            this.label22.TabIndex = 27;
+            this.label22.Text = "Y";
+            // 
+            // txtXPosCurrent1
+            // 
+            this.txtXPosCurrent1.Location = new System.Drawing.Point(27, 19);
+            this.txtXPosCurrent1.Name = "txtXPosCurrent1";
+            this.txtXPosCurrent1.Size = new System.Drawing.Size(83, 20);
+            this.txtXPosCurrent1.TabIndex = 30;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 22);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(14, 13);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "X";
+            // 
+            // XYR1Cam1
+            // 
+            this.XYR1Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XYR1Cam1.Location = new System.Drawing.Point(449, 85);
+            this.XYR1Cam1.Name = "XYR1Cam1";
+            this.XYR1Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XYR1Cam1.TabIndex = 49;
+            this.XYR1Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XYR2Cam1
+            // 
+            this.XYR2Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XYR2Cam1.Location = new System.Drawing.Point(621, 85);
+            this.XYR2Cam1.Name = "XYR2Cam1";
+            this.XYR2Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XYR2Cam1.TabIndex = 48;
+            this.XYR2Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY9Cam1
+            // 
+            this.XY9Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY9Cam1.Location = new System.Drawing.Point(718, 117);
+            this.XY9Cam1.Name = "XY9Cam1";
+            this.XY9Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XY9Cam1.TabIndex = 47;
+            this.XY9Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY3Cam1
+            // 
+            this.XY3Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY3Cam1.Location = new System.Drawing.Point(718, 19);
+            this.XY3Cam1.Name = "XY3Cam1";
+            this.XY3Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XY3Cam1.TabIndex = 46;
+            this.XY3Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY8Cam1
+            // 
+            this.XY8Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY8Cam1.Location = new System.Drawing.Point(542, 117);
+            this.XY8Cam1.Name = "XY8Cam1";
+            this.XY8Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XY8Cam1.TabIndex = 45;
+            this.XY8Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY7Cam1
+            // 
+            this.XY7Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY7Cam1.Location = new System.Drawing.Point(366, 117);
+            this.XY7Cam1.Name = "XY7Cam1";
+            this.XY7Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XY7Cam1.TabIndex = 44;
+            this.XY7Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY6Cam1
+            // 
+            this.XY6Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY6Cam1.Location = new System.Drawing.Point(369, 56);
+            this.XY6Cam1.Name = "XY6Cam1";
+            this.XY6Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XY6Cam1.TabIndex = 43;
+            this.XY6Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY5Cam1
+            // 
+            this.XY5Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY5Cam1.Location = new System.Drawing.Point(369, 19);
+            this.XY5Cam1.Name = "XY5Cam1";
+            this.XY5Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XY5Cam1.TabIndex = 42;
+            this.XY5Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY2Cam1
+            // 
+            this.XY2Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY2Cam1.Location = new System.Drawing.Point(718, 56);
+            this.XY2Cam1.Name = "XY2Cam1";
+            this.XY2Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XY2Cam1.TabIndex = 41;
+            this.XY2Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY4Cam1
+            // 
+            this.XY4Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY4Cam1.Location = new System.Drawing.Point(542, 19);
+            this.XY4Cam1.Name = "XY4Cam1";
+            this.XY4Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XY4Cam1.TabIndex = 40;
+            this.XY4Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY1Cam1
+            // 
+            this.XY1Cam1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY1Cam1.Location = new System.Drawing.Point(542, 56);
+            this.XY1Cam1.Name = "XY1Cam1";
+            this.XY1Cam1.Size = new System.Drawing.Size(143, 23);
+            this.XY1Cam1.TabIndex = 39;
+            this.XY1Cam1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.XYR1Cam2);
+            this.groupBox13.Controls.Add(this.XYR2Cam2);
+            this.groupBox13.Controls.Add(this.XY9Cam2);
+            this.groupBox13.Controls.Add(this.XY3Cam2);
+            this.groupBox13.Controls.Add(this.XY8Cam2);
+            this.groupBox13.Controls.Add(this.XY7Cam2);
+            this.groupBox13.Controls.Add(this.XY6Cam2);
+            this.groupBox13.Controls.Add(this.XY5Cam2);
+            this.groupBox13.Controls.Add(this.XY2Cam2);
+            this.groupBox13.Controls.Add(this.XY4Cam2);
+            this.groupBox13.Controls.Add(this.XY1Cam2);
+            this.groupBox13.Controls.Add(this.btnClearCam2);
+            this.groupBox13.Controls.Add(this.cbTestCam2);
+            this.groupBox13.Controls.Add(this.label39);
+            this.groupBox13.Controls.Add(this.txtYStep2);
+            this.groupBox13.Controls.Add(this.btnCalPos2);
+            this.groupBox13.Controls.Add(this.txtXStep2);
+            this.groupBox13.Controls.Add(this.label40);
+            this.groupBox13.Controls.Add(this.txtRPosCurrent2);
+            this.groupBox13.Controls.Add(this.txtYPosCurrent2);
+            this.groupBox13.Controls.Add(this.label41);
+            this.groupBox13.Controls.Add(this.label42);
+            this.groupBox13.Controls.Add(this.txtXPosCurrent2);
+            this.groupBox13.Controls.Add(this.label43);
+            this.groupBox13.Location = new System.Drawing.Point(8, 455);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(954, 157);
+            this.groupBox13.TabIndex = 27;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "CAM 34 - HANDEYE";
             // 
             // btnClearCam2
             // 
             this.btnClearCam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearCam2.Location = new System.Drawing.Point(41, 119);
+            this.btnClearCam2.Location = new System.Drawing.Point(27, 112);
             this.btnClearCam2.Name = "btnClearCam2";
             this.btnClearCam2.Size = new System.Drawing.Size(48, 34);
-            this.btnClearCam2.TabIndex = 27;
+            this.btnClearCam2.TabIndex = 40;
             this.btnClearCam2.Text = "Clear";
             this.btnClearCam2.UseVisualStyleBackColor = true;
-            this.btnClearCam2.Click += new System.EventHandler(this.btnClearCam2_Click);
+            // 
+            // cbTestCam2
+            // 
+            this.cbTestCam2.AutoSize = true;
+            this.cbTestCam2.Location = new System.Drawing.Point(176, 80);
+            this.cbTestCam2.Name = "cbTestCam2";
+            this.cbTestCam2.Size = new System.Drawing.Size(68, 17);
+            this.cbTestCam2.TabIndex = 39;
+            this.cbTestCam2.Text = "Chạy thử";
+            this.cbTestCam2.UseVisualStyleBackColor = true;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(116, 51);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(42, 13);
+            this.label39.TabIndex = 38;
+            this.label39.Text = "Buoc Y";
+            // 
+            // txtYStep2
+            // 
+            this.txtYStep2.Location = new System.Drawing.Point(176, 48);
+            this.txtYStep2.Name = "txtYStep2";
+            this.txtYStep2.Size = new System.Drawing.Size(83, 20);
+            this.txtYStep2.TabIndex = 37;
+            this.txtYStep2.Text = "3";
+            // 
+            // btnCalPos2
+            // 
+            this.btnCalPos2.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnCalPos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalPos2.Location = new System.Drawing.Point(148, 111);
+            this.btnCalPos2.Name = "btnCalPos2";
+            this.btnCalPos2.Size = new System.Drawing.Size(111, 34);
+            this.btnCalPos2.TabIndex = 34;
+            this.btnCalPos2.Text = "BẮT ĐẦU";
+            this.btnCalPos2.UseVisualStyleBackColor = false;
+            // 
+            // txtXStep2
+            // 
+            this.txtXStep2.Location = new System.Drawing.Point(176, 19);
+            this.txtXStep2.Name = "txtXStep2";
+            this.txtXStep2.Size = new System.Drawing.Size(83, 20);
+            this.txtXStep2.TabIndex = 36;
+            this.txtXStep2.Text = "5";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(116, 22);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(42, 13);
+            this.label40.TabIndex = 35;
+            this.label40.Text = "Buoc X";
+            // 
+            // txtRPosCurrent2
+            // 
+            this.txtRPosCurrent2.Location = new System.Drawing.Point(27, 77);
+            this.txtRPosCurrent2.Name = "txtRPosCurrent2";
+            this.txtRPosCurrent2.Size = new System.Drawing.Size(83, 20);
+            this.txtRPosCurrent2.TabIndex = 33;
+            // 
+            // txtYPosCurrent2
+            // 
+            this.txtYPosCurrent2.Location = new System.Drawing.Point(27, 48);
+            this.txtYPosCurrent2.Name = "txtYPosCurrent2";
+            this.txtYPosCurrent2.Size = new System.Drawing.Size(83, 20);
+            this.txtYPosCurrent2.TabIndex = 32;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(6, 80);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(15, 13);
+            this.label41.TabIndex = 30;
+            this.label41.Text = "R";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(6, 51);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(14, 13);
+            this.label42.TabIndex = 29;
+            this.label42.Text = "Y";
+            // 
+            // txtXPosCurrent2
+            // 
+            this.txtXPosCurrent2.Location = new System.Drawing.Point(27, 19);
+            this.txtXPosCurrent2.Name = "txtXPosCurrent2";
+            this.txtXPosCurrent2.Size = new System.Drawing.Size(83, 20);
+            this.txtXPosCurrent2.TabIndex = 31;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(6, 22);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(14, 13);
+            this.label43.TabIndex = 28;
+            this.label43.Text = "X";
+            // 
+            // XYR1Cam2
+            // 
+            this.XYR1Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XYR1Cam2.Location = new System.Drawing.Point(446, 84);
+            this.XYR1Cam2.Name = "XYR1Cam2";
+            this.XYR1Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XYR1Cam2.TabIndex = 51;
+            this.XYR1Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XYR2Cam2
+            // 
+            this.XYR2Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XYR2Cam2.Location = new System.Drawing.Point(621, 84);
+            this.XYR2Cam2.Name = "XYR2Cam2";
+            this.XYR2Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XYR2Cam2.TabIndex = 50;
+            this.XYR2Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY9Cam2
+            // 
+            this.XY9Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY9Cam2.Location = new System.Drawing.Point(712, 119);
+            this.XY9Cam2.Name = "XY9Cam2";
+            this.XY9Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XY9Cam2.TabIndex = 49;
+            this.XY9Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY3Cam2
+            // 
+            this.XY3Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY3Cam2.Location = new System.Drawing.Point(715, 22);
+            this.XY3Cam2.Name = "XY3Cam2";
+            this.XY3Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XY3Cam2.TabIndex = 48;
+            this.XY3Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY8Cam2
+            // 
+            this.XY8Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY8Cam2.Location = new System.Drawing.Point(536, 119);
+            this.XY8Cam2.Name = "XY8Cam2";
+            this.XY8Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XY8Cam2.TabIndex = 47;
+            this.XY8Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY7Cam2
+            // 
+            this.XY7Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY7Cam2.Location = new System.Drawing.Point(363, 119);
+            this.XY7Cam2.Name = "XY7Cam2";
+            this.XY7Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XY7Cam2.TabIndex = 46;
+            this.XY7Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY6Cam2
+            // 
+            this.XY6Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY6Cam2.Location = new System.Drawing.Point(366, 56);
+            this.XY6Cam2.Name = "XY6Cam2";
+            this.XY6Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XY6Cam2.TabIndex = 45;
+            this.XY6Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY5Cam2
+            // 
+            this.XY5Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY5Cam2.Location = new System.Drawing.Point(366, 22);
+            this.XY5Cam2.Name = "XY5Cam2";
+            this.XY5Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XY5Cam2.TabIndex = 44;
+            this.XY5Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY2Cam2
+            // 
+            this.XY2Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY2Cam2.Location = new System.Drawing.Point(715, 56);
+            this.XY2Cam2.Name = "XY2Cam2";
+            this.XY2Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XY2Cam2.TabIndex = 43;
+            this.XY2Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY4Cam2
+            // 
+            this.XY4Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY4Cam2.Location = new System.Drawing.Point(539, 22);
+            this.XY4Cam2.Name = "XY4Cam2";
+            this.XY4Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XY4Cam2.TabIndex = 42;
+            this.XY4Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XY1Cam2
+            // 
+            this.XY1Cam2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.XY1Cam2.Location = new System.Drawing.Point(539, 56);
+            this.XY1Cam2.Name = "XY1Cam2";
+            this.XY1Cam2.Size = new System.Drawing.Size(143, 23);
+            this.XY1Cam2.TabIndex = 41;
+            this.XY1Cam2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 673);
+            this.ClientSize = new System.Drawing.Size(978, 677);
             this.Controls.Add(this.strip);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -4924,7 +4786,6 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.grbJogControl.ResumeLayout(false);
@@ -5015,19 +4876,6 @@
             this.groupBox27.PerformLayout();
             this.groupBox26.ResumeLayout(false);
             this.groupBox26.PerformLayout();
-            this.tabPage8.ResumeLayout(false);
-            this.groupBox34.ResumeLayout(false);
-            this.groupBox34.PerformLayout();
-            this.groupBox38.ResumeLayout(false);
-            this.groupBox38.PerformLayout();
-            this.groupBox39.ResumeLayout(false);
-            this.groupBox39.PerformLayout();
-            this.groupBox32.ResumeLayout(false);
-            this.groupBox32.PerformLayout();
-            this.groupBox37.ResumeLayout(false);
-            this.groupBox37.PerformLayout();
-            this.groupBox36.ResumeLayout(false);
-            this.groupBox36.PerformLayout();
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -5038,6 +4886,10 @@
             this.groupBox9.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5064,7 +4916,6 @@
         private System.Windows.Forms.TextBox txtRMasPort3;
         private System.Windows.Forms.TextBox txtYMasPort3;
         private System.Windows.Forms.TextBox txtXMasPort3;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -5109,63 +4960,6 @@
         private System.Windows.Forms.Button button43;
         private System.Windows.Forms.Button button47;
         private System.Windows.Forms.Button button48;
-        private System.Windows.Forms.TabPage tabPage8;
-        private System.Windows.Forms.GroupBox groupBox32;
-        private System.Windows.Forms.TextBox txtXPosCurrent1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnCam1Connect;
-        private System.Windows.Forms.TextBox txtIpCamera1;
-        private System.Windows.Forms.GroupBox groupBox37;
-        private System.Windows.Forms.TextBox txtRPosCurrent1;
-        private System.Windows.Forms.TextBox txtYPosCurrent1;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.GroupBox groupBox36;
-        private System.Windows.Forms.Label XY1Cam1;
-        private System.Windows.Forms.Button btnCalPos1;
-        private System.Windows.Forms.Label XYR1Cam1;
-        private System.Windows.Forms.Label XYR2Cam1;
-        private System.Windows.Forms.Label XY9Cam1;
-        private System.Windows.Forms.Label XY3Cam1;
-        private System.Windows.Forms.Label XY8Cam1;
-        private System.Windows.Forms.Label XY7Cam1;
-        private System.Windows.Forms.Label XY6Cam1;
-        private System.Windows.Forms.Label XY5Cam1;
-        private System.Windows.Forms.Label XY2Cam1;
-        private System.Windows.Forms.Label XY4Cam1;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.TextBox txtYStep1;
-        private System.Windows.Forms.TextBox txtXStep1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox34;
-        private System.Windows.Forms.Label XYR1Cam2;
-        private System.Windows.Forms.Label XYR2Cam2;
-        private System.Windows.Forms.Label XY9Cam2;
-        private System.Windows.Forms.Label XY3Cam2;
-        private System.Windows.Forms.Label XY8Cam2;
-        private System.Windows.Forms.Label XY7Cam2;
-        private System.Windows.Forms.Label XY6Cam2;
-        private System.Windows.Forms.Label XY5Cam2;
-        private System.Windows.Forms.Label XY2Cam2;
-        private System.Windows.Forms.Label XY4Cam2;
-        private System.Windows.Forms.Label XY1Cam2;
-        private System.Windows.Forms.GroupBox groupBox38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox txtYStep2;
-        private System.Windows.Forms.Button btnCalPos2;
-        private System.Windows.Forms.TextBox txtXStep2;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox txtRPosCurrent2;
-        private System.Windows.Forms.TextBox txtYPosCurrent2;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox txtXPosCurrent2;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.GroupBox groupBox39;
-        private System.Windows.Forms.Button btnCam2Connect;
-        private System.Windows.Forms.TextBox txtIpCamera2;
-        private System.Windows.Forms.Label label44;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox grbJogControl;
         private System.Windows.Forms.GroupBox groupBox21;
@@ -5244,8 +5038,6 @@
         private System.Windows.Forms.StatusStrip strip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripProgressBar toolStripProgressBar1;
-        private System.Windows.Forms.CheckBox cbTestCam2;
-        private System.Windows.Forms.CheckBox cbTestCam1;
         private System.Windows.Forms.RadioButton rbtStep;
         private System.Windows.Forms.RadioButton rbtJog;
         private System.Windows.Forms.RadioButton rbtF;
@@ -5484,8 +5276,56 @@
         private System.Windows.Forms.TextBox txtZPointSocketZReady;
         private System.Windows.Forms.Button btnSavePointSocketZReady;
         private System.Windows.Forms.Button btnGoPointSocketZReady;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.Label XYR1Cam2;
+        private System.Windows.Forms.Label XYR2Cam2;
+        private System.Windows.Forms.Label XY9Cam2;
+        private System.Windows.Forms.Label XY3Cam2;
+        private System.Windows.Forms.Label XY8Cam2;
+        private System.Windows.Forms.Label XY7Cam2;
+        private System.Windows.Forms.Label XY6Cam2;
+        private System.Windows.Forms.Label XY5Cam2;
+        private System.Windows.Forms.Label XY2Cam2;
+        private System.Windows.Forms.Label XY4Cam2;
+        private System.Windows.Forms.Label XY1Cam2;
         private System.Windows.Forms.Button btnClearCam2;
+        private System.Windows.Forms.CheckBox cbTestCam2;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtYStep2;
+        private System.Windows.Forms.Button btnCalPos2;
+        private System.Windows.Forms.TextBox txtXStep2;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox txtRPosCurrent2;
+        private System.Windows.Forms.TextBox txtYPosCurrent2;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox txtXPosCurrent2;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label XYR1Cam1;
+        private System.Windows.Forms.Label XYR2Cam1;
+        private System.Windows.Forms.Label XY9Cam1;
+        private System.Windows.Forms.Label XY3Cam1;
+        private System.Windows.Forms.Label XY8Cam1;
+        private System.Windows.Forms.Label XY7Cam1;
+        private System.Windows.Forms.Label XY6Cam1;
+        private System.Windows.Forms.Label XY5Cam1;
+        private System.Windows.Forms.Label XY2Cam1;
+        private System.Windows.Forms.Label XY4Cam1;
+        private System.Windows.Forms.Label XY1Cam1;
         private System.Windows.Forms.Button btnClearCam1;
+        private System.Windows.Forms.CheckBox cbTestCam1;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox txtYStep1;
+        private System.Windows.Forms.Button btnCalPos1;
+        private System.Windows.Forms.TextBox txtXStep1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtRPosCurrent1;
+        private System.Windows.Forms.TextBox txtYPosCurrent1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtXPosCurrent1;
+        private System.Windows.Forms.Label label12;
     }
 }
 

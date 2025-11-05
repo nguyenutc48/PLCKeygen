@@ -388,139 +388,42 @@ namespace PLCKeygen
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string ip = cam12.Text.Trim();
-
-            var result = Cam1Connect(ip);
-
-            if (result)
-            {
-                btnConnect12.Text = "Ngắt kết nối";
-                btnConnect12.BackColor = Color.Green;
-                cam12.Enabled = false;
-                btnCam1Connect.Text = "Ngắt kết nối";
-                btnCam1Connect.BackColor = Color.Green;
-                txtIpCamera1.Enabled = false;
-            }
-            else
-            {
-                btnConnect12.Text = "Kết nối";
-                btnConnect12.BackColor = Color.LightCoral;
-                cam12.Enabled = true;
-                btnCam1Connect.Text = "Kết nối";
-                btnCam1Connect.BackColor = Color.LightCoral;
-                txtIpCamera1.Enabled = true;
-            }
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            string ip = cam34.Text.Trim();
-
-            var result = Cam2Connect(ip);
-
-            if (result)
-            {
-                btnConnect34.Text = "Ngắt kết nối";
-                btnConnect34.BackColor = Color.Green;
-                cam34.Enabled = false;
-                btnCam2Connect.Text = "Ngắt kết nối";
-                btnCam2Connect.BackColor = Color.Green;
-                txtIpCamera2.Enabled = false;
-            }
-            else
-            {
-                btnConnect34.Text = "Kết nối";
-                btnConnect34.BackColor = Color.LightCoral;
-                cam34.Enabled = true;
-                btnCam2Connect.Text = "Kết nối";
-                btnCam2Connect.BackColor = Color.LightCoral;
-                txtIpCamera2.Enabled = true;
-            }
-        }
-
-        private void btnCam1HandEyeConnect_Click(object sender, EventArgs e)
-        {
-            string ip = txtIpCamera1.Text.Trim();
-
-            var result = Cam1Connect(ip);
-
-            if (result)
-            {
-                btnConnect12.Text = "Ngắt kết nối";
-                btnConnect12.BackColor = Color.Green;
-                cam12.Enabled = false;
-                btnCam1Connect.Text = "Ngắt kết nối";
-                btnCam1Connect.BackColor = Color.Green;
-                txtIpCamera1.Enabled = false;
-            }
-            else
-            {
-                btnConnect12.Text = "Kết nối";
-                btnConnect12.BackColor = Color.LightCoral;
-                cam12.Enabled = true;
-                btnCam1Connect.Text = "Kết nối";
-                btnCam1Connect.BackColor = Color.LightCoral;
-                txtIpCamera1.Enabled = true;
-            }
-        }
-
-        private void btnCam2HandEyeConnect_Click(object sender, EventArgs e)
-        {
-            string ip = txtIpCamera2.Text.Trim();
-
-            var result = Cam2Connect(ip);
-
-            if (result)
-            {
-                btnConnect34.Text = "Ngắt kết nối";
-                btnConnect34.BackColor = Color.Green;
-                cam34.Enabled = false;
-                btnCam2Connect.Text = "Ngắt kết nối";
-                btnCam2Connect.BackColor = Color.Green;
-                txtIpCamera2.Enabled = false;
-            }
-            else
-            {
-                btnConnect34.Text = "Kết nối";
-                btnConnect34.BackColor = Color.LightCoral;
-                cam34.Enabled = true;
-                btnCam2Connect.Text = "Kết nối";
-                btnCam2Connect.BackColor = Color.LightCoral;
-                txtIpCamera2.Enabled = true;
-            }
-        }
-
-        private bool Cam1Connect(string ipCam)
-        {
             try
             {
-                string ip = ipCam.Trim();
+                string ip = cam12.Text.Trim();
                 int port = 7890;
 
                 if (cameraClient12 != null && cameraClient12.IsConnected)
                 {
                     cameraClient12.Disconnect();
-                    return false;
+                    btnConnect12.Text = "Connect";
+                    btnConnect12.BackColor = Color.LightCoral;
+                    cam12.Enabled = true;
+                    return;
                 }
 
                 cameraClient12 = new CameraTcpClient(ip, port);
 
                 if (cameraClient12.Connect())
                 {
-                    return true;
+                    MessageBox.Show("Ket noi camera thanh cong!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnConnect12.Text = "Connected";
+                    btnConnect12.BackColor = Color.LightGreen;
+                    cam12.Enabled = false;
                 }
                 else
                 {
-                    return false;
+                    MessageBox.Show("Ket noi camera that bai!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnConnect12.BackColor = Color.LightCoral;
                 }
             }
             catch (Exception ex)
             {
-                return false;
+                MessageBox.Show($"Loi: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private bool Cam2Connect(string ipCam)
+        private void button6_Click(object sender, EventArgs e)
         {
             try
             {
@@ -529,7 +432,11 @@ namespace PLCKeygen
 
                 if (cameraClient34 != null && cameraClient34.IsConnected)
                 {
-                    return true;
+                    cameraClient34.Disconnect();
+                    btnConnect34.Text = "Connect";
+                    btnConnect34.BackColor = Color.LightCoral;
+                    cam34.Enabled = true;
+                    return;
                 }
 
                 cameraClient34 = new CameraTcpClient(ip, port);
@@ -538,16 +445,20 @@ namespace PLCKeygen
 
                 if (cameraClient34.Connect())
                 {
-                    return true;
+                    MessageBox.Show("Ket noi camera thanh cong!", "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnConnect34.Text = "Connected";
+                    btnConnect34.BackColor = Color.LightGreen;
+                    cam34.Enabled = false;
                 }
                 else
                 {
-                    return false;
+                    MessageBox.Show("Ket noi camera that bai!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    btnConnect34.BackColor = Color.LightCoral;
                 }
             }
             catch (Exception ex)
             {
-                return false;
+                MessageBox.Show($"Loi: {ex.Message}", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1856,29 +1767,21 @@ namespace PLCKeygen
             {
                 btnConnect12.Text = "Disconnect";
                 btnConnect12.BackColor = Color.LightGreen;
-                btnCam1Connect.Text = "Disconnect";
-                btnCam1Connect.BackColor = Color.LightGreen;
             }
             else 
             {
                 btnConnect12.Text = "Connect";
                 btnConnect12.BackColor = Color.LightCoral;
-                btnCam1Connect.Text = "Connect";
-                btnCam1Connect.BackColor = Color.LightCoral;
             }
             if (cameraClient34 != null && cameraClient34.IsConnected)
             {
                 btnConnect34.Text = "Disconnect";
                 btnConnect34.BackColor = Color.LightGreen;
-                btnCam2Connect.Text = "Disconnect";
-                btnCam2Connect.BackColor = Color.LightGreen;
             }
             else 
             {
                 btnConnect34.Text = "Connect";
                 btnConnect34.BackColor = Color.LightCoral;
-                btnCam2Connect.Text = "Connect";
-                btnCam2Connect.BackColor = Color.LightCoral;
             }
             // Update trạng thái motion
 
