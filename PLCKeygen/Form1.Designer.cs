@@ -913,9 +913,9 @@
             // btnHomeAll
             // 
             this.btnHomeAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeAll.Location = new System.Drawing.Point(765, 529);
+            this.btnHomeAll.Location = new System.Drawing.Point(720, 529);
             this.btnHomeAll.Name = "btnHomeAll";
-            this.btnHomeAll.Size = new System.Drawing.Size(155, 43);
+            this.btnHomeAll.Size = new System.Drawing.Size(242, 43);
             this.btnHomeAll.TabIndex = 12;
             this.btnHomeAll.Text = "Origin All";
             this.btnHomeAll.UseVisualStyleBackColor = true;
@@ -925,9 +925,9 @@
             // 
             this.btnResetAll.BackColor = System.Drawing.Color.Orange;
             this.btnResetAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetAll.Location = new System.Drawing.Point(765, 577);
+            this.btnResetAll.Location = new System.Drawing.Point(720, 577);
             this.btnResetAll.Name = "btnResetAll";
-            this.btnResetAll.Size = new System.Drawing.Size(155, 43);
+            this.btnResetAll.Size = new System.Drawing.Size(242, 43);
             this.btnResetAll.TabIndex = 4;
             this.btnResetAll.Text = "Reset All";
             this.btnResetAll.UseVisualStyleBackColor = false;
@@ -1112,7 +1112,7 @@
             this.groupBox21.Size = new System.Drawing.Size(593, 283);
             this.groupBox21.TabIndex = 59;
             this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "Truc";
+            this.groupBox21.Text = "JOG TRỤC";
             // 
             // label45
             // 
@@ -4914,8 +4914,10 @@
             this.ClientSize = new System.Drawing.Size(978, 673);
             this.Controls.Add(this.strip);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LCA Handler Teaching EQS - Nguyen Van Nguyen";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
