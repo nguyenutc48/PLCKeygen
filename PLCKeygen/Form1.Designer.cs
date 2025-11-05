@@ -3473,7 +3473,7 @@
             // 
             this.btnCalPos2.BackColor = System.Drawing.Color.LimeGreen;
             this.btnCalPos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalPos2.Location = new System.Drawing.Point(108, 119);
+            this.btnCalPos2.Location = new System.Drawing.Point(162, 118);
             this.btnCalPos2.Name = "btnCalPos2";
             this.btnCalPos2.Size = new System.Drawing.Size(111, 34);
             this.btnCalPos2.TabIndex = 20;
