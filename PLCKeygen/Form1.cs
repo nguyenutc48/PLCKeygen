@@ -32,6 +32,9 @@ namespace PLCKeygen
         // Teaching mode password
         private const string TEACHING_PASSWORD = "1234";
 
+        // Teaching hotkey manager
+        private TeachingHotkeyManager hotkeyManager;
+
         public Form1()
         {
             InitializeComponent();
@@ -136,6 +139,9 @@ namespace PLCKeygen
             // Initialize Teaching groups as disabled (Jog mode is default)
             grpTeachingSocket.Enabled = false;
             grpTeachingTray.Enabled = false;
+
+            // Initialize Teaching Hotkey Manager
+            hotkeyManager = new TeachingHotkeyManager();
 
             // Wire up Speed textbox events for validation and auto-save
             txtXSpeed.KeyPress += SpeedStepTextBox_KeyPress;
@@ -1225,58 +1231,77 @@ namespace PLCKeygen
         // Keyboard shortcut handler
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            // Port selection (1-4)
-            if (e.KeyCode == Keys.F1)
+            // Check for Ctrl+H to show hotkey help (works in any mode)
+            CheckHotkeyHelpShortcut(e);
+            if (e.Handled) return;
+
+            // Check if we're in Teaching Mode and handle teaching hotkeys first
+            if (rbtTeachingMode.Checked && hotkeyManager != null)
+            {
+                var hotkey = hotkeyManager.FindHotkey(e);
+                if (hotkey != null)
+                {
+                    // Execute teaching hotkey action
+                    ExecuteTeachingHotkey(hotkey);
+                    e.Handled = true;
+                    e.SuppressKeyPress = true; // Prevent beep sound
+                    return;
+                }
+            }
+
+            // Original Jog Mode hotkeys (only when not in Teaching Mode or no teaching hotkey matched)
+            // Port selection (1-4) - Only in Jog Mode without modifiers
+            if (e.KeyCode == Keys.F1 && !e.Control && !e.Alt && !e.Shift)
             {
                 GetStepJogMode();
                 rbtPort1.Checked = true;
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.F2)
+            else if (e.KeyCode == Keys.F2 && !e.Control && !e.Alt && !e.Shift)
             {
                 GetStepJogMode();
                 rbtPort2.Checked = true;
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.F3)
+            else if (e.KeyCode == Keys.F3 && !e.Control && !e.Alt && !e.Shift)
             {
                 GetStepJogMode();
                 rbtPort3.Checked = true;
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.F4)
+            else if (e.KeyCode == Keys.F4 && !e.Control && !e.Alt && !e.Shift)
             {
                 GetStepJogMode();
                 rbtPort4.Checked = true;
                 e.Handled = true;
             }
             // Axis selection (X, Y, Z, I, O, F)
-            else if (e.KeyCode == Keys.X)
+            else if (e.KeyCode == Keys.X && !e.Control && !e.Alt)
             {
                 rbtX.Checked = true;
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.Y)
+            else if (e.KeyCode == Keys.Y && !e.Control && !e.Alt)
             {
                 rbtY.Checked = true;
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.Z)
+            else if (e.KeyCode == Keys.Z && !e.Control && !e.Alt)
             {
                 rbtZ.Checked = true;
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.I)
+            else if (e.KeyCode == Keys.I && !e.Control && !e.Alt)
             {
                 rbtRI.Checked = true;  // RI
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.O)
+            else if (e.KeyCode == Keys.O && !e.Control && !e.Alt)
             {
                 rbtRO.Checked = true;  // RO
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.F)
+            else if (e.KeyCode == Keys.F && !e.Control && !e.Alt)
             {
                 rbtF.Checked = true;  // F
                 e.Handled = true;
@@ -1886,10 +1911,10 @@ namespace PLCKeygen
                 else if (rb == rbtTeachingMode)
                 {
                     // Show password dialog when switching to Teaching mode
-                    string password = Interaction.InputBox(
+                    string password = PasswordDialog.Show(
                         "Nhập mật khẩu để vào chế độ Teaching:",
                         "Teaching Mode Password",
-                        "", -1, -1);
+                        this);
 
                     if (password == TEACHING_PASSWORD)
                     {
@@ -1897,12 +1922,17 @@ namespace PLCKeygen
                         grpTeachingSocket.Enabled = true;
                         grpTeachingTray.Enabled = true;
                     }
-                    else
+                    else if (password != null)  // User didn't cancel
                     {
                         // Incorrect password - show error and revert to Jog mode
                         MessageBox.Show("Mật khẩu không đúng!", "Error",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         rbtJogMode.Checked = true; // Revert to Jog mode
+                    }
+                    else  // User cancelled
+                    {
+                        // Revert to Jog mode without showing error
+                        rbtJogMode.Checked = true;
                     }
                 }
             }
@@ -3182,6 +3212,170 @@ namespace PLCKeygen
             string pointName = btn.Name.Replace("btnGoPoint", "");
             var addresses = GetTeachingPointAddresses(selectedPort, pointName);
             GoToTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f);
+        }
+
+        /// <summary>
+        /// Execute teaching hotkey action (Save or Go to teaching point)
+        /// </summary>
+        private void ExecuteTeachingHotkey(TeachingPointHotkey hotkey)
+        {
+            try
+            {
+                // Find the button control
+                System.Windows.Forms.Button targetButton = FindButtonByName(hotkey.ButtonName);
+
+                if (targetButton != null)
+                {
+                    // Visual feedback - briefly highlight the button
+                    FlashButton(targetButton);
+
+                    // Determine action based on button name
+                    if (hotkey.ButtonName.StartsWith("btnSavePoint"))
+                    {
+                        // Save teaching point
+                        SaveTeachingPointByName(hotkey.PointName);
+
+                        // Show brief notification
+                        ShowHotkeyNotification($"Đã lưu: {hotkey.Description}\nPhím: {hotkey.GetHotkeyString()}");
+                    }
+                    else if (hotkey.ButtonName.StartsWith("btnGoPoint"))
+                    {
+                        // Go to teaching point
+                        var addresses = GetTeachingPointAddresses(selectedPort, hotkey.PointName);
+                        GoToTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f);
+
+                        // Show brief notification
+                        ShowHotkeyNotification($"Di chuyển đến: {hotkey.Description}\nPhím: {hotkey.GetHotkeyString()}");
+                    }
+                }
+                else
+                {
+                    // Button not found - show error
+                    MessageBox.Show($"Không tìm thấy button: {hotkey.ButtonName}\nPoint: {hotkey.PointName}",
+                                  "Lỗi Hotkey",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi thực hiện hotkey:\n{ex.Message}",
+                              "Lỗi",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Find button control by name in teaching groups
+        /// </summary>
+        private System.Windows.Forms.Button FindButtonByName(string buttonName)
+        {
+            // Search in Tray group
+            System.Windows.Forms.Button button = FindButtonInControl(grpTeachingTray, buttonName);
+            if (button != null) return button;
+
+            // Search in Socket group
+            button = FindButtonInControl(grpTeachingSocket, buttonName);
+            return button;
+        }
+
+        /// <summary>
+        /// Recursively find button in control hierarchy
+        /// </summary>
+        private System.Windows.Forms.Button FindButtonInControl(Control parent, string buttonName)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl is System.Windows.Forms.Button btn && ctrl.Name == buttonName)
+                {
+                    return btn;
+                }
+
+                // Recursively search in GroupBox or other containers
+                if (ctrl.HasChildren)
+                {
+                    var result = FindButtonInControl(ctrl, buttonName);
+                    if (result != null) return result;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Flash button to provide visual feedback
+        /// </summary>
+        private async void FlashButton(System.Windows.Forms.Button button)
+        {
+            if (button == null) return;
+
+            Color originalColor = button.BackColor;
+
+            // Flash yellow briefly
+            button.BackColor = Color.Yellow;
+            await Task.Delay(150);
+
+            // For save buttons, restore to green if already saved, otherwise back to original
+            if (button.Name.StartsWith("btnSavePoint"))
+            {
+                // Keep green for save buttons (will be set by SaveTeachingPoint)
+                // The SaveTeachingPoint method already sets it to LightGreen
+            }
+            else
+            {
+                button.BackColor = originalColor;
+            }
+        }
+
+        /// <summary>
+        /// Show brief notification for hotkey action
+        /// </summary>
+        private async void ShowHotkeyNotification(string message)
+        {
+            // Create a temporary label to show notification
+            // This is a simple implementation - can be enhanced with a custom notification form
+
+            // For now, use status bar or title bar
+            string originalTitle = this.Text;
+            this.Text = $"[{message}] - {originalTitle}";
+
+            await Task.Delay(2000); // Show for 2 seconds
+
+            this.Text = originalTitle;
+        }
+
+        /// <summary>
+        /// Show Teaching Hotkey Help Form
+        /// Can be called from a button or menu item
+        /// </summary>
+        private void ShowTeachingHotkeyHelp()
+        {
+            if (hotkeyManager != null)
+            {
+                var helpForm = new TeachingHotkeyHelpForm(hotkeyManager);
+                helpForm.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Hotkey Manager chưa được khởi tạo.",
+                              "Lỗi",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Handle Ctrl+H to show hotkey help (can be called from KeyDown if needed)
+        /// </summary>
+        private void CheckHotkeyHelpShortcut(KeyEventArgs e)
+        {
+            // Ctrl+H to show help
+            if (e.Control && e.KeyCode == Keys.H)
+            {
+                ShowTeachingHotkeyHelp();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
 
         // Update teaching point textboxes with current saved values from PLC

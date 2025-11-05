@@ -77,6 +77,13 @@
     </Compile>
     <Compile Include="KeyenceHostLinkTcpClient.cs" />
     <Compile Include="PLCAddresses.Generated.cs" />
+    <Compile Include="PasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeachingPointHotkey.cs" />
+    <Compile Include="TeachingHotkeyHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -100,8 +107,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TEACHING_HOTKEYS_README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TEACHING_HOTKEYS_QUICK_REF.txt" />
     <None Include="App.config" />
     <None Include="packages.config" />
     <Content Include="ksmiletris_smile_11136.ico" />
