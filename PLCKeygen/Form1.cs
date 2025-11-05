@@ -80,12 +80,12 @@ namespace PLCKeygen
             rbtX.Checked = true;  // X axis
 
             // Wire up Go button event handlers
-            btnXGo.Click += btnAxisGo_Click;
-            btnYGo.Click += btnAxisGo_Click;
-            btnZGo.Click += btnAxisGo_Click;
-            btnRIGo.Click += btnAxisGo_Click;
-            btnROGo.Click += btnAxisGo_Click;
-            btnFGo.Click += btnAxisGo_Click;
+            //btnXGo.Click += btnAxisGo_Click;
+            //btnYGo.Click += btnAxisGo_Click;
+            //btnZGo.Click += btnAxisGo_Click;
+            //btnRIGo.Click += btnAxisGo_Click;
+            //btnROGo.Click += btnAxisGo_Click;
+            //btnFGo.Click += btnAxisGo_Click;
 
             // Wire up Org button event handlers
             btnXOrg.Click += btnAxisOrg_Click;
@@ -104,20 +104,20 @@ namespace PLCKeygen
             btnFReset.Click += btnAxisReset_Click;
 
             // Wire up Save button event handlers for Speed/Step
-            btnXSave.Click += btnAxisSave_Click;
-            btnYSave.Click += btnAxisSave_Click;
-            btnZSave.Click += btnAxisSave_Click;
-            btnRISave.Click += btnAxisSave_Click;
-            btnROSave.Click += btnAxisSave_Click;
-            btnFSave.Click += btnAxisSave_Click;
+            //btnXSave.Click += btnAxisSave_Click;
+            //btnYSave.Click += btnAxisSave_Click;
+            //btnZSave.Click += btnAxisSave_Click;
+            //btnRISave.Click += btnAxisSave_Click;
+            //btnROSave.Click += btnAxisSave_Click;
+            //btnFSave.Click += btnAxisSave_Click;
 
             // Wire up Go button event handlers for ABS movement
-            btnXGo.Click += btnAxisGo_Click;
-            btnYGo.Click += btnAxisGo_Click;
-            btnZGo.Click += btnAxisGo_Click;
-            btnRIGo.Click += btnAxisGo_Click;
-            btnROGo.Click += btnAxisGo_Click;
-            btnFGo.Click += btnAxisGo_Click;
+            //btnXGo.Click += btnAxisGo_Click;
+            //btnYGo.Click += btnAxisGo_Click;
+            //btnZGo.Click += btnAxisGo_Click;
+            //btnRIGo.Click += btnAxisGo_Click;
+            //btnROGo.Click += btnAxisGo_Click;
+            //btnFGo.Click += btnAxisGo_Click;
 
             // Wire up IO tab output button event handlers
             btnVacLoad.Click += btnOutputToggle_Click;
@@ -165,8 +165,61 @@ namespace PLCKeygen
             txtFStep.KeyPress += SpeedStepTextBox_KeyPress;
             txtFStep.KeyDown += SpeedStepTextBox_KeyDown;
 
+            txtTargetPos.KeyPress += SpeedStepTextBox_KeyPress;
+            txtTargetPos.KeyDown += TxtTargetPos_KeyDown;
+
             // Load initial Speed and Step values from PLC
             LoadAxisSpeedAndStep();
+        }
+
+        private void TxtTargetPos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+                return;
+
+            System.Windows.Forms.TextBox txt = sender as System.Windows.Forms.TextBox;
+            if (txt == null) return;
+
+            try
+            {
+                // Parse the value and multiply by 100, truncate to 2 decimal places
+                if (!double.TryParse(txt.Text, out double value))
+                {
+                    MessageBox.Show("Giá trị không hợp lệ!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Round to 2 decimal places and convert to integer (multiply by 100)
+                int plcValue = (int)(Math.Round(value, 2) * 100);
+
+                // Determine which textbox and get corresponding PLC address
+                string plcAddress = GetGoABSAddress(selectedPort,selectedAxis);
+                if (string.IsNullOrEmpty(plcAddress))
+                {
+                    MessageBox.Show("Không tìm thấy địa chỉ PLC!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Write to PLC
+                PLCKey.WriteInt32(plcAddress, plcValue);
+
+                // Update textbox with properly formatted value (2 decimals)
+                txt.Text = value.ToString("F2");
+
+                // Move focus away from textbox
+                this.ActiveControl = null;
+
+                // Show success message
+                MessageBox.Show($"Đã ghi thành công: {value:F2} (PLC value: {plcValue})", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi ghi xuống PLC: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -638,9 +691,15 @@ namespace PLCKeygen
         // Handeye functions for Camera 1 (Port 2)
         private async void btnCalPos1_Click(object sender, EventArgs e)
         {
+            
             var _dialogResult = MessageBox.Show("Bạn có chắc chắn không", "Cảnh báo",MessageBoxButtons.YesNo);
             if (_dialogResult == DialogResult.No)
             {
+                return;
+            }
+            if (cameraClient12 == null || !cameraClient12.IsConnected)
+            {
+                MessageBox.Show("Camera chưa kết nối","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
             XY1Cam1.BackColor = Color.Transparent;
@@ -667,10 +726,15 @@ namespace PLCKeygen
                 int stepX = int.Parse(txtXStep1.Text)*100;
                 int stepY = int.Parse(txtYStep1.Text)*100;
 
+                int orgXPos = 0;
+                int orgYPos = 0;
+
                 // Tinh toan 9 diem 
                 // Diem 1: Trung tam (X, Y)
                 int x1 = PLCKey.ReadInt32(PLCAddresses.Data.P2_X_Pos_Cur);
                 int y1 = PLCKey.ReadInt32(PLCAddresses.Data.P2_Y_Pos_Cur);
+                orgXPos = x1;
+                orgYPos = y1;
                 await RunABSPosXYRCam1Async(x1, y1,0);
                 XY1Cam1.Text = $"{x1/100.0f:F2},{y1/100.0f:F2}";
                 XY1Cam1.BackColor = Color.Green;
@@ -679,6 +743,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 1 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 2: (X+stepX, Y+stepY)
@@ -692,6 +758,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 2 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 3: (X+2*stepX, Y+2*stepY)
@@ -705,6 +773,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 3 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 4: (X+stepX, Y)
@@ -718,6 +788,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 4 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 5: (X, Y+stepY)
@@ -731,6 +803,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 5 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 6: (X, Y+2*stepY)
@@ -744,6 +818,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 6 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 7: (X-stepX, Y-stepY)
@@ -757,6 +833,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 7 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 8: (X+stepX, Y-stepY)
@@ -770,6 +848,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 9 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 9: (X+2*stepX, Y-stepY)
@@ -783,6 +863,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 9 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 10: (X+2*stepX, Y-stepY)
@@ -796,6 +878,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 10 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 100);
+                    return;
                 }
 
                 // Diem 11: (X+2*stepX, Y-stepY)
@@ -809,6 +893,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 10 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, -100);
+                    return;
                 }
 
                 await Task.Delay(1000);
@@ -817,6 +903,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Ket thuc handeye khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, -100);
+                    return;
                 }
 
                 await RunABSPosXYRCam1Async(x11, y11, -100);
@@ -833,9 +921,15 @@ namespace PLCKeygen
         // Handeye functions for Camera 34 (Port 4)
         private async void btnCalPos2_Click(object sender, EventArgs e)
         {
+            
             var _dialogResult = MessageBox.Show("Bạn có chắc chắn không", "Cảnh báo", MessageBoxButtons.YesNo);
             if (_dialogResult == DialogResult.No)
             {
+                return;
+            }
+            if (cameraClient34 == null || !cameraClient34.IsConnected)
+            {
+                MessageBox.Show("Camera chưa kết nối", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             XY1Cam2.BackColor = Color.Transparent;
@@ -862,10 +956,15 @@ namespace PLCKeygen
                 int stepX = int.Parse(txtXStep2.Text) * 100;
                 int stepY = int.Parse(txtYStep2.Text) * 100;
 
+                int orgXPos = 0;
+                int orgYPos = 0;
+
                 // Tinh toan 9 diem 
                 // Diem 1: Trung tam (X, Y)
                 int x1 = PLCKey.ReadInt32(PLCAddresses.Data.P4_X_Pos_Cur);
                 int y1 = PLCKey.ReadInt32(PLCAddresses.Data.P4_Y_Pos_Cur);
+                orgXPos = x1;
+                orgYPos = y1;
                 await RunABSPosXYRCam2Async(x1, y1, 0);
                 XY1Cam2.Text = $"{x1 / 100.0f:F2},{y1 / 100.0f:F2}";
                 XY1Cam2.BackColor = Color.Green;
@@ -874,6 +973,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 1 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 2: (X+stepX, Y+stepY)
@@ -887,6 +988,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 2 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 3: (X+2*stepX, Y+2*stepY)
@@ -900,6 +1003,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 3 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 4: (X+stepX, Y)
@@ -913,6 +1018,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 4 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 5: (X, Y+stepY)
@@ -926,6 +1033,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 5 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 6: (X, Y+2*stepY)
@@ -939,6 +1048,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 6 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 7: (X-stepX, Y-stepY)
@@ -952,6 +1063,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 7 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 8: (X+stepX, Y-stepY)
@@ -965,6 +1078,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 9 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 9: (X+2*stepX, Y-stepY)
@@ -978,6 +1093,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 9 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 0);
+                    return;
                 }
 
                 // Diem 10: (X+2*stepX, Y-stepY)
@@ -991,6 +1108,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 10 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, 100);
+                    return;
                 }
 
                 // Diem 11: (X+2*stepX, Y-stepY)
@@ -1004,6 +1123,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Diem 10 khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, -100);
+                    return;
                 }
 
                 await Task.Delay(1000);
@@ -1012,6 +1133,8 @@ namespace PLCKeygen
                 if (!cmd_result)
                 {
                     MessageBox.Show("Ket thuc handeye khong thanh cong!", "Loi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    await RunABSPosXYRCam2Async(orgXPos, orgYPos, -100);
+                    return;
                 }
 
                 await RunABSPosXYRCam2Async(x11, y11, -100);
@@ -1144,10 +1267,10 @@ namespace PLCKeygen
             RadioButton rb = sender as RadioButton;
             if (rb != null && rb.Checked)
             {
-                if (rb == rbtPort1) selectedPort = 1;
-                else if (rb == rbtPort2) selectedPort = 2;
-                else if (rb == rbtPort3) selectedPort = 3;
-                else if (rb == rbtPort4) selectedPort = 4;
+                if (rb == rbtPort1)      { selectedPort = 1; selectedIOPort = 1; rbtIOPort1.Checked = true; }
+                else if (rb == rbtPort2) { selectedPort = 2; selectedIOPort = 2; rbtIOPort2.Checked = true; }
+                else if (rb == rbtPort3) { selectedPort = 3; selectedIOPort = 3; rbtIOPort3.Checked = true; }
+                else if (rb == rbtPort4) { selectedPort = 4; selectedIOPort = 4; rbtIOPort4.Checked = true; }
 
                 // Update current position displays for new port
                 UpdateCurrentPositionDisplays();
@@ -1157,6 +1280,10 @@ namespace PLCKeygen
 
                 // Load Current Jog Mode
                 GetStepJogMode();
+
+                // Immediately update IO displays for new port
+                UpdateIOInputs();
+                UpdateIOOutputs();
             }
         }
 
@@ -1658,10 +1785,19 @@ namespace PLCKeygen
             RadioButton rb = sender as RadioButton;
             if (rb != null && rb.Checked)
             {
-                if (rb == rbtIOPort1) selectedIOPort = 1;
-                else if (rb == rbtIOPort2) selectedIOPort = 2;
-                else if (rb == rbtIOPort3) selectedIOPort = 3;
-                else if (rb == rbtIOPort4) selectedIOPort = 4;
+                if (rb == rbtIOPort1)      { selectedIOPort = 1; selectedPort = 1;  rbtPort1.Checked = true; }
+                else if (rb == rbtIOPort2) { selectedIOPort = 2; selectedPort = 2;  rbtPort2.Checked = true;  }
+                else if (rb == rbtIOPort3) { selectedIOPort = 3; selectedPort = 3;  rbtPort3.Checked = true;  }
+                else if (rb == rbtIOPort4) { selectedIOPort = 4; selectedPort = 4;  rbtPort4.Checked = true; }
+
+                // Update current position displays for new port
+                UpdateCurrentPositionDisplays();
+
+                // Load Speed and Step values for new port
+                LoadAxisSpeedAndStep();
+
+                // Load Current Jog Mode
+                GetStepJogMode();
 
                 // Immediately update IO displays for new port
                 UpdateIOInputs();
@@ -2069,68 +2205,68 @@ namespace PLCKeygen
         }
 
         // Save Speed and Step values to PLC when Save button is clicked
-        private void btnAxisSave_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
-            if (btn == null) return;
+        //private void btnAxisSave_Click(object sender, EventArgs e)
+        //{
+        //    System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
+        //    if (btn == null) return;
 
-            try
-            {
-                string axis = GetAxisFromSaveButton(btn);
-                if (string.IsNullOrEmpty(axis)) return;
+        //    try
+        //    {
+        //        string axis = GetAxisFromSaveButton(btn);
+        //        if (string.IsNullOrEmpty(axis)) return;
 
-                // Get the addresses for speed and step based on port and axis
-                string speedAddr = GetSpeedAddress(selectedPort, axis);
-                string stepAddr = GetStepAddress(selectedPort, axis);
+        //        // Get the addresses for speed and step based on port and axis
+        //        string speedAddr = GetSpeedAddress(selectedPort, axis);
+        //        string stepAddr = GetStepAddress(selectedPort, axis);
 
-                if (string.IsNullOrEmpty(speedAddr) || string.IsNullOrEmpty(stepAddr))
-                    return;
+        //        if (string.IsNullOrEmpty(speedAddr) || string.IsNullOrEmpty(stepAddr))
+        //            return;
 
-                // Get the textbox values
-                int speedValue = 0;
-                int stepValue = 0;
+        //        // Get the textbox values
+        //        int speedValue = 0;
+        //        int stepValue = 0;
 
-                switch (axis)
-                {
-                    case "X":
-                        int.TryParse(txtXSpeed.Text, out speedValue);
-                        int.TryParse(txtXStep.Text, out stepValue);
-                        break;
-                    case "Y":
-                        int.TryParse(txtYSpeed.Text, out speedValue);
-                        int.TryParse(txtYStep.Text, out stepValue);
-                        break;
-                    case "Z":
-                        int.TryParse(txtZSpeed.Text, out speedValue);
-                        int.TryParse(txtZStep.Text, out stepValue);
-                        break;
-                    case "RI":
-                        int.TryParse(txtRISpeed.Text, out speedValue);
-                        int.TryParse(txtRIStep.Text, out stepValue);
-                        break;
-                    case "RO":
-                        int.TryParse(txtROSpeed.Text, out speedValue);
-                        int.TryParse(txtROStep.Text, out stepValue);
-                        break;
-                    case "F":
-                        int.TryParse(txtFSpeed.Text, out speedValue);
-                        int.TryParse(txtFStep.Text, out stepValue);
-                        break;
-                }
+        //        switch (axis)
+        //        {
+        //            case "X":
+        //                int.TryParse(txtXSpeed.Text, out speedValue);
+        //                int.TryParse(txtXStep.Text, out stepValue);
+        //                break;
+        //            case "Y":
+        //                int.TryParse(txtYSpeed.Text, out speedValue);
+        //                int.TryParse(txtYStep.Text, out stepValue);
+        //                break;
+        //            case "Z":
+        //                int.TryParse(txtZSpeed.Text, out speedValue);
+        //                int.TryParse(txtZStep.Text, out stepValue);
+        //                break;
+        //            case "RI":
+        //                int.TryParse(txtRISpeed.Text, out speedValue);
+        //                int.TryParse(txtRIStep.Text, out stepValue);
+        //                break;
+        //            case "RO":
+        //                int.TryParse(txtROSpeed.Text, out speedValue);
+        //                int.TryParse(txtROStep.Text, out stepValue);
+        //                break;
+        //            case "F":
+        //                int.TryParse(txtFSpeed.Text, out speedValue);
+        //                int.TryParse(txtFStep.Text, out stepValue);
+        //                break;
+        //        }
 
-                // Write to PLC
-                PLCKey.WriteInt32(speedAddr, speedValue);
-                PLCKey.WriteInt32(stepAddr, stepValue);
+        //        // Write to PLC
+        //        PLCKey.WriteInt32(speedAddr, speedValue);
+        //        PLCKey.WriteInt32(stepAddr, stepValue);
 
-                MessageBox.Show($"Saved Speed={speedValue} and Step={stepValue} for {axis} axis",
-                    "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error saving values: {ex.Message}",
-                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        //        MessageBox.Show($"Saved Speed={speedValue} and Step={stepValue} for {axis} axis",
+        //            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"Error saving values: {ex.Message}",
+        //            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //}
 
         // Reset axis when Reset button is clicked
         private void btnAxisReset_Click(object sender, EventArgs e)
@@ -2174,43 +2310,18 @@ namespace PLCKeygen
 
             try
             {
-                string axis = GetAxisFromGoButton(btn);
-                if (string.IsNullOrEmpty(axis)) return;
-
                 // Get the target position textbox value
                 double targetPos = 0;
-                switch (axis)
-                {
-                    case "X":
-                        double.TryParse(txtXGoPos.Text, out targetPos);
-                        break;
-                    case "Y":
-                        double.TryParse(txtYGoPos.Text, out targetPos);
-                        break;
-                    case "Z":
-                        double.TryParse(txtZGoPos.Text, out targetPos);
-                        break;
-                    case "RI":
-                        double.TryParse(txtRIGoPos.Text, out targetPos);
-                        break;
-                    case "RO":
-                        double.TryParse(txtROGoPos.Text, out targetPos);
-                        break;
-                    case "F":
-                        double.TryParse(txtFGoPos.Text, out targetPos);
-                        break;
-                }
-
                 // Get PLC address for ABS position
-                string absAddr = GetABSPositionAddress(selectedPort, axis);
-                string goAddr = GetGoABSAddress(selectedPort, axis);
+                string absAddr = GetABSPositionAddress(selectedPort, selectedAxis);
+                string goAddr = GetGoABSAddress(selectedPort, selectedAxis);
 
                 if (string.IsNullOrEmpty(absAddr) || string.IsNullOrEmpty(goAddr))
                     return;
 
                 // Convert position to PLC units (x100 for XY, x10 for rotation)
                 int plcValue = 0;
-                if (axis == "X" || axis == "Y" || axis == "Z")
+                if (selectedAxis == "X" || selectedAxis == "Y" || selectedAxis == "Z")
                     plcValue = (int)(targetPos * 100);
                 else
                     plcValue = (int)(targetPos * 10);
@@ -2234,16 +2345,16 @@ namespace PLCKeygen
         }
 
         // Helper: Get axis name from Save button
-        private string GetAxisFromSaveButton(System.Windows.Forms.Button btn)
-        {
-            if (btn == btnXSave) return "X";
-            if (btn == btnYSave) return "Y";
-            if (btn == btnZSave) return "Z";
-            if (btn == btnRISave) return "RI";
-            if (btn == btnROSave) return "RO";
-            if (btn == btnFSave) return "F";
-            return null;
-        }
+        //private string GetAxisFromSaveButton(System.Windows.Forms.Button btn)
+        //{
+        //    if (btn == btnXSave) return "X";
+        //    if (btn == btnYSave) return "Y";
+        //    if (btn == btnZSave) return "Z";
+        //    if (btn == btnRISave) return "RI";
+        //    if (btn == btnROSave) return "RO";
+        //    if (btn == btnFSave) return "F";
+        //    return null;
+        //}
 
         // Helper: Get axis name from Reset button
         private string GetAxisFromResetButton(System.Windows.Forms.Button btn)
@@ -2258,16 +2369,16 @@ namespace PLCKeygen
         }
 
         // Helper: Get axis name from Go button
-        private string GetAxisFromGoButton(System.Windows.Forms.Button btn)
-        {
-            if (btn == btnXGo) return "X";
-            if (btn == btnYGo) return "Y";
-            if (btn == btnZGo) return "Z";
-            if (btn == btnRIGo) return "RI";
-            if (btn == btnROGo) return "RO";
-            if (btn == btnFGo) return "F";
-            return null;
-        }
+        //private string GetAxisFromGoButton(System.Windows.Forms.Button btn)
+        //{
+        //    if (btn == btnXGo) return "X";
+        //    if (btn == btnYGo) return "Y";
+        //    if (btn == btnZGo) return "Z";
+        //    if (btn == btnRIGo) return "RI";
+        //    if (btn == btnROGo) return "RO";
+        //    if (btn == btnFGo) return "F";
+        //    return null;
+        //}
 
         // Helper: Get Speed address based on port and axis
         private string GetSpeedAddress(int port, string axis)
