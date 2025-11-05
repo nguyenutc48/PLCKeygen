@@ -469,6 +469,8 @@
             this.txtXPointCamera = new System.Windows.Forms.TextBox();
             this.label109 = new System.Windows.Forms.Label();
             this.txtZPointSocketCameraZ = new System.Windows.Forms.TextBox();
+            this.btnClearCam1 = new System.Windows.Forms.Button();
+            this.btnClearCam2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -2222,7 +2224,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(970, 597);
+            this.tabPage2.Size = new System.Drawing.Size(970, 647);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "IO";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -3004,7 +3006,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(970, 597);
+            this.tabPage1.Size = new System.Drawing.Size(970, 647);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Master";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -3291,7 +3293,7 @@
             this.tabPage8.Controls.Add(this.groupBox32);
             this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(970, 597);
+            this.tabPage8.Size = new System.Drawing.Size(970, 647);
             this.tabPage8.TabIndex = 3;
             this.tabPage8.Text = "Handeye";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -3420,6 +3422,7 @@
             // 
             // groupBox38
             // 
+            this.groupBox38.Controls.Add(this.btnClearCam2);
             this.groupBox38.Controls.Add(this.cbTestCam2);
             this.groupBox38.Controls.Add(this.label39);
             this.groupBox38.Controls.Add(this.txtYStep2);
@@ -3468,12 +3471,14 @@
             // 
             // btnCalPos2
             // 
+            this.btnCalPos2.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnCalPos2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalPos2.Location = new System.Drawing.Point(108, 119);
             this.btnCalPos2.Name = "btnCalPos2";
-            this.btnCalPos2.Size = new System.Drawing.Size(64, 34);
+            this.btnCalPos2.Size = new System.Drawing.Size(111, 34);
             this.btnCalPos2.TabIndex = 20;
             this.btnCalPos2.Text = "BẮT ĐẦU";
-            this.btnCalPos2.UseVisualStyleBackColor = true;
+            this.btnCalPos2.UseVisualStyleBackColor = false;
             this.btnCalPos2.Click += new System.EventHandler(this.btnCalPos2_Click);
             // 
             // txtXStep2
@@ -3482,7 +3487,7 @@
             this.txtXStep2.Name = "txtXStep2";
             this.txtXStep2.Size = new System.Drawing.Size(83, 20);
             this.txtXStep2.TabIndex = 22;
-            this.txtXStep2.Text = "6";
+            this.txtXStep2.Text = "5";
             // 
             // label40
             // 
@@ -3560,7 +3565,6 @@
             this.btnCam2Connect.TabIndex = 15;
             this.btnCam2Connect.Text = "Connect";
             this.btnCam2Connect.UseVisualStyleBackColor = true;
-            this.btnCam2Connect.Click += new System.EventHandler(this.button6_Click);
             // 
             // txtIpCamera2
             // 
@@ -3703,6 +3707,7 @@
             // 
             // groupBox37
             // 
+            this.groupBox37.Controls.Add(this.btnClearCam1);
             this.groupBox37.Controls.Add(this.cbTestCam1);
             this.groupBox37.Controls.Add(this.label38);
             this.groupBox37.Controls.Add(this.txtYStep1);
@@ -3751,12 +3756,14 @@
             // 
             // btnCalPos1
             // 
-            this.btnCalPos1.Location = new System.Drawing.Point(108, 121);
+            this.btnCalPos1.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnCalPos1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalPos1.Location = new System.Drawing.Point(162, 119);
             this.btnCalPos1.Name = "btnCalPos1";
-            this.btnCalPos1.Size = new System.Drawing.Size(64, 34);
+            this.btnCalPos1.Size = new System.Drawing.Size(111, 34);
             this.btnCalPos1.TabIndex = 20;
             this.btnCalPos1.Text = "BẮT ĐẦU";
-            this.btnCalPos1.UseVisualStyleBackColor = true;
+            this.btnCalPos1.UseVisualStyleBackColor = false;
             this.btnCalPos1.Click += new System.EventHandler(this.btnCalPos1_Click);
             // 
             // txtXStep1
@@ -3843,7 +3850,6 @@
             this.btnCam1Connect.TabIndex = 15;
             this.btnCam1Connect.Text = "Connect";
             this.btnCam1Connect.UseVisualStyleBackColor = true;
-            this.btnCam1Connect.Click += new System.EventHandler(this.button5_Click);
             // 
             // txtIpCamera1
             // 
@@ -4879,6 +4885,28 @@
             this.txtZPointSocketCameraZ.Size = new System.Drawing.Size(62, 20);
             this.txtZPointSocketCameraZ.TabIndex = 117;
             // 
+            // btnClearCam1
+            // 
+            this.btnClearCam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearCam1.Location = new System.Drawing.Point(41, 119);
+            this.btnClearCam1.Name = "btnClearCam1";
+            this.btnClearCam1.Size = new System.Drawing.Size(48, 34);
+            this.btnClearCam1.TabIndex = 16;
+            this.btnClearCam1.Text = "Clear";
+            this.btnClearCam1.UseVisualStyleBackColor = true;
+            this.btnClearCam1.Click += new System.EventHandler(this.btnClearCam1_Click);
+            // 
+            // btnClearCam2
+            // 
+            this.btnClearCam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearCam2.Location = new System.Drawing.Point(41, 119);
+            this.btnClearCam2.Name = "btnClearCam2";
+            this.btnClearCam2.Size = new System.Drawing.Size(48, 34);
+            this.btnClearCam2.TabIndex = 27;
+            this.btnClearCam2.Text = "Clear";
+            this.btnClearCam2.UseVisualStyleBackColor = true;
+            this.btnClearCam2.Click += new System.EventHandler(this.btnClearCam2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -5454,6 +5482,8 @@
         private System.Windows.Forms.TextBox txtZPointSocketZReady;
         private System.Windows.Forms.Button btnSavePointSocketZReady;
         private System.Windows.Forms.Button btnGoPointSocketZReady;
+        private System.Windows.Forms.Button btnClearCam2;
+        private System.Windows.Forms.Button btnClearCam1;
     }
 }
 
