@@ -67,11 +67,13 @@
             this.cam34 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.cbbModel = new System.Windows.Forms.ComboBox();
+            this.btnModelDelete = new System.Windows.Forms.Button();
+            this.btnModelAdd = new System.Windows.Forms.Button();
             this.btnHomeAll = new System.Windows.Forms.Button();
             this.btnResetAll = new System.Windows.Forms.Button();
             this.grbJogControl = new System.Windows.Forms.GroupBox();
-            this.btnModelDelete = new System.Windows.Forms.Button();
-            this.btnModelAdd = new System.Windows.Forms.Button();
             this.rbtPort4 = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button28 = new System.Windows.Forms.Button();
@@ -80,7 +82,7 @@
             this.groupBox46 = new System.Windows.Forms.GroupBox();
             this.rbtTeachingMode = new System.Windows.Forms.RadioButton();
             this.rbtJogMode = new System.Windows.Forms.RadioButton();
-            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.grpJogPanel = new System.Windows.Forms.GroupBox();
             this.button22 = new System.Windows.Forms.Button();
             this.button23 = new System.Windows.Forms.Button();
             this.button24 = new System.Windows.Forms.Button();
@@ -461,16 +463,15 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cbbModel = new System.Windows.Forms.ComboBox();
-            this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox22.SuspendLayout();
             this.grbJogControl.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox46.SuspendLayout();
-            this.groupBox21.SuspendLayout();
+            this.grpJogPanel.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.grpTeachingSocket.SuspendLayout();
@@ -524,7 +525,6 @@
             this.groupBox27.SuspendLayout();
             this.groupBox26.SuspendLayout();
             this.strip.SuspendLayout();
-            this.groupBox22.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -888,6 +888,45 @@
             this.tabPage3.Text = "Motion";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // groupBox22
+            // 
+            this.groupBox22.Controls.Add(this.cbbModel);
+            this.groupBox22.Controls.Add(this.btnModelDelete);
+            this.groupBox22.Controls.Add(this.btnModelAdd);
+            this.groupBox22.Location = new System.Drawing.Point(721, 521);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(103, 105);
+            this.groupBox22.TabIndex = 123;
+            this.groupBox22.TabStop = false;
+            this.groupBox22.Text = "Model";
+            // 
+            // cbbModel
+            // 
+            this.cbbModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbModel.FormattingEnabled = true;
+            this.cbbModel.Location = new System.Drawing.Point(6, 15);
+            this.cbbModel.Name = "cbbModel";
+            this.cbbModel.Size = new System.Drawing.Size(91, 28);
+            this.cbbModel.TabIndex = 122;
+            // 
+            // btnModelDelete
+            // 
+            this.btnModelDelete.Location = new System.Drawing.Point(52, 52);
+            this.btnModelDelete.Name = "btnModelDelete";
+            this.btnModelDelete.Size = new System.Drawing.Size(40, 39);
+            this.btnModelDelete.TabIndex = 121;
+            this.btnModelDelete.Text = "Del";
+            this.btnModelDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnModelAdd
+            // 
+            this.btnModelAdd.Location = new System.Drawing.Point(11, 52);
+            this.btnModelAdd.Name = "btnModelAdd";
+            this.btnModelAdd.Size = new System.Drawing.Size(40, 39);
+            this.btnModelAdd.TabIndex = 121;
+            this.btnModelAdd.Text = "Add";
+            this.btnModelAdd.UseVisualStyleBackColor = true;
+            // 
             // btnHomeAll
             // 
             this.btnHomeAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -917,7 +956,7 @@
             this.grbJogControl.Controls.Add(this.groupBox4);
             this.grbJogControl.Controls.Add(this.rbtPort3);
             this.grbJogControl.Controls.Add(this.groupBox46);
-            this.grbJogControl.Controls.Add(this.groupBox21);
+            this.grbJogControl.Controls.Add(this.grpJogPanel);
             this.grbJogControl.Controls.Add(this.rbtPort2);
             this.grbJogControl.Controls.Add(this.groupBox6);
             this.grbJogControl.Controls.Add(this.rbtPort1);
@@ -927,24 +966,6 @@
             this.grbJogControl.Size = new System.Drawing.Size(706, 341);
             this.grbJogControl.TabIndex = 8;
             this.grbJogControl.TabStop = false;
-            // 
-            // btnModelDelete
-            // 
-            this.btnModelDelete.Location = new System.Drawing.Point(52, 52);
-            this.btnModelDelete.Name = "btnModelDelete";
-            this.btnModelDelete.Size = new System.Drawing.Size(40, 39);
-            this.btnModelDelete.TabIndex = 121;
-            this.btnModelDelete.Text = "Del";
-            this.btnModelDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnModelAdd
-            // 
-            this.btnModelAdd.Location = new System.Drawing.Point(11, 52);
-            this.btnModelAdd.Name = "btnModelAdd";
-            this.btnModelAdd.Size = new System.Drawing.Size(40, 39);
-            this.btnModelAdd.TabIndex = 121;
-            this.btnModelAdd.Text = "Add";
-            this.btnModelAdd.UseVisualStyleBackColor = true;
             // 
             // rbtPort4
             // 
@@ -1032,86 +1053,86 @@
             this.rbtJogMode.Text = "Jog";
             this.rbtJogMode.UseVisualStyleBackColor = true;
             // 
-            // groupBox21
+            // grpJogPanel
             // 
-            this.groupBox21.Controls.Add(this.button22);
-            this.groupBox21.Controls.Add(this.button23);
-            this.groupBox21.Controls.Add(this.button24);
-            this.groupBox21.Controls.Add(this.button25);
-            this.groupBox21.Controls.Add(this.button26);
-            this.groupBox21.Controls.Add(this.button27);
-            this.groupBox21.Controls.Add(this.button16);
-            this.groupBox21.Controls.Add(this.button17);
-            this.groupBox21.Controls.Add(this.button18);
-            this.groupBox21.Controls.Add(this.button19);
-            this.groupBox21.Controls.Add(this.button20);
-            this.groupBox21.Controls.Add(this.button21);
-            this.groupBox21.Controls.Add(this.button8);
-            this.groupBox21.Controls.Add(this.button11);
-            this.groupBox21.Controls.Add(this.button12);
-            this.groupBox21.Controls.Add(this.button13);
-            this.groupBox21.Controls.Add(this.button14);
-            this.groupBox21.Controls.Add(this.button15);
-            this.groupBox21.Controls.Add(this.label45);
-            this.groupBox21.Controls.Add(this.txtFStep);
-            this.groupBox21.Controls.Add(this.label46);
-            this.groupBox21.Controls.Add(this.txtROStep);
-            this.groupBox21.Controls.Add(this.label47);
-            this.groupBox21.Controls.Add(this.txtRIStep);
-            this.groupBox21.Controls.Add(this.label48);
-            this.groupBox21.Controls.Add(this.txtZStep);
-            this.groupBox21.Controls.Add(this.label49);
-            this.groupBox21.Controls.Add(this.txtYStep);
-            this.groupBox21.Controls.Add(this.label50);
-            this.groupBox21.Controls.Add(this.txtXStep);
-            this.groupBox21.Controls.Add(this.label11);
-            this.groupBox21.Controls.Add(this.txtFSpeed);
-            this.groupBox21.Controls.Add(this.label16);
-            this.groupBox21.Controls.Add(this.txtROSpeed);
-            this.groupBox21.Controls.Add(this.label24);
-            this.groupBox21.Controls.Add(this.txtRISpeed);
-            this.groupBox21.Controls.Add(this.label27);
-            this.groupBox21.Controls.Add(this.txtZSpeed);
-            this.groupBox21.Controls.Add(this.label36);
-            this.groupBox21.Controls.Add(this.txtYSpeed);
-            this.groupBox21.Controls.Add(this.label37);
-            this.groupBox21.Controls.Add(this.txtXSpeed);
-            this.groupBox21.Controls.Add(this.rbtF);
-            this.groupBox21.Controls.Add(this.rbtRO);
-            this.groupBox21.Controls.Add(this.rbtRI);
-            this.groupBox21.Controls.Add(this.rbtZ);
-            this.groupBox21.Controls.Add(this.rbtY);
-            this.groupBox21.Controls.Add(this.rbtX);
-            this.groupBox21.Controls.Add(this.btnFReset);
-            this.groupBox21.Controls.Add(this.btnROReset);
-            this.groupBox21.Controls.Add(this.btnRIReset);
-            this.groupBox21.Controls.Add(this.btnZReset);
-            this.groupBox21.Controls.Add(this.btnYReset);
-            this.groupBox21.Controls.Add(this.btnXReset);
-            this.groupBox21.Controls.Add(this.btnFOrg);
-            this.groupBox21.Controls.Add(this.btnROOrg);
-            this.groupBox21.Controls.Add(this.btnRIOrg);
-            this.groupBox21.Controls.Add(this.btnZOrg);
-            this.groupBox21.Controls.Add(this.btnYOrg);
-            this.groupBox21.Controls.Add(this.btnXOrg);
-            this.groupBox21.Controls.Add(this.label18);
-            this.groupBox21.Controls.Add(this.txtFCur);
-            this.groupBox21.Controls.Add(this.label29);
-            this.groupBox21.Controls.Add(this.txtROCur);
-            this.groupBox21.Controls.Add(this.label14);
-            this.groupBox21.Controls.Add(this.txtRICur);
-            this.groupBox21.Controls.Add(this.label17);
-            this.groupBox21.Controls.Add(this.txtZCur);
-            this.groupBox21.Controls.Add(this.label13);
-            this.groupBox21.Controls.Add(this.txtYCur);
-            this.groupBox21.Controls.Add(this.label15);
-            this.groupBox21.Controls.Add(this.txtXCur);
-            this.groupBox21.Location = new System.Drawing.Point(7, 52);
-            this.groupBox21.Name = "groupBox21";
-            this.groupBox21.Size = new System.Drawing.Size(593, 283);
-            this.groupBox21.TabIndex = 59;
-            this.groupBox21.TabStop = false;
-            this.groupBox21.Text = "JOG TRỤC";
+            this.grpJogPanel.Controls.Add(this.button22);
+            this.grpJogPanel.Controls.Add(this.button23);
+            this.grpJogPanel.Controls.Add(this.button24);
+            this.grpJogPanel.Controls.Add(this.button25);
+            this.grpJogPanel.Controls.Add(this.button26);
+            this.grpJogPanel.Controls.Add(this.button27);
+            this.grpJogPanel.Controls.Add(this.button16);
+            this.grpJogPanel.Controls.Add(this.button17);
+            this.grpJogPanel.Controls.Add(this.button18);
+            this.grpJogPanel.Controls.Add(this.button19);
+            this.grpJogPanel.Controls.Add(this.button20);
+            this.grpJogPanel.Controls.Add(this.button21);
+            this.grpJogPanel.Controls.Add(this.button8);
+            this.grpJogPanel.Controls.Add(this.button11);
+            this.grpJogPanel.Controls.Add(this.button12);
+            this.grpJogPanel.Controls.Add(this.button13);
+            this.grpJogPanel.Controls.Add(this.button14);
+            this.grpJogPanel.Controls.Add(this.button15);
+            this.grpJogPanel.Controls.Add(this.label45);
+            this.grpJogPanel.Controls.Add(this.txtFStep);
+            this.grpJogPanel.Controls.Add(this.label46);
+            this.grpJogPanel.Controls.Add(this.txtROStep);
+            this.grpJogPanel.Controls.Add(this.label47);
+            this.grpJogPanel.Controls.Add(this.txtRIStep);
+            this.grpJogPanel.Controls.Add(this.label48);
+            this.grpJogPanel.Controls.Add(this.txtZStep);
+            this.grpJogPanel.Controls.Add(this.label49);
+            this.grpJogPanel.Controls.Add(this.txtYStep);
+            this.grpJogPanel.Controls.Add(this.label50);
+            this.grpJogPanel.Controls.Add(this.txtXStep);
+            this.grpJogPanel.Controls.Add(this.label11);
+            this.grpJogPanel.Controls.Add(this.txtFSpeed);
+            this.grpJogPanel.Controls.Add(this.label16);
+            this.grpJogPanel.Controls.Add(this.txtROSpeed);
+            this.grpJogPanel.Controls.Add(this.label24);
+            this.grpJogPanel.Controls.Add(this.txtRISpeed);
+            this.grpJogPanel.Controls.Add(this.label27);
+            this.grpJogPanel.Controls.Add(this.txtZSpeed);
+            this.grpJogPanel.Controls.Add(this.label36);
+            this.grpJogPanel.Controls.Add(this.txtYSpeed);
+            this.grpJogPanel.Controls.Add(this.label37);
+            this.grpJogPanel.Controls.Add(this.txtXSpeed);
+            this.grpJogPanel.Controls.Add(this.rbtF);
+            this.grpJogPanel.Controls.Add(this.rbtRO);
+            this.grpJogPanel.Controls.Add(this.rbtRI);
+            this.grpJogPanel.Controls.Add(this.rbtZ);
+            this.grpJogPanel.Controls.Add(this.rbtY);
+            this.grpJogPanel.Controls.Add(this.rbtX);
+            this.grpJogPanel.Controls.Add(this.btnFReset);
+            this.grpJogPanel.Controls.Add(this.btnROReset);
+            this.grpJogPanel.Controls.Add(this.btnRIReset);
+            this.grpJogPanel.Controls.Add(this.btnZReset);
+            this.grpJogPanel.Controls.Add(this.btnYReset);
+            this.grpJogPanel.Controls.Add(this.btnXReset);
+            this.grpJogPanel.Controls.Add(this.btnFOrg);
+            this.grpJogPanel.Controls.Add(this.btnROOrg);
+            this.grpJogPanel.Controls.Add(this.btnRIOrg);
+            this.grpJogPanel.Controls.Add(this.btnZOrg);
+            this.grpJogPanel.Controls.Add(this.btnYOrg);
+            this.grpJogPanel.Controls.Add(this.btnXOrg);
+            this.grpJogPanel.Controls.Add(this.label18);
+            this.grpJogPanel.Controls.Add(this.txtFCur);
+            this.grpJogPanel.Controls.Add(this.label29);
+            this.grpJogPanel.Controls.Add(this.txtROCur);
+            this.grpJogPanel.Controls.Add(this.label14);
+            this.grpJogPanel.Controls.Add(this.txtRICur);
+            this.grpJogPanel.Controls.Add(this.label17);
+            this.grpJogPanel.Controls.Add(this.txtZCur);
+            this.grpJogPanel.Controls.Add(this.label13);
+            this.grpJogPanel.Controls.Add(this.txtYCur);
+            this.grpJogPanel.Controls.Add(this.label15);
+            this.grpJogPanel.Controls.Add(this.txtXCur);
+            this.grpJogPanel.Location = new System.Drawing.Point(7, 52);
+            this.grpJogPanel.Name = "grpJogPanel";
+            this.grpJogPanel.Size = new System.Drawing.Size(593, 283);
+            this.grpJogPanel.TabIndex = 59;
+            this.grpJogPanel.TabStop = false;
+            this.grpJogPanel.Text = "JOG TRỤC";
             // 
             // button22
             // 
@@ -4793,27 +4814,6 @@
             this.tstStatus.Size = new System.Drawing.Size(64, 17);
             this.tstStatus.Text = "Running....";
             // 
-            // cbbModel
-            // 
-            this.cbbModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbbModel.FormattingEnabled = true;
-            this.cbbModel.Location = new System.Drawing.Point(6, 15);
-            this.cbbModel.Name = "cbbModel";
-            this.cbbModel.Size = new System.Drawing.Size(91, 28);
-            this.cbbModel.TabIndex = 122;
-            // 
-            // groupBox22
-            // 
-            this.groupBox22.Controls.Add(this.cbbModel);
-            this.groupBox22.Controls.Add(this.btnModelDelete);
-            this.groupBox22.Controls.Add(this.btnModelAdd);
-            this.groupBox22.Location = new System.Drawing.Point(721, 521);
-            this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(103, 105);
-            this.groupBox22.TabIndex = 123;
-            this.groupBox22.TabStop = false;
-            this.groupBox22.Text = "Model";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4833,14 +4833,15 @@
             this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.groupBox22.ResumeLayout(false);
             this.grbJogControl.ResumeLayout(false);
             this.grbJogControl.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox46.ResumeLayout(false);
             this.groupBox46.PerformLayout();
-            this.groupBox21.ResumeLayout(false);
-            this.groupBox21.PerformLayout();
+            this.grpJogPanel.ResumeLayout(false);
+            this.grpJogPanel.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -4935,7 +4936,6 @@
             this.groupBox26.PerformLayout();
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();
-            this.groupBox22.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5008,7 +5008,7 @@
         private System.Windows.Forms.Button button48;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox grbJogControl;
-        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.GroupBox grpJogPanel;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtFCur;
         private System.Windows.Forms.Label label29;
