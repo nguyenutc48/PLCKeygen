@@ -84,24 +84,18 @@
             this.rbtTeachingMode = new System.Windows.Forms.RadioButton();
             this.rbtJogMode = new System.Windows.Forms.RadioButton();
             this.grpJogPanel = new System.Windows.Forms.GroupBox();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button23 = new System.Windows.Forms.Button();
-            this.button24 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
-            this.button26 = new System.Windows.Forms.Button();
-            this.button27 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button19 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
+            this.lampFLimitPlus = new System.Windows.Forms.Button();
+            this.lampZLimitPlus = new System.Windows.Forms.Button();
+            this.lampYLimitPlus = new System.Windows.Forms.Button();
+            this.lampXLimitPlus = new System.Windows.Forms.Button();
+            this.lampFHome = new System.Windows.Forms.Button();
+            this.lampZHome = new System.Windows.Forms.Button();
+            this.lampYHome = new System.Windows.Forms.Button();
+            this.lampXHome = new System.Windows.Forms.Button();
+            this.lampFLimitMinus = new System.Windows.Forms.Button();
+            this.lampZLimitMinus = new System.Windows.Forms.Button();
+            this.lampYLimitMinus = new System.Windows.Forms.Button();
+            this.lampXLimitMinus = new System.Windows.Forms.Button();
             this.label45 = new System.Windows.Forms.Label();
             this.txtFStep = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
@@ -474,6 +468,8 @@
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox34 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -876,6 +872,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -927,6 +924,7 @@
             // 
             // grbJogControl
             // 
+            this.grbJogControl.Controls.Add(this.groupBox34);
             this.grbJogControl.Controls.Add(this.groupBox22);
             this.grbJogControl.Controls.Add(this.rbtPort4);
             this.grbJogControl.Controls.Add(this.groupBox4);
@@ -1013,9 +1011,9 @@
             // 
             this.groupBox4.Controls.Add(this.button28);
             this.groupBox4.Controls.Add(this.txtTargetPos);
-            this.groupBox4.Location = new System.Drawing.Point(605, 136);
+            this.groupBox4.Location = new System.Drawing.Point(519, 201);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(95, 81);
+            this.groupBox4.Size = new System.Drawing.Size(181, 51);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Go Pos";
@@ -1023,7 +1021,7 @@
             // button28
             // 
             this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Location = new System.Drawing.Point(6, 45);
+            this.button28.Location = new System.Drawing.Point(94, 15);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(83, 30);
             this.button28.TabIndex = 44;
@@ -1086,24 +1084,18 @@
             // 
             // grpJogPanel
             // 
-            this.grpJogPanel.Controls.Add(this.button22);
-            this.grpJogPanel.Controls.Add(this.button23);
-            this.grpJogPanel.Controls.Add(this.button24);
-            this.grpJogPanel.Controls.Add(this.button25);
-            this.grpJogPanel.Controls.Add(this.button26);
-            this.grpJogPanel.Controls.Add(this.button27);
-            this.grpJogPanel.Controls.Add(this.button16);
-            this.grpJogPanel.Controls.Add(this.button17);
-            this.grpJogPanel.Controls.Add(this.button18);
-            this.grpJogPanel.Controls.Add(this.button19);
-            this.grpJogPanel.Controls.Add(this.button20);
-            this.grpJogPanel.Controls.Add(this.button21);
-            this.grpJogPanel.Controls.Add(this.button8);
-            this.grpJogPanel.Controls.Add(this.button11);
-            this.grpJogPanel.Controls.Add(this.button12);
-            this.grpJogPanel.Controls.Add(this.button13);
-            this.grpJogPanel.Controls.Add(this.button14);
-            this.grpJogPanel.Controls.Add(this.button15);
+            this.grpJogPanel.Controls.Add(this.lampFLimitPlus);
+            this.grpJogPanel.Controls.Add(this.lampZLimitPlus);
+            this.grpJogPanel.Controls.Add(this.lampYLimitPlus);
+            this.grpJogPanel.Controls.Add(this.lampXLimitPlus);
+            this.grpJogPanel.Controls.Add(this.lampFHome);
+            this.grpJogPanel.Controls.Add(this.lampZHome);
+            this.grpJogPanel.Controls.Add(this.lampYHome);
+            this.grpJogPanel.Controls.Add(this.lampXHome);
+            this.grpJogPanel.Controls.Add(this.lampFLimitMinus);
+            this.grpJogPanel.Controls.Add(this.lampZLimitMinus);
+            this.grpJogPanel.Controls.Add(this.lampYLimitMinus);
+            this.grpJogPanel.Controls.Add(this.lampXLimitMinus);
             this.grpJogPanel.Controls.Add(this.label45);
             this.grpJogPanel.Controls.Add(this.txtFStep);
             this.grpJogPanel.Controls.Add(this.label46);
@@ -1160,177 +1152,123 @@
             this.grpJogPanel.Controls.Add(this.txtXCur);
             this.grpJogPanel.Location = new System.Drawing.Point(7, 52);
             this.grpJogPanel.Name = "grpJogPanel";
-            this.grpJogPanel.Size = new System.Drawing.Size(593, 283);
+            this.grpJogPanel.Size = new System.Drawing.Size(506, 283);
             this.grpJogPanel.TabIndex = 59;
             this.grpJogPanel.TabStop = false;
             this.grpJogPanel.Text = "JOG TRỤC";
             // 
-            // button22
+            // lampFLimitPlus
             // 
-            this.button22.Location = new System.Drawing.Point(213, 239);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(30, 30);
-            this.button22.TabIndex = 105;
-            this.button22.Text = "L+";
-            this.button22.UseVisualStyleBackColor = true;
+            this.lampFLimitPlus.Location = new System.Drawing.Point(213, 152);
+            this.lampFLimitPlus.Name = "lampFLimitPlus";
+            this.lampFLimitPlus.Size = new System.Drawing.Size(30, 30);
+            this.lampFLimitPlus.TabIndex = 105;
+            this.lampFLimitPlus.Text = "L+";
+            this.lampFLimitPlus.UseVisualStyleBackColor = true;
             // 
-            // button23
+            // lampZLimitPlus
             // 
-            this.button23.Location = new System.Drawing.Point(213, 196);
-            this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(30, 30);
-            this.button23.TabIndex = 104;
-            this.button23.Text = "L+";
-            this.button23.UseVisualStyleBackColor = true;
+            this.lampZLimitPlus.Location = new System.Drawing.Point(213, 110);
+            this.lampZLimitPlus.Name = "lampZLimitPlus";
+            this.lampZLimitPlus.Size = new System.Drawing.Size(30, 30);
+            this.lampZLimitPlus.TabIndex = 102;
+            this.lampZLimitPlus.Text = "L+";
+            this.lampZLimitPlus.UseVisualStyleBackColor = true;
             // 
-            // button24
+            // lampYLimitPlus
             // 
-            this.button24.Location = new System.Drawing.Point(213, 153);
-            this.button24.Name = "button24";
-            this.button24.Size = new System.Drawing.Size(30, 30);
-            this.button24.TabIndex = 103;
-            this.button24.Text = "L+";
-            this.button24.UseVisualStyleBackColor = true;
+            this.lampYLimitPlus.Location = new System.Drawing.Point(213, 67);
+            this.lampYLimitPlus.Name = "lampYLimitPlus";
+            this.lampYLimitPlus.Size = new System.Drawing.Size(30, 30);
+            this.lampYLimitPlus.TabIndex = 101;
+            this.lampYLimitPlus.Text = "L+";
+            this.lampYLimitPlus.UseVisualStyleBackColor = true;
             // 
-            // button25
+            // lampXLimitPlus
             // 
-            this.button25.Location = new System.Drawing.Point(213, 110);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(30, 30);
-            this.button25.TabIndex = 102;
-            this.button25.Text = "L+";
-            this.button25.UseVisualStyleBackColor = true;
+            this.lampXLimitPlus.Location = new System.Drawing.Point(213, 24);
+            this.lampXLimitPlus.Name = "lampXLimitPlus";
+            this.lampXLimitPlus.Size = new System.Drawing.Size(30, 30);
+            this.lampXLimitPlus.TabIndex = 100;
+            this.lampXLimitPlus.Text = "L+";
+            this.lampXLimitPlus.UseVisualStyleBackColor = true;
             // 
-            // button26
+            // lampFHome
             // 
-            this.button26.Location = new System.Drawing.Point(213, 67);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(30, 30);
-            this.button26.TabIndex = 101;
-            this.button26.Text = "L+";
-            this.button26.UseVisualStyleBackColor = true;
+            this.lampFHome.Location = new System.Drawing.Point(172, 152);
+            this.lampFHome.Name = "lampFHome";
+            this.lampFHome.Size = new System.Drawing.Size(30, 30);
+            this.lampFHome.TabIndex = 99;
+            this.lampFHome.Text = "O";
+            this.lampFHome.UseVisualStyleBackColor = true;
             // 
-            // button27
+            // lampZHome
             // 
-            this.button27.Location = new System.Drawing.Point(213, 24);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(30, 30);
-            this.button27.TabIndex = 100;
-            this.button27.Text = "L+";
-            this.button27.UseVisualStyleBackColor = true;
+            this.lampZHome.Location = new System.Drawing.Point(172, 110);
+            this.lampZHome.Name = "lampZHome";
+            this.lampZHome.Size = new System.Drawing.Size(30, 30);
+            this.lampZHome.TabIndex = 96;
+            this.lampZHome.Text = "O";
+            this.lampZHome.UseVisualStyleBackColor = true;
             // 
-            // button16
+            // lampYHome
             // 
-            this.button16.Location = new System.Drawing.Point(172, 239);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(30, 30);
-            this.button16.TabIndex = 99;
-            this.button16.Text = "O";
-            this.button16.UseVisualStyleBackColor = true;
+            this.lampYHome.Location = new System.Drawing.Point(172, 67);
+            this.lampYHome.Name = "lampYHome";
+            this.lampYHome.Size = new System.Drawing.Size(30, 30);
+            this.lampYHome.TabIndex = 95;
+            this.lampYHome.Text = "O";
+            this.lampYHome.UseVisualStyleBackColor = true;
             // 
-            // button17
+            // lampXHome
             // 
-            this.button17.Location = new System.Drawing.Point(172, 196);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(30, 30);
-            this.button17.TabIndex = 98;
-            this.button17.Text = "O";
-            this.button17.UseVisualStyleBackColor = true;
+            this.lampXHome.Location = new System.Drawing.Point(172, 24);
+            this.lampXHome.Name = "lampXHome";
+            this.lampXHome.Size = new System.Drawing.Size(30, 30);
+            this.lampXHome.TabIndex = 94;
+            this.lampXHome.Text = "O";
+            this.lampXHome.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // lampFLimitMinus
             // 
-            this.button18.Location = new System.Drawing.Point(172, 153);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(30, 30);
-            this.button18.TabIndex = 97;
-            this.button18.Text = "O";
-            this.button18.UseVisualStyleBackColor = true;
+            this.lampFLimitMinus.Location = new System.Drawing.Point(131, 152);
+            this.lampFLimitMinus.Name = "lampFLimitMinus";
+            this.lampFLimitMinus.Size = new System.Drawing.Size(30, 30);
+            this.lampFLimitMinus.TabIndex = 93;
+            this.lampFLimitMinus.Text = "L-";
+            this.lampFLimitMinus.UseVisualStyleBackColor = true;
             // 
-            // button19
+            // lampZLimitMinus
             // 
-            this.button19.Location = new System.Drawing.Point(172, 110);
-            this.button19.Name = "button19";
-            this.button19.Size = new System.Drawing.Size(30, 30);
-            this.button19.TabIndex = 96;
-            this.button19.Text = "O";
-            this.button19.UseVisualStyleBackColor = true;
+            this.lampZLimitMinus.Location = new System.Drawing.Point(131, 110);
+            this.lampZLimitMinus.Name = "lampZLimitMinus";
+            this.lampZLimitMinus.Size = new System.Drawing.Size(30, 30);
+            this.lampZLimitMinus.TabIndex = 90;
+            this.lampZLimitMinus.Text = "L-";
+            this.lampZLimitMinus.UseVisualStyleBackColor = true;
             // 
-            // button20
+            // lampYLimitMinus
             // 
-            this.button20.Location = new System.Drawing.Point(172, 67);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(30, 30);
-            this.button20.TabIndex = 95;
-            this.button20.Text = "O";
-            this.button20.UseVisualStyleBackColor = true;
+            this.lampYLimitMinus.Location = new System.Drawing.Point(131, 67);
+            this.lampYLimitMinus.Name = "lampYLimitMinus";
+            this.lampYLimitMinus.Size = new System.Drawing.Size(30, 30);
+            this.lampYLimitMinus.TabIndex = 89;
+            this.lampYLimitMinus.Text = "L-";
+            this.lampYLimitMinus.UseVisualStyleBackColor = true;
             // 
-            // button21
+            // lampXLimitMinus
             // 
-            this.button21.Location = new System.Drawing.Point(172, 24);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(30, 30);
-            this.button21.TabIndex = 94;
-            this.button21.Text = "O";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(131, 239);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(30, 30);
-            this.button8.TabIndex = 93;
-            this.button8.Text = "L-";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(131, 196);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(30, 30);
-            this.button11.TabIndex = 92;
-            this.button11.Text = "L-";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Location = new System.Drawing.Point(131, 153);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(30, 30);
-            this.button12.TabIndex = 91;
-            this.button12.Text = "L-";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.Location = new System.Drawing.Point(131, 110);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(30, 30);
-            this.button13.TabIndex = 90;
-            this.button13.Text = "L-";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(131, 67);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(30, 30);
-            this.button14.TabIndex = 89;
-            this.button14.Text = "L-";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.Location = new System.Drawing.Point(131, 24);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(30, 30);
-            this.button15.TabIndex = 88;
-            this.button15.Text = "L-";
-            this.button15.UseVisualStyleBackColor = true;
+            this.lampXLimitMinus.Location = new System.Drawing.Point(131, 24);
+            this.lampXLimitMinus.Name = "lampXLimitMinus";
+            this.lampXLimitMinus.Size = new System.Drawing.Size(30, 30);
+            this.lampXLimitMinus.TabIndex = 88;
+            this.lampXLimitMinus.Text = "L-";
+            this.lampXLimitMinus.UseVisualStyleBackColor = true;
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(353, 231);
+            this.label45.Location = new System.Drawing.Point(319, 145);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(38, 13);
             this.label45.TabIndex = 87;
@@ -1339,7 +1277,7 @@
             // txtFStep
             // 
             this.txtFStep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFStep.Location = new System.Drawing.Point(358, 243);
+            this.txtFStep.Location = new System.Drawing.Point(324, 156);
             this.txtFStep.Name = "txtFStep";
             this.txtFStep.Size = new System.Drawing.Size(56, 22);
             this.txtFStep.TabIndex = 86;
@@ -1347,7 +1285,7 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(353, 188);
+            this.label46.Location = new System.Drawing.Point(319, 230);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(48, 13);
             this.label46.TabIndex = 85;
@@ -1356,7 +1294,7 @@
             // txtROStep
             // 
             this.txtROStep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtROStep.Location = new System.Drawing.Point(358, 200);
+            this.txtROStep.Location = new System.Drawing.Point(324, 242);
             this.txtROStep.Name = "txtROStep";
             this.txtROStep.Size = new System.Drawing.Size(56, 22);
             this.txtROStep.TabIndex = 84;
@@ -1364,7 +1302,7 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(353, 145);
+            this.label47.Location = new System.Drawing.Point(319, 187);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(43, 13);
             this.label47.TabIndex = 83;
@@ -1373,7 +1311,7 @@
             // txtRIStep
             // 
             this.txtRIStep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRIStep.Location = new System.Drawing.Point(358, 157);
+            this.txtRIStep.Location = new System.Drawing.Point(324, 199);
             this.txtRIStep.Name = "txtRIStep";
             this.txtRIStep.Size = new System.Drawing.Size(56, 22);
             this.txtRIStep.TabIndex = 82;
@@ -1381,7 +1319,7 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(353, 102);
+            this.label48.Location = new System.Drawing.Point(319, 102);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(39, 13);
             this.label48.TabIndex = 81;
@@ -1390,7 +1328,7 @@
             // txtZStep
             // 
             this.txtZStep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZStep.Location = new System.Drawing.Point(358, 114);
+            this.txtZStep.Location = new System.Drawing.Point(324, 114);
             this.txtZStep.Name = "txtZStep";
             this.txtZStep.Size = new System.Drawing.Size(56, 22);
             this.txtZStep.TabIndex = 80;
@@ -1398,7 +1336,7 @@
             // label49
             // 
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(353, 59);
+            this.label49.Location = new System.Drawing.Point(319, 59);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(39, 13);
             this.label49.TabIndex = 79;
@@ -1407,7 +1345,7 @@
             // txtYStep
             // 
             this.txtYStep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYStep.Location = new System.Drawing.Point(358, 71);
+            this.txtYStep.Location = new System.Drawing.Point(324, 71);
             this.txtYStep.Name = "txtYStep";
             this.txtYStep.Size = new System.Drawing.Size(56, 22);
             this.txtYStep.TabIndex = 78;
@@ -1415,7 +1353,7 @@
             // label50
             // 
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(353, 16);
+            this.label50.Location = new System.Drawing.Point(319, 16);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(39, 13);
             this.label50.TabIndex = 77;
@@ -1424,7 +1362,7 @@
             // txtXStep
             // 
             this.txtXStep.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXStep.Location = new System.Drawing.Point(358, 28);
+            this.txtXStep.Location = new System.Drawing.Point(324, 28);
             this.txtXStep.Name = "txtXStep";
             this.txtXStep.Size = new System.Drawing.Size(56, 22);
             this.txtXStep.TabIndex = 76;
@@ -1432,7 +1370,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(287, 231);
+            this.label11.Location = new System.Drawing.Point(253, 145);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 75;
@@ -1441,7 +1379,7 @@
             // txtFSpeed
             // 
             this.txtFSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFSpeed.Location = new System.Drawing.Point(293, 243);
+            this.txtFSpeed.Location = new System.Drawing.Point(259, 156);
             this.txtFSpeed.Name = "txtFSpeed";
             this.txtFSpeed.Size = new System.Drawing.Size(56, 22);
             this.txtFSpeed.TabIndex = 74;
@@ -1449,7 +1387,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(287, 188);
+            this.label16.Location = new System.Drawing.Point(253, 230);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(57, 13);
             this.label16.TabIndex = 73;
@@ -1458,7 +1396,7 @@
             // txtROSpeed
             // 
             this.txtROSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtROSpeed.Location = new System.Drawing.Point(293, 200);
+            this.txtROSpeed.Location = new System.Drawing.Point(259, 242);
             this.txtROSpeed.Name = "txtROSpeed";
             this.txtROSpeed.Size = new System.Drawing.Size(56, 22);
             this.txtROSpeed.TabIndex = 72;
@@ -1466,7 +1404,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(287, 145);
+            this.label24.Location = new System.Drawing.Point(253, 187);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(52, 13);
             this.label24.TabIndex = 71;
@@ -1475,7 +1413,7 @@
             // txtRISpeed
             // 
             this.txtRISpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRISpeed.Location = new System.Drawing.Point(293, 157);
+            this.txtRISpeed.Location = new System.Drawing.Point(259, 199);
             this.txtRISpeed.Name = "txtRISpeed";
             this.txtRISpeed.Size = new System.Drawing.Size(56, 22);
             this.txtRISpeed.TabIndex = 70;
@@ -1483,7 +1421,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(287, 102);
+            this.label27.Location = new System.Drawing.Point(253, 102);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(48, 13);
             this.label27.TabIndex = 69;
@@ -1492,7 +1430,7 @@
             // txtZSpeed
             // 
             this.txtZSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtZSpeed.Location = new System.Drawing.Point(293, 114);
+            this.txtZSpeed.Location = new System.Drawing.Point(259, 114);
             this.txtZSpeed.Name = "txtZSpeed";
             this.txtZSpeed.Size = new System.Drawing.Size(56, 22);
             this.txtZSpeed.TabIndex = 68;
@@ -1500,7 +1438,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(287, 59);
+            this.label36.Location = new System.Drawing.Point(253, 59);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(48, 13);
             this.label36.TabIndex = 67;
@@ -1509,7 +1447,7 @@
             // txtYSpeed
             // 
             this.txtYSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtYSpeed.Location = new System.Drawing.Point(293, 71);
+            this.txtYSpeed.Location = new System.Drawing.Point(259, 71);
             this.txtYSpeed.Name = "txtYSpeed";
             this.txtYSpeed.Size = new System.Drawing.Size(56, 22);
             this.txtYSpeed.TabIndex = 66;
@@ -1517,7 +1455,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(287, 16);
+            this.label37.Location = new System.Drawing.Point(253, 16);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(48, 13);
             this.label37.TabIndex = 65;
@@ -1526,7 +1464,7 @@
             // txtXSpeed
             // 
             this.txtXSpeed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtXSpeed.Location = new System.Drawing.Point(293, 28);
+            this.txtXSpeed.Location = new System.Drawing.Point(259, 28);
             this.txtXSpeed.Name = "txtXSpeed";
             this.txtXSpeed.Size = new System.Drawing.Size(56, 22);
             this.txtXSpeed.TabIndex = 64;
@@ -1535,7 +1473,7 @@
             // 
             this.rbtF.AutoSize = true;
             this.rbtF.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtF.Location = new System.Drawing.Point(8, 243);
+            this.rbtF.Location = new System.Drawing.Point(8, 156);
             this.rbtF.Name = "rbtF";
             this.rbtF.Size = new System.Drawing.Size(34, 20);
             this.rbtF.TabIndex = 63;
@@ -1546,7 +1484,7 @@
             // 
             this.rbtRO.AutoSize = true;
             this.rbtRO.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtRO.Location = new System.Drawing.Point(8, 200);
+            this.rbtRO.Location = new System.Drawing.Point(8, 242);
             this.rbtRO.Name = "rbtRO";
             this.rbtRO.Size = new System.Drawing.Size(47, 20);
             this.rbtRO.TabIndex = 62;
@@ -1557,7 +1495,7 @@
             // 
             this.rbtRI.AutoSize = true;
             this.rbtRI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtRI.Location = new System.Drawing.Point(8, 157);
+            this.rbtRI.Location = new System.Drawing.Point(8, 199);
             this.rbtRI.Name = "rbtRI";
             this.rbtRI.Size = new System.Drawing.Size(40, 20);
             this.rbtRI.TabIndex = 61;
@@ -1602,9 +1540,9 @@
             // btnFReset
             // 
             this.btnFReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFReset.Location = new System.Drawing.Point(516, 235);
+            this.btnFReset.Location = new System.Drawing.Point(452, 149);
             this.btnFReset.Name = "btnFReset";
-            this.btnFReset.Size = new System.Drawing.Size(60, 37);
+            this.btnFReset.Size = new System.Drawing.Size(50, 37);
             this.btnFReset.TabIndex = 58;
             this.btnFReset.Text = "Reset";
             this.btnFReset.UseVisualStyleBackColor = true;
@@ -1612,9 +1550,9 @@
             // btnROReset
             // 
             this.btnROReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnROReset.Location = new System.Drawing.Point(516, 192);
+            this.btnROReset.Location = new System.Drawing.Point(452, 234);
             this.btnROReset.Name = "btnROReset";
-            this.btnROReset.Size = new System.Drawing.Size(60, 37);
+            this.btnROReset.Size = new System.Drawing.Size(50, 37);
             this.btnROReset.TabIndex = 57;
             this.btnROReset.Text = "Reset";
             this.btnROReset.UseVisualStyleBackColor = true;
@@ -1622,9 +1560,9 @@
             // btnRIReset
             // 
             this.btnRIReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRIReset.Location = new System.Drawing.Point(516, 149);
+            this.btnRIReset.Location = new System.Drawing.Point(452, 190);
             this.btnRIReset.Name = "btnRIReset";
-            this.btnRIReset.Size = new System.Drawing.Size(60, 37);
+            this.btnRIReset.Size = new System.Drawing.Size(50, 37);
             this.btnRIReset.TabIndex = 56;
             this.btnRIReset.Text = "Reset";
             this.btnRIReset.UseVisualStyleBackColor = true;
@@ -1632,9 +1570,9 @@
             // btnZReset
             // 
             this.btnZReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZReset.Location = new System.Drawing.Point(516, 106);
+            this.btnZReset.Location = new System.Drawing.Point(452, 106);
             this.btnZReset.Name = "btnZReset";
-            this.btnZReset.Size = new System.Drawing.Size(60, 37);
+            this.btnZReset.Size = new System.Drawing.Size(50, 37);
             this.btnZReset.TabIndex = 55;
             this.btnZReset.Text = "Reset";
             this.btnZReset.UseVisualStyleBackColor = true;
@@ -1642,9 +1580,9 @@
             // btnYReset
             // 
             this.btnYReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYReset.Location = new System.Drawing.Point(516, 63);
+            this.btnYReset.Location = new System.Drawing.Point(452, 63);
             this.btnYReset.Name = "btnYReset";
-            this.btnYReset.Size = new System.Drawing.Size(60, 37);
+            this.btnYReset.Size = new System.Drawing.Size(50, 37);
             this.btnYReset.TabIndex = 54;
             this.btnYReset.Text = "Reset";
             this.btnYReset.UseVisualStyleBackColor = true;
@@ -1652,9 +1590,9 @@
             // btnXReset
             // 
             this.btnXReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXReset.Location = new System.Drawing.Point(516, 20);
+            this.btnXReset.Location = new System.Drawing.Point(452, 20);
             this.btnXReset.Name = "btnXReset";
-            this.btnXReset.Size = new System.Drawing.Size(60, 37);
+            this.btnXReset.Size = new System.Drawing.Size(50, 37);
             this.btnXReset.TabIndex = 53;
             this.btnXReset.Text = "Reset";
             this.btnXReset.UseVisualStyleBackColor = true;
@@ -1662,9 +1600,9 @@
             // btnFOrg
             // 
             this.btnFOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFOrg.Location = new System.Drawing.Point(451, 235);
+            this.btnFOrg.Location = new System.Drawing.Point(391, 149);
             this.btnFOrg.Name = "btnFOrg";
-            this.btnFOrg.Size = new System.Drawing.Size(60, 37);
+            this.btnFOrg.Size = new System.Drawing.Size(50, 37);
             this.btnFOrg.TabIndex = 52;
             this.btnFOrg.Text = "Home";
             this.btnFOrg.UseVisualStyleBackColor = true;
@@ -1672,9 +1610,9 @@
             // btnROOrg
             // 
             this.btnROOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnROOrg.Location = new System.Drawing.Point(451, 192);
+            this.btnROOrg.Location = new System.Drawing.Point(391, 234);
             this.btnROOrg.Name = "btnROOrg";
-            this.btnROOrg.Size = new System.Drawing.Size(60, 37);
+            this.btnROOrg.Size = new System.Drawing.Size(50, 37);
             this.btnROOrg.TabIndex = 51;
             this.btnROOrg.Text = "Home";
             this.btnROOrg.UseVisualStyleBackColor = true;
@@ -1682,9 +1620,9 @@
             // btnRIOrg
             // 
             this.btnRIOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRIOrg.Location = new System.Drawing.Point(451, 149);
+            this.btnRIOrg.Location = new System.Drawing.Point(391, 190);
             this.btnRIOrg.Name = "btnRIOrg";
-            this.btnRIOrg.Size = new System.Drawing.Size(60, 37);
+            this.btnRIOrg.Size = new System.Drawing.Size(50, 37);
             this.btnRIOrg.TabIndex = 50;
             this.btnRIOrg.Text = "Home";
             this.btnRIOrg.UseVisualStyleBackColor = true;
@@ -1692,9 +1630,9 @@
             // btnZOrg
             // 
             this.btnZOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnZOrg.Location = new System.Drawing.Point(451, 106);
+            this.btnZOrg.Location = new System.Drawing.Point(391, 106);
             this.btnZOrg.Name = "btnZOrg";
-            this.btnZOrg.Size = new System.Drawing.Size(60, 37);
+            this.btnZOrg.Size = new System.Drawing.Size(50, 37);
             this.btnZOrg.TabIndex = 49;
             this.btnZOrg.Text = "Home";
             this.btnZOrg.UseVisualStyleBackColor = true;
@@ -1702,9 +1640,9 @@
             // btnYOrg
             // 
             this.btnYOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnYOrg.Location = new System.Drawing.Point(451, 63);
+            this.btnYOrg.Location = new System.Drawing.Point(391, 63);
             this.btnYOrg.Name = "btnYOrg";
-            this.btnYOrg.Size = new System.Drawing.Size(60, 37);
+            this.btnYOrg.Size = new System.Drawing.Size(50, 37);
             this.btnYOrg.TabIndex = 48;
             this.btnYOrg.Text = "Home";
             this.btnYOrg.UseVisualStyleBackColor = true;
@@ -1712,9 +1650,9 @@
             // btnXOrg
             // 
             this.btnXOrg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXOrg.Location = new System.Drawing.Point(451, 20);
+            this.btnXOrg.Location = new System.Drawing.Point(391, 20);
             this.btnXOrg.Name = "btnXOrg";
-            this.btnXOrg.Size = new System.Drawing.Size(60, 37);
+            this.btnXOrg.Size = new System.Drawing.Size(50, 37);
             this.btnXOrg.TabIndex = 47;
             this.btnXOrg.Text = "Home";
             this.btnXOrg.UseVisualStyleBackColor = true;
@@ -1722,7 +1660,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(53, 231);
+            this.label18.Location = new System.Drawing.Point(53, 145);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(53, 13);
             this.label18.TabIndex = 27;
@@ -1731,7 +1669,7 @@
             // txtFCur
             // 
             this.txtFCur.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFCur.Location = new System.Drawing.Point(59, 243);
+            this.txtFCur.Location = new System.Drawing.Point(59, 156);
             this.txtFCur.Name = "txtFCur";
             this.txtFCur.ReadOnly = true;
             this.txtFCur.Size = new System.Drawing.Size(59, 22);
@@ -1740,7 +1678,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(53, 188);
+            this.label29.Location = new System.Drawing.Point(53, 230);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(63, 13);
             this.label29.TabIndex = 24;
@@ -1749,7 +1687,7 @@
             // txtROCur
             // 
             this.txtROCur.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtROCur.Location = new System.Drawing.Point(59, 200);
+            this.txtROCur.Location = new System.Drawing.Point(59, 242);
             this.txtROCur.Name = "txtROCur";
             this.txtROCur.ReadOnly = true;
             this.txtROCur.Size = new System.Drawing.Size(59, 22);
@@ -1758,7 +1696,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(53, 145);
+            this.label14.Location = new System.Drawing.Point(53, 186);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 13);
             this.label14.TabIndex = 21;
@@ -1767,7 +1705,7 @@
             // txtRICur
             // 
             this.txtRICur.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRICur.Location = new System.Drawing.Point(59, 157);
+            this.txtRICur.Location = new System.Drawing.Point(59, 199);
             this.txtRICur.Name = "txtRICur";
             this.txtRICur.ReadOnly = true;
             this.txtRICur.Size = new System.Drawing.Size(59, 22);
@@ -1843,9 +1781,9 @@
             this.groupBox6.Controls.Add(this.btnJog_Minus);
             this.groupBox6.Controls.Add(this.btnJog_Plus);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(605, 224);
+            this.groupBox6.Location = new System.Drawing.Point(519, 253);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(95, 111);
+            this.groupBox6.Size = new System.Drawing.Size(181, 82);
             this.groupBox6.TabIndex = 12;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Jog Control";
@@ -1853,9 +1791,9 @@
             // btnJog_Minus
             // 
             this.btnJog_Minus.Font = new System.Drawing.Font("Britannic Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJog_Minus.Location = new System.Drawing.Point(6, 65);
+            this.btnJog_Minus.Location = new System.Drawing.Point(6, 20);
             this.btnJog_Minus.Name = "btnJog_Minus";
-            this.btnJog_Minus.Size = new System.Drawing.Size(83, 41);
+            this.btnJog_Minus.Size = new System.Drawing.Size(83, 52);
             this.btnJog_Minus.TabIndex = 3;
             this.btnJog_Minus.Text = "-";
             this.btnJog_Minus.UseVisualStyleBackColor = true;
@@ -1865,9 +1803,9 @@
             // btnJog_Plus
             // 
             this.btnJog_Plus.Font = new System.Drawing.Font("Britannic Bold", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnJog_Plus.Location = new System.Drawing.Point(6, 18);
+            this.btnJog_Plus.Location = new System.Drawing.Point(92, 20);
             this.btnJog_Plus.Name = "btnJog_Plus";
-            this.btnJog_Plus.Size = new System.Drawing.Size(83, 41);
+            this.btnJog_Plus.Size = new System.Drawing.Size(83, 52);
             this.btnJog_Plus.TabIndex = 2;
             this.btnJog_Plus.Text = "+";
             this.btnJog_Plus.UseVisualStyleBackColor = true;
@@ -1893,9 +1831,9 @@
             // 
             this.groupBox5.Controls.Add(this.rbtStep);
             this.groupBox5.Controls.Add(this.rbtJog);
-            this.groupBox5.Location = new System.Drawing.Point(605, 52);
+            this.groupBox5.Location = new System.Drawing.Point(519, 140);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(95, 78);
+            this.groupBox5.Size = new System.Drawing.Size(181, 55);
             this.groupBox5.TabIndex = 11;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Jog mode";
@@ -1904,7 +1842,7 @@
             // 
             this.rbtStep.AutoSize = true;
             this.rbtStep.Font = new System.Drawing.Font("Britannic Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtStep.Location = new System.Drawing.Point(17, 47);
+            this.rbtStep.Location = new System.Drawing.Point(105, 22);
             this.rbtStep.Name = "rbtStep";
             this.rbtStep.Size = new System.Drawing.Size(54, 19);
             this.rbtStep.TabIndex = 5;
@@ -3302,7 +3240,7 @@
             this.tabPage2.Controls.Add(this.rbtIOPort1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(970, 651);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "IO";
@@ -4132,7 +4070,7 @@
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(970, 651);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Camera";
@@ -4919,9 +4857,9 @@
             // groupBox32
             // 
             this.groupBox32.Location = new System.Drawing.Point(5, 14);
-            this.groupBox32.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox32.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox32.Name = "groupBox32";
-            this.groupBox32.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox32.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox32.Size = new System.Drawing.Size(133, 65);
             this.groupBox32.TabIndex = 0;
             this.groupBox32.TabStop = false;
@@ -4950,6 +4888,24 @@
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(89, 18);
             this.toolStripStatusLabel2.Text = "PLC Connected";
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(970, 651);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Control";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox34
+            // 
+            this.groupBox34.Location = new System.Drawing.Point(519, 55);
+            this.groupBox34.Name = "groupBox34";
+            this.groupBox34.Size = new System.Drawing.Size(181, 84);
+            this.groupBox34.TabIndex = 124;
+            this.groupBox34.TabStop = false;
+            this.groupBox34.Text = "Setting";
             // 
             // Form1
             // 
@@ -5354,24 +5310,18 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button23;
-        private System.Windows.Forms.Button button24;
-        private System.Windows.Forms.Button button25;
-        private System.Windows.Forms.Button button26;
-        private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button19;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button lampFLimitPlus;
+        private System.Windows.Forms.Button lampZLimitPlus;
+        private System.Windows.Forms.Button lampYLimitPlus;
+        private System.Windows.Forms.Button lampXLimitPlus;
+        private System.Windows.Forms.Button lampFHome;
+        private System.Windows.Forms.Button lampZHome;
+        private System.Windows.Forms.Button lampYHome;
+        private System.Windows.Forms.Button lampXHome;
+        private System.Windows.Forms.Button lampFLimitMinus;
+        private System.Windows.Forms.Button lampZLimitMinus;
+        private System.Windows.Forms.Button lampYLimitMinus;
+        private System.Windows.Forms.Button lampXLimitMinus;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.TextBox txtTargetPos;
@@ -5529,6 +5479,8 @@
         private System.Windows.Forms.Button btnGoPointSocketZReadyLoad;
         private System.Windows.Forms.GroupBox groupBox32;
         private System.Windows.Forms.Button btnModelLoad;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.GroupBox groupBox34;
     }
 }
 
