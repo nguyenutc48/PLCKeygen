@@ -71,6 +71,7 @@
             this.btnResetAll = new System.Windows.Forms.Button();
             this.grbJogControl = new System.Windows.Forms.GroupBox();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.btnModelLoad = new System.Windows.Forms.Button();
             this.cbbModel = new System.Windows.Forms.ComboBox();
             this.btnModelDelete = new System.Windows.Forms.Button();
             this.btnModelAdd = new System.Windows.Forms.Button();
@@ -468,14 +469,13 @@
             this.txtXCurMasPort2 = new System.Windows.Forms.Label();
             this.btnSetMasP2 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox32 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.groupBox32 = new System.Windows.Forms.GroupBox();
-            this.btnModelLoad = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1002,11 +1002,22 @@
             this.groupBox22.TabStop = false;
             this.groupBox22.Text = "Model";
             // 
+            // btnModelLoad
+            // 
+            this.btnModelLoad.Location = new System.Drawing.Point(110, 18);
+            this.btnModelLoad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnModelLoad.Name = "btnModelLoad";
+            this.btnModelLoad.Size = new System.Drawing.Size(67, 43);
+            this.btnModelLoad.TabIndex = 123;
+            this.btnModelLoad.Text = "Load";
+            this.btnModelLoad.UseVisualStyleBackColor = true;
+            this.btnModelLoad.Click += new System.EventHandler(this.btnModelLoad_Click);
+            // 
             // cbbModel
             // 
             this.cbbModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbbModel.FormattingEnabled = true;
-            this.cbbModel.Location = new System.Drawing.Point(5, 23);
+            this.cbbModel.Location = new System.Drawing.Point(3, 23);
             this.cbbModel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbbModel.Name = "cbbModel";
             this.cbbModel.Size = new System.Drawing.Size(106, 33);
@@ -1014,9 +1025,9 @@
             // 
             // btnModelDelete
             // 
-            this.btnModelDelete.BackColor = System.Drawing.Color.Red;
-            this.btnModelDelete.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnModelDelete.Location = new System.Drawing.Point(220, 18);
+            this.btnModelDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnModelDelete.ForeColor = System.Drawing.Color.Red;
+            this.btnModelDelete.Location = new System.Drawing.Point(222, 18);
             this.btnModelDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModelDelete.Name = "btnModelDelete";
             this.btnModelDelete.Size = new System.Drawing.Size(47, 43);
@@ -1028,7 +1039,7 @@
             // btnModelAdd
             // 
             this.btnModelAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModelAdd.Location = new System.Drawing.Point(172, 18);
+            this.btnModelAdd.Location = new System.Drawing.Point(176, 18);
             this.btnModelAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnModelAdd.Name = "btnModelAdd";
             this.btnModelAdd.Size = new System.Drawing.Size(47, 43);
@@ -5404,6 +5415,15 @@
             this.tabPage4.Text = "Data";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // groupBox32
+            // 
+            this.groupBox32.Location = new System.Drawing.Point(8, 22);
+            this.groupBox32.Name = "groupBox32";
+            this.groupBox32.Size = new System.Drawing.Size(200, 100);
+            this.groupBox32.TabIndex = 0;
+            this.groupBox32.TabStop = false;
+            this.groupBox32.Text = "groupBox32";
+            // 
             // strip
             // 
             this.strip.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -5442,26 +5462,6 @@
             this.tstStatus.Name = "tstStatus";
             this.tstStatus.Size = new System.Drawing.Size(94, 25);
             this.tstStatus.Text = "Running....";
-            // 
-            // groupBox32
-            // 
-            this.groupBox32.Location = new System.Drawing.Point(8, 22);
-            this.groupBox32.Name = "groupBox32";
-            this.groupBox32.Size = new System.Drawing.Size(200, 100);
-            this.groupBox32.TabIndex = 0;
-            this.groupBox32.TabStop = false;
-            this.groupBox32.Text = "groupBox32";
-            // 
-            // btnModelLoad
-            //
-            this.btnModelLoad.Location = new System.Drawing.Point(114, 18);
-            this.btnModelLoad.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnModelLoad.Name = "btnModelLoad";
-            this.btnModelLoad.Size = new System.Drawing.Size(57, 43);
-            this.btnModelLoad.TabIndex = 123;
-            this.btnModelLoad.Text = "Load";
-            this.btnModelLoad.UseVisualStyleBackColor = true;
-            this.btnModelLoad.Click += new System.EventHandler(this.btnModelLoad_Click);
             // 
             // Form1
             // 
