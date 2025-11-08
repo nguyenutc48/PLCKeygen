@@ -53,6 +53,7 @@ namespace PLCKeygen
 
             PLCKey.Open();
             PLCKey.StartCommunication();
+            //PLCKey.PropertyChanged += ConnectionStatusChanged;
 
             // Setup keyboard shortcuts
             this.KeyPreview = true;
@@ -153,6 +154,9 @@ namespace PLCKeygen
             // Initialize Model Manager
             modelManager = new ModelManager();
 
+            // Wire up Model ComboBox event handler
+            cbbModel.SelectedIndexChanged += cbbModel_SelectedIndexChanged;
+
             // Wire up Speed textbox events for validation and auto-save
             txtXSpeed.KeyPress += SpeedStepTextBox_KeyPress;
             txtXSpeed.KeyDown += SpeedStepTextBox_KeyDown;
@@ -223,6 +227,10 @@ namespace PLCKeygen
             btnGoPointSocketZUnload.Click += btnGoPoint_Click;
             btnSavePointSocketZReady.Click += btnSavePoint_Click;
             btnGoPointSocketZReady.Click += btnGoPoint_Click;
+            btnSavePointSocketZReadyLoad.Click += btnSavePoint_Click;
+            btnGoPointSocketZReadyLoad.Click += btnGoPoint_Click;
+            btnSavePointSocketZReadyUnload.Click += btnSavePoint_Click;
+            btnGoPointSocketZReadyUnload.Click += btnGoPoint_Click;
             btnSavePointSocketFOpened.Click += btnSavePoint_Click;
             btnGoPointSocketFOpened.Click += btnGoPoint_Click;
             btnSavePointSocketFClosed.Click += btnSavePoint_Click;
@@ -236,6 +244,11 @@ namespace PLCKeygen
 
             // Load initial Speed and Step values from PLC
             LoadAxisSpeedAndStep();
+        }
+
+        private void ConnectionStatusChanged(object sender, PropertyChangedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void TxtTargetPos_KeyDown(object sender, KeyEventArgs e)
@@ -421,6 +434,15 @@ namespace PLCKeygen
         {
             LoadSelectedRadioPort();
             LoadIORadioPort();
+
+            // Load available models into ComboBox
+            RefreshModelComboBox();
+
+            // Hide model management buttons initially (Jog mode is default)
+            btnModelAdd.Visible = false;
+            btnModelDelete.Visible = false;
+            btnModelLoad.Visible = false;
+
             toolStripStatusLabel2.ToolTipText = "PLC Connected";
             toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
             txtXMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_X_Master) / 100.0f).ToString();
@@ -1408,10 +1430,37 @@ namespace PLCKeygen
             RadioButton rb = sender as RadioButton;
             if (rb != null && rb.Checked)
             {
-                if (rb == rbtPort1)      { selectedPort = 1; selectedIOPort = 1; rbtIOPort1.Checked = true; }
-                else if (rb == rbtPort2) { selectedPort = 2; selectedIOPort = 2; rbtIOPort2.Checked = true; }
-                else if (rb == rbtPort3) { selectedPort = 3; selectedIOPort = 3; rbtIOPort3.Checked = true; }
-                else if (rb == rbtPort4) { selectedPort = 4; selectedIOPort = 4; rbtIOPort4.Checked = true; }
+                rbtJogMode.Checked = true;
+                if (rb == rbtPort1)      { selectedPort = 1; selectedIOPort = 1; rbtIOPort1.Checked = true; rbtIOPort1.ForeColor = Color.Red; rbtIOPort2.ForeColor = Color.Black; rbtIOPort3.ForeColor = Color.Black; rbtIOPort4.ForeColor = Color.Black; }
+                else if (rb == rbtPort2) { selectedPort = 2; selectedIOPort = 2; rbtIOPort2.Checked = true; rbtIOPort2.ForeColor = Color.Red; rbtIOPort1.ForeColor = Color.Black; rbtIOPort3.ForeColor = Color.Black; rbtIOPort4.ForeColor = Color.Black;}
+                else if (rb == rbtPort3) { selectedPort = 3; selectedIOPort = 3; rbtIOPort3.Checked = true; rbtIOPort3.ForeColor = Color.Red; rbtIOPort2.ForeColor = Color.Black; rbtIOPort1.ForeColor = Color.Black; rbtIOPort4.ForeColor = Color.Black;}
+                else if (rb == rbtPort4) { selectedPort = 4; selectedIOPort = 4; rbtIOPort4.Checked = true; rbtIOPort4.ForeColor = Color.Red; rbtIOPort2.ForeColor = Color.Black; rbtIOPort3.ForeColor = Color.Black; rbtIOPort1.ForeColor = Color.Black; }
+
+                // Update current position displays for new port
+                UpdateCurrentPositionDisplays();
+
+                // Load Speed and Step values for new port
+                LoadAxisSpeedAndStep();
+
+                // Load Current Jog Mode
+                GetStepJogMode();
+
+                // Immediately update IO displays for new port
+                UpdateIOInputs();
+                UpdateIOOutputs();
+            }
+        }
+
+        private void IOPortRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                rbtJogMode.Checked = true;
+                if (rb == rbtIOPort1) { selectedIOPort = 1; selectedPort = 1;      rbtPort1.Checked = true; rbtPort1.ForeColor = Color.Red; rbtPort2.ForeColor = Color.Black; rbtPort3.ForeColor = Color.Black; rbtPort4.ForeColor = Color.Black; }
+                else if (rb == rbtIOPort2) { selectedIOPort = 2; selectedPort = 2; rbtPort2.Checked = true; rbtPort2.ForeColor = Color.Red; rbtPort1.ForeColor = Color.Black; rbtPort3.ForeColor = Color.Black; rbtPort4.ForeColor = Color.Black;}
+                else if (rb == rbtIOPort3) { selectedIOPort = 3; selectedPort = 3; rbtPort3.Checked = true; rbtPort3.ForeColor = Color.Red; rbtPort2.ForeColor = Color.Black; rbtPort1.ForeColor = Color.Black; rbtPort4.ForeColor = Color.Black;}
+                else if (rb == rbtIOPort4) { selectedIOPort = 4; selectedPort = 4; rbtPort4.Checked = true; rbtPort4.ForeColor = Color.Red; rbtPort2.ForeColor = Color.Black; rbtPort3.ForeColor = Color.Black; rbtPort1.ForeColor = Color.Black; }
 
                 // Update current position displays for new port
                 UpdateCurrentPositionDisplays();
@@ -1913,30 +1962,7 @@ namespace PLCKeygen
         #region IO Tab - Input/Output Status Update
 
         // IO Port radio button selection changed
-        private void IOPortRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton rb = sender as RadioButton;
-            if (rb != null && rb.Checked)
-            {
-                if (rb == rbtIOPort1)      { selectedIOPort = 1; selectedPort = 1;  rbtPort1.Checked = true; }
-                else if (rb == rbtIOPort2) { selectedIOPort = 2; selectedPort = 2;  rbtPort2.Checked = true;  }
-                else if (rb == rbtIOPort3) { selectedIOPort = 3; selectedPort = 3;  rbtPort3.Checked = true;  }
-                else if (rb == rbtIOPort4) { selectedIOPort = 4; selectedPort = 4;  rbtPort4.Checked = true; }
-
-                // Update current position displays for new port
-                UpdateCurrentPositionDisplays();
-
-                // Load Speed and Step values for new port
-                LoadAxisSpeedAndStep();
-
-                // Load Current Jog Mode
-                GetStepJogMode();
-
-                // Immediately update IO displays for new port
-                UpdateIOInputs();
-                UpdateIOOutputs();
-            }
-        }
+       
 
         // Handle Teaching mode radio button changes with password protection
         private void TeachingModeRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -1949,6 +1975,11 @@ namespace PLCKeygen
                     // Disable teaching groups when switching to Jog mode
                     grpTeachingSocket.Enabled = false;
                     grpTeachingTray.Enabled = false;
+
+                    // Hide model management buttons when switching to Jog mode
+                    btnModelAdd.Visible = false;
+                    btnModelDelete.Visible = false;
+                    btnModelLoad.Visible = false;
 
                     // Reset all save button colors when switching to Jog mode
                     ResetTeachingSaveButtonColors();
@@ -1966,6 +1997,11 @@ namespace PLCKeygen
                         // Correct password - enable teaching groups
                         grpTeachingSocket.Enabled = true;
                         grpTeachingTray.Enabled = true;
+
+                        // Show model management buttons when in Teaching mode
+                        btnModelAdd.Visible = true;
+                        btnModelDelete.Visible = true;
+                        btnModelLoad.Visible = true;
                     }
                     else if (password != null)  // User didn't cancel
                     {
@@ -2993,6 +3029,10 @@ namespace PLCKeygen
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZUnload, null);
                         case "SocketZReady":
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZReady, null);
+                        case "SocketZReadyLoad":
+                            return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZReadyLoad, null);
+                        case "SocketZReadyUnload":
+                            return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZReadyUnload, null);
                         case "SocketFOpened":
                             return (null, null, null, PLCAddresses.Data.P1_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
@@ -3038,6 +3078,10 @@ namespace PLCKeygen
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZUnload, null);
                         case "SocketZReady":
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZReady, null);
+                        case "SocketZReadyLoad":
+                            return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZReadyLoad, null);
+                        case "SocketZReadyUnload":
+                            return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZReadyUnload, null);
                         case "SocketFOpened":
                             return (null, null, null, PLCAddresses.Data.P2_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
@@ -3083,6 +3127,10 @@ namespace PLCKeygen
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZUnload, null);
                         case "SocketZReady":
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZReady, null);
+                        case "SocketZReadyLoad":
+                            return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZReadyLoad, null);
+                        case "SocketZReadyUnload":
+                            return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZReadyUnload, null);
                         case "SocketFOpened":
                             return (null, null, null, PLCAddresses.Data.P3_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
@@ -3128,6 +3176,10 @@ namespace PLCKeygen
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZUnload, null);
                         case "SocketZReady":
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZReady, null);
+                        case "SocketZReadyLoad":
+                            return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZReadyLoad, null);
+                        case "SocketZReadyUnload":
+                            return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZReadyUnload, null);
                         case "SocketFOpened":
                             return (null, null, null, PLCAddresses.Data.P4_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
@@ -3448,6 +3500,10 @@ namespace PLCKeygen
                 var socketZLoad = GetTeachingPointAddresses(selectedPort, "SocketZLoad");
                 var socketZUnload = GetTeachingPointAddresses(selectedPort, "SocketZUnload");
                 var socketZReady = GetTeachingPointAddresses(selectedPort, "SocketZReady");
+                var socketZReadyLoad = GetTeachingPointAddresses(selectedPort, "SocketZReadyLoad");
+                var socketZReadyUnload = GetTeachingPointAddresses(selectedPort, "SocketZReadyUnload");
+                var socketFOpened = GetTeachingPointAddresses(selectedPort, "SocketFOpened");
+                var socketFClosed = GetTeachingPointAddresses(selectedPort, "SocketFClosed");
 
                 var camera = GetTeachingPointAddresses(selectedPort, "Camera");
                 var socketCameraZ = GetTeachingPointAddresses(selectedPort, "SocketCameraZ");
@@ -3532,6 +3588,22 @@ namespace PLCKeygen
                 if (!string.IsNullOrEmpty(socketZReady.z))
                 {
                     txtZPointSocketZReady.Text = (PLCKey.ReadInt32(socketZReady.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketZReadyLoad.z))
+                {
+                    txtZPointSocketZReadyLoad.Text = (PLCKey.ReadInt32(socketZReadyLoad.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketZReadyUnload.z))
+                {
+                    txtZPointSocketZReadyUnload.Text = (PLCKey.ReadInt32(socketZReadyUnload.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketFOpened.f))
+                {
+                    txtFPointSocketFOpened.Text = (PLCKey.ReadInt32(socketFOpened.f) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketFClosed.f))
+                {
+                    txtFPointSocketFClosed.Text = (PLCKey.ReadInt32(socketFClosed.f) / 100.0f).ToString("F2");
                 }
 
                 // Update Camera textboxes
@@ -3729,7 +3801,7 @@ namespace PLCKeygen
             try
             {
                 // Prompt for model name
-                string modelName = PasswordDialog.Show(
+                string modelName = ModelNameInputDialog.Show(
                     "Nhập tên model:",
                     "Thêm Model Mới",
                     this);
@@ -3786,8 +3858,35 @@ namespace PLCKeygen
         /// </summary>
         private void cbbModel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Chỉ cho phép chọn model, không tự động load
+            // User phải nhấn btnModelLoad để thực sự load model vào PLC
+        }
+
+        /// <summary>
+        /// Load model button click handler
+        /// </summary>
+        private void btnModelLoad_Click(object sender, EventArgs e)
+        {
             if (cbbModel.SelectedItem == null)
+            {
+                MessageBox.Show(
+                    "Vui lòng chọn model cần load!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
+            }
+
+            // Chỉ cho phép load model khi ở chế độ Teaching
+            if (!rbtTeachingMode.Checked)
+            {
+                MessageBox.Show(
+                    "Vui lòng chuyển sang chế độ Teaching trước khi load model!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
 
             try
             {
@@ -3941,6 +4040,8 @@ namespace PLCKeygen
             portPoints.SocketZLoad = ReadPoint("SocketZLoad");
             portPoints.SocketZUnload = ReadPoint("SocketZUnload");
             portPoints.SocketZReady = ReadPoint("SocketZReady");
+            portPoints.SocketZReadyLoad = ReadPoint("SocketZReadyLoad");
+            portPoints.SocketZReadyUnload = ReadPoint("SocketZReadyUnload");
             portPoints.SocketFOpened = ReadPoint("SocketFOpened");
             portPoints.SocketFClosed = ReadPoint("SocketFClosed");
 
@@ -4003,6 +4104,8 @@ namespace PLCKeygen
             WritePoint("SocketZLoad", portPoints.SocketZLoad);
             WritePoint("SocketZUnload", portPoints.SocketZUnload);
             WritePoint("SocketZReady", portPoints.SocketZReady);
+            WritePoint("SocketZReadyLoad", portPoints.SocketZReadyLoad);
+            WritePoint("SocketZReadyUnload", portPoints.SocketZReadyUnload);
             WritePoint("SocketFOpened", portPoints.SocketFOpened);
             WritePoint("SocketFClosed", portPoints.SocketFClosed);
 
@@ -4027,6 +4130,7 @@ namespace PLCKeygen
                 "btnSavePointTrayNG2YEnd", "btnSavePointTrayNG2Z",
                 "btnSavePointSocket", "btnSavePointSocketZLoad",
                 "btnSavePointSocketZUnload", "btnSavePointSocketZReady",
+                "btnSavePointSocketZReadyLoad", "btnSavePointSocketZReadyUnload",
                 "btnSavePointSocketFOpened", "btnSavePointSocketFClosed",
                 "btnSavePointCamera", "btnSavePointSocketCameraZ"
             };
@@ -4042,5 +4146,6 @@ namespace PLCKeygen
         }
 
         #endregion
+
     }
 }

@@ -1,0 +1,48 @@
+
+
+*limit
+2: 
+X - DM28.00-limit+,DM28.01-home,DM28.02-limit-
+Y - DM58.00-limit+,DM58.01-home,DM58.02-limit-
+Z - DM88.00-limit+,DM88.01-home,DM88.02-limit-
+F - DM178.00-limit+,DM178.01-home,DM178.02-limit-
+4:
+X - DM208.00-limit+,DM208.01-home,DM208.02-limit-
+Z - DM268.00-limit+,DM268.01-home,DM268.02-limit-
+Y - DM238.00-limit+,DM238.01-home,DM238.02-limit-
+F - DM358.00-limit+,DM358.01-home,DM358.02-limit-
+1:
+X - DM388.00-limit+,DM388.01-home,DM388.02-limit-
+Y - DM418.00-limit+,DM418.01-home,DM418.02-limit-
+Z - DM448.00-limit+,DM448.01-home,DM448.02-limit-
+F - DM538.00-limit+,DM538.01-home,DM538.02-limit-
+3:
+X - DM568.00-limit+,DM568.01-home,DM568.02-limit-
+Y - DM598.00-limit+,DM598.01-home,DM598.02-limit-
+Z - DM628.00-limit+,DM628.01-home,DM628.02-limit-
+F - DM718.00-limit+,DM718.01-home,DM718.02-limit-
+
+*motor disable
+2: MR007,  
+4: MR1007,
+1: MR2007,
+3: MR3007,
+
+*bypass door 
+2. MR011
+4. MR1011
+1. MR2011
+3. MR3011
+
+*dry run mode
+2. MR10
+4. M1010
+1. M2010
+3. M3010
+
+*by pass sensor detect tray
+2. MR012
+4. MR1012
+1. MR2012
+3. MR3012
+
