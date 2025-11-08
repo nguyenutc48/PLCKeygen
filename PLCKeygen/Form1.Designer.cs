@@ -457,13 +457,23 @@
             this.txtYCurMasPort2 = new System.Windows.Forms.Label();
             this.txtXCurMasPort2 = new System.Windows.Forms.Label();
             this.btnSetMasP2 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtZPointSocketZReadyUnload = new System.Windows.Forms.TextBox();
+            this.btnSavePointSocketZReadyUnload = new System.Windows.Forms.Button();
+            this.btnGoPointSocketZReadyUnload = new System.Windows.Forms.Button();
+            this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtZPointSocketZReadyLoad = new System.Windows.Forms.TextBox();
+            this.btnSavePointSocketZReadyLoad = new System.Windows.Forms.Button();
+            this.btnGoPointSocketZReadyLoad = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -526,6 +536,8 @@
             this.groupBox27.SuspendLayout();
             this.groupBox26.SuspendLayout();
             this.strip.SuspendLayout();
+            this.groupBox21.SuspendLayout();
+            this.groupBox30.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -964,7 +976,7 @@
             this.btnModelDelete.TabIndex = 121;
             this.btnModelDelete.Text = "Del";
             this.btnModelDelete.UseVisualStyleBackColor = false;
-            this.btnModelDelete.Click += new System.EventHandler(this.btnModelDelete_Click_1);
+            this.btnModelDelete.Click += new System.EventHandler(this.btnModelDelete_Click);
             // 
             // btnModelAdd
             // 
@@ -974,6 +986,7 @@
             this.btnModelAdd.TabIndex = 121;
             this.btnModelAdd.Text = "Add";
             this.btnModelAdd.UseVisualStyleBackColor = true;
+            this.btnModelAdd.Click += new System.EventHandler(this.btnModelAdd_Click);
             // 
             // rbtPort4
             // 
@@ -1909,7 +1922,7 @@
             this.grpTeachingSocket.Enabled = false;
             this.grpTeachingSocket.Location = new System.Drawing.Point(720, 3);
             this.grpTeachingSocket.Name = "grpTeachingSocket";
-            this.grpTeachingSocket.Size = new System.Drawing.Size(242, 574);
+            this.grpTeachingSocket.Size = new System.Drawing.Size(242, 575);
             this.grpTeachingSocket.TabIndex = 11;
             this.grpTeachingSocket.TabStop = false;
             this.grpTeachingSocket.Text = "TEACHING";
@@ -1919,9 +1932,9 @@
             this.groupBox20.Controls.Add(this.groupBox40);
             this.groupBox20.Controls.Add(this.groupBox43);
             this.groupBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox20.Location = new System.Drawing.Point(6, 384);
+            this.groupBox20.Location = new System.Drawing.Point(6, 440);
             this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(229, 134);
+            this.groupBox20.Size = new System.Drawing.Size(229, 131);
             this.groupBox20.TabIndex = 8;
             this.groupBox20.TabStop = false;
             this.groupBox20.Text = "CAMERA";
@@ -1934,7 +1947,7 @@
             this.groupBox40.Controls.Add(this.btnGoPointSocketCameraZ);
             this.groupBox40.Location = new System.Drawing.Point(117, 15);
             this.groupBox40.Name = "groupBox40";
-            this.groupBox40.Size = new System.Drawing.Size(105, 113);
+            this.groupBox40.Size = new System.Drawing.Size(105, 110);
             this.groupBox40.TabIndex = 5;
             this.groupBox40.TabStop = false;
             this.groupBox40.Text = "Z Chụp";
@@ -1984,7 +1997,7 @@
             this.groupBox43.Controls.Add(this.btnGoPointCamera);
             this.groupBox43.Location = new System.Drawing.Point(6, 15);
             this.groupBox43.Name = "groupBox43";
-            this.groupBox43.Size = new System.Drawing.Size(105, 113);
+            this.groupBox43.Size = new System.Drawing.Size(105, 110);
             this.groupBox43.TabIndex = 4;
             this.groupBox43.TabStop = false;
             this.groupBox43.Text = "XY Chụp";
@@ -2045,9 +2058,9 @@
             // 
             this.groupBox31.Controls.Add(this.groupBox33);
             this.groupBox31.Controls.Add(this.groupBox35);
-            this.groupBox31.Location = new System.Drawing.Point(6, 259);
+            this.groupBox31.Location = new System.Drawing.Point(6, 328);
             this.groupBox31.Name = "groupBox31";
-            this.groupBox31.Size = new System.Drawing.Size(229, 121);
+            this.groupBox31.Size = new System.Drawing.Size(229, 111);
             this.groupBox31.TabIndex = 7;
             this.groupBox31.TabStop = false;
             this.groupBox31.Text = "ĐÓNG/MỞ";
@@ -2060,7 +2073,7 @@
             this.groupBox33.Controls.Add(this.btnGoPointSocketFClosed);
             this.groupBox33.Location = new System.Drawing.Point(117, 16);
             this.groupBox33.Name = "groupBox33";
-            this.groupBox33.Size = new System.Drawing.Size(105, 96);
+            this.groupBox33.Size = new System.Drawing.Size(105, 91);
             this.groupBox33.TabIndex = 5;
             this.groupBox33.TabStop = false;
             this.groupBox33.Text = "Đóng socket";
@@ -2108,7 +2121,7 @@
             this.groupBox35.Controls.Add(this.btnGoPointSocketFOpened);
             this.groupBox35.Location = new System.Drawing.Point(6, 16);
             this.groupBox35.Name = "groupBox35";
-            this.groupBox35.Size = new System.Drawing.Size(105, 96);
+            this.groupBox35.Size = new System.Drawing.Size(105, 91);
             this.groupBox35.TabIndex = 4;
             this.groupBox35.TabStop = false;
             this.groupBox35.Text = "Mở socket";
@@ -2150,13 +2163,15 @@
             // 
             // groupBox41
             // 
+            this.groupBox41.Controls.Add(this.groupBox21);
             this.groupBox41.Controls.Add(this.groupBox7);
+            this.groupBox41.Controls.Add(this.groupBox30);
             this.groupBox41.Controls.Add(this.groupBox42);
             this.groupBox41.Controls.Add(this.groupBox44);
             this.groupBox41.Controls.Add(this.groupBox45);
             this.groupBox41.Location = new System.Drawing.Point(6, 15);
             this.groupBox41.Name = "groupBox41";
-            this.groupBox41.Size = new System.Drawing.Size(227, 238);
+            this.groupBox41.Size = new System.Drawing.Size(227, 313);
             this.groupBox41.TabIndex = 1;
             this.groupBox41.TabStop = false;
             this.groupBox41.Text = "SOCKET";
@@ -2169,7 +2184,7 @@
             this.groupBox7.Controls.Add(this.btnGoPointSocketZReady);
             this.groupBox7.Location = new System.Drawing.Point(117, 14);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(105, 113);
+            this.groupBox7.Size = new System.Drawing.Size(105, 110);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Z Ready";
@@ -2215,9 +2230,9 @@
             this.groupBox42.Controls.Add(this.txtZPointSocketZUnload);
             this.groupBox42.Controls.Add(this.btnSavePointSocketZUnload);
             this.groupBox42.Controls.Add(this.btnGoPointSocketZUnload);
-            this.groupBox42.Location = new System.Drawing.Point(117, 133);
+            this.groupBox42.Location = new System.Drawing.Point(117, 125);
             this.groupBox42.Name = "groupBox42";
-            this.groupBox42.Size = new System.Drawing.Size(105, 96);
+            this.groupBox42.Size = new System.Drawing.Size(105, 91);
             this.groupBox42.TabIndex = 6;
             this.groupBox42.TabStop = false;
             this.groupBox42.Text = "Z Unload";
@@ -2263,9 +2278,9 @@
             this.groupBox44.Controls.Add(this.txtZPointSocketZLoad);
             this.groupBox44.Controls.Add(this.btnSavePointSocketZLoad);
             this.groupBox44.Controls.Add(this.btnGoPointSocketZLoad);
-            this.groupBox44.Location = new System.Drawing.Point(6, 133);
+            this.groupBox44.Location = new System.Drawing.Point(6, 125);
             this.groupBox44.Name = "groupBox44";
-            this.groupBox44.Size = new System.Drawing.Size(105, 96);
+            this.groupBox44.Size = new System.Drawing.Size(105, 91);
             this.groupBox44.TabIndex = 5;
             this.groupBox44.TabStop = false;
             this.groupBox44.Text = "Z Load";
@@ -2315,7 +2330,7 @@
             this.groupBox45.Controls.Add(this.btnGoPointSocket);
             this.groupBox45.Location = new System.Drawing.Point(6, 14);
             this.groupBox45.Name = "groupBox45";
-            this.groupBox45.Size = new System.Drawing.Size(105, 113);
+            this.groupBox45.Size = new System.Drawing.Size(105, 110);
             this.groupBox45.TabIndex = 4;
             this.groupBox45.TabStop = false;
             this.groupBox45.Text = "XY Socket";
@@ -4785,6 +4800,15 @@
             this.btnSetMasP2.UseVisualStyleBackColor = true;
             this.btnSetMasP2.Click += new System.EventHandler(this.btnSetMasP2_Click);
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(970, 651);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Data";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // strip
             // 
             this.strip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -4822,14 +4846,101 @@
             this.tstStatus.Size = new System.Drawing.Size(64, 17);
             this.tstStatus.Text = "Running....";
             // 
-            // tabPage4
+            // groupBox21
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(970, 651);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Data";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.groupBox21.Controls.Add(this.label2);
+            this.groupBox21.Controls.Add(this.txtZPointSocketZReadyUnload);
+            this.groupBox21.Controls.Add(this.btnSavePointSocketZReadyUnload);
+            this.groupBox21.Controls.Add(this.btnGoPointSocketZReadyUnload);
+            this.groupBox21.Location = new System.Drawing.Point(117, 217);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(105, 91);
+            this.groupBox21.TabIndex = 116;
+            this.groupBox21.TabStop = false;
+            this.groupBox21.Text = "Z Ready Unload";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(22, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 13);
+            this.label2.TabIndex = 114;
+            this.label2.Text = "Z";
+            // 
+            // txtZPointSocketZReadyUnload
+            // 
+            this.txtZPointSocketZReadyUnload.Location = new System.Drawing.Point(32, 17);
+            this.txtZPointSocketZReadyUnload.Name = "txtZPointSocketZReadyUnload";
+            this.txtZPointSocketZReadyUnload.ReadOnly = true;
+            this.txtZPointSocketZReadyUnload.Size = new System.Drawing.Size(48, 20);
+            this.txtZPointSocketZReadyUnload.TabIndex = 113;
+            // 
+            // btnSavePointSocketZReadyUnload
+            // 
+            this.btnSavePointSocketZReadyUnload.Location = new System.Drawing.Point(15, 67);
+            this.btnSavePointSocketZReadyUnload.Name = "btnSavePointSocketZReadyUnload";
+            this.btnSavePointSocketZReadyUnload.Size = new System.Drawing.Size(78, 20);
+            this.btnSavePointSocketZReadyUnload.TabIndex = 1;
+            this.btnSavePointSocketZReadyUnload.Text = "Save";
+            this.btnSavePointSocketZReadyUnload.UseVisualStyleBackColor = true;
+            // 
+            // btnGoPointSocketZReadyUnload
+            // 
+            this.btnGoPointSocketZReadyUnload.Location = new System.Drawing.Point(15, 44);
+            this.btnGoPointSocketZReadyUnload.Name = "btnGoPointSocketZReadyUnload";
+            this.btnGoPointSocketZReadyUnload.Size = new System.Drawing.Size(78, 20);
+            this.btnGoPointSocketZReadyUnload.TabIndex = 3;
+            this.btnGoPointSocketZReadyUnload.Text = "Go";
+            this.btnGoPointSocketZReadyUnload.UseVisualStyleBackColor = true;
+            // 
+            // groupBox30
+            // 
+            this.groupBox30.Controls.Add(this.label44);
+            this.groupBox30.Controls.Add(this.txtZPointSocketZReadyLoad);
+            this.groupBox30.Controls.Add(this.btnSavePointSocketZReadyLoad);
+            this.groupBox30.Controls.Add(this.btnGoPointSocketZReadyLoad);
+            this.groupBox30.Location = new System.Drawing.Point(6, 217);
+            this.groupBox30.Name = "groupBox30";
+            this.groupBox30.Size = new System.Drawing.Size(105, 91);
+            this.groupBox30.TabIndex = 115;
+            this.groupBox30.TabStop = false;
+            this.groupBox30.Text = "Z Ready Load";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(24, 21);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(14, 13);
+            this.label44.TabIndex = 114;
+            this.label44.Text = "Z";
+            // 
+            // txtZPointSocketZReadyLoad
+            // 
+            this.txtZPointSocketZReadyLoad.Location = new System.Drawing.Point(34, 17);
+            this.txtZPointSocketZReadyLoad.Name = "txtZPointSocketZReadyLoad";
+            this.txtZPointSocketZReadyLoad.ReadOnly = true;
+            this.txtZPointSocketZReadyLoad.Size = new System.Drawing.Size(48, 20);
+            this.txtZPointSocketZReadyLoad.TabIndex = 113;
+            // 
+            // btnSavePointSocketZReadyLoad
+            // 
+            this.btnSavePointSocketZReadyLoad.Location = new System.Drawing.Point(17, 67);
+            this.btnSavePointSocketZReadyLoad.Name = "btnSavePointSocketZReadyLoad";
+            this.btnSavePointSocketZReadyLoad.Size = new System.Drawing.Size(78, 20);
+            this.btnSavePointSocketZReadyLoad.TabIndex = 1;
+            this.btnSavePointSocketZReadyLoad.Text = "Save";
+            this.btnSavePointSocketZReadyLoad.UseVisualStyleBackColor = true;
+            // 
+            // btnGoPointSocketZReadyLoad
+            // 
+            this.btnGoPointSocketZReadyLoad.Location = new System.Drawing.Point(17, 44);
+            this.btnGoPointSocketZReadyLoad.Name = "btnGoPointSocketZReadyLoad";
+            this.btnGoPointSocketZReadyLoad.Size = new System.Drawing.Size(78, 20);
+            this.btnGoPointSocketZReadyLoad.TabIndex = 3;
+            this.btnGoPointSocketZReadyLoad.Text = "Go";
+            this.btnGoPointSocketZReadyLoad.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -4953,6 +5064,10 @@
             this.groupBox26.PerformLayout();
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();
+            this.groupBox21.ResumeLayout(false);
+            this.groupBox21.PerformLayout();
+            this.groupBox30.ResumeLayout(false);
+            this.groupBox30.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5394,6 +5509,16 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtZPointSocketZReadyUnload;
+        private System.Windows.Forms.Button btnSavePointSocketZReadyUnload;
+        private System.Windows.Forms.Button btnGoPointSocketZReadyUnload;
+        private System.Windows.Forms.GroupBox groupBox30;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox txtZPointSocketZReadyLoad;
+        private System.Windows.Forms.Button btnSavePointSocketZReadyLoad;
+        private System.Windows.Forms.Button btnGoPointSocketZReadyLoad;
     }
 }
 

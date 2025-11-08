@@ -987,6 +987,8 @@ namespace PLCKeygen
             public const string P1_TeachPoint_Socket_ZReady = "DM2060";
             public const string P1_TeachPoint_Socket_FOpened = "DM2080";
             public const string P1_TeachPoint_Socket_FClosed = "DM2078";
+            public const string P1_TeachPoint_Socket_ZReadyLoad = "DM2062";
+            public const string P1_TeachPoint_Socket_ZReadyUnload = "DM2064";
 
             // Teaching Points - Camera
             public const string P1_TeachPoint_Camera_X = "DM2092";
@@ -1104,6 +1106,8 @@ namespace PLCKeygen
             public const string P2_TeachPoint_Socket_ZReady = "DM1260";
             public const string P2_TeachPoint_Socket_FOpened = "DM1280";
             public const string P2_TeachPoint_Socket_FClosed = "DM1278";
+            public const string P2_TeachPoint_Socket_ZReadyLoad = "DM1262";
+            public const string P2_TeachPoint_Socket_ZReadyUnload = "DM1264";
 
             // Teaching Points - Camera
             public const string P2_TeachPoint_Camera_X = "DM1292";
@@ -1221,6 +1225,8 @@ namespace PLCKeygen
             public const string P3_TeachPoint_Socket_ZReady = "DM2460";
             public const string P3_TeachPoint_Socket_FOpened = "DM2480";
             public const string P3_TeachPoint_Socket_FClosed = "DM2478";
+            public const string P3_TeachPoint_Socket_ZReadyLoad = "DM2462";
+            public const string P3_TeachPoint_Socket_ZReadyUnload = "DM2464";
 
             // Teaching Points - Camera
             public const string P3_TeachPoint_Camera_X = "DM2492";
@@ -1338,6 +1344,8 @@ namespace PLCKeygen
             public const string P4_TeachPoint_Socket_ZReady = "DM1660";
             public const string P4_TeachPoint_Socket_FOpened = "DM1680";
             public const string P4_TeachPoint_Socket_FClosed = "DM1678";
+            public const string P4_TeachPoint_Socket_ZReadyLoad = "DM1662";
+            public const string P4_TeachPoint_Socket_ZReadyUnload = "DM1664";
 
             // Teaching Points - Camera
             public const string P4_TeachPoint_Camera_X = "DM1692";

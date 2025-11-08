@@ -149,6 +149,9 @@ namespace PLCKeygen
             // Initialize Model Manager
             modelManager = new ModelManager();
 
+            // Wire up Model ComboBox event handler
+            cbbModel.SelectedIndexChanged += cbbModel_SelectedIndexChanged;
+
             // Wire up Speed textbox events for validation and auto-save
             txtXSpeed.KeyPress += SpeedStepTextBox_KeyPress;
             txtXSpeed.KeyDown += SpeedStepTextBox_KeyDown;
@@ -417,6 +420,14 @@ namespace PLCKeygen
         {
             LoadSelectedRadioPort();
             LoadIORadioPort();
+
+            // Load available models into ComboBox
+            RefreshModelComboBox();
+
+            // Hide model management buttons initially (Jog mode is default)
+            btnModelAdd.Visible = false;
+            btnModelDelete.Visible = false;
+
             toolStripStatusLabel2.ToolTipText = "PLC Connected";
             toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
             txtXMasPort1.Text = (PLCKey.ReadInt32(PLCAddresses.Data.P1_X_Master) / 100.0f).ToString();
@@ -1915,6 +1926,10 @@ namespace PLCKeygen
                     grpTeachingSocket.Enabled = false;
                     grpTeachingTray.Enabled = false;
 
+                    // Hide model management buttons when switching to Jog mode
+                    btnModelAdd.Visible = false;
+                    btnModelDelete.Visible = false;
+
                     // Reset all save button colors when switching to Jog mode
                     ResetTeachingSaveButtonColors();
                 }
@@ -1931,6 +1946,10 @@ namespace PLCKeygen
                         // Correct password - enable teaching groups
                         grpTeachingSocket.Enabled = true;
                         grpTeachingTray.Enabled = true;
+
+                        // Show model management buttons when in Teaching mode
+                        btnModelAdd.Visible = true;
+                        btnModelDelete.Visible = true;
                     }
                     else if (password != null)  // User didn't cancel
                     {
@@ -3764,6 +3783,17 @@ namespace PLCKeygen
             if (cbbModel.SelectedItem == null)
                 return;
 
+            // Chỉ cho phép load model khi ở chế độ Teaching
+            if (!rbtTeachingMode.Checked)
+            {
+                MessageBox.Show(
+                    "Vui lòng chuyển sang chế độ Teaching trước khi load model!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 string modelName = cbbModel.SelectedItem.ToString();
@@ -4018,10 +4048,5 @@ namespace PLCKeygen
 
         #endregion
 
-        private void btnModelDelete_Click_1(object sender, EventArgs e)
-        {
-            //var a = cbbModel.Items.IndexOf(cbbModel.SelectedIndex);
-            cbbModel.Items.RemoveAt(cbbModel.SelectedIndex);
-        }
     }
 }
