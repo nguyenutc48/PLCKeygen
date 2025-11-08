@@ -53,7 +53,6 @@ namespace PLCKeygen
 
             PLCKey.Open();
             PLCKey.StartCommunication();
-            //PLCKey.PropertyChanged += ConnectionStatusChanged;
 
             // Setup keyboard shortcuts
             this.KeyPreview = true;
