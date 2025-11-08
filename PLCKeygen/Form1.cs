@@ -47,6 +47,10 @@ namespace PLCKeygen
             this.FormClosing += Closing;
             this.FormClosing += CloseIOport;
             PLCKey = new PLCKeyence("192.168.0.10", 8501);
+
+            // Subscribe to PropertyChanged event to monitor connection status
+            PLCKey.PropertyChanged += PLCKey_PropertyChanged;
+
             PLCKey.Open();
             PLCKey.StartCommunication();
 
@@ -450,6 +454,41 @@ namespace PLCKeygen
             }
         }
 
+        /// <summary>
+        /// Handle PLC connection status changes
+        /// </summary>
+        private void PLCKey_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            // Thread-safe UI update
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => PLCKey_PropertyChanged(sender, e)));
+                return;
+            }
+
+            // Parse the property name to get connection status
+            string status = e.PropertyName;
+
+            if (status == "connected")
+            {
+                // PLC is connected
+                toolStripStatusLabel2.Text = "PLC: Đã kết nối (192.168.0.10:8501)";
+                toolStripStatusLabel2.ForeColor = Color.Green;
+                toolStripProgressBar1.Visible = false;
+
+                Console.WriteLine("[Form1] PLC connected successfully");
+            }
+            else if (status=="disconnected")
+            {
+                // PLC is disconnected
+                toolStripStatusLabel2.Text = "PLC: Mất kết nối - Kiểm tra cáp mạng";
+                toolStripStatusLabel2.ForeColor = Color.Red;
+                toolStripProgressBar1.Visible = true;
+                toolStripProgressBar1.Style = ProgressBarStyle.Marquee;
+
+                Console.WriteLine("[Form1] PLC disconnected");
+            }
+        }
 
         private void button5_Click(object sender, EventArgs e)
         {
