@@ -49,6 +49,7 @@ namespace PLCKeygen
             PLCKey = new PLCKeyence("192.168.0.10", 8501);
             PLCKey.Open();
             PLCKey.StartCommunication();
+            //PLCKey.PropertyChanged += ConnectionStatusChanged;
 
             // Setup keyboard shortcuts
             this.KeyPreview = true;
@@ -241,6 +242,11 @@ namespace PLCKeygen
             LoadAxisSpeedAndStep();
         }
 
+        private void ConnectionStatusChanged(object sender, PropertyChangedEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void TxtTargetPos_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode != Keys.Enter)
@@ -431,6 +437,7 @@ namespace PLCKeygen
             // Hide model management buttons initially (Jog mode is default)
             btnModelAdd.Visible = false;
             btnModelDelete.Visible = false;
+            btnModelLoad.Visible = false;
 
             toolStripStatusLabel2.ToolTipText = "PLC Connected";
             toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
@@ -1933,6 +1940,7 @@ namespace PLCKeygen
                     // Hide model management buttons when switching to Jog mode
                     btnModelAdd.Visible = false;
                     btnModelDelete.Visible = false;
+                    btnModelLoad.Visible = false;
 
                     // Reset all save button colors when switching to Jog mode
                     ResetTeachingSaveButtonColors();
@@ -1954,6 +1962,7 @@ namespace PLCKeygen
                         // Show model management buttons when in Teaching mode
                         btnModelAdd.Visible = true;
                         btnModelDelete.Visible = true;
+                        btnModelLoad.Visible = true;
                     }
                     else if (password != null)  // User didn't cancel
                     {
@@ -3753,7 +3762,7 @@ namespace PLCKeygen
             try
             {
                 // Prompt for model name
-                string modelName = PasswordDialog.Show(
+                string modelName = ModelNameInputDialog.Show(
                     "Nhập tên model:",
                     "Thêm Model Mới",
                     this);
@@ -3810,8 +3819,24 @@ namespace PLCKeygen
         /// </summary>
         private void cbbModel_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Chỉ cho phép chọn model, không tự động load
+            // User phải nhấn btnModelLoad để thực sự load model vào PLC
+        }
+
+        /// <summary>
+        /// Load model button click handler
+        /// </summary>
+        private void btnModelLoad_Click(object sender, EventArgs e)
+        {
             if (cbbModel.SelectedItem == null)
+            {
+                MessageBox.Show(
+                    "Vui lòng chọn model cần load!",
+                    "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
                 return;
+            }
 
             // Chỉ cho phép load model khi ở chế độ Teaching
             if (!rbtTeachingMode.Checked)
