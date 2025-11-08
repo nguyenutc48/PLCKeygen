@@ -67,13 +67,13 @@
             this.cam34 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnHomeAll = new System.Windows.Forms.Button();
+            this.btnResetAll = new System.Windows.Forms.Button();
+            this.grbJogControl = new System.Windows.Forms.GroupBox();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.cbbModel = new System.Windows.Forms.ComboBox();
             this.btnModelDelete = new System.Windows.Forms.Button();
             this.btnModelAdd = new System.Windows.Forms.Button();
-            this.btnHomeAll = new System.Windows.Forms.Button();
-            this.btnResetAll = new System.Windows.Forms.Button();
-            this.grbJogControl = new System.Windows.Forms.GroupBox();
             this.rbtPort4 = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button28 = new System.Windows.Forms.Button();
@@ -166,130 +166,99 @@
             this.grpTeachingSocket = new System.Windows.Forms.GroupBox();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.groupBox40 = new System.Windows.Forms.GroupBox();
-            this.label109 = new System.Windows.Forms.Label();
             this.txtZPointSocketCameraZ = new System.Windows.Forms.TextBox();
             this.btnSavePointSocketCameraZ = new System.Windows.Forms.Button();
             this.btnGoPointSocketCameraZ = new System.Windows.Forms.Button();
             this.groupBox43 = new System.Windows.Forms.GroupBox();
-            this.label106 = new System.Windows.Forms.Label();
             this.txtYPointCamera = new System.Windows.Forms.TextBox();
-            this.label107 = new System.Windows.Forms.Label();
             this.txtXPointCamera = new System.Windows.Forms.TextBox();
             this.btnSavePointCamera = new System.Windows.Forms.Button();
             this.btnGoPointCamera = new System.Windows.Forms.Button();
             this.groupBox31 = new System.Windows.Forms.GroupBox();
             this.groupBox33 = new System.Windows.Forms.GroupBox();
-            this.label103 = new System.Windows.Forms.Label();
             this.txtFPointSocketFClosed = new System.Windows.Forms.TextBox();
             this.btnSavePointSocketFClosed = new System.Windows.Forms.Button();
             this.btnGoPointSocketFClosed = new System.Windows.Forms.Button();
             this.groupBox35 = new System.Windows.Forms.GroupBox();
-            this.label101 = new System.Windows.Forms.Label();
             this.txtFPointSocketFOpened = new System.Windows.Forms.TextBox();
             this.btnSavePointSocketFOpened = new System.Windows.Forms.Button();
             this.btnGoPointSocketFOpened = new System.Windows.Forms.Button();
             this.groupBox41 = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label105 = new System.Windows.Forms.Label();
             this.txtZPointSocketZReady = new System.Windows.Forms.TextBox();
             this.btnSavePointSocketZReady = new System.Windows.Forms.Button();
             this.btnGoPointSocketZReady = new System.Windows.Forms.Button();
             this.groupBox42 = new System.Windows.Forms.GroupBox();
-            this.label104 = new System.Windows.Forms.Label();
             this.txtZPointSocketZUnload = new System.Windows.Forms.TextBox();
             this.btnSavePointSocketZUnload = new System.Windows.Forms.Button();
             this.btnGoPointSocketZUnload = new System.Windows.Forms.Button();
             this.groupBox44 = new System.Windows.Forms.GroupBox();
-            this.label102 = new System.Windows.Forms.Label();
             this.txtZPointSocketZLoad = new System.Windows.Forms.TextBox();
             this.btnSavePointSocketZLoad = new System.Windows.Forms.Button();
             this.btnGoPointSocketZLoad = new System.Windows.Forms.Button();
             this.groupBox45 = new System.Windows.Forms.GroupBox();
-            this.label95 = new System.Windows.Forms.Label();
             this.txtYPointSocket = new System.Windows.Forms.TextBox();
-            this.label99 = new System.Windows.Forms.Label();
             this.txtXPointSocket = new System.Windows.Forms.TextBox();
             this.btnSavePointSocket = new System.Windows.Forms.Button();
             this.btnGoPointSocket = new System.Windows.Forms.Button();
             this.grpTeachingTray = new System.Windows.Forms.GroupBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.groupBox25 = new System.Windows.Forms.GroupBox();
-            this.label100 = new System.Windows.Forms.Label();
             this.txtZPointTrayNG2Z = new System.Windows.Forms.TextBox();
             this.btnSavePointTrayNG2Z = new System.Windows.Forms.Button();
             this.btnGoPointTrayNG2Z = new System.Windows.Forms.Button();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.label91 = new System.Windows.Forms.Label();
             this.txtYPointTrayNG2XEnd = new System.Windows.Forms.TextBox();
-            this.label92 = new System.Windows.Forms.Label();
             this.txtXPointTrayNG2XEnd = new System.Windows.Forms.TextBox();
             this.btnSavePointTrayNG2XEnd = new System.Windows.Forms.Button();
             this.btnGoPointTrayNG2XEnd = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.label97 = new System.Windows.Forms.Label();
             this.txtYPointTrayNG2YEnd = new System.Windows.Forms.TextBox();
-            this.label98 = new System.Windows.Forms.Label();
             this.txtXPointTrayNG2YEnd = new System.Windows.Forms.TextBox();
             this.btnSavePointTrayNG2YEnd = new System.Windows.Forms.Button();
             this.btnGoPointTrayNG2YEnd = new System.Windows.Forms.Button();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.label89 = new System.Windows.Forms.Label();
             this.txtYPointTrayNG2XYStart = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
             this.txtXPointTrayNG2XYStart = new System.Windows.Forms.TextBox();
             this.btnSavePointTrayNG2XYStart = new System.Windows.Forms.Button();
             this.btnGoPointTrayNG2XYStart = new System.Windows.Forms.Button();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
-            this.label96 = new System.Windows.Forms.Label();
             this.txtZPointTrayNG1Z = new System.Windows.Forms.TextBox();
             this.btnSavePointTrayNG1Z = new System.Windows.Forms.Button();
             this.btnGoPointTrayNG1Z = new System.Windows.Forms.Button();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.label82 = new System.Windows.Forms.Label();
             this.txtYPointTrayNG1XEnd = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
             this.txtXPointTrayNG1XEnd = new System.Windows.Forms.TextBox();
             this.btnSavePointTrayNG1XEnd = new System.Windows.Forms.Button();
             this.btnGoPointTrayNG1XEnd = new System.Windows.Forms.Button();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.label93 = new System.Windows.Forms.Label();
             this.txtYPointTrayNG1YEnd = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
             this.txtXPointTrayNG1YEnd = new System.Windows.Forms.TextBox();
             this.btnSavePointTrayNG1YEnd = new System.Windows.Forms.Button();
             this.btnGoPointTrayNG1YEnd = new System.Windows.Forms.Button();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.label78 = new System.Windows.Forms.Label();
             this.btnSavePointTrayNG1XYStart = new System.Windows.Forms.Button();
             this.txtYPointTrayNG1XYStart = new System.Windows.Forms.TextBox();
             this.btnGoPointTrayNG1XYStart = new System.Windows.Forms.Button();
-            this.label81 = new System.Windows.Forms.Label();
             this.txtXPointTrayNG1XYStart = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.btnSavePointTrayInputZ = new System.Windows.Forms.Button();
             this.btnGoPointTrayInputZ = new System.Windows.Forms.Button();
-            this.label80 = new System.Windows.Forms.Label();
             this.txtZPointTrayInputZ = new System.Windows.Forms.TextBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.btnSavePointTrayInputXEnd = new System.Windows.Forms.Button();
             this.txtYPointTrayInputXEnd = new System.Windows.Forms.TextBox();
             this.btnGoPointTrayInputXEnd = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
             this.txtXPointTrayInputXEnd = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label34 = new System.Windows.Forms.Label();
             this.btnSavePointTrayInputYEnd = new System.Windows.Forms.Button();
             this.txtYPointTrayInputYEnd = new System.Windows.Forms.TextBox();
             this.btnGoPointTrayInputYEnd = new System.Windows.Forms.Button();
-            this.label35 = new System.Windows.Forms.Label();
             this.txtXPointTrayInputYEnd = new System.Windows.Forms.TextBox();
             this.trayload = new System.Windows.Forms.GroupBox();
-            this.label31 = new System.Windows.Forms.Label();
             this.txtYPointTrayInputXYStart = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
             this.txtXPointTrayInputXYStart = new System.Windows.Forms.TextBox();
             this.btnSavePointTrayInputXYStart = new System.Windows.Forms.Button();
             this.btnGoPointTrayInputXYStart = new System.Windows.Forms.Button();
@@ -463,12 +432,45 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label103 = new System.Windows.Forms.Label();
+            this.label101 = new System.Windows.Forms.Label();
+            this.label104 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.label105 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.label99 = new System.Windows.Forms.Label();
+            this.label100 = new System.Windows.Forms.Label();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox22.SuspendLayout();
             this.grbJogControl.SuspendLayout();
+            this.groupBox22.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox46.SuspendLayout();
             this.grpJogPanel.SuspendLayout();
@@ -692,7 +694,7 @@
             this.btnConnect12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect12.Location = new System.Drawing.Point(12, 72);
             this.btnConnect12.Name = "btnConnect12";
-            this.btnConnect12.Size = new System.Drawing.Size(87, 53);
+            this.btnConnect12.Size = new System.Drawing.Size(181, 53);
             this.btnConnect12.TabIndex = 15;
             this.btnConnect12.Text = "Connect";
             this.btnConnect12.UseVisualStyleBackColor = true;
@@ -704,7 +706,7 @@
             this.cam12.Name = "cam12";
             this.cam12.Size = new System.Drawing.Size(181, 20);
             this.cam12.TabIndex = 14;
-            this.cam12.Text = "192.168.0.97";
+            this.cam12.Text = "192.168.0.98";
             // 
             // groupBox2
             // 
@@ -846,7 +848,7 @@
             this.btnConnect34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConnect34.Location = new System.Drawing.Point(12, 69);
             this.btnConnect34.Name = "btnConnect34";
-            this.btnConnect34.Size = new System.Drawing.Size(87, 55);
+            this.btnConnect34.Size = new System.Drawing.Size(181, 55);
             this.btnConnect34.TabIndex = 21;
             this.btnConnect34.Text = "Connect";
             this.btnConnect34.UseVisualStyleBackColor = true;
@@ -858,7 +860,7 @@
             this.cam34.Name = "cam34";
             this.cam34.Size = new System.Drawing.Size(181, 20);
             this.cam34.TabIndex = 20;
-            this.cam34.Text = "192.168.0.98";
+            this.cam34.Text = "192.168.0.97";
             // 
             // tabControl1
             // 
@@ -875,7 +877,6 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.groupBox22);
             this.tabPage3.Controls.Add(this.btnHomeAll);
             this.tabPage3.Controls.Add(this.btnResetAll);
             this.tabPage3.Controls.Add(this.grbJogControl);
@@ -888,51 +889,12 @@
             this.tabPage3.Text = "Motion";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // groupBox22
-            // 
-            this.groupBox22.Controls.Add(this.cbbModel);
-            this.groupBox22.Controls.Add(this.btnModelDelete);
-            this.groupBox22.Controls.Add(this.btnModelAdd);
-            this.groupBox22.Location = new System.Drawing.Point(721, 521);
-            this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(103, 105);
-            this.groupBox22.TabIndex = 123;
-            this.groupBox22.TabStop = false;
-            this.groupBox22.Text = "Model";
-            // 
-            // cbbModel
-            // 
-            this.cbbModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbbModel.FormattingEnabled = true;
-            this.cbbModel.Location = new System.Drawing.Point(6, 15);
-            this.cbbModel.Name = "cbbModel";
-            this.cbbModel.Size = new System.Drawing.Size(91, 28);
-            this.cbbModel.TabIndex = 122;
-            // 
-            // btnModelDelete
-            // 
-            this.btnModelDelete.Location = new System.Drawing.Point(52, 52);
-            this.btnModelDelete.Name = "btnModelDelete";
-            this.btnModelDelete.Size = new System.Drawing.Size(40, 39);
-            this.btnModelDelete.TabIndex = 121;
-            this.btnModelDelete.Text = "Del";
-            this.btnModelDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnModelAdd
-            // 
-            this.btnModelAdd.Location = new System.Drawing.Point(11, 52);
-            this.btnModelAdd.Name = "btnModelAdd";
-            this.btnModelAdd.Size = new System.Drawing.Size(40, 39);
-            this.btnModelAdd.TabIndex = 121;
-            this.btnModelAdd.Text = "Add";
-            this.btnModelAdd.UseVisualStyleBackColor = true;
-            // 
             // btnHomeAll
             // 
-            this.btnHomeAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHomeAll.Location = new System.Drawing.Point(830, 529);
+            this.btnHomeAll.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHomeAll.Location = new System.Drawing.Point(737, 583);
             this.btnHomeAll.Name = "btnHomeAll";
-            this.btnHomeAll.Size = new System.Drawing.Size(132, 43);
+            this.btnHomeAll.Size = new System.Drawing.Size(100, 43);
             this.btnHomeAll.TabIndex = 12;
             this.btnHomeAll.Text = "Home All";
             this.btnHomeAll.UseVisualStyleBackColor = true;
@@ -941,10 +903,10 @@
             // btnResetAll
             // 
             this.btnResetAll.BackColor = System.Drawing.Color.Orange;
-            this.btnResetAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetAll.Location = new System.Drawing.Point(830, 577);
+            this.btnResetAll.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetAll.Location = new System.Drawing.Point(843, 583);
             this.btnResetAll.Name = "btnResetAll";
-            this.btnResetAll.Size = new System.Drawing.Size(132, 43);
+            this.btnResetAll.Size = new System.Drawing.Size(100, 43);
             this.btnResetAll.TabIndex = 4;
             this.btnResetAll.Text = "Reset All";
             this.btnResetAll.UseVisualStyleBackColor = false;
@@ -952,6 +914,7 @@
             // 
             // grbJogControl
             // 
+            this.grbJogControl.Controls.Add(this.groupBox22);
             this.grbJogControl.Controls.Add(this.rbtPort4);
             this.grbJogControl.Controls.Add(this.groupBox4);
             this.grbJogControl.Controls.Add(this.rbtPort3);
@@ -966,6 +929,51 @@
             this.grbJogControl.Size = new System.Drawing.Size(706, 341);
             this.grbJogControl.TabIndex = 8;
             this.grbJogControl.TabStop = false;
+            // 
+            // groupBox22
+            // 
+            this.groupBox22.Controls.Add(this.cbbModel);
+            this.groupBox22.Controls.Add(this.btnModelDelete);
+            this.groupBox22.Controls.Add(this.btnModelAdd);
+            this.groupBox22.Location = new System.Drawing.Point(519, 9);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(181, 45);
+            this.groupBox22.TabIndex = 123;
+            this.groupBox22.TabStop = false;
+            this.groupBox22.Text = "Model";
+            // 
+            // cbbModel
+            // 
+            this.cbbModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbModel.FormattingEnabled = true;
+            this.cbbModel.Items.AddRange(new object[] {
+            "a",
+            "b"});
+            this.cbbModel.Location = new System.Drawing.Point(6, 15);
+            this.cbbModel.Name = "cbbModel";
+            this.cbbModel.Size = new System.Drawing.Size(91, 24);
+            this.cbbModel.TabIndex = 122;
+            // 
+            // btnModelDelete
+            // 
+            this.btnModelDelete.BackColor = System.Drawing.Color.Red;
+            this.btnModelDelete.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnModelDelete.Location = new System.Drawing.Point(138, 13);
+            this.btnModelDelete.Name = "btnModelDelete";
+            this.btnModelDelete.Size = new System.Drawing.Size(40, 28);
+            this.btnModelDelete.TabIndex = 121;
+            this.btnModelDelete.Text = "Del";
+            this.btnModelDelete.UseVisualStyleBackColor = false;
+            this.btnModelDelete.Click += new System.EventHandler(this.btnModelDelete_Click_1);
+            // 
+            // btnModelAdd
+            // 
+            this.btnModelAdd.Location = new System.Drawing.Point(98, 13);
+            this.btnModelAdd.Name = "btnModelAdd";
+            this.btnModelAdd.Size = new System.Drawing.Size(40, 28);
+            this.btnModelAdd.TabIndex = 121;
+            this.btnModelAdd.Text = "Add";
+            this.btnModelAdd.UseVisualStyleBackColor = true;
             // 
             // rbtPort4
             // 
@@ -1022,7 +1030,7 @@
             // 
             this.groupBox46.Controls.Add(this.rbtTeachingMode);
             this.groupBox46.Controls.Add(this.rbtJogMode);
-            this.groupBox46.Location = new System.Drawing.Point(369, 9);
+            this.groupBox46.Location = new System.Drawing.Point(353, 9);
             this.groupBox46.Name = "groupBox46";
             this.groupBox46.Size = new System.Drawing.Size(160, 45);
             this.groupBox46.TabIndex = 61;
@@ -1931,21 +1939,12 @@
             this.groupBox40.TabStop = false;
             this.groupBox40.Text = "Z Chụp";
             // 
-            // label109
-            // 
-            this.label109.AutoSize = true;
-            this.label109.Location = new System.Drawing.Point(14, 19);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(14, 13);
-            this.label109.TabIndex = 118;
-            this.label109.Text = "Z";
-            // 
             // txtZPointSocketCameraZ
             // 
-            this.txtZPointSocketCameraZ.Location = new System.Drawing.Point(31, 15);
+            this.txtZPointSocketCameraZ.Location = new System.Drawing.Point(24, 15);
             this.txtZPointSocketCameraZ.Name = "txtZPointSocketCameraZ";
             this.txtZPointSocketCameraZ.ReadOnly = true;
-            this.txtZPointSocketCameraZ.Size = new System.Drawing.Size(62, 20);
+            this.txtZPointSocketCameraZ.Size = new System.Drawing.Size(48, 20);
             this.txtZPointSocketCameraZ.TabIndex = 117;
             // 
             // btnSavePointSocketCameraZ
@@ -1981,38 +1980,20 @@
             this.groupBox43.TabStop = false;
             this.groupBox43.Text = "XY Chụp";
             // 
-            // label106
-            // 
-            this.label106.AutoSize = true;
-            this.label106.Location = new System.Drawing.Point(14, 42);
-            this.label106.Name = "label106";
-            this.label106.Size = new System.Drawing.Size(14, 13);
-            this.label106.TabIndex = 120;
-            this.label106.Text = "Y";
-            // 
             // txtYPointCamera
             // 
-            this.txtYPointCamera.Location = new System.Drawing.Point(31, 38);
+            this.txtYPointCamera.Location = new System.Drawing.Point(24, 38);
             this.txtYPointCamera.Name = "txtYPointCamera";
             this.txtYPointCamera.ReadOnly = true;
-            this.txtYPointCamera.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointCamera.Size = new System.Drawing.Size(48, 20);
             this.txtYPointCamera.TabIndex = 119;
-            // 
-            // label107
-            // 
-            this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(14, 19);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(14, 13);
-            this.label107.TabIndex = 118;
-            this.label107.Text = "X";
             // 
             // txtXPointCamera
             // 
-            this.txtXPointCamera.Location = new System.Drawing.Point(31, 15);
+            this.txtXPointCamera.Location = new System.Drawing.Point(24, 15);
             this.txtXPointCamera.Name = "txtXPointCamera";
             this.txtXPointCamera.ReadOnly = true;
-            this.txtXPointCamera.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointCamera.Size = new System.Drawing.Size(48, 20);
             this.txtXPointCamera.TabIndex = 117;
             // 
             // btnSavePointCamera
@@ -2057,21 +2038,12 @@
             this.groupBox33.TabStop = false;
             this.groupBox33.Text = "Đóng socket";
             // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(14, 23);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(13, 13);
-            this.label103.TabIndex = 116;
-            this.label103.Text = "F";
-            // 
             // txtFPointSocketFClosed
             // 
-            this.txtFPointSocketFClosed.Location = new System.Drawing.Point(31, 19);
+            this.txtFPointSocketFClosed.Location = new System.Drawing.Point(24, 19);
             this.txtFPointSocketFClosed.Name = "txtFPointSocketFClosed";
             this.txtFPointSocketFClosed.ReadOnly = true;
-            this.txtFPointSocketFClosed.Size = new System.Drawing.Size(62, 20);
+            this.txtFPointSocketFClosed.Size = new System.Drawing.Size(48, 20);
             this.txtFPointSocketFClosed.TabIndex = 115;
             // 
             // btnSavePointSocketFClosed
@@ -2105,21 +2077,12 @@
             this.groupBox35.TabStop = false;
             this.groupBox35.Text = "Mở socket";
             // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(14, 22);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(13, 13);
-            this.label101.TabIndex = 116;
-            this.label101.Text = "F";
-            // 
             // txtFPointSocketFOpened
             // 
-            this.txtFPointSocketFOpened.Location = new System.Drawing.Point(31, 18);
+            this.txtFPointSocketFOpened.Location = new System.Drawing.Point(24, 18);
             this.txtFPointSocketFOpened.Name = "txtFPointSocketFOpened";
             this.txtFPointSocketFOpened.ReadOnly = true;
-            this.txtFPointSocketFOpened.Size = new System.Drawing.Size(62, 20);
+            this.txtFPointSocketFOpened.Size = new System.Drawing.Size(48, 20);
             this.txtFPointSocketFOpened.TabIndex = 115;
             // 
             // btnSavePointSocketFOpened
@@ -2166,21 +2129,12 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Z Ready";
             // 
-            // label105
-            // 
-            this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(14, 21);
-            this.label105.Name = "label105";
-            this.label105.Size = new System.Drawing.Size(14, 13);
-            this.label105.TabIndex = 114;
-            this.label105.Text = "Z";
-            // 
             // txtZPointSocketZReady
             // 
-            this.txtZPointSocketZReady.Location = new System.Drawing.Point(31, 17);
+            this.txtZPointSocketZReady.Location = new System.Drawing.Point(24, 17);
             this.txtZPointSocketZReady.Name = "txtZPointSocketZReady";
             this.txtZPointSocketZReady.ReadOnly = true;
-            this.txtZPointSocketZReady.Size = new System.Drawing.Size(62, 20);
+            this.txtZPointSocketZReady.Size = new System.Drawing.Size(48, 20);
             this.txtZPointSocketZReady.TabIndex = 113;
             // 
             // btnSavePointSocketZReady
@@ -2214,21 +2168,12 @@
             this.groupBox42.TabStop = false;
             this.groupBox42.Text = "Z Unload";
             // 
-            // label104
-            // 
-            this.label104.AutoSize = true;
-            this.label104.Location = new System.Drawing.Point(14, 21);
-            this.label104.Name = "label104";
-            this.label104.Size = new System.Drawing.Size(14, 13);
-            this.label104.TabIndex = 114;
-            this.label104.Text = "Z";
-            // 
             // txtZPointSocketZUnload
             // 
-            this.txtZPointSocketZUnload.Location = new System.Drawing.Point(31, 17);
+            this.txtZPointSocketZUnload.Location = new System.Drawing.Point(24, 17);
             this.txtZPointSocketZUnload.Name = "txtZPointSocketZUnload";
             this.txtZPointSocketZUnload.ReadOnly = true;
-            this.txtZPointSocketZUnload.Size = new System.Drawing.Size(62, 20);
+            this.txtZPointSocketZUnload.Size = new System.Drawing.Size(48, 20);
             this.txtZPointSocketZUnload.TabIndex = 113;
             // 
             // btnSavePointSocketZUnload
@@ -2262,21 +2207,12 @@
             this.groupBox44.TabStop = false;
             this.groupBox44.Text = "Z Load";
             // 
-            // label102
-            // 
-            this.label102.AutoSize = true;
-            this.label102.Location = new System.Drawing.Point(16, 21);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(14, 13);
-            this.label102.TabIndex = 114;
-            this.label102.Text = "Z";
-            // 
             // txtZPointSocketZLoad
             // 
-            this.txtZPointSocketZLoad.Location = new System.Drawing.Point(33, 17);
+            this.txtZPointSocketZLoad.Location = new System.Drawing.Point(26, 17);
             this.txtZPointSocketZLoad.Name = "txtZPointSocketZLoad";
             this.txtZPointSocketZLoad.ReadOnly = true;
-            this.txtZPointSocketZLoad.Size = new System.Drawing.Size(62, 20);
+            this.txtZPointSocketZLoad.Size = new System.Drawing.Size(48, 20);
             this.txtZPointSocketZLoad.TabIndex = 113;
             // 
             // btnSavePointSocketZLoad
@@ -2312,38 +2248,20 @@
             this.groupBox45.TabStop = false;
             this.groupBox45.Text = "XY Socket";
             // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(14, 44);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(14, 13);
-            this.label95.TabIndex = 112;
-            this.label95.Text = "Y";
-            // 
             // txtYPointSocket
             // 
-            this.txtYPointSocket.Location = new System.Drawing.Point(31, 40);
+            this.txtYPointSocket.Location = new System.Drawing.Point(24, 40);
             this.txtYPointSocket.Name = "txtYPointSocket";
             this.txtYPointSocket.ReadOnly = true;
-            this.txtYPointSocket.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointSocket.Size = new System.Drawing.Size(48, 20);
             this.txtYPointSocket.TabIndex = 111;
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(14, 21);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(14, 13);
-            this.label99.TabIndex = 110;
-            this.label99.Text = "X";
             // 
             // txtXPointSocket
             // 
-            this.txtXPointSocket.Location = new System.Drawing.Point(31, 17);
+            this.txtXPointSocket.Location = new System.Drawing.Point(24, 17);
             this.txtXPointSocket.Name = "txtXPointSocket";
             this.txtXPointSocket.ReadOnly = true;
-            this.txtXPointSocket.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointSocket.Size = new System.Drawing.Size(48, 20);
             this.txtXPointSocket.TabIndex = 109;
             // 
             // btnSavePointSocket
@@ -2403,21 +2321,12 @@
             this.groupBox25.TabStop = false;
             this.groupBox25.Text = "Z";
             // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.Location = new System.Drawing.Point(14, 21);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(14, 13);
-            this.label100.TabIndex = 114;
-            this.label100.Text = "Z";
-            // 
             // txtZPointTrayNG2Z
             // 
-            this.txtZPointTrayNG2Z.Location = new System.Drawing.Point(31, 17);
+            this.txtZPointTrayNG2Z.Location = new System.Drawing.Point(15, 17);
             this.txtZPointTrayNG2Z.Name = "txtZPointTrayNG2Z";
             this.txtZPointTrayNG2Z.ReadOnly = true;
-            this.txtZPointTrayNG2Z.Size = new System.Drawing.Size(62, 20);
+            this.txtZPointTrayNG2Z.Size = new System.Drawing.Size(48, 20);
             this.txtZPointTrayNG2Z.TabIndex = 113;
             // 
             // btnSavePointTrayNG2Z
@@ -2453,38 +2362,20 @@
             this.groupBox17.TabStop = false;
             this.groupBox17.Text = "X End";
             // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(14, 45);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(14, 13);
-            this.label91.TabIndex = 116;
-            this.label91.Text = "Y";
-            // 
             // txtYPointTrayNG2XEnd
             // 
-            this.txtYPointTrayNG2XEnd.Location = new System.Drawing.Point(31, 41);
+            this.txtYPointTrayNG2XEnd.Location = new System.Drawing.Point(15, 41);
             this.txtYPointTrayNG2XEnd.Name = "txtYPointTrayNG2XEnd";
             this.txtYPointTrayNG2XEnd.ReadOnly = true;
-            this.txtYPointTrayNG2XEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointTrayNG2XEnd.Size = new System.Drawing.Size(48, 20);
             this.txtYPointTrayNG2XEnd.TabIndex = 115;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(14, 22);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(14, 13);
-            this.label92.TabIndex = 114;
-            this.label92.Text = "X";
             // 
             // txtXPointTrayNG2XEnd
             // 
-            this.txtXPointTrayNG2XEnd.Location = new System.Drawing.Point(31, 18);
+            this.txtXPointTrayNG2XEnd.Location = new System.Drawing.Point(15, 18);
             this.txtXPointTrayNG2XEnd.Name = "txtXPointTrayNG2XEnd";
             this.txtXPointTrayNG2XEnd.ReadOnly = true;
-            this.txtXPointTrayNG2XEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointTrayNG2XEnd.Size = new System.Drawing.Size(48, 20);
             this.txtXPointTrayNG2XEnd.TabIndex = 113;
             // 
             // btnSavePointTrayNG2XEnd
@@ -2520,38 +2411,20 @@
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Y End";
             // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(14, 44);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(14, 13);
-            this.label97.TabIndex = 116;
-            this.label97.Text = "Y";
-            // 
             // txtYPointTrayNG2YEnd
             // 
-            this.txtYPointTrayNG2YEnd.Location = new System.Drawing.Point(31, 40);
+            this.txtYPointTrayNG2YEnd.Location = new System.Drawing.Point(15, 40);
             this.txtYPointTrayNG2YEnd.Name = "txtYPointTrayNG2YEnd";
             this.txtYPointTrayNG2YEnd.ReadOnly = true;
-            this.txtYPointTrayNG2YEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointTrayNG2YEnd.Size = new System.Drawing.Size(48, 20);
             this.txtYPointTrayNG2YEnd.TabIndex = 115;
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.Location = new System.Drawing.Point(14, 21);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(14, 13);
-            this.label98.TabIndex = 114;
-            this.label98.Text = "X";
             // 
             // txtXPointTrayNG2YEnd
             // 
-            this.txtXPointTrayNG2YEnd.Location = new System.Drawing.Point(31, 17);
+            this.txtXPointTrayNG2YEnd.Location = new System.Drawing.Point(15, 17);
             this.txtXPointTrayNG2YEnd.Name = "txtXPointTrayNG2YEnd";
             this.txtXPointTrayNG2YEnd.ReadOnly = true;
-            this.txtXPointTrayNG2YEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointTrayNG2YEnd.Size = new System.Drawing.Size(48, 20);
             this.txtXPointTrayNG2YEnd.TabIndex = 113;
             // 
             // btnSavePointTrayNG2YEnd
@@ -2587,38 +2460,20 @@
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "XY Start";
             // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(14, 45);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(14, 13);
-            this.label89.TabIndex = 116;
-            this.label89.Text = "Y";
-            // 
             // txtYPointTrayNG2XYStart
             // 
-            this.txtYPointTrayNG2XYStart.Location = new System.Drawing.Point(31, 41);
+            this.txtYPointTrayNG2XYStart.Location = new System.Drawing.Point(15, 41);
             this.txtYPointTrayNG2XYStart.Name = "txtYPointTrayNG2XYStart";
             this.txtYPointTrayNG2XYStart.ReadOnly = true;
-            this.txtYPointTrayNG2XYStart.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointTrayNG2XYStart.Size = new System.Drawing.Size(48, 20);
             this.txtYPointTrayNG2XYStart.TabIndex = 115;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(14, 22);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(14, 13);
-            this.label90.TabIndex = 114;
-            this.label90.Text = "X";
             // 
             // txtXPointTrayNG2XYStart
             // 
-            this.txtXPointTrayNG2XYStart.Location = new System.Drawing.Point(31, 18);
+            this.txtXPointTrayNG2XYStart.Location = new System.Drawing.Point(15, 18);
             this.txtXPointTrayNG2XYStart.Name = "txtXPointTrayNG2XYStart";
             this.txtXPointTrayNG2XYStart.ReadOnly = true;
-            this.txtXPointTrayNG2XYStart.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointTrayNG2XYStart.Size = new System.Drawing.Size(48, 20);
             this.txtXPointTrayNG2XYStart.TabIndex = 113;
             // 
             // btnSavePointTrayNG2XYStart
@@ -2665,21 +2520,12 @@
             this.groupBox24.TabStop = false;
             this.groupBox24.Text = "Z";
             // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(14, 21);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(14, 13);
-            this.label96.TabIndex = 114;
-            this.label96.Text = "Z";
-            // 
             // txtZPointTrayNG1Z
             // 
-            this.txtZPointTrayNG1Z.Location = new System.Drawing.Point(31, 17);
+            this.txtZPointTrayNG1Z.Location = new System.Drawing.Point(15, 17);
             this.txtZPointTrayNG1Z.Name = "txtZPointTrayNG1Z";
             this.txtZPointTrayNG1Z.ReadOnly = true;
-            this.txtZPointTrayNG1Z.Size = new System.Drawing.Size(62, 20);
+            this.txtZPointTrayNG1Z.Size = new System.Drawing.Size(48, 20);
             this.txtZPointTrayNG1Z.TabIndex = 113;
             // 
             // btnSavePointTrayNG1Z
@@ -2715,38 +2561,20 @@
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "X End";
             // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(14, 45);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(14, 13);
-            this.label82.TabIndex = 116;
-            this.label82.Text = "Y";
-            // 
             // txtYPointTrayNG1XEnd
             // 
-            this.txtYPointTrayNG1XEnd.Location = new System.Drawing.Point(31, 41);
+            this.txtYPointTrayNG1XEnd.Location = new System.Drawing.Point(15, 41);
             this.txtYPointTrayNG1XEnd.Name = "txtYPointTrayNG1XEnd";
             this.txtYPointTrayNG1XEnd.ReadOnly = true;
-            this.txtYPointTrayNG1XEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointTrayNG1XEnd.Size = new System.Drawing.Size(48, 20);
             this.txtYPointTrayNG1XEnd.TabIndex = 115;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(14, 22);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(14, 13);
-            this.label87.TabIndex = 114;
-            this.label87.Text = "X";
             // 
             // txtXPointTrayNG1XEnd
             // 
-            this.txtXPointTrayNG1XEnd.Location = new System.Drawing.Point(31, 18);
+            this.txtXPointTrayNG1XEnd.Location = new System.Drawing.Point(15, 18);
             this.txtXPointTrayNG1XEnd.Name = "txtXPointTrayNG1XEnd";
             this.txtXPointTrayNG1XEnd.ReadOnly = true;
-            this.txtXPointTrayNG1XEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointTrayNG1XEnd.Size = new System.Drawing.Size(48, 20);
             this.txtXPointTrayNG1XEnd.TabIndex = 113;
             // 
             // btnSavePointTrayNG1XEnd
@@ -2782,38 +2610,20 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Y End";
             // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(14, 44);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(14, 13);
-            this.label93.TabIndex = 116;
-            this.label93.Text = "Y";
-            // 
             // txtYPointTrayNG1YEnd
             // 
-            this.txtYPointTrayNG1YEnd.Location = new System.Drawing.Point(31, 40);
+            this.txtYPointTrayNG1YEnd.Location = new System.Drawing.Point(15, 40);
             this.txtYPointTrayNG1YEnd.Name = "txtYPointTrayNG1YEnd";
             this.txtYPointTrayNG1YEnd.ReadOnly = true;
-            this.txtYPointTrayNG1YEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointTrayNG1YEnd.Size = new System.Drawing.Size(48, 20);
             this.txtYPointTrayNG1YEnd.TabIndex = 115;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(14, 21);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(14, 13);
-            this.label94.TabIndex = 114;
-            this.label94.Text = "X";
             // 
             // txtXPointTrayNG1YEnd
             // 
-            this.txtXPointTrayNG1YEnd.Location = new System.Drawing.Point(31, 17);
+            this.txtXPointTrayNG1YEnd.Location = new System.Drawing.Point(15, 17);
             this.txtXPointTrayNG1YEnd.Name = "txtXPointTrayNG1YEnd";
             this.txtXPointTrayNG1YEnd.ReadOnly = true;
-            this.txtXPointTrayNG1YEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointTrayNG1YEnd.Size = new System.Drawing.Size(48, 20);
             this.txtXPointTrayNG1YEnd.TabIndex = 113;
             // 
             // btnSavePointTrayNG1YEnd
@@ -2849,15 +2659,6 @@
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "XY Start ";
             // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(14, 45);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(14, 13);
-            this.label78.TabIndex = 116;
-            this.label78.Text = "Y";
-            // 
             // btnSavePointTrayNG1XYStart
             // 
             this.btnSavePointTrayNG1XYStart.Location = new System.Drawing.Point(15, 87);
@@ -2869,10 +2670,10 @@
             // 
             // txtYPointTrayNG1XYStart
             // 
-            this.txtYPointTrayNG1XYStart.Location = new System.Drawing.Point(31, 41);
+            this.txtYPointTrayNG1XYStart.Location = new System.Drawing.Point(15, 41);
             this.txtYPointTrayNG1XYStart.Name = "txtYPointTrayNG1XYStart";
             this.txtYPointTrayNG1XYStart.ReadOnly = true;
-            this.txtYPointTrayNG1XYStart.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointTrayNG1XYStart.Size = new System.Drawing.Size(48, 20);
             this.txtYPointTrayNG1XYStart.TabIndex = 115;
             // 
             // btnGoPointTrayNG1XYStart
@@ -2884,21 +2685,12 @@
             this.btnGoPointTrayNG1XYStart.Text = "Go";
             this.btnGoPointTrayNG1XYStart.UseVisualStyleBackColor = true;
             // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(14, 22);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(14, 13);
-            this.label81.TabIndex = 114;
-            this.label81.Text = "X";
-            // 
             // txtXPointTrayNG1XYStart
             // 
-            this.txtXPointTrayNG1XYStart.Location = new System.Drawing.Point(31, 18);
+            this.txtXPointTrayNG1XYStart.Location = new System.Drawing.Point(15, 18);
             this.txtXPointTrayNG1XYStart.Name = "txtXPointTrayNG1XYStart";
             this.txtXPointTrayNG1XYStart.ReadOnly = true;
-            this.txtXPointTrayNG1XYStart.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointTrayNG1XYStart.Size = new System.Drawing.Size(48, 20);
             this.txtXPointTrayNG1XYStart.TabIndex = 113;
             // 
             // groupBox8
@@ -2945,21 +2737,12 @@
             this.btnGoPointTrayInputZ.Text = "Go";
             this.btnGoPointTrayInputZ.UseVisualStyleBackColor = true;
             // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(13, 21);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(14, 13);
-            this.label80.TabIndex = 114;
-            this.label80.Text = "Z";
-            // 
             // txtZPointTrayInputZ
             // 
-            this.txtZPointTrayInputZ.Location = new System.Drawing.Point(30, 17);
+            this.txtZPointTrayInputZ.Location = new System.Drawing.Point(14, 17);
             this.txtZPointTrayInputZ.Name = "txtZPointTrayInputZ";
             this.txtZPointTrayInputZ.ReadOnly = true;
-            this.txtZPointTrayInputZ.Size = new System.Drawing.Size(62, 20);
+            this.txtZPointTrayInputZ.Size = new System.Drawing.Size(48, 20);
             this.txtZPointTrayInputZ.TabIndex = 113;
             // 
             // groupBox10
@@ -2977,15 +2760,6 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "X End";
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(13, 45);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(14, 13);
-            this.label32.TabIndex = 112;
-            this.label32.Text = "Y";
-            // 
             // btnSavePointTrayInputXEnd
             // 
             this.btnSavePointTrayInputXEnd.Location = new System.Drawing.Point(14, 87);
@@ -2997,10 +2771,10 @@
             // 
             // txtYPointTrayInputXEnd
             // 
-            this.txtYPointTrayInputXEnd.Location = new System.Drawing.Point(30, 41);
+            this.txtYPointTrayInputXEnd.Location = new System.Drawing.Point(14, 41);
             this.txtYPointTrayInputXEnd.Name = "txtYPointTrayInputXEnd";
             this.txtYPointTrayInputXEnd.ReadOnly = true;
-            this.txtYPointTrayInputXEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointTrayInputXEnd.Size = new System.Drawing.Size(48, 20);
             this.txtYPointTrayInputXEnd.TabIndex = 111;
             // 
             // btnGoPointTrayInputXEnd
@@ -3012,21 +2786,12 @@
             this.btnGoPointTrayInputXEnd.Text = "Go";
             this.btnGoPointTrayInputXEnd.UseVisualStyleBackColor = true;
             // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(13, 22);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(14, 13);
-            this.label33.TabIndex = 110;
-            this.label33.Text = "X";
-            // 
             // txtXPointTrayInputXEnd
             // 
-            this.txtXPointTrayInputXEnd.Location = new System.Drawing.Point(30, 18);
+            this.txtXPointTrayInputXEnd.Location = new System.Drawing.Point(14, 18);
             this.txtXPointTrayInputXEnd.Name = "txtXPointTrayInputXEnd";
             this.txtXPointTrayInputXEnd.ReadOnly = true;
-            this.txtXPointTrayInputXEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointTrayInputXEnd.Size = new System.Drawing.Size(48, 20);
             this.txtXPointTrayInputXEnd.TabIndex = 109;
             // 
             // groupBox9
@@ -3044,15 +2809,6 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Y End";
             // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(13, 44);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(14, 13);
-            this.label34.TabIndex = 112;
-            this.label34.Text = "Y";
-            // 
             // btnSavePointTrayInputYEnd
             // 
             this.btnSavePointTrayInputYEnd.Location = new System.Drawing.Point(14, 87);
@@ -3064,10 +2820,10 @@
             // 
             // txtYPointTrayInputYEnd
             // 
-            this.txtYPointTrayInputYEnd.Location = new System.Drawing.Point(30, 40);
+            this.txtYPointTrayInputYEnd.Location = new System.Drawing.Point(14, 40);
             this.txtYPointTrayInputYEnd.Name = "txtYPointTrayInputYEnd";
             this.txtYPointTrayInputYEnd.ReadOnly = true;
-            this.txtYPointTrayInputYEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointTrayInputYEnd.Size = new System.Drawing.Size(48, 20);
             this.txtYPointTrayInputYEnd.TabIndex = 111;
             // 
             // btnGoPointTrayInputYEnd
@@ -3079,25 +2835,18 @@
             this.btnGoPointTrayInputYEnd.Text = "Go";
             this.btnGoPointTrayInputYEnd.UseVisualStyleBackColor = true;
             // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(13, 21);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(14, 13);
-            this.label35.TabIndex = 110;
-            this.label35.Text = "X";
-            // 
             // txtXPointTrayInputYEnd
             // 
-            this.txtXPointTrayInputYEnd.Location = new System.Drawing.Point(30, 17);
+            this.txtXPointTrayInputYEnd.Location = new System.Drawing.Point(14, 17);
             this.txtXPointTrayInputYEnd.Name = "txtXPointTrayInputYEnd";
             this.txtXPointTrayInputYEnd.ReadOnly = true;
-            this.txtXPointTrayInputYEnd.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointTrayInputYEnd.Size = new System.Drawing.Size(48, 20);
             this.txtXPointTrayInputYEnd.TabIndex = 109;
             // 
             // trayload
             // 
+            this.trayload.Controls.Add(this.button6);
+            this.trayload.Controls.Add(this.button5);
             this.trayload.Controls.Add(this.label31);
             this.trayload.Controls.Add(this.txtYPointTrayInputXYStart);
             this.trayload.Controls.Add(this.label30);
@@ -3111,39 +2860,22 @@
             this.trayload.TabStop = false;
             this.trayload.Text = "XY Start";
             // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(13, 45);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(14, 13);
-            this.label31.TabIndex = 108;
-            this.label31.Text = "Y";
-            // 
             // txtYPointTrayInputXYStart
             // 
-            this.txtYPointTrayInputXYStart.Location = new System.Drawing.Point(30, 41);
+            this.txtYPointTrayInputXYStart.Location = new System.Drawing.Point(14, 41);
             this.txtYPointTrayInputXYStart.Name = "txtYPointTrayInputXYStart";
             this.txtYPointTrayInputXYStart.ReadOnly = true;
-            this.txtYPointTrayInputXYStart.Size = new System.Drawing.Size(62, 20);
+            this.txtYPointTrayInputXYStart.Size = new System.Drawing.Size(48, 20);
             this.txtYPointTrayInputXYStart.TabIndex = 107;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(13, 22);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(14, 13);
-            this.label30.TabIndex = 106;
-            this.label30.Text = "X";
             // 
             // txtXPointTrayInputXYStart
             // 
-            this.txtXPointTrayInputXYStart.Location = new System.Drawing.Point(30, 18);
+            this.txtXPointTrayInputXYStart.Location = new System.Drawing.Point(14, 19);
             this.txtXPointTrayInputXYStart.Name = "txtXPointTrayInputXYStart";
             this.txtXPointTrayInputXYStart.ReadOnly = true;
-            this.txtXPointTrayInputXYStart.Size = new System.Drawing.Size(62, 20);
+            this.txtXPointTrayInputXYStart.Size = new System.Drawing.Size(48, 20);
             this.txtXPointTrayInputXYStart.TabIndex = 4;
+            this.txtXPointTrayInputXYStart.Text = "123.34";
             // 
             // btnSavePointTrayInputXYStart
             // 
@@ -4814,6 +4546,303 @@
             this.tstStatus.Size = new System.Drawing.Size(64, 17);
             this.tstStatus.Text = "Running....";
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(66, 19);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(32, 20);
+            this.button5.TabIndex = 109;
+            this.button5.Text = "Go";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(66, 41);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(32, 20);
+            this.button6.TabIndex = 110;
+            this.button6.Text = "Go";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Location = new System.Drawing.Point(14, 23);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(13, 13);
+            this.label103.TabIndex = 116;
+            this.label103.Text = "F";
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(14, 22);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(13, 13);
+            this.label101.TabIndex = 116;
+            this.label101.Text = "F";
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Location = new System.Drawing.Point(14, 21);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(14, 13);
+            this.label104.TabIndex = 114;
+            this.label104.Text = "Z";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(16, 21);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(14, 13);
+            this.label102.TabIndex = 114;
+            this.label102.Text = "Z";
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(14, 21);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(14, 13);
+            this.label105.TabIndex = 114;
+            this.label105.Text = "Z";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(14, 44);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(14, 13);
+            this.label95.TabIndex = 112;
+            this.label95.Text = "Y";
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(14, 21);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(14, 13);
+            this.label99.TabIndex = 110;
+            this.label99.Text = "X";
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(4, 20);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(14, 13);
+            this.label100.TabIndex = 114;
+            this.label100.Text = "Z";
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(4, 44);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(14, 13);
+            this.label97.TabIndex = 116;
+            this.label97.Text = "Y";
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(4, 20);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(14, 13);
+            this.label98.TabIndex = 114;
+            this.label98.Text = "X";
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(4, 20);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(14, 13);
+            this.label96.TabIndex = 114;
+            this.label96.Text = "Z";
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(4, 44);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(14, 13);
+            this.label93.TabIndex = 116;
+            this.label93.Text = "Y";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(4, 20);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(14, 13);
+            this.label94.TabIndex = 114;
+            this.label94.Text = "X";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(4, 20);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(14, 13);
+            this.label80.TabIndex = 114;
+            this.label80.Text = "Z";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(4, 43);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(14, 13);
+            this.label34.TabIndex = 112;
+            this.label34.Text = "Y";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(4, 20);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(14, 13);
+            this.label35.TabIndex = 110;
+            this.label35.Text = "X";
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Location = new System.Drawing.Point(14, 19);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(14, 13);
+            this.label109.TabIndex = 118;
+            this.label109.Text = "Z";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Location = new System.Drawing.Point(14, 42);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(14, 13);
+            this.label106.TabIndex = 120;
+            this.label106.Text = "Y";
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Location = new System.Drawing.Point(14, 19);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(14, 13);
+            this.label107.TabIndex = 118;
+            this.label107.Text = "X";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(4, 45);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(14, 13);
+            this.label91.TabIndex = 116;
+            this.label91.Text = "Y";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(4, 22);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(14, 13);
+            this.label92.TabIndex = 114;
+            this.label92.Text = "X";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(4, 45);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(14, 13);
+            this.label89.TabIndex = 116;
+            this.label89.Text = "Y";
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(4, 22);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(14, 13);
+            this.label90.TabIndex = 114;
+            this.label90.Text = "X";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(4, 45);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(14, 13);
+            this.label82.TabIndex = 116;
+            this.label82.Text = "Y";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(4, 22);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(14, 13);
+            this.label87.TabIndex = 114;
+            this.label87.Text = "X";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(4, 45);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(14, 13);
+            this.label78.TabIndex = 116;
+            this.label78.Text = "Y";
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(4, 22);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(14, 13);
+            this.label81.TabIndex = 114;
+            this.label81.Text = "X";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(4, 45);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(14, 13);
+            this.label32.TabIndex = 112;
+            this.label32.Text = "Y";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(4, 22);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(14, 13);
+            this.label33.TabIndex = 110;
+            this.label33.Text = "X";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(4, 45);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(14, 13);
+            this.label31.TabIndex = 108;
+            this.label31.Text = "Y";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(4, 22);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(14, 13);
+            this.label30.TabIndex = 106;
+            this.label30.Text = "X";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4833,9 +4862,9 @@
             this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            this.groupBox22.ResumeLayout(false);
             this.grbJogControl.ResumeLayout(false);
             this.grbJogControl.PerformLayout();
+            this.groupBox22.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox46.ResumeLayout(false);
@@ -5257,68 +5286,37 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button btnSavePointTrayInputYEnd;
         private System.Windows.Forms.Button btnGoPointTrayInputYEnd;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtYPointTrayInputXYStart;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtXPointTrayInputXYStart;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txtYPointTrayInputXEnd;
-        private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txtXPointTrayInputXEnd;
-        private System.Windows.Forms.Label label80;
         private System.Windows.Forms.TextBox txtZPointTrayInputZ;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox txtYPointTrayInputYEnd;
-        private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox txtXPointTrayInputYEnd;
-        private System.Windows.Forms.Label label100;
         private System.Windows.Forms.TextBox txtZPointTrayNG2Z;
-        private System.Windows.Forms.Label label91;
         private System.Windows.Forms.TextBox txtYPointTrayNG2XEnd;
-        private System.Windows.Forms.Label label92;
         private System.Windows.Forms.TextBox txtXPointTrayNG2XEnd;
-        private System.Windows.Forms.Label label97;
         private System.Windows.Forms.TextBox txtYPointTrayNG2YEnd;
-        private System.Windows.Forms.Label label98;
         private System.Windows.Forms.TextBox txtXPointTrayNG2YEnd;
-        private System.Windows.Forms.Label label89;
         private System.Windows.Forms.TextBox txtYPointTrayNG2XYStart;
-        private System.Windows.Forms.Label label90;
         private System.Windows.Forms.TextBox txtXPointTrayNG2XYStart;
-        private System.Windows.Forms.Label label96;
         private System.Windows.Forms.TextBox txtZPointTrayNG1Z;
-        private System.Windows.Forms.Label label82;
         private System.Windows.Forms.TextBox txtYPointTrayNG1XEnd;
-        private System.Windows.Forms.Label label87;
         private System.Windows.Forms.TextBox txtXPointTrayNG1XEnd;
-        private System.Windows.Forms.Label label93;
         private System.Windows.Forms.TextBox txtYPointTrayNG1YEnd;
-        private System.Windows.Forms.Label label94;
         private System.Windows.Forms.TextBox txtXPointTrayNG1YEnd;
-        private System.Windows.Forms.Label label78;
         private System.Windows.Forms.TextBox txtYPointTrayNG1XYStart;
-        private System.Windows.Forms.Label label81;
         private System.Windows.Forms.TextBox txtXPointTrayNG1XYStart;
-        private System.Windows.Forms.Label label104;
         private System.Windows.Forms.TextBox txtZPointSocketZUnload;
-        private System.Windows.Forms.Label label102;
         private System.Windows.Forms.TextBox txtZPointSocketZLoad;
-        private System.Windows.Forms.Label label95;
         private System.Windows.Forms.TextBox txtYPointSocket;
-        private System.Windows.Forms.Label label99;
         private System.Windows.Forms.TextBox txtXPointSocket;
-        private System.Windows.Forms.Label label103;
         private System.Windows.Forms.TextBox txtFPointSocketFClosed;
-        private System.Windows.Forms.Label label101;
         private System.Windows.Forms.TextBox txtFPointSocketFOpened;
-        private System.Windows.Forms.Label label109;
         private System.Windows.Forms.TextBox txtZPointSocketCameraZ;
-        private System.Windows.Forms.Label label106;
         private System.Windows.Forms.TextBox txtYPointCamera;
-        private System.Windows.Forms.Label label107;
         private System.Windows.Forms.TextBox txtXPointCamera;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label105;
         private System.Windows.Forms.TextBox txtZPointSocketZReady;
         private System.Windows.Forms.Button btnSavePointSocketZReady;
         private System.Windows.Forms.Button btnGoPointSocketZReady;
@@ -5376,6 +5374,39 @@
         private System.Windows.Forms.Button btnModelAdd;
         private System.Windows.Forms.ComboBox cbbModel;
         private System.Windows.Forms.GroupBox groupBox22;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
     }
 }
 

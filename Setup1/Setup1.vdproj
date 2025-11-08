@@ -15,26 +15,20 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_736A2B2E714E4D7F9D12DE706B408FBE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E8636E494C9F4F7D91CC5DBD2D88EAD9"
+        "MsmKey" = "8:_2F111B605C784F1BADC827CE94E131FC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_EA6E270809349C91F7187573FE9D0CEC"
-        "OwnerKey" = "8:_E8636E494C9F4F7D91CC5DBD2D88EAD9"
+        "OwnerKey" = "8:_2F111B605C784F1BADC827CE94E131FC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_FB83B753A27AE523020B928E7F5E1DA0"
-        "OwnerKey" = "8:_E8636E494C9F4F7D91CC5DBD2D88EAD9"
+        "OwnerKey" = "8:_2F111B605C784F1BADC827CE94E131FC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -46,7 +40,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_E8636E494C9F4F7D91CC5DBD2D88EAD9"
+        "OwnerKey" = "8:_2F111B605C784F1BADC827CE94E131FC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -73,6 +67,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -89,6 +99,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -118,26 +136,6 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_736A2B2E714E4D7F9D12DE706B408FBE"
-            {
-            "SourcePath" = "8:..\\..\\..\\ksmiletris_smile_11136.ico"
-            "TargetName" = "8:ksmiletris_smile_11136.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_4EB941E23775477BAFA2A43C02EBFF47"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EA6E270809349C91F7187573FE9D0CEC"
             {
             "AssemblyRegister" = "3:1"
@@ -256,15 +254,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:LCA Handler Teaching"
-        "ProductCode" = "8:{F2722C9E-161C-409A-B159-0D3DFF4277F6}"
-        "PackageCode" = "8:{9FE34CCE-0622-47B8-A8CD-31EF4F9FABA0}"
+        "ProductCode" = "8:{1C806D1E-1ECB-4909-A782-7E33CF166C27}"
+        "PackageCode" = "8:{5D9AABA2-BBE4-4BC3-A7A7-C9E8DB1E56FC}"
         "UpgradeCode" = "8:{E7CF3FEB-A740-4BD8-B6D7-B96D380BDC0A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:25.11.9"
+        "ProductVersion" = "8:25.11.10"
         "Manufacturer" = "8:thiktek.com"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -274,7 +272,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_736A2B2E714E4D7F9D12DE706B408FBE"
+        "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -377,34 +375,6 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_01317D8C511543B7917F2F10DA3C0589"
-            {
-            "Name" = "8:LCA Handler Teaching"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_E8636E494C9F4F7D91CC5DBD2D88EAD9"
-            "Folder" = "8:_84C142EE7FFB46B68FCAEC2CD9543E89"
-            "WorkingFolder" = "8:_4EB941E23775477BAFA2A43C02EBFF47"
-            "Icon" = "8:_736A2B2E714E4D7F9D12DE706B408FBE"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A7634AB196694B799B65CA8C847E3A36"
-            {
-            "Name" = "8:LCA Handler Teaching"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_E8636E494C9F4F7D91CC5DBD2D88EAD9"
-            "Folder" = "8:_16274F6A4D0144B08D663EE5831C67EA"
-            "WorkingFolder" = "8:_4EB941E23775477BAFA2A43C02EBFF47"
-            "Icon" = "8:_736A2B2E714E4D7F9D12DE706B408FBE"
-            "Feature" = "8:"
-            }
         }
         "UserInterface"
         {
@@ -804,7 +774,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_E8636E494C9F4F7D91CC5DBD2D88EAD9"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2F111B605C784F1BADC827CE94E131FC"
             {
             "SourcePath" = "8:..\\PLCKeygen\\obj\\Debug\\PLCKeygen.exe"
             "TargetName" = "8:"
@@ -824,7 +794,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
+            "OutputConfiguration" = "8:Debug|Any CPU"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{8F937766-B4DA-4E8C-B2BE-6E2FF0885E45}"
             "ShowKeyOutput" = "11:TRUE"

@@ -1369,10 +1369,37 @@ namespace PLCKeygen
             RadioButton rb = sender as RadioButton;
             if (rb != null && rb.Checked)
             {
-                if (rb == rbtPort1)      { selectedPort = 1; selectedIOPort = 1; rbtIOPort1.Checked = true; }
-                else if (rb == rbtPort2) { selectedPort = 2; selectedIOPort = 2; rbtIOPort2.Checked = true; }
-                else if (rb == rbtPort3) { selectedPort = 3; selectedIOPort = 3; rbtIOPort3.Checked = true; }
-                else if (rb == rbtPort4) { selectedPort = 4; selectedIOPort = 4; rbtIOPort4.Checked = true; }
+                rbtJogMode.Checked = true;
+                if (rb == rbtPort1)      { selectedPort = 1; selectedIOPort = 1; rbtIOPort1.Checked = true; rbtIOPort1.ForeColor = Color.Red; rbtIOPort2.ForeColor = Color.Black; rbtIOPort3.ForeColor = Color.Black; rbtIOPort4.ForeColor = Color.Black; }
+                else if (rb == rbtPort2) { selectedPort = 2; selectedIOPort = 2; rbtIOPort2.Checked = true; rbtIOPort2.ForeColor = Color.Red; rbtIOPort1.ForeColor = Color.Black; rbtIOPort3.ForeColor = Color.Black; rbtIOPort4.ForeColor = Color.Black;}
+                else if (rb == rbtPort3) { selectedPort = 3; selectedIOPort = 3; rbtIOPort3.Checked = true; rbtIOPort3.ForeColor = Color.Red; rbtIOPort2.ForeColor = Color.Black; rbtIOPort1.ForeColor = Color.Black; rbtIOPort4.ForeColor = Color.Black;}
+                else if (rb == rbtPort4) { selectedPort = 4; selectedIOPort = 4; rbtIOPort4.Checked = true; rbtIOPort4.ForeColor = Color.Red; rbtIOPort2.ForeColor = Color.Black; rbtIOPort3.ForeColor = Color.Black; rbtIOPort1.ForeColor = Color.Black; }
+
+                // Update current position displays for new port
+                UpdateCurrentPositionDisplays();
+
+                // Load Speed and Step values for new port
+                LoadAxisSpeedAndStep();
+
+                // Load Current Jog Mode
+                GetStepJogMode();
+
+                // Immediately update IO displays for new port
+                UpdateIOInputs();
+                UpdateIOOutputs();
+            }
+        }
+
+        private void IOPortRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                rbtJogMode.Checked = true;
+                if (rb == rbtIOPort1) { selectedIOPort = 1; selectedPort = 1;      rbtPort1.Checked = true; rbtPort1.ForeColor = Color.Red; rbtPort2.ForeColor = Color.Black; rbtPort3.ForeColor = Color.Black; rbtPort4.ForeColor = Color.Black; }
+                else if (rb == rbtIOPort2) { selectedIOPort = 2; selectedPort = 2; rbtPort2.Checked = true; rbtPort2.ForeColor = Color.Red; rbtPort1.ForeColor = Color.Black; rbtPort3.ForeColor = Color.Black; rbtPort4.ForeColor = Color.Black;}
+                else if (rb == rbtIOPort3) { selectedIOPort = 3; selectedPort = 3; rbtPort3.Checked = true; rbtPort3.ForeColor = Color.Red; rbtPort2.ForeColor = Color.Black; rbtPort1.ForeColor = Color.Black; rbtPort4.ForeColor = Color.Black;}
+                else if (rb == rbtIOPort4) { selectedIOPort = 4; selectedPort = 4; rbtPort4.Checked = true; rbtPort4.ForeColor = Color.Red; rbtPort2.ForeColor = Color.Black; rbtPort3.ForeColor = Color.Black; rbtPort1.ForeColor = Color.Black; }
 
                 // Update current position displays for new port
                 UpdateCurrentPositionDisplays();
@@ -1874,30 +1901,7 @@ namespace PLCKeygen
         #region IO Tab - Input/Output Status Update
 
         // IO Port radio button selection changed
-        private void IOPortRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioButton rb = sender as RadioButton;
-            if (rb != null && rb.Checked)
-            {
-                if (rb == rbtIOPort1)      { selectedIOPort = 1; selectedPort = 1;  rbtPort1.Checked = true; }
-                else if (rb == rbtIOPort2) { selectedIOPort = 2; selectedPort = 2;  rbtPort2.Checked = true;  }
-                else if (rb == rbtIOPort3) { selectedIOPort = 3; selectedPort = 3;  rbtPort3.Checked = true;  }
-                else if (rb == rbtIOPort4) { selectedIOPort = 4; selectedPort = 4;  rbtPort4.Checked = true; }
-
-                // Update current position displays for new port
-                UpdateCurrentPositionDisplays();
-
-                // Load Speed and Step values for new port
-                LoadAxisSpeedAndStep();
-
-                // Load Current Jog Mode
-                GetStepJogMode();
-
-                // Immediately update IO displays for new port
-                UpdateIOInputs();
-                UpdateIOOutputs();
-            }
-        }
+       
 
         // Handle Teaching mode radio button changes with password protection
         private void TeachingModeRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -4003,5 +4007,11 @@ namespace PLCKeygen
         }
 
         #endregion
+
+        private void btnModelDelete_Click_1(object sender, EventArgs e)
+        {
+            //var a = cbbModel.Items.IndexOf(cbbModel.SelectedIndex);
+            cbbModel.Items.RemoveAt(cbbModel.SelectedIndex);
+        }
     }
 }

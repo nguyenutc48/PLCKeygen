@@ -1,0 +1,56 @@
+1.HEB,1<CR><LF>
+--> HEB,1
+2.HE,1,1,-68.97,165.24,0,0,0,0<CR><LF>
+--> HE,1
+3.HEE,1<CR><LF>
+-- HEE,1
+
+
+1. -68.97,166.62,0,-18.88,0,0
+
+
+2: 
+X - DM28
+Y - DM58
+Z - DM88
+F - DM178
+4:
+X - DM208
+Y - DM238
+Z - DM268
+F - DM358
+1:
+X - DM388
+Y - DM418
+Z - DM448
+F - DM538
+3:
+X - DM568
+Y - DM598
+Z - DM628
+F - DM718
+
+disable motor
+2: MR007,  
+4: MR1007,
+1: MR2007,
+3: MR3007,
+
+dis cửa -> đèn vàng hiển thị
+2. MR011
+4. MR1011
+1. MR2011
+3. MR3011
+
+dry run mode
+2. MR10
+4. M1010
+1. M2010
+3. M3010
+
+dis tray ss:
+2. MR012
+4. MR1012
+1. MR2012
+3. MR3012
+
