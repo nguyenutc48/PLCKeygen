@@ -29,9 +29,19 @@ namespace PLCKeygen
         private NetworkStream _stream;
         private  string _ip;
         private  int _port;
-        private  System.Timers.Timer _timer = new System.Timers.Timer(); 
+        private  System.Timers.Timer _timer = new System.Timers.Timer();
         private event EventHandler _reconnect;
         public bool IsSessionStarted { get; private set; } = true;
+
+        // Timeout settings
+        private const int CONNECTION_TIMEOUT_MS = 2000;  // 2 seconds for connection
+        private const int READ_WRITE_TIMEOUT_MS = 1000;  // 1 second for read/write
+        private const int SLOW_RESPONSE_THRESHOLD_MS = 500;  // Consider slow if > 500ms
+
+        // Response time tracking
+        private System.Diagnostics.Stopwatch _responseTimer = new System.Diagnostics.Stopwatch();
+        private int _slowResponseCount = 0;
+        private const int MAX_SLOW_RESPONSES = 3;  // Disconnect after 3 slow responses
 
         public PLCKeyence(string ipAddress, int port)
         {
@@ -45,18 +55,42 @@ namespace PLCKeygen
         {
             try
             {
-                IsSessionStarted = true;
-                _client = new TcpClient(_ip, _port);
-                _stream = _client.GetStream();
-              
+                // Create TcpClient with connection timeout
+                _client = new TcpClient();
+                _client.ReceiveTimeout = READ_WRITE_TIMEOUT_MS;
+                _client.SendTimeout = READ_WRITE_TIMEOUT_MS;
 
+                // Connect with timeout using async method
+                var result = _client.BeginConnect(_ip, _port, null, null);
+                var success = result.AsyncWaitHandle.WaitOne(TimeSpan.FromMilliseconds(CONNECTION_TIMEOUT_MS));
+
+                if (!success)
+                {
+                    _client.Close();
+                    throw new Exception($"Connection timeout after {CONNECTION_TIMEOUT_MS}ms");
+                }
+
+                _client.EndConnect(result);
+
+                // Get stream and set timeouts
+                _stream = _client.GetStream();
+                _stream.ReadTimeout = READ_WRITE_TIMEOUT_MS;
+                _stream.WriteTimeout = READ_WRITE_TIMEOUT_MS;
+
+                // Reset slow response counter
+                _slowResponseCount = 0;
+
+                IsSessionStarted = true;  // Only set true if connection succeeds
             }
             catch (Exception ex)
             {
+                IsSessionStarted = false;  // Ensure session is marked as not started
                 PropertyChangedEvent($"{Tcpstatus.disconnected}");
                 Console.WriteLine($"[HostLinkTCP] Connection failed: {ex.Message}");
-                //   LogProgram.WriteLog($"[HostLinkTCP] Connection failed: {ex.Message}");
-                //  MessageBox.Show($"Lỗi kết nối đến PLC tại {_ip}:{_port} - {ex.Message}", "PLC Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                // Clean up
+                _stream?.Close();
+                _client?.Close();
             }
         }
 
@@ -75,21 +109,50 @@ namespace PLCKeygen
             {
                 if (!IsSessionStarted || _stream == null)
                 {
-
                     return "EX:Client is not connected";
                 }
 
                 try
                 {
+                    // Start measuring response time
+                    _responseTimer.Restart();
 
                     string fullCommand = command.Trim() + "\r";
                     byte[] sendBytes = Encoding.ASCII.GetBytes(fullCommand);
                     _stream.Write(sendBytes, 0, sendBytes.Length);
 
-
                     byte[] buffer = new byte[256];
                     int bytesRead = _stream.Read(buffer, 0, buffer.Length);
                     string raw = Encoding.ASCII.GetString(buffer, 0, bytesRead).Trim();
+
+                    // Stop measuring response time
+                    _responseTimer.Stop();
+                    long responseTimeMs = _responseTimer.ElapsedMilliseconds;
+
+                    // Check if response is slow
+                    if (responseTimeMs > SLOW_RESPONSE_THRESHOLD_MS)
+                    {
+                        _slowResponseCount++;
+                        Console.WriteLine($"[HostLinkTCP] Slow response: {responseTimeMs}ms (count: {_slowResponseCount}/{MAX_SLOW_RESPONSES})");
+
+                        // Disconnect if too many slow responses
+                        if (_slowResponseCount >= MAX_SLOW_RESPONSES)
+                        {
+                            Console.WriteLine($"[HostLinkTCP] Too many slow responses, disconnecting...");
+                            IsSessionStarted = false;
+                            PropertyChangedEvent($"{Tcpstatus.disconnected}");
+                            Close();
+                            return "EX:Connection too slow";
+                        }
+                    }
+                    else
+                    {
+                        // Reset counter on good response
+                        if (_slowResponseCount > 0)
+                        {
+                            _slowResponseCount--;
+                        }
+                    }
 
                     // Tách phản hồi thành từng phần (status và data nếu có)
                     var parts = raw.Split(new[] { '\r', '\n', ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -102,7 +165,28 @@ namespace PLCKeygen
                     if (data == null) return status;
 
                     return data;
+                }
+                catch (System.IO.IOException ioEx) when (ioEx.InnerException is System.Net.Sockets.SocketException)
+                {
+                    // Network error or timeout
+                    Console.WriteLine($"[HostLinkTCP] Network error: {ioEx.Message}");
+                    IsSessionStarted = false;
+                    PropertyChangedEvent($"{Tcpstatus.disconnected}");
+                    return $"EX:{ioEx.Message}";
+                }
+                catch (System.IO.IOException ioEx)
+                {
+                    // Read/Write timeout
+                    Console.WriteLine($"[HostLinkTCP] Timeout: {ioEx.Message}");
+                    _slowResponseCount++;
 
+                    if (_slowResponseCount >= MAX_SLOW_RESPONSES)
+                    {
+                        IsSessionStarted = false;
+                        PropertyChangedEvent($"{Tcpstatus.disconnected}");
+                        Close();
+                    }
+                    return $"EX:Timeout";
                 }
                 catch (Exception ex)
                 {
@@ -110,7 +194,6 @@ namespace PLCKeygen
                     IsSessionStarted = false;
                     PropertyChangedEvent($"{Tcpstatus.disconnected}");
                     return $"EX:{ex.Message}";
-                    
                 }
             }
         }
@@ -258,9 +341,11 @@ namespace PLCKeygen
 
 
                 }
-                catch
+                catch (Exception ex)
                 {
-                    Console.WriteLine($"Lỗi kết nối đến PLC tại địa chỉ {address}");
+                    Console.WriteLine($"Lỗi kết nối đến PLC tại địa chỉ {address}: {ex.Message}");
+                    IsSessionStarted = false;
+                    PropertyChangedEvent($"{Tcpstatus.disconnected}");
                     return 0;
                 }
                 //MessageBox.Show("4");
@@ -320,9 +405,11 @@ namespace PLCKeygen
 
 
                 }
-                catch
+                catch (Exception ex)
                 {
-                    Console.WriteLine($"Lỗi kết nối đến PLC tại địa chỉ {address}");
+                    Console.WriteLine($"Lỗi kết nối đến PLC tại địa chỉ {address}: {ex.Message}");
+                    IsSessionStarted = false;
+                    PropertyChangedEvent($"{Tcpstatus.disconnected}");
                     return 0;
                 }
                 //MessageBox.Show("4");
@@ -423,9 +510,11 @@ namespace PLCKeygen
 
 
                 }
-                catch
+                catch (Exception ex)
                 {
-                    Console.WriteLine($"Lỗi kết nối đến PLC tại địa chỉ {address}");
+                    Console.WriteLine($"Lỗi kết nối đến PLC tại địa chỉ {address}: {ex.Message}");
+                    IsSessionStarted = false;
+                    PropertyChangedEvent($"{Tcpstatus.disconnected}");
                     return 0;
                 }
                 //MessageBox.Show("4");

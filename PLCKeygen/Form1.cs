@@ -38,6 +38,13 @@ namespace PLCKeygen
         // Model manager for saving/loading teaching models
         private ModelManager modelManager;
 
+        // PLC connection management
+        private System.Windows.Forms.Timer plcReconnectTimer;
+        private bool isManualDisconnect = false;
+        private const int RECONNECT_INTERVAL = 3000; // 3 seconds
+        private const string PLC_IP = "192.168.0.10";
+        private const int PLC_PORT = 8501;
+
         public Form1()
         {
             InitializeComponent();
@@ -46,9 +53,9 @@ namespace PLCKeygen
             this.Load += Form1_Load;
             this.FormClosing += Closing;
             this.FormClosing += CloseIOport;
-            PLCKey = new PLCKeyence("192.168.0.10", 8501);
-            PLCKey.Open();
-            PLCKey.StartCommunication();
+
+            // Initialize PLC connection with auto-reconnect
+            InitializePLCConnection();
 
             // Setup keyboard shortcuts
             this.KeyPreview = true;
@@ -3664,6 +3671,171 @@ namespace PLCKeygen
         {
             ClearCam2HandEyeStatus();
         }
+
+        #region PLC Connection Management
+
+        /// <summary>
+        /// Initialize PLC connection with auto-reconnect capability
+        /// </summary>
+        private void InitializePLCConnection()
+        {
+            // Initialize status bar - show connecting state
+            toolStripProgressBar1.Visible = true;  // Show progress bar
+            toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            toolStripStatusLabel2.Text = "PLC: Đang kết nối...";
+            toolStripStatusLabel2.ForeColor = System.Drawing.Color.Orange;
+
+            // Create PLC instance
+            PLCKey = new PLCKeyence(PLC_IP, PLC_PORT);
+
+            // Subscribe to connection status changes
+            PLCKey.PropertyChanged += PLCKey_PropertyChanged;
+
+            // Initialize reconnect timer
+            plcReconnectTimer = new System.Windows.Forms.Timer();
+            plcReconnectTimer.Interval = RECONNECT_INTERVAL;
+            plcReconnectTimer.Tick += PlcReconnectTimer_Tick;
+
+            // Attempt initial connection
+            ConnectToPLC();
+        }
+
+        /// <summary>
+        /// Handle PLC connection status changes
+        /// </summary>
+        private void PLCKey_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            // Run on UI thread
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => PLCKey_PropertyChanged(sender, e)));
+                return;
+            }
+
+            // Parse status from property name
+            if (e.PropertyName.Contains("connected"))
+            {
+                UpdatePLCConnectionStatus(true);
+            }
+            else if (e.PropertyName.Contains("disconnected"))
+            {
+                UpdatePLCConnectionStatus(false);
+            }
+        }
+
+        /// <summary>
+        /// Update status bar with PLC connection status
+        /// </summary>
+        private void UpdatePLCConnectionStatus(bool isConnected)
+        {
+            if (isConnected)
+            {
+                // Connected successfully
+                toolStripProgressBar1.Visible = false;
+                toolStripStatusLabel2.Text = "PLC: Đã kết nối (" + PLC_IP + ":" + PLC_PORT + ")";
+                toolStripStatusLabel2.ForeColor = System.Drawing.Color.Green;
+
+                // Stop reconnect timer
+                plcReconnectTimer.Stop();
+            }
+            else
+            {
+                // Disconnected
+                toolStripProgressBar1.Visible = true;
+                toolStripStatusLabel2.Text = "PLC: Mất kết nối - Đang thử kết nối lại...";
+                toolStripStatusLabel2.ForeColor = System.Drawing.Color.Red;
+
+                // Start reconnect timer if not manual disconnect
+                if (!isManualDisconnect)
+                {
+                    plcReconnectTimer.Start();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reconnect timer tick event
+        /// </summary>
+        private void PlcReconnectTimer_Tick(object sender, EventArgs e)
+        {
+            ConnectToPLC();
+        }
+
+        /// <summary>
+        /// Connect to PLC with error handling
+        /// </summary>
+        private void ConnectToPLC()
+        {
+            try
+            {
+                // Show connecting status
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        toolStripProgressBar1.Visible = true;
+                        toolStripStatusLabel2.Text = "PLC: Đang kết nối...";
+                        toolStripStatusLabel2.ForeColor = System.Drawing.Color.Orange;
+                    }));
+                }
+                else
+                {
+                    toolStripProgressBar1.Visible = true;
+                    toolStripStatusLabel2.Text = "PLC: Đang kết nối...";
+                    toolStripStatusLabel2.ForeColor = System.Drawing.Color.Orange;
+                }
+
+                // Attempt connection
+                PLCKey.Open();
+                bool success = PLCKey.StartCommunication();
+
+                // Verify connection is actually working by checking session status
+                if (success && PLCKey.IsSessionStarted)
+                {
+                    // Double check: try to read a register to verify real connection
+                    try
+                    {
+                        // Try reading a safe DM register (DM0) to verify connection
+                        PLCKey.ReadUInt16("DM0");
+
+                        // If we got here, connection is real
+                        UpdatePLCConnectionStatus(true);
+                    }
+                    catch
+                    {
+                        // Read failed, connection is not real
+                        UpdatePLCConnectionStatus(false);
+                    }
+                }
+                else
+                {
+                    // Connection failed, timer will retry
+                    UpdatePLCConnectionStatus(false);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Connection error
+                System.Diagnostics.Debug.WriteLine($"PLC Connection error: {ex.Message}");
+                UpdatePLCConnectionStatus(false);
+            }
+        }
+
+        /// <summary>
+        /// Disconnect from PLC (manual)
+        /// </summary>
+        private void DisconnectPLC()
+        {
+            isManualDisconnect = true;
+            plcReconnectTimer.Stop();
+            PLCKey?.Close();
+
+            toolStripProgressBar1.Visible = false;
+            toolStripStatusLabel2.Text = "PLC: Đã ngắt kết nối";
+            toolStripStatusLabel2.ForeColor = System.Drawing.Color.Gray;
+        }
+
+        #endregion
 
         #region Model Management
 

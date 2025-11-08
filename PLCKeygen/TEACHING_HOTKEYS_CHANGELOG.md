@@ -1,5 +1,76 @@
 # Teaching Hotkeys - Changelog
 
+## Version 1.4 (2025-11-06) - PLC Auto-Reconnect & Status Bar
+
+### 🔌 PLC Connection Management
+- **Auto-Reconnect**: Tự động kết nối lại khi mất kết nối với PLC
+  - Reconnect timer với interval 3 giây
+  - Subscribe to PLCKeyence PropertyChanged events
+  - Retry logic với error handling
+
+- **Status Bar Integration**: Hiển thị trạng thái kết nối real-time
+  - `toolStripProgressBar1`: Hiển thị marquee khi đang kết nối
+  - `toolStripStatusLabel2`: Hiển thị trạng thái với màu sắc
+    - 🟢 Xanh: "PLC: Đã kết nối (192.168.0.10:8501)"
+    - 🟠 Cam: "PLC: Đang kết nối..."
+    - 🔴 Đỏ: "PLC: Mất kết nối - Đang thử kết nối lại..."
+    - ⚪ Xám: "PLC: Đã ngắt kết nối"
+
+### 🎯 Features
+- Tự động kết nối khi khởi động application
+- Tự động reconnect khi mất kết nối (mỗi 3 giây)
+- Visual feedback rõ ràng với progress bar và status label
+- Thread-safe UI updates với InvokeRequired
+- Manual disconnect support (dừng auto-reconnect)
+- **Connection Verification**: Đọc thử DM register để verify kết nối thực sự
+- **⚡ Fast Connection Timeout**: 2 giây timeout (thay vì 20-30 giây mặc định)
+- **⚡ Response Time Monitoring**: Theo dõi tốc độ response từ PLC
+- **⚡ Auto-Disconnect On Slow Response**: Tự động ngắt khi PLC response chậm
+
+### 🐛 Bug Fixes
+- Fixed: Progress bar hiển thị ngay khi khởi động (thay vì ẩn)
+- Fixed: Status bar báo "Đã kết nối" khi chưa cắm PLC
+  - Thêm verification bằng ReadUInt16("DM0")
+  - Kiểm tra IsSessionStarted trước khi báo success
+- Fixed: `IsSessionStarted` được set true trước khi connection thành công
+  - Di chuyển `IsSessionStarted = true` xuống sau `GetStream()`
+  - Set `IsSessionStarted = false` trong catch block
+- Fixed: Connection timeout quá lâu (20-30s)
+  - Thêm connection timeout: 2 giây
+  - Thêm read/write timeout: 1 giây
+- Fixed: PLC response chậm không được phát hiện
+  - Monitor response time với Stopwatch
+  - Disconnect sau 3 slow responses liên tiếp
+
+### ⚙️ Timeout Configuration
+- **CONNECTION_TIMEOUT_MS**: 2000ms (2 giây) - Timeout khi kết nối
+- **READ_WRITE_TIMEOUT_MS**: 1000ms (1 giây) - Timeout khi đọc/ghi
+- **SLOW_RESPONSE_THRESHOLD_MS**: 500ms - Coi là chậm nếu > 500ms
+- **MAX_SLOW_RESPONSES**: 3 - Disconnect sau 3 lần chậm
+
+### 📁 Files Modified
+1. ✅ `Form1.cs` - PLC Connection Management region
+   - `InitializePLCConnection()`: Show progress bar khi khởi động
+   - `PLCKey_PropertyChanged()`: Handler cho status changes
+   - `UpdatePLCConnectionStatus()`: Cập nhật status bar
+   - `ConnectToPLC()`: Thêm verification với ReadUInt16("DM0")
+   - `DisconnectPLC()`: Manual disconnect
+   - Constants: PLC_IP, PLC_PORT, RECONNECT_INTERVAL
+
+2. ✅ `KeyenceHostLinkTcpClient.cs` - Connection reliability & performance
+   - **Timeout Settings**: CONNECTION_TIMEOUT_MS, READ_WRITE_TIMEOUT_MS, SLOW_RESPONSE_THRESHOLD_MS
+   - **Response Monitoring**: _responseTimer, _slowResponseCount, MAX_SLOW_RESPONSES
+   - `Open()`:
+     - BeginConnect/EndConnect với timeout
+     - Set stream read/write timeout
+     - Reset slow response counter
+   - `SendCommand()`:
+     - Measure response time với Stopwatch
+     - Track slow responses và auto-disconnect
+     - Improved exception handling (IOException, SocketException)
+
+---
+
 ## Version 1.3 (2025-11-06) - Single Instance Control
 
 ### 🔒 Single Instance Protection

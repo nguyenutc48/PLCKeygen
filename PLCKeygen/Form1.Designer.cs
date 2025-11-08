@@ -67,11 +67,13 @@
             this.cam34 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.cbbModel = new System.Windows.Forms.ComboBox();
+            this.btnModelDelete = new System.Windows.Forms.Button();
+            this.btnModelAdd = new System.Windows.Forms.Button();
             this.btnHomeAll = new System.Windows.Forms.Button();
             this.btnResetAll = new System.Windows.Forms.Button();
             this.grbJogControl = new System.Windows.Forms.GroupBox();
-            this.btnModelDelete = new System.Windows.Forms.Button();
-            this.btnModelAdd = new System.Windows.Forms.Button();
             this.rbtPort4 = new System.Windows.Forms.RadioButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button28 = new System.Windows.Forms.Button();
@@ -461,12 +463,11 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.tstStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cbbModel = new System.Windows.Forms.ComboBox();
-            this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.groupBox22.SuspendLayout();
             this.grbJogControl.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox46.SuspendLayout();
@@ -524,7 +525,6 @@
             this.groupBox27.SuspendLayout();
             this.groupBox26.SuspendLayout();
             this.strip.SuspendLayout();
-            this.groupBox22.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -888,6 +888,45 @@
             this.tabPage3.Text = "Motion";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // groupBox22
+            // 
+            this.groupBox22.Controls.Add(this.cbbModel);
+            this.groupBox22.Controls.Add(this.btnModelDelete);
+            this.groupBox22.Controls.Add(this.btnModelAdd);
+            this.groupBox22.Location = new System.Drawing.Point(721, 521);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(103, 105);
+            this.groupBox22.TabIndex = 123;
+            this.groupBox22.TabStop = false;
+            this.groupBox22.Text = "Model";
+            // 
+            // cbbModel
+            // 
+            this.cbbModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbbModel.FormattingEnabled = true;
+            this.cbbModel.Location = new System.Drawing.Point(6, 15);
+            this.cbbModel.Name = "cbbModel";
+            this.cbbModel.Size = new System.Drawing.Size(91, 28);
+            this.cbbModel.TabIndex = 122;
+            // 
+            // btnModelDelete
+            // 
+            this.btnModelDelete.Location = new System.Drawing.Point(52, 52);
+            this.btnModelDelete.Name = "btnModelDelete";
+            this.btnModelDelete.Size = new System.Drawing.Size(40, 39);
+            this.btnModelDelete.TabIndex = 121;
+            this.btnModelDelete.Text = "Del";
+            this.btnModelDelete.UseVisualStyleBackColor = true;
+            // 
+            // btnModelAdd
+            // 
+            this.btnModelAdd.Location = new System.Drawing.Point(11, 52);
+            this.btnModelAdd.Name = "btnModelAdd";
+            this.btnModelAdd.Size = new System.Drawing.Size(40, 39);
+            this.btnModelAdd.TabIndex = 121;
+            this.btnModelAdd.Text = "Add";
+            this.btnModelAdd.UseVisualStyleBackColor = true;
+            // 
             // btnHomeAll
             // 
             this.btnHomeAll.Font = new System.Drawing.Font("Britannic Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -927,24 +966,6 @@
             this.grbJogControl.Size = new System.Drawing.Size(706, 341);
             this.grbJogControl.TabIndex = 8;
             this.grbJogControl.TabStop = false;
-            // 
-            // btnModelDelete
-            // 
-            this.btnModelDelete.Location = new System.Drawing.Point(52, 52);
-            this.btnModelDelete.Name = "btnModelDelete";
-            this.btnModelDelete.Size = new System.Drawing.Size(40, 39);
-            this.btnModelDelete.TabIndex = 121;
-            this.btnModelDelete.Text = "Del";
-            this.btnModelDelete.UseVisualStyleBackColor = true;
-            // 
-            // btnModelAdd
-            // 
-            this.btnModelAdd.Location = new System.Drawing.Point(11, 52);
-            this.btnModelAdd.Name = "btnModelAdd";
-            this.btnModelAdd.Size = new System.Drawing.Size(40, 39);
-            this.btnModelAdd.TabIndex = 121;
-            this.btnModelAdd.Text = "Add";
-            this.btnModelAdd.UseVisualStyleBackColor = true;
             // 
             // rbtPort4
             // 
@@ -4773,7 +4794,7 @@
             // 
             this.toolStripProgressBar1.Name = "toolStripProgressBar1";
             this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 16);
-            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.toolStripProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             // 
             // toolStripStatusLabel2
             // 
@@ -4792,27 +4813,6 @@
             this.tstStatus.Name = "tstStatus";
             this.tstStatus.Size = new System.Drawing.Size(64, 17);
             this.tstStatus.Text = "Running....";
-            // 
-            // cbbModel
-            // 
-            this.cbbModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cbbModel.FormattingEnabled = true;
-            this.cbbModel.Location = new System.Drawing.Point(6, 15);
-            this.cbbModel.Name = "cbbModel";
-            this.cbbModel.Size = new System.Drawing.Size(91, 28);
-            this.cbbModel.TabIndex = 122;
-            // 
-            // groupBox22
-            // 
-            this.groupBox22.Controls.Add(this.cbbModel);
-            this.groupBox22.Controls.Add(this.btnModelDelete);
-            this.groupBox22.Controls.Add(this.btnModelAdd);
-            this.groupBox22.Location = new System.Drawing.Point(721, 521);
-            this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(103, 105);
-            this.groupBox22.TabIndex = 123;
-            this.groupBox22.TabStop = false;
-            this.groupBox22.Text = "Model";
             // 
             // Form1
             // 
@@ -4833,6 +4833,7 @@
             this.groupBox2.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            this.groupBox22.ResumeLayout(false);
             this.grbJogControl.ResumeLayout(false);
             this.grbJogControl.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -4935,7 +4936,6 @@
             this.groupBox26.PerformLayout();
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();
-            this.groupBox22.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
