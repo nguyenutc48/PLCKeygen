@@ -114,6 +114,7 @@
     <None Include="TEACHING_HOTKEYS_README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="note.txt" />
     <Content Include="TEACHING_HOTKEYS_QUICK_REF.txt" />
     <None Include="App.config" />
     <None Include="packages.config" />
