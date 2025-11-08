@@ -357,6 +357,9 @@ namespace PLCKeygen
             // Update current position displays for Motion tab
             UpdateCurrentPositionDisplays();
 
+            // Update limit switch displays (L-, Home, L+)
+            UpdateLimitSwitchDisplays();
+
             // Update IO tab inputs and outputs
             UpdateIOInputs();
             UpdateIOOutputs();
@@ -1438,6 +1441,9 @@ namespace PLCKeygen
                 // Update current position displays for new port
                 UpdateCurrentPositionDisplays();
 
+                // Update limit switch displays for new port
+                UpdateLimitSwitchDisplays();
+
                 // Load Speed and Step values for new port
                 LoadAxisSpeedAndStep();
 
@@ -1463,6 +1469,9 @@ namespace PLCKeygen
 
                 // Update current position displays for new port
                 UpdateCurrentPositionDisplays();
+
+                // Update limit switch displays for new port
+                UpdateLimitSwitchDisplays();
 
                 // Load Speed and Step values for new port
                 LoadAxisSpeedAndStep();
@@ -1905,6 +1914,143 @@ namespace PLCKeygen
             {
                 // Handle errors silently or log
             }
+        }
+
+        /// <summary>
+        /// Update limit switch indicator lamps (L-, Home, L+) based on PLC status
+        /// </summary>
+        private void UpdateLimitSwitchDisplays()
+        {
+            try
+            {
+                // Read limit switches based on selected port
+                switch (selectedPort)
+                {
+                    case 1:
+                        UpdateLimitLamp(lampXLimitMinus, PLCAddresses.Input.P1_X_LimitMinus);
+                        UpdateLimitLamp(lampXHome, PLCAddresses.Input.P1_X_Home);
+                        UpdateLimitLamp(lampXLimitPlus, PLCAddresses.Input.P1_X_LimitPlus);
+
+                        UpdateLimitLamp(lampYLimitMinus, PLCAddresses.Input.P1_Y_LimitMinus);
+                        UpdateLimitLamp(lampYHome, PLCAddresses.Input.P1_Y_Home);
+                        UpdateLimitLamp(lampYLimitPlus, PLCAddresses.Input.P1_Y_LimitPlus);
+
+                        UpdateLimitLamp(lampZLimitMinus, PLCAddresses.Input.P1_Z_LimitMinus);
+                        UpdateLimitLamp(lampZHome, PLCAddresses.Input.P1_Z_Home);
+                        UpdateLimitLamp(lampZLimitPlus, PLCAddresses.Input.P1_Z_LimitPlus);
+
+                        UpdateLimitLamp(lampFLimitMinus, PLCAddresses.Input.P1_F_LimitMinus);
+                        UpdateLimitLamp(lampFHome, PLCAddresses.Input.P1_F_Home);
+                        UpdateLimitLamp(lampFLimitPlus, PLCAddresses.Input.P1_F_LimitPlus);
+                        break;
+
+                    case 2:
+                        UpdateLimitLamp(lampXLimitMinus, PLCAddresses.Input.P2_X_LimitMinus);
+                        UpdateLimitLamp(lampXHome, PLCAddresses.Input.P2_X_Home);
+                        UpdateLimitLamp(lampXLimitPlus, PLCAddresses.Input.P2_X_LimitPlus);
+
+                        UpdateLimitLamp(lampYLimitMinus, PLCAddresses.Input.P2_Y_LimitMinus);
+                        UpdateLimitLamp(lampYHome, PLCAddresses.Input.P2_Y_Home);
+                        UpdateLimitLamp(lampYLimitPlus, PLCAddresses.Input.P2_Y_LimitPlus);
+
+                        UpdateLimitLamp(lampZLimitMinus, PLCAddresses.Input.P2_Z_LimitMinus);
+                        UpdateLimitLamp(lampZHome, PLCAddresses.Input.P2_Z_Home);
+                        UpdateLimitLamp(lampZLimitPlus, PLCAddresses.Input.P2_Z_LimitPlus);
+
+                        UpdateLimitLamp(lampFLimitMinus, PLCAddresses.Input.P2_F_LimitMinus);
+                        UpdateLimitLamp(lampFHome, PLCAddresses.Input.P2_F_Home);
+                        UpdateLimitLamp(lampFLimitPlus, PLCAddresses.Input.P2_F_LimitPlus);
+                        break;
+
+                    case 3:
+                        UpdateLimitLamp(lampXLimitMinus, PLCAddresses.Input.P3_X_LimitMinus);
+                        UpdateLimitLamp(lampXHome, PLCAddresses.Input.P3_X_Home);
+                        UpdateLimitLamp(lampXLimitPlus, PLCAddresses.Input.P3_X_LimitPlus);
+
+                        UpdateLimitLamp(lampYLimitMinus, PLCAddresses.Input.P3_Y_LimitMinus);
+                        UpdateLimitLamp(lampYHome, PLCAddresses.Input.P3_Y_Home);
+                        UpdateLimitLamp(lampYLimitPlus, PLCAddresses.Input.P3_Y_LimitPlus);
+
+                        UpdateLimitLamp(lampZLimitMinus, PLCAddresses.Input.P3_Z_LimitMinus);
+                        UpdateLimitLamp(lampZHome, PLCAddresses.Input.P3_Z_Home);
+                        UpdateLimitLamp(lampZLimitPlus, PLCAddresses.Input.P3_Z_LimitPlus);
+
+                        UpdateLimitLamp(lampFLimitMinus, PLCAddresses.Input.P3_F_LimitMinus);
+                        UpdateLimitLamp(lampFHome, PLCAddresses.Input.P3_F_Home);
+                        UpdateLimitLamp(lampFLimitPlus, PLCAddresses.Input.P3_F_LimitPlus);
+                        break;
+
+                    case 4:
+                        UpdateLimitLamp(lampXLimitMinus, PLCAddresses.Input.P4_X_LimitMinus);
+                        UpdateLimitLamp(lampXHome, PLCAddresses.Input.P4_X_Home);
+                        UpdateLimitLamp(lampXLimitPlus, PLCAddresses.Input.P4_X_LimitPlus);
+
+                        UpdateLimitLamp(lampYLimitMinus, PLCAddresses.Input.P4_Y_LimitMinus);
+                        UpdateLimitLamp(lampYHome, PLCAddresses.Input.P4_Y_Home);
+                        UpdateLimitLamp(lampYLimitPlus, PLCAddresses.Input.P4_Y_LimitPlus);
+
+                        UpdateLimitLamp(lampZLimitMinus, PLCAddresses.Input.P4_Z_LimitMinus);
+                        UpdateLimitLamp(lampZHome, PLCAddresses.Input.P4_Z_Home);
+                        UpdateLimitLamp(lampZLimitPlus, PLCAddresses.Input.P4_Z_LimitPlus);
+
+                        UpdateLimitLamp(lampFLimitMinus, PLCAddresses.Input.P4_F_LimitMinus);
+                        UpdateLimitLamp(lampFHome, PLCAddresses.Input.P4_F_Home);
+                        UpdateLimitLamp(lampFLimitPlus, PLCAddresses.Input.P4_F_LimitPlus);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle errors silently
+            }
+        }
+
+        /// <summary>
+        /// Update individual limit switch lamp color based on bit status
+        /// Green = Active (bit = 1), Gray = Inactive (bit = 0)
+        /// </summary>
+        private void UpdateLimitLamp(System.Windows.Forms.Button lamp, string address)
+        {
+            try
+            {
+                bool isActive = PLCKey.ReadBitFromWord(address, GetBitIndexFromAddress(address));
+
+                if (isActive)
+                {
+                    lamp.BackColor = Color.LimeGreen;  // Active - bright green
+                    lamp.ForeColor = Color.Black;
+                }
+                else
+                {
+                    lamp.BackColor = Color.Gray;  // Inactive - gray
+                    lamp.ForeColor = Color.White;
+                }
+            }
+            catch (Exception ex)
+            {
+                // On error, set to gray
+                lamp.BackColor = Color.Gray;
+                lamp.ForeColor = Color.White;
+            }
+        }
+
+        /// <summary>
+        /// Extract bit index from address like "DM388.00" -> 0, "DM388.01" -> 1
+        /// </summary>
+        private int GetBitIndexFromAddress(string address)
+        {
+            if (address.Contains("."))
+            {
+                string[] parts = address.Split('.');
+                if (parts.Length == 2)
+                {
+                    if (int.TryParse(parts[1], out int bitIndex))
+                    {
+                        return bitIndex;
+                    }
+                }
+            }
+            return 0;
         }
 
         // Button event handlers for Org (Home) buttons
@@ -2806,7 +2952,7 @@ namespace PLCKeygen
             if (addHome == null) return;
             PLCKey.SetBit(addHome);
             grbJogControl.Enabled = false;
-            tstStatus.Text = "Đang về gốc....";
+            toolStripStatusLabel2.Text = "Đang về gốc....";
             await Task.Factory.StartNew(() =>
             {
                 while (true)
@@ -2817,7 +2963,7 @@ namespace PLCKeygen
             });
             grbJogControl.Enabled = true;
             MessageBox.Show("Đã về gốc xong","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Question);
-            tstStatus.Text = "Ready!";
+            toolStripStatusLabel2.Text = "PLC: Đã kết nối (192.168.0.10:8501)";
         }
         #endregion
 
