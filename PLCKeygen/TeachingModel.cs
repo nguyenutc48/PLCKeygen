@@ -54,11 +54,13 @@ namespace PLCKeygen
         public TeachingPoint TrayNG2YEnd { get; set; }
         public TeachingPoint TrayNG2ZPosition { get; set; }
 
-        // Socket - 6 points
+        // Socket - 8 points
         public TeachingPoint SocketXYPosition { get; set; }
         public TeachingPoint SocketZLoad { get; set; }
         public TeachingPoint SocketZUnload { get; set; }
         public TeachingPoint SocketZReady { get; set; }
+        public TeachingPoint SocketZReadyLoad { get; set; }
+        public TeachingPoint SocketZReadyUnload { get; set; }
         public TeachingPoint SocketFOpened { get; set; }
         public TeachingPoint SocketFClosed { get; set; }
 
@@ -88,6 +90,8 @@ namespace PLCKeygen
             SocketZLoad = new TeachingPoint();
             SocketZUnload = new TeachingPoint();
             SocketZReady = new TeachingPoint();
+            SocketZReadyLoad = new TeachingPoint();
+            SocketZReadyUnload = new TeachingPoint();
             SocketFOpened = new TeachingPoint();
             SocketFClosed = new TeachingPoint();
 

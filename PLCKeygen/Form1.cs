@@ -222,6 +222,10 @@ namespace PLCKeygen
             btnGoPointSocketZUnload.Click += btnGoPoint_Click;
             btnSavePointSocketZReady.Click += btnSavePoint_Click;
             btnGoPointSocketZReady.Click += btnGoPoint_Click;
+            btnSavePointSocketZReadyLoad.Click += btnSavePoint_Click;
+            btnGoPointSocketZReadyLoad.Click += btnGoPoint_Click;
+            btnSavePointSocketZReadyUnload.Click += btnSavePoint_Click;
+            btnGoPointSocketZReadyUnload.Click += btnGoPoint_Click;
             btnSavePointSocketFOpened.Click += btnSavePoint_Click;
             btnGoPointSocketFOpened.Click += btnGoPoint_Click;
             btnSavePointSocketFClosed.Click += btnSavePoint_Click;
@@ -2977,6 +2981,10 @@ namespace PLCKeygen
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZUnload, null);
                         case "SocketZReady":
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZReady, null);
+                        case "SocketZReadyLoad":
+                            return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZReadyLoad, null);
+                        case "SocketZReadyUnload":
+                            return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZReadyUnload, null);
                         case "SocketFOpened":
                             return (null, null, null, PLCAddresses.Data.P1_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
@@ -3022,6 +3030,10 @@ namespace PLCKeygen
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZUnload, null);
                         case "SocketZReady":
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZReady, null);
+                        case "SocketZReadyLoad":
+                            return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZReadyLoad, null);
+                        case "SocketZReadyUnload":
+                            return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZReadyUnload, null);
                         case "SocketFOpened":
                             return (null, null, null, PLCAddresses.Data.P2_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
@@ -3067,6 +3079,10 @@ namespace PLCKeygen
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZUnload, null);
                         case "SocketZReady":
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZReady, null);
+                        case "SocketZReadyLoad":
+                            return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZReadyLoad, null);
+                        case "SocketZReadyUnload":
+                            return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZReadyUnload, null);
                         case "SocketFOpened":
                             return (null, null, null, PLCAddresses.Data.P3_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
@@ -3112,6 +3128,10 @@ namespace PLCKeygen
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZUnload, null);
                         case "SocketZReady":
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZReady, null);
+                        case "SocketZReadyLoad":
+                            return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZReadyLoad, null);
+                        case "SocketZReadyUnload":
+                            return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZReadyUnload, null);
                         case "SocketFOpened":
                             return (null, null, null, PLCAddresses.Data.P4_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
@@ -3432,6 +3452,8 @@ namespace PLCKeygen
                 var socketZLoad = GetTeachingPointAddresses(selectedPort, "SocketZLoad");
                 var socketZUnload = GetTeachingPointAddresses(selectedPort, "SocketZUnload");
                 var socketZReady = GetTeachingPointAddresses(selectedPort, "SocketZReady");
+                var socketZReadyLoad = GetTeachingPointAddresses(selectedPort, "SocketZReadyLoad");
+                var socketZReadyUnload = GetTeachingPointAddresses(selectedPort, "SocketZReadyUnload");
                 var socketFOpened = GetTeachingPointAddresses(selectedPort, "SocketFOpened");
                 var socketFClosed = GetTeachingPointAddresses(selectedPort, "SocketFClosed");
 
@@ -3518,6 +3540,14 @@ namespace PLCKeygen
                 if (!string.IsNullOrEmpty(socketZReady.z))
                 {
                     txtZPointSocketZReady.Text = (PLCKey.ReadInt32(socketZReady.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketZReadyLoad.z))
+                {
+                    txtZPointSocketZReadyLoad.Text = (PLCKey.ReadInt32(socketZReadyLoad.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketZReadyUnload.z))
+                {
+                    txtZPointSocketZReadyUnload.Text = (PLCKey.ReadInt32(socketZReadyUnload.z) / 100.0f).ToString("F2");
                 }
                 if (!string.IsNullOrEmpty(socketFOpened.f))
                 {
@@ -3946,6 +3976,8 @@ namespace PLCKeygen
             portPoints.SocketZLoad = ReadPoint("SocketZLoad");
             portPoints.SocketZUnload = ReadPoint("SocketZUnload");
             portPoints.SocketZReady = ReadPoint("SocketZReady");
+            portPoints.SocketZReadyLoad = ReadPoint("SocketZReadyLoad");
+            portPoints.SocketZReadyUnload = ReadPoint("SocketZReadyUnload");
             portPoints.SocketFOpened = ReadPoint("SocketFOpened");
             portPoints.SocketFClosed = ReadPoint("SocketFClosed");
 
@@ -4008,6 +4040,8 @@ namespace PLCKeygen
             WritePoint("SocketZLoad", portPoints.SocketZLoad);
             WritePoint("SocketZUnload", portPoints.SocketZUnload);
             WritePoint("SocketZReady", portPoints.SocketZReady);
+            WritePoint("SocketZReadyLoad", portPoints.SocketZReadyLoad);
+            WritePoint("SocketZReadyUnload", portPoints.SocketZReadyUnload);
             WritePoint("SocketFOpened", portPoints.SocketFOpened);
             WritePoint("SocketFClosed", portPoints.SocketFClosed);
 
@@ -4032,6 +4066,7 @@ namespace PLCKeygen
                 "btnSavePointTrayNG2YEnd", "btnSavePointTrayNG2Z",
                 "btnSavePointSocket", "btnSavePointSocketZLoad",
                 "btnSavePointSocketZUnload", "btnSavePointSocketZReady",
+                "btnSavePointSocketZReadyLoad", "btnSavePointSocketZReadyUnload",
                 "btnSavePointSocketFOpened", "btnSavePointSocketFClosed",
                 "btnSavePointCamera", "btnSavePointSocketCameraZ"
             };
