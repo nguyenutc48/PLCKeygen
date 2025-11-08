@@ -3413,6 +3413,8 @@ namespace PLCKeygen
                 var socketZLoad = GetTeachingPointAddresses(selectedPort, "SocketZLoad");
                 var socketZUnload = GetTeachingPointAddresses(selectedPort, "SocketZUnload");
                 var socketZReady = GetTeachingPointAddresses(selectedPort, "SocketZReady");
+                var socketFOpened = GetTeachingPointAddresses(selectedPort, "SocketFOpened");
+                var socketFClosed = GetTeachingPointAddresses(selectedPort, "SocketFClosed");
 
                 var camera = GetTeachingPointAddresses(selectedPort, "Camera");
                 var socketCameraZ = GetTeachingPointAddresses(selectedPort, "SocketCameraZ");
@@ -3497,6 +3499,14 @@ namespace PLCKeygen
                 if (!string.IsNullOrEmpty(socketZReady.z))
                 {
                     txtZPointSocketZReady.Text = (PLCKey.ReadInt32(socketZReady.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketFOpened.f))
+                {
+                    txtFPointSocketFOpened.Text = (PLCKey.ReadInt32(socketFOpened.f) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketFClosed.f))
+                {
+                    txtFPointSocketFClosed.Text = (PLCKey.ReadInt32(socketFClosed.f) / 100.0f).ToString("F2");
                 }
 
                 // Update Camera textboxes

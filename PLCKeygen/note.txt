@@ -1,54 +1,46 @@
-1.HEB,1<CR><LF>
---> HEB,1
-2.HE,1,1,-68.97,165.24,0,0,0,0<CR><LF>
---> HE,1
-3.HEE,1<CR><LF>
--- HEE,1
 
 
-1. -68.97,166.62,0,-18.88,0,0
-
-
+*limit
 2: 
-X - DM28
-Y - DM58
-Z - DM88
-F - DM178
+X - DM28.00-limit+,DM28.01-home,DM28.02-limit-
+Y - DM58.00-limit+,DM58.01-home,DM58.02-limit-
+Z - DM88.00-limit+,DM88.01-home,DM88.02-limit-
+F - DM178.00-limit+,DM178.01-home,DM178.02-limit-
 4:
-X - DM208
-Y - DM238
-Z - DM268
-F - DM358
+X - DM208.00-limit+,DM208.01-home,DM208.02-limit-
+Z - DM268.00-limit+,DM268.01-home,DM268.02-limit-
+Y - DM238.00-limit+,DM238.01-home,DM238.02-limit-
+F - DM358.00-limit+,DM358.01-home,DM358.02-limit-
 1:
-X - DM388
-Y - DM418
-Z - DM448
-F - DM538
+X - DM388.00-limit+,DM388.01-home,DM388.02-limit-
+Y - DM418.00-limit+,DM418.01-home,DM418.02-limit-
+Z - DM448.00-limit+,DM448.01-home,DM448.02-limit-
+F - DM538.00-limit+,DM538.01-home,DM538.02-limit-
 3:
-X - DM568
-Y - DM598
-Z - DM628
-F - DM718
+X - DM568.00-limit+,DM568.01-home,DM568.02-limit-
+Y - DM598.00-limit+,DM598.01-home,DM598.02-limit-
+Z - DM628.00-limit+,DM628.01-home,DM628.02-limit-
+F - DM718.00-limit+,DM718.01-home,DM718.02-limit-
 
-disable motor
+*motor disable
 2: MR007,  
 4: MR1007,
 1: MR2007,
 3: MR3007,
 
-dis cửa -> đèn vàng hiển thị
+*bypass door 
 2. MR011
 4. MR1011
 1. MR2011
 3. MR3011
 
-dry run mode
+*dry run mode
 2. MR10
 4. M1010
 1. M2010
 3. M3010
 
-dis tray ss:
+*by pass sensor detect tray
 2. MR012
 4. MR1012
 1. MR2012
