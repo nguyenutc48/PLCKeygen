@@ -71,6 +71,10 @@
             this.btnResetAll = new System.Windows.Forms.Button();
             this.grbJogControl = new System.Windows.Forms.GroupBox();
             this.groupBox34 = new System.Windows.Forms.GroupBox();
+            this.btnDryRunMode = new System.Windows.Forms.Button();
+            this.btnTrayDisable = new System.Windows.Forms.Button();
+            this.btnDoorDisable = new System.Windows.Forms.Button();
+            this.btnMotorDisable = new System.Windows.Forms.Button();
             this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.btnModelLoad = new System.Windows.Forms.Button();
             this.cbbModel = new System.Windows.Forms.ComboBox();
@@ -346,11 +350,11 @@
             this.ledSocketOpen = new System.Windows.Forms.Button();
             this.groupBox54 = new System.Windows.Forms.GroupBox();
             this.label62 = new System.Windows.Forms.Label();
-            this.button54 = new System.Windows.Forms.Button();
+            this.ledLCALampRed = new System.Windows.Forms.Button();
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
-            this.button55 = new System.Windows.Forms.Button();
-            this.ledLCA = new System.Windows.Forms.Button();
+            this.ledLCALampYellow = new System.Windows.Forms.Button();
+            this.ledLCALampGreen = new System.Windows.Forms.Button();
             this.label65 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
             this.ledLCAStop = new System.Windows.Forms.Button();
@@ -463,16 +467,12 @@
             this.txtYCurMasPort2 = new System.Windows.Forms.Label();
             this.txtXCurMasPort2 = new System.Windows.Forms.Label();
             this.btnSetMasP2 = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.groupBox32 = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnMotorDisable = new System.Windows.Forms.Button();
-            this.btnDoorDisable = new System.Windows.Forms.Button();
-            this.btnTrayDisable = new System.Windows.Forms.Button();
-            this.btnDryRunMode = new System.Windows.Forms.Button();
+            this.btnChartDisable = new System.Windows.Forms.Button();
+            this.btnAutoDisable = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -537,7 +537,6 @@
             this.groupBox28.SuspendLayout();
             this.groupBox27.SuspendLayout();
             this.groupBox26.SuspendLayout();
-            this.tabPage4.SuspendLayout();
             this.strip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -737,7 +736,7 @@
             this.cam12.Name = "cam12";
             this.cam12.Size = new System.Drawing.Size(270, 26);
             this.cam12.TabIndex = 14;
-            this.cam12.Text = "192.168.0.98";
+            this.cam12.Text = "192.168.0.97";
             // 
             // groupBox2
             // 
@@ -908,14 +907,13 @@
             this.cam34.Name = "cam34";
             this.cam34.Size = new System.Drawing.Size(270, 26);
             this.cam34.TabIndex = 20;
-            this.cam34.Text = "192.168.0.97";
+            this.cam34.Text = "192.168.0.98";
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -988,6 +986,8 @@
             // 
             // groupBox34
             // 
+            this.groupBox34.Controls.Add(this.btnAutoDisable);
+            this.groupBox34.Controls.Add(this.btnChartDisable);
             this.groupBox34.Controls.Add(this.btnDryRunMode);
             this.groupBox34.Controls.Add(this.btnTrayDisable);
             this.groupBox34.Controls.Add(this.btnDoorDisable);
@@ -1000,6 +1000,46 @@
             this.groupBox34.TabIndex = 124;
             this.groupBox34.TabStop = false;
             this.groupBox34.Text = "By Pass Setting";
+            // 
+            // btnDryRunMode
+            // 
+            this.btnDryRunMode.Location = new System.Drawing.Point(15, 78);
+            this.btnDryRunMode.Name = "btnDryRunMode";
+            this.btnDryRunMode.Size = new System.Drawing.Size(66, 36);
+            this.btnDryRunMode.TabIndex = 3;
+            this.btnDryRunMode.Text = "Dry Run";
+            this.btnDryRunMode.UseVisualStyleBackColor = true;
+            this.btnDryRunMode.Click += new System.EventHandler(this.btnDryRunMode_Click);
+            // 
+            // btnTrayDisable
+            // 
+            this.btnTrayDisable.Location = new System.Drawing.Point(100, 78);
+            this.btnTrayDisable.Name = "btnTrayDisable";
+            this.btnTrayDisable.Size = new System.Drawing.Size(66, 36);
+            this.btnTrayDisable.TabIndex = 2;
+            this.btnTrayDisable.Text = "Tray";
+            this.btnTrayDisable.UseVisualStyleBackColor = true;
+            this.btnTrayDisable.Click += new System.EventHandler(this.btnTrayDisable_Click);
+            // 
+            // btnDoorDisable
+            // 
+            this.btnDoorDisable.Location = new System.Drawing.Point(100, 31);
+            this.btnDoorDisable.Name = "btnDoorDisable";
+            this.btnDoorDisable.Size = new System.Drawing.Size(66, 36);
+            this.btnDoorDisable.TabIndex = 1;
+            this.btnDoorDisable.Text = "Door";
+            this.btnDoorDisable.UseVisualStyleBackColor = true;
+            this.btnDoorDisable.Click += new System.EventHandler(this.btnDoorDisable_Click);
+            // 
+            // btnMotorDisable
+            // 
+            this.btnMotorDisable.Location = new System.Drawing.Point(15, 31);
+            this.btnMotorDisable.Name = "btnMotorDisable";
+            this.btnMotorDisable.Size = new System.Drawing.Size(66, 36);
+            this.btnMotorDisable.TabIndex = 0;
+            this.btnMotorDisable.Text = "Motor";
+            this.btnMotorDisable.UseVisualStyleBackColor = true;
+            this.btnMotorDisable.Click += new System.EventHandler(this.btnMotorDisable_Click);
             // 
             // groupBox22
             // 
@@ -3590,7 +3630,7 @@
             this.groupBox49.Controls.Add(this.groupBox60);
             this.groupBox49.Controls.Add(this.groupBox59);
             this.groupBox49.Controls.Add(this.groupBox58);
-            this.groupBox49.Location = new System.Drawing.Point(732, 95);
+            this.groupBox49.Location = new System.Drawing.Point(732, 71);
             this.groupBox49.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox49.Name = "groupBox49";
             this.groupBox49.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -3643,9 +3683,9 @@
             this.label85.Location = new System.Drawing.Point(58, 122);
             this.label85.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(163, 20);
+            this.label85.Size = new System.Drawing.Size(153, 20);
             this.label85.TabIndex = 11;
-            this.label85.Text = "Đèn nút nhấn Restart";
+            this.label85.Text = "Đèn nút nhấn Reset";
             // 
             // btnLampRestart
             // 
@@ -3866,7 +3906,7 @@
             this.groupBox48.Controls.Add(this.groupBox52);
             this.groupBox48.Controls.Add(this.groupBox51);
             this.groupBox48.Controls.Add(this.groupBox50);
-            this.groupBox48.Location = new System.Drawing.Point(15, 95);
+            this.groupBox48.Location = new System.Drawing.Point(15, 71);
             this.groupBox48.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox48.Name = "groupBox48";
             this.groupBox48.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -4058,11 +4098,11 @@
             // groupBox54
             // 
             this.groupBox54.Controls.Add(this.label62);
-            this.groupBox54.Controls.Add(this.button54);
+            this.groupBox54.Controls.Add(this.ledLCALampRed);
             this.groupBox54.Controls.Add(this.label63);
             this.groupBox54.Controls.Add(this.label64);
-            this.groupBox54.Controls.Add(this.button55);
-            this.groupBox54.Controls.Add(this.ledLCA);
+            this.groupBox54.Controls.Add(this.ledLCALampYellow);
+            this.groupBox54.Controls.Add(this.ledLCALampGreen);
             this.groupBox54.Controls.Add(this.label65);
             this.groupBox54.Controls.Add(this.label66);
             this.groupBox54.Controls.Add(this.ledLCAStop);
@@ -4086,14 +4126,14 @@
             this.label62.TabIndex = 9;
             this.label62.Text = "LCA Red Light";
             // 
-            // button54
+            // ledLCALampRed
             // 
-            this.button54.Location = new System.Drawing.Point(14, 194);
-            this.button54.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button54.Name = "button54";
-            this.button54.Size = new System.Drawing.Size(36, 37);
-            this.button54.TabIndex = 8;
-            this.button54.UseVisualStyleBackColor = true;
+            this.ledLCALampRed.Location = new System.Drawing.Point(14, 194);
+            this.ledLCALampRed.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ledLCALampRed.Name = "ledLCALampRed";
+            this.ledLCALampRed.Size = new System.Drawing.Size(36, 37);
+            this.ledLCALampRed.TabIndex = 8;
+            this.ledLCALampRed.UseVisualStyleBackColor = true;
             // 
             // label63
             // 
@@ -4115,23 +4155,23 @@
             this.label64.TabIndex = 6;
             this.label64.Text = "LCA Green Light";
             // 
-            // button55
+            // ledLCALampYellow
             // 
-            this.button55.Location = new System.Drawing.Point(14, 152);
-            this.button55.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button55.Name = "button55";
-            this.button55.Size = new System.Drawing.Size(36, 37);
-            this.button55.TabIndex = 5;
-            this.button55.UseVisualStyleBackColor = true;
+            this.ledLCALampYellow.Location = new System.Drawing.Point(14, 152);
+            this.ledLCALampYellow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ledLCALampYellow.Name = "ledLCALampYellow";
+            this.ledLCALampYellow.Size = new System.Drawing.Size(36, 37);
+            this.ledLCALampYellow.TabIndex = 5;
+            this.ledLCALampYellow.UseVisualStyleBackColor = true;
             // 
-            // ledLCA
+            // ledLCALampGreen
             // 
-            this.ledLCA.Location = new System.Drawing.Point(14, 111);
-            this.ledLCA.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.ledLCA.Name = "ledLCA";
-            this.ledLCA.Size = new System.Drawing.Size(36, 37);
-            this.ledLCA.TabIndex = 4;
-            this.ledLCA.UseVisualStyleBackColor = true;
+            this.ledLCALampGreen.Location = new System.Drawing.Point(14, 111);
+            this.ledLCALampGreen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ledLCALampGreen.Name = "ledLCALampGreen";
+            this.ledLCALampGreen.Size = new System.Drawing.Size(36, 37);
+            this.ledLCALampGreen.TabIndex = 4;
+            this.ledLCALampGreen.UseVisualStyleBackColor = true;
             // 
             // label65
             // 
@@ -4238,9 +4278,9 @@
             this.label59.Location = new System.Drawing.Point(58, 162);
             this.label59.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(131, 20);
+            this.label59.Size = new System.Drawing.Size(121, 20);
             this.label59.TabIndex = 7;
-            this.label59.Text = "Nút nhấn Restart";
+            this.label59.Text = "Nút nhấn Reset";
             // 
             // label60
             // 
@@ -5352,26 +5392,6 @@
             this.btnSetMasP2.UseVisualStyleBackColor = true;
             this.btnSetMasP2.Click += new System.EventHandler(this.btnSetMasP2_Click);
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.groupBox32);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1459, 1009);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Data";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // groupBox32
-            // 
-            this.groupBox32.Location = new System.Drawing.Point(8, 22);
-            this.groupBox32.Name = "groupBox32";
-            this.groupBox32.Size = new System.Drawing.Size(200, 100);
-            this.groupBox32.TabIndex = 0;
-            this.groupBox32.TabStop = false;
-            this.groupBox32.Text = "groupBox32";
-            // 
             // strip
             // 
             this.strip.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -5397,45 +5417,23 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(130, 25);
             this.toolStripStatusLabel2.Text = "PLC Connected";
             // 
-            // btnMotorDisable
-            //
-            this.btnMotorDisable.Location = new System.Drawing.Point(23, 31);
-            this.btnMotorDisable.Name = "btnMotorDisable";
-            this.btnMotorDisable.Size = new System.Drawing.Size(94, 36);
-            this.btnMotorDisable.TabIndex = 0;
-            this.btnMotorDisable.Text = "Motor";
-            this.btnMotorDisable.UseVisualStyleBackColor = true;
-            this.btnMotorDisable.Click += new System.EventHandler(this.btnMotorDisable_Click);
-            //
-            // btnDoorDisable
-            //
-            this.btnDoorDisable.Location = new System.Drawing.Point(153, 31);
-            this.btnDoorDisable.Name = "btnDoorDisable";
-            this.btnDoorDisable.Size = new System.Drawing.Size(94, 36);
-            this.btnDoorDisable.TabIndex = 1;
-            this.btnDoorDisable.Text = "Door";
-            this.btnDoorDisable.UseVisualStyleBackColor = true;
-            this.btnDoorDisable.Click += new System.EventHandler(this.btnDoorDisable_Click);
-            //
-            // btnTrayDisable
-            //
-            this.btnTrayDisable.Location = new System.Drawing.Point(153, 78);
-            this.btnTrayDisable.Name = "btnTrayDisable";
-            this.btnTrayDisable.Size = new System.Drawing.Size(94, 36);
-            this.btnTrayDisable.TabIndex = 2;
-            this.btnTrayDisable.Text = "Tray";
-            this.btnTrayDisable.UseVisualStyleBackColor = true;
-            this.btnTrayDisable.Click += new System.EventHandler(this.btnTrayDisable_Click);
-            //
-            // btnDryRunMode
-            //
-            this.btnDryRunMode.Location = new System.Drawing.Point(23, 78);
-            this.btnDryRunMode.Name = "btnDryRunMode";
-            this.btnDryRunMode.Size = new System.Drawing.Size(94, 36);
-            this.btnDryRunMode.TabIndex = 3;
-            this.btnDryRunMode.Text = "Dry Run";
-            this.btnDryRunMode.UseVisualStyleBackColor = true;
-            this.btnDryRunMode.Click += new System.EventHandler(this.btnDryRunMode_Click);
+            // btnChartDisable
+            // 
+            this.btnChartDisable.Location = new System.Drawing.Point(181, 30);
+            this.btnChartDisable.Name = "btnChartDisable";
+            this.btnChartDisable.Size = new System.Drawing.Size(66, 36);
+            this.btnChartDisable.TabIndex = 4;
+            this.btnChartDisable.Text = "Chart";
+            this.btnChartDisable.UseVisualStyleBackColor = true;
+            // 
+            // btnAutoDisable
+            // 
+            this.btnAutoDisable.Location = new System.Drawing.Point(181, 78);
+            this.btnAutoDisable.Name = "btnAutoDisable";
+            this.btnAutoDisable.Size = new System.Drawing.Size(66, 36);
+            this.btnAutoDisable.TabIndex = 5;
+            this.btnAutoDisable.Text = "Auto";
+            this.btnAutoDisable.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -5563,7 +5561,6 @@
             this.groupBox27.PerformLayout();
             this.groupBox26.ResumeLayout(false);
             this.groupBox26.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();
             this.ResumeLayout(false);
@@ -5777,11 +5774,11 @@
         private System.Windows.Forms.Button ledTrayLoad;
         private System.Windows.Forms.GroupBox groupBox54;
         private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Button button54;
+        private System.Windows.Forms.Button ledLCALampRed;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Button button55;
-        private System.Windows.Forms.Button ledLCA;
+        private System.Windows.Forms.Button ledLCALampYellow;
+        private System.Windows.Forms.Button ledLCALampGreen;
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Button ledLCAStop;
@@ -5998,7 +5995,6 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.GroupBox groupBox21;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtZPointSocketZReadyUnload;
@@ -6009,13 +6005,14 @@
         private System.Windows.Forms.TextBox txtZPointSocketZReadyLoad;
         private System.Windows.Forms.Button btnSavePointSocketZReadyLoad;
         private System.Windows.Forms.Button btnGoPointSocketZReadyLoad;
-        private System.Windows.Forms.GroupBox groupBox32;
         private System.Windows.Forms.Button btnModelLoad;
         private System.Windows.Forms.GroupBox groupBox34;
         private System.Windows.Forms.Button btnDryRunMode;
         private System.Windows.Forms.Button btnTrayDisable;
         private System.Windows.Forms.Button btnDoorDisable;
         private System.Windows.Forms.Button btnMotorDisable;
+        private System.Windows.Forms.Button btnChartDisable;
+        private System.Windows.Forms.Button btnAutoDisable;
     }
 }
 

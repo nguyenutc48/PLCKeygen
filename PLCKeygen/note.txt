@@ -1,26 +1,26 @@
-
+﻿
 
 *limit
 2: 
-X - DM28.00-limit+,DM28.01-home,DM28.02-limit-
-Y - DM58.00-limit+,DM58.01-home,DM58.02-limit-
-Z - DM88.00-limit+,DM88.01-home,DM88.02-limit-
-F - DM178.00-limit+,DM178.01-home,DM178.02-limit-
+X - DM28.00-limit+,DM28.02-home,DM28.01-limit-
+Y - DM58.00-limit+,DM58.02-home,DM58.01-limit-
+Z - DM88.00-limit+,DM88.02-home,DM88.01-limit-
+F - DM178.00-limit+,DM178.02-home,DM178.01-limit-
 4:
-X - DM208.00-limit+,DM208.01-home,DM208.02-limit-
-Z - DM268.00-limit+,DM268.01-home,DM268.02-limit-
-Y - DM238.00-limit+,DM238.01-home,DM238.02-limit-
-F - DM358.00-limit+,DM358.01-home,DM358.02-limit-
+X - DM208.00-limit+,DM208.02-home,DM208.01-limit-
+Z - DM268.00-limit+,DM268.02-home,DM268.01-limit-
+Y - DM238.00-limit+,DM238.02-home,DM238.01-limit-
+F - DM358.00-limit+,DM358.02-home,DM358.01-limit-
 1:
-X - DM388.00-limit+,DM388.01-home,DM388.02-limit-
-Y - DM418.00-limit+,DM418.01-home,DM418.02-limit-
-Z - DM448.00-limit+,DM448.01-home,DM448.02-limit-
-F - DM538.00-limit+,DM538.01-home,DM538.02-limit-
+X - DM388.00-limit+,DM388.02-home,DM388.01-limit-
+Y - DM418.00-limit+,DM418.02-home,DM418.01-limit-
+Z - DM448.00-limit+,DM448.02-home,DM448.01-limit-
+F - DM538.00-limit+,DM538.02-home,DM538.01-limit-
 3:
-X - DM568.00-limit+,DM568.01-home,DM568.02-limit-
-Y - DM598.00-limit+,DM598.01-home,DM598.02-limit-
-Z - DM628.00-limit+,DM628.01-home,DM628.02-limit-
-F - DM718.00-limit+,DM718.01-home,DM718.02-limit-
+X - DM568.00-limit+,DM568.02-home,DM568.01-limit-
+Y - DM598.00-limit+,DM598.02-home,DM598.01-limit-
+Z - DM628.00-limit+,DM628.02-home,DM628.01-limit-
+F - DM718.00-limit+,DM718.02-home,DM718.01-limit-
 
 *motor disable
 2: MR007,  
@@ -36,9 +36,9 @@ F - DM718.00-limit+,DM718.01-home,DM718.02-limit-
 
 *dry run mode
 2. MR10
-4. M1010
-1. M2010
-3. M3010
+4. MR1010
+1. MR2010
+3. MR3010
 
 *by pass sensor detect tray
 2. MR012
@@ -47,8 +47,20 @@ F - DM718.00-limit+,DM718.01-home,DM718.02-limit-
 3. MR3012
 
 *auto mode
-2. MR022
-4. MR1022
-1. MR2022
-3. MR3022
+2. MR14200
+4. MR18200
+1. MR22200
+3. MR26200
+
+cảm biến xilanh chart 
+2. MR210 -on MR211-off
+4. MR1210    MR1211
+1. MR2210    MR2211
+3. MR3210    MR3211
+
+góc quay
+2. DM1290
+4. DM1690
+1. DM2090
+3. DM2490
 

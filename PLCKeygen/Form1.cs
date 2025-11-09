@@ -2069,7 +2069,8 @@ namespace PLCKeygen
         {
             try
             {
-                bool isActive = PLCKey.ReadBitFromWord(address, GetBitIndexFromAddress(address));
+                var addrSplit = address.Split('.');
+                bool isActive = PLCKey.ReadBitFromWord(addrSplit[0], GetBitIndexFromAddress(address));
 
                 if (isActive)
                 {
@@ -2258,6 +2259,12 @@ namespace PLCKeygen
                         UpdateLEDStatus(ledStop, PLCAddresses.Input.P1_SW_Stop1);
                         UpdateLEDStatus(ledReset, PLCAddresses.Input.P1_SW_Reset1);
                         UpdateLEDStatus(ledInit, PLCAddresses.Input.P1_SW_Init1);
+                        UpdateLEDStatus(ledLCALampGreen, PLCAddresses.Input.P1_Stt_lca_Gre1);
+                        UpdateLEDStatus(ledLCALampYellow, PLCAddresses.Input.P1_Stt_lca_Yel1 );
+                        UpdateLEDStatus(ledLCALampRed, PLCAddresses.Input.P1_Stt_lca_Red1 );
+                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P1_Ss_AirPlus1);
+                        UpdateLEDStatus(ledChartOut, PLCAddresses.Input.P1_Chart_On);
+                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P1_Chart_Off);
                         break;
 
                     case 2:
@@ -2279,6 +2286,12 @@ namespace PLCKeygen
                         UpdateLEDStatus(ledStop, PLCAddresses.Input.P2_SW_Stop2);
                         UpdateLEDStatus(ledReset, PLCAddresses.Input.P2_SW_Reset2);
                         UpdateLEDStatus(ledInit, PLCAddresses.Input.P2_SW_Init2);
+                        UpdateLEDStatus(ledLCALampGreen, PLCAddresses.Input.P2_Stt_lca_Gre2);
+                        UpdateLEDStatus(ledLCALampYellow, PLCAddresses.Input.P2_Stt_lca_Yel2);
+                        UpdateLEDStatus(ledLCALampRed, PLCAddresses.Input.P2_Stt_lca_Red2);
+                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P2_Ss_AirPlus2);
+                        UpdateLEDStatus(ledChartOut, PLCAddresses.Input.P2_Chart_On);
+                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P2_Chart_Off);
                         break;
 
                     case 3:
@@ -2300,6 +2313,12 @@ namespace PLCKeygen
                         UpdateLEDStatus(ledStop, PLCAddresses.Input.P3_SW_Stop3);
                         UpdateLEDStatus(ledReset, PLCAddresses.Input.P3_SW_Reset3);
                         UpdateLEDStatus(ledInit, PLCAddresses.Input.P3_SW_Init3);
+                        UpdateLEDStatus(ledLCALampGreen, PLCAddresses.Input.P3_Stt_lca_Gre3);
+                        UpdateLEDStatus(ledLCALampYellow, PLCAddresses.Input.P3_Stt_lca_Yel3);
+                        UpdateLEDStatus(ledLCALampRed, PLCAddresses.Input.P3_Stt_lca_Red3);
+                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P3_Ss_AirPlus3);
+                        UpdateLEDStatus(ledChartOut, PLCAddresses.Input.P3_Chart_On);
+                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P3_Chart_Off);
                         break;
 
                     case 4:
@@ -2321,6 +2340,12 @@ namespace PLCKeygen
                         UpdateLEDStatus(ledStop, PLCAddresses.Input.P4_SW_Stop4);
                         UpdateLEDStatus(ledReset, PLCAddresses.Input.P4_SW_Reset4);
                         UpdateLEDStatus(ledInit, PLCAddresses.Input.P4_SW_Init4);
+                        UpdateLEDStatus(ledLCALampGreen, PLCAddresses.Input.P4_Stt_lca_Gre4);
+                        UpdateLEDStatus(ledLCALampYellow, PLCAddresses.Input.P4_Stt_lca_Yel4);
+                        UpdateLEDStatus(ledLCALampRed, PLCAddresses.Input.P4_Stt_lca_Red4);
+                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P4_Ss_AirPlus4);
+                        UpdateLEDStatus(ledChartOut, PLCAddresses.Input.P4_Chart_On);
+                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P4_Chart_Off);
                         break;
                 }
             }
@@ -2338,7 +2363,7 @@ namespace PLCKeygen
                 return;
 
             bool bitStatus = PLCKey.ReadBit(plcAddress);
-            ledButton.BackColor = bitStatus ? Color.Green : Color.Red;
+            ledButton.BackColor = bitStatus ? Color.Green : Color.Gray;
         }
 
         // Update output button status
@@ -2415,7 +2440,7 @@ namespace PLCKeygen
                 return;
 
             bool bitStatus = PLCKey.ReadBit(plcAddress);
-            outputButton.BackColor = bitStatus ? Color.Red : Color.Green;
+            outputButton.BackColor = bitStatus ? Color.Green : Color.Gray;
         }
 
         // Output button click handler to toggle PLC bits

@@ -62,7 +62,6 @@ namespace PLCKeygen
 
         public void Close()
         {
-           
             _stream?.Close();
             _client?.Close();
             PropertyChangedEvent($"{Tcpstatus.disconnected}");
@@ -433,9 +432,6 @@ namespace PLCKeygen
 
         }
 
-
-
-
         //public short ReadInt16(string address)
         //{
         //    string response = SendCommand($"RD {address}.S");
@@ -507,32 +503,25 @@ namespace PLCKeygen
         }
         private void Reconnect(object sender, System.Timers.ElapsedEventArgs e)
         {
-            
-               
-                try
-                {
-                   
-                    Close();
-                    Open();
-                    StartCommunication();
-                  //  LogProgram.WriteLog($"Ready communication to {_ip}:{_port} after Reconnect");
-                 
-                 
+            try
+            {
+                Close();
+                Open();
+                StartCommunication();
+                //  LogProgram.WriteLog($"Ready communication to {_ip}:{_port} after Reconnect");
+            }
+            catch (Exception ex)
+            {
 
-                }
-                catch (Exception ex)
-                {
-
-                 Console.WriteLine($"Reconnection failed: {ex.Message}");
-                _timer.Interval = 3000; // Thử lại sau 3 giây
-                    _timer.AutoReset = false; // Chỉ chạy một lần
-                    _timer.Elapsed -= Reconnect; // Đảm bảo không đăng ký nhiều lần
-                    _timer.Elapsed += Reconnect; // Đăng ký lại sự kiện
-                    _timer.Start();   
-                    PropertyChangedEvent($"{Tcpstatus.disconnected}");
-                   // LogProgram.WriteLog($"Reconnection failed: {ex.Message}");
-                }
-         
+                Console.WriteLine($"Reconnection failed: {ex.Message}");
+            _timer.Interval = 3000; // Thử lại sau 3 giây
+                _timer.AutoReset = false; // Chỉ chạy một lần
+                _timer.Elapsed -= Reconnect; // Đảm bảo không đăng ký nhiều lần
+                _timer.Elapsed += Reconnect; // Đăng ký lại sự kiện
+                _timer.Start();   
+                PropertyChangedEvent($"{Tcpstatus.disconnected}");
+                // LogProgram.WriteLog($"Reconnection failed: {ex.Message}");
+            }
         }
     }
 

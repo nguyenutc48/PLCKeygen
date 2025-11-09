@@ -69,8 +69,7 @@ namespace PLCKeygen
             public const string P1_FReset =     "MR45205";
             public const string P1_FGo_ABS =    "MR45203";
             public const string P1_FGo_INC =    "MR45204";
-            public const string P1_SW_Auto =    "MR2001";
-            public const string P1_Auto_Mode =  "MR2022";
+            public const string P1_Auto_Mode = "MR22200";
             #endregion
 
             #region Port 2 Jog
@@ -111,8 +110,7 @@ namespace PLCKeygen
             public const string P2_FReset =     "MR41605";
             public const string P2_FGo_ABS =    "MR41603";
             public const string P2_FGo_INC =    "MR41604";
-            public const string P2_SW_Auto =    "MR001";
-            public const string P2_Auto_Mode =  "MR022";
+            public const string P2_Auto_Mode = "MR14200";
             #endregion
 
             #region Port 3 Jog
@@ -153,8 +151,7 @@ namespace PLCKeygen
             public const string P3_FReset =     "MR47005";
             public const string P3_FGo_ABS =    "MR47003";
             public const string P3_FGo_INC =    "MR47004";
-            public const string P3_SW_Auto =    "MR3001";
-            public const string P3_Auto_Mode =  "MR3022";
+            public const string P3_Auto_Mode = "MR26200";
             #endregion
 
             #region Port 4 Jog
@@ -195,43 +192,42 @@ namespace PLCKeygen
             public const string P4_FReset =     "MR43405";
             public const string P4_FGo_ABS =    "MR43403";
             public const string P4_FGo_INC =    "MR43404";
-            public const string P4_SW_Auto =    "MR1001";
-            public const string P4_Auto_Mode =  "MR1022";
+            public const string P4_Auto_Mode = "MR18200";
             #endregion
 
             #region Port 1 Limit Switches
 
             // X Axis Limits
             /// <summary>X Axis - Limit Plus</summary>
-            public const string P1_X_LimitPlus = "DM388.00";
+            public const string P1_X_LimitPlus = "DM388.0";
             /// <summary>X Axis - Home</summary>
-            public const string P1_X_Home = "DM388.01";
+            public const string P1_X_Home = "DM388.2";
             /// <summary>X Axis - Limit Minus</summary>
-            public const string P1_X_LimitMinus = "DM388.02";
+            public const string P1_X_LimitMinus = "DM388.1";
 
             // Y Axis Limits
             /// <summary>Y Axis - Limit Plus</summary>
-            public const string P1_Y_LimitPlus = "DM418.00";
+            public const string P1_Y_LimitPlus = "DM418.0";
             /// <summary>Y Axis - Home</summary>
-            public const string P1_Y_Home = "DM418.01";
+            public const string P1_Y_Home = "DM418.2";
             /// <summary>Y Axis - Limit Minus</summary>
-            public const string P1_Y_LimitMinus = "DM418.02";
+            public const string P1_Y_LimitMinus = "DM418.1";
 
             // Z Axis Limits
             /// <summary>Z Axis - Limit Plus</summary>
-            public const string P1_Z_LimitPlus = "DM448.00";
+            public const string P1_Z_LimitPlus = "DM448.0";
             /// <summary>Z Axis - Home</summary>
-            public const string P1_Z_Home = "DM448.01";
+            public const string P1_Z_Home = "DM448.2";
             /// <summary>Z Axis - Limit Minus</summary>
-            public const string P1_Z_LimitMinus = "DM448.02";
+            public const string P1_Z_LimitMinus = "DM448.1";
 
             // F Axis Limits
             /// <summary>F Axis - Limit Plus</summary>
-            public const string P1_F_LimitPlus = "DM538.00";
+            public const string P1_F_LimitPlus = "DM538.0";
             /// <summary>F Axis - Home</summary>
-            public const string P1_F_Home = "DM538.01";
+            public const string P1_F_Home = "DM538.2";
             /// <summary>F Axis - Limit Minus</summary>
-            public const string P1_F_LimitMinus = "DM538.02";
+            public const string P1_F_LimitMinus = "DM538.1";
 
             #endregion
 
@@ -244,7 +240,7 @@ namespace PLCKeygen
             public const string P1_Bypass_Door = "MR2011";
 
             /// <summary>Dry Run Mode</summary>
-            public const string P1_Dry_Run_Mode = "M2010";
+            public const string P1_Dry_Run_Mode = "MR2010";
 
             /// <summary>Bypass Sensor Detect Tray</summary>
             public const string P1_Bypass_Sensor_Detect_Tray = "MR2012";
@@ -333,41 +329,47 @@ namespace PLCKeygen
             /// <summary>Switch: Initialize 1 - SW Init1</summary>
             public const string P1_SW_Init1 = "MR2209";
 
+            /// <summary>Switch: Initialize 1 - SW Init1</summary>
+            public const string P1_Chart_On = "MR2210";
+
+            /// <summary>Switch: Initialize 1 - SW Init1</summary>
+            public const string P1_Chart_Off = "MR2211";
+
             #endregion
 
             #region Port 2 Limit Switches
 
             // X Axis Limits
             /// <summary>X Axis - Limit Plus</summary>
-            public const string P2_X_LimitPlus = "DM28.00";
+            public const string P2_X_LimitPlus = "DM28.0";
             /// <summary>X Axis - Home</summary>
-            public const string P2_X_Home = "DM28.01";
+            public const string P2_X_Home = "DM28.2";
             /// <summary>X Axis - Limit Minus</summary>
-            public const string P2_X_LimitMinus = "DM28.02";
+            public const string P2_X_LimitMinus = "DM28.1";
 
             // Y Axis Limits
             /// <summary>Y Axis - Limit Plus</summary>
-            public const string P2_Y_LimitPlus = "DM58.00";
+            public const string P2_Y_LimitPlus = "DM58.0";
             /// <summary>Y Axis - Home</summary>
-            public const string P2_Y_Home = "DM58.01";
+            public const string P2_Y_Home = "DM58.2";
             /// <summary>Y Axis - Limit Minus</summary>
-            public const string P2_Y_LimitMinus = "DM58.02";
+            public const string P2_Y_LimitMinus = "DM58.1";
 
             // Z Axis Limits
             /// <summary>Z Axis - Limit Plus</summary>
-            public const string P2_Z_LimitPlus = "DM88.00";
+            public const string P2_Z_LimitPlus = "DM88.0";
             /// <summary>Z Axis - Home</summary>
-            public const string P2_Z_Home = "DM88.01";
+            public const string P2_Z_Home = "DM88.2";
             /// <summary>Z Axis - Limit Minus</summary>
-            public const string P2_Z_LimitMinus = "DM88.02";
+            public const string P2_Z_LimitMinus = "DM88.1";
 
             // F Axis Limits
             /// <summary>F Axis - Limit Plus</summary>
-            public const string P2_F_LimitPlus = "DM178.00";
+            public const string P2_F_LimitPlus = "DM178.0";
             /// <summary>F Axis - Home</summary>
-            public const string P2_F_Home = "DM178.01";
+            public const string P2_F_Home = "DM178.2";
             /// <summary>F Axis - Limit Minus</summary>
-            public const string P2_F_LimitMinus = "DM178.02";
+            public const string P2_F_LimitMinus = "DM178.1";
 
             #endregion
 
@@ -469,41 +471,47 @@ namespace PLCKeygen
             /// <summary>Switch: Initialize 2 - SW Init2</summary>
             public const string P2_SW_Init2 = "MR209";
 
+            /// <summary>Switch: Initialize 1 - SW Init1</summary>
+            public const string P2_Chart_On = "MR210";
+
+            /// <summary>Switch: Initialize 1 - SW Init1</summary>
+            public const string P2_Chart_Off = "MR211";
+
             #endregion
 
             #region Port 3 Limit Switches
 
             // X Axis Limits
             /// <summary>X Axis - Limit Plus</summary>
-            public const string P3_X_LimitPlus = "DM568.00";
+            public const string P3_X_LimitPlus = "DM568.0";
             /// <summary>X Axis - Home</summary>
-            public const string P3_X_Home = "DM568.01";
+            public const string P3_X_Home = "DM568.2";
             /// <summary>X Axis - Limit Minus</summary>
-            public const string P3_X_LimitMinus = "DM568.02";
+            public const string P3_X_LimitMinus = "DM568.1";
 
             // Y Axis Limits
             /// <summary>Y Axis - Limit Plus</summary>
-            public const string P3_Y_LimitPlus = "DM598.00";
+            public const string P3_Y_LimitPlus = "DM598.0";
             /// <summary>Y Axis - Home</summary>
-            public const string P3_Y_Home = "DM598.01";
+            public const string P3_Y_Home = "DM598.2";
             /// <summary>Y Axis - Limit Minus</summary>
-            public const string P3_Y_LimitMinus = "DM598.02";
+            public const string P3_Y_LimitMinus = "DM598.1";
 
             // Z Axis Limits
             /// <summary>Z Axis - Limit Plus</summary>
-            public const string P3_Z_LimitPlus = "DM628.00";
+            public const string P3_Z_LimitPlus = "DM628.0";
             /// <summary>Z Axis - Home</summary>
-            public const string P3_Z_Home = "DM628.01";
+            public const string P3_Z_Home = "DM628.2";
             /// <summary>Z Axis - Limit Minus</summary>
-            public const string P3_Z_LimitMinus = "DM628.02";
+            public const string P3_Z_LimitMinus = "DM628.1";
 
             // F Axis Limits
             /// <summary>F Axis - Limit Plus</summary>
-            public const string P3_F_LimitPlus = "DM718.00";
+            public const string P3_F_LimitPlus = "DM718.0";
             /// <summary>F Axis - Home</summary>
-            public const string P3_F_Home = "DM718.01";
+            public const string P3_F_Home = "DM718.2";
             /// <summary>F Axis - Limit Minus</summary>
-            public const string P3_F_LimitMinus = "DM718.02";
+            public const string P3_F_LimitMinus = "DM718.1";
 
             #endregion
 
@@ -516,7 +524,7 @@ namespace PLCKeygen
             public const string P3_Bypass_Door = "MR3011";
 
             /// <summary>Dry Run Mode</summary>
-            public const string P3_Dry_Run_Mode = "M3010";
+            public const string P3_Dry_Run_Mode = "MR3010";
 
             /// <summary>Bypass Sensor Detect Tray</summary>
             public const string P3_Bypass_Sensor_Detect_Tray = "MR3012";
@@ -605,41 +613,47 @@ namespace PLCKeygen
             /// <summary>Switch: Initialize 3 - SW Init3</summary>
             public const string P3_SW_Init3 = "MR3209";
 
+            /// <summary>Switch: Initialize 1 - SW Init1</summary>
+            public const string P3_Chart_On = "MR3210";
+
+            /// <summary>Switch: Initialize 1 - SW Init1</summary>
+            public const string P3_Chart_Off = "MR3211";
+
             #endregion
 
             #region Port 4 Limit Switches
 
             // X Axis Limits
             /// <summary>X Axis - Limit Plus</summary>
-            public const string P4_X_LimitPlus = "DM208.00";
+            public const string P4_X_LimitPlus = "DM208.0";
             /// <summary>X Axis - Home</summary>
-            public const string P4_X_Home = "DM208.01";
+            public const string P4_X_Home = "DM208.2";
             /// <summary>X Axis - Limit Minus</summary>
-            public const string P4_X_LimitMinus = "DM208.02";
+            public const string P4_X_LimitMinus = "DM208.1";
 
             // Y Axis Limits
             /// <summary>Y Axis - Limit Plus</summary>
-            public const string P4_Y_LimitPlus = "DM238.00";
+            public const string P4_Y_LimitPlus = "DM238.0";
             /// <summary>Y Axis - Home</summary>
-            public const string P4_Y_Home = "DM238.01";
+            public const string P4_Y_Home = "DM238.2";
             /// <summary>Y Axis - Limit Minus</summary>
-            public const string P4_Y_LimitMinus = "DM238.02";
+            public const string P4_Y_LimitMinus = "DM238.1";
 
             // Z Axis Limits
             /// <summary>Z Axis - Limit Plus</summary>
-            public const string P4_Z_LimitPlus = "DM268.00";
+            public const string P4_Z_LimitPlus = "DM268.0";
             /// <summary>Z Axis - Home</summary>
-            public const string P4_Z_Home = "DM268.01";
+            public const string P4_Z_Home = "DM268.2";
             /// <summary>Z Axis - Limit Minus</summary>
-            public const string P4_Z_LimitMinus = "DM268.02";
+            public const string P4_Z_LimitMinus = "DM268.1";
 
             // F Axis Limits
             /// <summary>F Axis - Limit Plus</summary>
-            public const string P4_F_LimitPlus = "DM358.00";
+            public const string P4_F_LimitPlus = "DM358.0";
             /// <summary>F Axis - Home</summary>
-            public const string P4_F_Home = "DM358.01";
+            public const string P4_F_Home = "DM358.2";
             /// <summary>F Axis - Limit Minus</summary>
-            public const string P4_F_LimitMinus = "DM358.02";
+            public const string P4_F_LimitMinus = "DM358.1";
 
             #endregion
 
@@ -652,7 +666,7 @@ namespace PLCKeygen
             public const string P4_Bypass_Door = "MR1011";
 
             /// <summary>Dry Run Mode</summary>
-            public const string P4_Dry_Run_Mode = "M1010";
+            public const string P4_Dry_Run_Mode = "MR1010";
 
             /// <summary>Bypass Sensor Detect Tray</summary>
             public const string P4_Bypass_Sensor_Detect_Tray = "MR1012";
@@ -740,6 +754,12 @@ namespace PLCKeygen
 
             /// <summary>Switch: Initialize 4 - SW Init4</summary>
             public const string P4_SW_Init4 = "MR1209";
+
+            /// <summary>Switch: Initialize 1 - SW Init1</summary>
+            public const string P4_Chart_On = "MR1210";
+
+            /// <summary>Switch: Initialize 1 - SW Init1</summary>
+            public const string P4_Chart_Off = "MR1211";
 
             #endregion
         }
