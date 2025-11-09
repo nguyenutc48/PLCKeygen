@@ -467,9 +467,9 @@ namespace PLCKeygen
             RefreshModelComboBox();
 
             // Hide model management buttons initially (Jog mode is default)
-            btnModelAdd.Visible = false;
-            btnModelDelete.Visible = false;
-            btnModelLoad.Visible = false;
+            btnModelAdd.Enabled = false;
+            btnModelDelete.Enabled = false;
+            btnModelLoad.Enabled = false;
 
             // Initialize bypass button colors
             UpdateBypassButtonColors();
@@ -2180,9 +2180,9 @@ namespace PLCKeygen
                     grpTeachingTray.Enabled = false;
 
                     // Hide model management buttons when switching to Jog mode
-                    btnModelAdd.Visible = false;
-                    btnModelDelete.Visible = false;
-                    btnModelLoad.Visible = false;
+                    btnModelAdd.Enabled = false;
+                    btnModelDelete.Enabled = false;
+                    btnModelLoad.Enabled = false;
 
                     // Reset all save button colors when switching to Jog mode
                     ResetTeachingSaveButtonColors();
@@ -2214,9 +2214,9 @@ namespace PLCKeygen
                         grpTeachingTray.Enabled = true;
 
                         // Show model management buttons when in Teaching mode
-                        btnModelAdd.Visible = true;
-                        btnModelDelete.Visible = true;
-                        btnModelLoad.Visible = true;
+                        btnModelAdd.Enabled = true;
+                        btnModelDelete.Enabled = true;
+                        btnModelLoad.Enabled = true;
                     }
                     else if (password != null)  // User didn't cancel
                     {

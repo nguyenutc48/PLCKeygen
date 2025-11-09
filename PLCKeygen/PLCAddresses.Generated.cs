@@ -23,7 +23,7 @@ namespace PLCKeygen
     public static class PLCAddresses
     {
         public const string PLCName = "Keyence_PLC_Main";
-        public const string IPAddress = "192.168.1.100";
+        public const string IPAddress = "192.168.1.10";
         public const int Port = 8501;
 
         /// <summary>
