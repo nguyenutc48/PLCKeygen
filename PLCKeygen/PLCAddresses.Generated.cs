@@ -70,6 +70,7 @@ namespace PLCKeygen
             public const string P1_FGo_ABS =    "MR45203";
             public const string P1_FGo_INC =    "MR45204";
             public const string P1_SW_Auto =    "MR2001";
+            public const string P1_Auto_Mode =  "MR2022";
             #endregion
 
             #region Port 2 Jog
@@ -111,6 +112,7 @@ namespace PLCKeygen
             public const string P2_FGo_ABS =    "MR41603";
             public const string P2_FGo_INC =    "MR41604";
             public const string P2_SW_Auto =    "MR001";
+            public const string P2_Auto_Mode =  "MR022";
             #endregion
 
             #region Port 3 Jog
@@ -152,6 +154,7 @@ namespace PLCKeygen
             public const string P3_FGo_ABS =    "MR47003";
             public const string P3_FGo_INC =    "MR47004";
             public const string P3_SW_Auto =    "MR3001";
+            public const string P3_Auto_Mode =  "MR3022";
             #endregion
 
             #region Port 4 Jog
@@ -193,6 +196,7 @@ namespace PLCKeygen
             public const string P4_FGo_ABS =    "MR43403";
             public const string P4_FGo_INC =    "MR43404";
             public const string P4_SW_Auto =    "MR1001";
+            public const string P4_Auto_Mode =  "MR1022";
             #endregion
 
             #region Port 1 Limit Switches

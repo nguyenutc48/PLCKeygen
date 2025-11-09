@@ -302,11 +302,22 @@ namespace PLCKeygen
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // Check if Port 1 or Port 2 is in Auto Mode
+            if (IsAutoModeActive(1) || IsAutoModeActive(2))
+            {
+                MessageBox.Show(
+                    "Port 1 hoặc Port 2 đang ở chế độ Auto!\nKhông thể điều khiển Camera Cylinder khi Auto đang chạy.",
+                    "Auto Mode Active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             if (PLCKey.ReadBit(PLCAddresses.Output.P12_Cam_cylinder))
             {
                 PLCKey.ResetBit(PLCAddresses.Output.P12_Cam_cylinder);
                 button1.Text = "Sang trai";
-            } 
+            }
             else
             {
                 PLCKey.SetBit(PLCAddresses.Output.P12_Cam_cylinder);
@@ -316,6 +327,17 @@ namespace PLCKeygen
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Check if Port 3 or Port 4 is in Auto Mode
+            if (IsAutoModeActive(3) || IsAutoModeActive(4))
+            {
+                MessageBox.Show(
+                    "Port 3 hoặc Port 4 đang ở chế độ Auto!\nKhông thể điều khiển Camera Cylinder khi Auto đang chạy.",
+                    "Auto Mode Active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             if (PLCKey.ReadBit(PLCAddresses.Output.P34_Cam_cylinder))
             {
                 PLCKey.ResetBit(PLCAddresses.Output.P34_Cam_cylinder);
@@ -366,6 +388,9 @@ namespace PLCKeygen
 
             // Update teaching point displays
             UpdateTeachingPointDisplays();
+
+            // Update bypass button colors
+            UpdateBypassButtonColors();
         }
 
 
@@ -444,6 +469,9 @@ namespace PLCKeygen
             btnModelAdd.Visible = false;
             btnModelDelete.Visible = false;
             btnModelLoad.Visible = false;
+
+            // Initialize bypass button colors
+            UpdateBypassButtonColors();
 
             toolStripStatusLabel2.ToolTipText = "PLC Connected";
             toolStripProgressBar1.Style = ProgressBarStyle.Blocks;
@@ -1453,6 +1481,9 @@ namespace PLCKeygen
                 // Immediately update IO displays for new port
                 UpdateIOInputs();
                 UpdateIOOutputs();
+
+                // Update bypass button colors for new port
+                UpdateBypassButtonColors();
             }
         }
 
@@ -1482,6 +1513,9 @@ namespace PLCKeygen
                 // Immediately update IO displays for new port
                 UpdateIOInputs();
                 UpdateIOOutputs();
+
+                // Update bypass button colors for new port
+                UpdateBypassButtonColors();
             }
         }
 
@@ -1673,6 +1707,17 @@ namespace PLCKeygen
         // Generic JOG Plus button MouseDown event handler
         private void btnJogPlus_MouseDown(object sender, MouseEventArgs e)
         {
+            // Check if port is in Auto Mode
+            if (IsAutoModeActive(selectedPort))
+            {
+                MessageBox.Show(
+                    $"Port {selectedPort} đang ở chế độ Auto!\nKhông thể Jog khi Auto đang chạy.",
+                    "Auto Mode Active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             string address = GetJogPlusAddress(selectedPort, selectedAxis);
             if (!string.IsNullOrEmpty(address))
             {
@@ -1693,6 +1738,17 @@ namespace PLCKeygen
         // Generic JOG Minus button MouseDown event handler
         private void btnJogMinus_MouseDown(object sender, MouseEventArgs e)
         {
+            // Check if port is in Auto Mode
+            if (IsAutoModeActive(selectedPort))
+            {
+                MessageBox.Show(
+                    $"Port {selectedPort} đang ở chế độ Auto!\nKhông thể Jog khi Auto đang chạy.",
+                    "Auto Mode Active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             string address = GetJogMinusAddress(selectedPort, selectedAxis);
             if (!string.IsNullOrEmpty(address))
             {
@@ -2131,6 +2187,18 @@ namespace PLCKeygen
                 }
                 else if (rb == rbtTeachingMode)
                 {
+                    // Check if port is in Auto Mode
+                    if (IsAutoModeActive(selectedPort))
+                    {
+                        MessageBox.Show(
+                            $"Port {selectedPort} đang ở chế độ Auto!\nKhông thể chuyển sang Teaching Mode khi Auto đang chạy.",
+                            "Auto Mode Active",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                        rbtJogMode.Checked = true; // Revert to Jog mode
+                        return;
+                    }
+
                     // Show password dialog when switching to Teaching mode
                     string password = PasswordDialog.Show(
                         "Nhập mật khẩu để vào chế độ Teaching:",
@@ -2353,6 +2421,17 @@ namespace PLCKeygen
         // Output button click handler to toggle PLC bits
         private void btnOutputToggle_Click(object sender, EventArgs e)
         {
+            // Check if port is in Auto Mode
+            if (IsAutoModeActive(selectedIOPort))
+            {
+                MessageBox.Show(
+                    $"Port {selectedIOPort} đang ở chế độ Auto!\nKhông thể điều khiển Output khi Auto đang chạy.",
+                    "Auto Mode Active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
             if (btn == null) return;
 
@@ -2593,6 +2672,17 @@ namespace PLCKeygen
         // Reset axis when Reset button is clicked
         private void btnAxisReset_Click(object sender, EventArgs e)
         {
+            // Check if port is in Auto Mode
+            if (IsAutoModeActive(selectedPort))
+            {
+                MessageBox.Show(
+                    $"Port {selectedPort} đang ở chế độ Auto!\nKhông thể Reset khi Auto đang chạy.",
+                    "Auto Mode Active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
             if (btn == null) return;
 
@@ -2627,6 +2717,17 @@ namespace PLCKeygen
         // Go to ABS position when Go button is clicked
         private void btnAxisGo_Click(object sender, EventArgs e)
         {
+            // Check if port is in Auto Mode
+            if (IsAutoModeActive(selectedPort))
+            {
+                MessageBox.Show(
+                    $"Port {selectedPort} đang ở chế độ Auto!\nKhông thể Go khi Auto đang chạy.",
+                    "Auto Mode Active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
             if (btn == null) return;
 
@@ -2928,6 +3029,17 @@ namespace PLCKeygen
 
         private async void btnResetAll_Click(object sender, EventArgs e)
         {
+            // Check if port is in Auto Mode
+            if (IsAutoModeActive(selectedPort))
+            {
+                MessageBox.Show(
+                    $"Port {selectedPort} đang ở chế độ Auto!\nKhông thể Reset All khi Auto đang chạy.",
+                    "Auto Mode Active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             string addrReset = GetResetAllAddress(selectedPort);
             if (addrReset == null) return;
             PLCKey.SetBit(addrReset);
@@ -2946,6 +3058,17 @@ namespace PLCKeygen
 
         private async void btnHomeAll_Click(object sender, EventArgs e)
         {
+            // Check if port is in Auto Mode
+            if (IsAutoModeActive(selectedPort))
+            {
+                MessageBox.Show(
+                    $"Port {selectedPort} đang ở chế độ Auto!\nKhông thể Home All khi Auto đang chạy.",
+                    "Auto Mode Active",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+                return;
+            }
+
             var dialogResult = MessageBox.Show("Bạn có chắc chắn không","Cảnh báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
             if (dialogResult == DialogResult.No) return;
             string addHome = GetHomeAllAddress(selectedPort);
@@ -4287,6 +4410,217 @@ namespace PLCKeygen
                 {
                     btn.BackColor = System.Drawing.Color.LightGreen;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Motor Disable button click handler - Toggle PLC value
+        /// </summary>
+        private void btnMotorDisable_Click(object sender, EventArgs e)
+        {
+            ToggleBypassSignal(selectedPort, "Motor");
+        }
+
+        /// <summary>
+        /// Door Disable button click handler - Toggle PLC value
+        /// </summary>
+        private void btnDoorDisable_Click(object sender, EventArgs e)
+        {
+            ToggleBypassSignal(selectedPort, "Door");
+        }
+
+        /// <summary>
+        /// Dry Run Mode button click handler - Toggle PLC value
+        /// </summary>
+        private void btnDryRunMode_Click(object sender, EventArgs e)
+        {
+            ToggleBypassSignal(selectedPort, "DryRun");
+        }
+
+        /// <summary>
+        /// Tray Disable button click handler - Toggle PLC value
+        /// </summary>
+        private void btnTrayDisable_Click(object sender, EventArgs e)
+        {
+            ToggleBypassSignal(selectedPort, "Tray");
+        }
+
+        /// <summary>
+        /// Toggle bypass signal at PLC address
+        /// </summary>
+        private void ToggleBypassSignal(int port, string signalType)
+        {
+            try
+            {
+                string address = GetBypassAddress(port, signalType);
+                if (string.IsNullOrEmpty(address))
+                    return;
+
+                // Read current value
+                bool currentValue = PLCKey.ReadBit(address);
+
+                // Toggle value
+                if (currentValue)
+                    PLCKey.ResetBit(address);
+                else
+                    PLCKey.SetBit(address);
+
+                // Update button color immediately
+                UpdateBypassButtonColor(signalType, !currentValue);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Lỗi khi toggle bypass signal: {ex.Message}",
+                    "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Get PLC address for bypass signal based on port and signal type
+        /// </summary>
+        private string GetBypassAddress(int port, string signalType)
+        {
+            switch (port)
+            {
+                case 1:
+                    switch (signalType)
+                    {
+                        case "Motor": return PLCAddresses.Input.P1_Motor_Disable;
+                        case "Door": return PLCAddresses.Input.P1_Bypass_Door;
+                        case "DryRun": return PLCAddresses.Input.P1_Dry_Run_Mode;
+                        case "Tray": return PLCAddresses.Input.P1_Bypass_Sensor_Detect_Tray;
+                    }
+                    break;
+                case 2:
+                    switch (signalType)
+                    {
+                        case "Motor": return PLCAddresses.Input.P2_Motor_Disable;
+                        case "Door": return PLCAddresses.Input.P2_Bypass_Door;
+                        case "DryRun": return PLCAddresses.Input.P2_Dry_Run_Mode;
+                        case "Tray": return PLCAddresses.Input.P2_Bypass_Sensor_Detect_Tray;
+                    }
+                    break;
+                case 3:
+                    switch (signalType)
+                    {
+                        case "Motor": return PLCAddresses.Input.P3_Motor_Disable;
+                        case "Door": return PLCAddresses.Input.P3_Bypass_Door;
+                        case "DryRun": return PLCAddresses.Input.P3_Dry_Run_Mode;
+                        case "Tray": return PLCAddresses.Input.P3_Bypass_Sensor_Detect_Tray;
+                    }
+                    break;
+                case 4:
+                    switch (signalType)
+                    {
+                        case "Motor": return PLCAddresses.Input.P4_Motor_Disable;
+                        case "Door": return PLCAddresses.Input.P4_Bypass_Door;
+                        case "DryRun": return PLCAddresses.Input.P4_Dry_Run_Mode;
+                        case "Tray": return PLCAddresses.Input.P4_Bypass_Sensor_Detect_Tray;
+                    }
+                    break;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Update button color based on signal value
+        /// </summary>
+        private void UpdateBypassButtonColor(string signalType, bool isActive)
+        {
+            System.Windows.Forms.Button btn = null;
+            switch (signalType)
+            {
+                case "Motor": btn = btnMotorDisable; break;
+                case "Door": btn = btnDoorDisable; break;
+                case "DryRun": btn = btnDryRunMode; break;
+                case "Tray": btn = btnTrayDisable; break;
+            }
+
+            if (btn != null)
+            {
+                btn.BackColor = isActive ? System.Drawing.Color.LightGreen : System.Drawing.Color.LightGray;
+            }
+        }
+
+        /// <summary>
+        /// Check if port is in Auto Mode
+        /// </summary>
+        private bool IsAutoModeActive(int port)
+        {
+            try
+            {
+                string autoAddress = GetAutoModeAddress(port);
+                if (string.IsNullOrEmpty(autoAddress))
+                    return false;
+
+                return PLCKey.ReadBit(autoAddress);
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Get Auto Mode address for specific port
+        /// </summary>
+        private string GetAutoModeAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Input.P1_Auto_Mode;
+                case 2: return PLCAddresses.Input.P2_Auto_Mode;
+                case 3: return PLCAddresses.Input.P3_Auto_Mode;
+                case 4: return PLCAddresses.Input.P4_Auto_Mode;
+                default: return null;
+            }
+        }
+
+        /// <summary>
+        /// Update all bypass button colors from PLC (called by timer)
+        /// </summary>
+        private void UpdateBypassButtonColors()
+        {
+            try
+            {
+                // Motor Disable
+                string motorAddr = GetBypassAddress(selectedPort, "Motor");
+                if (!string.IsNullOrEmpty(motorAddr))
+                {
+                    bool motorValue = PLCKey.ReadBit(motorAddr);
+                    UpdateBypassButtonColor("Motor", motorValue);
+                }
+
+                // Door Bypass
+                string doorAddr = GetBypassAddress(selectedPort, "Door");
+                if (!string.IsNullOrEmpty(doorAddr))
+                {
+                    bool doorValue = PLCKey.ReadBit(doorAddr);
+                    UpdateBypassButtonColor("Door", doorValue);
+                }
+
+                // Dry Run Mode
+                string dryRunAddr = GetBypassAddress(selectedPort, "DryRun");
+                if (!string.IsNullOrEmpty(dryRunAddr))
+                {
+                    bool dryRunValue = PLCKey.ReadBit(dryRunAddr);
+                    UpdateBypassButtonColor("DryRun", dryRunValue);
+                }
+
+                // Tray Bypass
+                string trayAddr = GetBypassAddress(selectedPort, "Tray");
+                if (!string.IsNullOrEmpty(trayAddr))
+                {
+                    bool trayValue = PLCKey.ReadBit(trayAddr);
+                    UpdateBypassButtonColor("Tray", trayValue);
+                }
+            }
+            catch
+            {
+                // Ignore errors in timer update
             }
         }
 

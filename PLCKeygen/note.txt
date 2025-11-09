@@ -46,3 +46,9 @@ F - DM718.00-limit+,DM718.01-home,DM718.02-limit-
 1. MR2012
 3. MR3012
 
+*auto mode
+2. MR022
+4. MR1022
+1. MR2022
+3. MR3022
+
