@@ -15,20 +15,26 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_66EE27DCED5AD0D7DF9A64A6B1E55DBE"
-        "OwnerKey" = "8:_70FC341EC6D34253A6D104C9287795C4"
+        "MsmKey" = "8:_2B9DB3880B3B4D4DA1A6C497CECF84FA"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_70FC341EC6D34253A6D104C9287795C4"
+        "MsmKey" = "8:_66EE27DCED5AD0D7DF9A64A6B1E55DBE"
+        "OwnerKey" = "8:_CC42AD63E681498B80E3142CC668F63D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CC42AD63E681498B80E3142CC668F63D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_EA6E270809349C91F7187573FE9D0CEC"
-        "OwnerKey" = "8:_70FC341EC6D34253A6D104C9287795C4"
+        "OwnerKey" = "8:_CC42AD63E681498B80E3142CC668F63D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,7 +46,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_70FC341EC6D34253A6D104C9287795C4"
+        "OwnerKey" = "8:_CC42AD63E681498B80E3142CC668F63D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -144,6 +150,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2B9DB3880B3B4D4DA1A6C497CECF84FA"
+            {
+            "SourcePath" = "8:..\\PLCKeygen\\ksmiletris_smile_11136.ico"
+            "TargetName" = "8:ksmiletris_smile_11136.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_4EB941E23775477BAFA2A43C02EBFF47"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_66EE27DCED5AD0D7DF9A64A6B1E55DBE"
             {
             "AssemblyRegister" = "3:1"
@@ -225,7 +251,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_4EB941E23775477BAFA2A43C02EBFF47"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:C:\\[Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -263,7 +289,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:LCA Handler Teaching"
         "ProductCode" = "8:{997054F0-B572-4304-9716-8590B245F419}"
-        "PackageCode" = "8:{F1C92744-BE6D-4942-A833-122DED82886F}"
+        "PackageCode" = "8:{8AA3390C-FD26-4D3C-BF6A-C580ED4D10CD}"
         "UpgradeCode" = "8:{E7CF3FEB-A740-4BD8-B6D7-B96D380BDC0A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -383,6 +409,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_BE17533B5EF24065BB9A2EC3E1B337C0"
+            {
+            "Name" = "8:Teaching"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_CC42AD63E681498B80E3142CC668F63D"
+            "Folder" = "8:_16274F6A4D0144B08D663EE5831C67EA"
+            "WorkingFolder" = "8:_4EB941E23775477BAFA2A43C02EBFF47"
+            "Icon" = "8:_2B9DB3880B3B4D4DA1A6C497CECF84FA"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -782,9 +822,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_70FC341EC6D34253A6D104C9287795C4"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CC42AD63E681498B80E3142CC668F63D"
             {
-            "SourcePath" = "8:..\\PLCKeygen\\obj\\Debug\\PLCKeygen.exe"
+            "SourcePath" = "8:..\\PLCKeygen\\obj\\Release\\PLCKeygen.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4EB941E23775477BAFA2A43C02EBFF47"

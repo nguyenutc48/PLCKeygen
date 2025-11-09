@@ -232,6 +232,8 @@ namespace PLCKeygen
             #endregion
 
             #region Port 1 Control Signals
+            /// <summary>Chart Disable</summary>
+            public const string P1_Chart_Disable = "DM2088.0";
 
             /// <summary>Motor Disable</summary>
             public const string P1_Motor_Disable = "MR2007";
@@ -374,6 +376,8 @@ namespace PLCKeygen
             #endregion
 
             #region Port 2 Control Signals
+            /// <summary>Chart Disable</summary>
+            public const string P2_Chart_Disable = "DM1288.0";
 
             /// <summary>Motor Disable</summary>
             public const string P2_Motor_Disable = "MR007";
@@ -516,6 +520,8 @@ namespace PLCKeygen
             #endregion
 
             #region Port 3 Control Signals
+            /// <summary>Chart Disable</summary>
+            public const string P3_Chart_Disable = "DM2488.0";
 
             /// <summary>Motor Disable</summary>
             public const string P3_Motor_Disable = "MR3007";
@@ -658,6 +664,8 @@ namespace PLCKeygen
             #endregion
 
             #region Port 4 Control Signals
+            /// <summary>Chart Disable</summary>
+            public const string P4_Chart_Disable = "DM1688.0";
 
             /// <summary>Motor Disable</summary>
             public const string P4_Motor_Disable = "MR1007";
@@ -789,7 +797,7 @@ namespace PLCKeygen
             public const string P1_LCA_Request_Stop = "MR7006";
             public const string P1_LCA_Request_Reset = "MR7007";
             public const string P1_Cylinder_Chart_Socket = "MR7014";
-            public const string P1_Driver_Disable = "MR2202";
+            
             #endregion
 
             #region Port 2
@@ -804,7 +812,6 @@ namespace PLCKeygen
             public const string P2_LCA_Request_Stop = "MR5006";
             public const string P2_LCA_Request_Reset = "MR5007";
             public const string P2_Cylinder_Chart_Socket = "MR5014";
-            public const string P2_Driver_Disable = "MR202";
             #endregion
 
             #region Port 3
@@ -819,7 +826,6 @@ namespace PLCKeygen
             public const string P3_LCA_Request_Stop = "MR8006";
             public const string P3_LCA_Request_Reset = "MR8007";
             public const string P3_Cylinder_Chart_Socket = "MR8014";
-            public const string P3_Driver_Disable = "MR3202";
             #endregion
 
             #region Port 4
@@ -834,7 +840,6 @@ namespace PLCKeygen
             public const string P4_LCA_Request_Stop = "MR6006";
             public const string P4_LCA_Request_Reset = "MR6007";
             public const string P4_Cylinder_Chart_Socket = "MR6014";
-            public const string P4_Driver_Disable = "MR1202";
             #endregion
 
         }

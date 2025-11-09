@@ -71,6 +71,8 @@
             this.btnResetAll = new System.Windows.Forms.Button();
             this.grbJogControl = new System.Windows.Forms.GroupBox();
             this.groupBox34 = new System.Windows.Forms.GroupBox();
+            this.btnAutoDisable = new System.Windows.Forms.Button();
+            this.btnChartDisable = new System.Windows.Forms.Button();
             this.btnDryRunMode = new System.Windows.Forms.Button();
             this.btnTrayDisable = new System.Windows.Forms.Button();
             this.btnDoorDisable = new System.Windows.Forms.Button();
@@ -471,8 +473,6 @@
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnChartDisable = new System.Windows.Forms.Button();
-            this.btnAutoDisable = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -1000,6 +1000,26 @@
             this.groupBox34.TabIndex = 124;
             this.groupBox34.TabStop = false;
             this.groupBox34.Text = "By Pass Setting";
+            // 
+            // btnAutoDisable
+            // 
+            this.btnAutoDisable.Location = new System.Drawing.Point(181, 78);
+            this.btnAutoDisable.Name = "btnAutoDisable";
+            this.btnAutoDisable.Size = new System.Drawing.Size(66, 36);
+            this.btnAutoDisable.TabIndex = 5;
+            this.btnAutoDisable.Text = "Auto";
+            this.btnAutoDisable.UseVisualStyleBackColor = true;
+            this.btnAutoDisable.Click += new System.EventHandler(this.btnAutoDisable_Click);
+            // 
+            // btnChartDisable
+            // 
+            this.btnChartDisable.Location = new System.Drawing.Point(181, 30);
+            this.btnChartDisable.Name = "btnChartDisable";
+            this.btnChartDisable.Size = new System.Drawing.Size(66, 36);
+            this.btnChartDisable.TabIndex = 4;
+            this.btnChartDisable.Text = "Chart";
+            this.btnChartDisable.UseVisualStyleBackColor = true;
+            this.btnChartDisable.Click += new System.EventHandler(this.btnChartDisable_Click);
             // 
             // btnDryRunMode
             // 
@@ -5416,24 +5436,6 @@
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(130, 25);
             this.toolStripStatusLabel2.Text = "PLC Connected";
-            // 
-            // btnChartDisable
-            // 
-            this.btnChartDisable.Location = new System.Drawing.Point(181, 30);
-            this.btnChartDisable.Name = "btnChartDisable";
-            this.btnChartDisable.Size = new System.Drawing.Size(66, 36);
-            this.btnChartDisable.TabIndex = 4;
-            this.btnChartDisable.Text = "Chart";
-            this.btnChartDisable.UseVisualStyleBackColor = true;
-            // 
-            // btnAutoDisable
-            // 
-            this.btnAutoDisable.Location = new System.Drawing.Point(181, 78);
-            this.btnAutoDisable.Name = "btnAutoDisable";
-            this.btnAutoDisable.Size = new System.Drawing.Size(66, 36);
-            this.btnAutoDisable.TabIndex = 5;
-            this.btnAutoDisable.Text = "Auto";
-            this.btnAutoDisable.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

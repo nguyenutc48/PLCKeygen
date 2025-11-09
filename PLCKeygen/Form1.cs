@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Microsoft.VisualBasic;
 
 namespace PLCKeygen
 {
@@ -2262,9 +2263,9 @@ namespace PLCKeygen
                         UpdateLEDStatus(ledLCALampGreen, PLCAddresses.Input.P1_Stt_lca_Gre1);
                         UpdateLEDStatus(ledLCALampYellow, PLCAddresses.Input.P1_Stt_lca_Yel1 );
                         UpdateLEDStatus(ledLCALampRed, PLCAddresses.Input.P1_Stt_lca_Red1 );
-                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P1_Ss_AirPlus1);
+                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P1_Chart_Off);
                         UpdateLEDStatus(ledChartOut, PLCAddresses.Input.P1_Chart_On);
-                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P1_Chart_Off);
+                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P1_Ss_AirPlus1);
                         break;
 
                     case 2:
@@ -2289,9 +2290,9 @@ namespace PLCKeygen
                         UpdateLEDStatus(ledLCALampGreen, PLCAddresses.Input.P2_Stt_lca_Gre2);
                         UpdateLEDStatus(ledLCALampYellow, PLCAddresses.Input.P2_Stt_lca_Yel2);
                         UpdateLEDStatus(ledLCALampRed, PLCAddresses.Input.P2_Stt_lca_Red2);
-                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P2_Ss_AirPlus2);
+                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P2_Chart_Off);
                         UpdateLEDStatus(ledChartOut, PLCAddresses.Input.P2_Chart_On);
-                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P2_Chart_Off);
+                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P2_Ss_AirPlus2);
                         break;
 
                     case 3:
@@ -2316,9 +2317,9 @@ namespace PLCKeygen
                         UpdateLEDStatus(ledLCALampGreen, PLCAddresses.Input.P3_Stt_lca_Gre3);
                         UpdateLEDStatus(ledLCALampYellow, PLCAddresses.Input.P3_Stt_lca_Yel3);
                         UpdateLEDStatus(ledLCALampRed, PLCAddresses.Input.P3_Stt_lca_Red3);
-                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P3_Ss_AirPlus3);
+                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P3_Chart_Off);
                         UpdateLEDStatus(ledChartOut, PLCAddresses.Input.P3_Chart_On);
-                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P3_Chart_Off);
+                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P3_Ss_AirPlus3);
                         break;
 
                     case 4:
@@ -2343,9 +2344,9 @@ namespace PLCKeygen
                         UpdateLEDStatus(ledLCALampGreen, PLCAddresses.Input.P4_Stt_lca_Gre4);
                         UpdateLEDStatus(ledLCALampYellow, PLCAddresses.Input.P4_Stt_lca_Yel4);
                         UpdateLEDStatus(ledLCALampRed, PLCAddresses.Input.P4_Stt_lca_Red4);
-                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P4_Ss_AirPlus4);
+                        UpdateLEDStatus(ledChartIn, PLCAddresses.Input.P4_Chart_Off);
                         UpdateLEDStatus(ledChartOut, PLCAddresses.Input.P4_Chart_On);
-                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P4_Chart_Off);
+                        UpdateLEDStatus(ledVacIn, PLCAddresses.Input.P4_Ss_AirPlus4); 
                         break;
                 }
             }
@@ -4470,25 +4471,70 @@ namespace PLCKeygen
             ToggleBypassSignal(selectedPort, "Tray");
         }
 
+        private void btnAutoDisable_Click(object sender, EventArgs e)
+        {
+            ToggleBypassSignal(selectedPort, "Auto");
+        }
+
+        private void btnChartDisable_Click(object sender, EventArgs e)
+        {
+            ToggleBypassSignal(selectedPort, "Chart");
+        }
+
         /// <summary>
         /// Toggle bypass signal at PLC address
         /// </summary>
         private void ToggleBypassSignal(int port, string signalType)
         {
+            var _dialogResult = MessageBox.Show("Bạn có chắc chắn không", "Cảnh báo", MessageBoxButtons.YesNo);
+            if (_dialogResult == DialogResult.No)
+            {
+                return;
+            }
             try
             {
                 string address = GetBypassAddress(port, signalType);
                 if (string.IsNullOrEmpty(address))
                     return;
 
-                // Read current value
-                bool currentValue = PLCKey.ReadBit(address);
+                bool currentValue = false;
+                if (address.Contains('.'))
+                {
+                    var addrSplit = address.Split('.');
+                    currentValue = PLCKey.ReadBitFromWord(addrSplit[0], GetBitIndexFromAddress(address));
+                }
+                else
+                {
+                    // Read current value
+                    currentValue = PLCKey.ReadBit(address);
+                }
+
 
                 // Toggle value
                 if (currentValue)
-                    PLCKey.ResetBit(address);
+                {
+                    if (address.Contains('.'))
+                    {
+                        var addrSplit = address.Split('.');
+                        currentValue = PLCKey.ResetBitInWord(addrSplit[0], GetBitIndexFromAddress(address));
+                    }
+                    else
+                    {
+                        PLCKey.ResetBit(address);
+                    }
+                }
                 else
-                    PLCKey.SetBit(address);
+                {
+                    if (address.Contains('.'))
+                    {
+                        var addrSplit = address.Split('.');
+                        currentValue = PLCKey.SetBitInWord(addrSplit[0], GetBitIndexFromAddress(address));
+                    }
+                    else
+                    {
+                        PLCKey.SetBit(address);
+                    }
+                }   
 
                 // Update button color immediately
                 UpdateBypassButtonColor(signalType, !currentValue);
@@ -4517,6 +4563,8 @@ namespace PLCKeygen
                         case "Door": return PLCAddresses.Input.P1_Bypass_Door;
                         case "DryRun": return PLCAddresses.Input.P1_Dry_Run_Mode;
                         case "Tray": return PLCAddresses.Input.P1_Bypass_Sensor_Detect_Tray;
+                        case "Auto": return PLCAddresses.Input.P1_Auto_Mode;
+                        case "Chart": return PLCAddresses.Input.P1_Chart_Disable;
                     }
                     break;
                 case 2:
@@ -4526,6 +4574,8 @@ namespace PLCKeygen
                         case "Door": return PLCAddresses.Input.P2_Bypass_Door;
                         case "DryRun": return PLCAddresses.Input.P2_Dry_Run_Mode;
                         case "Tray": return PLCAddresses.Input.P2_Bypass_Sensor_Detect_Tray;
+                        case "Auto": return PLCAddresses.Input.P2_Auto_Mode;
+                        case "Chart": return PLCAddresses.Input.P2_Chart_Disable;
                     }
                     break;
                 case 3:
@@ -4535,6 +4585,8 @@ namespace PLCKeygen
                         case "Door": return PLCAddresses.Input.P3_Bypass_Door;
                         case "DryRun": return PLCAddresses.Input.P3_Dry_Run_Mode;
                         case "Tray": return PLCAddresses.Input.P3_Bypass_Sensor_Detect_Tray;
+                        case "Auto": return PLCAddresses.Input.P3_Auto_Mode;
+                        case "Chart": return PLCAddresses.Input.P3_Chart_Disable;
                     }
                     break;
                 case 4:
@@ -4544,6 +4596,8 @@ namespace PLCKeygen
                         case "Door": return PLCAddresses.Input.P4_Bypass_Door;
                         case "DryRun": return PLCAddresses.Input.P4_Dry_Run_Mode;
                         case "Tray": return PLCAddresses.Input.P4_Bypass_Sensor_Detect_Tray;
+                        case "Auto": return PLCAddresses.Input.P4_Auto_Mode;
+                        case "Chart": return PLCAddresses.Input.P4_Chart_Disable;
                     }
                     break;
             }
@@ -4562,6 +4616,8 @@ namespace PLCKeygen
                 case "Door": btn = btnDoorDisable; break;
                 case "DryRun": btn = btnDryRunMode; break;
                 case "Tray": btn = btnTrayDisable; break;
+                case "Auto": btn = btnAutoDisable; break;
+                case "Chart": btn = btnChartDisable; break;
             }
 
             if (btn != null)
@@ -4642,6 +4698,23 @@ namespace PLCKeygen
                     bool trayValue = PLCKey.ReadBit(trayAddr);
                     UpdateBypassButtonColor("Tray", trayValue);
                 }
+
+                // Auto Bypass
+                string autoAddr = GetBypassAddress(selectedPort, "Auto");
+                if (!string.IsNullOrEmpty(autoAddr))
+                {
+                    bool autoValue = PLCKey.ReadBit(autoAddr);
+                    UpdateBypassButtonColor("Auto", autoValue);
+                }
+
+                // Auto Bypass
+                string chartAddr = GetBypassAddress(selectedPort, "Chart");
+                if (!string.IsNullOrEmpty(chartAddr))
+                {
+                    var addrSplit = chartAddr.Split('.');
+                    bool chartValue = PLCKey.ReadBitFromWord(addrSplit[0], GetBitIndexFromAddress(chartAddr));
+                    UpdateBypassButtonColor("Chart", !chartValue);
+                }
             }
             catch
             {
@@ -4649,7 +4722,9 @@ namespace PLCKeygen
             }
         }
 
+
         #endregion
+
 
     }
 }
