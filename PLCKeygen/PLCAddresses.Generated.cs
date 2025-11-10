@@ -864,6 +864,14 @@ namespace PLCKeygen
             public const string P1_X_Master = "DM2082";
             public const string P1_Y_Master = "DM2084";
             public const string P1_R_Master = "DM2086";
+            public const string P1_Tray_Col_Number = "DM1224";
+            public const string P1_Tray_Row_Number = "DM1226";
+            public const string P1_Tray_Row_NG1 = "DM1228";
+            public const string P1_Tray_Row_NG2 = "DM1230";
+            public const string P1_Tray_Row_NG3 = "DM1232";
+            public const string P1_Tray_Row_NG4 = "DM1246";
+            public const string P1_Socket_Angle = "DM1290"; // Góc quay của hàng khi đưa vào socket
+            public const string P1_Model_ID_Save_As = "DM1300";
             // Port2
             public const string P2_X_Pos_Cur =  "TM300";
             public const string P2_RI_Pos_Cur = "TM302";
