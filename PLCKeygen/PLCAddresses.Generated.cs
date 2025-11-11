@@ -877,61 +877,54 @@ namespace PLCKeygen
             public const string P1_Rq_INC_F = "MR45204";
             public const string P1_Rq_Reset_F = "MR45205";
 
-            // Model Management (MR217)
+            // Model Teaching Management
             public const string P1_Rq_Call_Model = "MR21700";
             public const string P1_Rq_Save_Model = "MR21701";
             public const string P1_Rq_Saveas_Model = "MR21702";
-            public const string P1_Rq_Confirm = "MR21703";
-            public const string P1_Rq_Skip = "MR21704";
-            public const string P1_Load_Point_Start_OK = "MR21705";
-            public const string P1_Run_Point_Start_OK = "MR21706";
-            public const string P1_Load_Point_EndX_OK = "MR21707";
-            public const string P1_Run_Point_EndX_OK = "MR21708";
-            public const string P1_Load_Point_EndY_OK = "MR21709";
-            public const string P1_Run_Point_EndY_OK = "MR21710";
-            public const string P1_Load_Point_Start_NG = "MR21711";
-            public const string P1_Run_Point_Start_NG = "MR21712";
-            public const string P1_Load_Point_EndX_NG = "MR21713";
-            public const string P1_Run_Point_EndX_NG = "MR21714";
 
-            // NG4 Points (MR218)
-            public const string P1_Run_Point_EndY_NG = "MR21800";
-            public const string P1_Load_Point_Start_NG4 = "MR21801";
-            public const string P1_Run_Point_Start_NG4 = "MR21802";
-            public const string P1_Load_Point_EndX_NG4 = "MR21803";
-            public const string P1_Run_Point_EndX_NG4 = "MR21804";
-            public const string P1_Load_Point_EndY_NG4 = "MR21805";
-            public const string P1_Run_Point_EndY_NG4 = "MR21806";
-            public const string P1_Load_Point_Start_Half_NG4 = "MR21807";
-            public const string P1_Run_Point_Start_Half_NG4 = "MR21808";
-            public const string P1_Load_Point_SK = "MR21809";
-            public const string P1_Run_Point_SK = "MR21810";
+            public const string P1_SavePointTrayInputXYStart = "MR21705";
+            public const string P1_GoPointTrayInputXYStart = "MR21706";
+            public const string P1_SavePointTrayInputXEnd = "MR21707";
+            public const string P1_GoPointTrayInputXEnd = "MR21708";
+            public const string P1_SavePointTrayInputYEnd = "MR21709";
+            public const string P1_GoPointTrayInputYEnd = "MR21710";
+            public const string P1_SavePointTrayNG1XYStart = "MR21711";
+            public const string P1_GoPointTrayNG1XYStart = "MR21712";
+            public const string P1_SavePointTrayNG1XEnd = "MR21713";
+            public const string P1_GoPointTrayNG1XEnd = "MR21714";
+            public const string P1_SavePointTrayNG1YEnd = "MR21715";
+            public const string P1_GoPointTrayNG1YEnd = "MR21800";
+            public const string P1_SavePointTrayNG2XYStart = "MR21801";
+            public const string P1_GoPointTrayNG2XYStart = "MR21802";
+            public const string P1_SavePointTrayNG2XEnd = "MR21803";
+            public const string P1_GoPointTrayNG2XEnd = "MR21804";
+            public const string P1_SavePointTrayNG2YEnd = "MR21805";
+            public const string P1_GoPointTrayNG2YEnd = "MR21806";
+            public const string P1_SavePointSocket = "MR21809";
+            public const string P1_GoPointSocket = "MR21810";
 
-            // Z Ready Points (MR219)
-            public const string P1_Run_Ready_Z01 = "MR21900";
-            public const string P1_Load_Ready_Z11 = "MR21901";
-            public const string P1_Run_Ready_Z11 = "MR21902";
-            public const string P1_Load_UL_P0_Z = "MR21903";
-            public const string P1_Run_UL_P0_Z = "MR21904";
-            public const string P1_Load_L_P1_Z = "MR21905";
-            public const string P1_Run_L_P1_Z = "MR21906";
-            public const string P1_Load_C_P2_Z = "MR21907";
-            public const string P1_Run_C_P2_Z = "MR21908";
-            public const string P1_Load_UL_P3_Z = "MR21909";
-            public const string P1_Run_UL_P3_Z = "MR21910";
-            public const string P1_Load_Ready_Z00 = "MR21911";
-            public const string P1_Run_Ready_Z00 = "MR21912";
-            public const string P1_Load_Ready_Z10 = "MR21913";
-            public const string P1_Run_Ready_Z10 = "MR21914";
-
-            // F2 & Camera Points (MR220)
-            public const string P1_Run_Open_F2 = "MR22000";
-            public const string P1_Load_Pos_Cam = "MR22002";
-            public const string P1_Run_Pos_Cam = "MR22002";
-            public const string P1_Load_L_P4_Z = "MR22011";
-            public const string P1_Run_L_P4_Z = "MR22012";
-            public const string P1_Load_Close_F2 = "MR22013";
-            public const string P1_Run_Close_F2 = "MR22014";
+            public const string P1_SavePointSocketZReadyUnload = "MR21815";
+            public const string P1_GoPointSocketZReadyUnload = "MR21900";
+            public const string P1_SavePointTrayNG1Z = "MR21903";
+            public const string P1_GoPointTrayNG1Z = "MR21904";
+            public const string P1_SavePointTrayInputZ = "MR21905";
+            public const string P1_GoPointTrayInputZ = "MR21906";
+            public const string P1_SavePointSocketCameraZ = "MR21907";
+            public const string P1_GoPointSocketCameraZ = "MR21908";
+            public const string P1_SavePointSocketZUnload = "MR21909";
+            public const string P1_GoPointSocketZUnload = "MR21910";
+            public const string P1_SavePointSocketZReady = "MR21911";
+            public const string P1_GoPointSocketZReady = "MR21912";
+            public const string P1_SavePointSocketZReadyLoad = "MR21913";
+            public const string P1_GoPointSocketZReadyLoad = "MR21914";
+            public const string P1_SavePointSocketFOpened = "MR21915";
+            public const string P1_GoPointSocketFOpened = "MR22000";
+            public const string P1_SavePointCamera = "MR22001";
+            public const string P1_GoPointCamera = "MR22002";
+            public const string P1_SavePointSocketZLoad = "MR22011";
+            public const string P1_GoPointSocketZLoad = "MR22012";
+            public const string P1_SavePointSocketFClosed = "MR22013";
+            public const string P1_GoPointSocketFClosed = "MR22014";
 
             #endregion
 
@@ -1028,63 +1021,54 @@ namespace PLCKeygen
             public const string P2_Rq_INC_F = "MR41604";
             public const string P2_Rq_Reset_F = "MR41605";
 
-            // Model Management (MR137)
+            // Model Teaching Management
             public const string P2_Rq_Call_Model = "MR13700";
             public const string P2_Rq_Save_Model = "MR13701";
             public const string P2_Rq_Saveas_Model = "MR13702";
-            public const string P2_Rq_Confirm = "MR13703";
-            public const string P2_Rq_Skip = "MR13704";
-            public const string P2_Load_Point_Start_OK = "MR13705";
-            public const string P2_Run_Point_Start_OK = "MR13706";
-            public const string P2_Load_Point_EndX_OK = "MR13707";
-            public const string P2_Run_Point_EndX_OK = "MR13708";
-            public const string P2_Load_Point_EndY_OK = "MR13709";
-            public const string P2_Run_Point_EndY_OK = "MR13710";
-            public const string P2_Load_Point_Start_NG = "MR13711";
-            public const string P2_Run_Point_Start_NG = "MR13712";
-            public const string P2_Load_Point_EndX_NG = "MR13713";
-            public const string P2_Run_Point_EndX_NG = "MR13714";
 
-            // NG4 Points (MR138)
-            public const string P2_Run_Point_EndY_NG = "MR13800";
-            public const string P2_Load_Point_Start_NG4 = "MR13801";
-            public const string P2_Run_Point_Start_NG4 = "MR13802";
-            public const string P2_Load_Point_EndX_NG4 = "MR13803";
-            public const string P2_Run_Point_EndX_NG4 = "MR13804";
-            public const string P2_Load_Point_EndY_NG4 = "MR13805";
-            public const string P2_Run_Point_EndY_NG4 = "MR13806";
-            public const string P2_Load_Point_Start_Half_NG4 = "MR13807";
-            public const string P2_Run_Point_Start_Half_NG4 = "MR13808";
-            public const string P2_Load_Point_SK = "MR13809";
-            public const string P2_Run_Point_SK = "MR13810";
+            public const string P2_SavePointTrayInputXYStart = "MR13705";
+            public const string P2_GoPointTrayInputXYStart = "MR13706";
+            public const string P2_SavePointTrayInputXEnd = "MR13707";
+            public const string P2_GoPointTrayInputXEnd = "MR13708";
+            public const string P2_SavePointTrayInputYEnd = "MR13709";
+            public const string P2_GoPointTrayInputYEnd = "MR13710";
+            public const string P2_SavePointTrayNG1XYStart = "MR13711";
+            public const string P2_GoPointTrayNG1XYStart = "MR13712";
+            public const string P2_SavePointTrayNG1XEnd = "MR13713";
+            public const string P2_GoPointTrayNG1XEnd = "MR13714";
+            public const string P2_SavePointTrayNG1YEnd = "MR13715";
+            public const string P2_GoPointTrayNG1YEnd = "MR13800";
+            public const string P2_SavePointTrayNG2XYStart = "MR13801";
+            public const string P2_GoPointTrayNG2XYStart = "MR13802";
+            public const string P2_SavePointTrayNG2XEnd = "MR13803";
+            public const string P2_GoPointTrayNG2XEnd = "MR13804";
+            public const string P2_SavePointTrayNG2YEnd = "MR13805";
+            public const string P2_GoPointTrayNG2YEnd = "MR13806";
+            public const string P2_SavePointSocket = "MR13809";
+            public const string P2_GoPointSocket = "MR13810";
 
-            // Z Ready Points (MR139)
-            public const string P2_Run_Ready_Z01 = "MR13900";
-            public const string P2_Load_Ready_Z11 = "MR13901";
-            public const string P2_Run_Ready_Z11 = "MR13902";
-            public const string P2_Load_UL_P0_Z = "MR13903";
-            public const string P2_Run_UL_P0_Z = "MR13904";
-            public const string P2_Load_L_P1_Z = "MR13905";
-            public const string P2_Run_L_P1_Z = "MR13906";
-            public const string P2_Load_C_P2_Z = "MR13907";
-            public const string P2_Run_C_P2_Z = "MR13908";
-            public const string P2_Load_UL_P3_Z = "MR13909";
-            public const string P2_Run_UL_P3_Z = "MR13910";
-            public const string P2_Load_Ready_Z00 = "MR13911";
-            public const string P2_Run_Ready_Z00 = "MR13912";
-            public const string P2_Load_Ready_Z10 = "MR13913";
-            public const string P2_Run_Ready_Z10 = "MR13914";
-            public const string P2_Load_Ready_Z01 = "MR13915";
-
-            // F2 & Camera Points (MR140)
-            public const string P2_Run_Open_F2 = "MR14000";
-            public const string P2_Load_Pos_Cam = "MR14001";
-            public const string P2_Run_Pos_Cam = "MR14002";
-            public const string P2_Load_L_P4_Z = "MR14011";
-            public const string P2_Run_L_P4_Z = "MR14012";
-            public const string P2_Load_Close_F2 = "MR14013";
-            public const string P2_Run_Close_F2 = "MR14014";
-            public const string P2_Load_Open_F2 = "MR14015";
+            public const string P2_SavePointSocketZReadyUnload = "MR13815";
+            public const string P2_GoPointSocketZReadyUnload = "MR13900";
+            public const string P2_SavePointTrayNG1Z = "MR13903";
+            public const string P2_GoPointTrayNG1Z = "MR13904";
+            public const string P2_SavePointTrayInputZ = "MR13905";
+            public const string P2_GoPointTrayInputZ = "MR13906";
+            public const string P2_SavePointSocketCameraZ = "MR13907";
+            public const string P2_GoPointSocketCameraZ = "MR13908";
+            public const string P2_SavePointSocketZUnload = "MR13909";
+            public const string P2_GoPointSocketZUnload = "MR13910";
+            public const string P2_SavePointSocketZReady = "MR13911";
+            public const string P2_GoPointSocketZReady = "MR13912";
+            public const string P2_SavePointSocketZReadyLoad = "MR13913";
+            public const string P2_GoPointSocketZReadyLoad = "MR13914";
+            public const string P2_SavePointSocketFOpened = "MR13915";
+            public const string P2_GoPointSocketFOpened = "MR14000";
+            public const string P2_SavePointCamera = "MR14001";
+            public const string P2_GoPointCamera = "MR14002";
+            public const string P2_SavePointSocketZLoad = "MR14011";
+            public const string P2_GoPointSocketZLoad = "MR14012";
+            public const string P2_SavePointSocketFClosed = "MR14013";
+            public const string P2_GoPointSocketFClosed = "MR14014";
 
             #endregion
 
@@ -1177,64 +1161,54 @@ namespace PLCKeygen
             public const string P3_Rq_INC_F = "MR47004";
             public const string P3_Rq_Reset_F = "MR47005";
 
-            // Model Management (MR257)
+            // Model Teaching Management
             public const string P3_Rq_Call_Model = "MR25700";
             public const string P3_Rq_Save_Model = "MR25701";
             public const string P3_Rq_Saveas_Model = "MR25702";
-            public const string P3_Rq_Confirm = "MR25703";
-            public const string P3_Rq_Skip = "MR25704";
-            public const string P3_Load_Point_Start_OK = "MR25705";
-            public const string P3_Run_Point_Start_OK = "MR25706";
-            public const string P3_Load_Point_EndX_OK = "MR25707";
-            public const string P3_Run_Point_EndX_OK = "MR25708";
-            public const string P3_Load_Point_EndY_OK = "MR25709";
-            public const string P3_Run_Point_EndY_OK = "MR25710";
-            public const string P3_Load_Point_Start_NG = "MR25711";
-            public const string P3_Run_Point_Start_NG = "MR25712";
-            public const string P3_Load_Point_EndX_NG = "MR25713";
-            public const string P3_Run_Point_EndX_NG = "MR25714";
-            public const string P3_Load_Point_EndY_NG = "MR25715";
+            
+            public const string P3_SavePointTrayInputXYStart = "MR25705";
+            public const string P3_GoPointTrayInputXYStart = "MR25706";
+            public const string P3_SavePointTrayInputXEnd = "MR25707";
+            public const string P3_GoPointTrayInputXEnd = "MR25708";
+            public const string P3_SavePointTrayInputYEnd = "MR25709";
+            public const string P3_GoPointTrayInputYEnd = "MR25710";
+            public const string P3_SavePointTrayNG1XYStart = "MR25711";
+            public const string P3_GoPointTrayNG1XYStart = "MR25712";
+            public const string P3_SavePointTrayNG1XEnd = "MR25713";
+            public const string P3_GoPointTrayNG1XEnd = "MR25714";
+            public const string P3_SavePointTrayNG1YEnd = "MR25715";
+            public const string P3_GoPointTrayNG1YEnd = "MR25800";
+            public const string P3_SavePointTrayNG2XYStart = "MR25801";
+            public const string P3_GoPointTrayNG2XYStart = "MR25802";
+            public const string P3_SavePointTrayNG2XEnd = "MR25803";
+            public const string P3_GoPointTrayNG2XEnd = "MR25804";
+            public const string P3_SavePointTrayNG2YEnd = "MR25805";
+            public const string P3_GoPointTrayNG2YEnd = "MR25806";
+            public const string P3_SavePointSocket = "MR25809";
+            public const string P3_GoPointSocket = "MR25810";
 
-            // NG4 Points (MR258)
-            public const string P3_Run_Point_EndY_NG = "MR25800";
-            public const string P3_Load_Point_Start_NG4 = "MR25801";
-            public const string P3_Run_Point_Start_NG4 = "MR25802";
-            public const string P3_Load_Point_EndX_NG4 = "MR25803";
-            public const string P3_Run_Point_EndX_NG4 = "MR25804";
-            public const string P3_Load_Point_EndY_NG4 = "MR25805";
-            public const string P3_Run_Point_EndY_NG4 = "MR25806";
-            public const string P3_Load_Point_Start_Half_NG4 = "MR25807";
-            public const string P3_Run_Point_Start_Half_NG4 = "MR25808";
-            public const string P3_Load_Point_SK = "MR25809";
-            public const string P3_Run_Point_SK = "MR25810";
-
-            // Z Ready Points (MR259)
-            public const string P3_Run_Ready_Z01 = "MR25900";
-            public const string P3_Load_Ready_Z11 = "MR25901";
-            public const string P3_Run_Ready_Z11 = "MR25902";
-            public const string P3_Load_UL_P0_Z = "MR25903";
-            public const string P3_Run_UL_P0_Z = "MR25904";
-            public const string P3_Load_L_P1_Z = "MR25905";
-            public const string P3_Run_L_P1_Z = "MR25906";
-            public const string P3_Load_C_P2_Z = "MR25907";
-            public const string P3_Run_C_P2_Z = "MR25908";
-            public const string P3_Load_UL_P3_Z = "MR25909";
-            public const string P3_Run_UL_P3_Z = "MR25910";
-            public const string P3_Load_Ready_Z00 = "MR25911";
-            public const string P3_Run_Ready_Z00 = "MR25912";
-            public const string P3_Load_Ready_Z10 = "MR25913";
-            public const string P3_Run_Ready_Z10 = "MR25914";
-            public const string P3_Load_Ready_Z01 = "MR25915";
-
-            // F2 & Camera Points (MR260)
-            public const string P3_Run_Open_F2 = "MR26000";
-            public const string P3_Load_Pos_Cam = "MR26001";
-            public const string P3_Run_Pos_Cam = "MR26002";
-            public const string P3_Load_L_P4_Z = "MR26011";
-            public const string P3_Run_L_P4_Z = "MR26012";
-            public const string P3_Load_Close_F2 = "MR26013";
-            public const string P3_Run_Close_F2 = "MR26014";
-            public const string P3_Load_Open_F2 = "MR26015";
+            public const string P3_SavePointSocketZReadyUnload = "MR25815";
+            public const string P3_GoPointSocketZReadyUnload = "MR25900";
+            public const string P3_SavePointTrayNG1Z = "MR25903";
+            public const string P3_GoPointTrayNG1Z = "MR25904";
+            public const string P3_SavePointTrayInputZ = "MR25905";
+            public const string P3_GoPointTrayInputZ = "MR25906";
+            public const string P3_SavePointSocketCameraZ = "MR25907";
+            public const string P3_GoPointSocketCameraZ = "MR25908";
+            public const string P3_SavePointSocketZUnload = "MR25909";
+            public const string P3_GoPointSocketZUnload = "MR25910";
+            public const string P3_SavePointSocketZReady = "MR25911";
+            public const string P3_GoPointSocketZReady = "MR25912";
+            public const string P3_SavePointSocketZReadyLoad = "MR25913";
+            public const string P3_GoPointSocketZReadyLoad = "MR25914";
+            public const string P3_SavePointSocketFOpened = "MR25915";
+            public const string P3_GoPointSocketFOpened = "MR26000";
+            public const string P3_SavePointCamera = "MR26001";
+            public const string P3_GoPointCamera = "MR26002";
+            public const string P3_SavePointSocketZLoad = "MR26011";
+            public const string P3_GoPointSocketZLoad = "MR26012";
+            public const string P3_SavePointSocketFClosed = "MR26013";
+            public const string P3_GoPointSocketFClosed = "MR26014";
 
             #endregion
 
@@ -1330,61 +1304,54 @@ namespace PLCKeygen
             public const string P4_Rq_INC_F = "MR43404";
             public const string P4_Rq_Reset_F = "MR43405";
 
-            // Model Management (MR177)
+            // Model Teaching Management
             public const string P4_Rq_Call_Model = "MR17700";
             public const string P4_Rq_Save_Model = "MR17701";
             public const string P4_Rq_Saveas_Model = "MR17702";
-            public const string P4_Rq_Confirm = "MR17703";
-            public const string P4_Rq_Skip = "MR17704";
-            public const string P4_Load_Point_Start_OK = "MR17705";
-            public const string P4_Run_Point_Start_OK = "MR17706";
-            public const string P4_Load_Point_EndX_OK = "MR17707";
-            public const string P4_Run_Point_EndX_OK = "MR17708";
-            public const string P4_Load_Point_EndY_OK = "MR17709";
-            public const string P4_Run_Point_EndY_OK = "MR17710";
-            public const string P4_Load_Point_Start_NG = "MR17711";
-            public const string P4_Run_Point_Start_NG = "MR17712";
-            public const string P4_Load_Point_EndX_NG = "MR17713";
-            public const string P4_Run_Point_EndX_NG = "MR17714";
+            
+            public const string P4_SavePointTrayInputXYStart = "MR17705";
+            public const string P4_GoPointTrayInputXYStart = "MR17706";
+            public const string P4_SavePointTrayInputXEnd = "MR17707";
+            public const string P4_GoPointTrayInputXEnd = "MR17708";
+            public const string P4_SavePointTrayInputYEnd = "MR17709";
+            public const string P4_GoPointTrayInputYEnd = "MR17710";
+            public const string P4_SavePointTrayNG1XYStart = "MR17711";
+            public const string P4_GoPointTrayNG1XYStart = "MR17712";
+            public const string P4_SavePointTrayNG1XEnd = "MR17713";
+            public const string P4_GoPointTrayNG1XEnd = "MR17714";
+            public const string P4_SavePointTrayNG1YEnd = "MR17715";
+            public const string P4_GoPointTrayNG1YEnd = "MR17800";
+            public const string P4_SavePointTrayNG2XYStart = "MR17801";
+            public const string P4_GoPointTrayNG2XYStart = "MR17802";
+            public const string P4_SavePointTrayNG2XEnd = "MR17803";
+            public const string P4_GoPointTrayNG2XEnd = "MR17804";
+            public const string P4_SavePointTrayNG2YEnd = "MR17805";
+            public const string P4_GoPointTrayNG2YEnd = "MR17806";
+            public const string P4_SavePointSocket = "MR17809";
+            public const string P4_GoPointSocket = "MR17810";
 
-            // NG4 Points (MR178)
-            public const string P4_Run_Point_EndY_NG = "MR17800";
-            public const string P4_Load_Point_Start_NG4 = "MR17801";
-            public const string P4_Run_Point_Start_NG4 = "MR17802";
-            public const string P4_Load_Point_EndX_NG4 = "MR17803";
-            public const string P4_Run_Point_EndX_NG4 = "MR17804";
-            public const string P4_Load_Point_EndY_NG4 = "MR17805";
-            public const string P4_Run_Point_EndY_NG4 = "MR17806";
-            public const string P4_Load_Point_Start_Half_NG4 = "MR17807";
-            public const string P4_Run_Point_Start_Half_NG4 = "MR17808";
-            public const string P4_Load_Point_SK = "MR17809";
-            public const string P4_Run_Point_SK = "MR17810";
-
-            // Z Ready Points (MR179)
-            public const string P4_Run_Ready_Z01 = "MR17900";
-            public const string P4_Load_Ready_Z11 = "MR17901";
-            public const string P4_Run_Ready_Z11 = "MR17902";
-            public const string P4_Load_UL_P0_Z = "MR17903";
-            public const string P4_Run_UL_P0_Z = "MR17904";
-            public const string P4_Load_L_P1_Z = "MR17905";
-            public const string P4_Run_L_P1_Z = "MR17906";
-            public const string P4_Load_C_P2_Z = "MR17907";
-            public const string P4_Run_C_P2_Z = "MR17908";
-            public const string P4_Load_UL_P3_Z = "MR17909";
-            public const string P4_Run_UL_P3_Z = "MR17910";
-            public const string P4_Load_Ready_Z00 = "MR17911";
-            public const string P4_Run_Ready_Z00 = "MR17912";
-            public const string P4_Load_Ready_Z10 = "MR17913";
-            public const string P4_Run_Ready_Z10 = "MR17914";
-
-            // F2 & Camera Points (MR180)
-            public const string P4_Run_Open_F2 = "MR18000";
-            public const string P4_Load_Pos_Cam = "MR18001";
-            public const string P4_Run_Pos_Cam = "MR18002";
-            public const string P4_Load_L_P4_Z = "MR18011";
-            public const string P4_Run_L_P4_Z = "MR18012";
-            public const string P4_Load_Close_F2 = "MR18013";
-            public const string P4_Run_Close_F2 = "MR18014";
+            public const string P4_SavePointSocketZReadyUnload = "MR17815";
+            public const string P4_GoPointSocketZReadyUnload = "MR17900";
+            public const string P4_SavePointTrayNG1Z = "MR17903";
+            public const string P4_GoPointTrayNG1Z = "MR17904";
+            public const string P4_SavePointTrayInputZ = "MR17905";
+            public const string P4_GoPointTrayInputZ = "MR17906";
+            public const string P4_SavePointSocketCameraZ = "MR17907";
+            public const string P4_GoPointSocketCameraZ = "MR17908";
+            public const string P4_SavePointSocketZUnload = "MR17909";
+            public const string P4_GoPointSocketZUnload = "MR17910";
+            public const string P4_SavePointSocketZReady = "MR17911";
+            public const string P4_GoPointSocketZReady = "MR17912";
+            public const string P4_SavePointSocketZReadyLoad = "MR17913";
+            public const string P4_GoPointSocketZReadyLoad = "MR17914";
+            public const string P4_SavePointSocketFOpened = "MR17915";
+            public const string P4_GoPointSocketFOpened = "MR18000";
+            public const string P4_SavePointCamera = "MR18001";
+            public const string P4_GoPointCamera = "MR18002";
+            public const string P4_SavePointSocketZLoad = "MR18011";
+            public const string P4_GoPointSocketZLoad = "MR18012";
+            public const string P4_SavePointSocketFClosed = "MR18013";
+            public const string P4_GoPointSocketFClosed = "MR18014";
 
             #endregion
 

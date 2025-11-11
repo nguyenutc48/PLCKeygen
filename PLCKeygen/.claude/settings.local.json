@@ -10,7 +10,8 @@
       "Bash(\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe\" \"c:\\Users\\ADMIN\\Projects\\PLCKeygen\\PLCKeygen\\PLCKeygen.csproj\" /p:Configuration=Debug /v:minimal /nologo)",
       "Bash(\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe\" PLCKeygen.csproj -p:Configuration=Debug)",
       "Bash(\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe\" PLCKeygen.csproj /p:Configuration=Debug /v:minimal /nologo)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(\"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe\" PLCKeygen.csproj /p:Configuration=Debug /v:minimal)"
     ],
     "deny": [],
     "ask": []
