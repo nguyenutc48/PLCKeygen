@@ -391,12 +391,84 @@
             this.ledTrayLoadJig = new System.Windows.Forms.Button();
             this.rbtIOPort1 = new System.Windows.Forms.RadioButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox47 = new System.Windows.Forms.GroupBox();
+            this.groupBox68 = new System.Windows.Forms.GroupBox();
+            this.label155 = new System.Windows.Forms.Label();
+            this.txtSocket_Speed_Open = new System.Windows.Forms.TextBox();
+            this.label156 = new System.Windows.Forms.Label();
+            this.txtSocket_Speed_Close = new System.Windows.Forms.TextBox();
+            this.groupBox67 = new System.Windows.Forms.GroupBox();
+            this.label144 = new System.Windows.Forms.Label();
+            this.txtLoad_Socket_Speed_Z = new System.Windows.Forms.TextBox();
+            this.label145 = new System.Windows.Forms.Label();
+            this.txtLoad_Socket_Speed_XY = new System.Windows.Forms.TextBox();
+            this.label147 = new System.Windows.Forms.Label();
+            this.txtLoad_Socket_Speed_YReady = new System.Windows.Forms.TextBox();
+            this.label148 = new System.Windows.Forms.Label();
+            this.txtLoad_Socket_Speed_XReady = new System.Windows.Forms.TextBox();
+            this.label149 = new System.Windows.Forms.Label();
+            this.txtLoad_Socket_Speed_XYReady = new System.Windows.Forms.TextBox();
+            this.groupBox65 = new System.Windows.Forms.GroupBox();
+            this.label129 = new System.Windows.Forms.Label();
+            this.txtCamera_Speed_RI = new System.Windows.Forms.TextBox();
+            this.label130 = new System.Windows.Forms.Label();
+            this.txtCamera_Speed_Z = new System.Windows.Forms.TextBox();
+            this.label131 = new System.Windows.Forms.Label();
+            this.txtCamera_Speed_XY = new System.Windows.Forms.TextBox();
+            this.label133 = new System.Windows.Forms.Label();
+            this.txtCamera_Speed_YReady = new System.Windows.Forms.TextBox();
+            this.label134 = new System.Windows.Forms.Label();
+            this.txtCamera_Speed_XReady = new System.Windows.Forms.TextBox();
+            this.label135 = new System.Windows.Forms.Label();
+            this.txtCamera_Speed_XYReady = new System.Windows.Forms.TextBox();
+            this.groupBox66 = new System.Windows.Forms.GroupBox();
+            this.label137 = new System.Windows.Forms.Label();
+            this.txtUnload_Socket_Speed_Z = new System.Windows.Forms.TextBox();
+            this.label138 = new System.Windows.Forms.Label();
+            this.txtUnload_Socket_Speed_XY = new System.Windows.Forms.TextBox();
+            this.label140 = new System.Windows.Forms.Label();
+            this.txtUnload_Socket_Speed_YReady = new System.Windows.Forms.TextBox();
+            this.label141 = new System.Windows.Forms.Label();
+            this.txtUnload_Socket_Speed_XReady = new System.Windows.Forms.TextBox();
+            this.label142 = new System.Windows.Forms.Label();
+            this.txtUnload_Socket_Speed_XYReady = new System.Windows.Forms.TextBox();
+            this.groupBox64 = new System.Windows.Forms.GroupBox();
+            this.label116 = new System.Windows.Forms.Label();
+            this.txtLoad_Speed_Z = new System.Windows.Forms.TextBox();
+            this.label124 = new System.Windows.Forms.Label();
+            this.txtLoad_Speed_XY = new System.Windows.Forms.TextBox();
+            this.label126 = new System.Windows.Forms.Label();
+            this.txtLoad_Speed_YReady = new System.Windows.Forms.TextBox();
+            this.label127 = new System.Windows.Forms.Label();
+            this.txtLoad_Speed_XReady = new System.Windows.Forms.TextBox();
+            this.label128 = new System.Windows.Forms.Label();
+            this.txtLoad_Speed_XYReady = new System.Windows.Forms.TextBox();
+            this.groupBox63 = new System.Windows.Forms.GroupBox();
+            this.label123 = new System.Windows.Forms.Label();
+            this.txtUnload_Speed_RO = new System.Windows.Forms.TextBox();
+            this.label122 = new System.Windows.Forms.Label();
+            this.txtUnload_Speed_Z = new System.Windows.Forms.TextBox();
+            this.label121 = new System.Windows.Forms.Label();
+            this.txtUnload_Speed_XY = new System.Windows.Forms.TextBox();
+            this.label120 = new System.Windows.Forms.Label();
+            this.txtUnload_Speed_ZReady = new System.Windows.Forms.TextBox();
+            this.label119 = new System.Windows.Forms.Label();
+            this.txtUnload_Speed_YReady = new System.Windows.Forms.TextBox();
+            this.label118 = new System.Windows.Forms.Label();
+            this.txtUnload_Speed_XReady = new System.Windows.Forms.TextBox();
+            this.label111 = new System.Windows.Forms.Label();
+            this.txtUnload_Speed_XYReady = new System.Windows.Forms.TextBox();
             this.groupBox39 = new System.Windows.Forms.GroupBox();
+            this.groupBox62 = new System.Windows.Forms.GroupBox();
+            this.txtSocket_Angle = new System.Windows.Forms.TextBox();
+            this.groupBox32 = new System.Windows.Forms.GroupBox();
+            this.txtTray_Row_Number = new System.Windows.Forms.TextBox();
+            this.txtTray_Col_Number = new System.Windows.Forms.TextBox();
+            this.label110 = new System.Windows.Forms.Label();
+            this.label108 = new System.Windows.Forms.Label();
             this.groupBox36 = new System.Windows.Forms.GroupBox();
+            this.btnTeaching_Distance_Picker = new System.Windows.Forms.Button();
             this.txtRORI_Distance_X = new System.Windows.Forms.TextBox();
-            this.groupBox38 = new System.Windows.Forms.GroupBox();
-            this.txtTray_Row_NG4 = new System.Windows.Forms.TextBox();
-            this.label117 = new System.Windows.Forms.Label();
             this.groupBox37 = new System.Windows.Forms.GroupBox();
             this.txtTray_Row_NG3 = new System.Windows.Forms.TextBox();
             this.txtTray_Row_NG2 = new System.Windows.Forms.TextBox();
@@ -404,11 +476,9 @@
             this.txtTray_Row_NG1 = new System.Windows.Forms.TextBox();
             this.label113 = new System.Windows.Forms.Label();
             this.label114 = new System.Windows.Forms.Label();
-            this.groupBox32 = new System.Windows.Forms.GroupBox();
-            this.txtTray_Row_Number = new System.Windows.Forms.TextBox();
-            this.txtTray_Col_Number = new System.Windows.Forms.TextBox();
-            this.label110 = new System.Windows.Forms.Label();
-            this.label108 = new System.Windows.Forms.Label();
+            this.groupBox38 = new System.Windows.Forms.GroupBox();
+            this.txtTray_Row_NG4 = new System.Windows.Forms.TextBox();
+            this.label117 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.XYR1Cam2 = new System.Windows.Forms.Label();
@@ -492,76 +562,6 @@
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.groupBox47 = new System.Windows.Forms.GroupBox();
-            this.groupBox62 = new System.Windows.Forms.GroupBox();
-            this.txtSocket_Angle = new System.Windows.Forms.TextBox();
-            this.groupBox63 = new System.Windows.Forms.GroupBox();
-            this.txtUnload_Speed_XYReady = new System.Windows.Forms.TextBox();
-            this.label111 = new System.Windows.Forms.Label();
-            this.label118 = new System.Windows.Forms.Label();
-            this.txtUnload_Speed_XReady = new System.Windows.Forms.TextBox();
-            this.txtUnload_Speed_YReady = new System.Windows.Forms.TextBox();
-            this.label119 = new System.Windows.Forms.Label();
-            this.txtUnload_Speed_ZReady = new System.Windows.Forms.TextBox();
-            this.label120 = new System.Windows.Forms.Label();
-            this.txtUnload_Speed_XY = new System.Windows.Forms.TextBox();
-            this.label121 = new System.Windows.Forms.Label();
-            this.txtUnload_Speed_Z = new System.Windows.Forms.TextBox();
-            this.label122 = new System.Windows.Forms.Label();
-            this.txtUnload_Speed_RO = new System.Windows.Forms.TextBox();
-            this.label123 = new System.Windows.Forms.Label();
-            this.groupBox64 = new System.Windows.Forms.GroupBox();
-            this.label116 = new System.Windows.Forms.Label();
-            this.txtLoad_Speed_Z = new System.Windows.Forms.TextBox();
-            this.label124 = new System.Windows.Forms.Label();
-            this.txtLoad_Speed_XY = new System.Windows.Forms.TextBox();
-            this.label126 = new System.Windows.Forms.Label();
-            this.txtLoad_Speed_YReady = new System.Windows.Forms.TextBox();
-            this.label127 = new System.Windows.Forms.Label();
-            this.txtLoad_Speed_XReady = new System.Windows.Forms.TextBox();
-            this.label128 = new System.Windows.Forms.Label();
-            this.txtLoad_Speed_XYReady = new System.Windows.Forms.TextBox();
-            this.groupBox65 = new System.Windows.Forms.GroupBox();
-            this.label129 = new System.Windows.Forms.Label();
-            this.txtCamera_Speed_RI = new System.Windows.Forms.TextBox();
-            this.label130 = new System.Windows.Forms.Label();
-            this.txtCamera_Speed_Z = new System.Windows.Forms.TextBox();
-            this.label131 = new System.Windows.Forms.Label();
-            this.txtCamera_Speed_XY = new System.Windows.Forms.TextBox();
-            this.label133 = new System.Windows.Forms.Label();
-            this.txtCamera_Speed_YReady = new System.Windows.Forms.TextBox();
-            this.label134 = new System.Windows.Forms.Label();
-            this.txtCamera_Speed_XReady = new System.Windows.Forms.TextBox();
-            this.label135 = new System.Windows.Forms.Label();
-            this.txtCamera_Speed_XYReady = new System.Windows.Forms.TextBox();
-            this.groupBox66 = new System.Windows.Forms.GroupBox();
-            this.label137 = new System.Windows.Forms.Label();
-            this.txtUnload_Socket_Speed_Z = new System.Windows.Forms.TextBox();
-            this.label138 = new System.Windows.Forms.Label();
-            this.txtUnload_Socket_Speed_XY = new System.Windows.Forms.TextBox();
-            this.label140 = new System.Windows.Forms.Label();
-            this.txtUnload_Socket_Speed_YReady = new System.Windows.Forms.TextBox();
-            this.label141 = new System.Windows.Forms.Label();
-            this.txtUnload_Socket_Speed_XReady = new System.Windows.Forms.TextBox();
-            this.label142 = new System.Windows.Forms.Label();
-            this.txtUnload_Socket_Speed_XYReady = new System.Windows.Forms.TextBox();
-            this.groupBox67 = new System.Windows.Forms.GroupBox();
-            this.label144 = new System.Windows.Forms.Label();
-            this.txtLoad_Socket_Speed_Z = new System.Windows.Forms.TextBox();
-            this.label145 = new System.Windows.Forms.Label();
-            this.txtLoad_Socket_Speed_XY = new System.Windows.Forms.TextBox();
-            this.label147 = new System.Windows.Forms.Label();
-            this.txtLoad_Socket_Speed_YReady = new System.Windows.Forms.TextBox();
-            this.label148 = new System.Windows.Forms.Label();
-            this.txtLoad_Socket_Speed_XReady = new System.Windows.Forms.TextBox();
-            this.label149 = new System.Windows.Forms.Label();
-            this.txtLoad_Socket_Speed_XYReady = new System.Windows.Forms.TextBox();
-            this.groupBox68 = new System.Windows.Forms.GroupBox();
-            this.label155 = new System.Windows.Forms.Label();
-            this.txtSocket_Speed_Open = new System.Windows.Forms.TextBox();
-            this.label156 = new System.Windows.Forms.Label();
-            this.txtSocket_Speed_Close = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -620,11 +620,19 @@
             this.groupBox51.SuspendLayout();
             this.groupBox50.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.groupBox47.SuspendLayout();
+            this.groupBox68.SuspendLayout();
+            this.groupBox67.SuspendLayout();
+            this.groupBox65.SuspendLayout();
+            this.groupBox66.SuspendLayout();
+            this.groupBox64.SuspendLayout();
+            this.groupBox63.SuspendLayout();
             this.groupBox39.SuspendLayout();
-            this.groupBox36.SuspendLayout();
-            this.groupBox38.SuspendLayout();
-            this.groupBox37.SuspendLayout();
+            this.groupBox62.SuspendLayout();
             this.groupBox32.SuspendLayout();
+            this.groupBox36.SuspendLayout();
+            this.groupBox37.SuspendLayout();
+            this.groupBox38.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -633,14 +641,6 @@
             this.groupBox27.SuspendLayout();
             this.groupBox26.SuspendLayout();
             this.strip.SuspendLayout();
-            this.groupBox47.SuspendLayout();
-            this.groupBox62.SuspendLayout();
-            this.groupBox63.SuspendLayout();
-            this.groupBox64.SuspendLayout();
-            this.groupBox65.SuspendLayout();
-            this.groupBox66.SuspendLayout();
-            this.groupBox67.SuspendLayout();
-            this.groupBox68.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -1064,7 +1064,7 @@
             // btnAutoDisable
             // 
             this.btnAutoDisable.Location = new System.Drawing.Point(121, 51);
-            this.btnAutoDisable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAutoDisable.Margin = new System.Windows.Forms.Padding(2);
             this.btnAutoDisable.Name = "btnAutoDisable";
             this.btnAutoDisable.Size = new System.Drawing.Size(44, 23);
             this.btnAutoDisable.TabIndex = 5;
@@ -1075,7 +1075,7 @@
             // btnChartDisable
             // 
             this.btnChartDisable.Location = new System.Drawing.Point(121, 20);
-            this.btnChartDisable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChartDisable.Margin = new System.Windows.Forms.Padding(2);
             this.btnChartDisable.Name = "btnChartDisable";
             this.btnChartDisable.Size = new System.Drawing.Size(44, 23);
             this.btnChartDisable.TabIndex = 4;
@@ -1086,7 +1086,7 @@
             // btnDryRunMode
             // 
             this.btnDryRunMode.Location = new System.Drawing.Point(10, 51);
-            this.btnDryRunMode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDryRunMode.Margin = new System.Windows.Forms.Padding(2);
             this.btnDryRunMode.Name = "btnDryRunMode";
             this.btnDryRunMode.Size = new System.Drawing.Size(44, 23);
             this.btnDryRunMode.TabIndex = 3;
@@ -1097,7 +1097,7 @@
             // btnTrayDisable
             // 
             this.btnTrayDisable.Location = new System.Drawing.Point(67, 51);
-            this.btnTrayDisable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTrayDisable.Margin = new System.Windows.Forms.Padding(2);
             this.btnTrayDisable.Name = "btnTrayDisable";
             this.btnTrayDisable.Size = new System.Drawing.Size(44, 23);
             this.btnTrayDisable.TabIndex = 2;
@@ -1108,7 +1108,7 @@
             // btnDoorDisable
             // 
             this.btnDoorDisable.Location = new System.Drawing.Point(67, 20);
-            this.btnDoorDisable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDoorDisable.Margin = new System.Windows.Forms.Padding(2);
             this.btnDoorDisable.Name = "btnDoorDisable";
             this.btnDoorDisable.Size = new System.Drawing.Size(44, 23);
             this.btnDoorDisable.TabIndex = 1;
@@ -1119,7 +1119,7 @@
             // btnMotorDisable
             // 
             this.btnMotorDisable.Location = new System.Drawing.Point(10, 20);
-            this.btnMotorDisable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMotorDisable.Margin = new System.Windows.Forms.Padding(2);
             this.btnMotorDisable.Name = "btnMotorDisable";
             this.btnMotorDisable.Size = new System.Drawing.Size(44, 23);
             this.btnMotorDisable.TabIndex = 0;
@@ -3426,7 +3426,7 @@
             this.tabPage2.Controls.Add(this.rbtIOPort1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(970, 650);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "IO";
@@ -4249,12 +4249,682 @@
             this.tabPage4.Controls.Add(this.groupBox47);
             this.tabPage4.Controls.Add(this.groupBox39);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Size = new System.Drawing.Size(970, 650);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Data";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox47
+            // 
+            this.groupBox47.Controls.Add(this.groupBox68);
+            this.groupBox47.Controls.Add(this.groupBox67);
+            this.groupBox47.Controls.Add(this.groupBox65);
+            this.groupBox47.Controls.Add(this.groupBox66);
+            this.groupBox47.Controls.Add(this.groupBox64);
+            this.groupBox47.Controls.Add(this.groupBox63);
+            this.groupBox47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox47.Location = new System.Drawing.Point(7, 154);
+            this.groupBox47.Name = "groupBox47";
+            this.groupBox47.Size = new System.Drawing.Size(956, 376);
+            this.groupBox47.TabIndex = 7;
+            this.groupBox47.TabStop = false;
+            this.groupBox47.Text = "RUN SPEED";
+            // 
+            // groupBox68
+            // 
+            this.groupBox68.Controls.Add(this.label155);
+            this.groupBox68.Controls.Add(this.txtSocket_Speed_Open);
+            this.groupBox68.Controls.Add(this.label156);
+            this.groupBox68.Controls.Add(this.txtSocket_Speed_Close);
+            this.groupBox68.Location = new System.Drawing.Point(777, 21);
+            this.groupBox68.Name = "groupBox68";
+            this.groupBox68.Size = new System.Drawing.Size(147, 349);
+            this.groupBox68.TabIndex = 8;
+            this.groupBox68.TabStop = false;
+            this.groupBox68.Text = "Điểm Gập Socket";
+            // 
+            // label155
+            // 
+            this.label155.AutoSize = true;
+            this.label155.Location = new System.Drawing.Point(3, 67);
+            this.label155.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label155.Name = "label155";
+            this.label155.Size = new System.Drawing.Size(115, 16);
+            this.label155.TabIndex = 6;
+            this.label155.Text = "Tốc độ mở socket";
+            // 
+            // txtSocket_Speed_Open
+            // 
+            this.txtSocket_Speed_Open.Location = new System.Drawing.Point(8, 87);
+            this.txtSocket_Speed_Open.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSocket_Speed_Open.Name = "txtSocket_Speed_Open";
+            this.txtSocket_Speed_Open.Size = new System.Drawing.Size(54, 22);
+            this.txtSocket_Speed_Open.TabIndex = 5;
+            // 
+            // label156
+            // 
+            this.label156.AutoSize = true;
+            this.label156.Location = new System.Drawing.Point(3, 23);
+            this.label156.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label156.Name = "label156";
+            this.label156.Size = new System.Drawing.Size(127, 16);
+            this.label156.TabIndex = 4;
+            this.label156.Text = "Tốc độ đóng socket";
+            // 
+            // txtSocket_Speed_Close
+            // 
+            this.txtSocket_Speed_Close.Location = new System.Drawing.Point(8, 43);
+            this.txtSocket_Speed_Close.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSocket_Speed_Close.Name = "txtSocket_Speed_Close";
+            this.txtSocket_Speed_Close.Size = new System.Drawing.Size(54, 22);
+            this.txtSocket_Speed_Close.TabIndex = 3;
+            // 
+            // groupBox67
+            // 
+            this.groupBox67.Controls.Add(this.label144);
+            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_Z);
+            this.groupBox67.Controls.Add(this.label145);
+            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_XY);
+            this.groupBox67.Controls.Add(this.label147);
+            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_YReady);
+            this.groupBox67.Controls.Add(this.label148);
+            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_XReady);
+            this.groupBox67.Controls.Add(this.label149);
+            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_XYReady);
+            this.groupBox67.Location = new System.Drawing.Point(624, 21);
+            this.groupBox67.Name = "groupBox67";
+            this.groupBox67.Size = new System.Drawing.Size(147, 349);
+            this.groupBox67.TabIndex = 7;
+            this.groupBox67.TabStop = false;
+            this.groupBox67.Text = "Điểm Socket Load";
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.Location = new System.Drawing.Point(3, 243);
+            this.label144.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(91, 16);
+            this.label144.TabIndex = 6;
+            this.label144.Text = "Tốc độ Z load";
+            // 
+            // txtLoad_Socket_Speed_Z
+            // 
+            this.txtLoad_Socket_Speed_Z.Location = new System.Drawing.Point(8, 263);
+            this.txtLoad_Socket_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Socket_Speed_Z.Name = "txtLoad_Socket_Speed_Z";
+            this.txtLoad_Socket_Speed_Z.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Socket_Speed_Z.TabIndex = 5;
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Location = new System.Drawing.Point(2, 199);
+            this.label145.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(100, 16);
+            this.label145.TabIndex = 6;
+            this.label145.Text = "Tốc độ XY load";
+            // 
+            // txtLoad_Socket_Speed_XY
+            // 
+            this.txtLoad_Socket_Speed_XY.Location = new System.Drawing.Point(7, 219);
+            this.txtLoad_Socket_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Socket_Speed_XY.Name = "txtLoad_Socket_Speed_XY";
+            this.txtLoad_Socket_Speed_XY.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Socket_Speed_XY.TabIndex = 5;
+            // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.Location = new System.Drawing.Point(3, 111);
+            this.label147.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(120, 16);
+            this.label147.TabIndex = 6;
+            this.label147.Text = "Tốc độ Y sẵn sàng";
+            // 
+            // txtLoad_Socket_Speed_YReady
+            // 
+            this.txtLoad_Socket_Speed_YReady.Location = new System.Drawing.Point(8, 131);
+            this.txtLoad_Socket_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Socket_Speed_YReady.Name = "txtLoad_Socket_Speed_YReady";
+            this.txtLoad_Socket_Speed_YReady.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Socket_Speed_YReady.TabIndex = 5;
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Location = new System.Drawing.Point(3, 67);
+            this.label148.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(119, 16);
+            this.label148.TabIndex = 6;
+            this.label148.Text = "Tốc độ X sẵn sàng";
+            // 
+            // txtLoad_Socket_Speed_XReady
+            // 
+            this.txtLoad_Socket_Speed_XReady.Location = new System.Drawing.Point(8, 87);
+            this.txtLoad_Socket_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Socket_Speed_XReady.Name = "txtLoad_Socket_Speed_XReady";
+            this.txtLoad_Socket_Speed_XReady.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Socket_Speed_XReady.TabIndex = 5;
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.Location = new System.Drawing.Point(3, 23);
+            this.label149.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(128, 16);
+            this.label149.TabIndex = 4;
+            this.label149.Text = "Tốc độ XY sẵn sàng";
+            // 
+            // txtLoad_Socket_Speed_XYReady
+            // 
+            this.txtLoad_Socket_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
+            this.txtLoad_Socket_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Socket_Speed_XYReady.Name = "txtLoad_Socket_Speed_XYReady";
+            this.txtLoad_Socket_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Socket_Speed_XYReady.TabIndex = 3;
+            // 
+            // groupBox65
+            // 
+            this.groupBox65.Controls.Add(this.label129);
+            this.groupBox65.Controls.Add(this.txtCamera_Speed_RI);
+            this.groupBox65.Controls.Add(this.label130);
+            this.groupBox65.Controls.Add(this.txtCamera_Speed_Z);
+            this.groupBox65.Controls.Add(this.label131);
+            this.groupBox65.Controls.Add(this.txtCamera_Speed_XY);
+            this.groupBox65.Controls.Add(this.label133);
+            this.groupBox65.Controls.Add(this.txtCamera_Speed_YReady);
+            this.groupBox65.Controls.Add(this.label134);
+            this.groupBox65.Controls.Add(this.txtCamera_Speed_XReady);
+            this.groupBox65.Controls.Add(this.label135);
+            this.groupBox65.Controls.Add(this.txtCamera_Speed_XYReady);
+            this.groupBox65.Location = new System.Drawing.Point(318, 21);
+            this.groupBox65.Name = "groupBox65";
+            this.groupBox65.Size = new System.Drawing.Size(147, 349);
+            this.groupBox65.TabIndex = 8;
+            this.groupBox65.TabStop = false;
+            this.groupBox65.Text = "Điểm Camera";
+            // 
+            // label129
+            // 
+            this.label129.AutoSize = true;
+            this.label129.Location = new System.Drawing.Point(4, 287);
+            this.label129.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(98, 16);
+            this.label129.TabIndex = 6;
+            this.label129.Text = "Tốc độ xoay RI";
+            // 
+            // txtCamera_Speed_RI
+            // 
+            this.txtCamera_Speed_RI.Location = new System.Drawing.Point(10, 307);
+            this.txtCamera_Speed_RI.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCamera_Speed_RI.Name = "txtCamera_Speed_RI";
+            this.txtCamera_Speed_RI.Size = new System.Drawing.Size(54, 22);
+            this.txtCamera_Speed_RI.TabIndex = 5;
+            // 
+            // label130
+            // 
+            this.label130.AutoSize = true;
+            this.label130.Location = new System.Drawing.Point(3, 243);
+            this.label130.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label130.Name = "label130";
+            this.label130.Size = new System.Drawing.Size(110, 16);
+            this.label130.TabIndex = 6;
+            this.label130.Text = "Tốc độ Z camera";
+            // 
+            // txtCamera_Speed_Z
+            // 
+            this.txtCamera_Speed_Z.Location = new System.Drawing.Point(8, 263);
+            this.txtCamera_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCamera_Speed_Z.Name = "txtCamera_Speed_Z";
+            this.txtCamera_Speed_Z.Size = new System.Drawing.Size(54, 22);
+            this.txtCamera_Speed_Z.TabIndex = 5;
+            // 
+            // label131
+            // 
+            this.label131.AutoSize = true;
+            this.label131.Location = new System.Drawing.Point(2, 199);
+            this.label131.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(119, 16);
+            this.label131.TabIndex = 6;
+            this.label131.Text = "Tốc độ XY camera";
+            // 
+            // txtCamera_Speed_XY
+            // 
+            this.txtCamera_Speed_XY.Location = new System.Drawing.Point(7, 219);
+            this.txtCamera_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCamera_Speed_XY.Name = "txtCamera_Speed_XY";
+            this.txtCamera_Speed_XY.Size = new System.Drawing.Size(54, 22);
+            this.txtCamera_Speed_XY.TabIndex = 5;
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Location = new System.Drawing.Point(3, 111);
+            this.label133.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(120, 16);
+            this.label133.TabIndex = 6;
+            this.label133.Text = "Tốc độ Y sẵn sàng";
+            // 
+            // txtCamera_Speed_YReady
+            // 
+            this.txtCamera_Speed_YReady.Location = new System.Drawing.Point(8, 131);
+            this.txtCamera_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCamera_Speed_YReady.Name = "txtCamera_Speed_YReady";
+            this.txtCamera_Speed_YReady.Size = new System.Drawing.Size(54, 22);
+            this.txtCamera_Speed_YReady.TabIndex = 5;
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Location = new System.Drawing.Point(3, 67);
+            this.label134.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(119, 16);
+            this.label134.TabIndex = 6;
+            this.label134.Text = "Tốc độ X sẵn sàng";
+            // 
+            // txtCamera_Speed_XReady
+            // 
+            this.txtCamera_Speed_XReady.Location = new System.Drawing.Point(8, 87);
+            this.txtCamera_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCamera_Speed_XReady.Name = "txtCamera_Speed_XReady";
+            this.txtCamera_Speed_XReady.Size = new System.Drawing.Size(54, 22);
+            this.txtCamera_Speed_XReady.TabIndex = 5;
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Location = new System.Drawing.Point(3, 23);
+            this.label135.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(128, 16);
+            this.label135.TabIndex = 4;
+            this.label135.Text = "Tốc độ XY sẵn sàng";
+            // 
+            // txtCamera_Speed_XYReady
+            // 
+            this.txtCamera_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
+            this.txtCamera_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCamera_Speed_XYReady.Name = "txtCamera_Speed_XYReady";
+            this.txtCamera_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
+            this.txtCamera_Speed_XYReady.TabIndex = 3;
+            // 
+            // groupBox66
+            // 
+            this.groupBox66.Controls.Add(this.label137);
+            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_Z);
+            this.groupBox66.Controls.Add(this.label138);
+            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_XY);
+            this.groupBox66.Controls.Add(this.label140);
+            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_YReady);
+            this.groupBox66.Controls.Add(this.label141);
+            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_XReady);
+            this.groupBox66.Controls.Add(this.label142);
+            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_XYReady);
+            this.groupBox66.Location = new System.Drawing.Point(471, 21);
+            this.groupBox66.Name = "groupBox66";
+            this.groupBox66.Size = new System.Drawing.Size(147, 349);
+            this.groupBox66.TabIndex = 0;
+            this.groupBox66.TabStop = false;
+            this.groupBox66.Text = "Điểm Socket Unload";
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Location = new System.Drawing.Point(3, 243);
+            this.label137.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(105, 16);
+            this.label137.TabIndex = 6;
+            this.label137.Text = "Tốc độ Z unload";
+            // 
+            // txtUnload_Socket_Speed_Z
+            // 
+            this.txtUnload_Socket_Speed_Z.Location = new System.Drawing.Point(8, 263);
+            this.txtUnload_Socket_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Socket_Speed_Z.Name = "txtUnload_Socket_Speed_Z";
+            this.txtUnload_Socket_Speed_Z.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Socket_Speed_Z.TabIndex = 5;
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Location = new System.Drawing.Point(2, 199);
+            this.label138.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(114, 16);
+            this.label138.TabIndex = 6;
+            this.label138.Text = "Tốc độ XY unload";
+            // 
+            // txtUnload_Socket_Speed_XY
+            // 
+            this.txtUnload_Socket_Speed_XY.Location = new System.Drawing.Point(7, 219);
+            this.txtUnload_Socket_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Socket_Speed_XY.Name = "txtUnload_Socket_Speed_XY";
+            this.txtUnload_Socket_Speed_XY.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Socket_Speed_XY.TabIndex = 5;
+            // 
+            // label140
+            // 
+            this.label140.AutoSize = true;
+            this.label140.Location = new System.Drawing.Point(3, 111);
+            this.label140.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label140.Name = "label140";
+            this.label140.Size = new System.Drawing.Size(120, 16);
+            this.label140.TabIndex = 6;
+            this.label140.Text = "Tốc độ Y sẵn sàng";
+            // 
+            // txtUnload_Socket_Speed_YReady
+            // 
+            this.txtUnload_Socket_Speed_YReady.Location = new System.Drawing.Point(8, 131);
+            this.txtUnload_Socket_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Socket_Speed_YReady.Name = "txtUnload_Socket_Speed_YReady";
+            this.txtUnload_Socket_Speed_YReady.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Socket_Speed_YReady.TabIndex = 5;
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Location = new System.Drawing.Point(3, 67);
+            this.label141.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(119, 16);
+            this.label141.TabIndex = 6;
+            this.label141.Text = "Tốc độ X sẵn sàng";
+            // 
+            // txtUnload_Socket_Speed_XReady
+            // 
+            this.txtUnload_Socket_Speed_XReady.Location = new System.Drawing.Point(8, 87);
+            this.txtUnload_Socket_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Socket_Speed_XReady.Name = "txtUnload_Socket_Speed_XReady";
+            this.txtUnload_Socket_Speed_XReady.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Socket_Speed_XReady.TabIndex = 5;
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.Location = new System.Drawing.Point(3, 23);
+            this.label142.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(128, 16);
+            this.label142.TabIndex = 4;
+            this.label142.Text = "Tốc độ XY sẵn sàng";
+            // 
+            // txtUnload_Socket_Speed_XYReady
+            // 
+            this.txtUnload_Socket_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
+            this.txtUnload_Socket_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Socket_Speed_XYReady.Name = "txtUnload_Socket_Speed_XYReady";
+            this.txtUnload_Socket_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Socket_Speed_XYReady.TabIndex = 3;
+            // 
+            // groupBox64
+            // 
+            this.groupBox64.Controls.Add(this.label116);
+            this.groupBox64.Controls.Add(this.txtLoad_Speed_Z);
+            this.groupBox64.Controls.Add(this.label124);
+            this.groupBox64.Controls.Add(this.txtLoad_Speed_XY);
+            this.groupBox64.Controls.Add(this.label126);
+            this.groupBox64.Controls.Add(this.txtLoad_Speed_YReady);
+            this.groupBox64.Controls.Add(this.label127);
+            this.groupBox64.Controls.Add(this.txtLoad_Speed_XReady);
+            this.groupBox64.Controls.Add(this.label128);
+            this.groupBox64.Controls.Add(this.txtLoad_Speed_XYReady);
+            this.groupBox64.Location = new System.Drawing.Point(165, 21);
+            this.groupBox64.Name = "groupBox64";
+            this.groupBox64.Size = new System.Drawing.Size(147, 349);
+            this.groupBox64.TabIndex = 7;
+            this.groupBox64.TabStop = false;
+            this.groupBox64.Text = "Điểm Load";
+            // 
+            // label116
+            // 
+            this.label116.AutoSize = true;
+            this.label116.Location = new System.Drawing.Point(3, 243);
+            this.label116.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label116.Name = "label116";
+            this.label116.Size = new System.Drawing.Size(91, 16);
+            this.label116.TabIndex = 6;
+            this.label116.Text = "Tốc độ Z load";
+            // 
+            // txtLoad_Speed_Z
+            // 
+            this.txtLoad_Speed_Z.Location = new System.Drawing.Point(8, 263);
+            this.txtLoad_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Speed_Z.Name = "txtLoad_Speed_Z";
+            this.txtLoad_Speed_Z.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Speed_Z.TabIndex = 5;
+            // 
+            // label124
+            // 
+            this.label124.AutoSize = true;
+            this.label124.Location = new System.Drawing.Point(2, 199);
+            this.label124.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label124.Name = "label124";
+            this.label124.Size = new System.Drawing.Size(100, 16);
+            this.label124.TabIndex = 6;
+            this.label124.Text = "Tốc độ XY load";
+            // 
+            // txtLoad_Speed_XY
+            // 
+            this.txtLoad_Speed_XY.Location = new System.Drawing.Point(7, 219);
+            this.txtLoad_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Speed_XY.Name = "txtLoad_Speed_XY";
+            this.txtLoad_Speed_XY.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Speed_XY.TabIndex = 5;
+            // 
+            // label126
+            // 
+            this.label126.AutoSize = true;
+            this.label126.Location = new System.Drawing.Point(3, 111);
+            this.label126.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label126.Name = "label126";
+            this.label126.Size = new System.Drawing.Size(120, 16);
+            this.label126.TabIndex = 6;
+            this.label126.Text = "Tốc độ Y sẵn sàng";
+            // 
+            // txtLoad_Speed_YReady
+            // 
+            this.txtLoad_Speed_YReady.Location = new System.Drawing.Point(8, 131);
+            this.txtLoad_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Speed_YReady.Name = "txtLoad_Speed_YReady";
+            this.txtLoad_Speed_YReady.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Speed_YReady.TabIndex = 5;
+            // 
+            // label127
+            // 
+            this.label127.AutoSize = true;
+            this.label127.Location = new System.Drawing.Point(3, 67);
+            this.label127.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(119, 16);
+            this.label127.TabIndex = 6;
+            this.label127.Text = "Tốc độ X sẵn sàng";
+            // 
+            // txtLoad_Speed_XReady
+            // 
+            this.txtLoad_Speed_XReady.Location = new System.Drawing.Point(8, 87);
+            this.txtLoad_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Speed_XReady.Name = "txtLoad_Speed_XReady";
+            this.txtLoad_Speed_XReady.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Speed_XReady.TabIndex = 5;
+            // 
+            // label128
+            // 
+            this.label128.AutoSize = true;
+            this.label128.Location = new System.Drawing.Point(3, 23);
+            this.label128.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label128.Name = "label128";
+            this.label128.Size = new System.Drawing.Size(128, 16);
+            this.label128.TabIndex = 4;
+            this.label128.Text = "Tốc độ XY sẵn sàng";
+            // 
+            // txtLoad_Speed_XYReady
+            // 
+            this.txtLoad_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
+            this.txtLoad_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLoad_Speed_XYReady.Name = "txtLoad_Speed_XYReady";
+            this.txtLoad_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
+            this.txtLoad_Speed_XYReady.TabIndex = 3;
+            // 
+            // groupBox63
+            // 
+            this.groupBox63.Controls.Add(this.label123);
+            this.groupBox63.Controls.Add(this.txtUnload_Speed_RO);
+            this.groupBox63.Controls.Add(this.label122);
+            this.groupBox63.Controls.Add(this.txtUnload_Speed_Z);
+            this.groupBox63.Controls.Add(this.label121);
+            this.groupBox63.Controls.Add(this.txtUnload_Speed_XY);
+            this.groupBox63.Controls.Add(this.label120);
+            this.groupBox63.Controls.Add(this.txtUnload_Speed_ZReady);
+            this.groupBox63.Controls.Add(this.label119);
+            this.groupBox63.Controls.Add(this.txtUnload_Speed_YReady);
+            this.groupBox63.Controls.Add(this.label118);
+            this.groupBox63.Controls.Add(this.txtUnload_Speed_XReady);
+            this.groupBox63.Controls.Add(this.label111);
+            this.groupBox63.Controls.Add(this.txtUnload_Speed_XYReady);
+            this.groupBox63.Location = new System.Drawing.Point(12, 21);
+            this.groupBox63.Name = "groupBox63";
+            this.groupBox63.Size = new System.Drawing.Size(147, 349);
+            this.groupBox63.TabIndex = 0;
+            this.groupBox63.TabStop = false;
+            this.groupBox63.Text = "Điểm Unload";
+            // 
+            // label123
+            // 
+            this.label123.AutoSize = true;
+            this.label123.Location = new System.Drawing.Point(4, 287);
+            this.label123.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(105, 16);
+            this.label123.TabIndex = 6;
+            this.label123.Text = "Tốc độ xoay RO";
+            // 
+            // txtUnload_Speed_RO
+            // 
+            this.txtUnload_Speed_RO.Location = new System.Drawing.Point(9, 307);
+            this.txtUnload_Speed_RO.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Speed_RO.Name = "txtUnload_Speed_RO";
+            this.txtUnload_Speed_RO.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Speed_RO.TabIndex = 5;
+            // 
+            // label122
+            // 
+            this.label122.AutoSize = true;
+            this.label122.Location = new System.Drawing.Point(3, 243);
+            this.label122.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label122.Name = "label122";
+            this.label122.Size = new System.Drawing.Size(105, 16);
+            this.label122.TabIndex = 6;
+            this.label122.Text = "Tốc độ Z unload";
+            // 
+            // txtUnload_Speed_Z
+            // 
+            this.txtUnload_Speed_Z.Location = new System.Drawing.Point(8, 263);
+            this.txtUnload_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Speed_Z.Name = "txtUnload_Speed_Z";
+            this.txtUnload_Speed_Z.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Speed_Z.TabIndex = 5;
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.Location = new System.Drawing.Point(2, 199);
+            this.label121.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(114, 16);
+            this.label121.TabIndex = 6;
+            this.label121.Text = "Tốc độ XY unload";
+            // 
+            // txtUnload_Speed_XY
+            // 
+            this.txtUnload_Speed_XY.Location = new System.Drawing.Point(7, 219);
+            this.txtUnload_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Speed_XY.Name = "txtUnload_Speed_XY";
+            this.txtUnload_Speed_XY.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Speed_XY.TabIndex = 5;
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.Location = new System.Drawing.Point(3, 155);
+            this.label120.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(119, 16);
+            this.label120.TabIndex = 6;
+            this.label120.Text = "Tốc độ Z sẵn sàng";
+            // 
+            // txtUnload_Speed_ZReady
+            // 
+            this.txtUnload_Speed_ZReady.Location = new System.Drawing.Point(8, 175);
+            this.txtUnload_Speed_ZReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Speed_ZReady.Name = "txtUnload_Speed_ZReady";
+            this.txtUnload_Speed_ZReady.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Speed_ZReady.TabIndex = 5;
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Location = new System.Drawing.Point(3, 111);
+            this.label119.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(120, 16);
+            this.label119.TabIndex = 6;
+            this.label119.Text = "Tốc độ Y sẵn sàng";
+            // 
+            // txtUnload_Speed_YReady
+            // 
+            this.txtUnload_Speed_YReady.Location = new System.Drawing.Point(8, 131);
+            this.txtUnload_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Speed_YReady.Name = "txtUnload_Speed_YReady";
+            this.txtUnload_Speed_YReady.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Speed_YReady.TabIndex = 5;
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Location = new System.Drawing.Point(3, 67);
+            this.label118.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(119, 16);
+            this.label118.TabIndex = 6;
+            this.label118.Text = "Tốc độ X sẵn sàng";
+            // 
+            // txtUnload_Speed_XReady
+            // 
+            this.txtUnload_Speed_XReady.Location = new System.Drawing.Point(8, 87);
+            this.txtUnload_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Speed_XReady.Name = "txtUnload_Speed_XReady";
+            this.txtUnload_Speed_XReady.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Speed_XReady.TabIndex = 5;
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(3, 23);
+            this.label111.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(128, 16);
+            this.label111.TabIndex = 4;
+            this.label111.Text = "Tốc độ XY sẵn sàng";
+            // 
+            // txtUnload_Speed_XYReady
+            // 
+            this.txtUnload_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
+            this.txtUnload_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnload_Speed_XYReady.Name = "txtUnload_Speed_XYReady";
+            this.txtUnload_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
+            this.txtUnload_Speed_XYReady.TabIndex = 3;
             // 
             // groupBox39
             // 
@@ -4265,139 +4935,34 @@
             this.groupBox39.Controls.Add(this.groupBox38);
             this.groupBox39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox39.Location = new System.Drawing.Point(7, 2);
-            this.groupBox39.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox39.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox39.Name = "groupBox39";
-            this.groupBox39.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox39.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox39.Size = new System.Drawing.Size(956, 147);
             this.groupBox39.TabIndex = 6;
             this.groupBox39.TabStop = false;
             this.groupBox39.Text = "DATA TEACHING";
             // 
-            // groupBox36
+            // groupBox62
             // 
-            this.groupBox36.Controls.Add(this.button5);
-            this.groupBox36.Controls.Add(this.txtRORI_Distance_X);
-            this.groupBox36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox36.Location = new System.Drawing.Point(730, 16);
-            this.groupBox36.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox36.Name = "groupBox36";
-            this.groupBox36.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox36.Size = new System.Drawing.Size(222, 58);
-            this.groupBox36.TabIndex = 5;
-            this.groupBox36.TabStop = false;
-            this.groupBox36.Text = "Khoảng cách 2 đầu hút";
+            this.groupBox62.Controls.Add(this.txtSocket_Angle);
+            this.groupBox62.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox62.Location = new System.Drawing.Point(730, 78);
+            this.groupBox62.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox62.Name = "groupBox62";
+            this.groupBox62.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox62.Size = new System.Drawing.Size(222, 65);
+            this.groupBox62.TabIndex = 6;
+            this.groupBox62.TabStop = false;
+            this.groupBox62.Text = "Góc xoay đầu hút";
             // 
-            // txtRORI_Distance_X
+            // txtSocket_Angle
             // 
-            this.txtRORI_Distance_X.Location = new System.Drawing.Point(28, 23);
-            this.txtRORI_Distance_X.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtRORI_Distance_X.Name = "txtRORI_Distance_X";
-            this.txtRORI_Distance_X.Size = new System.Drawing.Size(68, 23);
-            this.txtRORI_Distance_X.TabIndex = 2;
-            // 
-            // groupBox38
-            // 
-            this.groupBox38.Controls.Add(this.txtTray_Row_NG4);
-            this.groupBox38.Controls.Add(this.label117);
-            this.groupBox38.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox38.Location = new System.Drawing.Point(488, 16);
-            this.groupBox38.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox38.Name = "groupBox38";
-            this.groupBox38.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox38.Size = new System.Drawing.Size(222, 127);
-            this.groupBox38.TabIndex = 4;
-            this.groupBox38.TabStop = false;
-            this.groupBox38.Text = "Tray NG4";
-            // 
-            // txtTray_Row_NG4
-            // 
-            this.txtTray_Row_NG4.Location = new System.Drawing.Point(140, 25);
-            this.txtTray_Row_NG4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtTray_Row_NG4.Name = "txtTray_Row_NG4";
-            this.txtTray_Row_NG4.Size = new System.Drawing.Size(68, 23);
-            this.txtTray_Row_NG4.TabIndex = 2;
-            // 
-            // label117
-            // 
-            this.label117.AutoSize = true;
-            this.label117.Location = new System.Drawing.Point(3, 27);
-            this.label117.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(129, 17);
-            this.label117.TabIndex = 0;
-            this.label117.Text = "Số hàng chứa NG4";
-            // 
-            // groupBox37
-            // 
-            this.groupBox37.Controls.Add(this.txtTray_Row_NG3);
-            this.groupBox37.Controls.Add(this.txtTray_Row_NG2);
-            this.groupBox37.Controls.Add(this.label112);
-            this.groupBox37.Controls.Add(this.txtTray_Row_NG1);
-            this.groupBox37.Controls.Add(this.label113);
-            this.groupBox37.Controls.Add(this.label114);
-            this.groupBox37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox37.Location = new System.Drawing.Point(246, 16);
-            this.groupBox37.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox37.Name = "groupBox37";
-            this.groupBox37.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox37.Size = new System.Drawing.Size(222, 127);
-            this.groupBox37.TabIndex = 3;
-            this.groupBox37.TabStop = false;
-            this.groupBox37.Text = "Tray NG";
-            // 
-            // txtTray_Row_NG3
-            // 
-            this.txtTray_Row_NG3.Location = new System.Drawing.Point(141, 86);
-            this.txtTray_Row_NG3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtTray_Row_NG3.Name = "txtTray_Row_NG3";
-            this.txtTray_Row_NG3.Size = new System.Drawing.Size(68, 23);
-            this.txtTray_Row_NG3.TabIndex = 2;
-            // 
-            // txtTray_Row_NG2
-            // 
-            this.txtTray_Row_NG2.Location = new System.Drawing.Point(141, 56);
-            this.txtTray_Row_NG2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtTray_Row_NG2.Name = "txtTray_Row_NG2";
-            this.txtTray_Row_NG2.Size = new System.Drawing.Size(68, 23);
-            this.txtTray_Row_NG2.TabIndex = 2;
-            // 
-            // label112
-            // 
-            this.label112.AutoSize = true;
-            this.label112.Location = new System.Drawing.Point(4, 88);
-            this.label112.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label112.Name = "label112";
-            this.label112.Size = new System.Drawing.Size(129, 17);
-            this.label112.TabIndex = 1;
-            this.label112.Text = "Số hàng chứa NG3";
-            // 
-            // txtTray_Row_NG1
-            // 
-            this.txtTray_Row_NG1.Location = new System.Drawing.Point(141, 25);
-            this.txtTray_Row_NG1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtTray_Row_NG1.Name = "txtTray_Row_NG1";
-            this.txtTray_Row_NG1.Size = new System.Drawing.Size(68, 23);
-            this.txtTray_Row_NG1.TabIndex = 2;
-            // 
-            // label113
-            // 
-            this.label113.AutoSize = true;
-            this.label113.Location = new System.Drawing.Point(4, 58);
-            this.label113.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(129, 17);
-            this.label113.TabIndex = 1;
-            this.label113.Text = "Số hàng chứa NG2";
-            // 
-            // label114
-            // 
-            this.label114.AutoSize = true;
-            this.label114.Location = new System.Drawing.Point(4, 27);
-            this.label114.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label114.Name = "label114";
-            this.label114.Size = new System.Drawing.Size(129, 17);
-            this.label114.TabIndex = 0;
-            this.label114.Text = "Số hàng chứa NG1";
+            this.txtSocket_Angle.Location = new System.Drawing.Point(28, 24);
+            this.txtSocket_Angle.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSocket_Angle.Name = "txtSocket_Angle";
+            this.txtSocket_Angle.Size = new System.Drawing.Size(68, 23);
+            this.txtSocket_Angle.TabIndex = 2;
             // 
             // groupBox32
             // 
@@ -4407,9 +4972,9 @@
             this.groupBox32.Controls.Add(this.label108);
             this.groupBox32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox32.Location = new System.Drawing.Point(4, 16);
-            this.groupBox32.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox32.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox32.Name = "groupBox32";
-            this.groupBox32.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox32.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox32.Size = new System.Drawing.Size(222, 127);
             this.groupBox32.TabIndex = 0;
             this.groupBox32.TabStop = false;
@@ -4418,7 +4983,7 @@
             // txtTray_Row_Number
             // 
             this.txtTray_Row_Number.Location = new System.Drawing.Point(140, 56);
-            this.txtTray_Row_Number.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTray_Row_Number.Margin = new System.Windows.Forms.Padding(2);
             this.txtTray_Row_Number.Name = "txtTray_Row_Number";
             this.txtTray_Row_Number.Size = new System.Drawing.Size(68, 23);
             this.txtTray_Row_Number.TabIndex = 2;
@@ -4426,7 +4991,7 @@
             // txtTray_Col_Number
             // 
             this.txtTray_Col_Number.Location = new System.Drawing.Point(140, 25);
-            this.txtTray_Col_Number.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTray_Col_Number.Margin = new System.Windows.Forms.Padding(2);
             this.txtTray_Col_Number.Name = "txtTray_Col_Number";
             this.txtTray_Col_Number.Size = new System.Drawing.Size(68, 23);
             this.txtTray_Col_Number.TabIndex = 2;
@@ -4451,6 +5016,141 @@
             this.label108.TabIndex = 0;
             this.label108.Text = "Số cột sản phẩm";
             // 
+            // groupBox36
+            // 
+            this.groupBox36.Controls.Add(this.btnTeaching_Distance_Picker);
+            this.groupBox36.Controls.Add(this.txtRORI_Distance_X);
+            this.groupBox36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox36.Location = new System.Drawing.Point(730, 16);
+            this.groupBox36.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox36.Name = "groupBox36";
+            this.groupBox36.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox36.Size = new System.Drawing.Size(222, 58);
+            this.groupBox36.TabIndex = 5;
+            this.groupBox36.TabStop = false;
+            this.groupBox36.Text = "Khoảng cách 2 đầu hút";
+            // 
+            // btnTeaching_Distance_Picker
+            // 
+            this.btnTeaching_Distance_Picker.Location = new System.Drawing.Point(125, 21);
+            this.btnTeaching_Distance_Picker.Name = "btnTeaching_Distance_Picker";
+            this.btnTeaching_Distance_Picker.Size = new System.Drawing.Size(75, 27);
+            this.btnTeaching_Distance_Picker.TabIndex = 3;
+            this.btnTeaching_Distance_Picker.Text = "Teach";
+            this.btnTeaching_Distance_Picker.UseVisualStyleBackColor = true;
+            // 
+            // txtRORI_Distance_X
+            // 
+            this.txtRORI_Distance_X.Location = new System.Drawing.Point(28, 23);
+            this.txtRORI_Distance_X.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRORI_Distance_X.Name = "txtRORI_Distance_X";
+            this.txtRORI_Distance_X.Size = new System.Drawing.Size(68, 23);
+            this.txtRORI_Distance_X.TabIndex = 2;
+            // 
+            // groupBox37
+            // 
+            this.groupBox37.Controls.Add(this.txtTray_Row_NG3);
+            this.groupBox37.Controls.Add(this.txtTray_Row_NG2);
+            this.groupBox37.Controls.Add(this.label112);
+            this.groupBox37.Controls.Add(this.txtTray_Row_NG1);
+            this.groupBox37.Controls.Add(this.label113);
+            this.groupBox37.Controls.Add(this.label114);
+            this.groupBox37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox37.Location = new System.Drawing.Point(246, 16);
+            this.groupBox37.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox37.Name = "groupBox37";
+            this.groupBox37.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox37.Size = new System.Drawing.Size(222, 127);
+            this.groupBox37.TabIndex = 3;
+            this.groupBox37.TabStop = false;
+            this.groupBox37.Text = "Tray NG";
+            // 
+            // txtTray_Row_NG3
+            // 
+            this.txtTray_Row_NG3.Location = new System.Drawing.Point(141, 86);
+            this.txtTray_Row_NG3.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTray_Row_NG3.Name = "txtTray_Row_NG3";
+            this.txtTray_Row_NG3.Size = new System.Drawing.Size(68, 23);
+            this.txtTray_Row_NG3.TabIndex = 2;
+            // 
+            // txtTray_Row_NG2
+            // 
+            this.txtTray_Row_NG2.Location = new System.Drawing.Point(141, 56);
+            this.txtTray_Row_NG2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTray_Row_NG2.Name = "txtTray_Row_NG2";
+            this.txtTray_Row_NG2.Size = new System.Drawing.Size(68, 23);
+            this.txtTray_Row_NG2.TabIndex = 2;
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Location = new System.Drawing.Point(4, 88);
+            this.label112.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(129, 17);
+            this.label112.TabIndex = 1;
+            this.label112.Text = "Số hàng chứa NG3";
+            // 
+            // txtTray_Row_NG1
+            // 
+            this.txtTray_Row_NG1.Location = new System.Drawing.Point(141, 25);
+            this.txtTray_Row_NG1.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTray_Row_NG1.Name = "txtTray_Row_NG1";
+            this.txtTray_Row_NG1.Size = new System.Drawing.Size(68, 23);
+            this.txtTray_Row_NG1.TabIndex = 2;
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Location = new System.Drawing.Point(4, 58);
+            this.label113.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(129, 17);
+            this.label113.TabIndex = 1;
+            this.label113.Text = "Số hàng chứa NG2";
+            // 
+            // label114
+            // 
+            this.label114.AutoSize = true;
+            this.label114.Location = new System.Drawing.Point(4, 27);
+            this.label114.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label114.Name = "label114";
+            this.label114.Size = new System.Drawing.Size(129, 17);
+            this.label114.TabIndex = 0;
+            this.label114.Text = "Số hàng chứa NG1";
+            // 
+            // groupBox38
+            // 
+            this.groupBox38.Controls.Add(this.txtTray_Row_NG4);
+            this.groupBox38.Controls.Add(this.label117);
+            this.groupBox38.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox38.Location = new System.Drawing.Point(488, 16);
+            this.groupBox38.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox38.Name = "groupBox38";
+            this.groupBox38.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox38.Size = new System.Drawing.Size(222, 127);
+            this.groupBox38.TabIndex = 4;
+            this.groupBox38.TabStop = false;
+            this.groupBox38.Text = "Tray NG4";
+            // 
+            // txtTray_Row_NG4
+            // 
+            this.txtTray_Row_NG4.Location = new System.Drawing.Point(140, 25);
+            this.txtTray_Row_NG4.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTray_Row_NG4.Name = "txtTray_Row_NG4";
+            this.txtTray_Row_NG4.Size = new System.Drawing.Size(68, 23);
+            this.txtTray_Row_NG4.TabIndex = 2;
+            // 
+            // label117
+            // 
+            this.label117.AutoSize = true;
+            this.label117.Location = new System.Drawing.Point(3, 27);
+            this.label117.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(129, 17);
+            this.label117.TabIndex = 0;
+            this.label117.Text = "Số hàng chứa NG4";
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.groupBox13);
@@ -4463,7 +5163,7 @@
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(970, 650);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Camera";
@@ -5265,706 +5965,6 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(89, 17);
             this.toolStripStatusLabel2.Text = "PLC Connected";
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(125, 21);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 27);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Teach";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // groupBox47
-            // 
-            this.groupBox47.Controls.Add(this.groupBox68);
-            this.groupBox47.Controls.Add(this.groupBox67);
-            this.groupBox47.Controls.Add(this.groupBox65);
-            this.groupBox47.Controls.Add(this.groupBox66);
-            this.groupBox47.Controls.Add(this.groupBox64);
-            this.groupBox47.Controls.Add(this.groupBox63);
-            this.groupBox47.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox47.Location = new System.Drawing.Point(7, 154);
-            this.groupBox47.Name = "groupBox47";
-            this.groupBox47.Size = new System.Drawing.Size(956, 376);
-            this.groupBox47.TabIndex = 7;
-            this.groupBox47.TabStop = false;
-            this.groupBox47.Text = "RUN SPEED";
-            // 
-            // groupBox62
-            // 
-            this.groupBox62.Controls.Add(this.txtSocket_Angle);
-            this.groupBox62.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox62.Location = new System.Drawing.Point(730, 78);
-            this.groupBox62.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox62.Name = "groupBox62";
-            this.groupBox62.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox62.Size = new System.Drawing.Size(222, 65);
-            this.groupBox62.TabIndex = 6;
-            this.groupBox62.TabStop = false;
-            this.groupBox62.Text = "Góc xoay đầu hút";
-            // 
-            // txtSocket_Angle
-            // 
-            this.txtSocket_Angle.Location = new System.Drawing.Point(28, 24);
-            this.txtSocket_Angle.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSocket_Angle.Name = "txtSocket_Angle";
-            this.txtSocket_Angle.Size = new System.Drawing.Size(68, 23);
-            this.txtSocket_Angle.TabIndex = 2;
-            // 
-            // groupBox63
-            // 
-            this.groupBox63.Controls.Add(this.label123);
-            this.groupBox63.Controls.Add(this.txtUnload_Speed_RO);
-            this.groupBox63.Controls.Add(this.label122);
-            this.groupBox63.Controls.Add(this.txtUnload_Speed_Z);
-            this.groupBox63.Controls.Add(this.label121);
-            this.groupBox63.Controls.Add(this.txtUnload_Speed_XY);
-            this.groupBox63.Controls.Add(this.label120);
-            this.groupBox63.Controls.Add(this.txtUnload_Speed_ZReady);
-            this.groupBox63.Controls.Add(this.label119);
-            this.groupBox63.Controls.Add(this.txtUnload_Speed_YReady);
-            this.groupBox63.Controls.Add(this.label118);
-            this.groupBox63.Controls.Add(this.txtUnload_Speed_XReady);
-            this.groupBox63.Controls.Add(this.label111);
-            this.groupBox63.Controls.Add(this.txtUnload_Speed_XYReady);
-            this.groupBox63.Location = new System.Drawing.Point(12, 21);
-            this.groupBox63.Name = "groupBox63";
-            this.groupBox63.Size = new System.Drawing.Size(147, 349);
-            this.groupBox63.TabIndex = 0;
-            this.groupBox63.TabStop = false;
-            this.groupBox63.Text = "Điểm Unload";
-            // 
-            // txtUnload_Speed_XYReady
-            // 
-            this.txtUnload_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
-            this.txtUnload_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Speed_XYReady.Name = "txtUnload_Speed_XYReady";
-            this.txtUnload_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Speed_XYReady.TabIndex = 3;
-            // 
-            // label111
-            // 
-            this.label111.AutoSize = true;
-            this.label111.Location = new System.Drawing.Point(3, 23);
-            this.label111.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(128, 16);
-            this.label111.TabIndex = 4;
-            this.label111.Text = "Tốc độ XY sẵn sàng";
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.Location = new System.Drawing.Point(3, 67);
-            this.label118.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(119, 16);
-            this.label118.TabIndex = 6;
-            this.label118.Text = "Tốc độ X sẵn sàng";
-            // 
-            // txtUnload_Speed_XReady
-            // 
-            this.txtUnload_Speed_XReady.Location = new System.Drawing.Point(8, 87);
-            this.txtUnload_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Speed_XReady.Name = "txtUnload_Speed_XReady";
-            this.txtUnload_Speed_XReady.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Speed_XReady.TabIndex = 5;
-            // 
-            // txtUnload_Speed_YReady
-            // 
-            this.txtUnload_Speed_YReady.Location = new System.Drawing.Point(8, 131);
-            this.txtUnload_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Speed_YReady.Name = "txtUnload_Speed_YReady";
-            this.txtUnload_Speed_YReady.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Speed_YReady.TabIndex = 5;
-            // 
-            // label119
-            // 
-            this.label119.AutoSize = true;
-            this.label119.Location = new System.Drawing.Point(3, 111);
-            this.label119.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(120, 16);
-            this.label119.TabIndex = 6;
-            this.label119.Text = "Tốc độ Y sẵn sàng";
-            // 
-            // txtUnload_Speed_ZReady
-            // 
-            this.txtUnload_Speed_ZReady.Location = new System.Drawing.Point(8, 175);
-            this.txtUnload_Speed_ZReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Speed_ZReady.Name = "txtUnload_Speed_ZReady";
-            this.txtUnload_Speed_ZReady.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Speed_ZReady.TabIndex = 5;
-            // 
-            // label120
-            // 
-            this.label120.AutoSize = true;
-            this.label120.Location = new System.Drawing.Point(3, 155);
-            this.label120.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(119, 16);
-            this.label120.TabIndex = 6;
-            this.label120.Text = "Tốc độ Z sẵn sàng";
-            // 
-            // txtUnload_Speed_XY
-            // 
-            this.txtUnload_Speed_XY.Location = new System.Drawing.Point(7, 219);
-            this.txtUnload_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Speed_XY.Name = "txtUnload_Speed_XY";
-            this.txtUnload_Speed_XY.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Speed_XY.TabIndex = 5;
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.Location = new System.Drawing.Point(2, 199);
-            this.label121.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(114, 16);
-            this.label121.TabIndex = 6;
-            this.label121.Text = "Tốc độ XY unload";
-            // 
-            // txtUnload_Speed_Z
-            // 
-            this.txtUnload_Speed_Z.Location = new System.Drawing.Point(8, 263);
-            this.txtUnload_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Speed_Z.Name = "txtUnload_Speed_Z";
-            this.txtUnload_Speed_Z.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Speed_Z.TabIndex = 5;
-            // 
-            // label122
-            // 
-            this.label122.AutoSize = true;
-            this.label122.Location = new System.Drawing.Point(3, 243);
-            this.label122.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label122.Name = "label122";
-            this.label122.Size = new System.Drawing.Size(105, 16);
-            this.label122.TabIndex = 6;
-            this.label122.Text = "Tốc độ Z unload";
-            // 
-            // txtUnload_Speed_RO
-            // 
-            this.txtUnload_Speed_RO.Location = new System.Drawing.Point(9, 307);
-            this.txtUnload_Speed_RO.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Speed_RO.Name = "txtUnload_Speed_RO";
-            this.txtUnload_Speed_RO.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Speed_RO.TabIndex = 5;
-            // 
-            // label123
-            // 
-            this.label123.AutoSize = true;
-            this.label123.Location = new System.Drawing.Point(4, 287);
-            this.label123.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(105, 16);
-            this.label123.TabIndex = 6;
-            this.label123.Text = "Tốc độ xoay RO";
-            // 
-            // groupBox64
-            // 
-            this.groupBox64.Controls.Add(this.label116);
-            this.groupBox64.Controls.Add(this.txtLoad_Speed_Z);
-            this.groupBox64.Controls.Add(this.label124);
-            this.groupBox64.Controls.Add(this.txtLoad_Speed_XY);
-            this.groupBox64.Controls.Add(this.label126);
-            this.groupBox64.Controls.Add(this.txtLoad_Speed_YReady);
-            this.groupBox64.Controls.Add(this.label127);
-            this.groupBox64.Controls.Add(this.txtLoad_Speed_XReady);
-            this.groupBox64.Controls.Add(this.label128);
-            this.groupBox64.Controls.Add(this.txtLoad_Speed_XYReady);
-            this.groupBox64.Location = new System.Drawing.Point(165, 21);
-            this.groupBox64.Name = "groupBox64";
-            this.groupBox64.Size = new System.Drawing.Size(147, 349);
-            this.groupBox64.TabIndex = 7;
-            this.groupBox64.TabStop = false;
-            this.groupBox64.Text = "Điểm Load";
-            // 
-            // label116
-            // 
-            this.label116.AutoSize = true;
-            this.label116.Location = new System.Drawing.Point(3, 243);
-            this.label116.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label116.Name = "label116";
-            this.label116.Size = new System.Drawing.Size(91, 16);
-            this.label116.TabIndex = 6;
-            this.label116.Text = "Tốc độ Z load";
-            // 
-            // txtLoad_Speed_Z
-            // 
-            this.txtLoad_Speed_Z.Location = new System.Drawing.Point(8, 263);
-            this.txtLoad_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Speed_Z.Name = "txtLoad_Speed_Z";
-            this.txtLoad_Speed_Z.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Speed_Z.TabIndex = 5;
-            // 
-            // label124
-            // 
-            this.label124.AutoSize = true;
-            this.label124.Location = new System.Drawing.Point(2, 199);
-            this.label124.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(100, 16);
-            this.label124.TabIndex = 6;
-            this.label124.Text = "Tốc độ XY load";
-            // 
-            // txtLoad_Speed_XY
-            // 
-            this.txtLoad_Speed_XY.Location = new System.Drawing.Point(7, 219);
-            this.txtLoad_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Speed_XY.Name = "txtLoad_Speed_XY";
-            this.txtLoad_Speed_XY.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Speed_XY.TabIndex = 5;
-            // 
-            // label126
-            // 
-            this.label126.AutoSize = true;
-            this.label126.Location = new System.Drawing.Point(3, 111);
-            this.label126.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label126.Name = "label126";
-            this.label126.Size = new System.Drawing.Size(120, 16);
-            this.label126.TabIndex = 6;
-            this.label126.Text = "Tốc độ Y sẵn sàng";
-            // 
-            // txtLoad_Speed_YReady
-            // 
-            this.txtLoad_Speed_YReady.Location = new System.Drawing.Point(8, 131);
-            this.txtLoad_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Speed_YReady.Name = "txtLoad_Speed_YReady";
-            this.txtLoad_Speed_YReady.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Speed_YReady.TabIndex = 5;
-            // 
-            // label127
-            // 
-            this.label127.AutoSize = true;
-            this.label127.Location = new System.Drawing.Point(3, 67);
-            this.label127.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label127.Name = "label127";
-            this.label127.Size = new System.Drawing.Size(119, 16);
-            this.label127.TabIndex = 6;
-            this.label127.Text = "Tốc độ X sẵn sàng";
-            // 
-            // txtLoad_Speed_XReady
-            // 
-            this.txtLoad_Speed_XReady.Location = new System.Drawing.Point(8, 87);
-            this.txtLoad_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Speed_XReady.Name = "txtLoad_Speed_XReady";
-            this.txtLoad_Speed_XReady.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Speed_XReady.TabIndex = 5;
-            // 
-            // label128
-            // 
-            this.label128.AutoSize = true;
-            this.label128.Location = new System.Drawing.Point(3, 23);
-            this.label128.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label128.Name = "label128";
-            this.label128.Size = new System.Drawing.Size(128, 16);
-            this.label128.TabIndex = 4;
-            this.label128.Text = "Tốc độ XY sẵn sàng";
-            // 
-            // txtLoad_Speed_XYReady
-            // 
-            this.txtLoad_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
-            this.txtLoad_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Speed_XYReady.Name = "txtLoad_Speed_XYReady";
-            this.txtLoad_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Speed_XYReady.TabIndex = 3;
-            // 
-            // groupBox65
-            // 
-            this.groupBox65.Controls.Add(this.label129);
-            this.groupBox65.Controls.Add(this.txtCamera_Speed_RI);
-            this.groupBox65.Controls.Add(this.label130);
-            this.groupBox65.Controls.Add(this.txtCamera_Speed_Z);
-            this.groupBox65.Controls.Add(this.label131);
-            this.groupBox65.Controls.Add(this.txtCamera_Speed_XY);
-            this.groupBox65.Controls.Add(this.label133);
-            this.groupBox65.Controls.Add(this.txtCamera_Speed_YReady);
-            this.groupBox65.Controls.Add(this.label134);
-            this.groupBox65.Controls.Add(this.txtCamera_Speed_XReady);
-            this.groupBox65.Controls.Add(this.label135);
-            this.groupBox65.Controls.Add(this.txtCamera_Speed_XYReady);
-            this.groupBox65.Location = new System.Drawing.Point(318, 21);
-            this.groupBox65.Name = "groupBox65";
-            this.groupBox65.Size = new System.Drawing.Size(147, 349);
-            this.groupBox65.TabIndex = 8;
-            this.groupBox65.TabStop = false;
-            this.groupBox65.Text = "Điểm Camera";
-            // 
-            // label129
-            // 
-            this.label129.AutoSize = true;
-            this.label129.Location = new System.Drawing.Point(4, 287);
-            this.label129.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(98, 16);
-            this.label129.TabIndex = 6;
-            this.label129.Text = "Tốc độ xoay RI";
-            // 
-            // txtCamera_Speed_RI
-            // 
-            this.txtCamera_Speed_RI.Location = new System.Drawing.Point(9, 307);
-            this.txtCamera_Speed_RI.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCamera_Speed_RI.Name = "txtCamera_Speed_RI";
-            this.txtCamera_Speed_RI.Size = new System.Drawing.Size(54, 22);
-            this.txtCamera_Speed_RI.TabIndex = 5;
-            // 
-            // label130
-            // 
-            this.label130.AutoSize = true;
-            this.label130.Location = new System.Drawing.Point(3, 243);
-            this.label130.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label130.Name = "label130";
-            this.label130.Size = new System.Drawing.Size(110, 16);
-            this.label130.TabIndex = 6;
-            this.label130.Text = "Tốc độ Z camera";
-            // 
-            // txtCamera_Speed_Z
-            // 
-            this.txtCamera_Speed_Z.Location = new System.Drawing.Point(8, 263);
-            this.txtCamera_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCamera_Speed_Z.Name = "txtCamera_Speed_Z";
-            this.txtCamera_Speed_Z.Size = new System.Drawing.Size(54, 22);
-            this.txtCamera_Speed_Z.TabIndex = 5;
-            // 
-            // label131
-            // 
-            this.label131.AutoSize = true;
-            this.label131.Location = new System.Drawing.Point(2, 199);
-            this.label131.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label131.Name = "label131";
-            this.label131.Size = new System.Drawing.Size(119, 16);
-            this.label131.TabIndex = 6;
-            this.label131.Text = "Tốc độ XY camera";
-            // 
-            // txtCamera_Speed_XY
-            // 
-            this.txtCamera_Speed_XY.Location = new System.Drawing.Point(7, 219);
-            this.txtCamera_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCamera_Speed_XY.Name = "txtCamera_Speed_XY";
-            this.txtCamera_Speed_XY.Size = new System.Drawing.Size(54, 22);
-            this.txtCamera_Speed_XY.TabIndex = 5;
-            // 
-            // label133
-            // 
-            this.label133.AutoSize = true;
-            this.label133.Location = new System.Drawing.Point(3, 111);
-            this.label133.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label133.Name = "label133";
-            this.label133.Size = new System.Drawing.Size(120, 16);
-            this.label133.TabIndex = 6;
-            this.label133.Text = "Tốc độ Y sẵn sàng";
-            // 
-            // txtCamera_Speed_YReady
-            // 
-            this.txtCamera_Speed_YReady.Location = new System.Drawing.Point(8, 131);
-            this.txtCamera_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCamera_Speed_YReady.Name = "txtCamera_Speed_YReady";
-            this.txtCamera_Speed_YReady.Size = new System.Drawing.Size(54, 22);
-            this.txtCamera_Speed_YReady.TabIndex = 5;
-            // 
-            // label134
-            // 
-            this.label134.AutoSize = true;
-            this.label134.Location = new System.Drawing.Point(3, 67);
-            this.label134.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label134.Name = "label134";
-            this.label134.Size = new System.Drawing.Size(119, 16);
-            this.label134.TabIndex = 6;
-            this.label134.Text = "Tốc độ X sẵn sàng";
-            // 
-            // txtCamera_Speed_XReady
-            // 
-            this.txtCamera_Speed_XReady.Location = new System.Drawing.Point(8, 87);
-            this.txtCamera_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCamera_Speed_XReady.Name = "txtCamera_Speed_XReady";
-            this.txtCamera_Speed_XReady.Size = new System.Drawing.Size(54, 22);
-            this.txtCamera_Speed_XReady.TabIndex = 5;
-            // 
-            // label135
-            // 
-            this.label135.AutoSize = true;
-            this.label135.Location = new System.Drawing.Point(3, 23);
-            this.label135.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label135.Name = "label135";
-            this.label135.Size = new System.Drawing.Size(128, 16);
-            this.label135.TabIndex = 4;
-            this.label135.Text = "Tốc độ XY sẵn sàng";
-            // 
-            // txtCamera_Speed_XYReady
-            // 
-            this.txtCamera_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
-            this.txtCamera_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCamera_Speed_XYReady.Name = "txtCamera_Speed_XYReady";
-            this.txtCamera_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
-            this.txtCamera_Speed_XYReady.TabIndex = 3;
-            // 
-            // groupBox66
-            // 
-            this.groupBox66.Controls.Add(this.label137);
-            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_Z);
-            this.groupBox66.Controls.Add(this.label138);
-            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_XY);
-            this.groupBox66.Controls.Add(this.label140);
-            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_YReady);
-            this.groupBox66.Controls.Add(this.label141);
-            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_XReady);
-            this.groupBox66.Controls.Add(this.label142);
-            this.groupBox66.Controls.Add(this.txtUnload_Socket_Speed_XYReady);
-            this.groupBox66.Location = new System.Drawing.Point(471, 21);
-            this.groupBox66.Name = "groupBox66";
-            this.groupBox66.Size = new System.Drawing.Size(147, 349);
-            this.groupBox66.TabIndex = 0;
-            this.groupBox66.TabStop = false;
-            this.groupBox66.Text = "Điểm Socket Unload";
-            // 
-            // label137
-            // 
-            this.label137.AutoSize = true;
-            this.label137.Location = new System.Drawing.Point(3, 243);
-            this.label137.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label137.Name = "label137";
-            this.label137.Size = new System.Drawing.Size(105, 16);
-            this.label137.TabIndex = 6;
-            this.label137.Text = "Tốc độ Z unload";
-            // 
-            // txtUnload_Socket_Speed_Z
-            // 
-            this.txtUnload_Socket_Speed_Z.Location = new System.Drawing.Point(8, 263);
-            this.txtUnload_Socket_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Socket_Speed_Z.Name = "txtUnload_Socket_Speed_Z";
-            this.txtUnload_Socket_Speed_Z.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Socket_Speed_Z.TabIndex = 5;
-            // 
-            // label138
-            // 
-            this.label138.AutoSize = true;
-            this.label138.Location = new System.Drawing.Point(2, 199);
-            this.label138.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label138.Name = "label138";
-            this.label138.Size = new System.Drawing.Size(114, 16);
-            this.label138.TabIndex = 6;
-            this.label138.Text = "Tốc độ XY unload";
-            // 
-            // txtUnload_Socket_Speed_XY
-            // 
-            this.txtUnload_Socket_Speed_XY.Location = new System.Drawing.Point(7, 219);
-            this.txtUnload_Socket_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Socket_Speed_XY.Name = "txtUnload_Socket_Speed_XY";
-            this.txtUnload_Socket_Speed_XY.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Socket_Speed_XY.TabIndex = 5;
-            // 
-            // label140
-            // 
-            this.label140.AutoSize = true;
-            this.label140.Location = new System.Drawing.Point(3, 111);
-            this.label140.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label140.Name = "label140";
-            this.label140.Size = new System.Drawing.Size(120, 16);
-            this.label140.TabIndex = 6;
-            this.label140.Text = "Tốc độ Y sẵn sàng";
-            // 
-            // txtUnload_Socket_Speed_YReady
-            // 
-            this.txtUnload_Socket_Speed_YReady.Location = new System.Drawing.Point(8, 131);
-            this.txtUnload_Socket_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Socket_Speed_YReady.Name = "txtUnload_Socket_Speed_YReady";
-            this.txtUnload_Socket_Speed_YReady.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Socket_Speed_YReady.TabIndex = 5;
-            // 
-            // label141
-            // 
-            this.label141.AutoSize = true;
-            this.label141.Location = new System.Drawing.Point(3, 67);
-            this.label141.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label141.Name = "label141";
-            this.label141.Size = new System.Drawing.Size(119, 16);
-            this.label141.TabIndex = 6;
-            this.label141.Text = "Tốc độ X sẵn sàng";
-            // 
-            // txtUnload_Socket_Speed_XReady
-            // 
-            this.txtUnload_Socket_Speed_XReady.Location = new System.Drawing.Point(8, 87);
-            this.txtUnload_Socket_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Socket_Speed_XReady.Name = "txtUnload_Socket_Speed_XReady";
-            this.txtUnload_Socket_Speed_XReady.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Socket_Speed_XReady.TabIndex = 5;
-            // 
-            // label142
-            // 
-            this.label142.AutoSize = true;
-            this.label142.Location = new System.Drawing.Point(3, 23);
-            this.label142.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label142.Name = "label142";
-            this.label142.Size = new System.Drawing.Size(128, 16);
-            this.label142.TabIndex = 4;
-            this.label142.Text = "Tốc độ XY sẵn sàng";
-            // 
-            // txtUnload_Socket_Speed_XYReady
-            // 
-            this.txtUnload_Socket_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
-            this.txtUnload_Socket_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUnload_Socket_Speed_XYReady.Name = "txtUnload_Socket_Speed_XYReady";
-            this.txtUnload_Socket_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
-            this.txtUnload_Socket_Speed_XYReady.TabIndex = 3;
-            // 
-            // groupBox67
-            // 
-            this.groupBox67.Controls.Add(this.label144);
-            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_Z);
-            this.groupBox67.Controls.Add(this.label145);
-            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_XY);
-            this.groupBox67.Controls.Add(this.label147);
-            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_YReady);
-            this.groupBox67.Controls.Add(this.label148);
-            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_XReady);
-            this.groupBox67.Controls.Add(this.label149);
-            this.groupBox67.Controls.Add(this.txtLoad_Socket_Speed_XYReady);
-            this.groupBox67.Location = new System.Drawing.Point(624, 21);
-            this.groupBox67.Name = "groupBox67";
-            this.groupBox67.Size = new System.Drawing.Size(147, 349);
-            this.groupBox67.TabIndex = 7;
-            this.groupBox67.TabStop = false;
-            this.groupBox67.Text = "Điểm Socket Load";
-            // 
-            // label144
-            // 
-            this.label144.AutoSize = true;
-            this.label144.Location = new System.Drawing.Point(3, 243);
-            this.label144.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(91, 16);
-            this.label144.TabIndex = 6;
-            this.label144.Text = "Tốc độ Z load";
-            // 
-            // txtLoad_Socket_Speed_Z
-            // 
-            this.txtLoad_Socket_Speed_Z.Location = new System.Drawing.Point(8, 263);
-            this.txtLoad_Socket_Speed_Z.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Socket_Speed_Z.Name = "txtLoad_Socket_Speed_Z";
-            this.txtLoad_Socket_Speed_Z.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Socket_Speed_Z.TabIndex = 5;
-            // 
-            // label145
-            // 
-            this.label145.AutoSize = true;
-            this.label145.Location = new System.Drawing.Point(2, 199);
-            this.label145.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(100, 16);
-            this.label145.TabIndex = 6;
-            this.label145.Text = "Tốc độ XY load";
-            // 
-            // txtLoad_Socket_Speed_XY
-            // 
-            this.txtLoad_Socket_Speed_XY.Location = new System.Drawing.Point(7, 219);
-            this.txtLoad_Socket_Speed_XY.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Socket_Speed_XY.Name = "txtLoad_Socket_Speed_XY";
-            this.txtLoad_Socket_Speed_XY.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Socket_Speed_XY.TabIndex = 5;
-            // 
-            // label147
-            // 
-            this.label147.AutoSize = true;
-            this.label147.Location = new System.Drawing.Point(3, 111);
-            this.label147.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(120, 16);
-            this.label147.TabIndex = 6;
-            this.label147.Text = "Tốc độ Y sẵn sàng";
-            // 
-            // txtLoad_Socket_Speed_YReady
-            // 
-            this.txtLoad_Socket_Speed_YReady.Location = new System.Drawing.Point(8, 131);
-            this.txtLoad_Socket_Speed_YReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Socket_Speed_YReady.Name = "txtLoad_Socket_Speed_YReady";
-            this.txtLoad_Socket_Speed_YReady.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Socket_Speed_YReady.TabIndex = 5;
-            // 
-            // label148
-            // 
-            this.label148.AutoSize = true;
-            this.label148.Location = new System.Drawing.Point(3, 67);
-            this.label148.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(119, 16);
-            this.label148.TabIndex = 6;
-            this.label148.Text = "Tốc độ X sẵn sàng";
-            // 
-            // txtLoad_Socket_Speed_XReady
-            // 
-            this.txtLoad_Socket_Speed_XReady.Location = new System.Drawing.Point(8, 87);
-            this.txtLoad_Socket_Speed_XReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Socket_Speed_XReady.Name = "txtLoad_Socket_Speed_XReady";
-            this.txtLoad_Socket_Speed_XReady.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Socket_Speed_XReady.TabIndex = 5;
-            // 
-            // label149
-            // 
-            this.label149.AutoSize = true;
-            this.label149.Location = new System.Drawing.Point(3, 23);
-            this.label149.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(128, 16);
-            this.label149.TabIndex = 4;
-            this.label149.Text = "Tốc độ XY sẵn sàng";
-            // 
-            // txtLoad_Socket_Speed_XYReady
-            // 
-            this.txtLoad_Socket_Speed_XYReady.Location = new System.Drawing.Point(8, 43);
-            this.txtLoad_Socket_Speed_XYReady.Margin = new System.Windows.Forms.Padding(2);
-            this.txtLoad_Socket_Speed_XYReady.Name = "txtLoad_Socket_Speed_XYReady";
-            this.txtLoad_Socket_Speed_XYReady.Size = new System.Drawing.Size(54, 22);
-            this.txtLoad_Socket_Speed_XYReady.TabIndex = 3;
-            // 
-            // groupBox68
-            // 
-            this.groupBox68.Controls.Add(this.label155);
-            this.groupBox68.Controls.Add(this.txtSocket_Speed_Open);
-            this.groupBox68.Controls.Add(this.label156);
-            this.groupBox68.Controls.Add(this.txtSocket_Speed_Close);
-            this.groupBox68.Location = new System.Drawing.Point(777, 21);
-            this.groupBox68.Name = "groupBox68";
-            this.groupBox68.Size = new System.Drawing.Size(147, 349);
-            this.groupBox68.TabIndex = 8;
-            this.groupBox68.TabStop = false;
-            this.groupBox68.Text = "Điểm Gập Socket";
-            // 
-            // label155
-            // 
-            this.label155.AutoSize = true;
-            this.label155.Location = new System.Drawing.Point(3, 67);
-            this.label155.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label155.Name = "label155";
-            this.label155.Size = new System.Drawing.Size(115, 16);
-            this.label155.TabIndex = 6;
-            this.label155.Text = "Tốc độ mở socket";
-            // 
-            // txtSocket_Speed_Open
-            // 
-            this.txtSocket_Speed_Open.Location = new System.Drawing.Point(8, 87);
-            this.txtSocket_Speed_Open.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSocket_Speed_Open.Name = "txtSocket_Speed_Open";
-            this.txtSocket_Speed_Open.Size = new System.Drawing.Size(54, 22);
-            this.txtSocket_Speed_Open.TabIndex = 5;
-            // 
-            // label156
-            // 
-            this.label156.AutoSize = true;
-            this.label156.Location = new System.Drawing.Point(3, 23);
-            this.label156.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label156.Name = "label156";
-            this.label156.Size = new System.Drawing.Size(127, 16);
-            this.label156.TabIndex = 4;
-            this.label156.Text = "Tốc độ đóng socket";
-            // 
-            // txtSocket_Speed_Close
-            // 
-            this.txtSocket_Speed_Close.Location = new System.Drawing.Point(8, 43);
-            this.txtSocket_Speed_Close.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSocket_Speed_Close.Name = "txtSocket_Speed_Close";
-            this.txtSocket_Speed_Close.Size = new System.Drawing.Size(54, 22);
-            this.txtSocket_Speed_Close.TabIndex = 3;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6078,15 +6078,30 @@
             this.groupBox50.ResumeLayout(false);
             this.groupBox50.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.groupBox47.ResumeLayout(false);
+            this.groupBox68.ResumeLayout(false);
+            this.groupBox68.PerformLayout();
+            this.groupBox67.ResumeLayout(false);
+            this.groupBox67.PerformLayout();
+            this.groupBox65.ResumeLayout(false);
+            this.groupBox65.PerformLayout();
+            this.groupBox66.ResumeLayout(false);
+            this.groupBox66.PerformLayout();
+            this.groupBox64.ResumeLayout(false);
+            this.groupBox64.PerformLayout();
+            this.groupBox63.ResumeLayout(false);
+            this.groupBox63.PerformLayout();
             this.groupBox39.ResumeLayout(false);
-            this.groupBox36.ResumeLayout(false);
-            this.groupBox36.PerformLayout();
-            this.groupBox38.ResumeLayout(false);
-            this.groupBox38.PerformLayout();
-            this.groupBox37.ResumeLayout(false);
-            this.groupBox37.PerformLayout();
+            this.groupBox62.ResumeLayout(false);
+            this.groupBox62.PerformLayout();
             this.groupBox32.ResumeLayout(false);
             this.groupBox32.PerformLayout();
+            this.groupBox36.ResumeLayout(false);
+            this.groupBox36.PerformLayout();
+            this.groupBox37.ResumeLayout(false);
+            this.groupBox37.PerformLayout();
+            this.groupBox38.ResumeLayout(false);
+            this.groupBox38.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
@@ -6102,21 +6117,6 @@
             this.groupBox26.PerformLayout();
             this.strip.ResumeLayout(false);
             this.strip.PerformLayout();
-            this.groupBox47.ResumeLayout(false);
-            this.groupBox62.ResumeLayout(false);
-            this.groupBox62.PerformLayout();
-            this.groupBox63.ResumeLayout(false);
-            this.groupBox63.PerformLayout();
-            this.groupBox64.ResumeLayout(false);
-            this.groupBox64.PerformLayout();
-            this.groupBox65.ResumeLayout(false);
-            this.groupBox65.PerformLayout();
-            this.groupBox66.ResumeLayout(false);
-            this.groupBox66.PerformLayout();
-            this.groupBox67.ResumeLayout(false);
-            this.groupBox67.PerformLayout();
-            this.groupBox68.ResumeLayout(false);
-            this.groupBox68.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6587,7 +6587,7 @@
         private System.Windows.Forms.TextBox txtRORI_Distance_X;
         private System.Windows.Forms.GroupBox groupBox39;
         private System.Windows.Forms.GroupBox groupBox47;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnTeaching_Distance_Picker;
         private System.Windows.Forms.GroupBox groupBox62;
         private System.Windows.Forms.TextBox txtSocket_Angle;
         private System.Windows.Forms.GroupBox groupBox63;

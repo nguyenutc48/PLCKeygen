@@ -39,6 +39,12 @@ namespace PLCKeygen
         // Model manager for saving/loading teaching models
         private ModelManager modelManager;
 
+        // Data tab manager for reading/writing speed and teaching data
+        private DataTabManager dataTabManager;
+
+        // Data tab tracking
+        private int selectedDataPort = 1;  // 1-4 for Data tab
+
         public Form1()
         {
             InitializeComponent();
@@ -153,6 +159,9 @@ namespace PLCKeygen
 
             // Initialize Model Manager
             modelManager = new ModelManager();
+
+            // Initialize Data Tab Manager
+            dataTabManager = new DataTabManager(PLCKey);
 
             // Wire up Model ComboBox event handler
             cbbModel.SelectedIndexChanged += cbbModel_SelectedIndexChanged;
@@ -505,6 +514,9 @@ namespace PLCKeygen
             {
                 button2.Text = "Sang trai";
             }
+
+            // Initialize Data Tab
+            InitializeDataTab();
         }
 
         /// <summary>
@@ -4722,8 +4734,74 @@ namespace PLCKeygen
             }
         }
 
+        #endregion
 
+        #region Data Tab Methods
+
+        /// <summary>
+        /// Initialize Data Tab - Setup radio buttons and load initial data
+        /// </summary>
+        private void InitializeDataTab()
+        {
+            // Register events for all textboxes in Data tab
+            dataTabManager.RegisterTextBoxEvents(tabPage4.Controls);
+
+            // Setup radio buttons for Data tab (need to be added in Designer first)
+            // These will be added in the Designer manually
+            // When added, uncomment these lines:
+            // rbtDataPort1.CheckedChanged += DataPortRadioButton_CheckedChanged;
+            // rbtDataPort2.CheckedChanged += DataPortRadioButton_CheckedChanged;
+            // rbtDataPort3.CheckedChanged += DataPortRadioButton_CheckedChanged;
+            // rbtDataPort4.CheckedChanged += DataPortRadioButton_CheckedChanged;
+            // rbtDataPort1.Checked = true;  // Set default to Port 1
+
+            // Load initial data for Port 1
+            LoadDataTabValues();
+        }
+
+        /// <summary>
+        /// Load all data (Speed and Teaching) for currently selected port
+        /// </summary>
+        private void LoadDataTabValues()
+        {
+            try
+            {
+                // Set current port in DataTabManager
+                dataTabManager.SetCurrentPort(selectedDataPort);
+
+                // Load Speed data
+                dataTabManager.LoadSpeedDataToTextBoxes(tabPage4.Controls);
+
+                // Load Teaching data
+                dataTabManager.LoadTeachingDataToTextBoxes(tabPage4.Controls);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi đọc dữ liệu từ PLC: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Event handler when Data Port radio button is changed
+        /// This will be connected when radio buttons are added in Designer
+        /// </summary>
+        private void DataPortRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                // Update selected port based on which radio button was clicked
+                if (rb.Name.Contains("1")) selectedDataPort = 1;
+                else if (rb.Name.Contains("2")) selectedDataPort = 2;
+                else if (rb.Name.Contains("3")) selectedDataPort = 3;
+                else if (rb.Name.Contains("4")) selectedDataPort = 4;
+
+                // Load data for new port
+                LoadDataTabValues();
+            }
+        }
 
         #endregion
+
     }
 }
