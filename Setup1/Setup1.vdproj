@@ -21,14 +21,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_66EE27DCED5AD0D7DF9A64A6B1E55DBE"
-        "OwnerKey" = "8:_CC42AD63E681498B80E3142CC668F63D"
+        "MsmKey" = "8:_CC42AD63E681498B80E3142CC668F63D"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_CC42AD63E681498B80E3142CC668F63D"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_D8539078664955819323D9B3425813F2"
+        "OwnerKey" = "8:_CC42AD63E681498B80E3142CC668F63D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,19 +40,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EA6E270809349C91F7187573FE9D0CEC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_CC42AD63E681498B80E3142CC668F63D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_66EE27DCED5AD0D7DF9A64A6B1E55DBE"
+        "OwnerKey" = "8:_D8539078664955819323D9B3425813F2"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_EA6E270809349C91F7187573FE9D0CEC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -170,14 +170,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_66EE27DCED5AD0D7DF9A64A6B1E55DBE"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D8539078664955819323D9B3425813F2"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_66EE27DCED5AD0D7DF9A64A6B1E55DBE"
+                    "_D8539078664955819323D9B3425813F2"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
@@ -287,26 +287,26 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:LCA Handler Teaching"
-        "ProductCode" = "8:{997054F0-B572-4304-9716-8590B245F419}"
-        "PackageCode" = "8:{8AA3390C-FD26-4D3C-BF6A-C580ED4D10CD}"
+        "ProductName" = "8:LCA Teaching"
+        "ProductCode" = "8:{194172ED-15C6-4076-A764-23DCAEBDD4A3}"
+        "PackageCode" = "8:{CA940416-EBA9-47E8-B003-C7D1A859927C}"
         "UpgradeCode" = "8:{E7CF3FEB-A740-4BD8-B6D7-B96D380BDC0A}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:25.11.11"
+        "ProductVersion" = "8:25.11.12"
         "Manufacturer" = "8:thiktek.com"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:LCATeachingSetup"
+        "Title" = "8:Teaching"
         "Subject" = "8:"
         "ARPCONTACT" = "8:thiktek.com"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_2B9DB3880B3B4D4DA1A6C497CECF84FA"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -824,7 +824,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_CC42AD63E681498B80E3142CC668F63D"
             {
-            "SourcePath" = "8:..\\PLCKeygen\\obj\\Release\\PLCKeygen.exe"
+            "SourcePath" = "8:..\\PLCKeygen\\obj\\Debug\\PLCKeygen.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4EB941E23775477BAFA2A43C02EBFF47"
