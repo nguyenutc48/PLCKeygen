@@ -45,6 +45,10 @@ namespace PLCKeygen
         // Data tab tracking
         private int selectedDataPort = 1;  // 1-4 for Data tab
 
+        // Distance picker tracking
+        private int distancePickerStep = 0;  // 0=Initial, 1=Position1, 2=Position2
+        private int distancePickerPos1 = 0;  // First position X value
+
         public Form1()
         {
             InitializeComponent();
@@ -250,6 +254,9 @@ namespace PLCKeygen
             btnGoPointCamera.Click += btnGoPoint_Click;
             btnSavePointSocketCameraZ.Click += btnSavePoint_Click;
             btnGoPointSocketCameraZ.Click += btnGoPoint_Click;
+
+            // Wire up Distance Picker button
+            btnTeaching_Distance_Picker.Click += btnTeaching_Distance_Picker_Click;
 
             // Load initial Speed and Step values from PLC
             LoadAxisSpeedAndStep();
@@ -4798,6 +4805,133 @@ namespace PLCKeygen
 
                 // Load data for new port
                 LoadDataTabValues();
+            }
+        }
+
+        /// <summary>
+        /// Event handler for Distance Picker button
+        /// Step 0: Initial state, button text = "Teach"
+        /// Step 1: After first click, button text = "Vị trí 1", waiting for user to move to position 1
+        /// Step 2: After second click, save position 1, button text = "Vị trí 2", waiting for user to move to position 2
+        /// Step 3: After third click, calculate distance, confirm and save to PLC
+        /// </summary>
+        private void btnTeaching_Distance_Picker_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (distancePickerStep == 0)
+                {
+                    // Initial state -> Step 1
+                    distancePickerStep = 1;
+                    btnTeaching_Distance_Picker.Text = "Vị trí 1";
+                    btnTeaching_Distance_Picker.BackColor = Color.Yellow;
+                }
+                else if (distancePickerStep == 1)
+                {
+                    // Step 1 -> Step 2: Save position 1
+                    string posAddressP1 = GetCurrentXPositionAddress(selectedDataPort);
+                    distancePickerPos1 = PLCKey.ReadInt32(posAddressP1);
+
+                    distancePickerStep = 2;
+                    btnTeaching_Distance_Picker.Text = "Vị trí 2";
+                    btnTeaching_Distance_Picker.BackColor = Color.Orange;
+                }
+                else if (distancePickerStep == 2)
+                {
+                    // Step 2 -> Calculate and confirm
+                    string posAddressP2 = GetCurrentXPositionAddress(selectedDataPort);
+                    int distancePickerPos2 = PLCKey.ReadInt32(posAddressP2);
+
+                    // Calculate distance (absolute value)
+                    int distanceRaw = Math.Abs(distancePickerPos2 - distancePickerPos1);
+                    double distanceInMm = distanceRaw / 100.0;
+
+                    // Show confirmation dialog
+                    DialogResult result = MessageBox.Show(
+                        $"Khoảng cách X đã tính: {distanceInMm:F2} mm\n\n" +
+                        $"Vị trí 1: {distancePickerPos1 / 100.0:F2} mm\n" +
+                        $"Vị trí 2: {distancePickerPos2 / 100.0:F2} mm\n" +
+                        $"Độ lệch: {distanceInMm:F2} mm\n\n" +
+                        $"Bạn có muốn ghi giá trị này vào PLC không?",
+                        "Xác nhận ghi giá trị",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Question
+                    );
+
+                    if (result == DialogResult.OK)
+                    {
+                        // Get PLC address for RORI_Distance_X
+                        string plcAddress = GetRORI_Distance_X_Address(selectedDataPort);
+
+                        // Write to PLC
+                        PLCKey.WriteInt32(plcAddress, distanceRaw);
+
+                        // Read back to confirm
+                        int readValue = PLCKey.ReadInt32(plcAddress);
+                        double readDisplayValue = readValue / 100.0;
+
+                        // Update textbox
+                        txtRORI_Distance_X.Text = readDisplayValue.ToString("F2");
+
+                        MessageBox.Show(
+                            $"Đã ghi thành công giá trị {readDisplayValue:F2} mm vào PLC!",
+                            "Thành công",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information
+                        );
+                    }
+
+                    // Reset to initial state
+                    distancePickerStep = 0;
+                    distancePickerPos1 = 0;
+                    btnTeaching_Distance_Picker.Text = "Teach";
+                    btnTeaching_Distance_Picker.BackColor = SystemColors.Control;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Lỗi khi thực hiện Distance Picker: {ex.Message}",
+                    "Lỗi",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+                // Reset to initial state on error
+                distancePickerStep = 0;
+                distancePickerPos1 = 0;
+                btnTeaching_Distance_Picker.Text = "Teach";
+                btnTeaching_Distance_Picker.BackColor = SystemColors.Control;
+            }
+        }
+
+        /// <summary>
+        /// Get PLC address for current X position based on port
+        /// </summary>
+        private string GetCurrentXPositionAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Data.P1_X_Pos_Cur;
+                case 2: return PLCAddresses.Data.P2_X_Pos_Cur;
+                case 3: return PLCAddresses.Data.P3_X_Pos_Cur;
+                case 4: return PLCAddresses.Data.P4_X_Pos_Cur;
+                default: throw new ArgumentException($"Invalid port: {port}");
+            }
+        }
+
+        /// <summary>
+        /// Get PLC address for RORI_Distance_X based on port
+        /// </summary>
+        private string GetRORI_Distance_X_Address(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Data.P1_RORI_Distance_X;
+                case 2: return PLCAddresses.Data.P2_RORI_Distance_X;
+                case 3: return PLCAddresses.Data.P3_RORI_Distance_X;
+                case 4: return PLCAddresses.Data.P4_RORI_Distance_X;
+                default: throw new ArgumentException($"Invalid port: {port}");
             }
         }
 

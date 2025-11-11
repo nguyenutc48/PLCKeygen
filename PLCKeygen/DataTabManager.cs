@@ -286,7 +286,28 @@ namespace PLCKeygen
                     try
                     {
                         int value = plcKeyence.ReadInt32(plcAddress);
-                        textBox.Text = value.ToString();
+
+                        // Các tốc độ góc (độ/giây) và trục Z (độ/giây): hệ số x10
+                        if (textBox.Name == "txtUnload_Speed_RO" ||
+                            textBox.Name == "txtCamera_Speed_RI" ||
+                            textBox.Name == "txtSocket_Speed_Close" ||
+                            textBox.Name == "txtSocket_Speed_Open" ||
+                            textBox.Name == "txtUnload_Speed_Z" ||
+                            textBox.Name == "txtUnload_Speed_ZReady" ||
+                            textBox.Name == "txtLoad_Speed_Z" ||
+                            textBox.Name == "txtCamera_Speed_Z" ||
+                            textBox.Name == "txtUnload_Socket_Speed_Z" ||
+                            textBox.Name == "txtLoad_Socket_Speed_Z")
+                        {
+                            double displayValue = value / 10.0;
+                            textBox.Text = displayValue.ToString("F1"); // 1 chữ số thập phân
+                        }
+                        // Các tốc độ trục khác (mm/s): hệ số x100
+                        else
+                        {
+                            double displayValue = value / 100.0;
+                            textBox.Text = displayValue.ToString("F2"); // 2 chữ số thập phân
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -328,6 +349,12 @@ namespace PLCKeygen
                             double displayValue = value / 100.0;
                             textBox.Text = displayValue.ToString("F2"); // Format 2 chữ số thập phân
                         }
+                        // Xử lý đặc biệt cho txtSocket_Angle: chia cho 10 để hiển thị độ
+                        else if (textBox.Name == "txtSocket_Angle")
+                        {
+                            double displayValue = value / 10.0;
+                            textBox.Text = displayValue.ToString("F1"); // Format 1 chữ số thập phân
+                        }
                         else
                         {
                             textBox.Text = value.ToString();
@@ -363,24 +390,72 @@ namespace PLCKeygen
                 int valueToWrite;
                 string displayValue = textBox.Text;
 
-                // Xử lý đặc biệt cho txtRORI_Distance_X
+                // Xử lý các giá trị có hệ số chuyển đổi
                 if (textBox.Name == "txtRORI_Distance_X")
                 {
-                    // Parse giá trị double (mm)
+                    // Hệ số x100: mm
                     if (!double.TryParse(textBox.Text, out double doubleValue))
                     {
                         MessageBox.Show("Giá trị không hợp lệ. Vui lòng nhập số (ví dụ: 67.05).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 
-                    // Làm tròn 2 chữ số thập phân và nhân 100
+                    doubleValue = Math.Round(doubleValue, 2);
+                    valueToWrite = (int)(doubleValue * 100);
+                    displayValue = doubleValue.ToString("F2");
+                }
+                else if (textBox.Name == "txtSocket_Angle")
+                {
+                    // Hệ số x10: góc (độ)
+                    if (!double.TryParse(textBox.Text, out double doubleValue))
+                    {
+                        MessageBox.Show("Giá trị không hợp lệ. Vui lòng nhập số (ví dụ: 90.0).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+                    doubleValue = Math.Round(doubleValue, 1);
+                    valueToWrite = (int)(doubleValue * 10);
+                    displayValue = doubleValue.ToString("F1");
+                }
+                else if (textBox.Name == "txtUnload_Speed_RO" ||
+                         textBox.Name == "txtCamera_Speed_RI" ||
+                         textBox.Name == "txtSocket_Speed_Close" ||
+                         textBox.Name == "txtSocket_Speed_Open" ||
+                         textBox.Name == "txtUnload_Speed_Z" ||
+                         textBox.Name == "txtUnload_Speed_ZReady" ||
+                         textBox.Name == "txtLoad_Speed_Z" ||
+                         textBox.Name == "txtCamera_Speed_Z" ||
+                         textBox.Name == "txtUnload_Socket_Speed_Z" ||
+                         textBox.Name == "txtLoad_Socket_Speed_Z")
+                {
+                    // Hệ số x10: tốc độ góc và trục Z (độ/giây)
+                    if (!double.TryParse(textBox.Text, out double doubleValue))
+                    {
+                        MessageBox.Show("Giá trị không hợp lệ. Vui lòng nhập số (ví dụ: 10.0).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+                    doubleValue = Math.Round(doubleValue, 1);
+                    valueToWrite = (int)(doubleValue * 10);
+                    displayValue = doubleValue.ToString("F1");
+                }
+                else if (speedAddressMap.ContainsKey(currentPort) &&
+                         speedAddressMap[currentPort].ContainsKey(textBox.Name))
+                {
+                    // Hệ số x100: các tốc độ trục khác (mm/s)
+                    if (!double.TryParse(textBox.Text, out double doubleValue))
+                    {
+                        MessageBox.Show("Giá trị không hợp lệ. Vui lòng nhập số (ví dụ: 100.00).", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
                     doubleValue = Math.Round(doubleValue, 2);
                     valueToWrite = (int)(doubleValue * 100);
                     displayValue = doubleValue.ToString("F2");
                 }
                 else
                 {
-                    // Validate input is numeric integer
+                    // Các giá trị nguyên khác
                     if (!int.TryParse(textBox.Text, out valueToWrite))
                     {
                         MessageBox.Show("Giá trị không hợp lệ. Vui lòng nhập số nguyên.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -412,6 +487,31 @@ namespace PLCKeygen
 
                 // Display read value with proper formatting
                 if (textBox.Name == "txtRORI_Distance_X")
+                {
+                    double readDisplayValue = readValue / 100.0;
+                    textBox.Text = readDisplayValue.ToString("F2");
+                }
+                else if (textBox.Name == "txtSocket_Angle")
+                {
+                    double readDisplayValue = readValue / 10.0;
+                    textBox.Text = readDisplayValue.ToString("F1");
+                }
+                else if (textBox.Name == "txtUnload_Speed_RO" ||
+                         textBox.Name == "txtCamera_Speed_RI" ||
+                         textBox.Name == "txtSocket_Speed_Close" ||
+                         textBox.Name == "txtSocket_Speed_Open" ||
+                         textBox.Name == "txtUnload_Speed_Z" ||
+                         textBox.Name == "txtUnload_Speed_ZReady" ||
+                         textBox.Name == "txtLoad_Speed_Z" ||
+                         textBox.Name == "txtCamera_Speed_Z" ||
+                         textBox.Name == "txtUnload_Socket_Speed_Z" ||
+                         textBox.Name == "txtLoad_Socket_Speed_Z")
+                {
+                    double readDisplayValue = readValue / 10.0;
+                    textBox.Text = readDisplayValue.ToString("F1");
+                }
+                else if (speedAddressMap.ContainsKey(currentPort) &&
+                         speedAddressMap[currentPort].ContainsKey(textBox.Name))
                 {
                     double readDisplayValue = readValue / 100.0;
                     textBox.Text = readDisplayValue.ToString("F2");
