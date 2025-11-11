@@ -797,7 +797,142 @@ namespace PLCKeygen
             public const string P1_LCA_Request_Stop = "MR7006";
             public const string P1_LCA_Request_Reset = "MR7007";
             public const string P1_Cylinder_Chart_Socket = "MR7014";
-            
+
+            // Teaching & Control Requests (MR222)
+            public const string P1_Rq_Auto = "MR22200";
+            public const string P1_Rq_Delete_Data = "MR22201";
+            public const string P1_Rq_Delete_Time = "MR22202";
+            public const string P1_Rq_End_Auto = "MR22203";
+
+            // Switch Status (MR020)
+            public const string P1_SWs_Auto2 = "MR02001";
+            public const string P1_SWs_Step_Jog2 = "MR02002";
+            public const string P1_SWs_HSp_Jog2 = "MR02003";
+            public const string P1_SWs_Step_Pr2 = "MR02004";
+            public const string P1_SWs_Next_Pr2 = "MR02005";
+            public const string P1_SWs_Pause2 = "MR02006";
+            public const string P1_SWs_DiAb2 = "MR02007";
+
+            // Origin & Movement Requests (MR214)
+            public const string P1_Rq_ORG = "MR21400";
+            public const string P1_Rq_Reset = "MR21401";
+            public const string P1_Rq_MP0_Unload_Tray = "MR21402";
+            public const string P1_Rq_MP1_Load_Tray = "MR21403";
+            public const string P1_Rq_MP2_Vision_Align = "MR21404";
+            public const string P1_Rq_MP3_Unload_Socket = "MR21405";
+            public const string P1_Rq_MP4_Load_Socket = "MR21406";
+            public const string P1_Rq_MP5_Run_Test = "MR21407";
+            public const string P1_Rq_MP6_Run_LCA = "MR21408";
+            public const string P1_Rq_MVFix_Socket = "MR21409";
+            public const string P1_Rq_Open_SK_Socket = "MR21410";
+            public const string P1_Rq_Close_SK_Socket = "MR21411";
+            public const string P1_Rq_VInt_Socket = "MR21412";
+            public const string P1_Rq_VOut_Socket = "MR21413";
+            public const string P1_Rq_VSocket_Socket = "MR21414";
+
+            // X Axis Requests (MR437)
+            public const string P1_Rq_Org_X = "MR43700";
+            public const string P1_Rq_JogPlus_X = "MR43701";
+            public const string P1_Rq_JogMinus_X = "MR43702";
+            public const string P1_Rq_ABS_X = "MR43703";
+            public const string P1_Rq_INC_X = "MR43704";
+            public const string P1_Rq_Reset_X = "MR43705";
+            public const string P1_Rq_ABS_XY = "MR43710";
+
+            // Y Axis Requests (MR440)
+            public const string P1_Rq_Org_Y = "MR44000";
+            public const string P1_Rq_JogPlus_Y = "MR44001";
+            public const string P1_Rq_JogMinus_Y = "MR44002";
+            public const string P1_Rq_ABS_Y = "MR44003";
+            public const string P1_Rq_INC_Y = "MR44004";
+            public const string P1_Rq_Reset_Y = "MR44005";
+
+            // Z Axis Requests (MR443)
+            public const string P1_Rq_Org_Z = "MR44300";
+            public const string P1_Rq_JogPlus_Z = "MR44301";
+            public const string P1_Rq_JogMinus_Z = "MR44302";
+            public const string P1_Rq_ABS_Z = "MR44303";
+            public const string P1_Rq_INC_Z = "MR44304";
+            public const string P1_Rq_Reset_Z = "MR44305";
+
+            // RI Axis Requests (MR446)
+            public const string P1_Rq_Org_RI = "MR44600";
+            public const string P1_Rq_JogPlus_RI = "MR44601";
+            public const string P1_Rq_JogMinus_RI = "MR44602";
+            public const string P1_Rq_INC_RI = "MR44604";
+            public const string P1_Rq_Reset_RI = "MR44605";
+
+            // RO Axis Requests (MR449)
+            public const string P1_Rq_Org_RO = "MR44900";
+            public const string P1_Rq_JogPlus_RO = "MR44901";
+            public const string P1_Rq_JogMinus_RO = "MR44902";
+            public const string P1_Rq_INC_RO = "MR44904";
+            public const string P1_Rq_Reset_RO = "MR44905";
+
+            // F Axis Requests (MR452)
+            public const string P1_Rq_Org_F = "MR45200";
+            public const string P1_Rq_JogPlus_F = "MR45201";
+            public const string P1_Rq_JogMinus_F = "MR45202";
+            public const string P1_Rq_ABS_F = "MR45203";
+            public const string P1_Rq_INC_F = "MR45204";
+            public const string P1_Rq_Reset_F = "MR45205";
+
+            // Model Management (MR217)
+            public const string P1_Rq_Call_Model = "MR21700";
+            public const string P1_Rq_Save_Model = "MR21701";
+            public const string P1_Rq_Saveas_Model = "MR21702";
+            public const string P1_Rq_Confirm = "MR21703";
+            public const string P1_Rq_Skip = "MR21704";
+            public const string P1_Load_Point_Start_OK = "MR21705";
+            public const string P1_Run_Point_Start_OK = "MR21706";
+            public const string P1_Load_Point_EndX_OK = "MR21707";
+            public const string P1_Run_Point_EndX_OK = "MR21708";
+            public const string P1_Load_Point_EndY_OK = "MR21709";
+            public const string P1_Run_Point_EndY_OK = "MR21710";
+            public const string P1_Load_Point_Start_NG = "MR21711";
+            public const string P1_Run_Point_Start_NG = "MR21712";
+            public const string P1_Load_Point_EndX_NG = "MR21713";
+            public const string P1_Run_Point_EndX_NG = "MR21714";
+
+            // NG4 Points (MR218)
+            public const string P1_Run_Point_EndY_NG = "MR21800";
+            public const string P1_Load_Point_Start_NG4 = "MR21801";
+            public const string P1_Run_Point_Start_NG4 = "MR21802";
+            public const string P1_Load_Point_EndX_NG4 = "MR21803";
+            public const string P1_Run_Point_EndX_NG4 = "MR21804";
+            public const string P1_Load_Point_EndY_NG4 = "MR21805";
+            public const string P1_Run_Point_EndY_NG4 = "MR21806";
+            public const string P1_Load_Point_Start_Half_NG4 = "MR21807";
+            public const string P1_Run_Point_Start_Half_NG4 = "MR21808";
+            public const string P1_Load_Point_SK = "MR21809";
+            public const string P1_Run_Point_SK = "MR21810";
+
+            // Z Ready Points (MR219)
+            public const string P1_Run_Ready_Z01 = "MR21900";
+            public const string P1_Load_Ready_Z11 = "MR21901";
+            public const string P1_Run_Ready_Z11 = "MR21902";
+            public const string P1_Load_UL_P0_Z = "MR21903";
+            public const string P1_Run_UL_P0_Z = "MR21904";
+            public const string P1_Load_L_P1_Z = "MR21905";
+            public const string P1_Run_L_P1_Z = "MR21906";
+            public const string P1_Load_C_P2_Z = "MR21907";
+            public const string P1_Run_C_P2_Z = "MR21908";
+            public const string P1_Load_UL_P3_Z = "MR21909";
+            public const string P1_Run_UL_P3_Z = "MR21910";
+            public const string P1_Load_Ready_Z00 = "MR21911";
+            public const string P1_Run_Ready_Z00 = "MR21912";
+            public const string P1_Load_Ready_Z10 = "MR21913";
+            public const string P1_Run_Ready_Z10 = "MR21914";
+
+            // F2 & Camera Points (MR220)
+            public const string P1_Run_Open_F2 = "MR22000";
+            public const string P1_Load_Pos_Cam = "MR22002";
+            public const string P1_Run_Pos_Cam = "MR22002";
+            public const string P1_Load_L_P4_Z = "MR22011";
+            public const string P1_Run_L_P4_Z = "MR22012";
+            public const string P1_Load_Close_F2 = "MR22013";
+            public const string P1_Run_Close_F2 = "MR22014";
+
             #endregion
 
             #region Port 2
@@ -812,6 +947,145 @@ namespace PLCKeygen
             public const string P2_LCA_Request_Stop = "MR5006";
             public const string P2_LCA_Request_Reset = "MR5007";
             public const string P2_Cylinder_Chart_Socket = "MR5014";
+
+            // Teaching & Control Requests (MR142)
+            public const string P2_Rq_Auto = "MR14200";
+            public const string P2_Rq_Delete_Data = "MR14201";
+            public const string P2_Rq_Delete_Time = "MR14202";
+            public const string P2_Rq_End_Auto = "MR14203";
+
+            // Switch Status (MR000)
+            public const string P2_SWs_Auto2 = "MR00001";
+            public const string P2_SWs_Step_Jog2 = "MR00002";
+            public const string P2_SWs_HSp_Jog2 = "MR00003";
+            public const string P2_SWs_Step_Pr2 = "MR00004";
+            public const string P2_SWs_Next_Pr2 = "MR00005";
+            public const string P2_SWs_Pause2 = "MR00006";
+            public const string P2_SWs_DiAb2 = "MR00007";
+
+            // Origin & Movement Requests (MR134)
+            public const string P2_Rq_ORG = "MR13400";
+            public const string P2_Rq_Reset = "MR13401";
+            public const string P2_Rq_MP0_Unload_Tray = "MR13402";
+            public const string P2_Rq_MP1_Load_Tray = "MR13403";
+            public const string P2_Rq_MP2_Vision_Align = "MR13404";
+            public const string P2_Rq_MP3_Unload_Socket = "MR13405";
+            public const string P2_Rq_MP4_Load_Socket = "MR13406";
+            public const string P2_Rq_MP5_Run_Test = "MR13407";
+            public const string P2_Rq_MP6_Run_LCA = "MR13408";
+            public const string P2_Rq_MVFix_Socket = "MR13409";
+            public const string P2_Rq_Open_SK_Socket = "MR13410";
+            public const string P2_Rq_Close_SK_Socket = "MR13411";
+            public const string P2_Rq_VInt_Socket = "MR13412";
+            public const string P2_Rq_VOut_Socket = "MR13413";
+            public const string P2_Rq_VSocket_Socket = "MR13414";
+            public const string P2_Rq_Xylanh_Chart = "MR13415";
+
+            // X Axis Requests (MR401)
+            public const string P2_Rq_Org_X = "MR40100";
+            public const string P2_Rq_JogPlus_X = "MR40101";
+            public const string P2_Rq_JogMinus_X = "MR40102";
+            public const string P2_Rq_ABS_X = "MR40103";
+            public const string P2_Rq_INC_X = "MR40104";
+            public const string P2_Rq_Reset_X = "MR40105";
+            public const string P2_Rq_ABS_XY = "MR40110";
+
+            // Y Axis Requests (MR404)
+            public const string P2_Rq_Org_Y = "MR40400";
+            public const string P2_Rq_JogPlus_Y = "MR40401";
+            public const string P2_Rq_JogMinus_Y = "MR40402";
+            public const string P2_Rq_ABS_Y = "MR40403";
+            public const string P2_Rq_INC_Y = "MR40404";
+            public const string P2_Rq_Reset_Y = "MR40405";
+
+            // Z Axis Requests (MR407)
+            public const string P2_Rq_Org_Z = "MR40700";
+            public const string P2_Rq_JogPlus_Z = "MR40701";
+            public const string P2_Rq_JogMinus_Z = "MR40702";
+            public const string P2_Rq_ABS_Z = "MR40703";
+            public const string P2_Rq_INC_Z = "MR40704";
+            public const string P2_Rq_Reset_Z = "MR40705";
+
+            // RI Axis Requests (MR410)
+            public const string P2_Rq_Org_RI = "MR41000";
+            public const string P2_Rq_JogPlus_RI = "MR41001";
+            public const string P2_Rq_JogMinus_RI = "MR41002";
+            public const string P2_Rq_INC_RI = "MR41004";
+            public const string P2_Rq_Reset_RI = "MR41005";
+
+            // RO Axis Requests (MR413)
+            public const string P2_Rq_Org_RO = "MR41300";
+            public const string P2_Rq_JogPlus_RO = "MR41301";
+            public const string P2_Rq_JogMinus_RO = "MR41302";
+            public const string P2_Rq_INC_RO = "MR41304";
+            public const string P2_Rq_Reset_RO = "MR41305";
+
+            // F Axis Requests (MR416)
+            public const string P2_Rq_Org_F = "MR41600";
+            public const string P2_Rq_JogPlus_F = "MR41601";
+            public const string P2_Rq_JogMinus_F = "MR41602";
+            public const string P2_Rq_ABS_F = "MR41603";
+            public const string P2_Rq_INC_F = "MR41604";
+            public const string P2_Rq_Reset_F = "MR41605";
+
+            // Model Management (MR137)
+            public const string P2_Rq_Call_Model = "MR13700";
+            public const string P2_Rq_Save_Model = "MR13701";
+            public const string P2_Rq_Saveas_Model = "MR13702";
+            public const string P2_Rq_Confirm = "MR13703";
+            public const string P2_Rq_Skip = "MR13704";
+            public const string P2_Load_Point_Start_OK = "MR13705";
+            public const string P2_Run_Point_Start_OK = "MR13706";
+            public const string P2_Load_Point_EndX_OK = "MR13707";
+            public const string P2_Run_Point_EndX_OK = "MR13708";
+            public const string P2_Load_Point_EndY_OK = "MR13709";
+            public const string P2_Run_Point_EndY_OK = "MR13710";
+            public const string P2_Load_Point_Start_NG = "MR13711";
+            public const string P2_Run_Point_Start_NG = "MR13712";
+            public const string P2_Load_Point_EndX_NG = "MR13713";
+            public const string P2_Run_Point_EndX_NG = "MR13714";
+
+            // NG4 Points (MR138)
+            public const string P2_Run_Point_EndY_NG = "MR13800";
+            public const string P2_Load_Point_Start_NG4 = "MR13801";
+            public const string P2_Run_Point_Start_NG4 = "MR13802";
+            public const string P2_Load_Point_EndX_NG4 = "MR13803";
+            public const string P2_Run_Point_EndX_NG4 = "MR13804";
+            public const string P2_Load_Point_EndY_NG4 = "MR13805";
+            public const string P2_Run_Point_EndY_NG4 = "MR13806";
+            public const string P2_Load_Point_Start_Half_NG4 = "MR13807";
+            public const string P2_Run_Point_Start_Half_NG4 = "MR13808";
+            public const string P2_Load_Point_SK = "MR13809";
+            public const string P2_Run_Point_SK = "MR13810";
+
+            // Z Ready Points (MR139)
+            public const string P2_Run_Ready_Z01 = "MR13900";
+            public const string P2_Load_Ready_Z11 = "MR13901";
+            public const string P2_Run_Ready_Z11 = "MR13902";
+            public const string P2_Load_UL_P0_Z = "MR13903";
+            public const string P2_Run_UL_P0_Z = "MR13904";
+            public const string P2_Load_L_P1_Z = "MR13905";
+            public const string P2_Run_L_P1_Z = "MR13906";
+            public const string P2_Load_C_P2_Z = "MR13907";
+            public const string P2_Run_C_P2_Z = "MR13908";
+            public const string P2_Load_UL_P3_Z = "MR13909";
+            public const string P2_Run_UL_P3_Z = "MR13910";
+            public const string P2_Load_Ready_Z00 = "MR13911";
+            public const string P2_Run_Ready_Z00 = "MR13912";
+            public const string P2_Load_Ready_Z10 = "MR13913";
+            public const string P2_Run_Ready_Z10 = "MR13914";
+            public const string P2_Load_Ready_Z01 = "MR13915";
+
+            // F2 & Camera Points (MR140)
+            public const string P2_Run_Open_F2 = "MR14000";
+            public const string P2_Load_Pos_Cam = "MR14001";
+            public const string P2_Run_Pos_Cam = "MR14002";
+            public const string P2_Load_L_P4_Z = "MR14011";
+            public const string P2_Run_L_P4_Z = "MR14012";
+            public const string P2_Load_Close_F2 = "MR14013";
+            public const string P2_Run_Close_F2 = "MR14014";
+            public const string P2_Load_Open_F2 = "MR14015";
+
             #endregion
 
             #region Port 3
@@ -826,6 +1100,142 @@ namespace PLCKeygen
             public const string P3_LCA_Request_Stop = "MR8006";
             public const string P3_LCA_Request_Reset = "MR8007";
             public const string P3_Cylinder_Chart_Socket = "MR8014";
+
+            // Teaching & Control Requests (MR262)
+            public const string P3_Rq_Auto = "MR26200";
+            public const string P3_Rq_Delete_Data = "MR26201";
+            public const string P3_Rq_Delete_Time = "MR26202";
+            public const string P3_Rq_End_Auto = "MR26203";
+
+            // Switch Status (MR030)
+            public const string P3_SWs_Auto3 = "MR03001";
+            public const string P3_SWs_Step_Jog3 = "MR03002";
+            public const string P3_SWs_HSp_Jog3 = "MR03003";
+            public const string P3_SWs_Step_Pr3 = "MR03004";
+            public const string P3_SWs_Next_Pr3 = "MR03005";
+            public const string P3_SWs_Pause3 = "MR03006";
+            public const string P3_SWs_DiAb3 = "MR03007";
+
+            // Origin & Movement Requests (MR254)
+            public const string P3_Rq_ORG = "MR25400";
+            public const string P3_Rq_Reset = "MR25401";
+            public const string P3_Rq_MP0 = "MR25402";
+            public const string P3_Rq_MP1 = "MR25403";
+            public const string P3_Rq_MP2 = "MR25404";
+            public const string P3_Rq_MP3 = "MR25405";
+            public const string P3_Rq_MP4 = "MR25406";
+            public const string P3_Rq_MP5 = "MR25407";
+            public const string P3_Rq_MP6 = "MR25408";
+            public const string P3_Rq_MVFix = "MR25409";
+            public const string P3_Rq_Open_SK = "MR25410";
+            public const string P3_Rq_Close_SK = "MR25411";
+
+            // X Axis Requests (MR455)
+            public const string P3_Rq_Org_X = "MR45500";
+            public const string P3_Rq_JogPlus_X = "MR45501";
+            public const string P3_Rq_JogMinus_X = "MR45502";
+            public const string P3_Rq_ABS_X = "MR45503";
+            public const string P3_Rq_INC_X = "MR45504";
+            public const string P3_Rq_Reset_X = "MR45505";
+            public const string P3_Rq_ABS_XY = "MR45510";
+
+            // Y Axis Requests (MR458)
+            public const string P3_Rq_Org_Y = "MR45800";
+            public const string P3_Rq_JogPlus_Y = "MR45801";
+            public const string P3_Rq_JogMinus_Y = "MR45802";
+            public const string P3_Rq_ABS_Y = "MR45803";
+            public const string P3_Rq_INC_Y = "MR45804";
+            public const string P3_Rq_Reset_Y = "MR45805";
+
+            // Z Axis Requests (MR461)
+            public const string P3_Rq_Org_Z = "MR46100";
+            public const string P3_Rq_JogPlus_Z = "MR46101";
+            public const string P3_Rq_JogMinus_Z = "MR46102";
+            public const string P3_Rq_ABS_Z = "MR46103";
+            public const string P3_Rq_INC_Z = "MR46104";
+            public const string P3_Rq_Reset_Z = "MR46105";
+
+            // RI Axis Requests (MR464)
+            public const string P3_Rq_Org_RI = "MR46400";
+            public const string P3_Rq_JogPlus_RI = "MR46401";
+            public const string P3_Rq_JogMinus_RI = "MR46402";
+            public const string P3_Rq_INC_RI = "MR46404";
+            public const string P3_Rq_Reset_RI = "MR46405";
+
+            // RO Axis Requests (MR467)
+            public const string P3_Rq_Org_RO = "MR46700";
+            public const string P3_Rq_JogPlus_RO = "MR46701";
+            public const string P3_Rq_JogMinus_RO = "MR46702";
+            public const string P3_Rq_INC_RO = "MR46704";
+            public const string P3_Rq_Reset_RO = "MR46705";
+
+            // F Axis Requests (MR470)
+            public const string P3_Rq_Org_F = "MR47000";
+            public const string P3_Rq_JogPlus_F = "MR47001";
+            public const string P3_Rq_JogMinus_F = "MR47002";
+            public const string P3_Rq_ABS_F = "MR47003";
+            public const string P3_Rq_INC_F = "MR47004";
+            public const string P3_Rq_Reset_F = "MR47005";
+
+            // Model Management (MR257)
+            public const string P3_Rq_Call_Model = "MR25700";
+            public const string P3_Rq_Save_Model = "MR25701";
+            public const string P3_Rq_Saveas_Model = "MR25702";
+            public const string P3_Rq_Confirm = "MR25703";
+            public const string P3_Rq_Skip = "MR25704";
+            public const string P3_Load_Point_Start_OK = "MR25705";
+            public const string P3_Run_Point_Start_OK = "MR25706";
+            public const string P3_Load_Point_EndX_OK = "MR25707";
+            public const string P3_Run_Point_EndX_OK = "MR25708";
+            public const string P3_Load_Point_EndY_OK = "MR25709";
+            public const string P3_Run_Point_EndY_OK = "MR25710";
+            public const string P3_Load_Point_Start_NG = "MR25711";
+            public const string P3_Run_Point_Start_NG = "MR25712";
+            public const string P3_Load_Point_EndX_NG = "MR25713";
+            public const string P3_Run_Point_EndX_NG = "MR25714";
+            public const string P3_Load_Point_EndY_NG = "MR25715";
+
+            // NG4 Points (MR258)
+            public const string P3_Run_Point_EndY_NG = "MR25800";
+            public const string P3_Load_Point_Start_NG4 = "MR25801";
+            public const string P3_Run_Point_Start_NG4 = "MR25802";
+            public const string P3_Load_Point_EndX_NG4 = "MR25803";
+            public const string P3_Run_Point_EndX_NG4 = "MR25804";
+            public const string P3_Load_Point_EndY_NG4 = "MR25805";
+            public const string P3_Run_Point_EndY_NG4 = "MR25806";
+            public const string P3_Load_Point_Start_Half_NG4 = "MR25807";
+            public const string P3_Run_Point_Start_Half_NG4 = "MR25808";
+            public const string P3_Load_Point_SK = "MR25809";
+            public const string P3_Run_Point_SK = "MR25810";
+
+            // Z Ready Points (MR259)
+            public const string P3_Run_Ready_Z01 = "MR25900";
+            public const string P3_Load_Ready_Z11 = "MR25901";
+            public const string P3_Run_Ready_Z11 = "MR25902";
+            public const string P3_Load_UL_P0_Z = "MR25903";
+            public const string P3_Run_UL_P0_Z = "MR25904";
+            public const string P3_Load_L_P1_Z = "MR25905";
+            public const string P3_Run_L_P1_Z = "MR25906";
+            public const string P3_Load_C_P2_Z = "MR25907";
+            public const string P3_Run_C_P2_Z = "MR25908";
+            public const string P3_Load_UL_P3_Z = "MR25909";
+            public const string P3_Run_UL_P3_Z = "MR25910";
+            public const string P3_Load_Ready_Z00 = "MR25911";
+            public const string P3_Run_Ready_Z00 = "MR25912";
+            public const string P3_Load_Ready_Z10 = "MR25913";
+            public const string P3_Run_Ready_Z10 = "MR25914";
+            public const string P3_Load_Ready_Z01 = "MR25915";
+
+            // F2 & Camera Points (MR260)
+            public const string P3_Run_Open_F2 = "MR26000";
+            public const string P3_Load_Pos_Cam = "MR26001";
+            public const string P3_Run_Pos_Cam = "MR26002";
+            public const string P3_Load_L_P4_Z = "MR26011";
+            public const string P3_Run_L_P4_Z = "MR26012";
+            public const string P3_Load_Close_F2 = "MR26013";
+            public const string P3_Run_Close_F2 = "MR26014";
+            public const string P3_Load_Open_F2 = "MR26015";
+
             #endregion
 
             #region Port 4
@@ -840,6 +1250,142 @@ namespace PLCKeygen
             public const string P4_LCA_Request_Stop = "MR6006";
             public const string P4_LCA_Request_Reset = "MR6007";
             public const string P4_Cylinder_Chart_Socket = "MR6014";
+
+            // Teaching & Control Requests (MR182)
+            public const string P4_Rq_Auto = "MR18200";
+            public const string P4_Rq_Delete_Data = "MR18201";
+            public const string P4_Rq_Delete_Time = "MR18202";
+            public const string P4_Rq_End_Auto = "MR18203";
+
+            // Switch Status (MR010)
+            public const string P4_SWs_Auto2 = "MR01001";
+            public const string P4_SWs_Step_Jog2 = "MR01002";
+            public const string P4_SWs_HSp_Jog2 = "MR01003";
+            public const string P4_SWs_Step_Pr2 = "MR01004";
+            public const string P4_SWs_Next_Pr2 = "MR01005";
+            public const string P4_SWs_Pause2 = "MR01006";
+            public const string P4_SWs_DiAb2 = "MR01007";
+
+            // Origin & Movement Requests (MR174)
+            public const string P4_Rq_ORG = "MR17400";
+            public const string P4_Rq_Reset = "MR17401";
+            public const string P4_Rq_MP0_Unload_Tray = "MR17402";
+            public const string P4_Rq_MP1_Load_Tray = "MR17403";
+            public const string P4_Rq_MP2_Vision_Align = "MR17404";
+            public const string P4_Rq_MP3_Unload_Socket = "MR17405";
+            public const string P4_Rq_MP4_Load_Socket = "MR17406";
+            public const string P4_Rq_MP5_Run_Test = "MR17407";
+            public const string P4_Rq_MP6_Run_LCA = "MR17408";
+            public const string P4_Rq_MVFix_Socket = "MR17409";
+            public const string P4_Rq_Open_SK_Socket = "MR17410";
+            public const string P4_Rq_Close_SK_Socket = "MR17411";
+            public const string P4_Rq_VInt_Socket = "MR17412";
+            public const string P4_Rq_VOut_Socket = "MR17413";
+            public const string P4_Rq_VSocket_Socket = "MR17414";
+
+            // X Axis Requests (MR419)
+            public const string P4_Rq_Org_X = "MR41900";
+            public const string P4_Rq_JogPlus_X = "MR41901";
+            public const string P4_Rq_JogMinus_X = "MR41902";
+            public const string P4_Rq_ABS_X = "MR41903";
+            public const string P4_Rq_INC_X = "MR41904";
+            public const string P4_Rq_Reset_X = "MR41905";
+            public const string P4_Rq_ABS_XY = "MR41910";
+
+            // Y Axis Requests (MR422)
+            public const string P4_Rq_Org_Y = "MR42200";
+            public const string P4_Rq_JogPlus_Y = "MR42201";
+            public const string P4_Rq_JogMinus_Y = "MR42202";
+            public const string P4_Rq_ABS_Y = "MR42203";
+            public const string P4_Rq_INC_Y = "MR42204";
+            public const string P4_Rq_Reset_Y = "MR42205";
+
+            // Z Axis Requests (MR425)
+            public const string P4_Rq_Org_Z = "MR42500";
+            public const string P4_Rq_JogPlus_Z = "MR42501";
+            public const string P4_Rq_JogMinus_Z = "MR42502";
+            public const string P4_Rq_ABS_Z = "MR42503";
+            public const string P4_Rq_INC_Z = "MR42504";
+            public const string P4_Rq_Reset_Z = "MR42505";
+
+            // RI Axis Requests (MR428)
+            public const string P4_Rq_Org_RI = "MR42800";
+            public const string P4_Rq_JogPlus_RI = "MR42801";
+            public const string P4_Rq_JogMinus_RI = "MR42802";
+            public const string P4_Rq_INC_RI = "MR42804";
+            public const string P4_Rq_Reset_RI = "MR42805";
+
+            // RO Axis Requests (MR431)
+            public const string P4_Rq_Org_RO = "MR43100";
+            public const string P4_Rq_JogPlus_RO = "MR43101";
+            public const string P4_Rq_JogMinus_RO = "MR43102";
+            public const string P4_Rq_INC_RO = "MR43104";
+            public const string P4_Rq_Reset_RO = "MR43105";
+
+            // F Axis Requests (MR434)
+            public const string P4_Rq_Org_F = "MR43400";
+            public const string P4_Rq_JogPlus_F = "MR43401";
+            public const string P4_Rq_JogMinus_F = "MR43402";
+            public const string P4_Rq_ABS_F = "MR43403";
+            public const string P4_Rq_INC_F = "MR43404";
+            public const string P4_Rq_Reset_F = "MR43405";
+
+            // Model Management (MR177)
+            public const string P4_Rq_Call_Model = "MR17700";
+            public const string P4_Rq_Save_Model = "MR17701";
+            public const string P4_Rq_Saveas_Model = "MR17702";
+            public const string P4_Rq_Confirm = "MR17703";
+            public const string P4_Rq_Skip = "MR17704";
+            public const string P4_Load_Point_Start_OK = "MR17705";
+            public const string P4_Run_Point_Start_OK = "MR17706";
+            public const string P4_Load_Point_EndX_OK = "MR17707";
+            public const string P4_Run_Point_EndX_OK = "MR17708";
+            public const string P4_Load_Point_EndY_OK = "MR17709";
+            public const string P4_Run_Point_EndY_OK = "MR17710";
+            public const string P4_Load_Point_Start_NG = "MR17711";
+            public const string P4_Run_Point_Start_NG = "MR17712";
+            public const string P4_Load_Point_EndX_NG = "MR17713";
+            public const string P4_Run_Point_EndX_NG = "MR17714";
+
+            // NG4 Points (MR178)
+            public const string P4_Run_Point_EndY_NG = "MR17800";
+            public const string P4_Load_Point_Start_NG4 = "MR17801";
+            public const string P4_Run_Point_Start_NG4 = "MR17802";
+            public const string P4_Load_Point_EndX_NG4 = "MR17803";
+            public const string P4_Run_Point_EndX_NG4 = "MR17804";
+            public const string P4_Load_Point_EndY_NG4 = "MR17805";
+            public const string P4_Run_Point_EndY_NG4 = "MR17806";
+            public const string P4_Load_Point_Start_Half_NG4 = "MR17807";
+            public const string P4_Run_Point_Start_Half_NG4 = "MR17808";
+            public const string P4_Load_Point_SK = "MR17809";
+            public const string P4_Run_Point_SK = "MR17810";
+
+            // Z Ready Points (MR179)
+            public const string P4_Run_Ready_Z01 = "MR17900";
+            public const string P4_Load_Ready_Z11 = "MR17901";
+            public const string P4_Run_Ready_Z11 = "MR17902";
+            public const string P4_Load_UL_P0_Z = "MR17903";
+            public const string P4_Run_UL_P0_Z = "MR17904";
+            public const string P4_Load_L_P1_Z = "MR17905";
+            public const string P4_Run_L_P1_Z = "MR17906";
+            public const string P4_Load_C_P2_Z = "MR17907";
+            public const string P4_Run_C_P2_Z = "MR17908";
+            public const string P4_Load_UL_P3_Z = "MR17909";
+            public const string P4_Run_UL_P3_Z = "MR17910";
+            public const string P4_Load_Ready_Z00 = "MR17911";
+            public const string P4_Run_Ready_Z00 = "MR17912";
+            public const string P4_Load_Ready_Z10 = "MR17913";
+            public const string P4_Run_Ready_Z10 = "MR17914";
+
+            // F2 & Camera Points (MR180)
+            public const string P4_Run_Open_F2 = "MR18000";
+            public const string P4_Load_Pos_Cam = "MR18001";
+            public const string P4_Run_Pos_Cam = "MR18002";
+            public const string P4_Load_L_P4_Z = "MR18011";
+            public const string P4_Run_L_P4_Z = "MR18012";
+            public const string P4_Load_Close_F2 = "MR18013";
+            public const string P4_Run_Close_F2 = "MR18014";
+
             #endregion
 
         }
@@ -864,14 +1410,53 @@ namespace PLCKeygen
             public const string P1_X_Master = "DM2082";
             public const string P1_Y_Master = "DM2084";
             public const string P1_R_Master = "DM2086";
-            public const string P1_Tray_Col_Number = "DM1224";
-            public const string P1_Tray_Row_Number = "DM1226";
-            public const string P1_Tray_Row_NG1 = "DM1228";
-            public const string P1_Tray_Row_NG2 = "DM1230";
-            public const string P1_Tray_Row_NG3 = "DM1232";
-            public const string P1_Tray_Row_NG4 = "DM1246";
-            public const string P1_Socket_Angle = "DM1290"; // Góc quay của hàng khi đưa vào socket
-            public const string P1_Model_ID_Save_As = "DM1300";
+            // Tray data
+            public const string P1_Tray_Col_Number = "DM2024"; // Số cột của tray hiện tại
+            public const string P1_Tray_Row_Number = "DM2026"; // Số hàng của tray hiện tại
+            public const string P1_Tray_Row_NG1 = "DM2028"; // Số hàng trên tray NG để loại NG1
+            public const string P1_Tray_Row_NG2 = "DM2030"; // Số hàng trên tray NG để loại NG2
+            public const string P1_Tray_Row_NG3 = "DM2032"; // Số hàng trên tray NG để loại NG3
+            public const string P1_Tray_Row_NG4 = "DM2046"; // Số hàng trên tray NG để loại NG4
+            public const string P1_Socket_Angle = "DM2090"; // Góc quay của hàng khi đưa vào socket
+            public const string P1_Model_ID_Save_As = "DM2100"; // Model ID được lưu lại
+            public const string P1_ID_Job = "DM1856";
+            //Speed unload tray
+            public const string P1_Unload_Speed_ZReady = "DM1802";
+            public const string P1_Unload_Speed_XY = "DM1808";
+            public const string P1_Unload_Speed_Z = "DM1812";
+            public const string P1_Unload_Speed_XReady = "DM1814";
+            public const string P1_Unload_Speed_YReady = "DM1816";
+            public const string P1_Unload_Speed_XYReady = "DM1818";
+            public const string P1_Unload_Speed_RO = "DM1820";
+            // Speed load tray
+            public const string P1_Load_Speed_XY = "DM1834";
+            public const string P1_Load_Speed_Z = "DM1838";
+            public const string P1_Load_Speed_XReady = "DM1840";
+            public const string P1_Load_Speed_YReady = "DM1842";
+            public const string P1_Load_Speed_XYReady = "DM1844";
+            // Speed alignment camera position
+            public const string P1_Camera_Speed_XY = "DM1854";
+            public const string P1_Camera_Speed_RI = "DM1858";
+            public const string P1_Camera_Speed_XReady = "DM1860";
+            public const string P1_Camera_Speed_YReady = "DM1862";
+            public const string P1_Camera_Speed_XYReady = "DM1864";
+            public const string P1_Camera_Speed_Z = "DM1868";
+            // Speed pick socket position
+            public const string P1_Unload_Socket_Speed_XY = "DM1874";
+            public const string P1_Unload_Socket_Speed_Z = "DM1878";
+            public const string P1_Unload_Socket_Speed_XReady = "DM1880";
+            public const string P1_Unload_Socket_Speed_YReady = "DM1882";
+            public const string P1_Unload_Socket_Speed_XYReady = "DM1884";
+            // Speed place socket position
+            public const string P1_Load_Socket_Speed_XY = "DM1894";
+            public const string P1_Load_Socket_Speed_Z = "DM1898";
+            public const string P1_Load_Socket_Speed_XReady = "DM1900";
+            public const string P1_Load_Socket_Speed_YReady = "DM1902";
+            public const string P1_Load_Socket_Speed_XYReady = "DM1904";
+            // Speed close/open socket
+            public const string P1_Socket_Speed_Close = "DM1912";
+            public const string P1_Socket_Speed_Open = "DM1916";
+
             // Port2
             public const string P2_X_Pos_Cur =  "TM300";
             public const string P2_RI_Pos_Cur = "TM302";
@@ -886,6 +1471,53 @@ namespace PLCKeygen
             public const string P2_X_Master = "DM1282";
             public const string P2_Y_Master = "DM1284";
             public const string P2_R_Master = "DM1286";
+            // Tray data
+            public const string P2_Tray_Col_Number = "DM1224"; // Số cột của tray hiện tại
+            public const string P2_Tray_Row_Number = "DM1226"; // Số hàng của tray hiện tại
+            public const string P2_Tray_Row_NG1 = "DM1228"; // Số hàng trên tray NG để loại NG1
+            public const string P2_Tray_Row_NG2 = "DM1230"; // Số hàng trên tray NG để loại NG2
+            public const string P2_Tray_Row_NG3 = "DM1232"; // Số hàng trên tray NG để loại NG3
+            public const string P2_Tray_Row_NG4 = "DM1246"; // Số hàng trên tray NG để loại NG4
+            public const string P2_Socket_Angle = "DM1290"; // Góc quay của hàng khi đưa vào socket
+            public const string P2_Model_ID_Save_As = "DM1300"; // Model ID được lưu lại
+            public const string P2_ID_Job = "DM1056";
+            //Speed unload tray
+            public const string P2_Unload_Speed_ZReady = "DM1002";
+            public const string P2_Unload_Speed_XY = "DM1008";
+            public const string P2_Unload_Speed_Z = "DM1012";
+            public const string P2_Unload_Speed_XReady = "DM1014";
+            public const string P2_Unload_Speed_YReady = "DM1016";
+            public const string P2_Unload_Speed_XYReady = "DM1018";
+            public const string P2_Unload_Speed_RO = "DM1020";
+            // Speed load tray
+            public const string P2_Load_Speed_XY = "DM1034";
+            public const string P2_Load_Speed_Z = "DM1038";
+            public const string P2_Load_Speed_XReady = "DM1040";
+            public const string P2_Load_Speed_YReady = "DM1042";
+            public const string P2_Load_Speed_XYReady = "DM1044";
+            // Speed alignment camera position
+            public const string P2_Camera_Speed_XY = "DM1054";
+            public const string P2_Camera_Speed_RI = "DM1058";
+            public const string P2_Camera_Speed_XReady = "DM1060";
+            public const string P2_Camera_Speed_YReady = "DM1062";
+            public const string P2_Camera_Speed_XYReady = "DM1064";
+            public const string P2_Camera_Speed_Z = "DM1068";
+            // Speed pick socket position
+            public const string P2_Unload_Socket_Speed_XY = "DM1074";
+            public const string P2_Unload_Socket_Speed_Z = "DM1078";
+            public const string P2_Unload_Socket_Speed_XReady = "DM1080";
+            public const string P2_Unload_Socket_Speed_YReady = "DM1082";
+            public const string P2_Unload_Socket_Speed_XYReady = "DM1084";
+            // Speed place socket position
+            public const string P2_Load_Socket_Speed_XY = "DM1094";
+            public const string P2_Load_Socket_Speed_Z = "DM1098";
+            public const string P2_Load_Socket_Speed_XReady = "DM1100";
+            public const string P2_Load_Socket_Speed_YReady = "DM1102";
+            public const string P2_Load_Socket_Speed_XYReady = "DM1104";
+            // Speed close/open socket
+            public const string P2_Socket_Speed_Close = "DM1112";
+            public const string P2_Socket_Speed_Open = "DM1116";
+
             // Port3
             public const string P3_X_Pos_Cur =  "TM348";
             public const string P3_RI_Pos_Cur = "TM350";
@@ -900,6 +1532,52 @@ namespace PLCKeygen
             public const string P3_X_Master = "DM2482";
             public const string P3_Y_Master = "DM2484";
             public const string P3_R_Master = "DM2486";
+            // Tray data
+            public const string P3_Tray_Col_Number = "DM2424"; // Số cột của tray hiện tại
+            public const string P3_Tray_Row_Number = "DM2426"; // Số hàng của tray hiện tại
+            public const string P3_Tray_Row_NG1 = "DM2428"; // Số hàng trên tray NG để loại NG1
+            public const string P3_Tray_Row_NG2 = "DM2430"; // Số hàng trên tray NG để loại NG2
+            public const string P3_Tray_Row_NG3 = "DM2432"; // Số hàng trên tray NG để loại NG3
+            public const string P3_Tray_Row_NG4 = "DM2446"; // Số hàng trên tray NG để loại NG4
+            public const string P3_Socket_Angle = "DM2490"; // Góc quay của hàng khi đưa vào socket
+            public const string P3_Model_ID_Save_As = "DM2500"; // Model ID được lưu lại
+            public const string P3_ID_Job = "DM2256";
+            //Speed unload tray
+            public const string P3_Unload_Speed_ZReady = "DM2202";
+            public const string P3_Unload_Speed_XY = "DM2208";
+            public const string P3_Unload_Speed_Z = "DM2212";
+            public const string P3_Unload_Speed_XReady = "DM2214";
+            public const string P3_Unload_Speed_YReady = "DM2216";
+            public const string P3_Unload_Speed_XYReady = "DM2218";
+            public const string P3_Unload_Speed_RO = "DM2220";
+            // Speed load tray
+            public const string P3_Load_Speed_XY = "DM2234";
+            public const string P3_Load_Speed_Z = "DM2238";
+            public const string P3_Load_Speed_XReady = "DM2240";
+            public const string P3_Load_Speed_YReady = "DM2242";
+            public const string P3_Load_Speed_XYReady = "DM2244";
+            // Speed alignment camera position
+            public const string P3_Camera_Speed_XY = "DM2254";
+            public const string P3_Camera_Speed_RI = "DM2258";
+            public const string P3_Camera_Speed_XReady = "DM2260";
+            public const string P3_Camera_Speed_YReady = "DM2262";
+            public const string P3_Camera_Speed_XYReady = "DM2264";
+            public const string P3_Camera_Speed_Z = "DM2268";
+            // Speed pick socket position
+            public const string P3_Unload_Socket_Speed_XY = "DM2274";
+            public const string P3_Unload_Socket_Speed_Z = "DM2278";
+            public const string P3_Unload_Socket_Speed_XReady = "DM2280";
+            public const string P3_Unload_Socket_Speed_YReady = "DM2282";
+            public const string P3_Unload_Socket_Speed_XYReady = "DM2284";
+            // Speed place socket position
+            public const string P3_Load_Socket_Speed_XY = "DM2294";
+            public const string P3_Load_Socket_Speed_Z = "DM2298";
+            public const string P3_Load_Socket_Speed_XReady = "DM2300";
+            public const string P3_Load_Socket_Speed_YReady = "DM2302";
+            public const string P3_Load_Socket_Speed_XYReady = "DM2304";
+            // Speed close/open socket
+            public const string P3_Socket_Speed_Close = "DM2312";
+            public const string P3_Socket_Speed_Open = "DM2316";
             // Port4
             public const string P4_X_Pos_Cur =  "TM316";
             public const string P4_RI_Pos_Cur = "TM318";
@@ -914,6 +1592,52 @@ namespace PLCKeygen
             public const string P4_X_Master = "DM1682";
             public const string P4_Y_Master = "DM1684";
             public const string P4_R_Master = "DM1686";
+            // Tray data
+            public const string P4_Tray_Col_Number = "DM1624"; // Số cột của tray hiện tại
+            public const string P4_Tray_Row_Number = "DM1626"; // Số hàng của tray hiện tại
+            public const string P4_Tray_Row_NG1 = "DM1628"; // Số hàng trên tray NG để loại NG1
+            public const string P4_Tray_Row_NG2 = "DM1630"; // Số hàng trên tray NG để loại NG2
+            public const string P4_Tray_Row_NG3 = "DM1632"; // Số hàng trên tray NG để loại NG3
+            public const string P4_Tray_Row_NG4 = "DM1646"; // Số hàng trên tray NG để loại NG4
+            public const string P4_Socket_Angle = "DM1690"; // Góc quay của hàng khi đưa vào socket
+            public const string P4_Model_ID_Save_As = "DM1700"; // Model ID được lưu lại
+            public const string P4_ID_Job = "DM1456";
+            //Speed unload tray
+            public const string P4_Unload_Speed_ZReady = "DM1402";
+            public const string P4_Unload_Speed_XY = "DM1408";
+            public const string P4_Unload_Speed_Z = "DM1412";
+            public const string P4_Unload_Speed_XReady = "DM1414";
+            public const string P4_Unload_Speed_YReady = "DM1416";
+            public const string P4_Unload_Speed_XYReady = "DM1418";
+            public const string P4_Unload_Speed_RO = "DM1420";
+            // Speed load tray
+            public const string P4_Load_Speed_XY = "DM1434";
+            public const string P4_Load_Speed_Z = "DM1438";
+            public const string P4_Load_Speed_XReady = "DM1440";
+            public const string P4_Load_Speed_YReady = "DM1442";
+            public const string P4_Load_Speed_XYReady = "DM1444";
+            // Speed alignment camera position
+            public const string P4_Camera_Speed_XY = "DM1454";
+            public const string P4_Camera_Speed_RI = "DM1458";
+            public const string P4_Camera_Speed_XReady = "DM1460";
+            public const string P4_Camera_Speed_YReady = "DM1462";
+            public const string P4_Camera_Speed_XYReady = "DM1464";
+            public const string P4_Camera_Speed_Z = "DM1468";
+            // Speed pick socket position
+            public const string P4_Unload_Socket_Speed_XY = "DM1474";
+            public const string P4_Unload_Socket_Speed_Z = "DM1478";
+            public const string P4_Unload_Socket_Speed_XReady = "DM1480";
+            public const string P4_Unload_Socket_Speed_YReady = "DM1482";
+            public const string P4_Unload_Socket_Speed_XYReady = "DM1484";
+            // Speed place socket position
+            public const string P4_Load_Socket_Speed_XY = "DM1494";
+            public const string P4_Load_Socket_Speed_Z = "DM1498";
+            public const string P4_Load_Socket_Speed_XReady = "DM1500";
+            public const string P4_Load_Socket_Speed_YReady = "DM1502";
+            public const string P4_Load_Socket_Speed_XYReady = "DM1504";
+            // Speed close/open socket
+            public const string P4_Socket_Speed_Close = "DM1512";
+            public const string P4_Socket_Speed_Open = "DM1516";
 
             #region Port 1 Extended Data (Base: DM360-510, DM2000-2100, DM1800-1910)
 
