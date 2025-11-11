@@ -1397,6 +1397,7 @@ namespace PLCKeygen
         {
 
             // Port1
+            #region Port 1
             public const string P1_X_Pos_Cur =  "TM332";
             public const string P1_RI_Pos_Cur = "TM334";
             public const string P1_Y_Pos_Cur =  "TM336";
@@ -1420,6 +1421,8 @@ namespace PLCKeygen
             public const string P1_Socket_Angle = "DM2090"; // Góc quay của hàng khi đưa vào socket
             public const string P1_Model_ID_Save_As = "DM2100"; // Model ID được lưu lại
             public const string P1_ID_Job = "DM1856";
+            public const string P1_RORI_Distance_X = "DM2056";
+            public const string P1_RORI_Distance_Y = "DM2058";
             //Speed unload tray
             public const string P1_Unload_Speed_ZReady = "DM1802";
             public const string P1_Unload_Speed_XY = "DM1808";
@@ -1456,8 +1459,10 @@ namespace PLCKeygen
             // Speed close/open socket
             public const string P1_Socket_Speed_Close = "DM1912";
             public const string P1_Socket_Speed_Open = "DM1916";
+            #endregion
 
             // Port2
+            #region Port 2
             public const string P2_X_Pos_Cur =  "TM300";
             public const string P2_RI_Pos_Cur = "TM302";
             public const string P2_Y_Pos_Cur =  "TM304";
@@ -1481,6 +1486,8 @@ namespace PLCKeygen
             public const string P2_Socket_Angle = "DM1290"; // Góc quay của hàng khi đưa vào socket
             public const string P2_Model_ID_Save_As = "DM1300"; // Model ID được lưu lại
             public const string P2_ID_Job = "DM1056";
+            public const string P2_RORI_Distance_X = "DM1256";
+            public const string P2_RORI_Distance_Y = "DM1258";
             //Speed unload tray
             public const string P2_Unload_Speed_ZReady = "DM1002";
             public const string P2_Unload_Speed_XY = "DM1008";
@@ -1517,8 +1524,10 @@ namespace PLCKeygen
             // Speed close/open socket
             public const string P2_Socket_Speed_Close = "DM1112";
             public const string P2_Socket_Speed_Open = "DM1116";
+            #endregion
 
             // Port3
+            #region Port 3
             public const string P3_X_Pos_Cur =  "TM348";
             public const string P3_RI_Pos_Cur = "TM350";
             public const string P3_Y_Pos_Cur =  "TM352";
@@ -1542,6 +1551,8 @@ namespace PLCKeygen
             public const string P3_Socket_Angle = "DM2490"; // Góc quay của hàng khi đưa vào socket
             public const string P3_Model_ID_Save_As = "DM2500"; // Model ID được lưu lại
             public const string P3_ID_Job = "DM2256";
+            public const string P3_RORI_Distance_X = "DM2456";
+            public const string P3_RORI_Distance_Y = "DM2458";
             //Speed unload tray
             public const string P3_Unload_Speed_ZReady = "DM2202";
             public const string P3_Unload_Speed_XY = "DM2208";
@@ -1578,7 +1589,10 @@ namespace PLCKeygen
             // Speed close/open socket
             public const string P3_Socket_Speed_Close = "DM2312";
             public const string P3_Socket_Speed_Open = "DM2316";
+            #endregion
+
             // Port4
+            #region Port 4
             public const string P4_X_Pos_Cur =  "TM316";
             public const string P4_RI_Pos_Cur = "TM318";
             public const string P4_Y_Pos_Cur =  "TM320";
@@ -1602,6 +1616,8 @@ namespace PLCKeygen
             public const string P4_Socket_Angle = "DM1690"; // Góc quay của hàng khi đưa vào socket
             public const string P4_Model_ID_Save_As = "DM1700"; // Model ID được lưu lại
             public const string P4_ID_Job = "DM1456";
+            public const string P4_RORI_Distance_X = "DM1656";
+            public const string P4_RORI_Distance_Y = "DM1658";
             //Speed unload tray
             public const string P4_Unload_Speed_ZReady = "DM1402";
             public const string P4_Unload_Speed_XY = "DM1408";
@@ -1638,6 +1654,7 @@ namespace PLCKeygen
             // Speed close/open socket
             public const string P4_Socket_Speed_Close = "DM1512";
             public const string P4_Socket_Speed_Open = "DM1516";
+            #endregion
 
             #region Port 1 Extended Data (Base: DM360-510, DM2000-2100, DM1800-1910)
 
