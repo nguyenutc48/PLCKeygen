@@ -22,9 +22,11 @@ namespace PLCKeygen
     /// </summary>
     public static class PLCAddresses
     {
+        #region PLC adress
         public const string PLCName = "Keyence_PLC_Main";
         public const string IPAddress = "192.168.1.10";
         public const int Port = 8501;
+        #endregion
 
         /// <summary>
         /// Địa chỉ Input (đầu vào)
@@ -902,7 +904,10 @@ namespace PLCKeygen
             public const string P1_GoPointTrayNG2YEnd = "MR21806";
             public const string P1_SavePointSocket = "MR21809";
             public const string P1_GoPointSocket = "MR21810";
-
+            public const string P1_SavePointSocketZReady = "MR21811";
+            public const string P1_GoPointSocketZReady = "MR21812";
+            public const string P1_SavePointSocketZReadyLoad = "MR21913";
+            public const string P1_GoPointSocketZReadyLoad = "MR21914";
             public const string P1_SavePointSocketZReadyUnload = "MR21815";
             public const string P1_GoPointSocketZReadyUnload = "MR21900";
             public const string P1_SavePointTrayNG1Z = "MR21903";
@@ -913,18 +918,14 @@ namespace PLCKeygen
             public const string P1_GoPointSocketCameraZ = "MR21908";
             public const string P1_SavePointSocketZUnload = "MR21909";
             public const string P1_GoPointSocketZUnload = "MR21910";
-            public const string P1_SavePointSocketZReady = "MR21911";
-            public const string P1_GoPointSocketZReady = "MR21912";
-            public const string P1_SavePointSocketZReadyLoad = "MR21913";
-            public const string P1_GoPointSocketZReadyLoad = "MR21914";
+            public const string P1_SavePointSocketZLoad = "MR21011";
+            public const string P1_GoPointSocketZLoad = "MR21012";
+            public const string P1_SavePointSocketFClosed = "MR21913";
+            public const string P1_GoPointSocketFClosed = "MR21914";
             public const string P1_SavePointSocketFOpened = "MR21915";
             public const string P1_GoPointSocketFOpened = "MR22000";
             public const string P1_SavePointCamera = "MR22001";
             public const string P1_GoPointCamera = "MR22002";
-            public const string P1_SavePointSocketZLoad = "MR22011";
-            public const string P1_GoPointSocketZLoad = "MR22012";
-            public const string P1_SavePointSocketFClosed = "MR22013";
-            public const string P1_GoPointSocketFClosed = "MR22014";
 
             #endregion
 
@@ -1046,7 +1047,10 @@ namespace PLCKeygen
             public const string P2_GoPointTrayNG2YEnd = "MR13806";
             public const string P2_SavePointSocket = "MR13809";
             public const string P2_GoPointSocket = "MR13810";
-
+            public const string P2_SavePointSocketZReady = "MR13811";
+            public const string P2_GoPointSocketZReady = "MR13812";
+            public const string P2_SavePointSocketZReadyLoad = "MR13813";
+            public const string P2_GoPointSocketZReadyLoad = "MR13814";
             public const string P2_SavePointSocketZReadyUnload = "MR13815";
             public const string P2_GoPointSocketZReadyUnload = "MR13900";
             public const string P2_SavePointTrayNG1Z = "MR13903";
@@ -1057,18 +1061,14 @@ namespace PLCKeygen
             public const string P2_GoPointSocketCameraZ = "MR13908";
             public const string P2_SavePointSocketZUnload = "MR13909";
             public const string P2_GoPointSocketZUnload = "MR13910";
-            public const string P2_SavePointSocketZReady = "MR13911";
-            public const string P2_GoPointSocketZReady = "MR13912";
-            public const string P2_SavePointSocketZReadyLoad = "MR13913";
-            public const string P2_GoPointSocketZReadyLoad = "MR13914";
+            public const string P2_SavePointSocketZLoad = "MR13911";
+            public const string P2_GoPointSocketZLoad = "MR13912";
+            public const string P2_SavePointSocketFClosed = "MR13913";
+            public const string P2_GoPointSocketFClosed = "MR13914";
             public const string P2_SavePointSocketFOpened = "MR13915";
             public const string P2_GoPointSocketFOpened = "MR14000";
             public const string P2_SavePointCamera = "MR14001";
             public const string P2_GoPointCamera = "MR14002";
-            public const string P2_SavePointSocketZLoad = "MR14011";
-            public const string P2_GoPointSocketZLoad = "MR14012";
-            public const string P2_SavePointSocketFClosed = "MR14013";
-            public const string P2_GoPointSocketFClosed = "MR14014";
 
             #endregion
 
@@ -1186,7 +1186,10 @@ namespace PLCKeygen
             public const string P3_GoPointTrayNG2YEnd = "MR25806";
             public const string P3_SavePointSocket = "MR25809";
             public const string P3_GoPointSocket = "MR25810";
-
+            public const string P3_SavePointSocketZReady = "MR25811";
+            public const string P3_GoPointSocketZReady = "MR25812";
+            public const string P3_SavePointSocketZReadyLoad = "MR25913";
+            public const string P3_GoPointSocketZReadyLoad = "MR25914";
             public const string P3_SavePointSocketZReadyUnload = "MR25815";
             public const string P3_GoPointSocketZReadyUnload = "MR25900";
             public const string P3_SavePointTrayNG1Z = "MR25903";
@@ -1197,18 +1200,14 @@ namespace PLCKeygen
             public const string P3_GoPointSocketCameraZ = "MR25908";
             public const string P3_SavePointSocketZUnload = "MR25909";
             public const string P3_GoPointSocketZUnload = "MR25910";
-            public const string P3_SavePointSocketZReady = "MR25911";
-            public const string P3_GoPointSocketZReady = "MR25912";
-            public const string P3_SavePointSocketZReadyLoad = "MR25913";
-            public const string P3_GoPointSocketZReadyLoad = "MR25914";
+            public const string P3_SavePointSocketZLoad = "MR26011";
+            public const string P3_GoPointSocketZLoad = "MR26012";
+            public const string P3_SavePointSocketFClosed = "MR25913";
+            public const string P3_GoPointSocketFClosed = "MR25914";
             public const string P3_SavePointSocketFOpened = "MR25915";
             public const string P3_GoPointSocketFOpened = "MR26000";
             public const string P3_SavePointCamera = "MR26001";
             public const string P3_GoPointCamera = "MR26002";
-            public const string P3_SavePointSocketZLoad = "MR26011";
-            public const string P3_GoPointSocketZLoad = "MR26012";
-            public const string P3_SavePointSocketFClosed = "MR26013";
-            public const string P3_GoPointSocketFClosed = "MR26014";
 
             #endregion
 
@@ -1308,7 +1307,7 @@ namespace PLCKeygen
             public const string P4_Rq_Call_Model = "MR17700";
             public const string P4_Rq_Save_Model = "MR17701";
             public const string P4_Rq_Saveas_Model = "MR17702";
-            
+
             public const string P4_SavePointTrayInputXYStart = "MR17705";
             public const string P4_GoPointTrayInputXYStart = "MR17706";
             public const string P4_SavePointTrayInputXEnd = "MR17707";
@@ -1329,7 +1328,10 @@ namespace PLCKeygen
             public const string P4_GoPointTrayNG2YEnd = "MR17806";
             public const string P4_SavePointSocket = "MR17809";
             public const string P4_GoPointSocket = "MR17810";
-
+            public const string P4_SavePointSocketZReady = "MR17811";
+            public const string P4_GoPointSocketZReady = "MR17812";
+            public const string P4_SavePointSocketZReadyLoad = "MR17813";
+            public const string P4_GoPointSocketZReadyLoad = "MR17814";
             public const string P4_SavePointSocketZReadyUnload = "MR17815";
             public const string P4_GoPointSocketZReadyUnload = "MR17900";
             public const string P4_SavePointTrayNG1Z = "MR17903";
@@ -1340,18 +1342,14 @@ namespace PLCKeygen
             public const string P4_GoPointSocketCameraZ = "MR17908";
             public const string P4_SavePointSocketZUnload = "MR17909";
             public const string P4_GoPointSocketZUnload = "MR17910";
-            public const string P4_SavePointSocketZReady = "MR17911";
-            public const string P4_GoPointSocketZReady = "MR17912";
-            public const string P4_SavePointSocketZReadyLoad = "MR17913";
-            public const string P4_GoPointSocketZReadyLoad = "MR17914";
+            public const string P4_SavePointSocketZLoad = "MR17911";
+            public const string P4_GoPointSocketZLoad = "MR17912";
+            public const string P4_SavePointSocketFClosed = "MR17913";
+            public const string P4_GoPointSocketFClosed = "MR17914";
             public const string P4_SavePointSocketFOpened = "MR17915";
             public const string P4_GoPointSocketFOpened = "MR18000";
             public const string P4_SavePointCamera = "MR18001";
             public const string P4_GoPointCamera = "MR18002";
-            public const string P4_SavePointSocketZLoad = "MR18011";
-            public const string P4_GoPointSocketZLoad = "MR18012";
-            public const string P4_SavePointSocketFClosed = "MR18013";
-            public const string P4_GoPointSocketFClosed = "MR18014";
 
             #endregion
 

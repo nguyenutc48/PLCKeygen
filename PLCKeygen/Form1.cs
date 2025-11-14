@@ -838,7 +838,9 @@ namespace PLCKeygen
             }
             return true;
         }
+
         #region HandEye
+
         bool cam1HandEyeStart = false;
         bool cam2HandEyeStart = false;
 
@@ -3253,7 +3255,636 @@ namespace PLCKeygen
         }
 
         // Helper method to get teaching point addresses based on port and point name
-        private (string x, string y, string z, string f) GetTeachingPointAddresses(int port, string pointName)
+        private string GetTeachingPointAddresses(int port, string pointName)
+        {
+            switch (port)
+            {
+                case 1:
+                    switch (pointName)
+                    {
+                        case "SavePointTrayInputXYStart": return PLCAddresses.Output.P1_SavePointTrayInputXYStart;
+                        case "GoPointTrayInputXYStart": return PLCAddresses.Output.P1_GoPointTrayInputXYStart;
+                        case "SavePointTrayInputXEnd": return PLCAddresses.Output.P1_SavePointTrayInputXEnd;
+                        case "GoPointTrayInputXEnd": return PLCAddresses.Output.P1_GoPointTrayInputXEnd;
+                        case "SavePointTrayInputYEnd": return PLCAddresses.Output.P1_SavePointTrayInputYEnd;
+                        case "GoPointTrayInputYEnd": return PLCAddresses.Output.P1_GoPointTrayInputYEnd;
+                        case "SavePointTrayNG1XYStart": return PLCAddresses.Output.P1_SavePointTrayNG1XYStart;
+                        case "GoPointTrayNG1XYStart": return PLCAddresses.Output.P1_GoPointTrayNG1XYStart;
+                        case "SavePointTrayNG1XEnd": return PLCAddresses.Output.P1_SavePointTrayNG1XEnd;
+                        case "GoPointTrayNG1XEnd": return PLCAddresses.Output.P1_GoPointTrayNG1XEnd;
+                        case "SavePointTrayNG1YEnd": return PLCAddresses.Output.P1_SavePointTrayNG1YEnd;
+                        case "GoPointTrayNG1YEnd": return PLCAddresses.Output.P1_GoPointTrayNG1YEnd;
+                        case "SavePointTrayNG2XYStart": return PLCAddresses.Output.P1_SavePointTrayNG2XYStart;
+                        case "GoPointTrayNG2XYStart": return PLCAddresses.Output.P1_GoPointTrayNG2XYStart;
+                        case "SavePointTrayNG2XEnd": return PLCAddresses.Output.P1_SavePointTrayNG2XEnd;
+                        case "GoPointTrayNG2XEnd": return PLCAddresses.Output.P1_GoPointTrayNG2XEnd;
+                        case "SavePointTrayNG2YEnd": return PLCAddresses.Output.P1_SavePointTrayNG2YEnd;
+                        case "GoPointTrayNG2YEnd": return PLCAddresses.Output.P1_GoPointTrayNG2YEnd;
+                        case "SavePointSocket": return PLCAddresses.Output.P1_SavePointSocket;
+                        case "GoPointSocket": return PLCAddresses.Output.P1_GoPointSocket;
+                        case "SavePointSocketZReadyUnload": return PLCAddresses.Output.P1_SavePointSocketZReadyUnload;
+                        case "GoPointSocketZReadyUnload": return PLCAddresses.Output.P1_GoPointSocketZReadyUnload;
+                        case "SavePointTrayNG1Z": return PLCAddresses.Output.P1_SavePointTrayNG1Z;
+                        case "GoPointTrayNG1Z": return PLCAddresses.Output.P1_GoPointTrayNG1Z;
+                        case "SavePointTrayInputZ": return PLCAddresses.Output.P1_SavePointTrayInputZ;
+                        case "GoPointTrayInputZ": return PLCAddresses.Output.P1_GoPointTrayInputZ;
+                        case "SavePointSocketCameraZ": return PLCAddresses.Output.P1_SavePointSocketCameraZ;
+                        case "GoPointSocketCameraZ": return PLCAddresses.Output.P1_GoPointSocketCameraZ;
+                        case "SavePointSocketZUnload": return PLCAddresses.Output.P1_SavePointSocketZUnload;
+                        case "GoPointSocketZUnload": return PLCAddresses.Output.P1_GoPointSocketZUnload;
+                        case "SavePointSocketZReady": return PLCAddresses.Output.P1_SavePointSocketZReady;
+                        case "GoPointSocketZReady": return PLCAddresses.Output.P1_GoPointSocketZReady;
+                        case "SavePointSocketZReadyLoad": return PLCAddresses.Output.P1_SavePointSocketZReadyLoad;
+                        case "GoPointSocketZReadyLoad": return PLCAddresses.Output.P1_GoPointSocketZReadyLoad;
+                        case "SavePointSocketFOpened": return PLCAddresses.Output.P1_SavePointSocketFOpened;
+                        case "GoPointSocketFOpened": return PLCAddresses.Output.P1_GoPointSocketFOpened;
+                        case "SavePointCamera": return PLCAddresses.Output.P1_SavePointCamera;
+                        case "GoPointCamera": return PLCAddresses.Output.P1_GoPointCamera;
+                        case "SavePointSocketZLoad": return PLCAddresses.Output.P1_SavePointSocketZLoad;
+                        case "GoPointSocketZLoad": return PLCAddresses.Output.P1_GoPointSocketZLoad;
+                        case "SavePointSocketFClosed": return PLCAddresses.Output.P1_SavePointSocketFClosed;
+                        case "GoPointSocketFClosed":  return PLCAddresses.Output.P1_GoPointSocketFClosed;
+                    }
+                    break;
+                case 2:
+                    switch (pointName)
+                    {
+                        case "SavePointTrayInputXYStart": return PLCAddresses.Output.P2_SavePointTrayInputXYStart;
+                        case "GoPointTrayInputXYStart": return PLCAddresses.Output.P2_GoPointTrayInputXYStart;
+                        case "SavePointTrayInputXEnd": return PLCAddresses.Output.P2_SavePointTrayInputXEnd;
+                        case "GoPointTrayInputXEnd": return PLCAddresses.Output.P2_GoPointTrayInputXEnd;
+                        case "SavePointTrayInputYEnd": return PLCAddresses.Output.P2_SavePointTrayInputYEnd;
+                        case "GoPointTrayInputYEnd": return PLCAddresses.Output.P2_GoPointTrayInputYEnd;
+                        case "SavePointTrayNG1XYStart": return PLCAddresses.Output.P2_SavePointTrayNG1XYStart;
+                        case "GoPointTrayNG1XYStart": return PLCAddresses.Output.P2_GoPointTrayNG1XYStart;
+                        case "SavePointTrayNG1XEnd": return PLCAddresses.Output.P2_SavePointTrayNG1XEnd;
+                        case "GoPointTrayNG1XEnd": return PLCAddresses.Output.P2_GoPointTrayNG1XEnd;
+                        case "SavePointTrayNG1YEnd": return PLCAddresses.Output.P2_SavePointTrayNG1YEnd;
+                        case "GoPointTrayNG1YEnd": return PLCAddresses.Output.P2_GoPointTrayNG1YEnd;
+                        case "SavePointTrayNG2XYStart": return PLCAddresses.Output.P2_SavePointTrayNG2XYStart;
+                        case "GoPointTrayNG2XYStart": return PLCAddresses.Output.P2_GoPointTrayNG2XYStart;
+                        case "SavePointTrayNG2XEnd": return PLCAddresses.Output.P2_SavePointTrayNG2XEnd;
+                        case "GoPointTrayNG2XEnd": return PLCAddresses.Output.P2_GoPointTrayNG2XEnd;
+                        case "SavePointTrayNG2YEnd": return PLCAddresses.Output.P2_SavePointTrayNG2YEnd;
+                        case "GoPointTrayNG2YEnd": return PLCAddresses.Output.P2_GoPointTrayNG2YEnd;
+                        case "SavePointSocket": return PLCAddresses.Output.P2_SavePointSocket;
+                        case "GoPointSocket": return PLCAddresses.Output.P2_GoPointSocket;
+                        case "SavePointSocketZReadyUnload": return PLCAddresses.Output.P2_SavePointSocketZReadyUnload;
+                        case "GoPointSocketZReadyUnload": return PLCAddresses.Output.P2_GoPointSocketZReadyUnload;
+                        case "SavePointTrayNG1Z": return PLCAddresses.Output.P2_SavePointTrayNG1Z;
+                        case "GoPointTrayNG1Z": return PLCAddresses.Output.P2_GoPointTrayNG1Z;
+                        case "SavePointTrayInputZ": return PLCAddresses.Output.P2_SavePointTrayInputZ;
+                        case "GoPointTrayInputZ": return PLCAddresses.Output.P2_GoPointTrayInputZ;
+                        case "SavePointSocketCameraZ": return PLCAddresses.Output.P2_SavePointSocketCameraZ;
+                        case "GoPointSocketCameraZ": return PLCAddresses.Output.P2_GoPointSocketCameraZ;
+                        case "SavePointSocketZUnload": return PLCAddresses.Output.P2_SavePointSocketZUnload;
+                        case "GoPointSocketZUnload": return PLCAddresses.Output.P2_GoPointSocketZUnload;
+                        case "SavePointSocketZReady": return PLCAddresses.Output.P2_SavePointSocketZReady;
+                        case "GoPointSocketZReady": return PLCAddresses.Output.P2_GoPointSocketZReady;
+                        case "SavePointSocketZReadyLoad": return PLCAddresses.Output.P2_SavePointSocketZReadyLoad;
+                        case "GoPointSocketZReadyLoad": return PLCAddresses.Output.P2_GoPointSocketZReadyLoad;
+                        case "SavePointSocketFOpened": return PLCAddresses.Output.P2_SavePointSocketFOpened;
+                        case "GoPointSocketFOpened": return PLCAddresses.Output.P2_GoPointSocketFOpened;
+                        case "SavePointCamera": return PLCAddresses.Output.P2_SavePointCamera;
+                        case "GoPointCamera": return PLCAddresses.Output.P2_GoPointCamera;
+                        case "SavePointSocketZLoad": return PLCAddresses.Output.P2_SavePointSocketZLoad;
+                        case "GoPointSocketZLoad": return PLCAddresses.Output.P2_GoPointSocketZLoad;
+                        case "SavePointSocketFClosed": return PLCAddresses.Output.P2_SavePointSocketFClosed;
+                        case "GoPointSocketFClosed": return PLCAddresses.Output.P2_GoPointSocketFClosed;
+                    }
+                    break;
+                case 3:
+                    switch (pointName)
+                    {
+                        case "SavePointTrayInputXYStart": return PLCAddresses.Output.P3_SavePointTrayInputXYStart;
+                        case "GoPointTrayInputXYStart": return PLCAddresses.Output.P3_GoPointTrayInputXYStart;
+                        case "SavePointTrayInputXEnd": return PLCAddresses.Output.P3_SavePointTrayInputXEnd;
+                        case "GoPointTrayInputXEnd": return PLCAddresses.Output.P3_GoPointTrayInputXEnd;
+                        case "SavePointTrayInputYEnd": return PLCAddresses.Output.P3_SavePointTrayInputYEnd;
+                        case "GoPointTrayInputYEnd": return PLCAddresses.Output.P3_GoPointTrayInputYEnd;
+                        case "SavePointTrayNG1XYStart": return PLCAddresses.Output.P3_SavePointTrayNG1XYStart;
+                        case "GoPointTrayNG1XYStart": return PLCAddresses.Output.P3_GoPointTrayNG1XYStart;
+                        case "SavePointTrayNG1XEnd": return PLCAddresses.Output.P3_SavePointTrayNG1XEnd;
+                        case "GoPointTrayNG1XEnd": return PLCAddresses.Output.P3_GoPointTrayNG1XEnd;
+                        case "SavePointTrayNG1YEnd": return PLCAddresses.Output.P3_SavePointTrayNG1YEnd;
+                        case "GoPointTrayNG1YEnd": return PLCAddresses.Output.P3_GoPointTrayNG1YEnd;
+                        case "SavePointTrayNG2XYStart": return PLCAddresses.Output.P3_SavePointTrayNG2XYStart;
+                        case "GoPointTrayNG2XYStart": return PLCAddresses.Output.P3_GoPointTrayNG2XYStart;
+                        case "SavePointTrayNG2XEnd": return PLCAddresses.Output.P3_SavePointTrayNG2XEnd;
+                        case "GoPointTrayNG2XEnd": return PLCAddresses.Output.P3_GoPointTrayNG2XEnd;
+                        case "SavePointTrayNG2YEnd": return PLCAddresses.Output.P3_SavePointTrayNG2YEnd;
+                        case "GoPointTrayNG2YEnd": return PLCAddresses.Output.P3_GoPointTrayNG2YEnd;
+                        case "SavePointSocket": return PLCAddresses.Output.P3_SavePointSocket;
+                        case "GoPointSocket": return PLCAddresses.Output.P3_GoPointSocket;
+                        case "SavePointSocketZReadyUnload": return PLCAddresses.Output.P3_SavePointSocketZReadyUnload;
+                        case "GoPointSocketZReadyUnload": return PLCAddresses.Output.P3_GoPointSocketZReadyUnload;
+                        case "SavePointTrayNG1Z": return PLCAddresses.Output.P3_SavePointTrayNG1Z;
+                        case "GoPointTrayNG1Z": return PLCAddresses.Output.P3_GoPointTrayNG1Z;
+                        case "SavePointTrayInputZ": return PLCAddresses.Output.P3_SavePointTrayInputZ;
+                        case "GoPointTrayInputZ": return PLCAddresses.Output.P3_GoPointTrayInputZ;
+                        case "SavePointSocketCameraZ": return PLCAddresses.Output.P3_SavePointSocketCameraZ;
+                        case "GoPointSocketCameraZ": return PLCAddresses.Output.P3_GoPointSocketCameraZ;
+                        case "SavePointSocketZUnload": return PLCAddresses.Output.P3_SavePointSocketZUnload;
+                        case "GoPointSocketZUnload": return PLCAddresses.Output.P3_GoPointSocketZUnload;
+                        case "SavePointSocketZReady": return PLCAddresses.Output.P3_SavePointSocketZReady;
+                        case "GoPointSocketZReady": return PLCAddresses.Output.P3_GoPointSocketZReady;
+                        case "SavePointSocketZReadyLoad": return PLCAddresses.Output.P3_SavePointSocketZReadyLoad;
+                        case "GoPointSocketZReadyLoad": return PLCAddresses.Output.P3_GoPointSocketZReadyLoad;
+                        case "SavePointSocketFOpened": return PLCAddresses.Output.P3_SavePointSocketFOpened;
+                        case "GoPointSocketFOpened": return PLCAddresses.Output.P3_GoPointSocketFOpened;
+                        case "SavePointCamera": return PLCAddresses.Output.P3_SavePointCamera;
+                        case "GoPointCamera": return PLCAddresses.Output.P3_GoPointCamera;
+                        case "SavePointSocketZLoad": return PLCAddresses.Output.P3_SavePointSocketZLoad;
+                        case "GoPointSocketZLoad": return PLCAddresses.Output.P3_GoPointSocketZLoad;
+                        case "SavePointSocketFClosed": return PLCAddresses.Output.P3_SavePointSocketFClosed;
+                        case "GoPointSocketFClosed": return PLCAddresses.Output.P3_GoPointSocketFClosed;
+                    }
+                    break;
+                case 4:
+                    switch (pointName)
+                    {
+                        case "SavePointTrayInputXYStart": return PLCAddresses.Output.P4_SavePointTrayInputXYStart;
+                        case "GoPointTrayInputXYStart": return PLCAddresses.Output.P4_GoPointTrayInputXYStart;
+                        case "SavePointTrayInputXEnd": return PLCAddresses.Output.P4_SavePointTrayInputXEnd;
+                        case "GoPointTrayInputXEnd": return PLCAddresses.Output.P4_GoPointTrayInputXEnd;
+                        case "SavePointTrayInputYEnd": return PLCAddresses.Output.P4_SavePointTrayInputYEnd;
+                        case "GoPointTrayInputYEnd": return PLCAddresses.Output.P4_GoPointTrayInputYEnd;
+                        case "SavePointTrayNG1XYStart": return PLCAddresses.Output.P4_SavePointTrayNG1XYStart;
+                        case "GoPointTrayNG1XYStart": return PLCAddresses.Output.P4_GoPointTrayNG1XYStart;
+                        case "SavePointTrayNG1XEnd": return PLCAddresses.Output.P4_SavePointTrayNG1XEnd;
+                        case "GoPointTrayNG1XEnd": return PLCAddresses.Output.P4_GoPointTrayNG1XEnd;
+                        case "SavePointTrayNG1YEnd": return PLCAddresses.Output.P4_SavePointTrayNG1YEnd;
+                        case "GoPointTrayNG1YEnd": return PLCAddresses.Output.P4_GoPointTrayNG1YEnd;
+                        case "SavePointTrayNG2XYStart": return PLCAddresses.Output.P4_SavePointTrayNG2XYStart;
+                        case "GoPointTrayNG2XYStart": return PLCAddresses.Output.P4_GoPointTrayNG2XYStart;
+                        case "SavePointTrayNG2XEnd": return PLCAddresses.Output.P4_SavePointTrayNG2XEnd;
+                        case "GoPointTrayNG2XEnd": return PLCAddresses.Output.P4_GoPointTrayNG2XEnd;
+                        case "SavePointTrayNG2YEnd": return PLCAddresses.Output.P4_SavePointTrayNG2YEnd;
+                        case "GoPointTrayNG2YEnd": return PLCAddresses.Output.P4_GoPointTrayNG2YEnd;
+                        case "SavePointSocket": return PLCAddresses.Output.P4_SavePointSocket;
+                        case "GoPointSocket": return PLCAddresses.Output.P4_GoPointSocket;
+                        case "SavePointSocketZReadyUnload": return PLCAddresses.Output.P4_SavePointSocketZReadyUnload;
+                        case "GoPointSocketZReadyUnload": return PLCAddresses.Output.P4_GoPointSocketZReadyUnload;
+                        case "SavePointTrayNG1Z": return PLCAddresses.Output.P4_SavePointTrayNG1Z;
+                        case "GoPointTrayNG1Z": return PLCAddresses.Output.P4_GoPointTrayNG1Z;
+                        case "SavePointTrayInputZ": return PLCAddresses.Output.P4_SavePointTrayInputZ;
+                        case "GoPointTrayInputZ": return PLCAddresses.Output.P4_GoPointTrayInputZ;
+                        case "SavePointSocketCameraZ": return PLCAddresses.Output.P4_SavePointSocketCameraZ;
+                        case "GoPointSocketCameraZ": return PLCAddresses.Output.P4_GoPointSocketCameraZ;
+                        case "SavePointSocketZUnload": return PLCAddresses.Output.P4_SavePointSocketZUnload;
+                        case "GoPointSocketZUnload": return PLCAddresses.Output.P4_GoPointSocketZUnload;
+                        case "SavePointSocketZReady": return PLCAddresses.Output.P4_SavePointSocketZReady;
+                        case "GoPointSocketZReady": return PLCAddresses.Output.P4_GoPointSocketZReady;
+                        case "SavePointSocketZReadyLoad": return PLCAddresses.Output.P4_SavePointSocketZReadyLoad;
+                        case "GoPointSocketZReadyLoad": return PLCAddresses.Output.P4_GoPointSocketZReadyLoad;
+                        case "SavePointSocketFOpened": return PLCAddresses.Output.P4_SavePointSocketFOpened;
+                        case "GoPointSocketFOpened": return PLCAddresses.Output.P4_GoPointSocketFOpened;
+                        case "SavePointCamera": return PLCAddresses.Output.P4_SavePointCamera;
+                        case "GoPointCamera": return PLCAddresses.Output.P4_GoPointCamera;
+                        case "SavePointSocketZLoad": return PLCAddresses.Output.P4_SavePointSocketZLoad;
+                        case "GoPointSocketZLoad": return PLCAddresses.Output.P4_GoPointSocketZLoad;
+                        case "SavePointSocketFClosed": return PLCAddresses.Output.P4_SavePointSocketFClosed;
+                        case "GoPointSocketFClosed": return PLCAddresses.Output.P4_GoPointSocketFClosed;
+                    }
+                    break;
+            }
+            return "";
+        }
+
+        // Generic Save button handler
+        private void btnSavePoint_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
+            if (btn == null) return;
+
+            // Determine which point based on button name
+            string pointName = btn.Name.Replace("btn", "");
+            var addresses = GetTeachingPointAddresses(selectedPort, pointName);
+            PLCKey.SetBit(addresses);
+            UpdateTeachingPointDisplays();
+            //SaveTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f, btn);
+        }
+
+        // Save teaching point by name (for keyboard shortcuts)
+        private void SaveTeachingPointByName(string pointName)
+        {
+            var addresses = GetTeachingPointAddresses(selectedPort, pointName);
+
+            // Find the corresponding save button to highlight it
+            System.Windows.Forms.Button saveButton = null;
+            string buttonName = "btnSavePoint" + pointName;
+
+            // Search for the button in teaching groups
+            foreach (Control ctrl in grpTeachingTray.Controls)
+            {
+                if (ctrl is GroupBox grp)
+                {
+                    foreach (Control subCtrl in grp.Controls)
+                    {
+                        if (subCtrl is GroupBox subGrp)
+                        {
+                            foreach (Control btnCtrl in subGrp.Controls)
+                            {
+                                if (btnCtrl.Name == buttonName)
+                                {
+                                    saveButton = btnCtrl as System.Windows.Forms.Button;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Also search in socket group
+            if (saveButton == null)
+            {
+                foreach (Control ctrl in grpTeachingSocket.Controls)
+                {
+                    if (ctrl is GroupBox grp)
+                    {
+                        foreach (Control btnCtrl in grp.Controls)
+                        {
+                            if (btnCtrl.Name == buttonName)
+                            {
+                                saveButton = btnCtrl as System.Windows.Forms.Button;
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+         
+        }
+
+        // Reset all teaching save button colors
+        private void ResetTeachingSaveButtonColors()
+        {
+            // Reset Tray group buttons
+            foreach (Control ctrl in grpTeachingTray.Controls)
+            {
+                if (ctrl is GroupBox grp)
+                {
+                    foreach (Control subCtrl in grp.Controls)
+                    {
+                        if (subCtrl is GroupBox subGrp)
+                        {
+                            foreach (Control btnCtrl in subGrp.Controls)
+                            {
+                                if (btnCtrl is System.Windows.Forms.Button btn && btn.Name.Contains("btnSavePoint"))
+                                {
+                                    btn.BackColor = SystemColors.Control;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Reset Socket group buttons
+            foreach (Control ctrl in grpTeachingSocket.Controls)
+            {
+                if (ctrl is GroupBox grp)
+                {
+                    foreach (Control btnCtrl in grp.Controls)
+                    {
+                        if (btnCtrl is System.Windows.Forms.Button btn && btn.Name.Contains("btnSavePoint"))
+                        {
+                            btn.BackColor = SystemColors.Control;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Generic Go button handler
+        private void btnGoPoint_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
+            if (btn == null) return;
+
+            // Determine which point based on button name
+            string pointName = btn.Name.Replace("btn", "");
+            var addresses = GetTeachingPointAddresses(selectedPort, pointName);
+            PLCKey.SetBit(addresses);
+            // GoToTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f);
+        }
+
+        /// <summary>
+        /// Execute teaching hotkey action (Save or Go to teaching point)
+        /// </summary>
+        private void ExecuteTeachingHotkey(TeachingPointHotkey hotkey)
+        {
+            try
+            {
+                // Find the button control
+                System.Windows.Forms.Button targetButton = FindButtonByName(hotkey.ButtonName);
+
+                if (targetButton != null)
+                {
+                    // Visual feedback - briefly highlight the button
+                    FlashButton(targetButton);
+
+                    // Determine action based on button name
+                    if (hotkey.ButtonName.StartsWith("btnSavePoint"))
+                    {
+                        // Save teaching point
+                        SaveTeachingPointByName(hotkey.PointName);
+
+                        // Show brief notification
+                        ShowHotkeyNotification($"Đã lưu: {hotkey.Description}\nPhím: {hotkey.GetHotkeyString()}");
+                    }
+                    else if (hotkey.ButtonName.StartsWith("btnGoPoint"))
+                    {
+                        // Go to teaching point
+                        var addresses = GetTeachingPointAddresses(selectedPort, hotkey.PointName);
+                        //GoToTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f);
+
+                        // Show brief notification
+                        ShowHotkeyNotification($"Di chuyển đến: {hotkey.Description}\nPhím: {hotkey.GetHotkeyString()}");
+                    }
+                }
+                else
+                {
+                    // Button not found - show error
+                    MessageBox.Show($"Không tìm thấy button: {hotkey.ButtonName}\nPoint: {hotkey.PointName}",
+                                  "Lỗi Hotkey",
+                                  MessageBoxButtons.OK,
+                                  MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi thực hiện hotkey:\n{ex.Message}",
+                              "Lỗi",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Find button control by name in teaching groups
+        /// </summary>
+        private System.Windows.Forms.Button FindButtonByName(string buttonName)
+        {
+            // Search in Tray group
+            System.Windows.Forms.Button button = FindButtonInControl(grpTeachingTray, buttonName);
+            if (button != null) return button;
+
+            // Search in Socket group
+            button = FindButtonInControl(grpTeachingSocket, buttonName);
+            return button;
+        }
+
+        /// <summary>
+        /// Recursively find button in control hierarchy
+        /// </summary>
+        private System.Windows.Forms.Button FindButtonInControl(Control parent, string buttonName)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (ctrl is System.Windows.Forms.Button btn && ctrl.Name == buttonName)
+                {
+                    return btn;
+                }
+
+                // Recursively search in GroupBox or other containers
+                if (ctrl.HasChildren)
+                {
+                    var result = FindButtonInControl(ctrl, buttonName);
+                    if (result != null) return result;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Flash button to provide visual feedback
+        /// </summary>
+        private async void FlashButton(System.Windows.Forms.Button button)
+        {
+            if (button == null) return;
+
+            Color originalColor = button.BackColor;
+
+            // Flash yellow briefly
+            button.BackColor = Color.Yellow;
+            await Task.Delay(150);
+
+            // For save buttons, restore to green if already saved, otherwise back to original
+            if (button.Name.StartsWith("btnSavePoint"))
+            {
+                // Keep green for save buttons (will be set by SaveTeachingPoint)
+                // The SaveTeachingPoint method already sets it to LightGreen
+            }
+            else
+            {
+                button.BackColor = originalColor;
+            }
+        }
+
+        /// <summary>
+        /// Show brief notification for hotkey action
+        /// </summary>
+        private async void ShowHotkeyNotification(string message)
+        {
+            // Create a temporary label to show notification
+            // This is a simple implementation - can be enhanced with a custom notification form
+
+            // For now, use status bar or title bar
+            string originalTitle = this.Text;
+            this.Text = $"[{message}] - {originalTitle}";
+
+            await Task.Delay(2000); // Show for 2 seconds
+
+            this.Text = originalTitle;
+        }
+
+        /// <summary>
+        /// Show Teaching Hotkey Help Form
+        /// Can be called from a button or menu item
+        /// </summary>
+        private void ShowTeachingHotkeyHelp()
+        {
+            if (hotkeyManager != null)
+            {
+                var helpForm = new TeachingHotkeyHelpForm(hotkeyManager);
+                helpForm.ShowDialog(this);
+            }
+            else
+            {
+                MessageBox.Show("Hotkey Manager chưa được khởi tạo.",
+                              "Lỗi",
+                              MessageBoxButtons.OK,
+                              MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Handle Ctrl+H to show hotkey help (can be called from KeyDown if needed)
+        /// </summary>
+        private void CheckHotkeyHelpShortcut(KeyEventArgs e)
+        {
+            // Ctrl+H to show help
+            if (e.Control && e.KeyCode == Keys.H)
+            {
+                ShowTeachingHotkeyHelp();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        // Update teaching point textboxes with current saved values from PLC
+        private void UpdateTeachingPointDisplays()
+        {
+            try
+            {
+                // Get teaching point addresses based on selected port
+                var trayInputXYStart = GetTeachingPointAddresses1(selectedPort, "TrayInputXYStart");
+                var trayInputXEnd = GetTeachingPointAddresses1(selectedPort, "TrayInputXEnd");
+                var trayInputYEnd = GetTeachingPointAddresses1(selectedPort, "TrayInputYEnd");
+                var trayInputZ = GetTeachingPointAddresses1(selectedPort, "TrayInputZ");
+
+                var trayNG1XYStart = GetTeachingPointAddresses1(selectedPort, "TrayNG1XYStart");
+                var trayNG1XEnd = GetTeachingPointAddresses1(selectedPort, "TrayNG1XEnd");
+                var trayNG1YEnd = GetTeachingPointAddresses1(selectedPort, "TrayNG1YEnd");
+                var trayNG1Z = GetTeachingPointAddresses1(selectedPort, "TrayNG1Z");
+
+                var trayNG2XYStart = GetTeachingPointAddresses1(selectedPort, "TrayNG2XYStart");
+                var trayNG2XEnd = GetTeachingPointAddresses1(selectedPort, "TrayNG2XEnd");
+                var trayNG2YEnd = GetTeachingPointAddresses1(selectedPort, "TrayNG2YEnd");
+                var trayNG2Z = GetTeachingPointAddresses1(selectedPort, "TrayNG2Z");
+
+                var socket = GetTeachingPointAddresses1(selectedPort, "Socket");
+                var socketZLoad = GetTeachingPointAddresses1(selectedPort, "SocketZLoad");
+                var socketZUnload = GetTeachingPointAddresses1(selectedPort, "SocketZUnload");
+                var socketZReady = GetTeachingPointAddresses1(selectedPort, "SocketZReady");
+                var socketZReadyLoad = GetTeachingPointAddresses1(selectedPort, "SocketZReadyLoad");
+                var socketZReadyUnload = GetTeachingPointAddresses1(selectedPort, "SocketZReadyUnload");
+                var socketFOpened = GetTeachingPointAddresses1(selectedPort, "SocketFOpened");
+                var socketFClosed = GetTeachingPointAddresses1(selectedPort, "SocketFClosed");
+
+                var camera = GetTeachingPointAddresses1(selectedPort, "Camera");
+                var socketCameraZ = GetTeachingPointAddresses1(selectedPort, "SocketCameraZ");
+
+                // Update Tray Input textboxes
+                if (!string.IsNullOrEmpty(trayInputXYStart.x))
+                {
+                    txtXPointTrayInputXYStart.Text = (PLCKey.ReadInt32(trayInputXYStart.x) / 100.0f).ToString("F2");
+                    txtYPointTrayInputXYStart.Text = (PLCKey.ReadInt32(trayInputXYStart.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(trayInputXEnd.x))
+                {
+                    txtXPointTrayInputXEnd.Text = (PLCKey.ReadInt32(trayInputXEnd.x) / 100.0f).ToString("F2");
+                    txtYPointTrayInputXEnd.Text = (PLCKey.ReadInt32(trayInputXEnd.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(trayInputYEnd.x))
+                {
+                    txtXPointTrayInputYEnd.Text = (PLCKey.ReadInt32(trayInputYEnd.x) / 100.0f).ToString("F2");
+                    txtYPointTrayInputYEnd.Text = (PLCKey.ReadInt32(trayInputYEnd.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(trayInputZ.z))
+                {
+                    txtZPointTrayInputZ.Text = (PLCKey.ReadInt32(trayInputZ.z) / 100.0f).ToString("F2");
+                }
+
+                // Update Tray NG1 textboxes
+                if (!string.IsNullOrEmpty(trayNG1XYStart.x))
+                {
+                    txtXPointTrayNG1XYStart.Text = (PLCKey.ReadInt32(trayNG1XYStart.x) / 100.0f).ToString("F2");
+                    txtYPointTrayNG1XYStart.Text = (PLCKey.ReadInt32(trayNG1XYStart.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(trayNG1XEnd.x))
+                {
+                    txtXPointTrayNG1XEnd.Text = (PLCKey.ReadInt32(trayNG1XEnd.x) / 100.0f).ToString("F2");
+                    txtYPointTrayNG1XEnd.Text = (PLCKey.ReadInt32(trayNG1XEnd.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(trayNG1YEnd.x))
+                {
+                    txtXPointTrayNG1YEnd.Text = (PLCKey.ReadInt32(trayNG1YEnd.x) / 100.0f).ToString("F2");
+                    txtYPointTrayNG1YEnd.Text = (PLCKey.ReadInt32(trayNG1YEnd.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(trayNG1Z.z))
+                {
+                    txtZPointTrayNG1Z.Text = (PLCKey.ReadInt32(trayNG1Z.z) / 100.0f).ToString("F2");
+                }
+
+                // Update Tray NG2 textboxes
+                if (!string.IsNullOrEmpty(trayNG2XYStart.x))
+                {
+                    txtXPointTrayNG2XYStart.Text = (PLCKey.ReadInt32(trayNG2XYStart.x) / 100.0f).ToString("F2");
+                    txtYPointTrayNG2XYStart.Text = (PLCKey.ReadInt32(trayNG2XYStart.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(trayNG2XEnd.x))
+                {
+                    txtXPointTrayNG2XEnd.Text = (PLCKey.ReadInt32(trayNG2XEnd.x) / 100.0f).ToString("F2");
+                    txtYPointTrayNG2XEnd.Text = (PLCKey.ReadInt32(trayNG2XEnd.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(trayNG2YEnd.x))
+                {
+                    txtXPointTrayNG2YEnd.Text = (PLCKey.ReadInt32(trayNG2YEnd.x) / 100.0f).ToString("F2");
+                    txtYPointTrayNG2YEnd.Text = (PLCKey.ReadInt32(trayNG2YEnd.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(trayNG2Z.z))
+                {
+                    txtZPointTrayNG2Z.Text = (PLCKey.ReadInt32(trayNG2Z.z) / 100.0f).ToString("F2");
+                }
+
+                // Update Socket textboxes
+                if (!string.IsNullOrEmpty(socket.x))
+                {
+                    txtXPointSocket.Text = (PLCKey.ReadInt32(socket.x) / 100.0f).ToString("F2");
+                    txtYPointSocket.Text = (PLCKey.ReadInt32(socket.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketZLoad.z))
+                {
+                    txtZPointSocketZLoad.Text = (PLCKey.ReadInt32(socketZLoad.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketZUnload.z))
+                {
+                    txtZPointSocketZUnload.Text = (PLCKey.ReadInt32(socketZUnload.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketZReady.z))
+                {
+                    txtZPointSocketZReady.Text = (PLCKey.ReadInt32(socketZReady.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketZReadyLoad.z))
+                {
+                    txtZPointSocketZReadyLoad.Text = (PLCKey.ReadInt32(socketZReadyLoad.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketZReadyUnload.z))
+                {
+                    txtZPointSocketZReadyUnload.Text = (PLCKey.ReadInt32(socketZReadyUnload.z) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketFOpened.f))
+                {
+                    txtFPointSocketFOpened.Text = (PLCKey.ReadInt32(socketFOpened.f) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketFClosed.f))
+                {
+                    txtFPointSocketFClosed.Text = (PLCKey.ReadInt32(socketFClosed.f) / 100.0f).ToString("F2");
+                }
+
+                // Update Camera textboxes
+                if (!string.IsNullOrEmpty(camera.x))
+                {
+                    txtXPointCamera.Text = (PLCKey.ReadInt32(camera.x) / 100.0f).ToString("F2");
+                    txtYPointCamera.Text = (PLCKey.ReadInt32(camera.y) / 100.0f).ToString("F2");
+                }
+                if (!string.IsNullOrEmpty(socketCameraZ.z))
+                {
+                    txtZPointSocketCameraZ.Text = (PLCKey.ReadInt32(socketCameraZ.z) / 100.0f).ToString("F2");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Silently handle errors during display update
+                // This prevents timer from crashing if PLC communication fails
+            }
+        }
+
+        private (string x, string y, string z, string f) GetTeachingPointAddresses1(int port, string pointName)
         {
             switch (port)
             {
@@ -3455,436 +4086,6 @@ namespace PLCKeygen
                     break;
             }
             return (null, null, null, null);
-        }
-
-        // Generic Save button handler
-        private void btnSavePoint_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
-            if (btn == null) return;
-
-            // Determine which point based on button name
-            string pointName = btn.Name.Replace("btnSavePoint", "");
-            var addresses = GetTeachingPointAddresses(selectedPort, pointName);
-            SaveTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f, btn);
-        }
-
-        // Save teaching point by name (for keyboard shortcuts)
-        private void SaveTeachingPointByName(string pointName)
-        {
-            var addresses = GetTeachingPointAddresses(selectedPort, pointName);
-
-            // Find the corresponding save button to highlight it
-            System.Windows.Forms.Button saveButton = null;
-            string buttonName = "btnSavePoint" + pointName;
-
-            // Search for the button in teaching groups
-            foreach (Control ctrl in grpTeachingTray.Controls)
-            {
-                if (ctrl is GroupBox grp)
-                {
-                    foreach (Control subCtrl in grp.Controls)
-                    {
-                        if (subCtrl is GroupBox subGrp)
-                        {
-                            foreach (Control btnCtrl in subGrp.Controls)
-                            {
-                                if (btnCtrl.Name == buttonName)
-                                {
-                                    saveButton = btnCtrl as System.Windows.Forms.Button;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            // Also search in socket group
-            if (saveButton == null)
-            {
-                foreach (Control ctrl in grpTeachingSocket.Controls)
-                {
-                    if (ctrl is GroupBox grp)
-                    {
-                        foreach (Control btnCtrl in grp.Controls)
-                        {
-                            if (btnCtrl.Name == buttonName)
-                            {
-                                saveButton = btnCtrl as System.Windows.Forms.Button;
-                                break;
-                            }
-                        }
-                    }
-                }
-            }
-
-            SaveTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f, saveButton);
-        }
-
-        // Reset all teaching save button colors
-        private void ResetTeachingSaveButtonColors()
-        {
-            // Reset Tray group buttons
-            foreach (Control ctrl in grpTeachingTray.Controls)
-            {
-                if (ctrl is GroupBox grp)
-                {
-                    foreach (Control subCtrl in grp.Controls)
-                    {
-                        if (subCtrl is GroupBox subGrp)
-                        {
-                            foreach (Control btnCtrl in subGrp.Controls)
-                            {
-                                if (btnCtrl is System.Windows.Forms.Button btn && btn.Name.Contains("btnSavePoint"))
-                                {
-                                    btn.BackColor = SystemColors.Control;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            // Reset Socket group buttons
-            foreach (Control ctrl in grpTeachingSocket.Controls)
-            {
-                if (ctrl is GroupBox grp)
-                {
-                    foreach (Control btnCtrl in grp.Controls)
-                    {
-                        if (btnCtrl is System.Windows.Forms.Button btn && btn.Name.Contains("btnSavePoint"))
-                        {
-                            btn.BackColor = SystemColors.Control;
-                        }
-                    }
-                }
-            }
-        }
-
-        // Generic Go button handler
-        private void btnGoPoint_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.Button btn = sender as System.Windows.Forms.Button;
-            if (btn == null) return;
-
-            // Determine which point based on button name
-            string pointName = btn.Name.Replace("btnGoPoint", "");
-            var addresses = GetTeachingPointAddresses(selectedPort, pointName);
-            GoToTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f);
-        }
-
-        /// <summary>
-        /// Execute teaching hotkey action (Save or Go to teaching point)
-        /// </summary>
-        private void ExecuteTeachingHotkey(TeachingPointHotkey hotkey)
-        {
-            try
-            {
-                // Find the button control
-                System.Windows.Forms.Button targetButton = FindButtonByName(hotkey.ButtonName);
-
-                if (targetButton != null)
-                {
-                    // Visual feedback - briefly highlight the button
-                    FlashButton(targetButton);
-
-                    // Determine action based on button name
-                    if (hotkey.ButtonName.StartsWith("btnSavePoint"))
-                    {
-                        // Save teaching point
-                        SaveTeachingPointByName(hotkey.PointName);
-
-                        // Show brief notification
-                        ShowHotkeyNotification($"Đã lưu: {hotkey.Description}\nPhím: {hotkey.GetHotkeyString()}");
-                    }
-                    else if (hotkey.ButtonName.StartsWith("btnGoPoint"))
-                    {
-                        // Go to teaching point
-                        var addresses = GetTeachingPointAddresses(selectedPort, hotkey.PointName);
-                        GoToTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f);
-
-                        // Show brief notification
-                        ShowHotkeyNotification($"Di chuyển đến: {hotkey.Description}\nPhím: {hotkey.GetHotkeyString()}");
-                    }
-                }
-                else
-                {
-                    // Button not found - show error
-                    MessageBox.Show($"Không tìm thấy button: {hotkey.ButtonName}\nPoint: {hotkey.PointName}",
-                                  "Lỗi Hotkey",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Lỗi khi thực hiện hotkey:\n{ex.Message}",
-                              "Lỗi",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Error);
-            }
-        }
-
-        /// <summary>
-        /// Find button control by name in teaching groups
-        /// </summary>
-        private System.Windows.Forms.Button FindButtonByName(string buttonName)
-        {
-            // Search in Tray group
-            System.Windows.Forms.Button button = FindButtonInControl(grpTeachingTray, buttonName);
-            if (button != null) return button;
-
-            // Search in Socket group
-            button = FindButtonInControl(grpTeachingSocket, buttonName);
-            return button;
-        }
-
-        /// <summary>
-        /// Recursively find button in control hierarchy
-        /// </summary>
-        private System.Windows.Forms.Button FindButtonInControl(Control parent, string buttonName)
-        {
-            foreach (Control ctrl in parent.Controls)
-            {
-                if (ctrl is System.Windows.Forms.Button btn && ctrl.Name == buttonName)
-                {
-                    return btn;
-                }
-
-                // Recursively search in GroupBox or other containers
-                if (ctrl.HasChildren)
-                {
-                    var result = FindButtonInControl(ctrl, buttonName);
-                    if (result != null) return result;
-                }
-            }
-            return null;
-        }
-
-        /// <summary>
-        /// Flash button to provide visual feedback
-        /// </summary>
-        private async void FlashButton(System.Windows.Forms.Button button)
-        {
-            if (button == null) return;
-
-            Color originalColor = button.BackColor;
-
-            // Flash yellow briefly
-            button.BackColor = Color.Yellow;
-            await Task.Delay(150);
-
-            // For save buttons, restore to green if already saved, otherwise back to original
-            if (button.Name.StartsWith("btnSavePoint"))
-            {
-                // Keep green for save buttons (will be set by SaveTeachingPoint)
-                // The SaveTeachingPoint method already sets it to LightGreen
-            }
-            else
-            {
-                button.BackColor = originalColor;
-            }
-        }
-
-        /// <summary>
-        /// Show brief notification for hotkey action
-        /// </summary>
-        private async void ShowHotkeyNotification(string message)
-        {
-            // Create a temporary label to show notification
-            // This is a simple implementation - can be enhanced with a custom notification form
-
-            // For now, use status bar or title bar
-            string originalTitle = this.Text;
-            this.Text = $"[{message}] - {originalTitle}";
-
-            await Task.Delay(2000); // Show for 2 seconds
-
-            this.Text = originalTitle;
-        }
-
-        /// <summary>
-        /// Show Teaching Hotkey Help Form
-        /// Can be called from a button or menu item
-        /// </summary>
-        private void ShowTeachingHotkeyHelp()
-        {
-            if (hotkeyManager != null)
-            {
-                var helpForm = new TeachingHotkeyHelpForm(hotkeyManager);
-                helpForm.ShowDialog(this);
-            }
-            else
-            {
-                MessageBox.Show("Hotkey Manager chưa được khởi tạo.",
-                              "Lỗi",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Error);
-            }
-        }
-
-        /// <summary>
-        /// Handle Ctrl+H to show hotkey help (can be called from KeyDown if needed)
-        /// </summary>
-        private void CheckHotkeyHelpShortcut(KeyEventArgs e)
-        {
-            // Ctrl+H to show help
-            if (e.Control && e.KeyCode == Keys.H)
-            {
-                ShowTeachingHotkeyHelp();
-                e.Handled = true;
-                e.SuppressKeyPress = true;
-            }
-        }
-
-        // Update teaching point textboxes with current saved values from PLC
-        private void UpdateTeachingPointDisplays()
-        {
-            try
-            {
-                // Get teaching point addresses based on selected port
-                var trayInputXYStart = GetTeachingPointAddresses(selectedPort, "TrayInputXYStart");
-                var trayInputXEnd = GetTeachingPointAddresses(selectedPort, "TrayInputXEnd");
-                var trayInputYEnd = GetTeachingPointAddresses(selectedPort, "TrayInputYEnd");
-                var trayInputZ = GetTeachingPointAddresses(selectedPort, "TrayInputZ");
-
-                var trayNG1XYStart = GetTeachingPointAddresses(selectedPort, "TrayNG1XYStart");
-                var trayNG1XEnd = GetTeachingPointAddresses(selectedPort, "TrayNG1XEnd");
-                var trayNG1YEnd = GetTeachingPointAddresses(selectedPort, "TrayNG1YEnd");
-                var trayNG1Z = GetTeachingPointAddresses(selectedPort, "TrayNG1Z");
-
-                var trayNG2XYStart = GetTeachingPointAddresses(selectedPort, "TrayNG2XYStart");
-                var trayNG2XEnd = GetTeachingPointAddresses(selectedPort, "TrayNG2XEnd");
-                var trayNG2YEnd = GetTeachingPointAddresses(selectedPort, "TrayNG2YEnd");
-                var trayNG2Z = GetTeachingPointAddresses(selectedPort, "TrayNG2Z");
-
-                var socket = GetTeachingPointAddresses(selectedPort, "Socket");
-                var socketZLoad = GetTeachingPointAddresses(selectedPort, "SocketZLoad");
-                var socketZUnload = GetTeachingPointAddresses(selectedPort, "SocketZUnload");
-                var socketZReady = GetTeachingPointAddresses(selectedPort, "SocketZReady");
-                var socketZReadyLoad = GetTeachingPointAddresses(selectedPort, "SocketZReadyLoad");
-                var socketZReadyUnload = GetTeachingPointAddresses(selectedPort, "SocketZReadyUnload");
-                var socketFOpened = GetTeachingPointAddresses(selectedPort, "SocketFOpened");
-                var socketFClosed = GetTeachingPointAddresses(selectedPort, "SocketFClosed");
-
-                var camera = GetTeachingPointAddresses(selectedPort, "Camera");
-                var socketCameraZ = GetTeachingPointAddresses(selectedPort, "SocketCameraZ");
-
-                // Update Tray Input textboxes
-                if (!string.IsNullOrEmpty(trayInputXYStart.x))
-                {
-                    txtXPointTrayInputXYStart.Text = (PLCKey.ReadInt32(trayInputXYStart.x) / 100.0f).ToString("F2");
-                    txtYPointTrayInputXYStart.Text = (PLCKey.ReadInt32(trayInputXYStart.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(trayInputXEnd.x))
-                {
-                    txtXPointTrayInputXEnd.Text = (PLCKey.ReadInt32(trayInputXEnd.x) / 100.0f).ToString("F2");
-                    txtYPointTrayInputXEnd.Text = (PLCKey.ReadInt32(trayInputXEnd.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(trayInputYEnd.x))
-                {
-                    txtXPointTrayInputYEnd.Text = (PLCKey.ReadInt32(trayInputYEnd.x) / 100.0f).ToString("F2");
-                    txtYPointTrayInputYEnd.Text = (PLCKey.ReadInt32(trayInputYEnd.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(trayInputZ.z))
-                {
-                    txtZPointTrayInputZ.Text = (PLCKey.ReadInt32(trayInputZ.z) / 100.0f).ToString("F2");
-                }
-
-                // Update Tray NG1 textboxes
-                if (!string.IsNullOrEmpty(trayNG1XYStart.x))
-                {
-                    txtXPointTrayNG1XYStart.Text = (PLCKey.ReadInt32(trayNG1XYStart.x) / 100.0f).ToString("F2");
-                    txtYPointTrayNG1XYStart.Text = (PLCKey.ReadInt32(trayNG1XYStart.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(trayNG1XEnd.x))
-                {
-                    txtXPointTrayNG1XEnd.Text = (PLCKey.ReadInt32(trayNG1XEnd.x) / 100.0f).ToString("F2");
-                    txtYPointTrayNG1XEnd.Text = (PLCKey.ReadInt32(trayNG1XEnd.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(trayNG1YEnd.x))
-                {
-                    txtXPointTrayNG1YEnd.Text = (PLCKey.ReadInt32(trayNG1YEnd.x) / 100.0f).ToString("F2");
-                    txtYPointTrayNG1YEnd.Text = (PLCKey.ReadInt32(trayNG1YEnd.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(trayNG1Z.z))
-                {
-                    txtZPointTrayNG1Z.Text = (PLCKey.ReadInt32(trayNG1Z.z) / 100.0f).ToString("F2");
-                }
-
-                // Update Tray NG2 textboxes
-                if (!string.IsNullOrEmpty(trayNG2XYStart.x))
-                {
-                    txtXPointTrayNG2XYStart.Text = (PLCKey.ReadInt32(trayNG2XYStart.x) / 100.0f).ToString("F2");
-                    txtYPointTrayNG2XYStart.Text = (PLCKey.ReadInt32(trayNG2XYStart.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(trayNG2XEnd.x))
-                {
-                    txtXPointTrayNG2XEnd.Text = (PLCKey.ReadInt32(trayNG2XEnd.x) / 100.0f).ToString("F2");
-                    txtYPointTrayNG2XEnd.Text = (PLCKey.ReadInt32(trayNG2XEnd.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(trayNG2YEnd.x))
-                {
-                    txtXPointTrayNG2YEnd.Text = (PLCKey.ReadInt32(trayNG2YEnd.x) / 100.0f).ToString("F2");
-                    txtYPointTrayNG2YEnd.Text = (PLCKey.ReadInt32(trayNG2YEnd.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(trayNG2Z.z))
-                {
-                    txtZPointTrayNG2Z.Text = (PLCKey.ReadInt32(trayNG2Z.z) / 100.0f).ToString("F2");
-                }
-
-                // Update Socket textboxes
-                if (!string.IsNullOrEmpty(socket.x))
-                {
-                    txtXPointSocket.Text = (PLCKey.ReadInt32(socket.x) / 100.0f).ToString("F2");
-                    txtYPointSocket.Text = (PLCKey.ReadInt32(socket.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(socketZLoad.z))
-                {
-                    txtZPointSocketZLoad.Text = (PLCKey.ReadInt32(socketZLoad.z) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(socketZUnload.z))
-                {
-                    txtZPointSocketZUnload.Text = (PLCKey.ReadInt32(socketZUnload.z) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(socketZReady.z))
-                {
-                    txtZPointSocketZReady.Text = (PLCKey.ReadInt32(socketZReady.z) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(socketZReadyLoad.z))
-                {
-                    txtZPointSocketZReadyLoad.Text = (PLCKey.ReadInt32(socketZReadyLoad.z) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(socketZReadyUnload.z))
-                {
-                    txtZPointSocketZReadyUnload.Text = (PLCKey.ReadInt32(socketZReadyUnload.z) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(socketFOpened.f))
-                {
-                    txtFPointSocketFOpened.Text = (PLCKey.ReadInt32(socketFOpened.f) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(socketFClosed.f))
-                {
-                    txtFPointSocketFClosed.Text = (PLCKey.ReadInt32(socketFClosed.f) / 100.0f).ToString("F2");
-                }
-
-                // Update Camera textboxes
-                if (!string.IsNullOrEmpty(camera.x))
-                {
-                    txtXPointCamera.Text = (PLCKey.ReadInt32(camera.x) / 100.0f).ToString("F2");
-                    txtYPointCamera.Text = (PLCKey.ReadInt32(camera.y) / 100.0f).ToString("F2");
-                }
-                if (!string.IsNullOrEmpty(socketCameraZ.z))
-                {
-                    txtZPointSocketCameraZ.Text = (PLCKey.ReadInt32(socketCameraZ.z) / 100.0f).ToString("F2");
-                }
-            }
-            catch (Exception ex)
-            {
-                // Silently handle errors during display update
-                // This prevents timer from crashing if PLC communication fails
-            }
         }
 
         #endregion
@@ -4231,66 +4432,14 @@ namespace PLCKeygen
         /// </summary>
         private void ReadAllTeachingPointsFromPLC(TeachingModel model)
         {
-            // Read Port 1
-            ReadPortTeachingPointsFromPLC(1, model.Port1);
-            // Read Port 2
-            ReadPortTeachingPointsFromPLC(2, model.Port2);
-            // Read Port 3
-            ReadPortTeachingPointsFromPLC(3, model.Port3);
-            // Read Port 4
-            ReadPortTeachingPointsFromPLC(4, model.Port4);
-        }
-
-        /// <summary>
-        /// Read teaching points from PLC for a specific port
-        /// </summary>
-        private void ReadPortTeachingPointsFromPLC(int port, PortTeachingPoints portPoints)
-        {
-            // Helper function to read a single teaching point (uses existing GetTeachingPointAddresses method)
-            TeachingPoint ReadPoint(string pointName)
-            {
-                var addresses = GetTeachingPointAddresses(port, pointName);
-                return new TeachingPoint(
-                    PLCKey.ReadInt32(addresses.x),  // X
-                    PLCKey.ReadInt32(addresses.y),  // Y
-                    PLCKey.ReadInt32(addresses.z),  // Z
-                    0,  // RI (not used in current implementation)
-                    0,  // RO (not used in current implementation)
-                    PLCKey.ReadInt32(addresses.f)   // F
-                );
-            }
-
-            // Tray Input (OK)
-            portPoints.TrayInputXYStart = ReadPoint("TrayInputXYStart");
-            portPoints.TrayInputXEnd = ReadPoint("TrayInputXEnd");
-            portPoints.TrayInputYEnd = ReadPoint("TrayInputYEnd");
-            portPoints.TrayInputZPosition = ReadPoint("TrayInputZ");
-
-            // Tray NG1
-            portPoints.TrayNG1XYStart = ReadPoint("TrayNG1XYStart");
-            portPoints.TrayNG1XEnd = ReadPoint("TrayNG1XEnd");
-            portPoints.TrayNG1YEnd = ReadPoint("TrayNG1YEnd");
-            portPoints.TrayNG1ZPosition = ReadPoint("TrayNG1Z");
-
-            // Tray NG2
-            portPoints.TrayNG2XYStart = ReadPoint("TrayNG2XYStart");
-            portPoints.TrayNG2XEnd = ReadPoint("TrayNG2XEnd");
-            portPoints.TrayNG2YEnd = ReadPoint("TrayNG2YEnd");
-            portPoints.TrayNG2ZPosition = ReadPoint("TrayNG2Z");
-
-            // Socket
-            portPoints.SocketXYPosition = ReadPoint("Socket");
-            portPoints.SocketZLoad = ReadPoint("SocketZLoad");
-            portPoints.SocketZUnload = ReadPoint("SocketZUnload");
-            portPoints.SocketZReady = ReadPoint("SocketZReady");
-            portPoints.SocketZReadyLoad = ReadPoint("SocketZReadyLoad");
-            portPoints.SocketZReadyUnload = ReadPoint("SocketZReadyUnload");
-            portPoints.SocketFOpened = ReadPoint("SocketFOpened");
-            portPoints.SocketFClosed = ReadPoint("SocketFClosed");
-
-            // Camera
-            portPoints.CameraXYPosition = ReadPoint("Camera");
-            portPoints.CameraZPosition = ReadPoint("SocketCameraZ");
+            //// Read Port 1
+            //ReadPortTeachingPointsFromPLC(1, model.Port1);
+            //// Read Port 2
+            //ReadPortTeachingPointsFromPLC(2, model.Port2);
+            //// Read Port 3
+            //ReadPortTeachingPointsFromPLC(3, model.Port3);
+            //// Read Port 4
+            //ReadPortTeachingPointsFromPLC(4, model.Port4);
         }
 
         /// <summary>
@@ -4298,64 +4447,16 @@ namespace PLCKeygen
         /// </summary>
         private void WriteAllTeachingPointsToPLC(TeachingModel model)
         {
-            // Write Port 1
-            WritePortTeachingPointsToPLC(1, model.Port1);
-            // Write Port 2
-            WritePortTeachingPointsToPLC(2, model.Port2);
-            // Write Port 3
-            WritePortTeachingPointsToPLC(3, model.Port3);
-            // Write Port 4
-            WritePortTeachingPointsToPLC(4, model.Port4);
+            //// Write Port 1
+            //WritePortTeachingPointsToPLC(1, model.Port1);
+            //// Write Port 2
+            //WritePortTeachingPointsToPLC(2, model.Port2);
+            //// Write Port 3
+            //WritePortTeachingPointsToPLC(3, model.Port3);
+            //// Write Port 4
+            //WritePortTeachingPointsToPLC(4, model.Port4);
         }
 
-        /// <summary>
-        /// Write teaching points to PLC for a specific port
-        /// </summary>
-        private void WritePortTeachingPointsToPLC(int port, PortTeachingPoints portPoints)
-        {
-            // Helper function to write a single teaching point (uses existing GetTeachingPointAddresses method)
-            void WritePoint(string pointName, TeachingPoint point)
-            {
-                var addresses = GetTeachingPointAddresses(port, pointName);
-                PLCKey.WriteInt32(addresses.x, point.X);
-                PLCKey.WriteInt32(addresses.y, point.Y);
-                PLCKey.WriteInt32(addresses.z, point.Z);
-                PLCKey.WriteInt32(addresses.f, point.F);
-                // RI and RO are not used in current implementation
-            }
-
-            // Tray Input (OK)
-            WritePoint("TrayInputXYStart", portPoints.TrayInputXYStart);
-            WritePoint("TrayInputXEnd", portPoints.TrayInputXEnd);
-            WritePoint("TrayInputYEnd", portPoints.TrayInputYEnd);
-            WritePoint("TrayInputZ", portPoints.TrayInputZPosition);
-
-            // Tray NG1
-            WritePoint("TrayNG1XYStart", portPoints.TrayNG1XYStart);
-            WritePoint("TrayNG1XEnd", portPoints.TrayNG1XEnd);
-            WritePoint("TrayNG1YEnd", portPoints.TrayNG1YEnd);
-            WritePoint("TrayNG1Z", portPoints.TrayNG1ZPosition);
-
-            // Tray NG2
-            WritePoint("TrayNG2XYStart", portPoints.TrayNG2XYStart);
-            WritePoint("TrayNG2XEnd", portPoints.TrayNG2XEnd);
-            WritePoint("TrayNG2YEnd", portPoints.TrayNG2YEnd);
-            WritePoint("TrayNG2Z", portPoints.TrayNG2ZPosition);
-
-            // Socket
-            WritePoint("Socket", portPoints.SocketXYPosition);
-            WritePoint("SocketZLoad", portPoints.SocketZLoad);
-            WritePoint("SocketZUnload", portPoints.SocketZUnload);
-            WritePoint("SocketZReady", portPoints.SocketZReady);
-            WritePoint("SocketZReadyLoad", portPoints.SocketZReadyLoad);
-            WritePoint("SocketZReadyUnload", portPoints.SocketZReadyUnload);
-            WritePoint("SocketFOpened", portPoints.SocketFOpened);
-            WritePoint("SocketFClosed", portPoints.SocketFClosed);
-
-            // Camera
-            WritePoint("Camera", portPoints.CameraXYPosition);
-            WritePoint("SocketCameraZ", portPoints.CameraZPosition);
-        }
 
         /// <summary>
         /// Update teaching button colors after loading model
