@@ -71,7 +71,8 @@ namespace PLCKeygen
                         {"txtLoad_Socket_Speed_XYReady", PLCAddresses.Data.P1_Load_Socket_Speed_XYReady},
                         // Socket Speed Close/Open
                         {"txtSocket_Speed_Close", PLCAddresses.Data.P1_Socket_Speed_Close},
-                        {"txtSocket_Speed_Open", PLCAddresses.Data.P1_Socket_Speed_Open}
+                        {"txtSocket_Speed_Open", PLCAddresses.Data.P1_Socket_Speed_Open},
+                        {"txtPosYReady", PLCAddresses.Data.P1_PosYReady}
                     }
                 },
                 {
@@ -112,7 +113,8 @@ namespace PLCKeygen
                         {"txtLoad_Socket_Speed_XYReady", PLCAddresses.Data.P2_Load_Socket_Speed_XYReady},
                         // Socket Speed Close/Open
                         {"txtSocket_Speed_Close", PLCAddresses.Data.P2_Socket_Speed_Close},
-                        {"txtSocket_Speed_Open", PLCAddresses.Data.P2_Socket_Speed_Open}
+                        {"txtSocket_Speed_Open", PLCAddresses.Data.P2_Socket_Speed_Open},
+                        {"txtPosYReady", PLCAddresses.Data.P2_PosYReady}
                     }
                 },
                 {
@@ -153,7 +155,8 @@ namespace PLCKeygen
                         {"txtLoad_Socket_Speed_XYReady", PLCAddresses.Data.P3_Load_Socket_Speed_XYReady},
                         // Socket Speed Close/Open
                         {"txtSocket_Speed_Close", PLCAddresses.Data.P3_Socket_Speed_Close},
-                        {"txtSocket_Speed_Open", PLCAddresses.Data.P3_Socket_Speed_Open}
+                        {"txtSocket_Speed_Open", PLCAddresses.Data.P3_Socket_Speed_Open},
+                        {"txtPosYReady", PLCAddresses.Data.P3_PosYReady}
                     }
                 },
                 {
@@ -194,7 +197,8 @@ namespace PLCKeygen
                         {"txtLoad_Socket_Speed_XYReady", PLCAddresses.Data.P4_Load_Socket_Speed_XYReady},
                         // Socket Speed Close/Open
                         {"txtSocket_Speed_Close", PLCAddresses.Data.P4_Socket_Speed_Close},
-                        {"txtSocket_Speed_Open", PLCAddresses.Data.P4_Socket_Speed_Open}
+                        {"txtSocket_Speed_Open", PLCAddresses.Data.P4_Socket_Speed_Open},
+                        {"txtPosYReady", PLCAddresses.Data.P4_PosYReady}
                     }
                 }
             };

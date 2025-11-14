@@ -222,13 +222,13 @@ namespace PLCKeygen
             btnGoPointTrayNG2Z.Click += btnGoPoint_Click;
 
             // Wire up Teaching Point buttons - Socket
-            btnSavePointSocket.Click += btnSavePoint_Click;
+            btnSavePointSocketXY.Click += btnSavePoint_Click;
             btnGoPointSocket.Click += btnGoPoint_Click;
             btnSavePointSocketZLoad.Click += btnSavePoint_Click;
             btnGoPointSocketZLoad.Click += btnGoPoint_Click;
             btnSavePointSocketZUnload.Click += btnSavePoint_Click;
             btnGoPointSocketZUnload.Click += btnGoPoint_Click;
-            btnSavePointSocketZReady.Click += btnSavePoint_Click;
+            btnSavePointSocketZReadyNone.Click += btnSavePoint_Click;
             btnGoPointSocketZReady.Click += btnGoPoint_Click;
             btnSavePointSocketZReadyLoad.Click += btnSavePoint_Click;
             btnGoPointSocketZReadyLoad.Click += btnGoPoint_Click;
@@ -240,7 +240,7 @@ namespace PLCKeygen
             btnGoPointSocketFClosed.Click += btnGoPoint_Click;
 
             // Wire up Teaching Point buttons - Camera
-            btnSavePointCamera.Click += btnSavePoint_Click;
+            btnSavePointCameraXY.Click += btnSavePoint_Click;
             btnGoPointCamera.Click += btnGoPoint_Click;
             btnSavePointSocketCameraZ.Click += btnSavePoint_Click;
             btnGoPointSocketCameraZ.Click += btnGoPoint_Click;
@@ -1487,6 +1487,8 @@ namespace PLCKeygen
 
                 // Update bypass button colors for new port
                 UpdateBypassButtonColors();
+                txtSocket_Angle.Text = "";
+                LoadDataTabValues();
             }
         }
 
@@ -3459,10 +3461,30 @@ namespace PLCKeygen
 
             // Determine which point based on button name
             string pointName = btn.Name.Replace("btn", "");
-            var addresses = GetTeachingPointAddresses(selectedPort, pointName);
-            PLCKey.SetBit(addresses);
+            if(pointName.Contains("TrayInputXYStart") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayInputXYStart"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayInputXEnd") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayInputXEnd"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayInputYEnd") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayInputYEnd"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayInputZ") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayInputZ"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayNG1XYStart") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayNG1XYStart"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayNG1XEnd") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayNG1XEnd"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayNG1YEnd") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayNG1YEnd"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayNG1Z") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayNG1Z"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayNG2XYStart") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayNG2XYStart"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayNG2XEnd") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayNG2XEnd"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayNG2YEnd") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayNG2YEnd"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("TrayNG2Z") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"TrayNG2Z"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("SocketXY") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"SocketXY"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("SocketZLoad") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"SocketZLoad"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("SocketZUnload") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"SocketZUnload"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("SocketZReadyNone") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort, "SocketZReadyNone"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("SocketZReadyLoad") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"SocketZReadyLoad"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("SocketZReadyUnload") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"SocketZReadyUnload"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("SocketFOpened") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"SocketFOpened"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("SocketFClosed") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort,"SocketFClosed"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);} 
+            if(pointName.Contains("CameraXY") ){var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort, "CameraXY"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn);}
+            if(pointName.Contains("SocketCameraZ") ){ var addressesTeachingPoint = GetTeachingPointAddresses1(selectedPort, "SocketCameraZ"); SaveTeachingPoint(addressesTeachingPoint.x, addressesTeachingPoint.y, addressesTeachingPoint.z, addressesTeachingPoint.f, btn); }
+
             UpdateTeachingPointDisplays();
-            //SaveTeachingPoint(addresses.x, addresses.y, addresses.z, addresses.f, btn);
         }
 
         // Save teaching point by name (for keyboard shortcuts)
@@ -3756,16 +3778,16 @@ namespace PLCKeygen
                 var trayNG2YEnd = GetTeachingPointAddresses1(selectedPort, "TrayNG2YEnd");
                 var trayNG2Z = GetTeachingPointAddresses1(selectedPort, "TrayNG2Z");
 
-                var socket = GetTeachingPointAddresses1(selectedPort, "Socket");
+                var socketxy = GetTeachingPointAddresses1(selectedPort, "SocketXY");
                 var socketZLoad = GetTeachingPointAddresses1(selectedPort, "SocketZLoad");
                 var socketZUnload = GetTeachingPointAddresses1(selectedPort, "SocketZUnload");
-                var socketZReady = GetTeachingPointAddresses1(selectedPort, "SocketZReady");
+                var socketZReady = GetTeachingPointAddresses1(selectedPort, "SocketZReadyNone");
                 var socketZReadyLoad = GetTeachingPointAddresses1(selectedPort, "SocketZReadyLoad");
                 var socketZReadyUnload = GetTeachingPointAddresses1(selectedPort, "SocketZReadyUnload");
                 var socketFOpened = GetTeachingPointAddresses1(selectedPort, "SocketFOpened");
                 var socketFClosed = GetTeachingPointAddresses1(selectedPort, "SocketFClosed");
 
-                var camera = GetTeachingPointAddresses1(selectedPort, "Camera");
+                var camera = GetTeachingPointAddresses1(selectedPort, "CameraXY");
                 var socketCameraZ = GetTeachingPointAddresses1(selectedPort, "SocketCameraZ");
 
                 // Update Tray Input textboxes
@@ -3832,10 +3854,10 @@ namespace PLCKeygen
                 }
 
                 // Update Socket textboxes
-                if (!string.IsNullOrEmpty(socket.x))
+                if (!string.IsNullOrEmpty(socketxy.x))
                 {
-                    txtXPointSocket.Text = (PLCKey.ReadInt32(socket.x) / 100.0f).ToString("F2");
-                    txtYPointSocket.Text = (PLCKey.ReadInt32(socket.y) / 100.0f).ToString("F2");
+                    txtXPointSocket.Text = (PLCKey.ReadInt32(socketxy.x) / 100.0f).ToString("F2");
+                    txtYPointSocket.Text = (PLCKey.ReadInt32(socketxy.y) / 100.0f).ToString("F2");
                 }
                 if (!string.IsNullOrEmpty(socketZLoad.z))
                 {
@@ -3915,13 +3937,13 @@ namespace PLCKeygen
                             return (PLCAddresses.Data.P1_TeachPoint_TrayNG2_YEnd_X, PLCAddresses.Data.P1_TeachPoint_TrayNG2_YEnd_Y, null, null);
                         case "TrayNG2Z":
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_TrayNG2_Z, null);
-                        case "Socket":
+                        case "SocketXY":
                             return (PLCAddresses.Data.P1_TeachPoint_Socket_X, PLCAddresses.Data.P1_TeachPoint_Socket_Y, null, null);
                         case "SocketZLoad":
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZLoad, null);
                         case "SocketZUnload":
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZUnload, null);
-                        case "SocketZReady":
+                        case "SocketZReadyNone":
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZReady, null);
                         case "SocketZReadyLoad":
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_Socket_ZReadyLoad, null);
@@ -3931,7 +3953,7 @@ namespace PLCKeygen
                             return (null, null, null, PLCAddresses.Data.P1_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
                             return (null, null, null, PLCAddresses.Data.P1_TeachPoint_Socket_FClosed);
-                        case "Camera":
+                        case "CameraXY":
                             return (PLCAddresses.Data.P1_TeachPoint_Camera_X, PLCAddresses.Data.P1_TeachPoint_Camera_Y, null, null);
                         case "SocketCameraZ":
                             return (null, null, PLCAddresses.Data.P1_TeachPoint_Camera_Z, null);
@@ -3964,13 +3986,13 @@ namespace PLCKeygen
                             return (PLCAddresses.Data.P2_TeachPoint_TrayNG2_YEnd_X, PLCAddresses.Data.P2_TeachPoint_TrayNG2_YEnd_Y, null, null);
                         case "TrayNG2Z":
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_TrayNG2_Z, null);
-                        case "Socket":
+                        case "SocketXY":
                             return (PLCAddresses.Data.P2_TeachPoint_Socket_X, PLCAddresses.Data.P2_TeachPoint_Socket_Y, null, null);
                         case "SocketZLoad":
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZLoad, null);
                         case "SocketZUnload":
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZUnload, null);
-                        case "SocketZReady":
+                        case "SocketZReadyNone":
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZReady, null);
                         case "SocketZReadyLoad":
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_Socket_ZReadyLoad, null);
@@ -3980,7 +4002,7 @@ namespace PLCKeygen
                             return (null, null, null, PLCAddresses.Data.P2_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
                             return (null, null, null, PLCAddresses.Data.P2_TeachPoint_Socket_FClosed);
-                        case "Camera":
+                        case "CameraXY":
                             return (PLCAddresses.Data.P2_TeachPoint_Camera_X, PLCAddresses.Data.P2_TeachPoint_Camera_Y, null, null);
                         case "SocketCameraZ":
                             return (null, null, PLCAddresses.Data.P2_TeachPoint_Camera_Z, null);
@@ -4013,13 +4035,13 @@ namespace PLCKeygen
                             return (PLCAddresses.Data.P3_TeachPoint_TrayNG2_YEnd_X, PLCAddresses.Data.P3_TeachPoint_TrayNG2_YEnd_Y, null, null);
                         case "TrayNG2Z":
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_TrayNG2_Z, null);
-                        case "Socket":
+                        case "SocketXY":
                             return (PLCAddresses.Data.P3_TeachPoint_Socket_X, PLCAddresses.Data.P3_TeachPoint_Socket_Y, null, null);
                         case "SocketZLoad":
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZLoad, null);
                         case "SocketZUnload":
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZUnload, null);
-                        case "SocketZReady":
+                        case "SocketZReadyNone":
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZReady, null);
                         case "SocketZReadyLoad":
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_Socket_ZReadyLoad, null);
@@ -4029,7 +4051,7 @@ namespace PLCKeygen
                             return (null, null, null, PLCAddresses.Data.P3_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
                             return (null, null, null, PLCAddresses.Data.P3_TeachPoint_Socket_FClosed);
-                        case "Camera":
+                        case "CameraXY":
                             return (PLCAddresses.Data.P3_TeachPoint_Camera_X, PLCAddresses.Data.P3_TeachPoint_Camera_Y, null, null);
                         case "SocketCameraZ":
                             return (null, null, PLCAddresses.Data.P3_TeachPoint_Camera_Z, null);
@@ -4062,13 +4084,13 @@ namespace PLCKeygen
                             return (PLCAddresses.Data.P4_TeachPoint_TrayNG2_YEnd_X, PLCAddresses.Data.P4_TeachPoint_TrayNG2_YEnd_Y, null, null);
                         case "TrayNG2Z":
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_TrayNG2_Z, null);
-                        case "Socket":
+                        case "SocketXY":
                             return (PLCAddresses.Data.P4_TeachPoint_Socket_X, PLCAddresses.Data.P4_TeachPoint_Socket_Y, null, null);
                         case "SocketZLoad":
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZLoad, null);
                         case "SocketZUnload":
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZUnload, null);
-                        case "SocketZReady":
+                        case "SocketZReadyNone":
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZReady, null);
                         case "SocketZReadyLoad":
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_Socket_ZReadyLoad, null);
@@ -4078,7 +4100,7 @@ namespace PLCKeygen
                             return (null, null, null, PLCAddresses.Data.P4_TeachPoint_Socket_FOpened);
                         case "SocketFClosed":
                             return (null, null, null, PLCAddresses.Data.P4_TeachPoint_Socket_FClosed);
-                        case "Camera":
+                        case "CameraXY":
                             return (PLCAddresses.Data.P4_TeachPoint_Camera_X, PLCAddresses.Data.P4_TeachPoint_Camera_Y, null, null);
                         case "SocketCameraZ":
                             return (null, null, PLCAddresses.Data.P4_TeachPoint_Camera_Z, null);
@@ -4805,7 +4827,7 @@ namespace PLCKeygen
             try
             {
                 // Set current port in DataTabManager
-                dataTabManager.SetCurrentPort(selectedDataPort);
+                dataTabManager.SetCurrentPort(selectedPort);
 
                 // Load Speed data
                 dataTabManager.LoadSpeedDataToTextBoxes(tabPage4.Controls);
@@ -4860,7 +4882,7 @@ namespace PLCKeygen
                 else if (distancePickerStep == 1)
                 {
                     // Step 1 -> Step 2: Save position 1
-                    string posAddressP1 = GetCurrentXPositionAddress(selectedDataPort);
+                    string posAddressP1 = GetCurrentXPositionAddress(selectedPort);
                     distancePickerPos1 = PLCKey.ReadInt32(posAddressP1);
 
                     distancePickerStep = 2;
@@ -4870,7 +4892,7 @@ namespace PLCKeygen
                 else if (distancePickerStep == 2)
                 {
                     // Step 2 -> Calculate and confirm
-                    string posAddressP2 = GetCurrentXPositionAddress(selectedDataPort);
+                    string posAddressP2 = GetCurrentXPositionAddress(selectedPort);
                     int distancePickerPos2 = PLCKey.ReadInt32(posAddressP2);
 
                     // Calculate distance (absolute value)
@@ -4892,7 +4914,7 @@ namespace PLCKeygen
                     if (result == DialogResult.OK)
                     {
                         // Get PLC address for RORI_Distance_X
-                        string plcAddress = GetRORI_Distance_X_Address(selectedDataPort);
+                        string plcAddress = GetRORI_Distance_X_Address(selectedPort);
 
                         // Write to PLC
                         PLCKey.WriteInt32(plcAddress, distanceRaw);
@@ -4968,5 +4990,29 @@ namespace PLCKeygen
 
         #endregion
 
+        private void btnRotaionAngle_Click(object sender, EventArgs e)
+        {
+            var angle = (int)(float.Parse(txtSocket_Angle.Text) * 10);
+            var addr = GetAddrressRotationAngle(selectedPort);
+            if (addr == "") return;
+            PLCKey.WriteInt32(addr,angle);
+            MessageBox.Show("Đã ghi thành công");
+        }
+
+        private string GetAddrressRotationAngle(int port)
+        {
+            switch (port)
+            {
+                case 1:
+                    return PLCAddresses.Data.P1_Socket_Angle;
+                case 2:
+                    return PLCAddresses.Data.P2_Socket_Angle;
+                case 3:
+                    return PLCAddresses.Data.P3_Socket_Angle;
+                case 4:
+                    return PLCAddresses.Data.P4_Socket_Angle;
+            }
+            return "";
+        }
     }
 }

@@ -1424,6 +1424,7 @@ namespace PLCKeygen
             // Speed close/open socket
             public const string P1_Socket_Speed_Close = "DM1912";
             public const string P1_Socket_Speed_Open = "DM1916";
+            public const string P1_PosYReady = "DM1816";
             #endregion
 
             // Port2
@@ -1489,6 +1490,7 @@ namespace PLCKeygen
             // Speed close/open socket
             public const string P2_Socket_Speed_Close = "DM1112";
             public const string P2_Socket_Speed_Open = "DM1116";
+            public const string P2_PosYReady = "DM1016";
             #endregion
 
             // Port3
@@ -1554,6 +1556,7 @@ namespace PLCKeygen
             // Speed close/open socket
             public const string P3_Socket_Speed_Close = "DM2312";
             public const string P3_Socket_Speed_Open = "DM2316";
+            public const string P3_PosYReady = "DM2216";
             #endregion
 
             // Port4
@@ -1619,6 +1622,7 @@ namespace PLCKeygen
             // Speed close/open socket
             public const string P4_Socket_Speed_Close = "DM1512";
             public const string P4_Socket_Speed_Open = "DM1516";
+            public const string P4_PosYReady = "DM1416";
             #endregion
 
             #region Port 1 Extended Data (Base: DM360-510, DM2000-2100, DM1800-1910)

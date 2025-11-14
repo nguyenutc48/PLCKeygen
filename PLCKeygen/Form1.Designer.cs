@@ -177,7 +177,7 @@
             this.txtYPointCamera = new System.Windows.Forms.TextBox();
             this.label107 = new System.Windows.Forms.Label();
             this.txtXPointCamera = new System.Windows.Forms.TextBox();
-            this.btnSavePointCamera = new System.Windows.Forms.Button();
+            this.btnSavePointCameraXY = new System.Windows.Forms.Button();
             this.btnGoPointCamera = new System.Windows.Forms.Button();
             this.groupBox31 = new System.Windows.Forms.GroupBox();
             this.groupBox33 = new System.Windows.Forms.GroupBox();
@@ -199,7 +199,7 @@
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label105 = new System.Windows.Forms.Label();
             this.txtZPointSocketZReady = new System.Windows.Forms.TextBox();
-            this.btnSavePointSocketZReady = new System.Windows.Forms.Button();
+            this.btnSavePointSocketZReadyNone = new System.Windows.Forms.Button();
             this.btnGoPointSocketZReady = new System.Windows.Forms.Button();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
             this.label44 = new System.Windows.Forms.Label();
@@ -221,7 +221,7 @@
             this.txtYPointSocket = new System.Windows.Forms.TextBox();
             this.label99 = new System.Windows.Forms.Label();
             this.txtXPointSocket = new System.Windows.Forms.TextBox();
-            this.btnSavePointSocket = new System.Windows.Forms.Button();
+            this.btnSavePointSocketXY = new System.Windows.Forms.Button();
             this.btnGoPointSocket = new System.Windows.Forms.Button();
             this.grpTeachingTray = new System.Windows.Forms.GroupBox();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
@@ -560,6 +560,9 @@
             this.strip = new System.Windows.Forms.StatusStrip();
             this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btnRotaionAngle = new System.Windows.Forms.Button();
+            this.label115 = new System.Windows.Forms.Label();
+            this.txtPosYReady = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -2266,7 +2269,7 @@
             this.groupBox43.Controls.Add(this.txtYPointCamera);
             this.groupBox43.Controls.Add(this.label107);
             this.groupBox43.Controls.Add(this.txtXPointCamera);
-            this.groupBox43.Controls.Add(this.btnSavePointCamera);
+            this.groupBox43.Controls.Add(this.btnSavePointCameraXY);
             this.groupBox43.Controls.Add(this.btnGoPointCamera);
             this.groupBox43.Location = new System.Drawing.Point(9, 23);
             this.groupBox43.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -2313,15 +2316,15 @@
             this.txtXPointCamera.Size = new System.Drawing.Size(70, 26);
             this.txtXPointCamera.TabIndex = 117;
             // 
-            // btnSavePointCamera
+            // btnSavePointCameraXY
             // 
-            this.btnSavePointCamera.Location = new System.Drawing.Point(22, 131);
-            this.btnSavePointCamera.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSavePointCamera.Name = "btnSavePointCamera";
-            this.btnSavePointCamera.Size = new System.Drawing.Size(117, 31);
-            this.btnSavePointCamera.TabIndex = 1;
-            this.btnSavePointCamera.Text = "Save";
-            this.btnSavePointCamera.UseVisualStyleBackColor = true;
+            this.btnSavePointCameraXY.Location = new System.Drawing.Point(22, 131);
+            this.btnSavePointCameraXY.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSavePointCameraXY.Name = "btnSavePointCameraXY";
+            this.btnSavePointCameraXY.Size = new System.Drawing.Size(117, 31);
+            this.btnSavePointCameraXY.TabIndex = 1;
+            this.btnSavePointCameraXY.Text = "Save";
+            this.btnSavePointCameraXY.UseVisualStyleBackColor = true;
             // 
             // btnGoPointCamera
             // 
@@ -2526,7 +2529,7 @@
             // 
             this.groupBox7.Controls.Add(this.label105);
             this.groupBox7.Controls.Add(this.txtZPointSocketZReady);
-            this.groupBox7.Controls.Add(this.btnSavePointSocketZReady);
+            this.groupBox7.Controls.Add(this.btnSavePointSocketZReadyNone);
             this.groupBox7.Controls.Add(this.btnGoPointSocketZReady);
             this.groupBox7.Location = new System.Drawing.Point(176, 22);
             this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -2555,15 +2558,15 @@
             this.txtZPointSocketZReady.Size = new System.Drawing.Size(70, 26);
             this.txtZPointSocketZReady.TabIndex = 113;
             // 
-            // btnSavePointSocketZReady
+            // btnSavePointSocketZReadyNone
             // 
-            this.btnSavePointSocketZReady.Location = new System.Drawing.Point(22, 132);
-            this.btnSavePointSocketZReady.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSavePointSocketZReady.Name = "btnSavePointSocketZReady";
-            this.btnSavePointSocketZReady.Size = new System.Drawing.Size(117, 31);
-            this.btnSavePointSocketZReady.TabIndex = 1;
-            this.btnSavePointSocketZReady.Text = "Save";
-            this.btnSavePointSocketZReady.UseVisualStyleBackColor = true;
+            this.btnSavePointSocketZReadyNone.Location = new System.Drawing.Point(22, 132);
+            this.btnSavePointSocketZReadyNone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSavePointSocketZReadyNone.Name = "btnSavePointSocketZReadyNone";
+            this.btnSavePointSocketZReadyNone.Size = new System.Drawing.Size(117, 31);
+            this.btnSavePointSocketZReadyNone.TabIndex = 1;
+            this.btnSavePointSocketZReadyNone.Text = "Save";
+            this.btnSavePointSocketZReadyNone.UseVisualStyleBackColor = true;
             // 
             // btnGoPointSocketZReady
             // 
@@ -2740,7 +2743,7 @@
             this.groupBox45.Controls.Add(this.txtYPointSocket);
             this.groupBox45.Controls.Add(this.label99);
             this.groupBox45.Controls.Add(this.txtXPointSocket);
-            this.groupBox45.Controls.Add(this.btnSavePointSocket);
+            this.groupBox45.Controls.Add(this.btnSavePointSocketXY);
             this.groupBox45.Controls.Add(this.btnGoPointSocket);
             this.groupBox45.Location = new System.Drawing.Point(9, 22);
             this.groupBox45.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -2787,15 +2790,15 @@
             this.txtXPointSocket.Size = new System.Drawing.Size(70, 26);
             this.txtXPointSocket.TabIndex = 109;
             // 
-            // btnSavePointSocket
+            // btnSavePointSocketXY
             // 
-            this.btnSavePointSocket.Location = new System.Drawing.Point(22, 132);
-            this.btnSavePointSocket.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSavePointSocket.Name = "btnSavePointSocket";
-            this.btnSavePointSocket.Size = new System.Drawing.Size(117, 31);
-            this.btnSavePointSocket.TabIndex = 1;
-            this.btnSavePointSocket.Text = "Save";
-            this.btnSavePointSocket.UseVisualStyleBackColor = true;
+            this.btnSavePointSocketXY.Location = new System.Drawing.Point(22, 132);
+            this.btnSavePointSocketXY.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSavePointSocketXY.Name = "btnSavePointSocketXY";
+            this.btnSavePointSocketXY.Size = new System.Drawing.Size(117, 31);
+            this.btnSavePointSocketXY.TabIndex = 1;
+            this.btnSavePointSocketXY.Text = "Save";
+            this.btnSavePointSocketXY.UseVisualStyleBackColor = true;
             // 
             // btnGoPointSocket
             // 
@@ -4614,6 +4617,8 @@
             // 
             // groupBox68
             // 
+            this.groupBox68.Controls.Add(this.label115);
+            this.groupBox68.Controls.Add(this.txtPosYReady);
             this.groupBox68.Controls.Add(this.label155);
             this.groupBox68.Controls.Add(this.txtSocket_Speed_Open);
             this.groupBox68.Controls.Add(this.label156);
@@ -5235,6 +5240,7 @@
             // 
             // groupBox62
             // 
+            this.groupBox62.Controls.Add(this.btnRotaionAngle);
             this.groupBox62.Controls.Add(this.txtSocket_Angle);
             this.groupBox62.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox62.Location = new System.Drawing.Point(1095, 120);
@@ -6318,6 +6324,33 @@
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(130, 25);
             this.toolStripStatusLabel2.Text = "PLC Connected";
             // 
+            // btnRotaionAngle
+            // 
+            this.btnRotaionAngle.Location = new System.Drawing.Point(188, 31);
+            this.btnRotaionAngle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRotaionAngle.Name = "btnRotaionAngle";
+            this.btnRotaionAngle.Size = new System.Drawing.Size(112, 42);
+            this.btnRotaionAngle.TabIndex = 3;
+            this.btnRotaionAngle.Text = "Save";
+            this.btnRotaionAngle.UseVisualStyleBackColor = true;
+            this.btnRotaionAngle.Click += new System.EventHandler(this.btnRotaionAngle_Click);
+            // 
+            // label115
+            // 
+            this.label115.AutoSize = true;
+            this.label115.Location = new System.Drawing.Point(7, 171);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(150, 25);
+            this.label115.TabIndex = 8;
+            this.label115.Text = "Tọa độ Y thu về";
+            // 
+            // txtPosYReady
+            // 
+            this.txtPosYReady.Location = new System.Drawing.Point(15, 202);
+            this.txtPosYReady.Name = "txtPosYReady";
+            this.txtPosYReady.Size = new System.Drawing.Size(79, 30);
+            this.txtPosYReady.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -6575,7 +6608,7 @@
         private System.Windows.Forms.Button btnSavePointSocketZLoad;
         private System.Windows.Forms.Button btnGoPointSocketZLoad;
         private System.Windows.Forms.GroupBox groupBox45;
-        private System.Windows.Forms.Button btnSavePointSocket;
+        private System.Windows.Forms.Button btnSavePointSocketXY;
         private System.Windows.Forms.Button btnGoPointSocket;
         private System.Windows.Forms.GroupBox grpTeachingTray;
         private System.Windows.Forms.GroupBox groupBox16;
@@ -6655,7 +6688,7 @@
         private System.Windows.Forms.Button btnSavePointSocketCameraZ;
         private System.Windows.Forms.Button btnGoPointSocketCameraZ;
         private System.Windows.Forms.GroupBox groupBox43;
-        private System.Windows.Forms.Button btnSavePointCamera;
+        private System.Windows.Forms.Button btnSavePointCameraXY;
         private System.Windows.Forms.Button btnGoPointCamera;
         private System.Windows.Forms.Button btnResetAll;
         private System.Windows.Forms.GroupBox groupBox46;
@@ -6811,7 +6844,7 @@
         private System.Windows.Forms.TextBox txtXPointCamera;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.TextBox txtZPointSocketZReady;
-        private System.Windows.Forms.Button btnSavePointSocketZReady;
+        private System.Windows.Forms.Button btnSavePointSocketZReadyNone;
         private System.Windows.Forms.Button btnGoPointSocketZReady;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.Label XYR1Cam2;
@@ -7007,6 +7040,9 @@
         private System.Windows.Forms.TextBox txtUnload_Socket_Speed_XYReady;
         private System.Windows.Forms.Label lblCurrentPortIOTab;
         private System.Windows.Forms.Label lblCurrentPortIOData;
+        private System.Windows.Forms.Button btnRotaionAngle;
+        private System.Windows.Forms.Label label115;
+        private System.Windows.Forms.TextBox txtPosYReady;
     }
 }
 
