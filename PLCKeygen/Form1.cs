@@ -191,6 +191,83 @@ namespace PLCKeygen
             txtTargetPos.KeyPress += SpeedStepTextBox_KeyPress;
             txtTargetPos.KeyDown += TxtTargetPos_KeyDown;
 
+            // Wire up Teaching Point textbox events for validation and auto-save
+            // Tray Input
+            txtXPointTrayInputXYStart.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointTrayInputXYStart.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointTrayInputXYStart.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointTrayInputXYStart.KeyDown += TeachingTextBox_KeyDown;
+            txtXPointTrayInputXEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointTrayInputXEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointTrayInputXEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointTrayInputXEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtXPointTrayInputYEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointTrayInputYEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointTrayInputYEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointTrayInputYEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtZPointTrayInputZ.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZPointTrayInputZ.KeyDown += TeachingTextBox_KeyDown;
+
+            // Tray NG1
+            txtXPointTrayNG1XYStart.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointTrayNG1XYStart.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointTrayNG1XYStart.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointTrayNG1XYStart.KeyDown += TeachingTextBox_KeyDown;
+            txtXPointTrayNG1XEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointTrayNG1XEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointTrayNG1XEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointTrayNG1XEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtXPointTrayNG1YEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointTrayNG1YEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointTrayNG1YEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointTrayNG1YEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtZPointTrayNG1Z.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZPointTrayNG1Z.KeyDown += TeachingTextBox_KeyDown;
+
+            // Tray NG2
+            txtXPointTrayNG2XYStart.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointTrayNG2XYStart.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointTrayNG2XYStart.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointTrayNG2XYStart.KeyDown += TeachingTextBox_KeyDown;
+            txtXPointTrayNG2XEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointTrayNG2XEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointTrayNG2XEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointTrayNG2XEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtXPointTrayNG2YEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointTrayNG2YEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointTrayNG2YEnd.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointTrayNG2YEnd.KeyDown += TeachingTextBox_KeyDown;
+            txtZPointTrayNG2Z.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZPointTrayNG2Z.KeyDown += TeachingTextBox_KeyDown;
+
+            // Socket
+            txtXPointSocket.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointSocket.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointSocket.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointSocket.KeyDown += TeachingTextBox_KeyDown;
+            txtZPointSocketZLoad.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZPointSocketZLoad.KeyDown += TeachingTextBox_KeyDown;
+            txtZPointSocketZUnload.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZPointSocketZUnload.KeyDown += TeachingTextBox_KeyDown;
+            txtZPointSocketZReady.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZPointSocketZReady.KeyDown += TeachingTextBox_KeyDown;
+            txtZPointSocketZReadyLoad.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZPointSocketZReadyLoad.KeyDown += TeachingTextBox_KeyDown;
+            txtZPointSocketZReadyUnload.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZPointSocketZReadyUnload.KeyDown += TeachingTextBox_KeyDown;
+            txtFPointSocketFOpened.KeyPress += SpeedStepTextBox_KeyPress;
+            txtFPointSocketFOpened.KeyDown += TeachingTextBox_KeyDown;
+            txtFPointSocketFClosed.KeyPress += SpeedStepTextBox_KeyPress;
+            txtFPointSocketFClosed.KeyDown += TeachingTextBox_KeyDown;
+
+            // Camera
+            txtXPointCamera.KeyPress += SpeedStepTextBox_KeyPress;
+            txtXPointCamera.KeyDown += TeachingTextBox_KeyDown;
+            txtYPointCamera.KeyPress += SpeedStepTextBox_KeyPress;
+            txtYPointCamera.KeyDown += TeachingTextBox_KeyDown;
+            txtZPointSocketCameraZ.KeyPress += SpeedStepTextBox_KeyPress;
+            txtZPointSocketCameraZ.KeyDown += TeachingTextBox_KeyDown;
+
             // Wire up Teaching Point buttons - Tray Input (OK)
             btnSavePointTrayInputXYStart.Click += btnSavePoint_Click;
             btnGoPointTrayInputXYStart.Click += btnGoPoint_Click;
@@ -393,8 +470,8 @@ namespace PLCKeygen
             UpdateIOInputs();
             UpdateIOOutputs();
 
-            // Update teaching point displays
-            UpdateTeachingPointDisplays();
+            // Note: UpdateTeachingPointDisplays() removed from timer to allow manual editing
+            // It will only update when port changes or after saving teaching points
 
             // Update bypass button colors
             UpdateBypassButtonColors();
@@ -499,6 +576,9 @@ namespace PLCKeygen
 
             // Initialize Data Tab
             InitializeDataTab();
+
+            // Load initial teaching point displays
+            UpdateTeachingPointDisplays();
         }
 
         /// <summary>
@@ -1489,6 +1569,9 @@ namespace PLCKeygen
                 UpdateBypassButtonColors();
                 txtSocket_Angle.Text = "";
                 LoadDataTabValues();
+
+                // Update teaching point displays for new port
+                UpdateTeachingPointDisplays();
             }
         }
 
@@ -4228,6 +4311,172 @@ namespace PLCKeygen
             if (txt == txtFStep) return GetStepAddress(selectedPort, "F");
 
             return null;
+        }
+
+        // Get PLC address for a specific Teaching Point textbox
+        private string GetTeachingPointAddress(System.Windows.Forms.TextBox txt)
+        {
+            // Tray Input
+            if (txt == txtXPointTrayInputXYStart || txt == txtYPointTrayInputXYStart)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "TrayInputXYStart");
+                return txt == txtXPointTrayInputXYStart ? addr.x : addr.y;
+            }
+            if (txt == txtXPointTrayInputXEnd || txt == txtYPointTrayInputXEnd)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "TrayInputXEnd");
+                return txt == txtXPointTrayInputXEnd ? addr.x : addr.y;
+            }
+            if (txt == txtXPointTrayInputYEnd || txt == txtYPointTrayInputYEnd)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "TrayInputYEnd");
+                return txt == txtXPointTrayInputYEnd ? addr.x : addr.y;
+            }
+            if (txt == txtZPointTrayInputZ)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "TrayInputZ").z;
+            }
+
+            // Tray NG1
+            if (txt == txtXPointTrayNG1XYStart || txt == txtYPointTrayNG1XYStart)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "TrayNG1XYStart");
+                return txt == txtXPointTrayNG1XYStart ? addr.x : addr.y;
+            }
+            if (txt == txtXPointTrayNG1XEnd || txt == txtYPointTrayNG1XEnd)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "TrayNG1XEnd");
+                return txt == txtXPointTrayNG1XEnd ? addr.x : addr.y;
+            }
+            if (txt == txtXPointTrayNG1YEnd || txt == txtYPointTrayNG1YEnd)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "TrayNG1YEnd");
+                return txt == txtXPointTrayNG1YEnd ? addr.x : addr.y;
+            }
+            if (txt == txtZPointTrayNG1Z)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "TrayNG1Z").z;
+            }
+
+            // Tray NG2
+            if (txt == txtXPointTrayNG2XYStart || txt == txtYPointTrayNG2XYStart)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "TrayNG2XYStart");
+                return txt == txtXPointTrayNG2XYStart ? addr.x : addr.y;
+            }
+            if (txt == txtXPointTrayNG2XEnd || txt == txtYPointTrayNG2XEnd)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "TrayNG2XEnd");
+                return txt == txtXPointTrayNG2XEnd ? addr.x : addr.y;
+            }
+            if (txt == txtXPointTrayNG2YEnd || txt == txtYPointTrayNG2YEnd)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "TrayNG2YEnd");
+                return txt == txtXPointTrayNG2YEnd ? addr.x : addr.y;
+            }
+            if (txt == txtZPointTrayNG2Z)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "TrayNG2Z").z;
+            }
+
+            // Socket
+            if (txt == txtXPointSocket || txt == txtYPointSocket)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "SocketXY");
+                return txt == txtXPointSocket ? addr.x : addr.y;
+            }
+            if (txt == txtZPointSocketZLoad)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "SocketZLoad").z;
+            }
+            if (txt == txtZPointSocketZUnload)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "SocketZUnload").z;
+            }
+            if (txt == txtZPointSocketZReady)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "SocketZReadyNone").z;
+            }
+            if (txt == txtZPointSocketZReadyLoad)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "SocketZReadyLoad").z;
+            }
+            if (txt == txtZPointSocketZReadyUnload)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "SocketZReadyUnload").z;
+            }
+            if (txt == txtFPointSocketFOpened)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "SocketFOpened").f;
+            }
+            if (txt == txtFPointSocketFClosed)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "SocketFClosed").f;
+            }
+
+            // Camera
+            if (txt == txtXPointCamera || txt == txtYPointCamera)
+            {
+                var addr = GetTeachingPointAddresses1(selectedPort, "CameraXY");
+                return txt == txtXPointCamera ? addr.x : addr.y;
+            }
+            if (txt == txtZPointSocketCameraZ)
+            {
+                return GetTeachingPointAddresses1(selectedPort, "SocketCameraZ").z;
+            }
+
+            return null;
+        }
+
+        // Event handler for Teaching Point textbox KeyDown (Enter key to save)
+        private void TeachingTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode != Keys.Enter)
+                return;
+
+            System.Windows.Forms.TextBox txt = sender as System.Windows.Forms.TextBox;
+            if (txt == null) return;
+
+            try
+            {
+                // Parse the value and multiply by 100, truncate to 2 decimal places
+                if (!double.TryParse(txt.Text, out double value))
+                {
+                    MessageBox.Show("Giá trị không hợp lệ!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Round to 2 decimal places and convert to integer (multiply by 100)
+                int plcValue = (int)(Math.Round(value, 2) * 100);
+
+                // Determine which textbox and get corresponding PLC address
+                string plcAddress = GetTeachingPointAddress(txt);
+                if (string.IsNullOrEmpty(plcAddress))
+                {
+                    MessageBox.Show("Không tìm thấy địa chỉ PLC!", "Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Write to PLC
+                PLCKey.WriteInt32(plcAddress, plcValue);
+
+                // Update textbox with properly formatted value (2 decimals)
+                txt.Text = value.ToString("F2");
+
+                // Move focus away from textbox
+                this.ActiveControl = null;
+
+                // Show success message
+                MessageBox.Show($"Đã ghi thành công: {value:F2} (PLC value: {plcValue})", "Success",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi ghi xuống PLC: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #endregion
