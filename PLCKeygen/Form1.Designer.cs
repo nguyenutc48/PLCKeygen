@@ -71,8 +71,6 @@
             this.btnResetAll = new System.Windows.Forms.Button();
             this.grbJogControl = new System.Windows.Forms.GroupBox();
             this.groupBox34 = new System.Windows.Forms.GroupBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.btnAutoDisable = new System.Windows.Forms.Button();
             this.btnChartDisable = new System.Windows.Forms.Button();
             this.btnDryRunMode = new System.Windows.Forms.Button();
@@ -1093,8 +1091,6 @@
             // 
             // groupBox34
             // 
-            this.groupBox34.Controls.Add(this.button5);
-            this.groupBox34.Controls.Add(this.button6);
             this.groupBox34.Controls.Add(this.btnAutoDisable);
             this.groupBox34.Controls.Add(this.btnChartDisable);
             this.groupBox34.Controls.Add(this.btnDryRunMode);
@@ -1109,24 +1105,6 @@
             this.groupBox34.TabIndex = 124;
             this.groupBox34.TabStop = false;
             this.groupBox34.Text = "By Pass Setting";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(136, 78);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(60, 35);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Auto";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(136, 31);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 35);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "Chart";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // btnAutoDisable
             // 
@@ -7065,8 +7043,6 @@
         private System.Windows.Forms.Button btnRotaionAngle;
         private System.Windows.Forms.Label label115;
         private System.Windows.Forms.TextBox txtPosYReady;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
     }
 }
 

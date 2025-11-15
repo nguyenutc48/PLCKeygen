@@ -1425,6 +1425,10 @@ namespace PLCKeygen
             public const string P1_Socket_Speed_Close = "DM1912";
             public const string P1_Socket_Speed_Open = "DM1916";
             public const string P1_PosYReady = "DM1816";
+            public const string P1_Alarm_Code_Warning = "TM74";
+            public const string P1_Alarm_Code_Error = "TM75";
+            public const string P1_Alarm_Code_Infor = "TM82";
+            
             #endregion
 
             // Port2
@@ -1491,6 +1495,9 @@ namespace PLCKeygen
             public const string P2_Socket_Speed_Close = "DM1112";
             public const string P2_Socket_Speed_Open = "DM1116";
             public const string P2_PosYReady = "DM1016";
+            public const string P2_Alarm_Code_Warning = "TM70";
+            public const string P2_Alarm_Code_Error = "TM71";
+            public const string P2_Alarm_Code_Infor = "TM80";
             #endregion
 
             // Port3
@@ -1557,6 +1564,9 @@ namespace PLCKeygen
             public const string P3_Socket_Speed_Close = "DM2312";
             public const string P3_Socket_Speed_Open = "DM2316";
             public const string P3_PosYReady = "DM2216";
+            public const string P3_Alarm_Code_Warning = "TM76";
+            public const string P3_Alarm_Code_Error = "TM76";
+            public const string P3_Alarm_Code_Infor = "TM83";
             #endregion
 
             // Port4
@@ -1623,6 +1633,9 @@ namespace PLCKeygen
             public const string P4_Socket_Speed_Close = "DM1512";
             public const string P4_Socket_Speed_Open = "DM1516";
             public const string P4_PosYReady = "DM1416";
+            public const string P4_Alarm_Code_Warning = "TM72";
+            public const string P4_Alarm_Code_Error = "TM73";
+            public const string P4_Alarm_Code_Infor = "TM81";
             #endregion
 
             #region Port 1 Extended Data (Base: DM360-510, DM2000-2100, DM1800-1910)
@@ -2110,7 +2123,6 @@ namespace PLCKeygen
             public const string Data_NG4 = "DM960";
 
             #endregion
-
         }
 
     }

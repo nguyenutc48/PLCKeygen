@@ -49,6 +49,9 @@ namespace PLCKeygen
         private int distancePickerStep = 0;  // 0=Initial, 1=Position1, 2=Position2
         private int distancePickerPos1 = 0;  // First position X value
 
+        // Track last shown alarm/error to prevent repeated popups
+        private readonly Dictionary<string, int> lastShownAlarms = new Dictionary<string, int>();
+
         public Form1()
         {
             InitializeComponent();
@@ -475,6 +478,9 @@ namespace PLCKeygen
 
             // Update bypass button colors
             UpdateBypassButtonColors();
+
+            // Check and display alarms/errors/status for all ports
+            CheckAndDisplayAlarms();
         }
 
 
@@ -1567,7 +1573,6 @@ namespace PLCKeygen
 
                 // Update bypass button colors for new port
                 UpdateBypassButtonColors();
-                txtSocket_Angle.Text = "";
                 LoadDataTabValues();
 
                 // Update teaching point displays for new port
@@ -5334,5 +5339,143 @@ namespace PLCKeygen
             }
             return "";
         }
+
+        #region Alarm/Error/Status Monitoring
+
+        /// <summary>
+        /// Get alarm code address for specific port
+        /// </summary>
+        private string GetAlarmCodeAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Data.P1_Alarm_Code_Warning;
+                case 2: return PLCAddresses.Data.P2_Alarm_Code_Warning;
+                case 3: return PLCAddresses.Data.P3_Alarm_Code_Warning;
+                case 4: return PLCAddresses.Data.P4_Alarm_Code_Warning;
+                default: return null;
+            }
+        }
+
+        /// <summary>
+        /// Get error code address for specific port
+        /// </summary>
+        private string GetErrorCodeAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Data.P1_Alarm_Code_Error;
+                case 2: return PLCAddresses.Data.P2_Alarm_Code_Error;
+                case 3: return PLCAddresses.Data.P3_Alarm_Code_Error;
+                case 4: return PLCAddresses.Data.P4_Alarm_Code_Error;
+                default: return null;
+            }
+        }
+
+        /// <summary>
+        /// Get status code address for specific port
+        /// </summary>
+        private string GetStatusCodeAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Data.P1_Alarm_Code_Infor;
+                case 2: return PLCAddresses.Data.P2_Alarm_Code_Infor;
+                case 3: return PLCAddresses.Data.P3_Alarm_Code_Infor;
+                case 4: return PLCAddresses.Data.P4_Alarm_Code_Infor;
+                default: return null;
+            }
+        }
+
+        /// <summary>
+        /// Check and display alarms/errors for current selected port only
+        /// Called from timer1_Tick
+        /// </summary>
+        private void CheckAndDisplayAlarms()
+        {
+            try
+            {
+                // Only check alarms for the currently selected port
+                int port = selectedPort;
+
+                // Read alarm code (warning)
+                string alarmAddr = GetAlarmCodeAddress(port);
+                if (!string.IsNullOrEmpty(alarmAddr))
+                {
+                    int alarmCode = PLCKey.ReadInt32(alarmAddr);
+                    if (alarmCode > 0)
+                    {
+                        string alarmMessage = AlarmErrorMessages.GetAlarmMessage(alarmCode);
+                        ShowAlarmNotification(port, "CẢNH BÁO", alarmMessage, alarmCode);
+                    }
+                }
+
+                // Read error code
+                string errorAddr = GetErrorCodeAddress(port);
+                if (!string.IsNullOrEmpty(errorAddr))
+                {
+                    int errorCode = PLCKey.ReadInt32(errorAddr);
+                    if (errorCode > 0)
+                    {
+                        string errorMessage = AlarmErrorMessages.GetErrorMessage(errorCode);
+                        ShowAlarmNotification(port, "LỖI", errorMessage, errorCode);
+                    }
+                }
+
+                // Read status code (info)
+                string statusAddr = GetStatusCodeAddress(port);
+                if (!string.IsNullOrEmpty(statusAddr))
+                {
+                    int statusCode = PLCKey.ReadInt32(statusAddr);
+                    if (statusCode > 0)
+                    {
+                        string statusMessage = AlarmErrorMessages.GetStatusMessage(statusCode);
+                        UpdateStatusDisplay(port, statusMessage, statusCode);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Ignore errors during alarm check to prevent timer crash
+                System.Diagnostics.Debug.WriteLine($"Error checking alarms: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Show alarm notification (warning or error level)
+        /// Only shows popup if alarm code changed
+        /// </summary>
+        private void ShowAlarmNotification(int port, string level, string message, int code)
+        {
+            string key = $"Port{port}_{level}";
+
+            // Only show popup if this is a new alarm or code changed
+            if (!lastShownAlarms.ContainsKey(key) || lastShownAlarms[key] != code)
+            {
+                lastShownAlarms[key] = code;
+
+                // Show popup notification
+                string title = $"{level} - Port {port}";
+                MessageBox.Show(
+                    $"Port {port}: {message}\n\nMã: {code}",
+                    title,
+                    MessageBoxButtons.OK,
+                    level == "LỖI" ? MessageBoxIcon.Error : MessageBoxIcon.Warning
+                );
+            }
+        }
+
+        /// <summary>
+        /// Update status display (info level - no popup)
+        /// TODO: Update status label or textbox in UI
+        /// </summary>
+        private void UpdateStatusDisplay(int port, string message, int code)
+        {
+            // For now, just write to debug output
+            // Later can update a status label on the form
+            System.Diagnostics.Debug.WriteLine($"Port {port} Status: {message} (Code: {code})");
+        }
+
+        #endregion
     }
 }
