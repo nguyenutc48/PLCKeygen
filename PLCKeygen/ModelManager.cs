@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
@@ -37,11 +38,50 @@ namespace PLCKeygen
         }
 
         /// <summary>
+        /// Get model by port and ID
+        /// </summary>
+        public TeachingModel GetModelByPortAndID(int portNumber, int modelID)
+        {
+            return modelCollection.FindModelByPortAndID(portNumber, modelID);
+        }
+
+        /// <summary>
+        /// Get model by ID (deprecated)
+        /// </summary>
+        public TeachingModel GetModelByID(int modelID)
+        {
+            return modelCollection.FindModelByID(modelID);
+        }
+
+        /// <summary>
         /// Get model by name
         /// </summary>
         public TeachingModel GetModel(string modelName)
         {
             return modelCollection.FindModel(modelName);
+        }
+
+        /// <summary>
+        /// Get or create model by port and ID with default name
+        /// </summary>
+        public TeachingModel GetOrCreateModelByPortAndID(int portNumber, int modelID)
+        {
+            var model = GetModelByPortAndID(portNumber, modelID);
+            if (model == null)
+            {
+                // Create default model name
+                string defaultName = $"Model {modelID}";
+                model = new TeachingModel(portNumber, modelID, defaultName);
+            }
+            return model;
+        }
+
+        /// <summary>
+        /// Get all models for a specific port
+        /// </summary>
+        public List<TeachingModel> GetModelsForPort(int portNumber)
+        {
+            return modelCollection.GetModelsForPort(portNumber);
         }
 
         /// <summary>

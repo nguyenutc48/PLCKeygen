@@ -1572,6 +1572,12 @@ namespace PLCKeygen
 
                 // Update teaching point displays for new port
                 UpdateTeachingPointDisplays();
+
+                // Reload model list for new port if in Teaching mode
+                if (rbtTeachingMode.Checked)
+                {
+                    LoadCurrentModelFromPLC();
+                }
             }
         }
 
@@ -2273,6 +2279,9 @@ namespace PLCKeygen
                         btnModelAdd.Enabled = true;
                         btnModelDelete.Enabled = true;
                         btnModelLoad.Enabled = true;
+
+                        // Load current model ID from PLC and populate ComboBox
+                        LoadCurrentModelFromPLC();
                     }
                     else if (password != null)  // User didn't cancel
                     {
@@ -3174,6 +3183,45 @@ namespace PLCKeygen
 
         #region Teaching Mode Functions
 
+        // Helper: Get ID_Job address based on port
+        private string GetIDJobAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Data.P1_ID_Job;
+                case 2: return PLCAddresses.Data.P2_ID_Job;
+                case 3: return PLCAddresses.Data.P3_ID_Job;
+                case 4: return PLCAddresses.Data.P4_ID_Job;
+                default: return null;
+            }
+        }
+
+        // Helper: Get Rq_Call_Model address based on port
+        private string GetRqCallModelAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Output.P1_Rq_Call_Model;
+                case 2: return PLCAddresses.Output.P2_Rq_Call_Model;
+                case 3: return PLCAddresses.Output.P3_Rq_Call_Model;
+                case 4: return PLCAddresses.Output.P4_Rq_Call_Model;
+                default: return null;
+            }
+        }
+
+        // Helper: Get Rq_Save_Model address based on port
+        private string GetRqSaveModelAddress(int port)
+        {
+            switch (port)
+            {
+                case 1: return PLCAddresses.Output.P1_Rq_Save_Model;
+                case 2: return PLCAddresses.Output.P2_Rq_Save_Model;
+                case 3: return PLCAddresses.Output.P3_Rq_Save_Model;
+                case 4: return PLCAddresses.Output.P4_Rq_Save_Model;
+                default: return null;
+            }
+        }
+
         // Helper: Get current position address based on port and axis
         private string GetCurrentPositionAddress(int port, string axis)
         {
@@ -3248,6 +3296,13 @@ namespace PLCKeygen
                 if (saveButton != null)
                 {
                     saveButton.BackColor = Color.LightGreen;
+                }
+
+                // Auto setbit Rq_Save_Model to save the current model in PLC
+                string rqSaveModelAddr = GetRqSaveModelAddress(selectedPort);
+                if (!string.IsNullOrEmpty(rqSaveModelAddr))
+                {
+                    PLCKey.SetBit(rqSaveModelAddr);
                 }
 
                 MessageBox.Show("Đã lưu tọa độ teaching thành công!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -4462,6 +4517,13 @@ namespace PLCKeygen
                 // Write to PLC
                 PLCKey.WriteInt32(plcAddress, plcValue);
 
+                // Auto setbit Rq_Save_Model to save the current model in PLC
+                string rqSaveModelAddr = GetRqSaveModelAddress(selectedPort);
+                if (!string.IsNullOrEmpty(rqSaveModelAddr))
+                {
+                    PLCKey.SetBit(rqSaveModelAddr);
+                }
+
                 // Update textbox with properly formatted value (2 decimals)
                 txt.Text = value.ToString("F2");
 
@@ -4494,6 +4556,67 @@ namespace PLCKeygen
         #region Model Management
 
         /// <summary>
+        /// Load current model ID from PLC and populate ComboBox with all available models
+        /// </summary>
+        private void LoadCurrentModelFromPLC()
+        {
+            try
+            {
+                // Read current model ID from PLC for selected port
+                string idJobAddr = GetIDJobAddress(selectedPort);
+                if (string.IsNullOrEmpty(idJobAddr))
+                {
+                    return;
+                }
+
+                int currentModelID = PLCKey.ReadInt32(idJobAddr);
+
+                // Validate model ID (0-100)
+                if (currentModelID < 1 || currentModelID > 100)
+                {
+                    currentModelID = 1; // Default to model 1
+                }
+
+                // Get or create model for this port and ID
+                var currentModel = modelManager.GetOrCreateModelByPortAndID(selectedPort, currentModelID);
+
+                // Clear and populate ComboBox with models for this port only
+                cbbModel.Items.Clear();
+
+                // Get all models for current port
+                var portModels = modelManager.GetModelsForPort(selectedPort);
+
+                // Add saved models to ComboBox
+                foreach (var model in portModels)
+                {
+                    cbbModel.Items.Add($"[{model.ModelID}] {model.ModelName}");
+                }
+
+                // Also add current model if not already in the list
+                if (!modelManager.GetAllModels().ModelIDExists(selectedPort, currentModelID))
+                {
+                    cbbModel.Items.Insert(0, $"[{currentModelID}] {currentModel.ModelName}");
+                }
+
+                // Select current model in ComboBox
+                for (int i = 0; i < cbbModel.Items.Count; i++)
+                {
+                    string item = cbbModel.Items[i].ToString();
+                    if (item.StartsWith($"[{currentModelID}]"))
+                    {
+                        cbbModel.SelectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi đọc Model ID từ PLC: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
         /// Refresh ComboBox with available models
         /// </summary>
         private void RefreshModelComboBox()
@@ -4509,51 +4632,59 @@ namespace PLCKeygen
         }
 
         /// <summary>
-        /// Add new model button click handler
+        /// Rename current model button click handler
         /// </summary>
         private void btnModelAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                // Prompt for model name
-                string modelName = ModelNameInputDialog.Show(
-                    "Nhập tên model:",
-                    "Thêm Model Mới",
-                    this);
+                // Read current model ID from PLC
+                string idJobAddr = GetIDJobAddress(selectedPort);
+                if (string.IsNullOrEmpty(idJobAddr))
+                {
+                    MessageBox.Show("Không thể đọc Model ID từ PLC!", "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                if (string.IsNullOrWhiteSpace(modelName))
+                int currentModelID = PLCKey.ReadInt32(idJobAddr);
+
+                // Validate model ID (1-100)
+                if (currentModelID < 1 || currentModelID > 100)
+                {
+                    MessageBox.Show($"Model ID không hợp lệ: {currentModelID}. ID phải từ 1-100.",
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Get current model or create new one for this port
+                var currentModel = modelManager.GetOrCreateModelByPortAndID(selectedPort, currentModelID);
+                string currentName = currentModel.ModelName;
+
+                // Prompt for new model name
+                string newModelName = ModelNameInputDialog.Show(
+                    $"Nhập tên mới cho Port {selectedPort} - Model ID {currentModelID}:",
+                    "Đổi Tên Model",
+                    this,
+                    currentName);
+
+                if (string.IsNullOrWhiteSpace(newModelName))
                 {
                     return;  // User cancelled or entered empty name
                 }
 
-                // Check if model already exists
-                if (modelManager.ModelExists(modelName))
-                {
-                    MessageBox.Show(
-                        $"Model '{modelName}' đã tồn tại!",
-                        "Lỗi",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
-                    return;
-                }
+                // Update model name
+                currentModel.ModelName = newModelName;
+                currentModel.LastModified = DateTime.Now;
 
-                // Read all current teaching points from PLC
-                var model = new TeachingModel(modelName);
+                // Save or update model
+                modelManager.SaveOrUpdateModel(currentModel);
 
-                // Read teaching points for all 4 ports
-                ReadAllTeachingPointsFromPLC(model);
-
-                // Save model
-                modelManager.SaveModel(model);
-
-                // Refresh ComboBox
-                RefreshModelComboBox();
-
-                // Select the newly added model
-                cbbModel.SelectedItem = modelName;
+                // Reload ComboBox with updated model list
+                LoadCurrentModelFromPLC();
 
                 MessageBox.Show(
-                    $"Model '{modelName}' đã được lưu thành công!",
+                    $"Port {selectedPort} - Model ID {currentModelID} đã được đổi tên thành '{newModelName}'!",
                     "Thành công",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -4561,7 +4692,7 @@ namespace PLCKeygen
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Lỗi khi thêm model: {ex.Message}",
+                    $"Lỗi khi đổi tên model: {ex.Message}",
                     "Lỗi",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -4569,34 +4700,58 @@ namespace PLCKeygen
         }
 
         /// <summary>
-        /// Model selection changed handler
+        /// Model selection changed handler - Write ID to PLC and call model
         /// </summary>
         private void cbbModel_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Chỉ cho phép chọn model, không tự động load
-            // User phải nhấn btnModelLoad để thực sự load model vào PLC
+            if (cbbModel.SelectedItem == null)
+                return;
+
+            try
+            {
+                // Extract model ID from selected item "[ID] Name"
+                string selectedText = cbbModel.SelectedItem.ToString();
+                int startIdx = selectedText.IndexOf('[');
+                int endIdx = selectedText.IndexOf(']');
+
+                if (startIdx >= 0 && endIdx > startIdx)
+                {
+                    string idStr = selectedText.Substring(startIdx + 1, endIdx - startIdx - 1);
+                    if (int.TryParse(idStr, out int modelID))
+                    {
+                        // Write model ID to PLC
+                        string idJobAddr = GetIDJobAddress(selectedPort);
+                        if (!string.IsNullOrEmpty(idJobAddr))
+                        {
+                            PLCKey.WriteInt32(idJobAddr, modelID);
+
+                            // Setbit Rq_Call_Model to trigger PLC to load coordinates
+                            string rqCallModelAddr = GetRqCallModelAddress(selectedPort);
+                            if (!string.IsNullOrEmpty(rqCallModelAddr))
+                            {
+                                PLCKey.SetBit(rqCallModelAddr);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi chuyển model: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
-        /// Load model button click handler
+        /// Save Model button click handler - Trigger PLC to save current teaching coordinates
         /// </summary>
         private void btnModelLoad_Click(object sender, EventArgs e)
         {
-            if (cbbModel.SelectedItem == null)
-            {
-                MessageBox.Show(
-                    "Vui lòng chọn model cần load!",
-                    "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                return;
-            }
-
-            // Chỉ cho phép load model khi ở chế độ Teaching
+            // Chỉ cho phép save khi ở chế độ Teaching
             if (!rbtTeachingMode.Checked)
             {
                 MessageBox.Show(
-                    "Vui lòng chuyển sang chế độ Teaching trước khi load model!",
+                    "Vui lòng chuyển sang chế độ Teaching trước!",
                     "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
@@ -4605,46 +4760,23 @@ namespace PLCKeygen
 
             try
             {
-                string modelName = cbbModel.SelectedItem.ToString();
-                var model = modelManager.GetModel(modelName);
-
-                if (model == null)
+                // Setbit Rq_Save_Model to trigger PLC to save current teaching coordinates
+                string rqSaveModelAddr = GetRqSaveModelAddress(selectedPort);
+                if (!string.IsNullOrEmpty(rqSaveModelAddr))
                 {
-                    MessageBox.Show(
-                        $"Không tìm thấy model '{modelName}'!",
-                        "Lỗi",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Confirm before loading
-                var result = MessageBox.Show(
-                    $"Bạn có muốn load teaching points từ model '{modelName}'?\n\n" +
-                    $"Thao tác này sẽ ghi đè các teaching points hiện tại trong PLC.",
-                    "Xác nhận",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
-                {
-                    // Write all teaching points to PLC
-                    WriteAllTeachingPointsToPLC(model);
+                    PLCKey.SetBit(rqSaveModelAddr);
 
                     MessageBox.Show(
-                        $"Model '{modelName}' đã được load thành công!",
+                        "Đã yêu cầu PLC lưu tọa độ teaching cho model hiện tại!",
                         "Thành công",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
-
-                    // Update button colors to reflect loaded points
-                    UpdateTeachingButtonColors();
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Lỗi khi load model: {ex.Message}",
+                    $"Lỗi khi lưu model: {ex.Message}",
                     "Lỗi",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -4698,67 +4830,6 @@ namespace PLCKeygen
             }
         }
 
-        /// <summary>
-        /// Read all teaching points from PLC for all 4 ports
-        /// </summary>
-        private void ReadAllTeachingPointsFromPLC(TeachingModel model)
-        {
-            //// Read Port 1
-            //ReadPortTeachingPointsFromPLC(1, model.Port1);
-            //// Read Port 2
-            //ReadPortTeachingPointsFromPLC(2, model.Port2);
-            //// Read Port 3
-            //ReadPortTeachingPointsFromPLC(3, model.Port3);
-            //// Read Port 4
-            //ReadPortTeachingPointsFromPLC(4, model.Port4);
-        }
-
-        /// <summary>
-        /// Write all teaching points to PLC for all 4 ports
-        /// </summary>
-        private void WriteAllTeachingPointsToPLC(TeachingModel model)
-        {
-            //// Write Port 1
-            //WritePortTeachingPointsToPLC(1, model.Port1);
-            //// Write Port 2
-            //WritePortTeachingPointsToPLC(2, model.Port2);
-            //// Write Port 3
-            //WritePortTeachingPointsToPLC(3, model.Port3);
-            //// Write Port 4
-            //WritePortTeachingPointsToPLC(4, model.Port4);
-        }
-
-
-        /// <summary>
-        /// Update teaching button colors after loading model
-        /// </summary>
-        private void UpdateTeachingButtonColors()
-        {
-            // Set all Save buttons to green to indicate they have values
-            var saveButtons = new[]
-            {
-                "btnSavePointTrayInputXYStart", "btnSavePointTrayInputXEnd",
-                "btnSavePointTrayInputYEnd", "btnSavePointTrayInputZ",
-                "btnSavePointTrayNG1XYStart", "btnSavePointTrayNG1XEnd",
-                "btnSavePointTrayNG1YEnd", "btnSavePointTrayNG1Z",
-                "btnSavePointTrayNG2XYStart", "btnSavePointTrayNG2XEnd",
-                "btnSavePointTrayNG2YEnd", "btnSavePointTrayNG2Z",
-                "btnSavePointSocket", "btnSavePointSocketZLoad",
-                "btnSavePointSocketZUnload", "btnSavePointSocketZReady",
-                "btnSavePointSocketZReadyLoad", "btnSavePointSocketZReadyUnload",
-                "btnSavePointSocketFOpened", "btnSavePointSocketFClosed",
-                "btnSavePointCamera", "btnSavePointSocketCameraZ"
-            };
-
-            foreach (var btnName in saveButtons)
-            {
-                var btn = FindButtonByName(btnName);
-                if (btn != null)
-                {
-                    btn.BackColor = System.Drawing.Color.LightGreen;
-                }
-            }
-        }
 
         /// <summary>
         /// Motor Disable button click handler - Toggle PLC value

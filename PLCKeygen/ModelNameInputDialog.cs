@@ -90,5 +90,26 @@ namespace PLCKeygen
                 return result == DialogResult.OK ? dialog.Password : null;
             }
         }
+
+        /// <summary>
+        /// Static method với default value
+        /// </summary>
+        /// <param name="prompt">Prompt text</param>
+        /// <param name="title">Dialog title</param>
+        /// <param name="owner">Parent form</param>
+        /// <param name="defaultValue">Default value to pre-fill</param>
+        /// <returns>Input string, hoặc null nếu Cancel</returns>
+        public static string Show(string prompt, string title, Form owner, string defaultValue)
+        {
+            using (var dialog = new ModelNameInputDialog(prompt, title))
+            {
+                if (!string.IsNullOrEmpty(defaultValue))
+                {
+                    dialog.txtPassword.Text = defaultValue;
+                }
+                DialogResult result = owner != null ? dialog.ShowDialog(owner) : dialog.ShowDialog();
+                return result == DialogResult.OK ? dialog.Password : null;
+            }
+        }
     }
 }
