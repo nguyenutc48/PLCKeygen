@@ -1537,6 +1537,29 @@ namespace PLCKeygen
             }
         }
 
+        /// <summary>
+        /// Override ProcessCmdKey to handle global keyboard shortcuts
+        /// This works even when focus is on other controls/tabs
+        /// </summary>
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // Ctrl+C: Toggle btnVacLoad (works in any tab)
+            if (keyData == (Keys.Control | Keys.C))
+            {
+                btnVacLoad.PerformClick();
+                return true; // Mark as handled
+            }
+            // Ctrl+V: Toggle btnVacUnload (works in any tab)
+            else if (keyData == (Keys.Control | Keys.V))
+            {
+                btnVacUnload.PerformClick();
+                return true; // Mark as handled
+            }
+
+            // Let the base class handle other keys
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         // Port selection changed
         private void PortRadioButton_CheckedChanged(object sender, EventArgs e)
         {
