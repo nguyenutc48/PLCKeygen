@@ -4901,6 +4901,16 @@ namespace PLCKeygen
             ToggleBypassSignal(selectedPort, "Chart");
         }
 
+        private void btnCam1Disable_Click(object sender, EventArgs e)
+        {
+            ToggleBypassSignal(selectedPort, "Cam1");
+        }
+
+        private void btnCam2Disable_Click(object sender, EventArgs e)
+        {
+            ToggleBypassSignal(selectedPort, "Cam2");
+        }
+
         /// <summary>
         /// Toggle bypass signal at PLC address
         /// </summary>
@@ -4985,6 +4995,8 @@ namespace PLCKeygen
                         case "Tray": return PLCAddresses.Input.P1_Bypass_Sensor_Detect_Tray;
                         case "Auto": return PLCAddresses.Input.P1_Auto_Mode;
                         case "Chart": return PLCAddresses.Input.P1_Chart_Disable;
+                        case "Cam2": return PLCAddresses.Input.Cam2_Check_Disable;
+                        case "Cam1": return PLCAddresses.Input.Cam1_Check_Disable;
                     }
                     break;
                 case 2:
@@ -4996,6 +5008,8 @@ namespace PLCKeygen
                         case "Tray": return PLCAddresses.Input.P2_Bypass_Sensor_Detect_Tray;
                         case "Auto": return PLCAddresses.Input.P2_Auto_Mode;
                         case "Chart": return PLCAddresses.Input.P2_Chart_Disable;
+                        case "Cam2": return PLCAddresses.Input.Cam2_Check_Disable;
+                        case "Cam1": return PLCAddresses.Input.Cam1_Check_Disable;
                     }
                     break;
                 case 3:
@@ -5007,6 +5021,8 @@ namespace PLCKeygen
                         case "Tray": return PLCAddresses.Input.P3_Bypass_Sensor_Detect_Tray;
                         case "Auto": return PLCAddresses.Input.P3_Auto_Mode;
                         case "Chart": return PLCAddresses.Input.P3_Chart_Disable;
+                        case "Cam2": return PLCAddresses.Input.Cam2_Check_Disable;
+                        case "Cam1": return PLCAddresses.Input.Cam1_Check_Disable;
                     }
                     break;
                 case 4:
@@ -5018,6 +5034,8 @@ namespace PLCKeygen
                         case "Tray": return PLCAddresses.Input.P4_Bypass_Sensor_Detect_Tray;
                         case "Auto": return PLCAddresses.Input.P4_Auto_Mode;
                         case "Chart": return PLCAddresses.Input.P4_Chart_Disable;
+                        case "Cam2": return PLCAddresses.Input.Cam2_Check_Disable;
+                        case "Cam1": return PLCAddresses.Input.Cam1_Check_Disable;
                     }
                     break;
             }
@@ -5038,6 +5056,8 @@ namespace PLCKeygen
                 case "Tray": btn = btnTrayDisable; break;
                 case "Auto": btn = btnAutoDisable; break;
                 case "Chart": btn = btnChartDisable; break;
+                case "Cam1": btn = btnCam1Disable; break;
+                case "Cam2": btn = btnCam2Disable; break;
             }
 
             if (btn != null)
@@ -5134,6 +5154,22 @@ namespace PLCKeygen
                     var addrSplit = chartAddr.Split('.');
                     bool chartValue = PLCKey.ReadBitFromWord(addrSplit[0], GetBitIndexFromAddress(chartAddr));
                     UpdateBypassButtonColor("Chart", !chartValue);
+                }
+
+                // Cam1 Bypass
+                string cam1Addr = GetBypassAddress(selectedPort, "Cam1");
+                if (!string.IsNullOrEmpty(cam1Addr))
+                {
+                    bool cam1Value = PLCKey.ReadBit(cam1Addr);
+                    UpdateBypassButtonColor("Cam1", cam1Value);
+                }
+
+                // Cam1 Bypass
+                string cam2Addr = GetBypassAddress(selectedPort, "Cam2");
+                if (!string.IsNullOrEmpty(cam2Addr))
+                {
+                    bool cam2Value = PLCKey.ReadBit(cam2Addr);
+                    UpdateBypassButtonColor("Cam2", cam2Value);
                 }
             }
             catch
@@ -5422,16 +5458,16 @@ namespace PLCKeygen
                 int port = selectedPort;
 
                 // Read alarm code (warning)
-                string alarmAddr = GetAlarmCodeAddress(port);
-                if (!string.IsNullOrEmpty(alarmAddr))
-                {
-                    int alarmCode = PLCKey.ReadInt32(alarmAddr);
-                    if (alarmCode > 0)
-                    {
-                        string alarmMessage = AlarmErrorMessages.GetAlarmMessage(alarmCode);
-                        ShowAlarmNotification(port, "CẢNH BÁO", alarmMessage, alarmCode);
-                    }
-                }
+                //string alarmAddr = GetAlarmCodeAddress(port);
+                //if (!string.IsNullOrEmpty(alarmAddr))
+                //{
+                //    int alarmCode = PLCKey.ReadInt32(alarmAddr);
+                //    if (alarmCode > 0)
+                //    {
+                //        string alarmMessage = AlarmErrorMessages.GetAlarmMessage(alarmCode);
+                //        ShowAlarmNotification(port, "CẢNH BÁO", alarmMessage, alarmCode);
+                //    }
+                //}
 
                 // Read error code
                 string errorAddr = GetErrorCodeAddress(port);

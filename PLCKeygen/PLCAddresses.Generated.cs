@@ -33,6 +33,8 @@ namespace PLCKeygen
         /// </summary>
         public static class Input
         {
+            public const string Cam1_Check_Disable = "MR10112";
+            public const string Cam2_Check_Disable = "MR10412";
             #region Port 1 Jog
             public const string P1_Step_Jog_Mode =  "MR02002";
             public const string P1_XJog_Plus =  "MR43701";
@@ -248,6 +250,7 @@ namespace PLCKeygen
 
             /// <summary>Bypass Sensor Detect Tray</summary>
             public const string P1_Bypass_Sensor_Detect_Tray = "MR2012";
+            
 
             #endregion
 
